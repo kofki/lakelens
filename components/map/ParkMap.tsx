@@ -57,7 +57,9 @@ function ParkMapInner({
 }: ParkMapProps) {
   const mapRef = useRef<MapRef>(null);
   const parksRef = useRef(parks);
-  parksRef.current = parks;
+  useEffect(() => {
+    parksRef.current = parks;
+  }, [parks]);
   const [showLabels, setShowLabels] = useState(false);
   const [tileError, setTileError] = useState(false);
 
@@ -173,7 +175,7 @@ function ParkMapInner({
           className="absolute inset-x-3 z-10 flex items-start gap-2 rounded-xl bg-white/95 p-3 text-sm text-cocoa shadow-card"
           style={{ top: topInsetPx + 8 }}
         >
-          <p className="flex-1">Some map tiles didn't load. Park markers and the list below still work.</p>
+          <p className="flex-1">Some map tiles didn&apos;t load. Park markers and the list below still work.</p>
           <button
             type="button"
             onClick={() => setTileError(false)}
