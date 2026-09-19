@@ -30,7 +30,32 @@ import {
   type NwsForecastResponse,
   type NwsPointsResponse,
 } from "@/lib/ingest/nws";
-import { buildOpenMeteoUrl, normalizeOpenMeteo, offsetString, wmoText, type OpenMeteoResponse } from "@/lib/ingest/openMeteo";
+import {
+  buildOpenMeteoBatchUrl,
+  buildOpenMeteoUrl,
+  fetchOpenMeteoBatch,
+  normalizeOpenMeteo,
+  normalizeOpenMeteoMulti,
+  offsetString,
+  wmoText,
+  type OpenMeteoResponse,
+} from "@/lib/ingest/openMeteo";
+import { buildContinuousUrl, chunk, fetchFlowHistory, normalizeContinuous } from "@/lib/ingest/usgs";
+import { parseRdbSites, selectGauges, usgsSitesUrl, isLiveReading, type SiteLiveness } from "@/lib/ingest/gauges";
+import {
+  algaeAlertHash,
+  algaeAlertText,
+  algaeSeverity,
+  buildAlgaeQueryUrl,
+  fetchAlgaeSamples,
+  isAlertWorthy,
+  matchAlgaeToParks,
+  microcystinValue,
+  normalizeAlgae,
+  type ArcgisQueryResponse,
+} from "@/lib/ingest/algae";
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 import { normalizeLongWeekends, normalizeNagerHolidays, type NagerHoliday, type NagerLongWeekend } from "@/lib/ingest/holidays";
 import { manualAlertHash, nwsAlertHash, sha256Hex } from "@/lib/ingest/hash";
 import type { UsgsReading } from "@/lib/types";
@@ -42,6 +67,9 @@ import forecastFixture from "./fixtures/nws-forecast.json";
 import hourlyFixture from "./fixtures/nws-hourly.json";
 import alertsFixture from "./fixtures/nws-alerts-fl.json";
 import openMeteoFixture from "./fixtures/open-meteo.json";
+import openMeteoMultiFixture from "./fixtures/open-meteo-multi.json";
+import continuousFixture from "./fixtures/usgs-continuous.json";
+import algaeFixture from "./fixtures/fdep-algae.json";
 import nagerFixture from "./fixtures/nager-2026.json";
 import longWeekendFixture from "./fixtures/nager-longweekend-2026.json";
 
@@ -52,6 +80,10 @@ const forecast = forecastFixture as unknown as NwsForecastResponse;
 const hourly = hourlyFixture as unknown as NwsForecastResponse;
 const alerts = (alertsFixture as unknown as { features: NwsAlertFeature[] }).features;
 const openMeteo = openMeteoFixture as unknown as OpenMeteoResponse;
+const openMeteoMulti = openMeteoMultiFixture as unknown as OpenMeteoResponse[];
+const continuous = continuousFixture as unknown as OgcFeatureCollection;
+const algae = algaeFixture as unknown as ArcgisQueryResponse;
+const sitesRdb = readFileSync(join(__dirname, "fixtures/usgs-sites-ichetucknee.rdb"), "utf8");
 const nager = nagerFixture as unknown as NagerHoliday[];
 const longWeekends = longWeekendFixture as unknown as NagerLongWeekend[];
 
@@ -460,5 +492,234 @@ describe("alert hashes", () => {
     expect(sha256Hex("abc")).toBe("ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad");
     expect(manualAlertHash("p1", "closure", "  Swim area closed ")).toBe(manualAlertHash("p1", "closure", "Swim area closed"));
     expect(nwsAlertHash("p1", "urn:1", "h")).not.toBe(nwsAlertHash("p2", "urn:1", "h"));
+  });
+});
+
+// ---------------------------------------------------------------- USGS batching + flow history
+
+describe("usgs batching", () => {
+  it("chunks site ids 40 per request and merges the results", async () => {
+    const sites = Array.from({ length: 95 }, (_, i) => String(10000000 + i));
+    const urls: string[] = [];
+    const fetchImpl: typeof fetch = async (input) => {
+      const url = String(input);
+      urls.push(url);
+      const ids = new URL(url).searchParams.get("monitoring_location_id")!.split(",");
+      return jsonResponse({
+        features: ids.map((id) => ({
+          properties: { monitoring_location_id: id, parameter_code: "00060", time: NOW.toISOString(), value: "1", unit_of_measure: "ft^3/s" },
+        })),
+      });
+    };
+    const result = await fetchUsgsLatestDetailed(sites, { fetchImpl, now: NOW });
+    expect(urls).toHaveLength(3);
+    expect(urls.map((u) => new URL(u).searchParams.get("monitoring_location_id")!.split(",").length)).toEqual([40, 40, 15]);
+    expect(Object.keys(result.readingsBySite)).toHaveLength(95);
+    expect(result.source).toBe("usgs-ogc");
+    expect(chunk([1, 2, 3], 2)).toEqual([[1, 2], [3]]);
+  });
+});
+
+describe("usgs flow history (OGC continuous)", () => {
+  it("normalises the continuous collection into ascending {t, v} points with the unit", () => {
+    const { points, unit } = normalizeContinuous(continuous, "02322700", "00060");
+    expect(points).toHaveLength(24);
+    expect(unit).toBe("ft3/s");
+    expect(points[0]).toEqual({ t: "2026-09-19T11:00:00.000Z", v: 218 });
+    for (let i = 1; i < points.length; i++) expect(points[i].t > points[i - 1].t).toBe(true);
+    expect(points.every((p) => typeof p.v === "number")).toBe(true);
+  });
+
+  it("drops other sites / parameters and non-numeric values and dedupes by time", () => {
+    const junk: OgcFeatureCollection = {
+      features: [
+        { properties: { monitoring_location_id: "USGS-1", parameter_code: "00060", time: "2026-09-19T01:00:00Z", value: "5", unit_of_measure: "ft^3/s" } },
+        { properties: { monitoring_location_id: "USGS-1", parameter_code: "00060", time: "2026-09-19T01:00:00Z", value: "6", unit_of_measure: "ft^3/s" } },
+        { properties: { monitoring_location_id: "USGS-1", parameter_code: "00060", time: "2026-09-19T00:00:00Z", value: "Ice", unit_of_measure: "ft^3/s" } },
+        { properties: { monitoring_location_id: "USGS-2", parameter_code: "00060", time: "2026-09-19T00:30:00Z", value: "7", unit_of_measure: "ft^3/s" } },
+        { properties: { monitoring_location_id: "USGS-1", parameter_code: "00065", time: "2026-09-19T00:30:00Z", value: "1.2", unit_of_measure: "ft" } },
+      ],
+    };
+    const { points } = normalizeContinuous(junk, "1", "00060");
+    expect(points).toEqual([{ t: "2026-09-19T01:00:00.000Z", v: 6 }]);
+  });
+
+  it("builds the documented request and falls back from discharge to gage height", async () => {
+    const url = buildContinuousUrl("02322700", "00060", new Date("2026-09-18T06:45:00Z"), NOW);
+    expect(url).toContain("/collections/continuous/items?");
+    expect(url).toContain("monitoring_location_id=USGS-02322700");
+    expect(url).toContain("datetime=2026-09-18T06%3A45%3A00.000Z%2F2026-09-19T06%3A45%3A00.000Z");
+
+    const calls: string[] = [];
+    const fetchImpl: typeof fetch = async (input) => {
+      const u = new URL(String(input));
+      calls.push(u.searchParams.get("parameter_code")!);
+      if (u.searchParams.get("parameter_code") === "00060") return jsonResponse({ features: [] });
+      return jsonResponse({
+        features: [{ properties: { monitoring_location_id: "USGS-02322400", parameter_code: "00065", time: "2026-09-19T05:00:00Z", value: "2.5", unit_of_measure: "ft" } }],
+      });
+    };
+    const h = await fetchFlowHistory("02322400", 24, { fetchImpl, now: NOW });
+    expect(calls).toEqual(["00060", "00065"]);
+    expect(h).toEqual({ site: "02322400", parameter: "00065", unit: "ft", points: [{ t: "2026-09-19T05:00:00.000Z", v: 2.5 }] });
+  });
+});
+
+// ---------------------------------------------------------------- Open-Meteo multi-location
+
+describe("open-meteo multi-location", () => {
+  it("builds comma-separated coordinate lists with forecast_hours=24", () => {
+    const url = buildOpenMeteoBatchUrl([
+      { lat: 29.98389, lng: -82.76194 },
+      { lat: 28.94722, lng: -81.33972 },
+    ]);
+    expect(url).toContain("latitude=29.98389%2C28.94722");
+    expect(url).toContain("longitude=-82.76194%2C-81.33972");
+    expect(url).toContain("forecast_hours=24");
+    expect(buildOpenMeteoUrl(1, 2)).toContain("latitude=1&longitude=2");
+  });
+
+  it("parses the array response in request order (element 0 has no location_id)", () => {
+    const payloads = normalizeOpenMeteoMulti(openMeteoMulti, 3, "2026-09-19T17:30:00.000Z");
+    expect(payloads).toHaveLength(3);
+    expect(payloads.every((p) => p.provider === "open-meteo")).toBe(true);
+    expect(payloads[0].current.tempF).toBe(openMeteoMulti[0].current!.temperature_2m);
+    expect(payloads[2].current.tempF).toBe(openMeteoMulti[2].current!.temperature_2m);
+    // forecast_hours=24 responses already start at the current hour
+    expect(payloads[0].hourly).toHaveLength(24);
+    expect(payloads[0].hourly[0].time).toBe("2026-09-19T13:00-04:00");
+    expect(payloads[0].daily).toHaveLength(7);
+    expect(payloads[1].today.highF).not.toBeNull();
+  });
+
+  it("accepts a bare object for a single location and rejects a count mismatch", () => {
+    expect(normalizeOpenMeteoMulti(openMeteo, 1, "2026-09-19T05:45:00.000Z")[0].current.tempF).toBe(73.7);
+    expect(() => normalizeOpenMeteoMulti(openMeteoMulti, 2, "x")).toThrow(/expected 2/);
+  });
+
+  it("retries once after HTTP 429 and refuses batches over 20", async () => {
+    let n = 0;
+    const fetchImpl: typeof fetch = async () => {
+      n++;
+      return n === 1 ? new Response("rate limited", { status: 429 }) : jsonResponse(openMeteoMulti);
+    };
+    const payloads = await fetchOpenMeteoBatch(
+      [
+        { lat: 1, lng: 1 },
+        { lat: 2, lng: 2 },
+        { lat: 3, lng: 3 },
+      ],
+      { fetchImpl, sleep: async () => {} },
+    );
+    expect(n).toBe(2);
+    expect(payloads).toHaveLength(3);
+    await expect(fetchOpenMeteoBatch(Array.from({ length: 21 }, (_, i) => ({ lat: i, lng: i })), { fetchImpl })).rejects.toThrow(/exceeds 20/);
+  });
+});
+
+// ---------------------------------------------------------------- gauge selection
+
+describe("gauge selection (scripts/fetch-usgs-sites)", () => {
+  const ich = { lat: 29.98389, lng: -82.76194 }; // Ichetucknee head spring
+  const sites = parseRdbSites(sitesRdb);
+
+  it("parses the RDB site table (comments, header and format rows skipped)", () => {
+    expect(sites).toHaveLength(5);
+    expect(sites.find((s) => s.site_no === "02322700")).toMatchObject({ site_tp_cd: "ST", station_nm: "ICHETUCKNEE R @ HWY27 NR HILDRETH, FL" });
+    expect(sites.find((s) => s.site_no === "02322688")?.site_tp_cd).toBe("SP");
+    expect(usgsSitesUrl(ich.lat, ich.lng)).toContain("bBox=-82.91194%2C29.83389%2C-82.61194%2C30.13389");
+    expect(usgsSitesUrl(ich.lat, ich.lng)).toContain("siteType=SP%2CST");
+  });
+
+  it("picks the live spring <= 1 km and the nearest live discharge gauge <= 15 km", () => {
+    const live: Record<string, SiteLiveness> = {
+      "02322688": { discharge: false, level: true }, // Blue Hole spring, ~0.55 km
+      "02322700": { discharge: true, level: true }, // Ichetucknee R @ Hwy 27, ~4.2 km
+      "02322500": { discharge: true, level: true }, // Santa Fe nr Fort White, ~15.7 km (out of range)
+    };
+    const sel = selectGauges(ich, sites, live);
+    expect(sel.usgs_site_id).toBe("02322688");
+    expect(sel.river_gauge_site_id).toBe("02322700");
+    expect(sel.gauge_distance_km).toBeCloseTo(4.2, 0);
+    expect(Object.keys(sel.site_names).sort()).toEqual(["02322688", "02322700"]);
+  });
+
+  it("ignores dead gauges, prefers discharge over level-only, and never reuses the spring as the river gauge", () => {
+    const none = selectGauges(ich, sites, {});
+    expect(none).toEqual({ usgs_site_id: null, river_gauge_site_id: null, gauge_distance_km: null, site_names: {} });
+
+    const levelOnlyNearer = selectGauges(ich, sites, {
+      "02322700": { discharge: false, level: true }, // 4.2 km, level only
+      "02322800": { discharge: true, level: true }, // ~12 km, discharge
+    });
+    expect(levelOnlyNearer.river_gauge_site_id).toBe("02322800");
+
+    const springOnly = selectGauges(ich, sites, { "02322688": { discharge: true, level: false } });
+    expect(springOnly.usgs_site_id).toBe("02322688");
+    expect(springOnly.river_gauge_site_id).toBeNull();
+    expect(springOnly.gauge_distance_km).toBeCloseTo(0.5, 0);
+  });
+
+  it("isLiveReading uses a 24 h window", () => {
+    expect(isLiveReading("2026-09-19T00:00:00Z", NOW)).toBe(true);
+    expect(isLiveReading("2026-09-17T00:00:00Z", NOW)).toBe(false);
+    expect(isLiveReading("garbage", NOW)).toBe(false);
+  });
+});
+
+// ---------------------------------------------------------------- FDEP algae
+
+describe("fdep algae", () => {
+  const ALGAE_NOW = new Date("2026-09-19T21:30:00Z"); // fixture captured 2026-09-19
+  const samples = normalizeAlgae(algae);
+
+  it("normalises ArcGIS features (epoch dates, coordinates, Yes/No/Pending domains)", () => {
+    expect(samples).toHaveLength(98);
+    const doctors = samples.find((s) => s.id === "0d087f81-3e80-4ea2-8170-ca23622c00cc")!;
+    expect(doctors.sampledAt).toBe("2026-08-31T15:25:00.000Z");
+    expect(doctors.lat).toBeCloseTo(30.1256, 3);
+    expect(doctors.toxinPresent).toBe("yes");
+    expect(doctors.bloomObserved).toBe(true);
+    expect(doctors.county).toBe("Clay");
+    expect(samples.some((s) => s.toxinPresent === "pending")).toBe(true);
+    expect(buildAlgaeQueryUrl(new Date("2026-08-29T21:30:00Z"))).toContain("where=SampleDateTime+%3E%3D+TIMESTAMP+%272026-08-29+21%3A30%3A00%27");
+  });
+
+  it("severity and text follow toxin presence", () => {
+    const doctors = samples.find((s) => s.id === "0d087f81-3e80-4ea2-8170-ca23622c00cc")!;
+    expect(algaeSeverity(doctors)).toBe("Severe");
+    expect(microcystinValue(doctors.microcystin)).toBe("0.33");
+    expect(algaeAlertText(doctors, 1.8)).toMatch(/^FDEP algal bloom sample within 2 km on Aug 31 — microcystin detected \(0\.33 µg\/L\)/);
+    const pending = { ...doctors, toxinPresent: "pending" as const, microcystin: "Pending" };
+    expect(algaeSeverity(pending)).toBe("Moderate");
+    expect(algaeAlertText(pending, 0.4)).toContain("within 1 km");
+    expect(algaeAlertText(pending, 0.4)).toContain("toxin results pending");
+    const clean = { ...doctors, toxinPresent: "no" as const, bloomObserved: false };
+    expect(isAlertWorthy(clean)).toBe(false);
+    expect(algaeSeverity({ ...clean, bloomObserved: true })).toBe("Minor");
+    expect(algaeAlertHash("p1", "s1")).not.toBe(algaeAlertHash("p2", "s1"));
+  });
+
+  it("matches samples to parks within 3 km and inside the 21-day window", () => {
+    const doctors = samples.find((s) => s.id === "0d087f81-3e80-4ea2-8170-ca23622c00cc")!;
+    const parks = [
+      { id: "near", lat: doctors.lat + 0.01, lng: doctors.lng }, // ~1.1 km
+      { id: "far", lat: doctors.lat + 0.1, lng: doctors.lng }, // ~11 km
+      { id: "ichetucknee", lat: 29.98389, lng: -82.76194 },
+    ];
+    const matches = matchAlgaeToParks(samples, parks, ALGAE_NOW);
+    expect(matches.some((m) => m.park.id === "near" && m.sample.id === doctors.id)).toBe(true);
+    expect(matches.some((m) => m.park.id === "far")).toBe(false);
+    expect(matches.find((m) => m.park.id === "near" && m.sample.id === doctors.id)?.distanceKm).toBeCloseTo(1.1, 1);
+    // same sample 30 days later has aged out
+    expect(matchAlgaeToParks(samples, parks, new Date("2026-10-19T21:30:00Z")).some((m) => m.sample.id === doctors.id)).toBe(false);
+    // clean samples never match
+    expect(matches.every((m) => isAlertWorthy(m.sample))).toBe(true);
+  });
+
+  it("fetchAlgaeSamples surfaces ArcGIS error envelopes", async () => {
+    await expect(fetchAlgaeSamples({ fetchImpl: async () => jsonResponse({ error: { code: 400, message: "Invalid query" } }) })).rejects.toThrow(/Invalid query/);
+    const ok = await fetchAlgaeSamples({ fetchImpl: async () => jsonResponse(algae), now: ALGAE_NOW });
+    expect(ok).toHaveLength(98);
   });
 });

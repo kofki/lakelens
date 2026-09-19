@@ -1,10 +1,13 @@
 /**
  * Ingestion job runner (server only — uses the admin client).
  *
- *   usgs     one batched USGS call for every distinct gauge of deep parks -> conditions_snapshots(source=usgs)
- *   weather  deep parks every run; basic parks only when UTC hour % 3 === 0 (or force); a park is skipped
- *            when its latest weather snapshot is < 50 min old (unless force). NWS first, Open-Meteo fallback.
+ *   usgs     batched USGS calls (40 sites/request) for every distinct gauge of EVERY park with a gauge
+ *            -> one conditions_snapshots(source=usgs) row per gauged park
+ *   weather  EVERY park every run. Deep parks: NWS (Open-Meteo fallback), 4 in parallel. Basic parks:
+ *            Open-Meteo multi-location batches of 20, sequential (429-safe), one insert per batch.
+ *            A park is skipped when its latest weather snapshot is < 50 min old (unless force).
  *   alerts   ONE statewide NWS call -> park_alerts(kind=nws) upsert by hash; stale/expired rows -> active=false
+ *   algae    FDEP algal bloom samples (21 days) within 3 km -> park_alerts(kind=notice, source=fdep-algae)
  *   holidays refresh holidays + long_weekends for this year and next (Nager.Date)
  *   prune    delete conditions_snapshots older than 7 days
  *
@@ -17,11 +20,21 @@ import { createAdminClient } from "@/lib/supabase/admin";
 import type { CronJob, NwsGrid, Park } from "@/lib/types";
 import { buildUsgsPayloadForPark, fetchUsgsLatestDetailed } from "./usgs";
 import { fetchAlertsFL, fetchNwsWeather, matchAlertsToPark, type NwsAlertFeature } from "./nws";
-import { fetchOpenMeteo } from "./openMeteo";
+import { OPEN_METEO_BATCH_SIZE, fetchOpenMeteo, fetchOpenMeteoBatch } from "./openMeteo";
 import { fetchLongWeekends, fetchNagerHolidays } from "./holidays";
 import { nwsAlertHash } from "./hash";
+import {
+  ALGAE_SOURCE,
+  FDEP_ALGAE_DASHBOARD_URL,
+  algaeAlertEndsAt,
+  algaeAlertHash,
+  algaeAlertText,
+  algaeSeverity,
+  fetchAlgaeSamples,
+  matchAlgaeToParks,
+} from "./algae";
 
-export const CRON_JOBS: readonly CronJob[] = ["usgs", "weather", "alerts", "holidays", "prune"];
+export const CRON_JOBS: readonly CronJob[] = ["usgs", "weather", "alerts", "holidays", "prune", "algae"];
 
 export function isCronJob(value: string): value is CronJob {
   return (CRON_JOBS as readonly string[]).includes(value);
@@ -30,7 +43,7 @@ export function isCronJob(value: string): value is CronJob {
 export interface RunJobOptions {
   /** restrict usgs/weather to one park (used by /api/refresh) */
   parkId?: string;
-  /** ignore freshness throttles and the basic-tier 3-hour cadence */
+  /** ignore freshness throttles */
   force?: boolean;
   /** injectable clock (tests) */
   now?: Date;
@@ -92,6 +105,9 @@ export async function runJob(job: CronJob, opts: RunJobOptions = {}): Promise<Ru
       case "prune":
         await runPrune(ctx);
         break;
+      case "algae":
+        await runAlgae(ctx);
+        break;
       default:
         return { ok: false, counts: {}, errors: [`unknown job: ${String(job)}`] };
     }
@@ -107,7 +123,7 @@ export async function runJob(job: CronJob, opts: RunJobOptions = {}): Promise<Ru
 
 async function runUsgs(ctx: Ctx): Promise<void> {
   let q = ctx.db.from("parks").select("id,slug,name,coverage_tier,usgs_site_id,river_gauge_site_id,gauge_distance_km");
-  q = ctx.opts.parkId ? q.eq("id", ctx.opts.parkId) : q.eq("coverage_tier", "deep");
+  if (ctx.opts.parkId) q = q.eq("id", ctx.opts.parkId);
   const { data: parks, error } = await q;
   if (error) throw new Error(`load parks: ${error.message}`);
 
@@ -149,11 +165,7 @@ async function runWeather(ctx: Ctx): Promise<void> {
     ? await ctx.db.from("parks").select("id,slug,name,lat,lng,coverage_tier,nws_grid,nws_zone,nws_county").eq("id", ctx.opts.parkId)
     : await ctx.db.from("parks").select("id,slug,name,lat,lng,coverage_tier,nws_grid,nws_zone,nws_county");
   if (error) throw new Error(`load parks: ${error.message}`);
-
-  const basicDue = force || ctx.now.getUTCHours() % 3 === 0;
-  const due = (parks ?? []).filter((p) => ctx.opts.parkId || p.coverage_tier === "deep" || basicDue);
-  ctx.counts.parks_due = due.length;
-  ctx.counts.parks_basic_skipped = (parks ?? []).length - due.length;
+  ctx.counts.parks = parks?.length ?? 0;
 
   // freshness: newest weather snapshot per park
   const latest = new Map<string, number>();
@@ -170,26 +182,60 @@ async function runWeather(ctx: Ctx): Promise<void> {
     }
   }
 
-  const queue = due.filter((p) => {
+  const queue = (parks ?? []).filter((p) => {
     const t = latest.get(p.id);
     const fresh = t !== undefined && ctx.now.getTime() - t < WEATHER_FRESH_MS;
     if (fresh) bump(ctx, "skipped_fresh");
     return !fresh;
-  });
+  }) as WeatherParkRow[];
+  const deep = queue.filter((p) => p.coverage_tier === "deep");
+  const basic = queue.filter((p) => p.coverage_tier !== "deep");
+  ctx.counts.deep_due = deep.length;
+  ctx.counts.basic_due = basic.length;
 
+  // deep parks: NWS with per-park Open-Meteo fallback, a few in parallel
   let i = 0;
   const worker = async () => {
-    while (i < queue.length) {
+    while (i < deep.length) {
       if (overBudget(ctx)) {
-        bump(ctx, "skipped_time_budget", queue.length - i);
-        i = queue.length;
+        bump(ctx, "skipped_time_budget", deep.length - i);
+        i = deep.length;
         return;
       }
-      const park = queue[i++];
-      await refreshParkWeather(ctx, park as WeatherParkRow);
+      await refreshParkWeather(ctx, deep[i++]);
     }
   };
-  await Promise.all(Array.from({ length: Math.min(WEATHER_CONCURRENCY, queue.length) }, worker));
+  await Promise.all(Array.from({ length: Math.min(WEATHER_CONCURRENCY, deep.length) }, worker));
+
+  // basic parks: Open-Meteo multi-location batches, sequential so we never trip its burst limit
+  for (let start = 0; start < basic.length; start += OPEN_METEO_BATCH_SIZE) {
+    if (overBudget(ctx)) {
+      bump(ctx, "skipped_time_budget", basic.length - start);
+      break;
+    }
+    const batch = basic.slice(start, start + OPEN_METEO_BATCH_SIZE);
+    await refreshBasicWeatherBatch(ctx, batch);
+  }
+}
+
+/** One Open-Meteo request + one insert for up to OPEN_METEO_BATCH_SIZE basic parks. */
+async function refreshBasicWeatherBatch(ctx: Ctx, batch: WeatherParkRow[]): Promise<void> {
+  const fetchedAt = new Date().toISOString();
+  bump(ctx, "open_meteo_batches");
+  try {
+    const payloads = await fetchOpenMeteoBatch(
+      batch.map((p) => ({ lat: p.lat, lng: p.lng })),
+      { fetchedAt },
+    );
+    const rows = batch.map((p, idx) => ({ park_id: p.id, source: "open-meteo", fetched_at: fetchedAt, payload: payloads[idx] as unknown as Json }));
+    const { error } = await ctx.db.from("conditions_snapshots").insert(rows);
+    if (error) throw new Error(`insert weather batch: ${error.message}`);
+    bump(ctx, "open_meteo", batch.length);
+    bump(ctx, "inserted", batch.length);
+  } catch (err) {
+    ctx.errors.push(`open-meteo batch (${batch[0]?.slug}…, ${batch.length} parks): ${msg(err)}`);
+    bump(ctx, "failed", batch.length);
+  }
 }
 
 async function refreshParkWeather(ctx: Ctx, park: WeatherParkRow): Promise<void> {
@@ -330,6 +376,58 @@ async function runHolidays(ctx: Ctx): Promise<void> {
       ctx.errors.push(`long_weekends ${y}: ${msg(err)}`);
     }
   }
+}
+
+// ---------- algae (FDEP) ----------
+
+async function runAlgae(ctx: Ctx): Promise<void> {
+  const samples = await fetchAlgaeSamples({ now: ctx.now });
+  ctx.counts.samples = samples.length;
+
+  const { data: parks, error } = await ctx.db.from("parks").select("id,slug,lat,lng");
+  if (error) throw new Error(`load parks: ${error.message}`);
+  ctx.counts.parks = parks?.length ?? 0;
+
+  const nowIso = ctx.now.toISOString();
+  const rows = new Map<string, Database["public"]["Tables"]["park_alerts"]["Insert"]>();
+  for (const m of matchAlgaeToParks(samples, parks ?? [], ctx.now)) {
+    const hash = algaeAlertHash(m.park.id, m.sample.id);
+    if (rows.has(hash)) continue;
+    rows.set(hash, {
+      park_id: m.park.id,
+      kind: "notice",
+      source: ALGAE_SOURCE,
+      text: algaeAlertText(m.sample, m.distanceKm),
+      official_url: FDEP_ALGAE_DASHBOARD_URL,
+      severity: algaeSeverity(m.sample),
+      starts_at: m.sample.sampledAt,
+      ends_at: algaeAlertEndsAt(m.sample),
+      hash,
+      active: true,
+      last_seen: nowIso,
+      last_checked_at: nowIso,
+    });
+  }
+  ctx.counts.matched = rows.size;
+
+  if (rows.size > 0) {
+    const { error: upErr } = await ctx.db.from("park_alerts").upsert([...rows.values()], { onConflict: "hash" });
+    if (upErr) throw new Error(`upsert park_alerts: ${upErr.message}`);
+    ctx.counts.upserted = rows.size;
+  }
+
+  // deactivate samples that aged out of the window or vanished from the feed (manual rows untouched)
+  const { data: active, error: actErr } = await ctx.db.from("park_alerts").select("id,hash,ends_at").eq("source", ALGAE_SOURCE).eq("active", true);
+  if (actErr) throw new Error(`load active algae alerts: ${actErr.message}`);
+  const stale = (active ?? []).filter((a) => !rows.has(a.hash) || (a.ends_at && Date.parse(a.ends_at) <= ctx.now.getTime()));
+  if (stale.length > 0) {
+    const { error: deErr } = await ctx.db
+      .from("park_alerts")
+      .update({ active: false, last_checked_at: nowIso })
+      .in("id", stale.map((a) => a.id));
+    if (deErr) throw new Error(`deactivate algae alerts: ${deErr.message}`);
+  }
+  ctx.counts.deactivated = stale.length;
 }
 
 // ---------- prune ----------
