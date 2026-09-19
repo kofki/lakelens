@@ -64,7 +64,7 @@ export default async function ParkPage({ params }: Params) {
   const { park } = bundle;
   const deep = park.coverage_tier === "deep";
   const alerts = activeAlerts(bundle.alerts, now);
-  const showBackups = ["full", "likely_full", "closed"].includes(bundle.status.level);
+  const showBackups = ["full", "closed"].includes(bundle.status.level);
 
   const sections: SectionLink[] = [
     { id: "status", label: "Status" },

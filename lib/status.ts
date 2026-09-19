@@ -30,17 +30,7 @@ export const STATUS_META: Record<StatusLevel, StatusMeta> = {
     bgHex: "#dcfce7",
     edgeHex: "#16a34a",
     icon: "CircleCheck",
-    description: "No closure expected right now.",
-  },
-  likely_full: {
-    label: "Likely full soon",
-    shortLabel: "Filling",
-    colorToken: "status-likely",
-    hex: "#7c4a03",
-    bgHex: "#fef3c7",
-    edgeHex: "#d97706",
-    icon: "Clock",
-    description: "Our estimate says this park may reach capacity today.",
+    description: "Letting visitors in right now.",
   },
   full: {
     label: "Full / turned away",
@@ -74,4 +64,4 @@ export const STATUS_META: Record<StatusLevel, StatusMeta> = {
   },
 };
 
-export const STATUS_ORDER: StatusLevel[] = ["open", "likely_full", "full", "closed", "unknown"];
+export const STATUS_ORDER: StatusLevel[] = ["open", "full", "closed", "unknown"];

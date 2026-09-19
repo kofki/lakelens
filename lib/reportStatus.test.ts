@@ -103,8 +103,9 @@ describe("summarizeReports", () => {
   });
 
   it("impliesLevel mapping", () => {
-    expect(summarizeReports([makeReport("line", 5)], [], NOW).impliesLevel).toBe("likely_full");
-    expect(summarizeReports([makeReport("lot_full", 5)], [], NOW).impliesLevel).toBe("likely_full");
+    // A queue or a full lot is a "hurry" signal, not a closure: the park is still open.
+    expect(summarizeReports([makeReport("line", 5)], [], NOW).impliesLevel).toBe("open");
+    expect(summarizeReports([makeReport("lot_full", 5)], [], NOW).impliesLevel).toBe("open");
     expect(summarizeReports([makeReport("got_in", 5)], [], NOW).impliesLevel).toBe("open");
     expect(summarizeReports([makeReport("water_murky", 5)], [], NOW).impliesLevel).toBeNull();
   });

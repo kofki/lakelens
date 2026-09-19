@@ -272,23 +272,32 @@ export default function AboutPage() {
                 <dl className="grid gap-2 sm:grid-cols-3">
                   <div className="rounded-xl bg-cream p-3">
                     <dt className="text-xs font-bold text-mocha">Score 0 or less</dt>
-                    <dd className="mt-1">
+                    <dd className="mt-1 space-y-1">
                       <StatusPill level="open" size="sm" />
+                      <p className="text-xs text-mocha">No crowd expected.</p>
                     </dd>
                   </div>
                   <div className="rounded-xl bg-cream p-3">
                     <dt className="text-xs font-bold text-mocha">Score 1–2 (possible)</dt>
-                    <dd className="mt-1">
-                      <StatusPill level="likely_full" size="sm" estimate />
+                    <dd className="mt-1 space-y-1">
+                      <StatusPill level="open" size="sm" estimate />
+                      <p className="text-xs text-mocha">Still open — we show the time it usually fills.</p>
                     </dd>
                   </div>
                   <div className="rounded-xl bg-cream p-3">
                     <dt className="text-xs font-bold text-mocha">Score 3 or more (likely)</dt>
-                    <dd className="mt-1">
-                      <StatusPill level="likely_full" size="sm" estimate />
+                    <dd className="mt-1 space-y-1">
+                      <StatusPill level="open" size="sm" estimate />
+                      <p className="text-xs text-mocha">Open, but go early — it is likely to fill today.</p>
                     </dd>
                   </div>
                 </dl>
+                <p className="rounded-xl bg-aqua p-3 text-sm text-cyan-deep">
+                  A park is only marked <strong>Full</strong> or <strong>Closed</strong> once it has actually
+                  stopped letting people in — an official closure, the swim season, or visitors reporting they
+                  were turned away. Everything else stays <strong>Open</strong>, with the estimate shown
+                  alongside it.
+                </p>
                 <ul className="list-disc space-y-2 pl-5 text-sm">
                   <li>
                     <span className="font-bold">Predicted time.</span> Parks with a known typical fill time

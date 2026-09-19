@@ -7,7 +7,8 @@
 import type { BackupSuggestion, Filters, ParkWithStatus, ParkingLot } from "./types";
 import { driveMinutes, haversineKm, isAccessibleEntry } from "./distance";
 
-export const BACKUP_TRIGGER_LEVELS = new Set(["full", "likely_full", "closed"]);
+// Only suggest alternatives once a park has actually stopped admitting visitors.
+export const BACKUP_TRIGGER_LEVELS = new Set(["full", "closed"]);
 export const BACKUP_EXCLUDED_LEVELS = new Set(["full", "closed"]);
 
 /** "Main lot · $6 per vehicle · 4 ADA spaces · overflow lot available" or null. */

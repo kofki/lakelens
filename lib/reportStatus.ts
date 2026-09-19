@@ -9,8 +9,9 @@
  * - Which group defines the summary: entry.turned_away > parking.lot_full > entry.line
  *   > entry.got_in > everything else (most recent first).
  * - contradicted: a got_in newer than the newest turned_away (or vice versa).
- * - impliesLevel: turned_away → full, line → likely_full, got_in → open,
- *   lot_full → likely_full, others → null.
+ * - impliesLevel: turned_away → full, got_in/line/lot_full → open, others → null.
+ *   A queue or a full lot means "hurry", not "closed" — the park is still letting people
+ *   in, so the report text is surfaced as evidence under an Open status.
  * - confirmations = still_true − no_longer on the group's reports (min 0). If, within the
  *   last 30 min, no_longer answers outnumber still_true, impliesLevel is cleared to null.
  * - sampleCount = seeded (is_sample) reports in the group, so the UI can label them.
@@ -41,9 +42,9 @@ const PRIORITY: Record<string, number> = {
 
 export const IMPLIES_LEVEL: Partial<Record<ReportValue, StatusLevel>> = {
   turned_away: "full",
-  line: "likely_full",
+  line: "open",
   got_in: "open",
-  lot_full: "likely_full",
+  lot_full: "open",
 };
 
 export const EMPTY_SUMMARY: ReportSummary = {

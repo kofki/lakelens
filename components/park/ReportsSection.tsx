@@ -60,7 +60,8 @@ export function ReportsSection({ park, reports, confirmations, summary, usgsFetc
   }, [reports, optimistic]);
 
   const promptFor = useMemo(() => {
-    if (summary.signal === "none" || !summary.impliesLevel || !["full", "likely_full"].includes(summary.impliesLevel)) return null;
+    // Only a "turned away" style report (impliesLevel "full") is worth re-confirming.
+    if (summary.signal === "none" || summary.impliesLevel !== "full") return null;
     const freshest = all.find((r) => r.category === summary.category && r.value === summary.value);
     if (!freshest) return null;
     return now.getTime() - new Date(freshest.created_at).getTime() >= STILL_TRUE_AFTER_MS ? freshest : null;

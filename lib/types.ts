@@ -9,7 +9,12 @@
  */
 
 // ---------- enums (mirrored as CHECK constraints in SQL) ----------
-export type StatusLevel = "open" | "likely_full" | "full" | "closed" | "unknown";
+/**
+ * A park is only `full`/`closed` once it has actually stopped letting people in.
+ * A park that is expected to fill later today stays `open`; the forecast lives in
+ * ParkStatus.predictedTime + reasons so the UI can say "Open · usually fills by 10:15".
+ */
+export type StatusLevel = "open" | "full" | "closed" | "unknown";
 export type CoverageTier = "basic" | "deep";
 export type ParkType = "spring" | "lake" | "river" | "beach";
 export type Operator = "state" | "county" | "private";
@@ -18,7 +23,7 @@ export type WaterAccess = "yes" | "limited" | "no" | "unknown";
 export type EntryType = "ramp" | "stairs" | "dock_ladder" | "sloped_bank" | "sand" | "other" | "unknown";
 export type Surface = "paved" | "boardwalk" | "sand" | "natural" | "unknown";
 export type AlertKind = "closure" | "notice" | "nws";
-export type ConditionsSource = "usgs" | "nws" | "open-meteo";
+export type ConditionsSource = "usgs" | "noaa" | "nws" | "open-meteo";
 export type ReportCategory = "entry" | "conditions" | "parking" | "accessibility";
 
 export const REPORT_VALUES = {
@@ -98,6 +103,9 @@ export interface Park {
   usgs_site_id: string | null;
   river_gauge_site_id: string | null;
   gauge_distance_km: number | null;
+  /** NOAA CO-OPS (Tides & Currents) station for coastal parks with no USGS gauge */
+  noaa_station_id: string | null;
+  noaa_distance_km: number | null;
   nws_grid: NwsGrid | null;
   nws_zone: string | null;
   nws_county: string | null;
@@ -231,6 +239,36 @@ export interface UsgsPayload {
   flowNote: string | null;
 }
 
+/** NOAA CO-OPS parameters we surface. `water_level` is a tide height above MLLW. */
+export type NoaaParameter = "water_temp" | "water_level";
+
+export interface NoaaReading {
+  station: string; // "8720218"
+  parameter: NoaaParameter;
+  value: number;
+  unit: string; // "degF" | "ft"
+  time: string; // ISO UTC
+  stale: boolean; // older than 3 h at fetch time
+}
+
+export interface NoaaTide {
+  type: "H" | "L";
+  time: string; // ISO UTC
+  valueFt: number;
+}
+
+export interface NoaaPayload {
+  source: "noaa";
+  fetchedAt: string;
+  stationId: string;
+  stationName: string | null;
+  /** km from the park to the station, when known */
+  distanceKm: number | null;
+  readings: NoaaReading[];
+  nextTide: NoaaTide | null;
+  note: string | null;
+}
+
 export interface WeatherHour {
   time: string; // ISO local with offset
   tempF: number | null;
@@ -346,6 +384,8 @@ export interface ParkWithStatus {
   accessibility: Accessibility | null;
   usgs: UsgsPayload | null;
   usgsFetchedAt: string | null;
+  noaa: NoaaPayload | null;
+  noaaFetchedAt: string | null;
   weather: WeatherPayload | null;
   weatherFetchedAt: string | null;
   alerts: ParkAlert[];
@@ -386,4 +426,4 @@ export interface ConfirmReportInput {
   response: "still_true" | "no_longer";
 }
 
-export type CronJob = "usgs" | "weather" | "alerts" | "holidays" | "prune" | "algae";
+export type CronJob = "usgs" | "noaa" | "weather" | "alerts" | "holidays" | "prune" | "algae";

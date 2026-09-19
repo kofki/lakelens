@@ -15,7 +15,7 @@ export interface ParkMarkerProps {
   onSelect: (id: string) => void;
 }
 
-/** Accessible name for a marker button: "Ichetucknee Springs State Park: Likely full soon (estimate)". */
+/** Accessible name for a marker button: "Ichetucknee Springs State Park: Open (estimate)". */
 export function markerLabel(item: ParkWithStatus): string {
   const meta = STATUS_META[item.status.level];
   return `${item.park.name}: ${meta.label}${item.status.isEstimate ? " (estimate)" : ""}`;

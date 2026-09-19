@@ -100,12 +100,12 @@ describe("plain language", () => {
     expect(reportLine({ ...EMPTY_SUMMARY, signal: "confirmed", category: "entry", value: "turned_away", count: 3, freshestAt, impliesLevel: "full", confidence: "high" }, NOW)).toBe(
       "Turned away · reported 25 min ago · 3 people confirmed",
     );
-    expect(reportLine({ ...EMPTY_SUMMARY, signal: "reported", category: "entry", value: "line", count: 1, freshestAt, impliesLevel: "likely_full", confirmations: 2 }, NOW)).toBe(
+    expect(reportLine({ ...EMPTY_SUMMARY, signal: "reported", category: "entry", value: "line", count: 1, freshestAt, impliesLevel: "open", confirmations: 2 }, NOW)).toBe(
       "Line at gate · reported 25 min ago · 2 said still true",
     );
     expect(
       reportLine({ ...EMPTY_SUMMARY, signal: "confirmed", category: "entry", value: "turned_away", count: 3, freshestAt, impliesLevel: null, contradicted: true, sampleCount: 3 }, NOW),
     ).toBe("Turned away · reported 25 min ago · 3 people confirmed · now reported as no longer true · a newer report disagrees · sample data");
-    expect(reportLine({ ...EMPTY_SUMMARY, signal: "reported", category: "parking", value: "lot_full", count: 2, freshestAt, impliesLevel: "likely_full", sampleCount: 1 }, NOW)).toContain("includes sample data");
+    expect(reportLine({ ...EMPTY_SUMMARY, signal: "reported", category: "parking", value: "lot_full", count: 2, freshestAt, impliesLevel: "open", sampleCount: 1 }, NOW)).toContain("includes sample data");
   });
 });

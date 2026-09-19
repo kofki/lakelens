@@ -8,9 +8,11 @@
  * 1. active closure alert (kind=closure, active, starts_at null|<=now, ends_at null|>now) → closed (alert)
  * 2. out of swim season → closed (seasonal)
  * 3. confirmed reports with an implied level → that level (confirmed_reports)
- * 4. single/reported full|likely_full agreeing with a possible|likely prediction → full / likely_full (report_prediction)
+ * 4. a single "turned away" report agreeing with a possible|likely prediction → full (report_prediction)
  * 4b. reported "got in" agreeing with a "none" prediction → open (report_prediction)
- * 5. prediction: likely → likely_full, possible → likely_full (low confidence), none → open (prediction, estimate)
+ * 5. prediction alone → open, carrying predictedTime + reasons (prediction, estimate).
+ *    A park that is merely *expected* to fill is still open; only an alert, the season or a
+ *    "turned away" report closes it.
  * 6. otherwise unknown
  * Pure TS: no React / Next / DOM.
  */
@@ -109,9 +111,9 @@ export function getParkStatus(input: ParkStatusInput): ParkStatus {
   if (summary && summary.signal === "reported" && prediction) {
     const implied = summary.impliesLevel;
     const predictsCrowd = prediction.level === "possible" || prediction.level === "likely";
-    if ((implied === "full" || implied === "likely_full") && predictsCrowd) {
+    if (implied === "full" && predictsCrowd) {
       return {
-        level: implied === "full" ? "full" : "likely_full",
+        level: "full",
         source: "report_prediction",
         confidence: summary.contradicted ? "low" : summary.confidence === "low" ? "medium" : summary.confidence,
         reasons: [reportLine(summary, now), ...predReasons],
@@ -150,9 +152,9 @@ export function getParkStatus(input: ParkStatusInput): ParkStatus {
         predictedTime: null,
       };
     }
-    const level = prediction.level === "none" ? "open" : "likely_full";
+    // Expected-to-fill is still open: the timing is carried by predictedTime + reasons.
     return {
-      level,
+      level: "open",
       source: "prediction",
       confidence: prediction.level === "possible" ? "low" : prediction.confidence,
       reasons,

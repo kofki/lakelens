@@ -52,9 +52,9 @@ export function StatusHeader({ bundle, now }: StatusHeaderProps) {
 
       <p className="text-base text-cocoa md:text-lg md:font-bold">{meta.description}</p>
 
-      {status.predictedTime && status.level === "likely_full" && (
+      {status.predictedTime && status.level === "open" && (
         <p className="text-sm font-bold text-cocoa">
-          Expected to fill around {formatLocalTime(status.predictedTime)}{" "}
+          Usually fills around {formatLocalTime(status.predictedTime)} — arrive earlier to be safe{" "}
           <Badge variant="estimate" className="ml-1 align-middle" />
         </p>
       )}

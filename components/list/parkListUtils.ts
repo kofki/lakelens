@@ -53,7 +53,7 @@ function byDistance(a: ParkWithStatus, b: ParkWithStatus): number {
   return (a.distanceKm ?? Number.POSITIVE_INFINITY) - (b.distanceKm ?? Number.POSITIVE_INFINITY);
 }
 
-/** Stable sort. distance: nearest first (unknown last); status: open → likely full → full → closed → unknown. */
+/** Stable sort. distance: nearest first (unknown last); status: open → full → closed → unknown. */
 export function sortParks(items: ParkWithStatus[], sort: SortKey): ParkWithStatus[] {
   const arr = [...items];
   switch (sort) {
@@ -76,21 +76,17 @@ export function activeFilterCount(filters: Filters): number {
 export interface StatusCounts {
   shown: number;
   open: number;
-  likelyFull: number;
   full: number;
   closed: number;
   unknown: number;
 }
 
 export function countStatuses(items: ParkWithStatus[]): StatusCounts {
-  const c: StatusCounts = { shown: items.length, open: 0, likelyFull: 0, full: 0, closed: 0, unknown: 0 };
+  const c: StatusCounts = { shown: items.length, open: 0, full: 0, closed: 0, unknown: 0 };
   for (const item of items) {
     switch (item.status.level) {
       case "open":
         c.open++;
-        break;
-      case "likely_full":
-        c.likelyFull++;
         break;
       case "full":
         c.full++;
@@ -108,9 +104,9 @@ export function countStatuses(items: ParkWithStatus[]): StatusCounts {
 /** "12 parks shown, 3 full, 2 closed" — read by the live region and shown in the sheet header. */
 export function countsMessage(c: StatusCounts): string {
   const parts = [`${c.shown} ${c.shown === 1 ? "park" : "parks"} shown`];
+  if (c.open) parts.push(`${c.open} open`);
   if (c.full) parts.push(`${c.full} full`);
   if (c.closed) parts.push(`${c.closed} closed`);
-  if (c.likelyFull) parts.push(`${c.likelyFull} likely full soon`);
   return parts.join(", ");
 }
 

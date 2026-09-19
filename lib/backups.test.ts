@@ -86,7 +86,7 @@ const ichetucknee = item(makePark("ichetucknee", "Ichetucknee Springs", 29.98389
 const ginnie = item(makePark("ginnie", "Ginnie Springs", 29.83608, -82.70015, { operator: "private", guarded: "no" }), "open", access("ginnie", { water_access: "yes", entry_type: "ramp" }));
 const poe = item(makePark("poe", "Poe Springs", 29.82583, -82.64928), "closed");
 const gilchrist = item(makePark("gilchrist", "Gilchrist Blue", 29.82972, -82.6829), "closed");
-const rainbow = item(makePark("rainbow", "Rainbow Springs", 29.1025, -82.4375), "likely_full", access("rainbow", { water_access: "limited", entry_type: "stairs", wheelchair_loaner: true }));
+const rainbow = item(makePark("rainbow", "Rainbow Springs", 29.1025, -82.4375), "open", access("rainbow", { water_access: "limited", entry_type: "stairs", wheelchair_loaner: true }));
 const deleon = item(makePark("deleon", "De Leon Springs", 29.1413, -81.3706, { coverage_tier: "basic", guarded: "yes" }), "unknown");
 const blue = item(makePark("blue", "Blue Spring", 28.94722, -81.33972), "open", access("blue", { water_access: "yes", entry_type: "stairs" }));
 const wekiwa = item(makePark("wekiwa", "Wekiwa Springs", 28.7119, -81.4603), "full");
@@ -113,8 +113,10 @@ describe("suggestBackups", () => {
     expect(suggestBackups(ichetucknee, ALL, DEFAULT_FILTERS, {}, 10).map((b) => b.park.id)).toEqual(["ginnie", "rainbow", "deleon", "blue"]);
   });
 
-  it("works for likely_full and closed targets too", () => {
-    expect(suggestBackups(rainbow, ALL, DEFAULT_FILTERS).map((b) => b.park.id)).toEqual(["ginnie", "deleon", "blue"]);
+  it("only triggers once a park has actually stopped admitting visitors", () => {
+    // Rainbow is open (it may fill later, but you can still get in) → no backups needed.
+    expect(suggestBackups(rainbow, ALL, DEFAULT_FILTERS)).toEqual([]);
+    // Poe is closed by an official notice → suggest the nearest park with room.
     expect(suggestBackups(poe, ALL, DEFAULT_FILTERS)[0].park.id).toBe("ginnie");
   });
 

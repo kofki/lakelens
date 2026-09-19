@@ -6,6 +6,7 @@
  * Light orange (peach) and teal (lagoon) FAIL contrast as text on white:
  * use them only as fills behind cocoa text/icons.
  */
+ 
 @theme {
   /* ---- LakeLens "spring forest" palette (beachlens.net structure, forest colours) ---- */
   --color-cream: #f5f3ea;        /* ivory page background (forest floor light) */

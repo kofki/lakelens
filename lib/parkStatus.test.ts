@@ -133,8 +133,9 @@ describe("getParkStatus", () => {
     expect(s.reasons[0]).toContain("Turned away");
     expect(s.reasons[0]).toContain("3 people confirmed");
 
-    const lot = getParkStatus({ park: makePark(), alerts: [], reportSummary: summary({ signal: "confirmed", category: "parking", value: "lot_full", count: 4, impliesLevel: "likely_full", confidence: "high" }), prediction: null, now: NOW });
-    expect(lot.level).toBe("likely_full");
+    // A confirmed "lot full" keeps the park open — it has not stopped admitting visitors.
+    const lot = getParkStatus({ park: makePark(), alerts: [], reportSummary: summary({ signal: "confirmed", category: "parking", value: "lot_full", count: 4, impliesLevel: "open", confidence: "high" }), prediction: null, now: NOW });
+    expect(lot.level).toBe("open");
     expect(lot.source).toBe("confirmed_reports");
   });
 
@@ -152,10 +153,10 @@ describe("getParkStatus", () => {
     expect(s.isEstimate).toBe(false);
     const possible = getParkStatus({ park: makePark(), alerts: [], reportSummary: reportedFull, prediction: prediction("possible"), now: NOW });
     expect(possible.level).toBe("full");
-    const line = summary({ signal: "reported", category: "entry", value: "line", count: 1, impliesLevel: "likely_full", confidence: "low" });
+    // A queue plus a crowd forecast is still open; the prediction supplies the timing.
+    const line = summary({ signal: "reported", category: "entry", value: "line", count: 1, impliesLevel: "open", confidence: "low" });
     const l = getParkStatus({ park: makePark(), alerts: [], reportSummary: line, prediction: prediction("likely"), now: NOW });
-    expect(l.level).toBe("likely_full");
-    expect(l.source).toBe("report_prediction");
+    expect(l.level).toBe("open");
   });
 
   it("4. single full report with a quiet prediction does NOT become full", () => {
@@ -172,12 +173,13 @@ describe("getParkStatus", () => {
     expect(s.source).toBe("report_prediction");
     const busy = getParkStatus({ park: makePark(), alerts: [], reportSummary: gotIn, prediction: prediction("likely"), now: NOW });
     expect(busy.source).toBe("prediction");
-    expect(busy.level).toBe("likely_full");
+    expect(busy.level).toBe("open");
   });
 
-  it("5. prediction only → estimate with predicted time", () => {
+  it("5. prediction only → open, with the predicted fill time as an estimate", () => {
     const likely = getParkStatus({ park: makePark(), alerts: [], reportSummary: EMPTY_SUMMARY, prediction: prediction("likely"), now: NOW });
-    expect(likely.level).toBe("likely_full");
+    // Expected to fill later today is still open — the timing rides along in predictedTime.
+    expect(likely.level).toBe("open");
     expect(likely.source).toBe("prediction");
     expect(likely.isEstimate).toBe(true);
     expect(likely.confidence).toBe("high");
@@ -185,7 +187,7 @@ describe("getParkStatus", () => {
     expect(likely.updatedAt).toBe(NOW.toISOString());
 
     const possible = getParkStatus({ park: makePark(), alerts: [], reportSummary: EMPTY_SUMMARY, prediction: prediction("possible"), now: NOW });
-    expect(possible.level).toBe("likely_full");
+    expect(possible.level).toBe("open");
     expect(possible.confidence).toBe("low");
 
     const none = getParkStatus({ park: makePark(), alerts: [], reportSummary: EMPTY_SUMMARY, prediction: prediction("none"), now: NOW });
