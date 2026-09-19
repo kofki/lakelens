@@ -39,6 +39,16 @@ function prefersReducedMotion(): boolean {
 }
 
 /** Gate on WebGL first; hooks for the map itself live in ParkMapInner. */
+
+/** MapLibre refuses to fit when padding eats the canvas; keep at least 45 % of it visible. */
+function safePadding(map: { getCanvas(): HTMLCanvasElement }, top: number, bottom: number) {
+  const h = map.getCanvas().clientHeight || 800;
+  const maxTotal = Math.round(h * 0.55);
+  if (top + bottom <= maxTotal) return { top, bottom, left: 0, right: 0 };
+  const scale = maxTotal / (top + bottom);
+  return { top: Math.round(top * scale), bottom: Math.round(bottom * scale), left: 0, right: 0 };
+}
+
 export function ParkMap(props: ParkMapProps) {
   const webgl = useWebGL2();
   if (webgl === null) return <MapSkeleton />;
@@ -62,15 +72,21 @@ function ParkMapInner({
   }, [parks]);
   const [showLabels, setShowLabels] = useState(false);
   const [tileError, setTileError] = useState(false);
+  /** true once the user pans/zooms; until then inset changes re-fit the whole state */
+  const interactedRef = useRef(false);
 
   // Keep the visible (unpadded) area above the sheet so fitBounds / easeTo respect it.
   useEffect(() => {
     try {
-      mapRef.current?.setPadding({ top: topInsetPx, bottom: bottomInsetPx, left: 0, right: 0 });
+      const map = mapRef.current;
+      if (map) {
+        map.setPadding(safePadding(map, topInsetPx, bottomInsetPx));
+        if (!interactedRef.current) map.fitBounds(initialBounds ?? FLORIDA_BOUNDS, { padding: 12, duration: 0, maxZoom: 9 });
+      }
     } catch {
       // map not ready yet; onLoad applies the padding too
     }
-  }, [bottomInsetPx, topInsetPx]);
+  }, [bottomInsetPx, topInsetPx, initialBounds]);
 
   // Centre the selected park in the visible area.
   useEffect(() => {
@@ -93,7 +109,21 @@ function ParkMapInner({
       map.touchZoomRotate.disableRotation();
       map.keyboard.disableRotation();
       map.getCanvas().setAttribute("aria-label", MAP_ARIA_LABEL);
-      map.setPadding({ top: topInsetPx, bottom: bottomInsetPx, left: 0, right: 0 });
+      map.setPadding(safePadding(map, topInsetPx, bottomInsetPx));
+      map.on("dragstart", () => {
+        interactedRef.current = true;
+      });
+      map.on("wheel", () => {
+        interactedRef.current = true;
+      });
+      map.on("touchstart", () => {
+        interactedRef.current = true;
+      });
+      try {
+        map.fitBounds(initialBounds ?? FLORIDA_BOUNDS, { padding: 12, duration: 0, maxZoom: 9 });
+      } catch {
+        map.jumpTo({ center: [-83.3, 28.4], zoom: 5.4 });
+      }
       setShowLabels(map.getZoom() >= LABEL_ZOOM);
     },
     // initial padding only; later changes go through the effect above
@@ -133,8 +163,9 @@ function ParkMapInner({
         ref={mapRef}
         mapStyle={MAP_STYLE_URL}
         initialViewState={{
-          bounds: initialBounds ?? FLORIDA_BOUNDS,
-          fitBoundsOptions: { padding: { top: topInsetPx + 16, bottom: bottomInsetPx + 16, left: 24, right: 24 } },
+          longitude: -83.3,
+          latitude: 28.4,
+          zoom: 5.4,
         }}
         style={{ width: "100%", height: "100%" }}
         minZoom={5}

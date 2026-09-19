@@ -46,3 +46,6 @@ supabase/functions/.env
 
 # vitest
 /coverage
+
+# local tooling
+.claude/

@@ -104,9 +104,6 @@ export function AccessibilityCard({ park, accessibility }: AccessibilityCardProp
               : "Not yet verified on site or with the park. Treat as a starting point and call ahead."}
           </p>
         </div>
-        <Button variant="secondary" size="md" formAction={undefined} disabled className="hidden">
-          placeholder
-        </Button>
       </Card>
     </Section>
   );

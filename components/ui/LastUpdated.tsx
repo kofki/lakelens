@@ -1,5 +1,5 @@
 import { Clock, TriangleAlert } from "lucide-react";
-import { relativeTime } from "@/lib/freshness";
+import { RelativeTime } from "./RelativeTime";
 import { cn } from "./cn";
 
 export interface LastUpdatedProps {
@@ -16,11 +16,9 @@ export interface LastUpdatedProps {
 
 /**
  * "Updated 25 min ago · USGS". Every data point in LakeLens carries one of these.
- * Uses lib/freshness.relativeTime against the render time; pages revalidate every 60 s.
+ * The relative time is rendered by <RelativeTime>, which is hydration-safe and ticks.
  */
 export function LastUpdated({ at, source, stale = false, prefix = "Updated", className }: LastUpdatedProps) {
-  const now = new Date();
-  const rel = at ? relativeTime(at, now) : null;
   return (
     <p className={cn("flex flex-wrap items-center gap-x-1.5 gap-y-0.5 text-xs text-cocoa/75", className)}>
       {stale ? (
@@ -28,9 +26,9 @@ export function LastUpdated({ at, source, stale = false, prefix = "Updated", cla
       ) : (
         <Clock aria-hidden="true" focusable="false" className="size-3.5 shrink-0" />
       )}
-      {at && rel ? (
+      {at ? (
         <span>
-          {prefix} <time dateTime={at}>{rel}</time>
+          {prefix} <RelativeTime at={at} />
         </span>
       ) : (
         <span>Last update unknown</span>
