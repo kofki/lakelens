@@ -59,7 +59,6 @@ export function BackupSuggestions({ target, all, initial }: BackupSuggestionsPro
                 <Link
                   href={href}
                   className="block rounded-xl border border-mist bg-white p-3 hover:border-sand focus-visible:outline-sunset"
-                  aria-label={`${s.park.name}: ${STATUS_META[s.status.level].label}, ${kmToMiles(s.distanceKm).toFixed(0)} miles, about ${s.driveMinutes} minutes`}
                 >
                   <div className="flex flex-wrap items-center justify-between gap-2">
                     <p className="text-base font-extrabold text-cocoa">{s.park.name}</p>

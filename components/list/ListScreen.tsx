@@ -122,6 +122,7 @@ export function ListScreen({ parks, initialFilters }: ListScreenProps) {
           <EmptyState title="Park data isn't available yet" body="We couldn't load parks right now. Try again in a minute." />
         ) : (
           <>
+            <h2 className="sr-only">Parks</h2>
             <div className="sm:hidden">
               <ParkList parks={sorted} userLocation={geo.location} sort={sort} />
             </div>

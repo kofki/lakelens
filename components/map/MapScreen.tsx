@@ -173,6 +173,7 @@ export function MapScreen({ parks, initialFilters }: MapScreenProps) {
           </div>
         </div>
         <div id="park-list-desktop" tabIndex={-1} className="flex-1 overflow-y-auto overscroll-contain px-4 pb-6 pt-3 outline-none">
+          <h2 className="sr-only">Parks</h2>
           {list ?? <ParkList parks={sorted} userLocation={geo.location} sort={sort} selectedId={selectedId} onSelect={onSelect} />}
         </div>
       </aside>
@@ -221,6 +222,7 @@ export function MapScreen({ parks, initialFilters }: MapScreenProps) {
         }
       >
         <div id="park-list" tabIndex={-1} className="outline-none">
+          <h2 className="sr-only">Parks</h2>
           {list ?? <ParkList parks={sorted} userLocation={geo.location} sort={sort} />}
         </div>
       </BottomSheet>

@@ -13,7 +13,7 @@
   --color-lagoon: #17e0ee;
   --color-aqua: #cbeaed;
   --color-cocoa: #3d2518;
-  --color-mocha: #966e59;
+  --color-mocha: #7b5645; /* was #966e59; darkened for 4.5:1 body-text contrast on cream/white */
   --color-taupe: #cab3a5;
   --color-sand: #ceaa94;
   --color-mist: #e1d7ce;
