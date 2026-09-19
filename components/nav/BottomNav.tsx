@@ -26,14 +26,14 @@ function isActive(href: Tab["href"], pathname: string): boolean {
 /**
  * Fixed bottom tab bar (Map / List / Report / About), mobile only: hidden on md+ where
  * TopNav takes over. Height = --bottom-nav-h (nav.css) plus the iOS safe area. Active tab
- * is marked with aria-current, a peach icon pill and heavier text, never colour alone.
+ * is marked with aria-current, a spring-water icon pill and heavier text, never colour alone.
  */
 export function BottomNav() {
   const pathname = usePathname() ?? "/";
   return (
     <nav
       aria-label="Primary (mobile)"
-      className="bottom-nav fixed inset-x-0 bottom-0 z-40 border-t border-mist bg-white/95 backdrop-blur md:hidden"
+      className="bottom-nav fixed inset-x-0 bottom-0 z-40 border-t border-mist bg-cream/95 backdrop-blur md:hidden"
     >
       <ul className="mx-auto flex h-[var(--bottom-nav-h)] max-w-2xl items-stretch">
         {TABS.map(({ href, label, icon: Icon }) => {
@@ -45,20 +45,20 @@ export function BottomNav() {
                 aria-current={active ? "page" : undefined}
                 className={cn(
                   "flex h-full min-h-11 flex-col items-center justify-center gap-0.5 rounded-lg text-xs leading-none",
-                  active ? "font-extrabold text-cocoa" : "font-bold text-cocoa/75 hover:text-cocoa",
+                  active ? "font-extrabold text-brown" : "font-bold text-mocha hover:text-brown",
                 )}
               >
                 <span
                   className={cn(
                     "flex h-7 w-12 items-center justify-center rounded-full transition-colors",
-                    active ? "bg-peach" : "bg-transparent",
+                    active ? "bg-aqua" : "bg-transparent",
                   )}
                 >
                   <Icon
                     aria-hidden="true"
                     focusable="false"
                     strokeWidth={active ? 2.5 : 2}
-                    className={cn("size-5", active ? "text-cocoa" : "text-mocha")}
+                    className={cn("size-5", active ? "text-brown" : "text-mocha")}
                   />
                 </span>
                 <span>{label}</span>

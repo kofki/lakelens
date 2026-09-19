@@ -1,5 +1,5 @@
 /**
- * GET/POST /api/cron/{usgs|weather|alerts|holidays|prune}
+ * GET/POST /api/cron/{usgs|weather|alerts|holidays|prune|algae}
  *
  * Called by Supabase pg_cron (pg_net) and by hand with `Authorization: Bearer $CRON_SECRET`.
  * Optional query: ?force=1 (ignore freshness throttles), ?park_id=<uuid> (usgs/weather only).

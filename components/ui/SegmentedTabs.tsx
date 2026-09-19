@@ -43,7 +43,7 @@ export function SegmentedTabs({ tabs, value, onChange, ariaLabel, className }: S
       role="tablist"
       aria-label={ariaLabel}
       onKeyDown={onKeyDown}
-      className={cn("flex w-full gap-1 rounded-full bg-mist/60 p-1", className)}
+      className={cn("flex w-full gap-1 rounded-full bg-mist-light p-1", className)}
     >
       {tabs.map((t, i) => {
         const selected = t.id === value;
@@ -61,7 +61,7 @@ export function SegmentedTabs({ tabs, value, onChange, ariaLabel, className }: S
             onClick={() => onChange(t.id)}
             className={cn(
               "min-h-11 min-w-0 flex-1 rounded-full px-3 text-sm font-bold leading-tight transition-colors",
-              selected ? "bg-white text-cocoa shadow-card" : "text-cocoa/75 hover:text-cocoa",
+              selected ? "bg-brown text-white shadow-card" : "text-brown hover:bg-white",
             )}
           >
             {t.label}

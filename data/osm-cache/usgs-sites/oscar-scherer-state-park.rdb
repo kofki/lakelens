@@ -1,0 +1,36 @@
+#
+#
+# US Geological Survey
+# retrieved: 2026-09-19 17:36:34 -04:00	(sdas01)
+#
+# The Site File stores location and general information about groundwater,
+# surface water, and meteorological sites
+# for sites in USA.
+#
+# File-format description:  http://help.waterdata.usgs.gov/faq/about-tab-delimited-output
+# Automated-retrieval info: http://waterservices.usgs.gov/rest/Site-Service.html
+#
+# Contact:   gs-w_support_nwisweb@usgs.gov
+# Warning: A site search criterion has been used for which the data may be unavailable.
+#
+# The following selected fields are included in this output:
+#
+#  agency_cd       -- Agency
+#  site_no         -- Site identification number
+#  station_nm      -- Site name
+#  site_tp_cd      -- Site type
+#  dec_lat_va      -- Decimal latitude
+#  dec_long_va     -- Decimal longitude
+#  coord_acy_cd    -- Latitude-longitude accuracy
+#  dec_coord_datum_cd -- Decimal Latitude-longitude datum
+#  alt_va          -- Altitude of Gage/land surface
+#  alt_acy_va      -- Altitude accuracy
+#  alt_datum_cd    -- Altitude datum
+#  huc_cd          -- Hydrologic unit code
+#
+agency_cd	site_no	station_nm	site_tp_cd	dec_lat_va	dec_long_va	coord_acy_cd	dec_coord_datum_cd	alt_va	alt_acy_va	alt_datum_cd	huc_cd
+5s	15s	50s	7s	16s	16s	1s	10s	8s	3s	10s	16s
+USGS	02298830	MYAKKA RIVER NEAR SR 72 NEAR SARASOTA, FL	ST	27.23521944	-82.3118944	F	NAD83	 7.92	 .1	NGVD29	03100102
+USGS	02298880	MYAKKA RIVER AT CONTROL NEAR LAUREL FL	ST	27.1856073	-82.3556494	F	NAD83	 2.35	.01	NAVD88	03100102
+USGS	02299729	SHAKETT CREEK AT CR 762 NR NOKOMIS, FL	ST	27.137631	-82.435681	F	NAD83	-9.12	0.1	NAVD88	031002010202
+USGS	02299734	CURRY CREEK AT HIGHWAY 41 AT NOKOMIS FL	ST	27.11271944	-82.4474111	H	NAD83	 0	1.6	NAVD88	03100201

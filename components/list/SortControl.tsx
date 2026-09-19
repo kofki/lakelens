@@ -16,7 +16,7 @@ export interface SortControlProps {
 export function SortControl({ id, value, onChange, hasLocation, className }: SortControlProps) {
   return (
     <div className={cn("flex items-center gap-2", className)}>
-      <label htmlFor={id} className="text-sm font-bold text-cocoa">
+      <label htmlFor={id} className="text-sm font-bold text-brown">
         Sort
       </label>
       <select
@@ -25,7 +25,7 @@ export function SortControl({ id, value, onChange, hasLocation, className }: Sor
         onChange={(e) => {
           if (isSortKey(e.target.value)) onChange(e.target.value);
         }}
-        className="min-h-11 rounded-full border border-mist bg-white px-3 text-sm font-bold text-cocoa shadow-card"
+        className="min-h-11 rounded-full border border-mist bg-white px-3 text-sm font-bold text-brown shadow-card"
       >
         <option value="distance" disabled={!hasLocation}>
           {hasLocation ? "Nearest first" : "Nearest first (needs location)"}

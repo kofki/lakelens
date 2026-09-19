@@ -28,6 +28,7 @@ import { Wordmark } from "@/components/ui/Logo";
 import { Section } from "@/components/ui/Section";
 import { StatusPill } from "@/components/ui/StatusPill";
 import { SiteFooter } from "@/components/nav/SiteFooter";
+import { SideNav } from "./SideNav";
 
 export const metadata: Metadata = {
   title: "About",
@@ -144,7 +145,7 @@ function ExtLink({ href, children }: { href: string; children: ReactNode }) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center gap-1 font-bold text-cocoa underline decoration-sunset decoration-2 underline-offset-4 hover:decoration-cocoa"
+      className="inline-flex items-center gap-1 font-bold text-brown underline decoration-moss decoration-2 underline-offset-4 hover:decoration-brown"
     >
       {children}
       <ExternalLink aria-hidden="true" className="size-3.5" />
@@ -159,10 +160,10 @@ export default function AboutPage() {
       <div className="mx-auto w-full max-w-[1100px] flex-1 px-6 py-10 md:py-16">
         <header className="space-y-4 md:space-y-5">
           <Wordmark size="lg" className="md:hidden" />
-          <h1 className="max-w-[18ch] text-[2rem] font-extrabold leading-tight md:text-[3rem]">
+          <h1 className="max-w-[18ch] text-[2rem] font-extrabold leading-tight text-brown md:text-[3rem]">
             Know before you go.
           </h1>
-          <p className="max-w-prose text-cocoa/75 md:text-lg">
+          <p className="max-w-prose text-mocha md:text-lg">
             LakeLens tells you whether a Florida spring or state-park swim area is likely to be full, closed
             or open before you drive out, and shows the parking and accessibility details that decide whether
             a trip works for you.
@@ -174,7 +175,7 @@ export default function AboutPage() {
                 <li key={t.id}>
                   <a
                     href={`#${t.id}`}
-                    className="inline-flex min-h-11 items-center rounded-full border border-mist bg-white px-4 text-sm font-bold text-cocoa shadow-card hover:bg-cream"
+                    className="inline-flex min-h-11 items-center rounded-full border border-mist bg-white px-4 text-sm font-bold text-brown shadow-card hover:border-moss"
                   >
                     {t.label}
                   </a>
@@ -190,19 +191,8 @@ export default function AboutPage() {
               aria-label="On this page"
               className="md:sticky md:top-[calc(var(--top-nav-h)+24px)] md:max-h-[calc(100vh-var(--top-nav-h)-48px)] md:overflow-y-auto"
             >
-              <p className="mb-2 text-xs font-extrabold uppercase tracking-wide text-mocha">On this page</p>
-              <ul className="space-y-0.5 border-l-2 border-mist">
-                {TOC.map((t) => (
-                  <li key={t.id}>
-                    <a
-                      href={`#${t.id}`}
-                      className="-ml-0.5 flex min-h-11 items-center border-l-2 border-transparent pl-4 pr-2 text-sm font-bold text-cocoa/80 hover:border-sunset hover:text-cocoa"
-                    >
-                      {t.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+              <p className="mb-2 text-xs font-extrabold uppercase tracking-wide text-brown">On this page</p>
+              <SideNav items={TOC} />
             </nav>
           </aside>
 
@@ -235,7 +225,7 @@ export default function AboutPage() {
                     warnings, cold water, currents and park rules.
                   </li>
                 </ul>
-                <p className="text-sm text-cocoa/75">
+                <p className="text-sm text-mocha">
                   Every status is shown as an icon plus words, never a colour on its own:
                 </p>
                 <ul className="flex flex-wrap gap-2">
@@ -253,7 +243,7 @@ export default function AboutPage() {
               <Card className="space-y-4">
                 <p className="flex flex-wrap items-center gap-2">
                   <Badge variant="estimate" />
-                  <span className="text-sm text-cocoa/75">
+                  <span className="text-sm text-mocha">
                     It is an estimate. Parks never publish live capacity, so we score the day instead.
                   </span>
                 </p>
@@ -265,13 +255,13 @@ export default function AboutPage() {
                     <li key={f.label} className="flex items-start gap-3 p-3">
                       <span
                         aria-hidden="true"
-                        className="mt-0.5 inline-flex shrink-0 text-sunset [&>svg]:size-5"
+                        className="mt-0.5 inline-flex shrink-0 text-taupe [&>svg]:size-5"
                       >
                         {f.icon}
                       </span>
                       <span className="min-w-0 flex-1">
                         <span className="font-bold">{f.label}</span>
-                        <span className="block text-sm text-cocoa/75">{f.note}</span>
+                        <span className="block text-sm text-mocha">{f.note}</span>
                       </span>
                       <span className="shrink-0 rounded-full bg-cream px-2.5 py-1 text-sm font-extrabold tabular-nums">
                         {f.points}
@@ -281,19 +271,19 @@ export default function AboutPage() {
                 </ul>
                 <dl className="grid gap-2 sm:grid-cols-3">
                   <div className="rounded-xl bg-cream p-3">
-                    <dt className="text-xs font-bold text-cocoa/75">Score 0 or less</dt>
+                    <dt className="text-xs font-bold text-mocha">Score 0 or less</dt>
                     <dd className="mt-1">
                       <StatusPill level="open" size="sm" />
                     </dd>
                   </div>
                   <div className="rounded-xl bg-cream p-3">
-                    <dt className="text-xs font-bold text-cocoa/75">Score 1–2 (possible)</dt>
+                    <dt className="text-xs font-bold text-mocha">Score 1–2 (possible)</dt>
                     <dd className="mt-1">
                       <StatusPill level="likely_full" size="sm" estimate />
                     </dd>
                   </div>
                   <div className="rounded-xl bg-cream p-3">
-                    <dt className="text-xs font-bold text-cocoa/75">Score 3 or more (likely)</dt>
+                    <dt className="text-xs font-bold text-mocha">Score 3 or more (likely)</dt>
                     <dd className="mt-1">
                       <StatusPill level="likely_full" size="sm" estimate />
                     </dd>
@@ -377,7 +367,7 @@ export default function AboutPage() {
                     <dt className="shrink-0 sm:w-40">
                       <Badge variant="verified" />
                     </dt>
-                    <dd className="text-sm text-cocoa/75">
+                    <dd className="text-sm text-mocha">
                       Stated on the park&rsquo;s official page (Florida State Parks, Alachua County, Ginnie
                       Springs Outdoors), with a link to the source.
                     </dd>
@@ -386,7 +376,7 @@ export default function AboutPage() {
                     <dt className="shrink-0 sm:w-40">
                       <Badge variant="unverified" />
                     </dt>
-                    <dd className="text-sm text-cocoa/75">
+                    <dd className="text-sm text-mocha">
                       Accessibility details we could not confirm officially, OpenStreetMap parking lots, and
                       anything a visitor reported. Shown as text, including &ldquo;unknown&rdquo; where we
                       simply do not know.
@@ -396,7 +386,7 @@ export default function AboutPage() {
                     <dt className="shrink-0 sm:w-40">
                       <Badge variant="official" />
                     </dt>
-                    <dd className="text-sm text-cocoa/75">
+                    <dd className="text-sm text-mocha">
                       Closure and notice alerts are entered manually from official notices and show when they
                       were last checked. We do not scrape park websites.
                     </dd>
@@ -405,13 +395,13 @@ export default function AboutPage() {
                     <dt className="shrink-0 sm:w-40">
                       <Badge variant="typical" />
                     </dt>
-                    <dd className="text-sm text-cocoa/75">
+                    <dd className="text-sm text-mocha">
                       Values like &ldquo;spring water is typically 72°F&rdquo; when there is no live gauge.
                       Never presented as a live reading.
                     </dd>
                   </div>
                 </dl>
-                <p className="flex items-start gap-2 rounded-xl bg-peach/40 p-3 text-sm">
+                <p className="flex items-start gap-2 rounded-xl bg-peach p-3 text-sm text-cocoa">
                   <TriangleAlert aria-hidden="true" className="mt-0.5 size-4 shrink-0 text-cocoa" />
                   <span>
                     <span className="font-bold">Lifeguards:</span> most Florida springs have no lifeguard on
@@ -429,12 +419,12 @@ export default function AboutPage() {
                     <li key={s.name} className="space-y-1 p-4">
                       <ExtLink href={s.href}>{s.name}</ExtLink>
                       <p className="text-sm">{s.what}</p>
-                      <p className="text-xs text-cocoa/75">{s.licence}</p>
+                      <p className="text-xs text-mocha">{s.licence}</p>
                     </li>
                   ))}
                 </ul>
               </Card>
-              <p className="text-sm text-cocoa/75">
+              <p className="text-sm text-mocha">
                 Each number in the app shows where it came from and when it was last fetched. Water data older
                 than 6 hours, forecasts older than 3 hours and reports older than 2 hours are flagged as
                 possibly out of date.
@@ -457,7 +447,7 @@ export default function AboutPage() {
                     and the water portions, as well as buildings, playgrounds and food-service areas.
                   </li>
                 </ul>
-                <p className="text-sm text-cocoa/75">
+                <p className="text-sm text-mocha">
                   Each park card lists its own tubing, life-jacket and inflatable rules from the official
                   page. Ginnie Springs and Poe Springs are not state parks and set their own rules. See the{" "}
                   <ExtLink href="https://www.floridastateparks.org/Rules">
@@ -496,7 +486,7 @@ export default function AboutPage() {
                   brings the same idea, honest and accessible conditions at a glance, to Florida&rsquo;s
                   freshwater swim areas.
                 </p>
-                <p className="text-sm text-cocoa/75">
+                <p className="text-sm text-mocha">
                   Tracks: Social Impact and Best Design. Built with Next.js, Supabase, MapLibre and a lot of
                   iced coffee.
                 </p>
@@ -509,10 +499,10 @@ export default function AboutPage() {
                   <li>
                     <span
                       aria-hidden="true"
-                      className="absolute -left-[9px] mt-1 size-4 rounded-full bg-sunset"
+                      className="absolute -left-[9px] mt-1 size-4 rounded-full bg-taupe"
                     />
                     <p className="font-bold">Now: Florida springs and state-park swim areas</p>
-                    <p className="text-sm text-cocoa/75">
+                    <p className="text-sm text-mocha">
                       Seven parks with deep coverage, dozens more with the basics, live USGS and weather
                       feeds.
                     </p>
@@ -520,20 +510,20 @@ export default function AboutPage() {
                   <li>
                     <span
                       aria-hidden="true"
-                      className="absolute -left-[9px] mt-1 size-4 rounded-full bg-peach"
+                      className="absolute -left-[9px] mt-1 size-4 rounded-full bg-moss"
                     />
                     <p className="font-bold">Next: Florida lakes and rivers</p>
-                    <p className="text-sm text-cocoa/75">
+                    <p className="text-sm text-mocha">
                       Boat ramps, blue-green algae advisories and river stage warnings across the state.
                     </p>
                   </li>
                   <li>
                     <span
                       aria-hidden="true"
-                      className="absolute -left-[9px] mt-1 size-4 rounded-full bg-aqua"
+                      className="absolute -left-[9px] mt-1 size-4 rounded-full bg-lagoon"
                     />
                     <p className="font-bold">Then: the Great Lakes</p>
-                    <p className="text-sm text-cocoa/75">
+                    <p className="text-sm text-mocha">
                       Rip-current and water-quality data for the busiest beaches.
                     </p>
                   </li>
@@ -543,7 +533,7 @@ export default function AboutPage() {
                       className="absolute -left-[9px] mt-1 size-4 rounded-full bg-mist"
                     />
                     <p className="font-bold">Later: nationwide</p>
-                    <p className="text-sm text-cocoa/75">
+                    <p className="text-sm text-mocha">
                       Any public freshwater swim area with an open data source.
                     </p>
                   </li>
@@ -555,7 +545,7 @@ export default function AboutPage() {
                   </ButtonLink>
                   <Link
                     href="/list"
-                    className="inline-flex min-h-11 items-center rounded-full px-4 font-bold text-cocoa underline decoration-sunset decoration-2 underline-offset-4"
+                    className="inline-flex min-h-11 items-center rounded-full px-4 font-bold text-brown underline decoration-moss decoration-2 underline-offset-4"
                   >
                     Browse the list
                   </Link>

@@ -87,7 +87,7 @@ export function ReportSheet({ park, open, onOpenChange, onSubmitted }: ReportShe
       description="One tap is enough. Reports fade after about two hours and are shown to everyone."
     >
       {state === "done" ? (
-        <div role="status" className="rounded-xl bg-aqua/60 p-4 text-cocoa">
+        <div role="status" className="rounded-xl bg-aqua p-4 text-cyan-deep">
           <p className="flex items-center gap-2 text-base font-extrabold">
             <Check aria-hidden="true" focusable="false" className="h-5 w-5 text-status-open" />
             Thanks — your report helps others.
@@ -128,7 +128,7 @@ export function ReportSheet({ park, open, onOpenChange, onSubmitted }: ReportShe
                     onClick={() => setValue(v)}
                     className={cn(
                       "min-h-12 rounded-full border-2 px-3 text-sm font-extrabold transition-colors",
-                      selected ? "border-sunset bg-sunset text-white" : "border-mist bg-white text-cocoa hover:border-sand",
+                      selected ? "border-brown bg-brown text-white" : "border-mist bg-white text-cocoa hover:border-moss",
                     )}
                   >
                     {selected && <Check aria-hidden="true" focusable="false" className="mr-1 inline h-4 w-4" />}
@@ -149,7 +149,7 @@ export function ReportSheet({ park, open, onOpenChange, onSubmitted }: ReportShe
               onChange={(e) => setNote(e.target.value.slice(0, NOTE_MAX))}
               rows={2}
               maxLength={NOTE_MAX}
-              className="mt-1 w-full rounded-xl border-2 border-mist bg-white p-3 text-sm text-cocoa focus:border-sunset"
+              className="mt-1 w-full rounded-xl border-2 border-mist bg-white p-3 text-sm text-cocoa focus:border-brown"
               placeholder="e.g. Turned away at the gate at 10:15"
             />
             <p className="mt-1 text-right text-xs text-mocha" aria-live="polite">
@@ -158,7 +158,7 @@ export function ReportSheet({ park, open, onOpenChange, onSubmitted }: ReportShe
           </div>
 
           <div>
-            <label htmlFor={photoId} className="inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-full border-2 border-mist bg-white px-4 text-sm font-bold text-cocoa">
+            <label htmlFor={photoId} className="inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-full border-2 border-mist bg-white px-4 text-sm font-bold text-cocoa hover:border-moss">
               <Camera aria-hidden="true" focusable="false" className="h-4 w-4" />
               {photo ? `Photo: ${photo.name}` : "Add a photo (optional)"}
             </label>
@@ -173,7 +173,7 @@ export function ReportSheet({ park, open, onOpenChange, onSubmitted }: ReportShe
           </div>
 
           {error && (
-            <p role="alert" className="rounded-xl bg-peach/60 p-3 text-sm font-bold text-cocoa">
+            <p role="alert" className="rounded-xl bg-status-full-bg p-3 text-sm font-bold text-status-full">
               {error}
             </p>
           )}

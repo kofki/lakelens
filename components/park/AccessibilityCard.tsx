@@ -86,8 +86,8 @@ export function AccessibilityCard({ park, accessibility }: AccessibilityCardProp
             const Icon = r.icon;
             return (
               <div key={r.label} className="flex items-start gap-3 py-2 md:border-b md:border-mist">
-                <dt className="flex min-w-0 flex-1 items-center gap-2 text-sm text-cocoa/75">
-                  <Icon aria-hidden="true" focusable="false" className="size-4 shrink-0 text-sunset" />
+                <dt className="flex min-w-0 flex-1 items-center gap-2 text-sm text-mocha">
+                  <Icon aria-hidden="true" focusable="false" className="size-4 shrink-0 text-taupe" />
                   <span>{r.label}</span>
                 </dt>
                 <dd className="max-w-[55%] text-right text-sm font-bold text-cocoa">{r.value}</dd>
@@ -97,7 +97,7 @@ export function AccessibilityCard({ park, accessibility }: AccessibilityCardProp
         </dl>
         <div className="space-y-1 border-t border-mist pt-3">
           <LastUpdated at={a.updated_at} source={a.source ?? "Source not stated"} prefix="Checked" />
-          <p className="text-xs text-cocoa/75">
+          <p className="text-xs text-mocha">
             {a.verified
               ? "Verified against the park's official accessibility information."
               : "Not yet verified on site or with the park. Treat as a starting point and call ahead."}

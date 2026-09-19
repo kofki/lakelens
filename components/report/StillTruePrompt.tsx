@@ -34,7 +34,7 @@ export function StillTruePrompt({ report, now, onAnswered }: StillTruePromptProp
   const label = REPORT_VALUE_LABELS[report.value] ?? report.value;
 
   return (
-    <div className="rounded-xl bg-aqua/60 p-3" role="group" aria-label="Confirm the latest report">
+    <div className="rounded-xl bg-peach p-3" role="group" aria-label="Confirm the latest report">
       <p className="text-sm font-extrabold text-cocoa">
         Still {label.toLowerCase()}? <span className="font-normal text-mocha">Reported {relativeTime(report.created_at, now)}.</span>
       </p>

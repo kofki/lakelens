@@ -15,7 +15,7 @@ export interface ChipProps {
 
 /**
  * Toggle pill (filters, one-tap report values). Exposes state via aria-pressed and
- * a check mark, not colour alone. 44px minimum height.
+ * a check mark, not colour alone. 44px minimum height. Selected = forest green fill.
  */
 export function Chip({ selected = false, onClick, icon, children, className, ariaLabel }: ChipProps) {
   return (
@@ -27,8 +27,8 @@ export function Chip({ selected = false, onClick, icon, children, className, ari
       className={cn(
         "inline-flex min-h-11 items-center gap-1.5 rounded-full border px-4 text-sm font-bold leading-tight transition-colors [&>svg]:size-4 [&>svg]:shrink-0",
         selected
-          ? "border-cocoa bg-cocoa text-cream"
-          : "border-mist bg-white text-cocoa shadow-card hover:bg-cream active:bg-mist/40",
+          ? "border-brown bg-brown text-white"
+          : "border-mist bg-white text-mocha hover:border-brown hover:text-brown active:bg-mist-light",
         className,
       )}
     >

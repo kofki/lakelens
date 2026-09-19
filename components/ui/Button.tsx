@@ -12,13 +12,14 @@ interface VisualProps {
   full?: boolean;
 }
 
-/* Sunset orange fails 4.5:1 with white text, so primary buttons use cocoa text on orange
- * (~6:1). The global focus ring is orange too, so primary swaps it for cocoa. */
+/* Spring-forest buttons (beachlens.net pill shapes). Primary is forest green with white
+ * text (9.6:1); the global cyan focus ring reads on every variant. Sunlit amber is kept
+ * for accents/active states because white-on-amber fails AA. */
 const VARIANT: Record<ButtonVariant, string> = {
-  primary: "bg-sunset text-cocoa hover:brightness-95 active:brightness-90 focus-visible:outline-cocoa",
-  secondary: "border border-mist bg-white text-cocoa shadow-card hover:bg-cream active:bg-mist/40",
-  ghost: "bg-transparent text-cocoa hover:bg-mist/50 active:bg-mist/70",
-  danger: "bg-status-full text-white hover:brightness-95 active:brightness-90 focus-visible:outline-cocoa",
+  primary: "bg-brown text-white hover:bg-brown-deep active:bg-brown-deep",
+  secondary: "border-2 border-brown bg-white text-brown hover:bg-brown hover:text-white active:bg-brown-deep active:text-white",
+  ghost: "bg-transparent text-brown hover:bg-mist-light active:bg-mist",
+  danger: "bg-status-full text-white hover:brightness-95 active:brightness-90",
 };
 
 const SIZE: Record<ButtonSize, string> = {
@@ -29,7 +30,7 @@ const SIZE: Record<ButtonSize, string> = {
 /** Shared classes so other components (e.g. `<summary>`) can look like a button. */
 export function buttonClasses({ variant = "primary", size = "md", full = false }: VisualProps, className?: string) {
   return cn(
-    "inline-flex select-none items-center justify-center gap-2 rounded-full font-bold leading-tight transition-[filter,background-color,color] disabled:pointer-events-none disabled:opacity-50 [&>svg]:size-5 [&>svg]:shrink-0",
+    "inline-flex select-none items-center justify-center gap-2 rounded-full font-bold leading-tight transition-[filter,background-color,color,border-color] disabled:pointer-events-none disabled:opacity-50 [&>svg]:size-5 [&>svg]:shrink-0",
     VARIANT[variant],
     SIZE[size],
     full && "w-full",

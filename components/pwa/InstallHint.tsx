@@ -88,24 +88,24 @@ export function InstallHint() {
   return (
     <aside
       aria-label="Install LakeLens"
-      className="fixed inset-x-3 z-50 mx-auto max-w-lg rounded-card border border-mist bg-white p-3 shadow-sheet md:hidden"
+      className="fixed inset-x-3 z-50 mx-auto max-w-lg rounded-card border border-mist-light bg-white p-3 shadow-sheet md:hidden"
       style={{ bottom: "calc(var(--bottom-nav-h) + env(safe-area-inset-bottom, 0px) + 12px)" }}
     >
       <div className="flex items-start gap-3">
-        <span aria-hidden="true" className="mt-0.5 inline-flex shrink-0 rounded-full bg-peach p-2 text-cocoa">
+        <span aria-hidden="true" className="mt-0.5 inline-flex shrink-0 rounded-full bg-aqua p-2 text-brown">
           <Smartphone className="size-5" />
         </span>
         <div className="min-w-0 flex-1 text-sm text-cocoa">
-          <p className="font-extrabold">Add LakeLens to your home screen</p>
+          <p className="font-extrabold text-ink">Add LakeLens to your home screen</p>
           {mode === "ios" ? (
-            <p className="mt-0.5 text-cocoa/75">
+            <p className="mt-0.5 text-mocha">
               Tap <Share aria-hidden="true" className="inline size-4 align-text-bottom" />{" "}
               <span className="font-bold">Share</span>, then{" "}
               <SquarePlus aria-hidden="true" className="inline size-4 align-text-bottom" />{" "}
               <span className="font-bold">Add to Home Screen</span>. It works offline for the basics.
             </p>
           ) : (
-            <p className="mt-0.5 text-cocoa/75">One tap to install. Opens full screen and loads faster.</p>
+            <p className="mt-0.5 text-mocha">One tap to install. Opens full screen and loads faster.</p>
           )}
           <div className="mt-2 flex flex-wrap gap-2">
             {mode === "prompt" && (
@@ -122,7 +122,7 @@ export function InstallHint() {
           type="button"
           onClick={dismiss}
           aria-label="Dismiss install hint"
-          className="-mr-1 -mt-1 inline-flex size-11 shrink-0 items-center justify-center rounded-full text-cocoa hover:bg-mist/50"
+          className="-mr-1 -mt-1 inline-flex size-11 shrink-0 items-center justify-center rounded-full text-brown hover:bg-mist-light"
         >
           <X aria-hidden="true" className="size-5" />
         </button>

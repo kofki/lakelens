@@ -17,9 +17,9 @@ export function Section({ id, title, icon, action, children, className }: Sectio
   return (
     <section id={id} aria-labelledby={headingId} className={cn("scroll-mt-4 space-y-3", className)}>
       <div className="flex items-center justify-between gap-3">
-        <h2 id={headingId} className="flex items-center gap-2 text-lg font-extrabold leading-tight text-cocoa">
+        <h2 id={headingId} className="flex items-center gap-2 text-lg font-extrabold leading-tight text-brown">
           {icon && (
-            <span aria-hidden="true" className="shrink-0 text-sunset [&>svg]:size-5">
+            <span aria-hidden="true" className="shrink-0 text-taupe [&>svg]:size-5">
               {icon}
             </span>
           )}

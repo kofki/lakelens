@@ -7,27 +7,61 @@
  * use them only as fills behind cocoa text/icons.
  */
 @theme {
-  --color-cream: #fef8f1;
-  --color-sunset: #fe8b00;
-  --color-peach: #feca8a;
-  --color-lagoon: #17e0ee;
-  --color-aqua: #cbeaed;
-  --color-cocoa: #3d2518;
-  --color-mocha: #7b5645; /* was #966e59; darkened for 4.5:1 body-text contrast on cream/white */
-  --color-taupe: #cab3a5;
-  --color-sand: #ceaa94;
-  --color-mist: #e1d7ce;
+  /* ---- LakeLens "spring forest" palette (beachlens.net structure, forest colours) ---- */
+  --color-cream: #f5f3ea;        /* ivory page background (forest floor light) */
+  --color-sunset: #e08a2e;       /* sunlit amber: primary CTA, active states */
+  --color-sunset-dark: #c97a25;  /* amber hover (fills only) */
+  --color-sunset-deep: #9a5713;  /* amber as TEXT on cream/white (5:1): link hover, accents */
+  --color-peach: #f5dfb0;        /* soft sunlight fill */
+  --color-lagoon: #3fb5c2;       /* spring water: logo/secondary CTA */
+  --color-cyan: #5fd0d9;         /* focus rings, links on dark */
+  --color-cyan-dark: #3fb5c2;    /* water hover */
+  --color-cyan-deep: #0f6f76;    /* water text on light (AA) */
+  --color-aqua: #dff4f2;         /* spring-water tint background */
+  --color-cocoa: #2b2a25;        /* primary text: cypress bark */
+  --color-ink: #1c1b17;          /* card titles */
+  --color-brown: #1f4d3a;        /* forest green: nav links, headings, brand */
+  --color-brown-deep: #1b3328;   /* deep forest: footer, dark surfaces */
+  --color-forest: #1f4d3a;       /* alias */
+  --color-forest-deep: #1b3328;  /* alias */
+  --color-mocha: #5b6657;        /* secondary text: moss grey (6:1 on ivory) */
+  --color-taupe: #4f7a4a;        /* moss: eyebrows, active tab underline */
+  --color-moss: #7a9a5b;         /* leaf accent (decorative, fills) */
+  --color-sand: #a8b59a;         /* placeholders, decorative */
+  --color-mist: #dfe3d3;         /* sage borders, dividers */
+  --color-mist-light: #eaece0;   /* card borders */
+  --color-muted: #7d857a;        /* tertiary meta text: 3.8:1 on white, so LARGE/decorative text only; use mocha for body meta */
 
-  /* Status colours: all pass 3:1 against white (WCAG 1.4.11) and pair with icon + text. */
-  --color-status-open: #2e7d32;
-  --color-status-likely: #c25e00;
-  --color-status-full: #c62828;
-  --color-status-closed: #3d2518;
-  --color-status-unknown: #6d5546;
+  /* Status: pastel pill fills with darkened text so every pill passes AA (icon + text always). */
+  --color-status-open: #14532d;
+  --color-status-open-bg: #dcfce7;
+  --color-status-open-edge: #16a34a;
+  --color-status-likely: #7c4a03;
+  --color-status-likely-bg: #fef3c7;
+  --color-status-likely-edge: #d97706;
+  --color-status-full: #991b1b;
+  --color-status-full-bg: #fee2e2;
+  --color-status-full-edge: #dc2626;
+  --color-status-closed: #7f1d1d;
+  --color-status-closed-bg: #fecaca;
+  --color-status-closed-edge: #7f1d1d;
+  --color-status-unknown: #374151;
+  --color-status-unknown-bg: #eef0ea;
+  --color-status-unknown-edge: #6b7280;
 
-  --radius-card: 1rem;
-  --shadow-card: 0 4px 16px rgb(61 37 24 / 0.08);
-  --shadow-sheet: 0 -8px 24px rgb(61 37 24 / 0.12);
+  /* Level ramp for stat tiles */
+  --color-level-good: #16a34a;
+  --color-level-ok: #0d9488;
+  --color-level-warn: #d97706;
+  --color-level-high: #ea580c;
+  --color-level-bad: #dc2626;
+
+  --radius-card: 20px;
+  --radius-tile: 16px;
+  --shadow-card: 0 2px 12px rgb(31 77 58 / 0.08);
+  --shadow-card-hover: 0 12px 36px rgb(31 77 58 / 0.16);
+  --shadow-nav: 0 4px 16px rgb(27 51 40 / 0.15);
+  --shadow-sheet: 0 -8px 24px rgb(27 51 40 / 0.14);
 }
 
 @theme inline {
@@ -46,8 +80,17 @@ body {
 }
 
 :focus-visible {
-  outline: 3px solid var(--color-sunset);
+  outline: 3px solid var(--color-cyan);
   outline-offset: 2px;
+}
+
+/* beachlens.net tactile press feedback */
+button:active,
+a:active {
+  transform: scale(0.97);
+}
+* {
+  -webkit-tap-highlight-color: transparent;
 }
 
 @media (prefers-reduced-motion: reduce) {

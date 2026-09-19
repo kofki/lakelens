@@ -41,13 +41,13 @@ function Row({ icon: Icon, strong, danger, title, body, footer }: SafetyRow) {
     <li className="flex gap-3">
       <span
         aria-hidden="true"
-        className={`mt-0.5 inline-flex size-9 shrink-0 items-center justify-center rounded-full ${danger ? "bg-status-full/10 text-status-full" : "bg-aqua text-cocoa"}`}
+        className={`mt-0.5 inline-flex size-9 shrink-0 items-center justify-center rounded-full ${danger ? "bg-status-full-bg text-status-full" : "bg-aqua text-cyan-deep"}`}
       >
         <Icon className="size-5" strokeWidth={2.25} focusable="false" />
       </span>
       <div className="min-w-0 space-y-0.5">
         <p className={`text-sm leading-snug ${strong ? "font-extrabold text-cocoa" : "font-bold text-cocoa"}`}>{title}</p>
-        {body && <p className="text-sm text-cocoa/85">{body}</p>}
+        {body && <p className="text-sm text-cocoa">{body}</p>}
         {footer}
       </div>
     </li>
@@ -175,7 +175,7 @@ export function SafetyCard({ park, usgs, usgsFetchedAt, now }: SafetyCardProps) 
     <Section id="safety" title="Safety" icon={<TriangleAlert />}>
       <Card>
         {park.coverage_tier !== "deep" && (
-          <p className="mb-3 text-xs text-cocoa/75">
+          <p className="mb-3 text-xs text-mocha">
             Park-specific safety details are not yet available for this park. These are general freshwater rules.
           </p>
         )}

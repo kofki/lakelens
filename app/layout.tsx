@@ -45,7 +45,7 @@ export const metadata: Metadata = {
 /* userScalable stays enabled: 200 % zoom is an accessibility requirement.
  * viewportFit "cover" makes env(safe-area-inset-bottom) real on iPhones. */
 export const viewport: Viewport = {
-  themeColor: "#fe8b00",
+  themeColor: "#1f4d3a",
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",

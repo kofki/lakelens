@@ -386,4 +386,4 @@ export interface ConfirmReportInput {
   response: "still_true" | "no_longer";
 }
 
-export type CronJob = "usgs" | "weather" | "alerts" | "holidays" | "prune";
+export type CronJob = "usgs" | "weather" | "alerts" | "holidays" | "prune" | "algae";

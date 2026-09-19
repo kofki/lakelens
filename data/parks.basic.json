@@ -13,9 +13,10 @@
       "blue-spring-state-park",
       "wekiwa-springs-state-park"
     ],
-    "note": "Basic tier: swimming listed by Florida State Parks; hours are the system default; fees/rules/accessibility not yet verified per park.",
+    "note": "Basic tier: swimming listed by Florida State Parks. Parks with `enriched_at` have hours/fees/rules/safety/description verified against their official floridastateparks.org pages on that date (browser capture); rules.alcohol cites F.A.C. 62D-2.014 (statewide) and rules.pets 'not in swim area' is the statewide pet policy unless the park page says so. Others still carry system-default hours and unverified fees/rules.",
     "nws_points_resolved_at": "2026-09-19T05:54:38.896Z",
-    "nws_points_source": "https://api.weather.gov/points/{lat},{lng}"
+    "nws_points_source": "https://api.weather.gov/points/{lat},{lng}",
+    "enrichment_updated_at": "2026-09-19T21:37:28.982Z"
   },
   "parks": [
     {
@@ -28,11 +29,17 @@
       "coverage_tier": "basic",
       "swimming_verified": true,
       "guarded": "unknown",
-      "hours": "8 a.m. to sundown, 365 days",
-      "fees": null,
+      "hours": "Park and historic gardens open 8 a.m. to sunset daily, 365 days a year. Maclay House museum 9 a.m. to 5 p.m. daily, January through April.",
+      "fees": "$6 per vehicle (up to 8 people); $4 single-occupant vehicle; $2 pedestrians, bicyclists and extra passengers. Garden entry is extra January through April: $6 adults, $3 ages 2-12.",
       "reservation_required": false,
       "reservation_url": null,
-      "rules": {},
+      "rules": {
+        "alcohol": "Prohibited. Alcoholic beverages are not allowed in Florida state parks (F.A.C. 62D-2.014).",
+        "pets": "Pets are welcome on a 6-foot leash in most of the park but not inside the formal gardens or the swimming area.",
+        "other": [
+          "Only boats without gas-powered motors are allowed on Lake Hall."
+        ]
+      },
       "usgs_site_id": null,
       "river_gauge_site_id": null,
       "gauge_distance_km": null,
@@ -47,18 +54,22 @@
       "nws_county": "FLC073",
       "typical_closure_time": null,
       "cavern_warning": false,
-      "safety_notes": null,
+      "safety_notes": "Swimming is in Lake Hall, a natural lake, so expect limited visibility and a natural bottom. Boats with gas motors are not allowed on the lake, but paddlers share the water with swimmers.",
       "official_url": "https://www.floridastateparks.org/MaclayGardens",
       "photo_url": null,
-      "entrance_notes": "Coordinates are the park centroid, not the swim area. Address: 3540 Thomasville Road Tallahassee, FL 32309.",
+      "entrance_notes": "3540 Thomasville Road, Tallahassee FL 32309 (850-487-4556), on US 319 north of I-10. No day-use reservations. Pets, food and drink are not permitted inside the formal gardens. Coordinates are the park centroid, not the swim area.",
       "swim_season": null,
-      "description": null,
+      "description": "Best known for its historic ornamental gardens, this Tallahassee park also has Lake Hall, where you can swim, fish and paddle from a lakeshore picnic area with pavilions and grills. Two short nature trails overlook the lake.",
       "sources": [
         "https://www.floridastateparks.org/parks-and-trails?parks%5B0%5D=experiences%3A262 (Swimming experience filter, captured with a browser 2026-09-19)",
         "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/PARKS_BOUNDARIES/MapServer/0 (park boundary centroid, Leon County)",
         "https://www.floridastateparks.org/MaclayGardens",
-        "https://api.weather.gov/points/30.5286,-84.2602 (NWS forecast grid, zone and county)"
-      ]
+        "https://api.weather.gov/points/30.5286,-84.2602 (NWS forecast grid, zone and county)",
+        "https://www.floridastateparks.org/parks-and-trails/alfred-b-maclay-gardens-state-park (browser, 2026-09-19)",
+        "https://www.floridastateparks.org/parks-and-trails/alfred-b-maclay-gardens-state-park/hours-fees",
+        "https://www.flrules.org/gateway/ruleno.asp?id=62D-2.014 (alcohol prohibited in state parks)"
+      ],
+      "enriched_at": "2026-09-19"
     },
     {
       "slug": "anastasia-state-park",
@@ -363,12 +374,18 @@
       "lng": -86.87561,
       "coverage_tier": "basic",
       "swimming_verified": true,
-      "guarded": "unknown",
-      "hours": "8 a.m. to sundown, 365 days",
-      "fees": null,
+      "guarded": "no",
+      "hours": "8 a.m. to sundown, 365 days a year (Central time). Ranger station staffed 3 to 5 p.m.",
+      "fees": "$4 per vehicle (up to 8 people), paid at the honor box - correct change required; $2 pedestrians, bicyclists and extra passengers; $2 for Florida National Guard members and Florida EBT card holders.",
       "reservation_required": false,
       "reservation_url": null,
-      "rules": {},
+      "rules": {
+        "alcohol": "Prohibited. Alcoholic beverages are not allowed in Florida state parks (F.A.C. 62D-2.014).",
+        "pets": "Pets are welcome on a 6-foot handheld leash but are not permitted on the beaches or in the water.",
+        "tubing": "Allowed; bring your own tube (rentals from Blackwater Canoe Rental, 850-623-0235). All floats end at Deaton Bridge - no river access beyond it.",
+        "life_jackets": "Recommended by the park for anyone who is not a strong swimmer (USCG-approved).",
+        "other": []
+      },
       "usgs_site_id": null,
       "river_gauge_site_id": null,
       "gauge_distance_km": null,
@@ -383,18 +400,23 @@
       "nws_county": "FLC113",
       "typical_closure_time": null,
       "cavern_warning": false,
-      "safety_notes": null,
+      "safety_notes": "Lifeguards are not on duty; the park recommends that anyone who is not a strong swimmer wear a U.S. Coast Guard-approved life jacket. The river is tannin-tinted but clear over white sandbars, with current and shifting sand; water levels change - call 850-983-5363 for current levels. There is no river access below Deaton Bridge and a major blockage downstream.",
       "official_url": "https://www.floridastateparks.org/parks-and-trails/blackwater-river-state-park",
       "photo_url": null,
-      "entrance_notes": "Coordinates are the park centroid, not the swim area. Address: 7720 Deaton Bridge Road Milton, FL 32564.",
+      "entrance_notes": "7720 Deaton Bridge Road, Milton FL 32564 (850-983-5363); GPS routing is unreliable - double-check directions. No reservations; pay at the honor box. Three paved river-access lots plus a dirt canoe-trail lot: the Deaton Bridge lots are small and fill early on summer weekends and holidays, so use the pavilion parking area half a mile north of the bridge, which has plenty of space and a boardwalk to the main swim area. Coordinates are the park centroid, not the swim area.",
       "swim_season": null,
-      "description": null,
+      "description": "Two miles of the golden-brown, sand-bottomed Blackwater River run through this Panhandle park near Milton, with white sandbar beaches, a boardwalk to the main swimming area, two large pavilions and an outdoor shower. Tubing and paddling end at Deaton Bridge inside the park.",
       "sources": [
         "https://www.floridastateparks.org/parks-and-trails?parks%5B0%5D=experiences%3A262 (Swimming experience filter, captured with a browser 2026-09-19)",
         "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/PARKS_BOUNDARIES/MapServer/0 (park boundary centroid, Santa Rosa County)",
         "https://www.floridastateparks.org/parks-and-trails/blackwater-river-state-park",
-        "https://api.weather.gov/points/30.7074,-86.8756 (NWS forecast grid, zone and county)"
-      ]
+        "https://api.weather.gov/points/30.7074,-86.8756 (NWS forecast grid, zone and county)",
+        "https://www.floridastateparks.org/parks-and-trails/blackwater-river-state-park (browser, 2026-09-19)",
+        "https://www.floridastateparks.org/parks-and-trails/blackwater-river-state-park/hours-fees",
+        "https://www.floridastateparks.org/parks-and-trails/blackwater-river-state-park/experiences-amenities",
+        "https://www.flrules.org/gateway/ruleno.asp?id=62D-2.014 (alcohol prohibited in state parks)"
+      ],
+      "enriched_at": "2026-09-19"
     },
     {
       "slug": "caladesi-island-state-park",
@@ -826,11 +848,18 @@
       "coverage_tier": "basic",
       "swimming_verified": true,
       "guarded": "unknown",
-      "hours": "8 a.m. to sundown, 365 days",
-      "fees": null,
+      "hours": "8 a.m. to sundown, 365 days a year. The swimming area opens by 8:30 a.m.; its closing time is posted daily and depends on daylight. It closes when thunderstorms threaten and reopens once they pass.",
+      "fees": "$6 per vehicle (2-8 people); $4 single-occupant vehicle; $2 per extra occupant; $2 pedestrian or bicyclist. River boat tours $8 (13+), $5 (ages 3-12), free under 3.",
       "reservation_required": false,
       "reservation_url": null,
-      "rules": {},
+      "rules": {
+        "alcohol": "Prohibited. Alcoholic beverages are not allowed in Florida state parks (F.A.C. 62D-2.014).",
+        "pets": "Pets are welcome in the park on a 6-foot leash but are not allowed in the swimming area (statewide rule).",
+        "other": [
+          "Swim and snorkel only inside the designated swimming area near the spring.",
+          "Recreational scuba diving is not allowed in Wakulla Spring or the swimming area; open-water diving is at Cherokee Sink with check-in at the entrance station."
+        ]
+      },
       "usgs_site_id": null,
       "river_gauge_site_id": null,
       "gauge_distance_km": null,
@@ -844,19 +873,24 @@
       "nws_zone": "FLZ027",
       "nws_county": "FLC129",
       "typical_closure_time": null,
-      "cavern_warning": false,
-      "safety_notes": null,
+      "cavern_warning": true,
+      "safety_notes": "The spring water is about 69-70 F year-round. Alligators and manatees live in the spring and river, so swim only inside the designated swimming area near the spring head. A 22-foot dive/observation tower stands over deep water. The swim area closes when thunderstorms threaten. Recreational scuba is not allowed in the spring or swim area; the vent is a cave system and cave diving is only for certified cave divers at Emerald Sink (Clear Cut Sink closed for research from June 14, 2026).",
       "official_url": "https://www.floridastateparks.org/WakullaSprings",
       "photo_url": null,
-      "entrance_notes": "Coordinates are the park centroid, not the swim area. Address: 465 Wakulla Park Drive Wakulla Springs, FL 32327.",
+      "entrance_notes": "465 Wakulla Park Drive, Wakulla Springs FL 32327 (850-561-7276), off SR 61 south of Tallahassee. No day-use reservations. Coordinates are the park centroid, not the swim area.",
       "swim_season": null,
-      "description": null,
+      "description": "One of the world's largest and deepest freshwater springs, with 70 F water, a 22-foot dive and observation tower and a grassy beach along the Wakulla River, all beside a 1930s lodge and guided riverboat tours. Swimming is allowed only in the designated area near the spring head.",
       "sources": [
         "https://www.floridastateparks.org/parks-and-trails?parks%5B0%5D=experiences%3A262 (Swimming experience filter, captured with a browser 2026-09-19)",
         "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/PARKS_BOUNDARIES/MapServer/0 (park boundary centroid, Wakulla County)",
         "https://www.floridastateparks.org/WakullaSprings",
-        "https://api.weather.gov/points/30.2419,-84.3028 (NWS forecast grid, zone and county)"
-      ]
+        "https://api.weather.gov/points/30.2419,-84.3028 (NWS forecast grid, zone and county)",
+        "https://www.floridastateparks.org/parks-and-trails/edward-ball-wakulla-springs-state-park (browser, 2026-09-19)",
+        "https://www.floridastateparks.org/parks-and-trails/edward-ball-wakulla-springs-state-park/hours-fees",
+        "https://www.floridastateparks.org/parks-and-trails/edward-ball-wakulla-springs-state-park/experiences-amenities",
+        "https://www.flrules.org/gateway/ruleno.asp?id=62D-2.014 (alcohol prohibited in state parks)"
+      ],
+      "enriched_at": "2026-09-19"
     },
     {
       "slug": "egmont-key-state-park",
@@ -910,11 +944,17 @@
       "coverage_tier": "basic",
       "swimming_verified": true,
       "guarded": "unknown",
-      "hours": "8 a.m. to sundown, 365 days",
-      "fees": null,
+      "hours": "8 a.m. to sundown, 365 days a year.",
+      "fees": "$5 per vehicle (2-8 people); $4 single-occupant vehicle; $2 pedestrians, bicyclists and extra passengers. Pavilions $30-$50 per day plus tax.",
       "reservation_required": false,
       "reservation_url": null,
-      "rules": {},
+      "rules": {
+        "alcohol": "Prohibited. Alcoholic beverages are not allowed in Florida state parks (F.A.C. 62D-2.014).",
+        "pets": "Pets are welcome on a 6-foot leash and must be well behaved; pick up after them. Pets are not allowed in the swimming area (statewide rule).",
+        "other": [
+          "A Florida freshwater fishing licence is required for anglers over 16."
+        ]
+      },
       "usgs_site_id": null,
       "river_gauge_site_id": null,
       "gauge_distance_km": null,
@@ -929,18 +969,23 @@
       "nws_county": "FLC133",
       "typical_closure_time": null,
       "cavern_warning": false,
-      "safety_notes": null,
+      "safety_notes": "The swimming lake is a small (two-acre) freshwater lake with a white sand beach; no lifeguard is stated on the official page, so treat it as unguarded. The waterfall and sinkholes are on a separate boardwalk trail - the sinkholes are up to 100 feet deep, so stay on the boardwalk. Waterfall flow depends on recent rain.",
       "official_url": "https://www.floridastateparks.org/parks-and-trails/falling-waters-state-park",
       "photo_url": null,
-      "entrance_notes": "Coordinates are the park centroid, not the swim area. Address: 1130 State Park Road Chipley, FL 32428.",
+      "entrance_notes": "1130 State Park Road, Chipley FL 32428 (850-638-6130), about 3 miles south of I-10 exit 120. No day-use reservations. Picnic pavilions are first-come unless reserved. Coordinates are the park centroid, not the swim area.",
       "swim_season": null,
-      "description": null,
+      "description": "Home to Florida's highest waterfall, which drops 73 feet into a sinkhole, plus a two-acre lake with a white sand beach, rinse shower, restrooms and changing space for swimmers. The hilly park sits a few miles south of I-10 near Chipley.",
       "sources": [
         "https://www.floridastateparks.org/parks-and-trails?parks%5B0%5D=experiences%3A262 (Swimming experience filter, captured with a browser 2026-09-19)",
         "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/PARKS_BOUNDARIES/MapServer/0 (park boundary centroid, Washington County)",
         "https://www.floridastateparks.org/parks-and-trails/falling-waters-state-park",
-        "https://api.weather.gov/points/30.7284,-85.5295 (NWS forecast grid, zone and county)"
-      ]
+        "https://api.weather.gov/points/30.7284,-85.5295 (NWS forecast grid, zone and county)",
+        "https://www.floridastateparks.org/parks-and-trails/falling-waters-state-park (browser, 2026-09-19)",
+        "https://www.floridastateparks.org/parks-and-trails/falling-waters-state-park/hours-fees",
+        "https://www.floridastateparks.org/parks-and-trails/falling-waters-state-park/experiences-amenities",
+        "https://www.flrules.org/gateway/ruleno.asp?id=62D-2.014 (alcohol prohibited in state parks)"
+      ],
+      "enriched_at": "2026-09-19"
     },
     {
       "slug": "fanning-springs-state-park",
@@ -993,12 +1038,19 @@
       "lng": -85.23396,
       "coverage_tier": "basic",
       "swimming_verified": true,
-      "guarded": "unknown",
-      "hours": "8 a.m. to sundown, 365 days",
-      "fees": null,
+      "guarded": "no",
+      "hours": "Day-use area open 8 a.m. to sunset CST, 365 days a year. Cave tours 9 a.m. to 4 p.m. CST daily (closed on scheduled maintenance dates).",
+      "fees": "$5 per vehicle (2-8 people); $4 single-occupant vehicle; $2 pedestrians, bicyclists and extra passengers. Cave tours extra: $16 ages 13+, $9 ages 3-12, free 2 and under.",
       "reservation_required": false,
       "reservation_url": null,
-      "rules": {},
+      "rules": {
+        "alcohol": "Prohibited. Alcoholic beverages are not allowed in Florida state parks (F.A.C. 62D-2.014).",
+        "pets": "Pets are permitted under the Florida State Parks pet policy (6-foot leash) but not in the swimming area (statewide rule).",
+        "other": [
+          "The park closes at sunset and visitors must be out by then.",
+          "Only small boats are recommended at the ramp; do not travel south under the bridge."
+        ]
+      },
       "usgs_site_id": null,
       "river_gauge_site_id": null,
       "gauge_distance_km": null,
@@ -1012,19 +1064,24 @@
       "nws_zone": "FLZ011",
       "nws_county": "FLC063",
       "typical_closure_time": null,
-      "cavern_warning": false,
-      "safety_notes": null,
+      "cavern_warning": true,
+      "safety_notes": "No lifeguards on duty - swim at your own risk. The Blue Hole swimming area is about 35 feet deep. Because it sits next to the Chipola River it sometimes has dark water and may close when the river floods. The park is a cave system: guided cave tours are on land, and moving water in the park is dangerous.",
       "official_url": "https://www.floridastateparks.org/parks-and-trails/florida-caverns-state-park",
       "photo_url": null,
-      "entrance_notes": "Coordinates are the park centroid, not the swim area. Address: 3345 Caverns Road Marianna, FL 32446.",
+      "entrance_notes": "3345 Caverns Road, Marianna FL 32446 (850-482-1228), in the Central time zone. No day-use reservations; cave tour tickets are first-come at the gift shop from 9 a.m. CST and often sell out on weekends. Park at the Blue Hole day-use area for swimming. Coordinates are the park centroid, not the swim area.",
       "swim_season": null,
-      "description": null,
+      "description": "Florida's only state park with guided tours through a large limestone cave, plus the Blue Hole, a deep spring-fed swimming area beside the Chipola River. The swim area can turn dark or close when the river is high.",
       "sources": [
         "https://www.floridastateparks.org/parks-and-trails?parks%5B0%5D=experiences%3A262 (Swimming experience filter, captured with a browser 2026-09-19)",
         "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/PARKS_BOUNDARIES/MapServer/0 (park boundary centroid, Jackson County)",
         "https://www.floridastateparks.org/parks-and-trails/florida-caverns-state-park",
-        "https://api.weather.gov/points/30.8129,-85.2340 (NWS forecast grid, zone and county)"
-      ]
+        "https://api.weather.gov/points/30.8129,-85.2340 (NWS forecast grid, zone and county)",
+        "https://www.floridastateparks.org/parks-and-trails/florida-caverns-state-park (browser, 2026-09-19)",
+        "https://www.floridastateparks.org/parks-and-trails/florida-caverns-state-park/hours-fees",
+        "https://www.floridastateparks.org/parks-and-trails/florida-caverns-state-park/experiences-amenities",
+        "https://www.flrules.org/gateway/ruleno.asp?id=62D-2.014 (alcohol prohibited in state parks)"
+      ],
+      "enriched_at": "2026-09-19"
     },
     {
       "slug": "fort-clinch-state-park",
@@ -1581,12 +1638,19 @@
       "lng": -81.74114,
       "coverage_tier": "basic",
       "swimming_verified": true,
-      "guarded": "unknown",
-      "hours": "8 a.m. to sundown, 365 days",
-      "fees": null,
+      "guarded": "no",
+      "hours": "8 a.m. to sundown, 365 days a year. All boats must be off the water an hour before sunset.",
+      "fees": "$5 per vehicle (2-8 people); $4 single-occupant vehicle; $2 pedestrians, bicyclists and extra passengers.",
       "reservation_required": false,
       "reservation_url": null,
-      "rules": {},
+      "rules": {
+        "alcohol": "Prohibited. Alcoholic beverages are not allowed in Florida state parks (F.A.C. 62D-2.014).",
+        "pets": "Pets are allowed on a 6-foot handheld leash in day-use areas and trails but not at the playground, swimming area, cabins or park buildings.",
+        "other": [
+          "Swim only in the designated Lake Louisa swimming area; no swimming in the other lakes.",
+          "Boats must be hand-carried to the water; electric trolling motors only, no gas motors."
+        ]
+      },
       "usgs_site_id": null,
       "river_gauge_site_id": null,
       "gauge_distance_km": null,
@@ -1601,18 +1665,23 @@
       "nws_county": "FLC069",
       "typical_closure_time": null,
       "cavern_warning": false,
-      "safety_notes": null,
+      "safety_notes": "No lifeguards on duty - swim at your own risk, and only in the designated swimming area on Lake Louisa; swimming is not permitted in the park's other lakes. The water is tea-coloured from natural tannins, so you may not be able to see the bottom even in shallow water. The beach bathhouse has cold, non-potable water only.",
       "official_url": "https://www.floridastateparks.org/parks-and-trails/lake-louisa-state-park",
       "photo_url": null,
-      "entrance_notes": "Coordinates are the park centroid, not the swim area. Address: 7305 U.S. Highway 27 Clermont, FL 34714.",
+      "entrance_notes": "7305 US Highway 27, Clermont FL 34714 (352-394-3969). No day-use reservations. The Lake Louisa day-use area (swimming, picnic tables and grills) is first-come, first-served - arrive soon after opening on busy days to get a table. Coordinates are the park centroid, not the swim area.",
       "swim_season": null,
-      "description": null,
+      "description": "A large park 30 minutes from Orlando with rolling hills, 20 miles of trails and several lakes; swimming is allowed in a designated area on tannin-stained Lake Louisa, next to a shaded picnic area, bathhouse and fully accessible playground. Dixie Lake has boat rentals and cabins.",
       "sources": [
         "https://www.floridastateparks.org/parks-and-trails?parks%5B0%5D=experiences%3A262 (Swimming experience filter, captured with a browser 2026-09-19)",
         "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/PARKS_BOUNDARIES/MapServer/0 (park boundary centroid, Lake County)",
         "https://www.floridastateparks.org/parks-and-trails/lake-louisa-state-park",
-        "https://api.weather.gov/points/28.4470,-81.7411 (NWS forecast grid, zone and county)"
-      ]
+        "https://api.weather.gov/points/28.4470,-81.7411 (NWS forecast grid, zone and county)",
+        "https://www.floridastateparks.org/parks-and-trails/lake-louisa-state-park (browser, 2026-09-19)",
+        "https://www.floridastateparks.org/parks-and-trails/lake-louisa-state-park/hours-fees",
+        "https://www.floridastateparks.org/parks-and-trails/lake-louisa-state-park/experiences-amenities",
+        "https://www.flrules.org/gateway/ruleno.asp?id=62D-2.014 (alcohol prohibited in state parks)"
+      ],
+      "enriched_at": "2026-09-19"
     },
     {
       "slug": "lake-manatee-state-park",
@@ -1623,12 +1692,19 @@
       "lng": -82.33725,
       "coverage_tier": "basic",
       "swimming_verified": true,
-      "guarded": "unknown",
-      "hours": "8 a.m. to sundown, 365 days",
-      "fees": null,
+      "guarded": "no",
+      "hours": "8 a.m. to sundown, 365 days a year.",
+      "fees": "$5 per vehicle (2-8 people); $4 single-occupant vehicle; $2 pedestrians, bicyclists and extra passengers. Boat ramp $4 extra.",
       "reservation_required": false,
       "reservation_url": null,
-      "rules": {},
+      "rules": {
+        "alcohol": "Prohibited. Alcoholic beverages are not allowed in Florida state parks (F.A.C. 62D-2.014).",
+        "pets": "Pets are allowed on a 6-foot handheld leash on trails and in use areas but not in the swimming area; they may not be left unattended.",
+        "other": [
+          "Boat motors must be under 20 horsepower; overnight mooring is not permitted.",
+          "Canoe and kayak rentals are not available."
+        ]
+      },
       "usgs_site_id": null,
       "river_gauge_site_id": null,
       "gauge_distance_km": null,
@@ -1643,18 +1719,23 @@
       "nws_county": "FLC081",
       "typical_closure_time": null,
       "cavern_warning": false,
-      "safety_notes": null,
+      "safety_notes": "A lifeguard is not provided - swim at your own risk. The swimming area is on the shore of a human-made reservoir; water plants are often blown ashore and conditions and access vary by season, so the park strongly recommends calling 941-741-3028 before a visit for current conditions. Motorboats (under 20 hp) use the lake.",
       "official_url": "https://www.floridastateparks.org/parks-and-trails/lake-manatee-state-park",
       "photo_url": null,
-      "entrance_notes": "Coordinates are the park centroid, not the swim area. Address: 20007 State Road 64 East Bradenton, FL 34212.",
+      "entrance_notes": "20007 State Road 64 East, Bradenton FL 34212 (941-741-3028). No day-use reservations. 94 parking spaces plus 18 boat-trailer spaces; parking is included in the entry fee and overnight parking is not allowed. Call ahead for swim-area conditions. Coordinates are the park centroid, not the swim area.",
       "swim_season": null,
-      "description": null,
+      "description": "A small park on three miles of Lake Manatee's south shore, 15 miles east of Bradenton, with a designated swimming beach in the day-use area, a restroom with rinse station nearby and a large oak-shaded picnic area. Despite the name there are no manatees - a dam blocks them.",
       "sources": [
         "https://www.floridastateparks.org/parks-and-trails?parks%5B0%5D=experiences%3A262 (Swimming experience filter, captured with a browser 2026-09-19)",
         "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/PARKS_BOUNDARIES/MapServer/0 (park boundary centroid, Manatee County)",
         "https://www.floridastateparks.org/parks-and-trails/lake-manatee-state-park",
-        "https://api.weather.gov/points/27.4785,-82.3372 (NWS forecast grid, zone and county)"
-      ]
+        "https://api.weather.gov/points/27.4785,-82.3372 (NWS forecast grid, zone and county)",
+        "https://www.floridastateparks.org/parks-and-trails/lake-manatee-state-park (browser, 2026-09-19)",
+        "https://www.floridastateparks.org/parks-and-trails/lake-manatee-state-park/hours-fees",
+        "https://www.floridastateparks.org/parks-and-trails/lake-manatee-state-park/experiences-amenities",
+        "https://www.flrules.org/gateway/ruleno.asp?id=62D-2.014 (alcohol prohibited in state parks)"
+      ],
+      "enriched_at": "2026-09-19"
     },
     {
       "slug": "lignumvitae-key-botanical-state-park",
@@ -1917,12 +1998,18 @@
       "lng": -81.95012,
       "coverage_tier": "basic",
       "swimming_verified": true,
-      "guarded": "unknown",
-      "hours": "8 a.m. to sundown, 365 days",
-      "fees": null,
+      "guarded": "no",
+      "hours": "8 a.m. to sundown, 365 days a year.",
+      "fees": "$5 per vehicle (up to 8 people); $4 single-occupant vehicle or motorcycle; $2 pedestrians, bicyclists and extra passengers. Canoe rental $4 per hour.",
       "reservation_required": false,
       "reservation_url": null,
-      "rules": {},
+      "rules": {
+        "alcohol": "Prohibited. Alcoholic beverages are not allowed in Florida state parks (F.A.C. 62D-2.014).",
+        "pets": "Pets are welcome on a 6-foot leash but are not allowed on the beach, in the swimming area, or in cabins and cabin areas.",
+        "other": [
+          "Swimming is allowed in the designated swimming area only."
+        ]
+      },
       "usgs_site_id": null,
       "river_gauge_site_id": null,
       "gauge_distance_km": null,
@@ -1937,18 +2024,23 @@
       "nws_county": "FLC019",
       "typical_closure_time": null,
       "cavern_warning": false,
-      "safety_notes": null,
+      "safety_notes": "No lifeguard on duty - watch children and non-swimmers carefully. Swimming is allowed only in the designated area of Little Lake Johnson, a sandhill lake whose level rises and falls with rainfall: the official park notice says the swimming area is CLOSED effective July 6, 2026 because of low water, with no swimming permitted elsewhere in the park. Call 352-316-4286 for current water levels.",
       "official_url": "https://www.floridastateparks.org/parks-and-trails/mike-roess-gold-head-branch-state-park",
       "photo_url": null,
-      "entrance_notes": "Coordinates are the park centroid, not the swim area. Address: 6239 State Road 21 Keystone Heights, FL 32656.",
+      "entrance_notes": "6239 State Road 21, Keystone Heights FL 32656 (352-316-4286). No day-use reservations. The beach is downhill from the picnic area and an easy walk from the cabins but a longer walk from the campgrounds; the restroom by the swim area has no electricity or showers. Turkey Oak campground closed for renovation from March 2026. Coordinates are the park centroid, not the swim area.",
       "swim_season": null,
-      "description": null,
+      "description": "One of Florida's first state parks, built by the CCC in the 1930s on rolling sandhills near Keystone Heights, with a large sandy beach on spring-fed Little Lake Johnson below the picnic area and lakefront cabins. The lake's water level swings with drought, and the swim area has been closed for low water since July 2026.",
       "sources": [
         "https://www.floridastateparks.org/parks-and-trails?parks%5B0%5D=experiences%3A262 (Swimming experience filter, captured with a browser 2026-09-19)",
         "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/PARKS_BOUNDARIES/MapServer/0 (park boundary centroid, Clay County)",
         "https://www.floridastateparks.org/parks-and-trails/mike-roess-gold-head-branch-state-park",
-        "https://api.weather.gov/points/29.8369,-81.9501 (NWS forecast grid, zone and county)"
-      ]
+        "https://api.weather.gov/points/29.8369,-81.9501 (NWS forecast grid, zone and county)",
+        "https://www.floridastateparks.org/parks-and-trails/mike-roess-gold-head-branch-state-park (browser, 2026-09-19; 'Know before you go' low-water closure notice)",
+        "https://www.floridastateparks.org/parks-and-trails/mike-roess-gold-head-branch-state-park/hours-fees",
+        "https://www.floridastateparks.org/parks-and-trails/mike-roess-gold-head-branch-state-park/experiences-amenities",
+        "https://www.flrules.org/gateway/ruleno.asp?id=62D-2.014 (alcohol prohibited in state parks)"
+      ],
+      "enriched_at": "2026-09-19"
     },
     {
       "slug": "north-peninsula-state-park",
@@ -2001,12 +2093,18 @@
       "lng": -82.57779,
       "coverage_tier": "basic",
       "swimming_verified": true,
-      "guarded": "unknown",
-      "hours": "8 a.m. to sundown, 365 days",
-      "fees": null,
+      "guarded": "no",
+      "hours": "8 a.m. to sundown, 365 days a year.",
+      "fees": "$5 per vehicle (2-8 people); $4 single-occupant vehicle; $2 pedestrians, bicyclists and extra passengers.",
       "reservation_required": false,
       "reservation_url": null,
-      "rules": {},
+      "rules": {
+        "alcohol": "Prohibited. Alcoholic beverages are not allowed in Florida state parks (F.A.C. 62D-2.014).",
+        "pets": "Well-behaved pets are welcome under the Florida State Parks pet policy (6-foot leash) but not in the swimming area (statewide rule).",
+        "other": [
+          "Canoeing downriver from the in-park launch is prohibited because of the swimming area and the River Sink; paddle upstream and return."
+        ]
+      },
       "usgs_site_id": null,
       "river_gauge_site_id": null,
       "gauge_distance_km": null,
@@ -2021,18 +2119,23 @@
       "nws_county": "FLC023",
       "typical_closure_time": null,
       "cavern_warning": false,
-      "safety_notes": null,
+      "safety_notes": "No lifeguard on duty - swim at your own risk. The swim area is on the tea-coloured Santa Fe River just above the River Sink, where the river disappears underground; it is closed for safety when the river is too high or too low, so call 386-454-1853 before you come. Paddling downstream past the swim area toward the sink is prohibited.",
       "official_url": "https://www.floridastateparks.org/parks-and-trails/oleno-state-park",
       "photo_url": null,
-      "entrance_notes": "Coordinates are the park centroid, not the swim area. Address: 410 S.E. O'Leno Park Road High Springs, FL 32643.",
+      "entrance_notes": "410 SE O'Leno Park Road, High Springs FL 32643 (386-454-1853), on US 441 six miles north of High Springs. No day-use reservations. The River Trail is closed effective May 14, 2026. Coordinates are the park centroid, not the swim area.",
       "swim_season": null,
-      "description": null,
+      "description": "A 1930s CCC-built park on the Santa Fe River north of High Springs, with a river swimming area, a historic suspension bridge, riverside pavilions and shaded trails where the river vanishes into a sinkhole. Swimming depends on river level and closes when the water is too high or too low.",
       "sources": [
         "https://www.floridastateparks.org/parks-and-trails?parks%5B0%5D=experiences%3A262 (Swimming experience filter, captured with a browser 2026-09-19)",
         "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/PARKS_BOUNDARIES/MapServer/0 (park boundary centroid, Alachua, Columbia County)",
         "https://www.floridastateparks.org/parks-and-trails/oleno-state-park",
-        "https://api.weather.gov/points/29.9136,-82.5778 (NWS forecast grid, zone and county)"
-      ]
+        "https://api.weather.gov/points/29.9136,-82.5778 (NWS forecast grid, zone and county)",
+        "https://www.floridastateparks.org/parks-and-trails/oleno-state-park (browser, 2026-09-19)",
+        "https://www.floridastateparks.org/parks-and-trails/oleno-state-park/hours-fees",
+        "https://www.floridastateparks.org/parks-and-trails/oleno-state-park/experiences-amenities",
+        "https://www.flrules.org/gateway/ruleno.asp?id=62D-2.014 (alcohol prohibited in state parks)"
+      ],
+      "enriched_at": "2026-09-19"
     },
     {
       "slug": "ochlockonee-river-state-park",
@@ -2044,11 +2147,15 @@
       "coverage_tier": "basic",
       "swimming_verified": true,
       "guarded": "unknown",
-      "hours": "8 a.m. to sundown, 365 days",
-      "fees": null,
+      "hours": "8 a.m. to sunset, 365 days a year.",
+      "fees": "$4 per vehicle (up to 8 people); $2 each additional person; $2 pedestrian or bicyclist. Boat launch $4.",
       "reservation_required": false,
       "reservation_url": null,
-      "rules": {},
+      "rules": {
+        "alcohol": "Prohibited. Alcoholic beverages are not allowed in Florida state parks (F.A.C. 62D-2.014).",
+        "pets": "Pets are allowed under the Florida State Parks pet policy (6-foot leash) but not in the swimming area (statewide rule).",
+        "other": []
+      },
       "usgs_site_id": null,
       "river_gauge_site_id": null,
       "gauge_distance_km": null,
@@ -2063,18 +2170,23 @@
       "nws_county": "FLC129",
       "typical_closure_time": null,
       "cavern_warning": false,
-      "safety_notes": null,
+      "safety_notes": "The swimming area is on the Dead River near its junction with the tidal Ochlockonee River, so expect dark water, current and boat traffic from the nearby ramp. No lifeguard is mentioned on the official page - treat it as unguarded.",
       "official_url": "https://www.floridastateparks.org/parks-and-trails/ochlockonee-river-state-park",
       "photo_url": null,
-      "entrance_notes": "Coordinates are the park centroid, not the swim area. Address: 429 State Park Road Sopchoppy, FL 32358.",
+      "entrance_notes": "429 State Park Road, Sopchoppy FL 32358 (850-962-2771), off US 319 south of Sopchoppy. No day-use reservations. Pavilions are first-come unless reserved. Coordinates are the park centroid, not the swim area.",
       "swim_season": null,
-      "description": null,
+      "description": "A quiet longleaf-pine park near Sopchoppy where the Ochlockonee and Dead rivers meet, with a small swimming area, outdoor showers and pavilions in the day-use area beside an accessible boat ramp and kayak launch.",
       "sources": [
         "https://www.floridastateparks.org/parks-and-trails?parks%5B0%5D=experiences%3A262 (Swimming experience filter, captured with a browser 2026-09-19)",
         "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/PARKS_BOUNDARIES/MapServer/0 (park boundary centroid, Wakulla County)",
         "https://www.floridastateparks.org/parks-and-trails/ochlockonee-river-state-park",
-        "https://api.weather.gov/points/30.0034,-84.4862 (NWS forecast grid, zone and county)"
-      ]
+        "https://api.weather.gov/points/30.0034,-84.4862 (NWS forecast grid, zone and county)",
+        "https://www.floridastateparks.org/parks-and-trails/ochlockonee-river-state-park (browser, 2026-09-19)",
+        "https://www.floridastateparks.org/parks-and-trails/ochlockonee-river-state-park/hours-fees",
+        "https://www.floridastateparks.org/parks-and-trails/ochlockonee-river-state-park/experiences-amenities",
+        "https://www.flrules.org/gateway/ruleno.asp?id=62D-2.014 (alcohol prohibited in state parks)"
+      ],
+      "enriched_at": "2026-09-19"
     },
     {
       "slug": "oleta-river-state-park",
@@ -2128,11 +2240,18 @@
       "coverage_tier": "basic",
       "swimming_verified": true,
       "guarded": "unknown",
-      "hours": "8 a.m. to sundown, 365 days",
-      "fees": null,
+      "hours": "8 a.m. to sundown, 365 days a year. Nature center open Saturday and Sunday 10 a.m. to 2 p.m.",
+      "fees": "$5 per vehicle (up to 8 people); $4 single-occupant vehicle; $2 pedestrians, bicyclists and extra passengers. Sunset entry (last hour before sunset) $4 per vehicle.",
       "reservation_required": false,
       "reservation_url": null,
-      "rules": {},
+      "rules": {
+        "alcohol": "Prohibited except in designated areas during park-sanctioned events.",
+        "pets": "Pets are allowed on a 6-foot handheld leash in the campground and recreation areas but by law not on the swimming beach or in the lake, nor in restrooms, on playgrounds or in rental canoes.",
+        "other": [
+          "Fishing is not permitted inside the roped-off swimming area.",
+          "Snorkeling is allowed in Lake Osprey."
+        ]
+      },
       "usgs_site_id": null,
       "river_gauge_site_id": null,
       "gauge_distance_km": null,
@@ -2147,18 +2266,22 @@
       "nws_county": "FLC115",
       "typical_closure_time": null,
       "cavern_warning": false,
-      "safety_notes": null,
+      "safety_notes": "Lake Osprey is a small freshwater lake with a roped-off swimming area; the official page does not mention a lifeguard, so treat it as unguarded. Fishing is allowed on the lake but not inside the swim ropes. Cold-water showers only at the beach bathhouse.",
       "official_url": "https://www.floridastateparks.org/parks-and-trails/oscar-scherer-state-park",
       "photo_url": null,
-      "entrance_notes": "Coordinates are the park centroid, not the swim area. Address: 1843 S. Tamiami Trail Osprey, FL 34229.",
+      "entrance_notes": "1843 S. Tamiami Trail (US 41), Osprey FL 34229 (941-483-5956). No day-use reservations. Swimming is at the Lake Osprey Picnic Area, which has its own parking, bathhouse and playground. Coordinates are the park centroid, not the swim area.",
       "swim_season": null,
-      "description": null,
+      "description": "A scrub-jay preserve tucked between Sarasota-area suburbs, with Lake Osprey - the only freshwater swimming lake in Sarasota County - offering a sandy beach, roped swim area, snorkeling, bathhouse and pavilions beside a nature center. The paved Legacy Trail runs through the park.",
       "sources": [
         "https://www.floridastateparks.org/parks-and-trails?parks%5B0%5D=experiences%3A262 (Swimming experience filter, captured with a browser 2026-09-19)",
         "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/PARKS_BOUNDARIES/MapServer/0 (park boundary centroid, Sarasota County)",
         "https://www.floridastateparks.org/parks-and-trails/oscar-scherer-state-park",
-        "https://api.weather.gov/points/27.1807,-82.4602 (NWS forecast grid, zone and county)"
-      ]
+        "https://api.weather.gov/points/27.1807,-82.4602 (NWS forecast grid, zone and county)",
+        "https://www.floridastateparks.org/parks-and-trails/oscar-scherer-state-park (browser, 2026-09-19)",
+        "https://www.floridastateparks.org/parks-and-trails/oscar-scherer-state-park/hours-fees",
+        "https://www.floridastateparks.org/parks-and-trails/oscar-scherer-state-park/experiences-amenities"
+      ],
+      "enriched_at": "2026-09-19"
     },
     {
       "slug": "perdido-key-state-park",
@@ -2212,11 +2335,18 @@
       "coverage_tier": "basic",
       "swimming_verified": true,
       "guarded": "unknown",
-      "hours": "8 a.m. to sundown, 365 days",
-      "fees": null,
+      "hours": "8 a.m. to sunset, 365 days a year.",
+      "fees": "$4 per vehicle (up to 8 people), paid at the honor box - correct change required; $2 pedestrians, bicyclists and extra passengers. Picnic pavilions $25 plus tax (first-come, first-served May 26 - Sept. 1).",
       "reservation_required": false,
       "reservation_url": null,
-      "rules": {},
+      "rules": {
+        "alcohol": "Prohibited in all areas of the park, including picnic pavilions and the beach.",
+        "pets": "Pets are allowed in designated areas under the Florida State Parks pet policy but not in the spring or swim area.",
+        "other": [
+          "Fishing is permitted only outside the designated swimming area.",
+          "Snorkeling is allowed in designated areas only."
+        ]
+      },
       "usgs_site_id": null,
       "river_gauge_site_id": null,
       "gauge_distance_km": null,
@@ -2231,18 +2361,22 @@
       "nws_county": "FLC059",
       "typical_closure_time": null,
       "cavern_warning": false,
-      "safety_notes": null,
+      "safety_notes": "The spring stays a constant 68 F year-round - cold enough to tire swimmers. Swim and snorkel only in the designated areas; fishing is kept out of the swim area. The park frequently reaches capacity in summer and closes its gates for unknown periods; pedestrians and cyclists are not admitted while it is closed.",
       "official_url": "https://www.floridastateparks.org/parks-and-trails/ponce-de-leon-springs-state-park",
       "photo_url": null,
-      "entrance_notes": "Coordinates are the park centroid, not the swim area. Address: 2860 Ponce de Leon Springs Road Ponce de Leon, FL 32455.",
+      "entrance_notes": "2860 Ponce de Leon Springs Road, Ponce de Leon FL 32455 (850-836-4281), just off I-10 exit 96. No day-use reservations; pay at the honor box. During busy periods expect long waits - the park frequently hits capacity and temporarily closes, with admission reopening periodically through the day. Pavilion reservations do not guarantee entry. Coordinates are the park centroid, not the swim area.",
       "swim_season": null,
-      "description": null,
+      "description": "A clear 68 F spring in the western Panhandle, fed by two underground flows that pump 14 million gallons a day into a short run that meets tea-coloured Sandy Creek. A large bathhouse with changing rooms, pavilions and two short nature trails surround the swim area.",
       "sources": [
         "https://www.floridastateparks.org/parks-and-trails?parks%5B0%5D=experiences%3A262 (Swimming experience filter, captured with a browser 2026-09-19)",
         "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/PARKS_BOUNDARIES/MapServer/0 (park boundary centroid, Holmes, Walton County)",
         "https://www.floridastateparks.org/parks-and-trails/ponce-de-leon-springs-state-park",
-        "https://api.weather.gov/points/30.7088,-85.9274 (NWS forecast grid, zone and county)"
-      ]
+        "https://api.weather.gov/points/30.7088,-85.9274 (NWS forecast grid, zone and county)",
+        "https://www.floridastateparks.org/parks-and-trails/ponce-de-leon-springs-state-park (browser, 2026-09-19; capacity notice)",
+        "https://www.floridastateparks.org/parks-and-trails/ponce-de-leon-springs-state-park/hours-fees",
+        "https://www.floridastateparks.org/parks-and-trails/ponce-de-leon-springs-state-park/experiences-amenities"
+      ],
+      "enriched_at": "2026-09-19"
     },
     {
       "slug": "san-pedro-underwater-archaeological-preserve-state-park",
@@ -2631,12 +2765,20 @@
       "lng": -83.13637,
       "coverage_tier": "basic",
       "swimming_verified": true,
-      "guarded": "unknown",
-      "hours": "8 a.m. to sundown, 365 days",
-      "fees": null,
+      "guarded": "no",
+      "hours": "8 a.m. to sundown, 365 days a year. Dives must end one hour before sundown.",
+      "fees": "$4 per vehicle (up to 8 people), paid at the honor box - correct change required; $2 pedestrians, bicyclists and extra passengers.",
       "reservation_required": false,
       "reservation_url": null,
-      "rules": {},
+      "rules": {
+        "alcohol": "Prohibited. Alcoholic beverages are not allowed in Florida state parks (F.A.C. 62D-2.014).",
+        "pets": "Well-behaved dogs are welcome on a 6-foot handheld leash and may not be left unattended more than 30 minutes; dogs are not permitted in the springs.",
+        "other": [
+          "Divers must show proof of certification, sign in, and dive in teams of at least two; no solo diving, no DPVs (scooters).",
+          "Cave and cavern diving only in Orange Grove Sink and Peacock Springs; open-water divers only in Orange Grove Sink and may not carry lights.",
+          "Dives must be concluded one hour before sundown."
+        ]
+      },
       "usgs_site_id": null,
       "river_gauge_site_id": null,
       "gauge_distance_km": null,
@@ -2650,19 +2792,24 @@
       "nws_zone": "FLZ021",
       "nws_county": "FLC121",
       "typical_closure_time": null,
-      "cavern_warning": false,
-      "safety_notes": null,
+      "cavern_warning": true,
+      "safety_notes": "No lifeguard on duty - swim at your own risk. Swimming and snorkeling are allowed only in Peacock Springs and Orange Grove Sink and depend on seasonal water levels. These springs open into one of the longest underwater cave systems in the country (nearly 33,000 feet surveyed): only certified cave and cavern divers may enter the caves, in teams of two or more, and open-water divers are limited to Orange Grove Sink without lights. No potable water in the park.",
       "official_url": "https://www.floridastateparks.org/parks-and-trails/wes-skiles-peacock-springs-state-park",
       "photo_url": null,
-      "entrance_notes": "Coordinates are the park centroid, not the swim area. Address: 18532 180th Street Live Oak, FL 32060.",
+      "entrance_notes": "18532 180th Street, Live Oak FL 32060 (386-294-3667). No reservations; pay at the honor box. Two parking areas, each with a portable restroom and changing room; facilities are limited and there is no drinking water. Coordinates are the park centroid, not the swim area.",
       "swim_season": null,
-      "description": null,
+      "description": "A quiet Suwannee County park with two major springs, a spring run and six sinkholes over one of the longest underwater cave systems in the United States. Swimming in Peacock Springs and Orange Grove Sink is popular in summer, and a shaded interpretive trail traces the caves below.",
       "sources": [
         "https://www.floridastateparks.org/parks-and-trails?parks%5B0%5D=experiences%3A262 (Swimming experience filter, captured with a browser 2026-09-19)",
         "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/PARKS_BOUNDARIES/MapServer/0 (park boundary centroid, Suwannee County)",
         "https://www.floridastateparks.org/parks-and-trails/wes-skiles-peacock-springs-state-park",
-        "https://api.weather.gov/points/30.1316,-83.1364 (NWS forecast grid, zone and county)"
-      ]
+        "https://api.weather.gov/points/30.1316,-83.1364 (NWS forecast grid, zone and county)",
+        "https://www.floridastateparks.org/parks-and-trails/wes-skiles-peacock-springs-state-park (browser, 2026-09-19)",
+        "https://www.floridastateparks.org/parks-and-trails/wes-skiles-peacock-springs-state-park/hours-fees",
+        "https://www.floridastateparks.org/parks-and-trails/wes-skiles-peacock-springs-state-park/experiences-amenities",
+        "https://www.flrules.org/gateway/ruleno.asp?id=62D-2.014 (alcohol prohibited in state parks)"
+      ],
+      "enriched_at": "2026-09-19"
     },
     {
       "slug": "william-j-billy-joe-rish-recreation-area",

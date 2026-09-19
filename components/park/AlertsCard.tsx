@@ -12,10 +12,11 @@ export interface AlertsCardProps {
   now: Date;
 }
 
-const KIND: Record<AlertKind, { label: string; icon: LucideIcon; tone: string }> = {
-  closure: { label: "Closure", icon: OctagonX, tone: "text-status-closed" },
-  notice: { label: "Notice", icon: Info, tone: "text-cocoa" },
-  nws: { label: "Weather alert", icon: CloudLightning, tone: "text-status-likely" },
+/** Label colour + the left accent bar on the card. Kind is always spelled out in text as well. */
+const KIND: Record<AlertKind, { label: string; icon: LucideIcon; tone: string; accent: string }> = {
+  closure: { label: "Closure", icon: OctagonX, tone: "text-status-closed", accent: "border-l-4 border-l-status-closed-edge" },
+  notice: { label: "Notice", icon: Info, tone: "text-cyan-deep", accent: "border-l-4 border-l-cyan" },
+  nws: { label: "Weather alert", icon: CloudLightning, tone: "text-status-likely", accent: "border-l-4 border-l-status-likely-edge" },
 };
 
 /** Alerts in force right now, closures first, then newest. */
@@ -49,7 +50,7 @@ export function AlertsCard({ alerts, now }: AlertsCardProps) {
           const stale = isStale(a.last_seen, STALE.alerts, now);
           return (
             <li key={a.id}>
-              <Card as="article" className={a.kind === "closure" ? "space-y-2 border-status-closed/40" : "space-y-2"}>
+              <Card as="article" className={`space-y-2 ${meta.accent}`}>
                 <div className="flex flex-wrap items-center gap-2">
                   <span className={`inline-flex items-center gap-1.5 text-sm font-extrabold ${meta.tone}`}>
                     <Icon aria-hidden="true" focusable="false" className="size-5 shrink-0" strokeWidth={2.25} />
@@ -60,7 +61,7 @@ export function AlertsCard({ alerts, now }: AlertsCardProps) {
                   )}
                 </div>
                 <p className="whitespace-pre-line text-sm text-cocoa">{a.text}</p>
-                <p className="text-xs text-cocoa/75">
+                <p className="text-xs text-mocha">
                   {a.starts_at ? <>Since {formatLocalDate(a.starts_at)}</> : <>Start date not stated</>}
                   {" · "}
                   {a.ends_at ? <>Until {formatLocalDate(a.ends_at)}</> : <>No end date announced</>}
@@ -71,7 +72,7 @@ export function AlertsCard({ alerts, now }: AlertsCardProps) {
                     href={a.official_url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex min-h-11 items-center gap-1 text-sm font-bold text-cocoa underline"
+                    className="inline-flex min-h-11 items-center gap-1 text-sm font-bold text-brown underline underline-offset-2"
                   >
                     Read the official notice
                     <ExternalLink aria-hidden="true" focusable="false" className="size-4" />

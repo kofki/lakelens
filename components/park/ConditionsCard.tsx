@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/Badge";
 import { LastUpdated } from "@/components/ui/LastUpdated";
 import { Section } from "@/components/ui/Section";
 import { StatTile, type StatTone } from "@/components/ui/StatTile";
+import { FlowSparkline } from "@/components/park/FlowSparkline";
 
 export interface ConditionsCardProps {
   bundle: ParkBundle;
@@ -29,6 +30,7 @@ export function ConditionsCard({ bundle, now }: ConditionsCardProps) {
   const { park, weather, weatherFetchedAt, usgs, usgsFetchedAt } = bundle;
   const readings = usgs?.readings ?? [];
   const sites = [park.usgs_site_id, park.river_gauge_site_id];
+  const flowSiteId = park.usgs_site_id ?? park.river_gauge_site_id;
 
   const flow = describeFlow(usgs, park);
   const temp = describeWaterTemp(usgs, park);
@@ -67,7 +69,7 @@ export function ConditionsCard({ bundle, now }: ConditionsCardProps) {
       {weather ? (
         <div className="mt-3 flex flex-wrap items-end justify-between gap-3 md:flex-col md:items-stretch">
           <div>
-            <p className="text-5xl font-extrabold leading-none text-cocoa">
+            <p className="text-5xl font-extrabold leading-none text-ink">
               {weather.current.tempF !== null ? `${Math.round(weather.current.tempF)}°F` : "—"}
             </p>
             <p className="mt-1 text-sm font-bold text-mocha">{describeWeather(weather, now)}</p>
@@ -76,7 +78,7 @@ export function ConditionsCard({ bundle, now }: ConditionsCardProps) {
           {weather.daily.length > 0 && (
             <ol className="flex gap-2 overflow-x-auto pb-1 md:grid md:grid-cols-7 md:overflow-visible" aria-label="Seven-day outlook">
               {weather.daily.slice(0, 7).map((d) => (
-                <li key={d.date} className="min-w-14 rounded-xl bg-cream px-2 py-1.5 text-center md:min-w-0">
+                <li key={d.date} className="min-w-14 rounded-xl border border-mist bg-cream px-2 py-1.5 text-center md:min-w-0">
                   <p className="text-xs font-extrabold text-cocoa">{d.name || formatLocalDate(`${d.date}T12:00:00Z`)}</p>
                   <p className="text-sm font-bold text-cocoa">{d.highF !== null ? `${Math.round(d.highF)}°` : "—"}</p>
                   <p className="text-xs text-mocha">{d.lowF !== null ? `${Math.round(d.lowF)}°` : ""}</p>
@@ -105,15 +107,18 @@ export function ConditionsCard({ bundle, now }: ConditionsCardProps) {
                 : undefined
           }
         />
-        <StatTile
-          icon={<Waves aria-hidden="true" focusable="false" />}
-          label="Flow"
-          value={discharge ? `${Math.round(discharge.value).toLocaleString()} cfs` : "—"}
-          descriptor={flow.sentence}
-          tone={flowTone}
-          percent={discharge && flow.level !== "unknown" ? (flow.level === "high" ? 90 : 45) : null}
-          footnote={discharge ? `Updated ${relativeTime(discharge.time, now)}${discharge.stale ? " · may be out of date" : ""}` : "No live flow gauge"}
-        />
+        <div className="flex flex-col gap-2">
+          <StatTile
+            icon={<Waves aria-hidden="true" focusable="false" />}
+            label="Flow"
+            value={discharge ? `${Math.round(discharge.value).toLocaleString()} cfs` : "—"}
+            descriptor={flow.sentence}
+            tone={flowTone}
+            percent={discharge && flow.level !== "unknown" ? (flow.level === "high" ? 90 : 45) : null}
+            footnote={discharge ? `Updated ${relativeTime(discharge.time, now)}${discharge.stale ? " · may be out of date" : ""}` : "No live flow gauge"}
+          />
+          {flowSiteId && <FlowSparkline parkId={park.id} siteId={flowSiteId} />}
+        </div>
         <StatTile
           icon={<Gauge aria-hidden="true" focusable="false" />}
           label="Water level"

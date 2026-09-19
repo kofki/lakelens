@@ -27,9 +27,9 @@ export function ParkTile({ item }: ParkTileProps) {
     <article
       className={
         "group relative isolate flex aspect-[4/3] flex-col justify-end overflow-hidden rounded-[20px] bg-mist p-2.5 " +
-        "shadow-[0_2px_12px_rgba(150,110,89,0.06)] transition-[transform,box-shadow] duration-300 " +
-        "hover:-translate-y-1.5 hover:shadow-[0_12px_36px_rgba(150,110,89,0.13)] " +
-        "focus-within:-translate-y-1.5 focus-within:shadow-[0_12px_36px_rgba(150,110,89,0.13)]"
+        "shadow-card transition-[transform,box-shadow] duration-300 " +
+        "hover:-translate-y-1.5 hover:shadow-card-hover " +
+        "focus-within:-translate-y-1.5 focus-within:shadow-card-hover"
       }
     >
       <ParkPhoto
@@ -40,15 +40,15 @@ export function ParkTile({ item }: ParkTileProps) {
       <StatusPill level={status.level} size="sm" estimate={status.isEstimate} className="absolute left-3 top-3" />
 
       {distance && (
-        <span className="absolute right-3 top-3 inline-flex items-center gap-1 rounded-full bg-white/85 px-2.5 py-1 text-xs font-bold text-cocoa shadow-card backdrop-blur">
+        <span className="absolute right-3 top-3 inline-flex items-center gap-1 rounded-full bg-aqua/95 px-2.5 py-1 text-xs font-bold text-cyan-deep shadow-card backdrop-blur">
           <MapPin aria-hidden="true" focusable="false" className="size-3.5" />
           {distance}
           <span className="sr-only"> away</span>
         </span>
       )}
 
-      <div className="rounded-[14px] bg-white/85 px-3 py-2 backdrop-blur-xl">
-        <h3 className="truncate text-[0.95rem] font-extrabold leading-tight text-cocoa">
+      <div className="rounded-[14px] bg-white/90 px-3 py-2 backdrop-blur-xl">
+        <h3 className="truncate text-[0.95rem] font-extrabold leading-tight text-ink">
           <Link href={`/park/${park.slug}`} className="after:absolute after:inset-0 after:rounded-[20px]">
             {park.name}
           </Link>

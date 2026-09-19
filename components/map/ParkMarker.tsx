@@ -24,6 +24,8 @@ export function markerLabel(item: ParkWithStatus): string {
 /**
  * A real <button> portalled into the MapLibre marker element, so every park is a
  * keyboard tab stop with icon + text + colour (never colour alone).
+ * beachlens.net marker: white circle, 2.5px status-edge border, status-coloured icon,
+ * small tail, ink label chip beside it once zoomed in; selected = amber ring.
  */
 export function ParkMarker({ item, selected, showLabel, onSelect }: ParkMarkerProps) {
   const { park, status } = item;
@@ -46,16 +48,29 @@ export function ParkMarker({ item, selected, showLabel, onSelect }: ParkMarkerPr
         data-park-marker={park.id}
         aria-label={markerLabel(item)}
         aria-pressed={selected}
-        style={{ "--marker-color": meta.hex } as CSSProperties}
-        className={cn(
-          "relative flex min-h-11 cursor-pointer items-center gap-1 rounded-full border-2 border-(--marker-color) bg-white px-2.5 py-1 text-sm font-extrabold text-cocoa shadow-md",
-          // small pointer tail under the pill, same colour as the border
-          "after:absolute after:left-1/2 after:top-full after:-mt-1.5 after:size-3 after:-translate-x-1/2 after:rotate-45 after:border-b-2 after:border-r-2 after:border-(--marker-color) after:bg-white",
-          selected && "ring-3 ring-sunset ring-offset-2 ring-offset-cream",
-        )}
+        style={{ "--marker-edge": meta.edgeHex, "--marker-fg": meta.hex } as CSSProperties}
+        className="relative flex min-h-11 min-w-11 cursor-pointer items-center justify-center rounded-full"
       >
-        <StatusIcon level={status.level} className="size-5 text-(--marker-color)" />
-        <span className={showLabel ? "whitespace-nowrap" : "sr-only"}>{meta.shortLabel}</span>
+        <span
+          aria-hidden="true"
+          className={cn(
+            "relative flex size-10 items-center justify-center rounded-full border-[2.5px] border-(--marker-edge) bg-white shadow-md",
+            // small pointer tail under the circle, same colour as the border
+            "after:absolute after:left-1/2 after:top-full after:-mt-2 after:size-3 after:-translate-x-1/2 after:rotate-45 after:border-b-[2.5px] after:border-r-[2.5px] after:border-(--marker-edge) after:bg-white",
+            selected && "ring-3 ring-sunset ring-offset-2 ring-offset-cream",
+          )}
+        >
+          <StatusIcon level={status.level} className="relative z-10 size-5 text-(--marker-fg)" />
+        </span>
+        <span
+          className={
+            showLabel
+              ? "absolute left-full top-1/2 ml-1 -translate-y-1/2 whitespace-nowrap rounded-full border border-mist-light bg-white/95 px-2 py-0.5 text-xs font-extrabold text-ink shadow-card"
+              : "sr-only"
+          }
+        >
+          {meta.shortLabel}
+        </span>
       </button>
     </Marker>
   );

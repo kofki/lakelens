@@ -22,7 +22,7 @@ export function RulesCard({ park }: RulesCardProps) {
   return (
     <Section id="rules" title="Rules, hours and reservations" icon={<Scale aria-hidden="true" focusable="false" />}>
       {park.reservation_required && (
-        <div className="mb-3 rounded-xl bg-peach/60 p-3 text-sm text-cocoa">
+        <div className="mb-3 rounded-xl bg-peach p-3 text-sm text-cocoa">
           <p className="font-extrabold">
             <CalendarCheck aria-hidden="true" focusable="false" className="mr-1 inline h-4 w-4 align-text-bottom" />
             Day-use reservation required
@@ -81,7 +81,7 @@ export function RulesCard({ park }: RulesCardProps) {
             href={park.official_url}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex min-h-11 items-center gap-1 text-sm font-bold text-cocoa underline underline-offset-2"
+            className="inline-flex min-h-11 items-center gap-1 text-sm font-bold text-brown underline underline-offset-2"
           >
             Official park page
             <ExternalLink aria-hidden="true" focusable="false" className="h-4 w-4" />

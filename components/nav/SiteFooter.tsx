@@ -17,18 +17,18 @@ const CREDITS: { href: string; label: string }[] = [
   { href: "https://www.floridastateparks.org/", label: "Florida State Parks" },
 ];
 
-const HEADING = "mb-4 text-[1.1rem] font-extrabold text-sunset";
+const HEADING = "mb-4 text-[1.1rem] font-extrabold text-peach";
 const LINK =
-  "inline-flex min-h-11 items-center text-[0.9rem] leading-[1.8] text-[#ceaa94] underline-offset-4 transition-colors hover:text-sunset hover:underline";
+  "inline-flex min-h-11 items-center text-[0.9rem] leading-[1.8] text-sand underline-offset-4 transition-colors hover:text-peach hover:underline";
 
 /**
  * Marketing-style footer (BeachLens family) for content pages: About, Offline, Report, List,
- * Park. Not rendered by app/layout.tsx so the map page stays full-height. Warm brown
- * background with mist text (~10:1); sand links (~5:1) against the brown.
+ * Park. Not rendered by app/layout.tsx so the map page stays full-height. Deep-forest
+ * background with sage text (10:1); moss-sand links (6.3:1); sunlight headings (10:1).
  */
 export function SiteFooter({ className }: { className?: string }) {
   return (
-    <footer className={cn("mt-10 bg-[#4a3728] px-6 py-12 text-[#e1d7ce] md:px-8", className)}>
+    <footer className={cn("mt-10 bg-brown-deep px-6 py-12 text-mist md:px-8", className)}>
       <div className="mx-auto grid max-w-[1100px] grid-cols-1 gap-10 md:grid-cols-[2fr_1fr_1fr] md:gap-12">
         <div className="space-y-4">
           <div className="flex items-center gap-2">
@@ -39,7 +39,7 @@ export function SiteFooter({ className }: { className?: string }) {
             Know before you go. Closure estimates, one-tap crowd reports, parking and accessibility for
             Florida&rsquo;s springs and state-park swim areas.
           </p>
-          <p className="text-[0.9rem] text-[#ceaa94]">Built at SASEhack 2026 by the BeachLens team.</p>
+          <p className="text-[0.9rem] text-sand">Built at SASEhack 2026 by the BeachLens team.</p>
         </div>
 
         <nav aria-labelledby="footer-explore-heading">

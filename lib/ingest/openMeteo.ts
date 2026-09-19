@@ -10,6 +10,12 @@
  * Times come back LOCAL WITHOUT an offset ("2026-09-19T00:00"); we append the offset derived
  * from utc_offset_seconds so WeatherHour.time is "ISO local with offset" like the NWS payload.
  * No API key, no User-Agent requirement. Runtime-neutral; injectable fetchImpl.
+ *
+ * MULTI-LOCATION (verified live 2026-09-19): latitude/longitude accept comma-separated lists and the
+ * response is a JSON ARRAY in request order (element 0 has no `location_id`; later ones carry 1, 2, ...),
+ * so results are matched by index. `forecast_hours=24` trims hourly to the next 24 h from the current
+ * hour (~2 KB per location instead of ~7 KB) — 20 locations answer in well under a second. Parallel
+ * bursts get HTTP 429 (seen at 7 concurrent calls), so batches run sequentially with one retry.
  */
 import type { WeatherDay, WeatherHour, WeatherPayload } from "@/lib/types";
 
@@ -103,10 +109,23 @@ function num(v: number | null | undefined): number | null {
   return typeof v === "number" && Number.isFinite(v) ? v : null;
 }
 
+/** Max locations per request. 20 keeps each response ~50 KB and well inside pg_net's 30 s budget. */
+export const OPEN_METEO_BATCH_SIZE = 20;
+
+export interface LatLng {
+  lat: number;
+  lng: number;
+}
+
 export function buildOpenMeteoUrl(lat: number, lng: number, forecastDays = 7): string {
+  return buildOpenMeteoBatchUrl([{ lat, lng }], forecastDays);
+}
+
+/** Same request as buildOpenMeteoUrl but for several locations (comma-separated lists). */
+export function buildOpenMeteoBatchUrl(points: LatLng[], forecastDays = 7, forecastHours = 24): string {
   const params = new URLSearchParams({
-    latitude: String(lat),
-    longitude: String(lng),
+    latitude: points.map((p) => String(p.lat)).join(","),
+    longitude: points.map((p) => String(p.lng)).join(","),
     current: "temperature_2m,precipitation,weather_code,wind_speed_10m,relative_humidity_2m",
     hourly: "temperature_2m,precipitation_probability,precipitation,weather_code",
     daily: "weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,precipitation_sum,uv_index_max",
@@ -115,6 +134,7 @@ export function buildOpenMeteoUrl(lat: number, lng: number, forecastDays = 7): s
     precipitation_unit: "inch",
     timezone: "America/New_York",
     forecast_days: String(forecastDays),
+    forecast_hours: String(forecastHours),
   });
   return `${OPEN_METEO_URL}?${params.toString()}`;
 }
@@ -174,20 +194,54 @@ export function normalizeOpenMeteo(json: OpenMeteoResponse, fetchedAt: string): 
   };
 }
 
+/**
+ * Multi-location response -> one WeatherPayload per requested point, in request order.
+ * A single-location request answers with a bare object; that is accepted too. Throws when the
+ * count does not match so a partial answer can never be attributed to the wrong park.
+ */
+export function normalizeOpenMeteoMulti(json: OpenMeteoResponse | OpenMeteoResponse[], expected: number, fetchedAt: string): WeatherPayload[] {
+  const list = Array.isArray(json) ? json : [json];
+  if (list.length !== expected) throw new Error(`Open-Meteo returned ${list.length} locations, expected ${expected}`);
+  return list.map((item) => normalizeOpenMeteo(item, fetchedAt));
+}
+
 export interface OpenMeteoOptions {
   fetchImpl?: typeof fetch;
   timeoutMs?: number;
   fetchedAt?: string;
+  /** retries after HTTP 429 / 5xx (default 1, 1.5 s apart) */
+  retries?: number;
+  /** injectable sleep (tests) */
+  sleep?: (ms: number) => Promise<void>;
+}
+
+/** Up to OPEN_METEO_BATCH_SIZE points in ONE request; payloads come back in the same order. */
+export async function fetchOpenMeteoBatch(points: LatLng[], opts: OpenMeteoOptions = {}): Promise<WeatherPayload[]> {
+  if (points.length === 0) return [];
+  if (points.length > OPEN_METEO_BATCH_SIZE) throw new Error(`Open-Meteo batch of ${points.length} exceeds ${OPEN_METEO_BATCH_SIZE}`);
+  const fetchImpl = opts.fetchImpl ?? fetch;
+  const sleep = opts.sleep ?? ((ms: number) => new Promise<void>((r) => setTimeout(r, ms)));
+  const retries = opts.retries ?? 1;
+  const url = buildOpenMeteoBatchUrl(points);
+  let lastErr: unknown = null;
+  for (let attempt = 0; attempt <= retries; attempt++) {
+    try {
+      const res = await fetchImpl(url, { headers: { Accept: "application/json" }, cache: "no-store", signal: AbortSignal.timeout(opts.timeoutMs ?? 12000) });
+      if (res.status === 429 || res.status >= 500) throw new Error(`Open-Meteo HTTP ${res.status}`);
+      if (!res.ok) throw new Error(`Open-Meteo HTTP ${res.status}`);
+      const json = (await res.json()) as OpenMeteoResponse | OpenMeteoResponse[];
+      return normalizeOpenMeteoMulti(json, points.length, opts.fetchedAt ?? new Date().toISOString());
+    } catch (err) {
+      lastErr = err;
+      const retryable = err instanceof Error && /HTTP (429|5\d\d)|timeout|aborted/i.test(err.message);
+      if (!retryable || attempt >= retries) break;
+      await sleep(1500);
+    }
+  }
+  throw lastErr instanceof Error ? lastErr : new Error(String(lastErr));
 }
 
 export async function fetchOpenMeteo(lat: number, lng: number, opts: OpenMeteoOptions = {}): Promise<WeatherPayload> {
-  const fetchImpl = opts.fetchImpl ?? fetch;
-  const res = await fetchImpl(buildOpenMeteoUrl(lat, lng), {
-    headers: { Accept: "application/json" },
-    cache: "no-store",
-    signal: AbortSignal.timeout(opts.timeoutMs ?? 12000),
-  });
-  if (!res.ok) throw new Error(`Open-Meteo HTTP ${res.status}`);
-  const json = (await res.json()) as OpenMeteoResponse;
-  return normalizeOpenMeteo(json, opts.fetchedAt ?? new Date().toISOString());
+  const [payload] = await fetchOpenMeteoBatch([{ lat, lng }], { ...opts, retries: opts.retries ?? 0 });
+  return payload;
 }

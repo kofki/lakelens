@@ -32,7 +32,7 @@ export function SearchField({ id, value, onChange, className, placeholder = "Sea
         placeholder={placeholder}
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="min-h-11 w-full rounded-full border border-mist bg-white pl-9 pr-3 text-base text-cocoa placeholder:text-mocha"
+        className="min-h-11 w-full rounded-full border border-mist bg-white pl-9 pr-3 text-base text-cocoa placeholder:text-mocha hover:border-sand"
       />
     </div>
   );

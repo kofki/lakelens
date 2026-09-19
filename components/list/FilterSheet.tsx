@@ -38,19 +38,19 @@ function ToggleRow({
   hint: string;
 }) {
   return (
-    <label htmlFor={id} className="flex min-h-11 cursor-pointer items-center gap-3 rounded-xl bg-white px-3 py-2 shadow-card">
+    <label htmlFor={id} className="flex min-h-11 cursor-pointer items-center gap-3 rounded-tile border border-mist-light bg-white px-3 py-2 shadow-card">
       <input
         id={id}
         type="checkbox"
         checked={checked}
         onChange={(e) => onChange(e.target.checked)}
-        className="size-6 shrink-0 accent-sunset"
+        className="size-6 shrink-0 accent-brown"
       />
-      <span aria-hidden="true" className="inline-flex shrink-0 text-sunset [&>svg]:size-5">
+      <span aria-hidden="true" className="inline-flex shrink-0 text-taupe [&>svg]:size-5">
         {icon}
       </span>
       <span className="min-w-0">
-        <span className="block font-bold text-cocoa">{label}</span>
+        <span className="block font-bold text-ink">{label}</span>
         <span className="block text-xs text-mocha">{hint}</span>
       </span>
     </label>
@@ -75,7 +75,7 @@ export function FilterSheet({
   return (
     <ModalSheet open={open} onOpenChange={onOpenChange} title="Filters and sort" description="Narrow the list of parks.">
       <fieldset className="flex flex-col gap-2">
-        <legend className="mb-1 text-sm font-bold text-cocoa">Show only</legend>
+        <legend className="mb-1 text-sm font-bold text-brown">Show only</legend>
         <ToggleRow
           id={`${base}-accessible`}
           checked={filters.accessibleEntry}

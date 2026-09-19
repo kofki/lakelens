@@ -58,18 +58,18 @@ export function ListScreen({ parks, initialFilters }: ListScreenProps) {
     <div className="flex w-full flex-1 flex-col">
       <section
         aria-labelledby="discover-heading"
-        className="relative overflow-hidden bg-cocoa bg-cover bg-center px-6 pb-6 pt-[calc(env(safe-area-inset-top)+24px)] text-center md:pb-10 md:pt-10"
+        className="relative overflow-hidden bg-forest-deep bg-cover bg-center px-6 pb-6 pt-[calc(env(safe-area-inset-top)+24px)] text-center md:pb-10 md:pt-10"
         style={{ backgroundImage: `url(${HERO_PHOTO})` }}
       >
-        <div aria-hidden="true" className="absolute inset-0 bg-black/45" />
+        <div aria-hidden="true" className="absolute inset-0 bg-forest-deep/55" />
         <div className="relative z-10">
           <h1
             id="discover-heading"
             className="text-[2rem] font-extrabold leading-tight text-white drop-shadow-lg md:text-[3rem]"
           >
-            Discover <span className="text-sunset">Florida&rsquo;s</span> Springs
+            Discover <span className="text-peach">Florida&rsquo;s</span> Springs
           </h1>
-          <p className="mx-auto mt-3 max-w-[600px] text-[1.05rem] text-white/85">
+          <p className="mx-auto mt-3 max-w-[600px] text-[1.05rem] text-white/90">
             Closure estimates, live conditions, parking and accessibility for every state park with swimming.
           </p>
         </div>
@@ -83,11 +83,11 @@ export function ListScreen({ parks, initialFilters }: ListScreenProps) {
             variant="secondary"
             onClick={() => setFiltersOpen(true)}
             aria-label={`Filters and sort${filterCount ? `, ${filterCount} active` : ""}`}
-            className="rounded-full px-3"
+            className="group rounded-full px-3"
           >
             <SlidersHorizontal aria-hidden="true" focusable="false" className="h-5 w-5" />
             {filterCount > 0 && (
-              <span className="ml-1 rounded-full bg-sunset px-1.5 text-xs font-extrabold text-cocoa" aria-hidden="true">
+              <span className="ml-1 rounded-full bg-sunset px-1.5 text-xs font-extrabold text-cocoa group-hover:bg-white group-hover:text-brown" aria-hidden="true">
                 {filterCount}
               </span>
             )}

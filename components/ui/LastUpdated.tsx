@@ -20,7 +20,7 @@ export interface LastUpdatedProps {
  */
 export function LastUpdated({ at, source, stale = false, prefix = "Updated", className }: LastUpdatedProps) {
   return (
-    <p className={cn("flex flex-wrap items-center gap-x-1.5 gap-y-0.5 text-xs text-cocoa/75", className)}>
+    <p className={cn("flex flex-wrap items-center gap-x-1.5 gap-y-0.5 text-xs text-mocha", className)}>
       {stale ? (
         <TriangleAlert aria-hidden="true" focusable="false" className="size-3.5 shrink-0 text-status-likely" />
       ) : (

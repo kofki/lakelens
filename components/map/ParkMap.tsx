@@ -218,14 +218,14 @@ function ParkMapInner({
       {tileError && (
         <div
           role="status"
-          className="absolute inset-x-3 z-10 flex items-start gap-2 rounded-xl bg-white/95 p-3 text-sm text-cocoa shadow-card"
+          className="absolute inset-x-3 z-10 flex items-start gap-2 rounded-tile border border-mist-light bg-white/95 p-3 text-sm text-cocoa shadow-card"
           style={{ top: topInsetPx + 8 }}
         >
           <p className="flex-1">Some map tiles didn&apos;t load. Park markers and the list below still work.</p>
           <button
             type="button"
             onClick={() => setTileError(false)}
-            className="min-h-11 shrink-0 rounded-full px-3 font-bold underline"
+            className="min-h-11 shrink-0 rounded-full px-3 font-bold text-brown underline hover:bg-mist-light"
           >
             Dismiss
           </button>

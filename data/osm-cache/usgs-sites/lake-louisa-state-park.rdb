@@ -1,0 +1,46 @@
+#
+#
+# US Geological Survey
+# retrieved: 2026-09-19 17:36:31 -04:00	(sdas01)
+#
+# The Site File stores location and general information about groundwater,
+# surface water, and meteorological sites
+# for sites in USA.
+#
+# File-format description:  http://help.waterdata.usgs.gov/faq/about-tab-delimited-output
+# Automated-retrieval info: http://waterservices.usgs.gov/rest/Site-Service.html
+#
+# Contact:   gs-w_support_nwisweb@usgs.gov
+# Warning: A site search criterion has been used for which the data may be unavailable.
+#
+# The following selected fields are included in this output:
+#
+#  agency_cd       -- Agency
+#  site_no         -- Site identification number
+#  station_nm      -- Site name
+#  site_tp_cd      -- Site type
+#  dec_lat_va      -- Decimal latitude
+#  dec_long_va     -- Decimal longitude
+#  coord_acy_cd    -- Latitude-longitude accuracy
+#  dec_coord_datum_cd -- Decimal Latitude-longitude datum
+#  alt_va          -- Altitude of Gage/land surface
+#  alt_acy_va      -- Altitude accuracy
+#  alt_datum_cd    -- Altitude datum
+#  huc_cd          -- Hydrologic unit code
+#
+agency_cd	site_no	station_nm	site_tp_cd	dec_lat_va	dec_long_va	coord_acy_cd	dec_coord_datum_cd	alt_va	alt_acy_va	alt_datum_cd	huc_cd
+5s	15s	50s	7s	16s	16s	1s	10s	8s	3s	10s	16s
+USGS	02236350	GREEN SWAMP RUN NEAR EVA, FL	ST	28.3111212	-81.6853534	S	NAD83	 116.16	2.5	NGVD29	03080102
+USGS	02236500	BIG CREEK NEAR CLERMONT, FL	ST	28.44778229	-81.74007599	S	NAD83	 98.97	2.5	NGVD29	03080102
+USGS	02236605	LITTLE CREEK AT GREEN SWAMP ROAD NEAR CLERMONT, FL	ST	28.4486152	-81.7814655	S	NAD83				03080102
+USGS	02236900	PALATLAKAHA R AT CHERRY LK OUT NEAR GROVELAND, FL	ST	28.59277586	-81.8222998	S	NAD83				03080102
+USGS	02236901	PALATLAKAHA R BL SPWY AT CH LK OUT NR GROVELAND,FL	ST	28.59249809	-81.8225775	S	NAD83				03080102
+USGS	02266025	REEDY CREEK AT S-46 NEAR VINELAND, FL	ST	28.4052845	-81.61146309	S	NAD83				03090101
+USGS	02266026	10B REEDY CREEK BELOW S-46 NR VINELAND FLA	ST	28.40417345	-81.61146309	S	NAD83				03090101
+USGS	02266200	WHITTENHORSE CREEK NEAR VINELAND, FL	ST	28.38500749	-81.6164632	S	NAD83	 7.23	2.5	NGVD29	03090101
+USGS	02266205	WHITTENHORSE CREEK AT S-411, NEAR VINELAND, FL	ST	28.39306276	-81.6109075	S	NAD83				03090101
+USGS	02266206	WHITTENHORSE BELOW S-411 NR VINELAND,FL	ST	28.39306277	-81.6106298	S	NAD83				03090101
+USGS	02266291	LATERAL 405 AT S-405A, NEAR DOCTOR PHILLIPS, FL	ST	28.427028	-81.605278	1	NAD83	96.0	0.1	NGVD29	030901010503
+USGS	02266292	LATERAL 405 BL S405A NR DR PHILLIPS, FL	ST	28.426889	-81.605194	1	NAD83	101.0	0.1	NGVD29	030901010503
+USGS	02266295	LATERAL 410 AT S-410 NEAR VINELAND, FL	ST	28.366444	-81.5985	1	NAD83	93.0	0.1	NGVD29	030901010503
+USGS	02266296	LATERAL 410 BL S-410 NR VINELAND, FL	ST	28.366417	-81.598417	1	NAD83	89.0	0.1	NGVD29	030901010503

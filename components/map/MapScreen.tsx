@@ -98,7 +98,7 @@ export function MapScreen({ parks, initialFilters }: MapScreenProps) {
     >
       <a
         href={isDesktop ? "#park-list-desktop" : "#park-list"}
-        className="sr-only z-50 rounded-full bg-sunset px-4 py-2 font-bold text-cocoa focus:not-sr-only focus:fixed focus:left-3 focus:top-3"
+        className="sr-only z-50 rounded-full bg-brown px-4 py-2 font-bold text-white focus:not-sr-only focus:fixed focus:left-3 focus:top-3"
       >
         Skip to park list
       </a>
@@ -126,11 +126,11 @@ export function MapScreen({ parks, initialFilters }: MapScreenProps) {
             variant="secondary"
             onClick={() => setFiltersOpen(true)}
             aria-label={`Filters and sort${filterCount ? `, ${filterCount} active` : ""}`}
-            className="rounded-full px-3"
+            className="group rounded-full px-3"
           >
             <SlidersHorizontal aria-hidden="true" focusable="false" className="h-5 w-5" />
             {filterCount > 0 && (
-              <span className="ml-1 rounded-full bg-sunset px-1.5 text-xs font-extrabold text-cocoa" aria-hidden="true">
+              <span className="ml-1 rounded-full bg-sunset px-1.5 text-xs font-extrabold text-cocoa group-hover:bg-white group-hover:text-brown" aria-hidden="true">
                 {filterCount}
               </span>
             )}
@@ -144,7 +144,7 @@ export function MapScreen({ parks, initialFilters }: MapScreenProps) {
         className="hidden w-[420px] shrink-0 flex-col border-r border-mist bg-white lg:flex xl:w-[480px]"
       >
         <div className="shrink-0 border-b border-mist px-4 pb-3 pt-4">
-          <h1 className="text-xl font-extrabold text-cocoa">Florida springs &amp; swim areas</h1>
+          <h1 className="text-xl font-extrabold text-brown">Florida springs &amp; swim areas</h1>
           <p className="mt-0.5 text-sm text-mocha">Closure estimates, live water and weather, and visitor reports.</p>
           <SearchField
             id="park-search-desktop"

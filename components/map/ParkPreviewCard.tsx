@@ -90,13 +90,13 @@ export function ParkPreviewCard({ item, onClose, onHeightChange, style, classNam
           <div className="min-w-0 flex-1">
             <div className="flex items-start justify-between gap-2">
               <div className="min-w-0">
-                <h2 id={headingId} className="text-lg font-extrabold leading-tight text-cocoa">
+                <h2 id={headingId} className="text-lg font-extrabold leading-tight text-ink">
                   {park.name}
                 </h2>
                 <p className="mt-0.5 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-mocha">
                   <span>{describeParkKind(park)}</span>
                   {distance && (
-                    <span className="inline-flex items-center gap-1 rounded-full bg-aqua px-2 py-0.5 font-bold text-cocoa">
+                    <span className="inline-flex items-center gap-1 rounded-full bg-aqua px-2 py-0.5 font-bold text-cyan-deep">
                       <MapPin aria-hidden="true" focusable="false" className="size-3" />
                       {distance} away
                     </span>
@@ -107,7 +107,7 @@ export function ParkPreviewCard({ item, onClose, onHeightChange, style, classNam
                 type="button"
                 onClick={onClose}
                 aria-label="Close preview"
-                className="-mr-1 -mt-1 flex size-11 shrink-0 items-center justify-center rounded-full text-cocoa hover:bg-mist/60"
+                className="-mr-1 -mt-1 flex size-11 shrink-0 items-center justify-center rounded-full text-brown hover:bg-mist-light"
               >
                 <X aria-hidden="true" focusable="false" className="size-5" />
               </button>

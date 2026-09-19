@@ -1,0 +1,2855 @@
+{
+ "objectIdFieldName": "objectid",
+ "uniqueIdField": {
+  "name": "objectid",
+  "isSystemMaintained": true
+ },
+ "globalIdFieldName": "globalid",
+ "geometryType": "esriGeometryPoint",
+ "spatialReference": {
+  "wkid": 4326,
+  "latestWkid": 4326
+ },
+ "fields": [
+  {
+   "name": "objectid",
+   "type": "esriFieldTypeOID",
+   "alias": "ObjectID",
+   "sqlType": "sqlTypeOther",
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "globalid",
+   "type": "esriFieldTypeGlobalID",
+   "alias": "GlobalID",
+   "sqlType": "sqlTypeGUID",
+   "length": 38,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "SampleDateTime",
+   "type": "esriFieldTypeDate",
+   "alias": "Site Visit Date/Time",
+   "sqlType": "sqlTypeOther",
+   "length": 255,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "County",
+   "type": "esriFieldTypeString",
+   "alias": "County",
+   "sqlType": "sqlTypeOther",
+   "length": 255,
+   "domain": {
+    "type": "codedValue",
+    "name": "cvd_County",
+    "codedValues": [
+     {
+      "name": "Alachua",
+      "code": "Alachua"
+     },
+     {
+      "name": "Baker",
+      "code": "Baker"
+     },
+     {
+      "name": "Bay",
+      "code": "Bay"
+     },
+     {
+      "name": "Bradford",
+      "code": "Bradford"
+     },
+     {
+      "name": "Brevard",
+      "code": "Brevard"
+     },
+     {
+      "name": "Broward",
+      "code": "Broward"
+     },
+     {
+      "name": "Calhoun",
+      "code": "Calhoun"
+     },
+     {
+      "name": "Charlotte",
+      "code": "Charlotte"
+     },
+     {
+      "name": "Citrus",
+      "code": "Citrus"
+     },
+     {
+      "name": "Clay",
+      "code": "Clay"
+     },
+     {
+      "name": "Collier",
+      "code": "Collier"
+     },
+     {
+      "name": "Columbia",
+      "code": "Columbia"
+     },
+     {
+      "name": "DeSoto",
+      "code": "DeSoto"
+     },
+     {
+      "name": "Dixie",
+      "code": "Dixie"
+     },
+     {
+      "name": "Duval",
+      "code": "Duval"
+     },
+     {
+      "name": "Escambia",
+      "code": "Escambia"
+     },
+     {
+      "name": "Flagler",
+      "code": "Flagler"
+     },
+     {
+      "name": "Franklin",
+      "code": "Franklin"
+     },
+     {
+      "name": "Gadsden",
+      "code": "Gadsden"
+     },
+     {
+      "name": "Gilchrist",
+      "code": "Gilchrist"
+     },
+     {
+      "name": "Glades",
+      "code": "Glades"
+     },
+     {
+      "name": "Gulf",
+      "code": "Gulf"
+     },
+     {
+      "name": "Hamilton",
+      "code": "Hamilton"
+     },
+     {
+      "name": "Hardee",
+      "code": "Hardee"
+     },
+     {
+      "name": "Hendry",
+      "code": "Hendry"
+     },
+     {
+      "name": "Hernando",
+      "code": "Hernando"
+     },
+     {
+      "name": "Highlands",
+      "code": "Highlands"
+     },
+     {
+      "name": "Hillsborough",
+      "code": "Hillsborough"
+     },
+     {
+      "name": "Holmes",
+      "code": "Holmes"
+     },
+     {
+      "name": "Indian River",
+      "code": "IndianRiver"
+     },
+     {
+      "name": "Jackson",
+      "code": "Jackson"
+     },
+     {
+      "name": "Jefferson",
+      "code": "Jefferson"
+     },
+     {
+      "name": "Lafayette",
+      "code": "Lafayette"
+     },
+     {
+      "name": "Lake",
+      "code": "Lake"
+     },
+     {
+      "name": "Lee",
+      "code": "Lee"
+     },
+     {
+      "name": "Leon",
+      "code": "Leon"
+     },
+     {
+      "name": "Levy",
+      "code": "Levy"
+     },
+     {
+      "name": "Liberty",
+      "code": "Liberty"
+     },
+     {
+      "name": "Madison",
+      "code": "Madison"
+     },
+     {
+      "name": "Manatee",
+      "code": "Manatee"
+     },
+     {
+      "name": "Marion",
+      "code": "Marion"
+     },
+     {
+      "name": "Martin",
+      "code": "Martin"
+     },
+     {
+      "name": "Miami-Dade",
+      "code": "MiamiDade"
+     },
+     {
+      "name": "Monroe",
+      "code": "Monroe"
+     },
+     {
+      "name": "Nassau",
+      "code": "Nassau"
+     },
+     {
+      "name": "Okaloosa",
+      "code": "Okaloosa"
+     },
+     {
+      "name": "Okeechobee",
+      "code": "Okeechobee"
+     },
+     {
+      "name": "Orange",
+      "code": "Orange"
+     },
+     {
+      "name": "Osceola",
+      "code": "Osceola"
+     },
+     {
+      "name": "Palm Beach",
+      "code": "PalmBeach"
+     },
+     {
+      "name": "Pasco",
+      "code": "Pasco"
+     },
+     {
+      "name": "Pinellas",
+      "code": "Pinellas"
+     },
+     {
+      "name": "Polk",
+      "code": "Polk"
+     },
+     {
+      "name": "Putnam",
+      "code": "Putnam"
+     },
+     {
+      "name": "Santa Rosa",
+      "code": "SantaRosa"
+     },
+     {
+      "name": "Sarasota",
+      "code": "Sarasota"
+     },
+     {
+      "name": "Seminole",
+      "code": "Seminole"
+     },
+     {
+      "name": "St. Johns",
+      "code": "StJohns"
+     },
+     {
+      "name": "St. Lucie",
+      "code": "StLucie"
+     },
+     {
+      "name": "Sumter",
+      "code": "Sumter"
+     },
+     {
+      "name": "Suwannee",
+      "code": "Suwannee"
+     },
+     {
+      "name": "Taylor",
+      "code": "Taylor"
+     },
+     {
+      "name": "Union",
+      "code": "Union"
+     },
+     {
+      "name": "Volusia",
+      "code": "Volusia"
+     },
+     {
+      "name": "Wakulla",
+      "code": "Wakulla"
+     },
+     {
+      "name": "Walton",
+      "code": "Walton"
+     },
+     {
+      "name": "Washington",
+      "code": "Washington"
+     }
+    ]
+   },
+   "defaultValue": null
+  },
+  {
+   "name": "esrignss_latitude",
+   "type": "esriFieldTypeDouble",
+   "alias": "Latitude",
+   "sqlType": "sqlTypeOther",
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "esrignss_longitude",
+   "type": "esriFieldTypeDouble",
+   "alias": "Longitude",
+   "sqlType": "sqlTypeOther",
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "BloomObserved",
+   "type": "esriFieldTypeString",
+   "alias": "Algal Bloom Observed?",
+   "sqlType": "sqlTypeOther",
+   "length": 255,
+   "domain": {
+    "type": "codedValue",
+    "name": "cvd_BloomObserved",
+    "codedValues": [
+     {
+      "name": "Yes",
+      "code": "Yes"
+     },
+     {
+      "name": "No",
+      "code": "No"
+     }
+    ]
+   },
+   "defaultValue": null
+  },
+  {
+   "name": "AlgalIDResult",
+   "type": "esriFieldTypeString",
+   "alias": "Algal ID",
+   "sqlType": "sqlTypeOther",
+   "length": 1023,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "ToxinPresent",
+   "type": "esriFieldTypeString",
+   "alias": "Toxin Present",
+   "sqlType": "sqlTypeOther",
+   "length": 255,
+   "domain": {
+    "type": "codedValue",
+    "name": "cvd_ToxinPresent",
+    "codedValues": [
+     {
+      "name": "Yes",
+      "code": "Yes"
+     },
+     {
+      "name": "No",
+      "code": "No"
+     },
+     {
+      "name": "Pending",
+      "code": "Pending"
+     }
+    ]
+   },
+   "defaultValue": null
+  },
+  {
+   "name": "Microcystin",
+   "type": "esriFieldTypeString",
+   "alias": "Total Microcystin Toxin (micrograms/L)",
+   "sqlType": "sqlTypeOther",
+   "length": 1024,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "OtherToxin",
+   "type": "esriFieldTypeString",
+   "alias": "Other Toxin (micrograms/L)",
+   "sqlType": "sqlTypeOther",
+   "length": 1024,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "CyanobacteriaDominant",
+   "type": "esriFieldTypeString",
+   "alias": "Cyanobacteria Dominant",
+   "sqlType": "sqlTypeOther",
+   "length": 10,
+   "domain": {
+    "type": "codedValue",
+    "name": "AlgalBloom_Draft_CyanobacteriaDominant_6612fdfb-45cb-41c8-887e-00176042461b",
+    "codedValues": [
+     {
+      "name": "Yes",
+      "code": "Yes"
+     },
+     {
+      "name": "No",
+      "code": "No"
+     },
+     {
+      "name": "Pending",
+      "code": "Pending"
+     }
+    ]
+   },
+   "defaultValue": null
+  },
+  {
+   "name": "locationString",
+   "type": "esriFieldTypeString",
+   "alias": "Location",
+   "sqlType": "sqlTypeOther",
+   "length": 255,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "MonitoringGroupPublicFacing",
+   "type": "esriFieldTypeString",
+   "alias": "Site Visited By",
+   "sqlType": "sqlTypeOther",
+   "length": 255,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "SampleDepthDesc",
+   "type": "esriFieldTypeString",
+   "alias": "Sample Depth Description",
+   "sqlType": "sqlTypeOther",
+   "length": 255,
+   "domain": {
+    "type": "codedValue",
+    "name": "cvd_SampleDepthDesc",
+    "codedValues": [
+     {
+      "name": "Surface grab",
+      "code": "SurfaceGrab"
+     },
+     {
+      "name": "Surface-scum grab",
+      "code": "SurfaceScumGrab"
+     },
+     {
+      "name": "Scum core",
+      "code": "ScumCore"
+     },
+     {
+      "name": "Water column at depth",
+      "code": "WaterColumnAtDepth"
+     },
+     {
+      "name": "N/A",
+      "code": "NA"
+     }
+    ]
+   },
+   "defaultValue": null
+  },
+  {
+   "name": "EditDate",
+   "type": "esriFieldTypeDate",
+   "alias": "EditDate",
+   "sqlType": "sqlTypeOther",
+   "length": 8,
+   "domain": null,
+   "defaultValue": null
+  }
+ ],
+ "features": [
+  {
+   "attributes": {
+    "objectid": 20836,
+    "globalid": "0d087f81-3e80-4ea2-8170-ca23622c00cc",
+    "SampleDateTime": 1788189900000,
+    "County": "Clay",
+    "esrignss_latitude": 30.125590894325683,
+    "esrignss_longitude": -81.7172897373455,
+    "BloomObserved": "Yes",
+    "AlgalIDResult": "mixed algae; no dominant species in sample",
+    "ToxinPresent": "Yes",
+    "Microcystin": "0.33 I (I qualifier indicates that the reported value is between the laboratory method detection limit and the laboratory practical quantitation limit.)",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "No",
+    "locationString": "Doctors Lake - 1915 Salt Myrtle Lane",
+    "MonitoringGroupPublicFacing": "NEROC",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789799889223
+   },
+   "geometry": {
+    "x": -81.7172897373455,
+    "y": 30.125590894325683
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20837,
+    "globalid": "fea31a9b-5c36-4e0f-a095-116906fae13a",
+    "SampleDateTime": 1788191100000,
+    "County": "Clay",
+    "esrignss_latitude": 30.136294999132982,
+    "esrignss_longitude": -81.72066753832988,
+    "BloomObserved": "Yes",
+    "AlgalIDResult": "mixed algae; no dominant species in sample",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "No",
+    "locationString": "Doctors Lake - Pace Island dock",
+    "MonitoringGroupPublicFacing": "NEROC",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789799890483
+   },
+   "geometry": {
+    "x": -81.72066753832988,
+    "y": 30.136294999132982
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20838,
+    "globalid": "761996bf-48ce-4b21-9532-e5c64c9c2398",
+    "SampleDateTime": 1788182700000,
+    "County": "Brevard",
+    "esrignss_latitude": 28.142439,
+    "esrignss_longitude": -80.746111,
+    "BloomObserved": "No",
+    "AlgalIDResult": "mixed algae; no dominant species in sample",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "No",
+    "locationString": "Lake Washington - Center (LWC)",
+    "MonitoringGroupPublicFacing": "SJRWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789799890727
+   },
+   "geometry": {
+    "x": -80.746111,
+    "y": 28.142439
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20839,
+    "globalid": "5a2e0441-3a25-42a5-b119-a1eba1cc94da",
+    "SampleDateTime": 1788180840000,
+    "County": "Martin",
+    "esrignss_latitude": 26.98489167,
+    "esrignss_longitude": -80.62142778,
+    "BloomObserved": "No",
+    "AlgalIDResult": "mixed algae; no dominant species in sample",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "No",
+    "locationString": "Lake Okeechobee - S308C (lakeside)",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789496387766
+   },
+   "geometry": {
+    "x": -80.62142778,
+    "y": 26.98489167
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20840,
+    "globalid": "deecae57-05a7-4480-a695-7714708a76b8",
+    "SampleDateTime": 1788181500000,
+    "County": "Martin",
+    "esrignss_latitude": 26.985302,
+    "esrignss_longitude": -80.621292,
+    "BloomObserved": "No",
+    "AlgalIDResult": "mixed algae; no dominant species in sample",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "No",
+    "locationString": "C44 canal - S308C",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789507961836
+   },
+   "geometry": {
+    "x": -80.621292,
+    "y": 26.985302
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20841,
+    "globalid": "235c60eb-9946-4e7d-b606-d60ec7e5790e",
+    "SampleDateTime": 1788179580000,
+    "County": "Glades",
+    "esrignss_latitude": 26.84078333,
+    "esrignss_longitude": -81.08352222,
+    "BloomObserved": "No",
+    "AlgalIDResult": "Dominant taxon: Dinophyceae",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "No",
+    "locationString": "C43 canal - S77 (upstream)",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789496422934
+   },
+   "geometry": {
+    "x": -81.08352222,
+    "y": 26.84078333
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20842,
+    "globalid": "cfb3181d-18b2-4560-9720-0e5f103c3854",
+    "SampleDateTime": 1788265200000,
+    "County": "Charlotte",
+    "esrignss_latitude": 26.98960839103556,
+    "esrignss_longitude": -82.25022706013817,
+    "BloomObserved": "No",
+    "AlgalIDResult": "mixed algae; no dominant species in sample",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "No",
+    "locationString": "Mayaka River - Quail Waterway",
+    "MonitoringGroupPublicFacing": "SOROC",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789799891283
+   },
+   "geometry": {
+    "x": -82.25022706013817,
+    "y": 26.98960839103556
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20843,
+    "globalid": "33a80979-b3c6-4196-896c-19a94223ebe8",
+    "SampleDateTime": 1788271200000,
+    "County": "Lee",
+    "esrignss_latitude": 26.589571455273923,
+    "esrignss_longitude": -81.93293448017377,
+    "BloomObserved": "No",
+    "AlgalIDResult": "mixed algae; no dominant species in sample",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "No",
+    "locationString": "Caloosahatchee River - Del Mar Canal South",
+    "MonitoringGroupPublicFacing": "SOROC",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789799891518
+   },
+   "geometry": {
+    "x": -81.93293448017377,
+    "y": 26.589571455273923
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20844,
+    "globalid": "64ee6529-8ca0-49f2-ba67-ba12e4570327",
+    "SampleDateTime": 1788272400000,
+    "County": "StJohns",
+    "esrignss_latitude": 29.914097,
+    "esrignss_longitude": -81.59445,
+    "BloomObserved": "Yes",
+    "AlgalIDResult": "Dominant taxon: Microcystis aeruginosa",
+    "ToxinPresent": "Yes",
+    "Microcystin": "0.91 I (I qualifier indicates that the reported value is between the laboratory method detection limit and the laboratory practical quantitation limit.)",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "St. Johns River - Fort Picolata",
+    "MonitoringGroupPublicFacing": "NEROC",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789799891761
+   },
+   "geometry": {
+    "x": -81.59445,
+    "y": 29.914097
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20845,
+    "globalid": "102bf580-69b5-4b46-aabd-943a50647c9c",
+    "SampleDateTime": 1788269400000,
+    "County": "Leon",
+    "esrignss_latitude": 30.60849848459245,
+    "esrignss_longitude": -84.22949724795639,
+    "BloomObserved": "Yes",
+    "AlgalIDResult": "Co-dominant taxa were: Raphidiopsis gangetica and Botryococcus braunii",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "Lake Monkey Business - Dock at parking lot",
+    "MonitoringGroupPublicFacing": "TLHROC",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789799892001
+   },
+   "geometry": {
+    "x": -84.22949724795639,
+    "y": 30.60849848459245
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20846,
+    "globalid": "05235683-aa1a-4e8a-8ed5-b6e629521307",
+    "SampleDateTime": 1788272100000,
+    "County": "Leon",
+    "esrignss_latitude": 30.538685582836322,
+    "esrignss_longitude": -84.204759913284,
+    "BloomObserved": "Yes",
+    "AlgalIDResult": "algal mat - Dominant taxon: Leptolyngbya; water - Co-dominant taxa were: Raphidiopsis gangetica and Botryococcus braunii",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "Lake Sheelin - Pimlico Park",
+    "MonitoringGroupPublicFacing": "TLHROC",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789799892257
+   },
+   "geometry": {
+    "x": -84.204759913284,
+    "y": 30.538685582836322
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20847,
+    "globalid": "8de595a4-ec6c-4a92-a814-332e6e436ffe",
+    "SampleDateTime": 1788273300000,
+    "County": "StJohns",
+    "esrignss_latitude": 29.933897,
+    "esrignss_longitude": -81.576532,
+    "BloomObserved": "Yes",
+    "AlgalIDResult": "Dominant taxon: Microcystis aeruginosa",
+    "ToxinPresent": "Yes",
+    "Microcystin": "0.68 I (I qualifier indicates that the reported value is between the laboratory method detection limit and the laboratory practical quantitation limit.)",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "St. Johns River - Colee Cove",
+    "MonitoringGroupPublicFacing": "NEROC",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789799892507
+   },
+   "geometry": {
+    "x": -81.576532,
+    "y": 29.933897
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20848,
+    "globalid": "3efdab4c-4d72-4765-99b0-df63dc5fc7da",
+    "SampleDateTime": 1788270720000,
+    "County": "Volusia",
+    "esrignss_latitude": 28.83496,
+    "esrignss_longitude": -81.27091,
+    "BloomObserved": "No",
+    "AlgalIDResult": "Dominant taxon: Microcystis aeruginosa",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "Lake Monroe - Center (LMAC)",
+    "MonitoringGroupPublicFacing": "SJRWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789799892759
+   },
+   "geometry": {
+    "x": -81.27091,
+    "y": 28.83496
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20849,
+    "globalid": "7c43d583-f086-4c6e-87ee-b3e239f0170b",
+    "SampleDateTime": 1788264060000,
+    "County": "Okeechobee",
+    "esrignss_latitude": 27.14130083,
+    "esrignss_longitude": -80.84600028,
+    "BloomObserved": "No",
+    "AlgalIDResult": "Dominant taxon: Microcystis aeruginosa",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "Lake Okeechobee - KISSR0.0",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789496439001
+   },
+   "geometry": {
+    "x": -80.84600028,
+    "y": 27.14130083
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20850,
+    "globalid": "0ea59ce5-672a-4f97-9e38-91f160b3b769",
+    "SampleDateTime": 1788265860000,
+    "County": "Okeechobee",
+    "esrignss_latitude": 27.18975583,
+    "esrignss_longitude": -80.82803972,
+    "BloomObserved": "No",
+    "AlgalIDResult": "Dominant taxon: Planktolyngbya limnetica",
+    "ToxinPresent": "Yes",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: 0.13 I (I qualifier indicates that the reported value is between the laboratory method detection limit and the laboratory practical quantitation limit.); Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "Lake Okeechobee - LZ2",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789496440241
+   },
+   "geometry": {
+    "x": -80.82803972,
+    "y": 27.18975583
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20851,
+    "globalid": "5a042bb7-507d-437a-bc9a-0e8c7c369e61",
+    "SampleDateTime": 1788267120000,
+    "County": "Okeechobee",
+    "esrignss_latitude": 27.18687028,
+    "esrignss_longitude": -80.76699028,
+    "BloomObserved": "No",
+    "AlgalIDResult": "Dominant taxon: Botryococcus braunii",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "No",
+    "locationString": "Lake Okeechobee - NES191",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789496441505
+   },
+   "geometry": {
+    "x": -80.76699028,
+    "y": 27.18687028
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20852,
+    "globalid": "d2af883c-7a25-4e43-94e3-989c5907a4c9",
+    "SampleDateTime": 1788268140000,
+    "County": "Okeechobee",
+    "esrignss_latitude": 27.13889167,
+    "esrignss_longitude": -80.79339722,
+    "BloomObserved": "No",
+    "AlgalIDResult": "Co-dominant taxa were: Raphidiopsis raciborskii and Planktolyngbya limnetica",
+    "ToxinPresent": "Yes",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: 0.30 I (I qualifier indicates that the reported value is between the laboratory method detection limit and the laboratory practical quantitation limit.); Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "Lake Okeechobee - L001",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789496442468
+   },
+   "geometry": {
+    "x": -80.79339722,
+    "y": 27.13889167
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20853,
+    "globalid": "8805ba4e-7fb6-4c08-bc68-ad9fc742b602",
+    "SampleDateTime": 1788269580000,
+    "County": "Martin",
+    "esrignss_latitude": 27.10840694,
+    "esrignss_longitude": -80.69143806,
+    "BloomObserved": "No",
+    "AlgalIDResult": "Co-dominant taxa were: Microcystis aeruginosa and Planktolyngbya limnetica",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "Lake Okeechobee - NES135",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789496443596
+   },
+   "geometry": {
+    "x": -80.69143806,
+    "y": 27.10840694
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20854,
+    "globalid": "82f0de14-a0d3-4c5e-afda-b6cc470b1eb8",
+    "SampleDateTime": 1788270600000,
+    "County": "Okeechobee",
+    "esrignss_latitude": 27.088105,
+    "esrignss_longitude": -80.74581889,
+    "BloomObserved": "No",
+    "AlgalIDResult": "Co-dominant taxa were: Microcystis aeruginosa and Planktolyngbya limnetica",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "Lake Okeechobee - NCENTER",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789496446432
+   },
+   "geometry": {
+    "x": -80.74581889,
+    "y": 27.088105
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20855,
+    "globalid": "befb29ef-62f3-4b87-a010-80331a53de54",
+    "SampleDateTime": 1788271860000,
+    "County": "Martin",
+    "esrignss_latitude": 27.04657278,
+    "esrignss_longitude": -80.65226389,
+    "BloomObserved": "No",
+    "AlgalIDResult": "mixed algae; no dominant species in sample",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "No",
+    "locationString": "Lake Okeechobee - EASTSHORE",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789496458863
+   },
+   "geometry": {
+    "x": -80.65226389,
+    "y": 27.04657278
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20856,
+    "globalid": "c91475ad-93b3-4e65-ac4f-859906bf9f7c",
+    "SampleDateTime": 1788267120000,
+    "County": "Glades",
+    "esrignss_latitude": 26.97180472,
+    "esrignss_longitude": -81.00593694,
+    "BloomObserved": "No",
+    "AlgalIDResult": "mixed algae; no dominant species in sample",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "No",
+    "locationString": "Lake Okeechobee - FEBOUT",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789496461543
+   },
+   "geometry": {
+    "x": -81.00593694,
+    "y": 26.97180472
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20857,
+    "globalid": "9e97d2ca-9006-4f8e-8a0c-2548b863c21a",
+    "SampleDateTime": 1788273120000,
+    "County": "Martin",
+    "esrignss_latitude": 26.97768389,
+    "esrignss_longitude": -80.70958167,
+    "BloomObserved": "No",
+    "AlgalIDResult": "Dominant taxon: Microcystis aeruginosa",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "Lake Okeechobee - L004",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789496463006
+   },
+   "geometry": {
+    "x": -80.70958167,
+    "y": 26.97768389
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20858,
+    "globalid": "97364794-65a4-44ea-b0e8-2add2cfa219c",
+    "SampleDateTime": 1788275160000,
+    "County": "Glades",
+    "esrignss_latitude": 26.95711222,
+    "esrignss_longitude": -80.89169222,
+    "BloomObserved": "No",
+    "AlgalIDResult": "mixed algae; no dominant species in sample",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "No",
+    "locationString": "Lake Okeechobee - L008",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789496464069
+   },
+   "geometry": {
+    "x": -80.89169222,
+    "y": 26.95711222
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20859,
+    "globalid": "26a9a72b-587a-44b2-994f-3822e7f2f75c",
+    "SampleDateTime": 1788276420000,
+    "County": "Glades",
+    "esrignss_latitude": 26.95673028,
+    "esrignss_longitude": -80.972385,
+    "BloomObserved": "No",
+    "AlgalIDResult": "Co-dominant taxa were: Dolichospermum circinale and Planktolyngbya limnetica",
+    "ToxinPresent": "Yes",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: 0.18 I (I qualifier indicates that the reported value is between the laboratory method detection limit and the laboratory practical quantitation limit.); Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "Lake Okeechobee - L005",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789496466116
+   },
+   "geometry": {
+    "x": -80.972385,
+    "y": 26.95673028
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20860,
+    "globalid": "daea6f6b-83d4-4b90-a2fb-285316198960",
+    "SampleDateTime": 1788277920000,
+    "County": "Okeechobee",
+    "esrignss_latitude": 26.99341639,
+    "esrignss_longitude": -80.86659306,
+    "BloomObserved": "No",
+    "AlgalIDResult": "Dominant taxon: Microcystis aeruginosa",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "Lake Okeechobee - POLESOUT3",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789496468219
+   },
+   "geometry": {
+    "x": -80.86659306,
+    "y": 26.99341639
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20861,
+    "globalid": "952f05be-b58e-4c6d-ba63-225a8b31898d",
+    "SampleDateTime": 1788278700000,
+    "County": "Okeechobee",
+    "esrignss_latitude": 27.01,
+    "esrignss_longitude": -80.88,
+    "BloomObserved": "No",
+    "AlgalIDResult": "Co-dominant taxa were: Raphidiopsis raciborskii and Planktolyngbya limnetica",
+    "ToxinPresent": "Yes",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: 0.47; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "Lake Okeechobee - POLESOUT2",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789496469544
+   },
+   "geometry": {
+    "x": -80.88046366986313,
+    "y": 27.009184336598487
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20862,
+    "globalid": "77b0510a-e61a-421a-9516-a5337cd70a4b",
+    "SampleDateTime": 1788279900000,
+    "County": "Glades",
+    "esrignss_latitude": 27.02569083,
+    "esrignss_longitude": -80.89909444,
+    "BloomObserved": "No",
+    "AlgalIDResult": "Co-dominant taxa were: Raphidiopsis raciborskii and Planktolyngbya limnetica",
+    "ToxinPresent": "Yes",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: 0.73; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "Lake Okeechobee - POLESOUT1",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789496471409
+   },
+   "geometry": {
+    "x": -80.89909444,
+    "y": 27.02569083
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20863,
+    "globalid": "ef4b2a0e-5571-4a2b-a626-07d72cb18291",
+    "SampleDateTime": 1788280680000,
+    "County": "Glades",
+    "esrignss_latitude": 27.03819806,
+    "esrignss_longitude": -80.91854056,
+    "BloomObserved": "No",
+    "AlgalIDResult": "Co-dominant taxa were: Raphidiopsis raciborskii and Planktolyngbya spp.",
+    "ToxinPresent": "Yes",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: 0.76; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "Lake Okeechobee - POLESOUT",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789496472587
+   },
+   "geometry": {
+    "x": -80.91854056,
+    "y": 27.03819806
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20864,
+    "globalid": "4acd2a94-02ac-47d2-b53b-f0dbaa7dd080",
+    "SampleDateTime": 1788282120000,
+    "County": "Okeechobee",
+    "esrignss_latitude": 27.08224583,
+    "esrignss_longitude": -80.81341028,
+    "BloomObserved": "No",
+    "AlgalIDResult": "Co-dominant taxa were: Raphidiopsis raciborskii and Planktolyngbya spp.",
+    "ToxinPresent": "Yes",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: 0.27 I (I qualifier indicates that the reported value is between the laboratory method detection limit and the laboratory practical quantitation limit.); Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "Lake Okeechobee - KBARSE",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789496476503
+   },
+   "geometry": {
+    "x": -80.81341028,
+    "y": 27.08224583
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20865,
+    "globalid": "bf68f4a9-1868-4c57-95ab-1ea7830745ac",
+    "SampleDateTime": 1788282900000,
+    "County": "Brevard",
+    "esrignss_latitude": 28.125542578614912,
+    "esrignss_longitude": -80.63779507169664,
+    "BloomObserved": "No",
+    "AlgalIDResult": "Dominant taxon: Dinophyceae",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "No",
+    "locationString": "Eau Gallie River - S of Sun Cir",
+    "MonitoringGroupPublicFacing": "CEROC",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789799894610
+   },
+   "geometry": {
+    "x": -80.63779507169664,
+    "y": 28.125542578614912
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20866,
+    "globalid": "b9dda550-c98a-4380-93dc-b0011fb45922",
+    "SampleDateTime": 1788357900000,
+    "County": "Putnam",
+    "esrignss_latitude": 29.475018884321436,
+    "esrignss_longitude": -81.5775504174904,
+    "BloomObserved": "No",
+    "AlgalIDResult": "mixed algae; no dominant species in sample",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "No",
+    "locationString": "Como Lake - NE Lake Section (East Side)",
+    "MonitoringGroupPublicFacing": "NEROC",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789799894870
+   },
+   "geometry": {
+    "x": -81.5775504174904,
+    "y": 29.475018884321436
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20867,
+    "globalid": "a50982e4-1380-4315-bf0a-8989b2a2ee74",
+    "SampleDateTime": 1788361800000,
+    "County": "StJohns",
+    "esrignss_latitude": 29.82342670067038,
+    "esrignss_longitude": -81.55350590023282,
+    "BloomObserved": "Yes",
+    "AlgalIDResult": "mixed algae; no dominant species in sample",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "No",
+    "locationString": "St. Johns River - Riverdale Boat Ramp",
+    "MonitoringGroupPublicFacing": "NEROC",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789799895143
+   },
+   "geometry": {
+    "x": -81.55350590023282,
+    "y": 29.82342670067038
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20868,
+    "globalid": "ad30f080-68f4-48b9-8801-94a6d3b6fc8a",
+    "SampleDateTime": 1788366600000,
+    "County": "Polk",
+    "esrignss_latitude": 27.967436028997245,
+    "esrignss_longitude": -81.94957804737483,
+    "BloomObserved": "Yes",
+    "AlgalIDResult": "mixed algae; no dominant species in sample",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "No",
+    "locationString": "Scott Lake - at Fitzgerald Rd Boat Ramp",
+    "MonitoringGroupPublicFacing": "SWROC",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789799895385
+   },
+   "geometry": {
+    "x": -81.94957804737483,
+    "y": 27.967436028997245
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20869,
+    "globalid": "ded7e0f0-5459-49dd-a06e-32b6fe2a676a",
+    "SampleDateTime": 1788352260000,
+    "County": "PalmBeach",
+    "esrignss_latitude": 26.915795,
+    "esrignss_longitude": -80.625368,
+    "BloomObserved": "No",
+    "AlgalIDResult": "Co-dominant taxa were: Planktolyngbya limnetica and Planktolyngbya contorta",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "Lake Okeechobee - CLV10A",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789496491312
+   },
+   "geometry": {
+    "x": -80.625368,
+    "y": 26.915795
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20870,
+    "globalid": "e2330283-4bd0-45cb-96e4-724c72b1228b",
+    "SampleDateTime": 1788354180000,
+    "County": "PalmBeach",
+    "esrignss_latitude": 26.90172,
+    "esrignss_longitude": -80.788738,
+    "BloomObserved": "No",
+    "AlgalIDResult": "Dominant taxon: Microcystis aeruginosa",
+    "ToxinPresent": "Yes",
+    "Microcystin": "0.38 I (I qualifier indicates that the reported value is between the laboratory method detection limit and the laboratory practical quantitation limit.)",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "Lake Okeechobee - LZ40",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789496492622
+   },
+   "geometry": {
+    "x": -80.788738,
+    "y": 26.90172
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20871,
+    "globalid": "0dd355e5-0935-4681-9567-bb04582d0cbc",
+    "SampleDateTime": 1788355260000,
+    "County": "PalmBeach",
+    "esrignss_latitude": 26.859393,
+    "esrignss_longitude": -80.869107,
+    "BloomObserved": "No",
+    "AlgalIDResult": "Dominant taxon: Microcystis aeruginosa",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "Lake Okeechobee - PALMOUT3",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789496495948
+   },
+   "geometry": {
+    "x": -80.869107,
+    "y": 26.859393
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20872,
+    "globalid": "217c6cb4-5239-415a-a1bf-ec9c421e88d3",
+    "SampleDateTime": 1788355860000,
+    "County": "Hendry",
+    "esrignss_latitude": 26.849474,
+    "esrignss_longitude": -80.893114,
+    "BloomObserved": "No",
+    "AlgalIDResult": "Co-dominant taxa were: Microcystis aeruginosa and Dolichospermum circinale",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "Lake Okeechobee - PALMOUT2",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789496497102
+   },
+   "geometry": {
+    "x": -80.893114,
+    "y": 26.849474
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20873,
+    "globalid": "d85ea981-5c5b-4061-92b7-ff3952e5efba",
+    "SampleDateTime": 1788356400000,
+    "County": "Hendry",
+    "esrignss_latitude": 26.839835,
+    "esrignss_longitude": -80.920058,
+    "BloomObserved": "No",
+    "AlgalIDResult": "Dominant taxon: Planktolyngbya limnetica",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "Lake Okeechobee - PALMOUT1",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789496500927
+   },
+   "geometry": {
+    "x": -80.920058,
+    "y": 26.839835
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20874,
+    "globalid": "dbd4f05d-2aa0-4391-823d-0e94616b34ad",
+    "SampleDateTime": 1788356940000,
+    "County": "Glades",
+    "esrignss_latitude": 26.834402,
+    "esrignss_longitude": -80.938552,
+    "BloomObserved": "No",
+    "AlgalIDResult": "mixed algae; no dominant species in sample",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "No",
+    "locationString": "Lake Okeechobee - PALMOUT",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789496502792
+   },
+   "geometry": {
+    "x": -80.938552,
+    "y": 26.834402
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20875,
+    "globalid": "29e6f301-d051-471a-8ff4-fbd892a098b3",
+    "SampleDateTime": 1788358380000,
+    "County": "PalmBeach",
+    "esrignss_latitude": 26.79697139,
+    "esrignss_longitude": -80.86009472,
+    "BloomObserved": "No",
+    "AlgalIDResult": "mixed algae; no dominant species in sample",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "No",
+    "locationString": "Lake Okeechobee - LZ30",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789496503835
+   },
+   "geometry": {
+    "x": -80.86009472,
+    "y": 26.79697139
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20876,
+    "globalid": "1bf1dcba-420a-4622-a5e3-3a779ad09b43",
+    "SampleDateTime": 1788360000000,
+    "County": "PalmBeach",
+    "esrignss_latitude": 26.77000111,
+    "esrignss_longitude": -80.78434972,
+    "BloomObserved": "No",
+    "AlgalIDResult": "Dominant taxon: Microcystis aeruginosa",
+    "ToxinPresent": "Yes",
+    "Microcystin": "0.85 I (I qualifier indicates that the reported value is between the laboratory method detection limit and the laboratory practical quantitation limit.)",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "Lake Okeechobee - L007",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789496511493
+   },
+   "geometry": {
+    "x": -80.78434972,
+    "y": 26.77000111
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20877,
+    "globalid": "2f2c6520-568d-4f38-ad2b-51fb947c5c2e",
+    "SampleDateTime": 1788361020000,
+    "County": "PalmBeach",
+    "esrignss_latitude": 26.82255833,
+    "esrignss_longitude": -80.78283611,
+    "BloomObserved": "No",
+    "AlgalIDResult": "Dominant taxon: Microcystis aeruginosa",
+    "ToxinPresent": "Yes",
+    "Microcystin": "1.0",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "Lake Okeechobee - L006",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789496512637
+   },
+   "geometry": {
+    "x": -80.78283611,
+    "y": 26.82255833
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20878,
+    "globalid": "b1f54f8e-7664-4129-91b1-ded7f29f96ff",
+    "SampleDateTime": 1788452400000,
+    "County": "Charlotte",
+    "esrignss_latitude": 26.96938403431081,
+    "esrignss_longitude": -82.14600066247569,
+    "BloomObserved": "No",
+    "AlgalIDResult": "Dominant taxon: Dinophyceae",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "No",
+    "locationString": "Countryman Waterway - Driggers Ave",
+    "MonitoringGroupPublicFacing": "SOROC",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789799896528
+   },
+   "geometry": {
+    "x": -82.14600066247569,
+    "y": 26.96938403431081
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20879,
+    "globalid": "99975196-b064-490f-aa8b-1cf59d75d719",
+    "SampleDateTime": 1788441720000,
+    "County": "Seminole",
+    "esrignss_latitude": 28.7268,
+    "esrignss_longitude": -81.2111,
+    "BloomObserved": "No",
+    "AlgalIDResult": "mixed algae; no dominant species in sample",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "No",
+    "locationString": "Lake Jesup - Center (OW-CTR)",
+    "MonitoringGroupPublicFacing": "SJRWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789799896768
+   },
+   "geometry": {
+    "x": -81.2111,
+    "y": 28.7268
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20880,
+    "globalid": "3ff00621-1716-4893-ad38-64c29cd4ee44",
+    "SampleDateTime": 1788445500000,
+    "County": "Alachua",
+    "esrignss_latitude": 29.53450281389988,
+    "esrignss_longitude": -82.30445016127952,
+    "BloomObserved": "Yes",
+    "AlgalIDResult": "Co-dominant taxa were: Microcystis aeruginosa and Planktolyngbya limnetica",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "Lake Wauberg - North Shore Swim Area",
+    "MonitoringGroupPublicFacing": "County",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789508417751
+   },
+   "geometry": {
+    "x": -82.30445016127952,
+    "y": 29.53450281389988
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20881,
+    "globalid": "8f413056-64f3-439d-a823-de36565d112d",
+    "SampleDateTime": 1788878100000,
+    "County": "Duval",
+    "esrignss_latitude": 30.307948598093997,
+    "esrignss_longitude": -81.68717410369369,
+    "BloomObserved": "No",
+    "AlgalIDResult": "mixed algae; no dominant species in sample",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "No",
+    "locationString": "St. Johns River - Stockton Street",
+    "MonitoringGroupPublicFacing": "NEROC",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789799897125
+   },
+   "geometry": {
+    "x": -81.68717410369369,
+    "y": 30.307948598093997
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20882,
+    "globalid": "bb06442d-f755-4d03-88d0-d239f783fe6c",
+    "SampleDateTime": 1788881100000,
+    "County": "Duval",
+    "esrignss_latitude": 30.134366898692463,
+    "esrignss_longitude": -81.59648789305803,
+    "BloomObserved": "No",
+    "AlgalIDResult": "mixed algae; no dominant species in sample",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "No",
+    "locationString": "Julington Creek - Clarks Fish Camp",
+    "MonitoringGroupPublicFacing": "NEROC",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789799897360
+   },
+   "geometry": {
+    "x": -81.59648789305803,
+    "y": 30.134366898692463
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20883,
+    "globalid": "308dd853-935b-4ac3-89a0-f1104c9a47fc",
+    "SampleDateTime": 1788885900000,
+    "County": "StJohns",
+    "esrignss_latitude": 29.99439891093774,
+    "esrignss_longitude": -81.67450422528597,
+    "BloomObserved": "Yes",
+    "AlgalIDResult": "Dominant taxon: Microcystis aeruginosa",
+    "ToxinPresent": "Yes",
+    "Microcystin": "2.3",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "St. Johns River - Green Cove Springs Public Pier",
+    "MonitoringGroupPublicFacing": "NEROC",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789799897592
+   },
+   "geometry": {
+    "x": -81.67450422528597,
+    "y": 29.99439891093774
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20884,
+    "globalid": "df7b2bc7-e092-4215-a56f-c78de164e3bb",
+    "SampleDateTime": 1788875040000,
+    "County": "Clay",
+    "esrignss_latitude": 30.13805556,
+    "esrignss_longitude": -81.72722222,
+    "BloomObserved": "Yes",
+    "AlgalIDResult": "Dominant taxon: Microcystis aeruginosa",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "Doctors Lake - Center (DTL)",
+    "MonitoringGroupPublicFacing": "SJRWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789799897829
+   },
+   "geometry": {
+    "x": -81.72722222,
+    "y": 30.13805556
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20885,
+    "globalid": "99e4e20b-9ff2-4492-a694-7dda38ba34e0",
+    "SampleDateTime": 1788879000000,
+    "County": "Duval",
+    "esrignss_latitude": 30.15666667,
+    "esrignss_longitude": -81.68388889,
+    "BloomObserved": "Yes",
+    "AlgalIDResult": "Dominant taxon: Microcystis aeruginosa",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "St. Johns River - Mandarin Point (MP72)",
+    "MonitoringGroupPublicFacing": "SJRWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789799898072
+   },
+   "geometry": {
+    "x": -81.68388889,
+    "y": 30.15666667
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20886,
+    "globalid": "22048b74-41e9-4c88-99ff-a4b67690baf0",
+    "SampleDateTime": 1788881820000,
+    "County": "StJohns",
+    "esrignss_latitude": 29.98163056,
+    "esrignss_longitude": -81.62213889,
+    "BloomObserved": "Yes",
+    "AlgalIDResult": "Dominant taxon: Microcystis aeruginosa",
+    "ToxinPresent": "Yes",
+    "Microcystin": "0.79 I (I qualifier indicates that the reported value is between the laboratory method detection limit and the laboratory practical quantitation limit.)",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "St. Johns River - Shands Bridge (20030157)",
+    "MonitoringGroupPublicFacing": "SJRWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789799898323
+   },
+   "geometry": {
+    "x": -81.62213889,
+    "y": 29.98163056
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20887,
+    "globalid": "db6e6db1-a344-482b-9e57-0fd800e92409",
+    "SampleDateTime": 1788883260000,
+    "County": "StJohns",
+    "esrignss_latitude": 29.89586330952629,
+    "esrignss_longitude": -81.59365097925605,
+    "BloomObserved": "Yes",
+    "AlgalIDResult": "Dominant taxon: Microcystis panniformis",
+    "ToxinPresent": "Yes",
+    "Microcystin": "0.33 I (I qualifier indicates that the reported value is between the laboratory method detection limit and the laboratory practical quantitation limit.)",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "St. Johns River - Watson Island (SJWSIL)",
+    "MonitoringGroupPublicFacing": "SJRWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789799898556
+   },
+   "geometry": {
+    "x": -81.59365097925605,
+    "y": 29.89586330952629
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20888,
+    "globalid": "0d940ccf-7815-4252-a8fd-2701eee326a4",
+    "SampleDateTime": 1788961800000,
+    "County": "StJohns",
+    "esrignss_latitude": 29.914097,
+    "esrignss_longitude": -81.59445,
+    "BloomObserved": "Yes",
+    "AlgalIDResult": "Dominant taxon: Microcystis aeruginosa",
+    "ToxinPresent": "Yes",
+    "Microcystin": "0.37 I (I qualifier indicates that the reported value is between the laboratory method detection limit and the laboratory practical quantitation limit.)",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "St. Johns River - Fort Picolata",
+    "MonitoringGroupPublicFacing": "NEROC",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789799898788
+   },
+   "geometry": {
+    "x": -81.59445,
+    "y": 29.914097
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20889,
+    "globalid": "dc25dc34-3d9a-4dfb-9ef8-92b70335bc77",
+    "SampleDateTime": 1788963300000,
+    "County": "Martin",
+    "esrignss_latitude": 26.98487464177054,
+    "esrignss_longitude": -80.6216557298921,
+    "BloomObserved": "No",
+    "AlgalIDResult": "mixed algae; no dominant species in sample",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "No",
+    "locationString": "Lake Okeechobee - S308C (lakeside)",
+    "MonitoringGroupPublicFacing": "SEROC",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789799899039
+   },
+   "geometry": {
+    "x": -80.6216557298921,
+    "y": 26.98487464177054
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20890,
+    "globalid": "6d2b25cf-00c9-4339-b73a-994d4ee707b4",
+    "SampleDateTime": 1788963960000,
+    "County": "Volusia",
+    "esrignss_latitude": 29.30830556,
+    "esrignss_longitude": -81.60638889,
+    "BloomObserved": "No",
+    "AlgalIDResult": "Dominant taxon: Planktolyngbya limnetica",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "Lake George - Center (LEO)",
+    "MonitoringGroupPublicFacing": "SJRWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789799899283
+   },
+   "geometry": {
+    "x": -81.60638889,
+    "y": 29.30830556
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20891,
+    "globalid": "5e2edbb5-f83c-4a4a-bf65-a1398c223353",
+    "SampleDateTime": 1788965100000,
+    "County": "Martin",
+    "esrignss_latitude": 26.985219269731918,
+    "esrignss_longitude": -80.6208988265886,
+    "BloomObserved": "No",
+    "AlgalIDResult": "mixed algae; no dominant species in sample",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "No",
+    "locationString": "C44 canal - S308C",
+    "MonitoringGroupPublicFacing": "SEROC",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789799899525
+   },
+   "geometry": {
+    "x": -80.6208988265886,
+    "y": 26.985219269731918
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20892,
+    "globalid": "80c061bd-b066-4c79-832a-19dc94f6aebe",
+    "SampleDateTime": 1788964740000,
+    "County": "Putnam",
+    "esrignss_latitude": 29.52955556,
+    "esrignss_longitude": -81.55372222,
+    "BloomObserved": "Yes",
+    "AlgalIDResult": "Co-dominant taxa were: Microcystis aeruginosa and Dolichospermum circinale",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "Crescent Lake - mouth of Dunns Creek (CRESLM)",
+    "MonitoringGroupPublicFacing": "SJRWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789799899757
+   },
+   "geometry": {
+    "x": -81.55372222,
+    "y": 29.52955556
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20893,
+    "globalid": "de6fd3f6-0cc8-43f0-85ce-79911a48816b",
+    "SampleDateTime": 1788967500000,
+    "County": "Clay",
+    "esrignss_latitude": 30.12545868220154,
+    "esrignss_longitude": -81.71697079907673,
+    "BloomObserved": "Yes",
+    "AlgalIDResult": "Dominant taxon: Microcystis aeruginosa",
+    "ToxinPresent": "Yes",
+    "Microcystin": "0.41 I (I qualifier indicates that the reported value is between the laboratory method detection limit and the laboratory practical quantitation limit.)",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "Doctors Lake - Salt Myrtle Lane",
+    "MonitoringGroupPublicFacing": "NEROC",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789799900002
+   },
+   "geometry": {
+    "x": -81.71697079907673,
+    "y": 30.12545868220154
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20894,
+    "globalid": "02373243-5111-44c5-8d0a-cb03f003a079",
+    "SampleDateTime": 1788964620000,
+    "County": "Seminole",
+    "esrignss_latitude": 28.64279667237359,
+    "esrignss_longitude": -81.31705934125642,
+    "BloomObserved": "Yes",
+    "AlgalIDResult": "Co-dominant taxa were: Microcystis aeruginosa and Raphidiopsis raciborskii",
+    "ToxinPresent": "Yes",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: 0.65; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "Lake Howell - NW Shore",
+    "MonitoringGroupPublicFacing": "CEROC",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789799900262
+   },
+   "geometry": {
+    "x": -81.31705934125642,
+    "y": 28.64279667237359
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20895,
+    "globalid": "c4d33140-fecb-40da-bc37-b5405c0340d1",
+    "SampleDateTime": 1788976560000,
+    "County": "Putnam",
+    "esrignss_latitude": 29.79916,
+    "esrignss_longitude": -81.84901,
+    "BloomObserved": "No",
+    "AlgalIDResult": "mixed algae; no dominant species in sample",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "No",
+    "locationString": "Georges Lake - Center (20030400)",
+    "MonitoringGroupPublicFacing": "SJRWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789799900497
+   },
+   "geometry": {
+    "x": -81.84901,
+    "y": 29.79916
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20896,
+    "globalid": "4d17b088-5a5c-4aca-bf4f-bca57d0760df",
+    "SampleDateTime": 1789045860000,
+    "County": "IndianRiver",
+    "esrignss_latitude": 27.7266,
+    "esrignss_longitude": -80.7536,
+    "BloomObserved": "Yes",
+    "AlgalIDResult": "Dominant taxon: Microcystis aeruginosa",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "Blue Cypress Lake - Center (BCL)",
+    "MonitoringGroupPublicFacing": "SJRWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789799900798
+   },
+   "geometry": {
+    "x": -80.7536,
+    "y": 27.7266
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20897,
+    "globalid": "f8f77681-526d-4734-9d73-34cc6f923900",
+    "SampleDateTime": 1789049100000,
+    "County": "IndianRiver",
+    "esrignss_latitude": 27.81065,
+    "esrignss_longitude": -80.724854,
+    "BloomObserved": "Yes",
+    "AlgalIDResult": "Dominant taxon: Planktolyngbya limnetica",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "Stick Marsh - North (STKM)",
+    "MonitoringGroupPublicFacing": "SJRWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789799901023
+   },
+   "geometry": {
+    "x": -80.724854,
+    "y": 27.81065
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20899,
+    "globalid": "49a8ba55-5f39-4eed-b3fd-832cb7e614d9",
+    "SampleDateTime": 1789046700000,
+    "County": "Lake",
+    "esrignss_latitude": 28.84340218,
+    "esrignss_longitude": -81.73327281,
+    "BloomObserved": "Yes",
+    "AlgalIDResult": "Co-dominant taxa were: Microcystis aeruginosa and Planktolyngbya spp.",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "Lake Eustis  - Center (20020368)",
+    "MonitoringGroupPublicFacing": "SJRWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789799901511
+   },
+   "geometry": {
+    "x": -81.73327281,
+    "y": 28.84340218
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20900,
+    "globalid": "21b58e74-dcbc-4a02-86bd-8cd13df7019c",
+    "SampleDateTime": 1789051860000,
+    "County": "Orange",
+    "esrignss_latitude": 28.569494156732947,
+    "esrignss_longitude": -81.36591647946588,
+    "BloomObserved": "No",
+    "AlgalIDResult": "mixed algae; no dominant species in sample",
+    "ToxinPresent": "Yes",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: 0.52; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "No",
+    "locationString": "Lake Formosa - pedestrian bridge",
+    "MonitoringGroupPublicFacing": "CEROC",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789508668454
+   },
+   "geometry": {
+    "x": -81.36591647946588,
+    "y": 28.569494156732947
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20903,
+    "globalid": "834e963d-7665-4a0c-8c41-b15182dad061",
+    "SampleDateTime": 1789390380000,
+    "County": "Brevard",
+    "esrignss_latitude": 28.142439,
+    "esrignss_longitude": -80.746111,
+    "BloomObserved": "No",
+    "AlgalIDResult": "mixed algae; no dominant species in sample",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "No",
+    "locationString": "Lake Washington - Center (LWC)",
+    "MonitoringGroupPublicFacing": "SJRWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789799901842
+   },
+   "geometry": {
+    "x": -80.746111,
+    "y": 28.142439
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20904,
+    "globalid": "98c01e2b-714b-48c8-97e7-4c360d2aecc5",
+    "SampleDateTime": 1789392600000,
+    "County": "Hillsborough",
+    "esrignss_latitude": 28.050463073024524,
+    "esrignss_longitude": -82.28214233570117,
+    "BloomObserved": "Yes",
+    "AlgalIDResult": "Dominant taxon: Microcystis aeruginosa",
+    "ToxinPresent": "Yes",
+    "Microcystin": "1.1",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "Lake Thonotosassa - South Shore",
+    "MonitoringGroupPublicFacing": "SWROC",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789799902082
+   },
+   "geometry": {
+    "x": -82.28214233570117,
+    "y": 28.050463073024524
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20905,
+    "globalid": "a215e168-063c-434b-aba1-865d56adaebd",
+    "SampleDateTime": 1789391100000,
+    "County": "Glades",
+    "esrignss_latitude": 26.84078333,
+    "esrignss_longitude": -81.08352222,
+    "BloomObserved": "No",
+    "AlgalIDResult": "mixed algae; no dominant species in sample",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "No",
+    "locationString": "C43 canal - S77 (upstream)",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789657040051
+   },
+   "geometry": {
+    "x": -81.08352222,
+    "y": 26.84078333
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20906,
+    "globalid": "b82a41e6-7404-4cb5-844f-bf9382015404",
+    "SampleDateTime": 1789391700000,
+    "County": "Martin",
+    "esrignss_latitude": 26.98489167,
+    "esrignss_longitude": -80.62142778,
+    "BloomObserved": "No",
+    "AlgalIDResult": "mixed algae; no dominant species in sample",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "No",
+    "locationString": "Lake Okeechobee - S308C (lakeside)",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789656911100
+   },
+   "geometry": {
+    "x": -80.62142778,
+    "y": 26.98489167
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20907,
+    "globalid": "fbfe032b-e1f2-4338-b14d-1e5a08b2181c",
+    "SampleDateTime": 1789480200000,
+    "County": "StJohns",
+    "esrignss_latitude": 29.99438492568311,
+    "esrignss_longitude": -81.67452898115354,
+    "BloomObserved": "Yes",
+    "AlgalIDResult": "Co-dominant taxa were: Microcystis aeruginosa and Pseudanabaena mucicola",
+    "ToxinPresent": "Yes",
+    "Microcystin": "0.88 I (I qualifier indicates that the reported value is between the laboratory method detection limit and the laboratory practical quantitation limit.)",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "St. Johns River - Green Cove Springs Public Pier",
+    "MonitoringGroupPublicFacing": "NEROC",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789799902590
+   },
+   "geometry": {
+    "x": -81.67452898115354,
+    "y": 29.99438492568311
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20908,
+    "globalid": "27446ba7-ef2e-4cfd-98e9-a7d4e53db90d",
+    "SampleDateTime": 1789485900000,
+    "County": "Collier",
+    "esrignss_latitude": 26.201647971562505,
+    "esrignss_longitude": -81.528093670625,
+    "BloomObserved": "Yes",
+    "AlgalIDResult": "mixed algae; no dominant species in sample",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "No",
+    "locationString": "Faka Union Canal Basin - 16th Ave SE",
+    "MonitoringGroupPublicFacing": "SOROC",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789799902822
+   },
+   "geometry": {
+    "x": -81.528093670625,
+    "y": 26.201647971562505
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20909,
+    "globalid": "e7f0db0d-1be8-472d-8a11-b55da87327c7",
+    "SampleDateTime": 1789480800000,
+    "County": "Seminole",
+    "esrignss_latitude": 28.7268,
+    "esrignss_longitude": -81.2111,
+    "BloomObserved": "Yes",
+    "AlgalIDResult": "Co-dominant taxa were: Microcystis aeruginosa and Raphidiopsis raciborskii",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "Lake Jesup - Center (OW-CTR)",
+    "MonitoringGroupPublicFacing": "SJRWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789799903085
+   },
+   "geometry": {
+    "x": -81.2111,
+    "y": 28.7268
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20910,
+    "globalid": "321912ad-990c-43a6-869f-ccc8c5531990",
+    "SampleDateTime": 1789482000000,
+    "County": "Volusia",
+    "esrignss_latitude": 28.83496,
+    "esrignss_longitude": -81.27091,
+    "BloomObserved": "No",
+    "AlgalIDResult": "Dominant taxon: Microcystis aeruginosa",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "Lake Monroe - Center (LMAC)",
+    "MonitoringGroupPublicFacing": "SJRWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789799903314
+   },
+   "geometry": {
+    "x": -81.27091,
+    "y": 28.83496
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20911,
+    "globalid": "9da6e00b-921d-44ce-b005-e6be10aab61e",
+    "SampleDateTime": 1789473960000,
+    "County": "Okeechobee",
+    "esrignss_latitude": 27.14130083,
+    "esrignss_longitude": -80.84600028,
+    "BloomObserved": "No",
+    "AlgalIDResult": "mixed algae; no dominant species in sample",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "No",
+    "locationString": "Lake Okeechobee - KISSR0.0",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789680782123
+   },
+   "geometry": {
+    "x": -80.84600028,
+    "y": 27.14130083
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20912,
+    "globalid": "95534895-5c25-4da3-a04d-f6e110f156a3",
+    "SampleDateTime": 1789475940000,
+    "County": "Okeechobee",
+    "esrignss_latitude": 27.18975583,
+    "esrignss_longitude": -80.82803972,
+    "BloomObserved": "No",
+    "AlgalIDResult": "Dominant taxon: Planktolyngbya limnetica",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "Lake Okeechobee - LZ2",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789680772303
+   },
+   "geometry": {
+    "x": -80.82803972,
+    "y": 27.18975583
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20913,
+    "globalid": "633e7239-aad0-4546-b62b-0ec71399ca4d",
+    "SampleDateTime": 1789477440000,
+    "County": "Okeechobee",
+    "esrignss_latitude": 27.18687028,
+    "esrignss_longitude": -80.76699028,
+    "BloomObserved": "No",
+    "AlgalIDResult": "Dominant taxon: Botryococcus braunii",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "No",
+    "locationString": "Lake Okeechobee - NES191",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789680771203
+   },
+   "geometry": {
+    "x": -80.76699028,
+    "y": 27.18687028
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20914,
+    "globalid": "81082861-61e5-4608-8f99-88f436520c03",
+    "SampleDateTime": 1789478340000,
+    "County": "Okeechobee",
+    "esrignss_latitude": 27.13889167,
+    "esrignss_longitude": -80.79339722,
+    "BloomObserved": "No",
+    "AlgalIDResult": "Co-dominant taxa were: Microcystis aeruginosa and Planktolyngbya limnetica",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "Lake Okeechobee - L001",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789680770110
+   },
+   "geometry": {
+    "x": -80.79339722,
+    "y": 27.13889167
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20915,
+    "globalid": "13b3c147-1652-4626-9e57-be5e7a10ebed",
+    "SampleDateTime": 1789479660000,
+    "County": "Martin",
+    "esrignss_latitude": 27.10840694,
+    "esrignss_longitude": -80.69143806,
+    "BloomObserved": "No",
+    "AlgalIDResult": "Dominant taxon: Planktolyngbya limnetica",
+    "ToxinPresent": "Yes",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: 0.11 I (I qualifier indicates that the reported value is between the laboratory method detection limit and the laboratory practical quantitation limit.); Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "Lake Okeechobee - NES135",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789680768012
+   },
+   "geometry": {
+    "x": -80.69143806,
+    "y": 27.10840694
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20916,
+    "globalid": "a34a3f08-66d0-4519-a973-28d7e790c7d6",
+    "SampleDateTime": 1789480740000,
+    "County": "Okeechobee",
+    "esrignss_latitude": 27.088105,
+    "esrignss_longitude": -80.74581889,
+    "BloomObserved": "No",
+    "AlgalIDResult": "Co-dominant taxa were: Microcystis aeruginosa and Raphidiopsis raciborskii",
+    "ToxinPresent": "Yes",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: 0.16 I (I qualifier indicates that the reported value is between the laboratory method detection limit and the laboratory practical quantitation limit.); Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "Lake Okeechobee - NCENTER",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789680766994
+   },
+   "geometry": {
+    "x": -80.74581889,
+    "y": 27.088105
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20917,
+    "globalid": "e393c5e6-46d4-40a0-8cc0-b4d29fc0c9c2",
+    "SampleDateTime": 1789482120000,
+    "County": "Martin",
+    "esrignss_latitude": 27.04657278,
+    "esrignss_longitude": -80.65226389,
+    "BloomObserved": "No",
+    "AlgalIDResult": "Co-dominant taxa were: Dolichospermum circinale and Dinophyceae",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "Lake Okeechobee - EASTSHORE",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789680765747
+   },
+   "geometry": {
+    "x": -80.65226389,
+    "y": 27.04657278
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20918,
+    "globalid": "da71dd80-a51e-4a16-a245-786613f78b1b",
+    "SampleDateTime": 1789483320000,
+    "County": "Martin",
+    "esrignss_latitude": 26.97768389,
+    "esrignss_longitude": -80.70958167,
+    "BloomObserved": "No",
+    "AlgalIDResult": "Dominant taxon: Microcystis aeruginosa",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "Lake Okeechobee - L004",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789680764119
+   },
+   "geometry": {
+    "x": -80.70958167,
+    "y": 26.97768389
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20919,
+    "globalid": "bc3000e4-e59c-4e78-915f-bb7001bbe13c",
+    "SampleDateTime": 1789485180000,
+    "County": "Glades",
+    "esrignss_latitude": 26.95711222,
+    "esrignss_longitude": -80.89169222,
+    "BloomObserved": "No",
+    "AlgalIDResult": "Co-dominant taxa were: Raphidiopsis raciborskii and Planktolyngbya limnetica",
+    "ToxinPresent": "Yes",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: 0.18 I (I qualifier indicates that the reported value is between the laboratory method detection limit and the laboratory practical quantitation limit.); Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "Lake Okeechobee - L008",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789680757433
+   },
+   "geometry": {
+    "x": -80.89169222,
+    "y": 26.95711222
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20920,
+    "globalid": "9e320d63-03b5-4e3f-bdac-acf6caa8379c",
+    "SampleDateTime": 1789486320000,
+    "County": "Glades",
+    "esrignss_latitude": 26.95673028,
+    "esrignss_longitude": -80.972385,
+    "BloomObserved": "No",
+    "AlgalIDResult": "Co-dominant taxa were: Dolichospermum circinale and Raphidiopsis raciborskii",
+    "ToxinPresent": "Yes",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: 0.15 I (I qualifier indicates that the reported value is between the laboratory method detection limit and the laboratory practical quantitation limit.); Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "Lake Okeechobee - L005",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789680756105
+   },
+   "geometry": {
+    "x": -80.972385,
+    "y": 26.95673028
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20921,
+    "globalid": "bb941778-b142-4486-8cf6-df91359fc7bd",
+    "SampleDateTime": 1789488660000,
+    "County": "Okeechobee",
+    "esrignss_latitude": 27.009245,
+    "esrignss_longitude": -80.88050278,
+    "BloomObserved": "No",
+    "AlgalIDResult": "Co-dominant taxa were: Raphidiopsis raciborskii and Planktolyngbya limnetica",
+    "ToxinPresent": "Yes",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: 0.71; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "Lake Okeechobee - POLESOUT2",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789680755124
+   },
+   "geometry": {
+    "x": -80.88050278,
+    "y": 27.009245
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20922,
+    "globalid": "b84e1cc3-95b9-4a0d-913e-ca20d1b69c96",
+    "SampleDateTime": 1789487880000,
+    "County": "Okeechobee",
+    "esrignss_latitude": 26.99341639,
+    "esrignss_longitude": -80.86659306,
+    "BloomObserved": "No",
+    "AlgalIDResult": "Co-dominant taxa were: Raphidiopsis raciborskii and Planktolyngbya limnetica",
+    "ToxinPresent": "Yes",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: 0.57; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "Lake Okeechobee - POLESOUT3",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789680754064
+   },
+   "geometry": {
+    "x": -80.86659306,
+    "y": 26.99341639
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20923,
+    "globalid": "a6002e9f-eb47-4233-b28c-c922b6356666",
+    "SampleDateTime": 1789489380000,
+    "County": "Glades",
+    "esrignss_latitude": 27.02569083,
+    "esrignss_longitude": -80.89909444,
+    "BloomObserved": "No",
+    "AlgalIDResult": "Co-dominant taxa were: Raphidiopsis raciborskii and Planktolyngbya limnetica",
+    "ToxinPresent": "Yes",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: 0.81; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "Lake Okeechobee - POLESOUT1",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789680752460
+   },
+   "geometry": {
+    "x": -80.89909444,
+    "y": 27.02569083
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20924,
+    "globalid": "5999dd33-0cf4-4ee0-8890-eb6d492320ca",
+    "SampleDateTime": 1789490160000,
+    "County": "Glades",
+    "esrignss_latitude": 27.03819806,
+    "esrignss_longitude": -80.91854056,
+    "BloomObserved": "No",
+    "AlgalIDResult": "Co-dominant taxa were: Raphidiopsis raciborskii and Planktolyngbya limnetica",
+    "ToxinPresent": "Yes",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: 0.88; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "Lake Okeechobee - POLESOUT",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789680751544
+   },
+   "geometry": {
+    "x": -80.91854056,
+    "y": 27.03819806
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20925,
+    "globalid": "c644f3ec-12e4-46ed-bd6b-c0bda447cf37",
+    "SampleDateTime": 1789491540000,
+    "County": "Okeechobee",
+    "esrignss_latitude": 27.08224583,
+    "esrignss_longitude": -80.81341028,
+    "BloomObserved": "No",
+    "AlgalIDResult": "Co-dominant taxa were: Microcystis aeruginosa and Raphidiopsis raciborskii",
+    "ToxinPresent": "Yes",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: 0.63; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "Lake Okeechobee - KBARSE",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789680750270
+   },
+   "geometry": {
+    "x": -80.81341028,
+    "y": 27.08224583
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20926,
+    "globalid": "e1b959df-c014-42e4-8b08-f81026139696",
+    "SampleDateTime": 1789562280000,
+    "County": "PalmBeach",
+    "esrignss_latitude": 26.91607806,
+    "esrignss_longitude": -80.6246625,
+    "BloomObserved": "No",
+    "AlgalIDResult": "mixed algae; no dominant species in sample",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "No",
+    "locationString": "Lake Okeechobee - CLV10A",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789754728977
+   },
+   "geometry": {
+    "x": -80.6246625,
+    "y": 26.91607806
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20927,
+    "globalid": "6fe4f0cc-c74e-4738-a7eb-6702d2dd5389",
+    "SampleDateTime": 1789564620000,
+    "County": "PalmBeach",
+    "esrignss_latitude": 26.901815,
+    "esrignss_longitude": -80.7890025,
+    "BloomObserved": "No",
+    "AlgalIDResult": "Dominant taxon: Microcystis aeruginosa",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "Lake Okeechobee - LZ40",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789754743207
+   },
+   "geometry": {
+    "x": -80.7890025,
+    "y": 26.901815
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20928,
+    "globalid": "9e069ea4-dac7-4577-8ed5-191d2c802b96",
+    "SampleDateTime": 1789565940000,
+    "County": "PalmBeach",
+    "esrignss_latitude": 26.85943222,
+    "esrignss_longitude": -80.86905444,
+    "BloomObserved": "No",
+    "AlgalIDResult": "mixed algae; no dominant species in sample",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "No",
+    "locationString": "Lake Okeechobee - PALMOUT3",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789754753309
+   },
+   "geometry": {
+    "x": -80.86905444,
+    "y": 26.85943222
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20929,
+    "globalid": "7793606c-9186-48ff-ba08-1c5449e0b931",
+    "SampleDateTime": 1789566780000,
+    "County": "Hendry",
+    "esrignss_latitude": 26.84936611,
+    "esrignss_longitude": -80.89314389,
+    "BloomObserved": "No",
+    "AlgalIDResult": "mixed algae; no dominant species in sample",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "No",
+    "locationString": "Lake Okeechobee - PALMOUT2",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789754762817
+   },
+   "geometry": {
+    "x": -80.89314389,
+    "y": 26.84936611
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20930,
+    "globalid": "b51e9f9b-a57b-4abb-889c-4e2aec33c39b",
+    "SampleDateTime": 1789568280000,
+    "County": "Hendry",
+    "esrignss_latitude": 26.83997861,
+    "esrignss_longitude": -80.9198925,
+    "BloomObserved": "No",
+    "AlgalIDResult": "mixed algae; no dominant species in sample",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "No",
+    "locationString": "Lake Okeechobee - PALMOUT1",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789754773052
+   },
+   "geometry": {
+    "x": -80.9198925,
+    "y": 26.83997861
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20931,
+    "globalid": "28def468-193d-4a38-8262-7868eb62b1cf",
+    "SampleDateTime": 1789569240000,
+    "County": "Glades",
+    "esrignss_latitude": 26.83239167,
+    "esrignss_longitude": -80.94255,
+    "BloomObserved": "No",
+    "AlgalIDResult": "mixed algae; no dominant species in sample",
+    "ToxinPresent": "Yes",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: 0.12 I (I qualifier indicates that the reported value is between the laboratory method detection limit and the laboratory practical quantitation limit.); Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "No",
+    "locationString": "Lake Okeechobee - PALMOUT",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789754868013
+   },
+   "geometry": {
+    "x": -80.94255,
+    "y": 26.83239167
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20932,
+    "globalid": "a3723d73-ebc9-4cca-8040-e3a6af5e3704",
+    "SampleDateTime": 1789571760000,
+    "County": "PalmBeach",
+    "esrignss_latitude": 26.79697139,
+    "esrignss_longitude": -80.86009472,
+    "BloomObserved": "No",
+    "AlgalIDResult": "mixed algae; no dominant species in sample",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "No",
+    "locationString": "Lake Okeechobee - LZ30",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789754793947
+   },
+   "geometry": {
+    "x": -80.86009472,
+    "y": 26.79697139
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20933,
+    "globalid": "fc51adfe-e7ce-488d-9fff-4423f0ff7317",
+    "SampleDateTime": 1789573320000,
+    "County": "PalmBeach",
+    "esrignss_latitude": 26.77000111,
+    "esrignss_longitude": -80.78434972,
+    "BloomObserved": "No",
+    "AlgalIDResult": "mixed algae; no dominant species in sample",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "No",
+    "locationString": "Lake Okeechobee - L007",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789754807000
+   },
+   "geometry": {
+    "x": -80.78434972,
+    "y": 26.77000111
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20934,
+    "globalid": "a93b745a-0e7f-47ef-bb8c-321ff48b68ea",
+    "SampleDateTime": 1789574460000,
+    "County": "PalmBeach",
+    "esrignss_latitude": 26.82255833,
+    "esrignss_longitude": -80.78283611,
+    "BloomObserved": "No",
+    "AlgalIDResult": "Dominant taxon: Microcystis aeruginosa",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "Lake Okeechobee - L006",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789754819041
+   },
+   "geometry": {
+    "x": -80.78283611,
+    "y": 26.82255833
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20935,
+    "globalid": "ad894b38-573c-4a8a-b261-ef2bb17a9e16",
+    "SampleDateTime": 1789581900000,
+    "County": "Martin",
+    "esrignss_latitude": 26.986308,
+    "esrignss_longitude": -80.619303,
+    "BloomObserved": "No",
+    "AlgalIDResult": "mixed algae; no dominant species in sample",
+    "ToxinPresent": "No",
+    "Microcystin": "not detected",
+    "OtherToxin": "Anatoxin-a: not detected; Cylindrospermopsin: not detected; Nodularin-R: not detected; Saxitoxins: not detected",
+    "CyanobacteriaDominant": "No",
+    "locationString": "C44 canal - S308C",
+    "MonitoringGroupPublicFacing": "SFWMD",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789754832377
+   },
+   "geometry": {
+    "x": -80.619303,
+    "y": 26.986308
+   }
+  },
+  {
+   "attributes": {
+    "objectid": 20936,
+    "globalid": "42941cc6-9392-4d12-a13e-4da6b4f79e0f",
+    "SampleDateTime": 1789657200000,
+    "County": "Hillsborough",
+    "esrignss_latitude": 28.00520648494351,
+    "esrignss_longitude": -82.60243727402926,
+    "BloomObserved": "Yes",
+    "AlgalIDResult": "Dominant taxon: Microcystis aeruginosa",
+    "ToxinPresent": "Pending",
+    "Microcystin": "Pending",
+    "OtherToxin": "Pending",
+    "CyanobacteriaDominant": "Yes",
+    "locationString": "Bayport Canal Bridge",
+    "MonitoringGroupPublicFacing": "SWROC",
+    "SampleDepthDesc": "SurfaceGrab",
+    "EditDate": 1789799906044
+   },
+   "geometry": {
+    "x": -82.60243727402926,
+    "y": 28.00520648494351
+   }
+  }
+ ]
+}

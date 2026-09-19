@@ -35,7 +35,7 @@ export function Hero({ park, status }: HeroProps) {
         ) : (
           <div
             aria-hidden="true"
-            className="flex h-full w-full items-end justify-end bg-gradient-to-br from-lagoon via-aqua to-peach p-4"
+            className="flex h-full w-full items-end justify-end bg-gradient-to-br from-brown via-lagoon to-aqua p-4"
           >
             <span className="select-none text-6xl font-extrabold text-white/50 md:text-8xl">{park.name.charAt(0)}</span>
           </div>
@@ -48,13 +48,13 @@ export function Hero({ park, status }: HeroProps) {
             <MapPin aria-hidden="true" focusable="false" className="size-4 shrink-0" />
             {PARK_TYPE_TEXT[park.type]} · {OPERATOR_TEXT[park.operator]}
           </p>
-          <h1 className="text-[1.75rem] font-extrabold leading-tight text-cocoa md:text-[2.25rem]">{park.name}</h1>
+          <h1 className="text-[1.75rem] font-extrabold leading-tight text-ink md:text-[2.25rem]">{park.name}</h1>
           <div className="flex flex-wrap items-center gap-2 pt-1">
             <span
               className={
                 park.guarded === "no"
-                  ? "inline-flex items-center gap-1.5 rounded-full border border-status-full/40 bg-white px-3 py-1 text-sm font-bold text-status-full shadow-card"
-                  : "inline-flex items-center gap-1.5 rounded-full border border-mist bg-white px-3 py-1 text-sm font-bold text-cocoa shadow-card"
+                  ? "inline-flex items-center gap-1.5 rounded-full border border-status-full-edge bg-status-full-bg px-3 py-1 text-sm font-bold text-status-full"
+                  : "inline-flex items-center gap-1.5 rounded-full border border-mist bg-white px-3 py-1 text-sm font-bold text-cocoa"
               }
             >
               <GuardIcon aria-hidden="true" focusable="false" className="size-4 shrink-0" strokeWidth={2.25} />
@@ -68,7 +68,7 @@ export function Hero({ park, status }: HeroProps) {
         {status && (
           <div className="hidden shrink-0 flex-col items-end gap-1 md:flex">
             <StatusPill level={status.level} size="lg" estimate={status.isEstimate} />
-            <span className="text-sm font-bold text-cocoa/75">{CONFIDENCE_TEXT[status.confidence]}</span>
+            <span className="text-sm font-bold text-mocha">{CONFIDENCE_TEXT[status.confidence]}</span>
           </div>
         )}
       </div>

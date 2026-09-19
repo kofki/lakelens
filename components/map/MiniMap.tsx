@@ -75,7 +75,7 @@ export function MiniMap({ center, parkName, lots, className }: MiniMapProps) {
             href={directionsUrl(lot.lat, lot.lng, `${lot.name} parking`, platform)}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex min-h-11 items-center gap-2 font-bold text-cocoa underline"
+            className="inline-flex min-h-11 items-center gap-2 font-bold text-brown underline"
           >
             <SquareParking aria-hidden="true" focusable="false" className="size-4 shrink-0" />
             {lotLabel(lot)}
@@ -87,7 +87,7 @@ export function MiniMap({ center, parkName, lots, className }: MiniMapProps) {
   );
 
   return (
-    <div className={cn("overflow-hidden rounded-card border border-mist/60 bg-white shadow-card", className)}>
+    <div className={cn("overflow-hidden rounded-card border border-mist-light bg-white shadow-card", className)}>
       {webgl === null && (
         <div role="status" className="h-56 w-full animate-pulse bg-aqua/50">
           <span className="sr-only">Loading map…</span>
@@ -108,7 +108,7 @@ export function MiniMap({ center, parkName, lots, className }: MiniMapProps) {
               <div
                 role="img"
                 aria-label={parkName}
-                className="flex size-9 items-center justify-center rounded-full bg-sunset text-cocoa shadow-md ring-2 ring-white"
+                className="flex size-9 items-center justify-center rounded-full bg-brown text-white shadow-md ring-2 ring-white"
               >
                 <MapPin aria-hidden="true" focusable="false" className="size-5" strokeWidth={2.5} />
               </div>
@@ -120,7 +120,7 @@ export function MiniMap({ center, parkName, lots, className }: MiniMapProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`Directions to ${lotLabel(lot)} (${mapsName}, opens in a new tab)`}
-                  className="flex size-11 items-center justify-center rounded-full border-2 border-mocha bg-white text-cocoa shadow-md"
+                  className="flex size-11 items-center justify-center rounded-full border-[2.5px] border-cyan-deep bg-white text-cyan-deep shadow-md"
                 >
                   <SquareParking aria-hidden="true" focusable="false" className="size-6" />
                 </a>

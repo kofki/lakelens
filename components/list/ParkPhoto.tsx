@@ -19,7 +19,7 @@ export function ParkPhoto({ src, alt = "", className }: ParkPhotoProps) {
   return (
     <div
       aria-hidden="true"
-      className={cn("flex items-center justify-center bg-linear-to-br from-aqua to-peach/60 text-cocoa/60", className)}
+      className={cn("flex items-center justify-center bg-linear-to-br from-aqua to-mist text-cyan-deep/70", className)}
     >
       <Waves focusable="false" className="size-8" />
     </div>

@@ -10,11 +10,11 @@ export function MapSkeleton({ className }: { className?: string }) {
       aria-busy="true"
       className={cn("flex h-full w-full flex-col items-center justify-center gap-3 bg-aqua/40 text-cocoa", className)}
     >
-      <div aria-hidden="true" className="size-10 animate-pulse rounded-full bg-aqua" />
+      <div aria-hidden="true" className="size-10 animate-pulse rounded-full bg-lagoon/50" />
       <p className="text-sm font-bold">Loading map…</p>
       <Link
         href="/list"
-        className="inline-flex min-h-11 items-center rounded-full bg-white px-4 text-sm font-bold text-cocoa shadow-card"
+        className="inline-flex min-h-11 items-center rounded-full border-2 border-brown bg-white px-4 text-sm font-bold text-brown shadow-card"
       >
         Skip to the park list
       </Link>

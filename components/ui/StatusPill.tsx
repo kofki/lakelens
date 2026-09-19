@@ -11,14 +11,14 @@ export interface StatusPillProps {
   className?: string;
 }
 
-/* Text colours all pass 4.5:1 on white (see app/globals.css). Background is solid white
- * so the pill stays legible when overlaid on photos or the cream page. */
+/* beachlens.net pastel pills: fill = STATUS_META.bgHex, text = STATUS_META.hex (all >= 6.6:1),
+ * 1.5px edge = STATUS_META.edgeHex (>= 3:1 on white). Tokens live in app/globals.css. */
 const TONE: Record<StatusLevel, string> = {
-  open: "text-status-open border-status-open/40",
-  likely_full: "text-status-likely border-status-likely/40",
-  full: "text-status-full border-status-full/40",
-  closed: "text-status-closed border-status-closed/40",
-  unknown: "text-status-unknown border-status-unknown/40",
+  open: "bg-status-open-bg text-status-open border-status-open-edge",
+  likely_full: "bg-status-likely-bg text-status-likely border-status-likely-edge",
+  full: "bg-status-full-bg text-status-full border-status-full-edge",
+  closed: "bg-status-closed-bg text-status-closed border-status-closed-edge",
+  unknown: "bg-status-unknown-bg text-status-unknown border-status-unknown-edge",
 };
 
 const SIZE = {
@@ -39,7 +39,7 @@ export function StatusPill({ level, size = "md", estimate = false, className }: 
     <span
       data-level={level}
       className={cn(
-        "inline-flex max-w-full items-center rounded-full border bg-white font-bold leading-tight shadow-card",
+        "inline-flex max-w-full items-center rounded-full border-[1.5px] font-bold leading-tight",
         TONE[level],
         s.pill,
         className,
@@ -55,7 +55,7 @@ export function StatusPill({ level, size = "md", estimate = false, className }: 
         <span>{meta.label}</span>
       )}
       {estimate && (
-        <span className="ml-0.5 rounded-full bg-mist/70 px-1.5 py-px text-[0.72em] font-extrabold uppercase tracking-wide text-cocoa">
+        <span className="ml-0.5 rounded-full bg-white/80 px-1.5 py-px text-[0.72em] font-extrabold uppercase tracking-wide text-cocoa">
           Estimate
         </span>
       )}

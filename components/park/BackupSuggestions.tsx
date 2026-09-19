@@ -7,7 +7,6 @@ import { Accessibility, Car, Compass } from "lucide-react";
 import { DEFAULT_FILTERS, type BackupSuggestion, type ParkWithStatus } from "@/lib/types";
 import { suggestBackups } from "@/lib/backups";
 import { isAccessibleEntry, kmToMiles } from "@/lib/distance";
-import { STATUS_META } from "@/lib/status";
 import { Section } from "@/components/ui/Section";
 import { StatusPill } from "@/components/ui/StatusPill";
 import { Badge } from "@/components/ui/Badge";
@@ -58,10 +57,10 @@ export function BackupSuggestions({ target, all, initial }: BackupSuggestionsPro
               <li key={s.park.id}>
                 <Link
                   href={href}
-                  className="block rounded-xl border border-mist bg-white p-3 hover:border-sand focus-visible:outline-sunset"
+                  className="block rounded-xl border border-mist-light bg-white p-3 shadow-card transition-colors hover:border-moss"
                 >
                   <div className="flex flex-wrap items-center justify-between gap-2">
-                    <p className="text-base font-extrabold text-cocoa">{s.park.name}</p>
+                    <p className="text-base font-extrabold text-ink">{s.park.name}</p>
                     <StatusPill level={s.status.level} size="sm" estimate={s.status.isEstimate} />
                   </div>
                   <p className="mt-1 text-sm text-mocha">

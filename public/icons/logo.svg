@@ -1,9 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="LakeLens">
-  <rect width="512" height="512" rx="112" fill="#fef8f1"/>
+  <rect width="512" height="512" rx="112" fill="#f5f3ea"/>
   <g transform="translate(0 0) scale(1)">
-  <path d="M256 64c-48 70-100 130-100 192a100 100 0 0 0 200 0c0-62-52-122-100-192z" fill="#fe8b00"/>
-  <path d="M214 268a42 42 0 0 0 26 40" fill="none" stroke="#feca8a" stroke-width="16" stroke-linecap="round"/>
-  <path d="M40 400c36-28 72-28 108 0s72 28 108 0 72-28 108 0 72 28 108 0" fill="none" stroke="#17e0ee" stroke-width="26" stroke-linecap="round"/>
-  <path d="M40 452c36-28 72-28 108 0s72 28 108 0 72-28 108 0 72 28 108 0" fill="none" stroke="#cbeaed" stroke-width="22" stroke-linecap="round"/>
+  <path d="M256 64c-48 70-100 130-100 192a100 100 0 0 0 200 0c0-62-52-122-100-192z" fill="#e08a2e"/>
+  <path d="M234 308c-12-48 18-92 66-102c4 48-18 92-66 102z" fill="#7a9a5b"/>
+  <path d="M240 302l56-92" fill="none" stroke="#f5f3ea" stroke-width="7" stroke-linecap="round"/>
+  <path d="M40 400c36-28 72-28 108 0s72 28 108 0 72-28 108 0 72 28 108 0" fill="none" stroke="#3fb5c2" stroke-width="26" stroke-linecap="round"/>
+  <path d="M40 452c36-28 72-28 108 0s72 28 108 0 72-28 108 0 72 28 108 0" fill="none" stroke="#cfeff2" stroke-width="22" stroke-linecap="round"/>
 </g>
 </svg>

@@ -61,7 +61,7 @@ export function PlanSidebar({ bundle, className }: PlanSidebarProps) {
   return (
     <aside aria-label="Plan your visit" className={className}>
       <Card as="section" className="space-y-3">
-        <h2 className="text-lg font-extrabold leading-tight text-cocoa">Plan your visit</h2>
+        <h2 className="text-xs font-extrabold uppercase tracking-wide text-taupe">Plan your visit</h2>
         <StatusPill level={status.level} size="lg" estimate={status.isEstimate} />
         <p className="text-sm font-bold text-cocoa">
           {line.text}
@@ -111,7 +111,7 @@ export function PlanSidebar({ bundle, className }: PlanSidebarProps) {
             href={park.official_url}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex min-h-11 items-center gap-1 text-sm font-bold text-cocoa underline underline-offset-2"
+            className="inline-flex min-h-11 items-center gap-1 text-sm font-bold text-brown underline underline-offset-2"
           >
             Official park page
             <ExternalLink aria-hidden="true" focusable="false" className="size-4" />
@@ -120,13 +120,13 @@ export function PlanSidebar({ bundle, className }: PlanSidebarProps) {
         )}
       </Card>
 
-      <Card as="section" className="space-y-3">
-        <h2 className="text-lg font-extrabold leading-tight text-cocoa">Where you&apos;ll be</h2>
+      <Card as="section" className="space-y-3 border-mist">
+        <h2 className="text-lg font-extrabold leading-tight text-brown">Where you&apos;ll be</h2>
         <MiniMapLazy center={{ lat: park.lat, lng: park.lng }} parkName={park.name} lots={bundle.parkingLots} className="w-full" />
       </Card>
 
       <Card as="section" className="flex items-start gap-2">
-        <AccessibilityIcon aria-hidden="true" focusable="false" className="mt-0.5 size-5 shrink-0 text-sunset" />
+        <AccessibilityIcon aria-hidden="true" focusable="false" className="mt-0.5 size-5 shrink-0 text-taupe" />
         <p className="text-sm text-cocoa">
           <span className="font-bold">Accessible water entry:</span> {accessText}{" "}
           {accessibility && (

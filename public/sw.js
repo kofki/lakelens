@@ -1,7 +1,7 @@
 /* LakeLens service worker: network-first with an /offline fallback for page loads.
  * Registered only in production (components/pwa/RegisterSW.tsx) and served with
  * Cache-Control: no-cache (next.config.ts). Bump CACHE to drop old entries. */
-const CACHE = "lakelens-v1";
+const CACHE = "lakelens-v2";
 const OFFLINE_URL = "/offline";
 const PRECACHE = [OFFLINE_URL, "/icons/icon-192.png", "/icons/icon-512.png", "/icons/logo.svg"];
 

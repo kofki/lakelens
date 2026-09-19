@@ -42,7 +42,7 @@ export default async function ReportPage() {
       <div className="mx-auto w-full max-w-[1100px] flex-1 px-6 pb-8 pt-[calc(env(safe-area-inset-top)+12px)] md:py-12">
         <div className="md:grid md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] md:gap-12 lg:gap-16">
           <header className="md:sticky md:top-[calc(var(--top-nav-h)+24px)] md:self-start">
-            <h1 className="text-2xl font-extrabold text-cocoa md:text-4xl md:leading-tight">
+            <h1 className="text-2xl font-extrabold text-brown md:text-4xl md:leading-tight">
               Report conditions
             </h1>
             <p className="mt-1 text-sm text-mocha md:mt-3 md:text-base">
@@ -54,13 +54,13 @@ export default async function ReportPage() {
                 <li key={title} className="flex items-start gap-3">
                   <span
                     aria-hidden="true"
-                    className="mt-0.5 inline-flex shrink-0 rounded-full bg-peach p-2 text-cocoa"
+                    className="mt-0.5 inline-flex shrink-0 rounded-full bg-aqua p-2 text-cyan-deep"
                   >
                     <Icon className="size-5" />
                   </span>
                   <span>
-                    <span className="block font-bold text-cocoa">{title}</span>
-                    <span className="block text-sm text-cocoa/75">{body}</span>
+                    <span className="block font-bold text-ink">{title}</span>
+                    <span className="block text-sm text-mocha">{body}</span>
                   </span>
                 </li>
               ))}

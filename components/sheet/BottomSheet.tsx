@@ -138,7 +138,7 @@ export function BottomSheet({ index, onIndexChange, onHeightChange, ariaLabel, h
       role="region"
       aria-label={ariaLabel}
       className={cn(
-        "fixed inset-x-0 z-30 flex flex-col rounded-t-[var(--radius-card)] bg-white shadow-[var(--shadow-sheet)]",
+        "fixed inset-x-0 z-30 flex flex-col rounded-t-[var(--radius-card)] border-t border-mist-light bg-white shadow-[var(--shadow-sheet)]",
         className,
       )}
       style={{

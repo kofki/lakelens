@@ -40,14 +40,14 @@ export function StatusHeader({ bundle, now }: StatusHeaderProps) {
     <section
       id="status"
       aria-labelledby="status-heading"
-      className="scroll-mt-4 space-y-4 rounded-card border border-mist/60 bg-white p-4 shadow-card"
+      className="scroll-mt-4 space-y-4 rounded-card border border-mist-light bg-white p-4 shadow-card"
     >
       <h2 id="status-heading" className="sr-only">
         Status
       </h2>
       <div className="flex flex-wrap items-center gap-2 md:hidden">
         <StatusPill level={status.level} size="lg" estimate={status.isEstimate} />
-        <span className="text-sm font-bold text-cocoa/75">{CONFIDENCE_TEXT[status.confidence]}</span>
+        <span className="text-sm font-bold text-mocha">{CONFIDENCE_TEXT[status.confidence]}</span>
       </div>
 
       <p className="text-base text-cocoa md:text-lg md:font-bold">{meta.description}</p>
@@ -61,7 +61,7 @@ export function StatusHeader({ bundle, now }: StatusHeaderProps) {
 
       {status.reasons.length > 0 && (
         <div>
-          <h3 className="text-sm font-extrabold text-cocoa/75">Why we say this</h3>
+          <h3 className="text-xs font-bold uppercase tracking-wide text-taupe">Why we say this</h3>
           <ul className="mt-1 list-disc space-y-1 pl-5 text-sm text-cocoa">
             {status.reasons.map((r, i) => (
               <li key={`${i}-${r}`}>{r}</li>
@@ -72,7 +72,7 @@ export function StatusHeader({ bundle, now }: StatusHeaderProps) {
 
       <div className="space-y-1 border-t border-mist pt-3">
         <LastUpdated at={status.updatedAt} source={STATUS_SOURCE_TEXT[status.source]} prefix="Status updated" />
-        <p className="text-xs text-cocoa/75">
+        <p className="text-xs text-mocha">
           Sourced from {sourcesLine(bundle)}
           {conditionsAt ? (
             <>
@@ -88,7 +88,7 @@ export function StatusHeader({ bundle, now }: StatusHeaderProps) {
           )}
         </p>
         {park.coverage_tier === "basic" && (
-          <p className="text-xs text-cocoa/75">
+          <p className="text-xs text-mocha">
             Basic coverage: closure estimates and live water data are not yet available for this park.
           </p>
         )}

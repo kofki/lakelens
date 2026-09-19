@@ -6,6 +6,11 @@
  *       ?f=json&monitoring_location_id=USGS-02322700,...&parameter_code=00060,00065,00010,63160&limit=200
  * Fallback: legacy WaterServices IV (WaterML-JSON, site-local times with offset; decommission "early 2027").
  *   GET https://waterservices.usgs.gov/nwis/iv/?format=json&sites=...&parameterCd=...&siteStatus=all
+ * History: OGC "continuous" collection (same feature shape, ascending time) for the flow sparkline.
+ *   GET https://api.waterdata.usgs.gov/ogcapi/v1/collections/continuous/items
+ *       ?f=json&monitoring_location_id=USGS-02322700&parameter_code=00060&datetime=<start>/<end>&limit=2000
+ *
+ * Site ids are batched USGS_BATCH_SIZE (40) per request so ~45 gauges across all parks fit comfortably.
  *
  * Runtime-neutral: no Next/React/DOM imports. Every network call accepts an injectable `fetchImpl`
  * so tests run against fixtures in tests/fixtures/.
@@ -18,7 +23,10 @@ export const USGS_PARAMETERS: readonly UsgsParameter[] = ["00060", "00065", "000
 export const USGS_STALE_MS = 6 * 3600e3;
 
 export const USGS_OGC_URL = "https://api.waterdata.usgs.gov/ogcapi/v1/collections/latest-continuous/items";
+export const USGS_CONTINUOUS_URL = "https://api.waterdata.usgs.gov/ogcapi/v1/collections/continuous/items";
 export const USGS_LEGACY_URL = "https://waterservices.usgs.gov/nwis/iv/";
+/** Max monitoring locations per OGC / legacy request. */
+export const USGS_BATCH_SIZE = 40;
 
 /**
  * Typical discharge baselines (ft3/s) per gauge, used ONLY for the coarse `flowFlag`.
@@ -269,10 +277,17 @@ async function getJson<T>(url: string, init: RequestInit, fetchImpl: typeof fetc
   return (await res.json()) as T;
 }
 
+export function chunk<T>(items: T[], size: number): T[][] {
+  const out: T[][] = [];
+  for (let i = 0; i < items.length; i += size) out.push(items.slice(i, i + size));
+  return out;
+}
+
 /**
- * One batched call for all distinct site ids. Falls back to the legacy IV service when the OGC
- * endpoint errors, times out, or returns no features. Returns readings grouped by bare site id
- * ("02322700"), newest per parameter, quirks applied, stale flags relative to `now`.
+ * Batched calls (USGS_BATCH_SIZE sites each) for all distinct site ids. Each chunk falls back to the
+ * legacy IV service when the OGC endpoint errors, times out, or returns no features. Returns readings
+ * grouped by bare site id ("02322700"), newest per parameter, quirks applied, stale flags relative to `now`.
+ * `source` is "usgs-legacy" when ANY chunk needed the fallback.
  */
 export async function fetchUsgsLatestDetailed(siteIds: string[], opts: FetchUsgsOptions = {}): Promise<UsgsFetchResult> {
   const sites = [...new Set(siteIds.map(normalizeSiteId).filter(Boolean))];
@@ -283,21 +298,29 @@ export async function fetchUsgsLatestDetailed(siteIds: string[], opts: FetchUsgs
   const headers: Record<string, string> = { Accept: "application/json" };
   if (opts.apiKey) headers["X-Api-Key"] = opts.apiKey;
 
+  const all: UsgsReading[] = [];
+  let source: UsgsPayload["source"] = "usgs-ogc";
   let fallbackReason: string | null = null;
-  try {
-    const json = await getJson<OgcFeatureCollection>(buildOgcUrl(sites), { headers, cache: "no-store" }, fetchImpl, timeoutMs);
-    const readings = prepareReadings(normalizeOgc(json, now));
-    if (readings.length > 0) {
-      return { source: "usgs-ogc", readingsBySite: groupBySite(readings), readings, fallbackReason: null };
+  for (const batch of chunk(sites, USGS_BATCH_SIZE)) {
+    let reason: string | null = null;
+    try {
+      const json = await getJson<OgcFeatureCollection>(buildOgcUrl(batch), { headers, cache: "no-store" }, fetchImpl, timeoutMs);
+      const readings = normalizeOgc(json, now);
+      if (readings.length > 0) {
+        all.push(...readings);
+        continue;
+      }
+      reason = "OGC latest-continuous returned no usable features";
+    } catch (err) {
+      reason = `OGC latest-continuous failed: ${err instanceof Error ? err.message : String(err)}`;
     }
-    fallbackReason = "OGC latest-continuous returned no usable features";
-  } catch (err) {
-    fallbackReason = `OGC latest-continuous failed: ${err instanceof Error ? err.message : String(err)}`;
+    const json = await getJson<LegacyResponse>(buildLegacyUrl(batch), { headers: { Accept: "application/json" }, cache: "no-store" }, fetchImpl, timeoutMs);
+    all.push(...normalizeLegacy(json, now));
+    source = "usgs-legacy";
+    fallbackReason ??= reason;
   }
-
-  const json = await getJson<LegacyResponse>(buildLegacyUrl(sites), { headers: { Accept: "application/json" }, cache: "no-store" }, fetchImpl, timeoutMs);
-  const readings = prepareReadings(normalizeLegacy(json, now));
-  return { source: "usgs-legacy", readingsBySite: groupBySite(readings), readings, fallbackReason };
+  const readings = prepareReadings(all);
+  return { source, readingsBySite: groupBySite(readings), readings, fallbackReason };
 }
 
 /** Contract signature: readings grouped by site id. See fetchUsgsLatestDetailed for the source label. */
@@ -362,4 +385,78 @@ export function buildUsgsPayloadForPark(
   }
 
   return { source, fetchedAt: fetchedAtIso, readings: merged, flowFlag, flowNote };
+}
+
+// ---------- flow history (OGC continuous collection) ----------
+
+export type FlowParameter = "00060" | "00065";
+
+export interface FlowPoint {
+  /** ISO UTC */
+  t: string;
+  v: number;
+}
+
+export interface FlowHistory {
+  site: string;
+  parameter: FlowParameter;
+  unit: string;
+  points: FlowPoint[];
+}
+
+export function buildContinuousUrl(site: string, parameter: FlowParameter, start: Date, end: Date, limit = 2000): string {
+  const params = new URLSearchParams({
+    f: "json",
+    monitoring_location_id: `USGS-${normalizeSiteId(site)}`,
+    parameter_code: parameter,
+    datetime: `${start.toISOString()}/${end.toISOString()}`,
+    limit: String(limit),
+  });
+  return `${USGS_CONTINUOUS_URL}?${params.toString()}`;
+}
+
+/**
+ * OGC continuous GeoJSON -> ascending, de-duplicated {t, v} points for ONE site/parameter.
+ * Non-numeric values and features for other sites/parameters are dropped. Exported for tests.
+ */
+export function normalizeContinuous(json: OgcFeatureCollection, site?: string, parameter?: FlowParameter): { points: FlowPoint[]; unit: string } {
+  const byTime = new Map<string, number>();
+  let unit = "";
+  for (const f of json?.features ?? []) {
+    const p = f?.properties;
+    if (!p) continue;
+    if (site && normalizeSiteId(String(p.monitoring_location_id ?? "")) !== normalizeSiteId(site)) continue;
+    if (parameter && String(p.parameter_code ?? "") !== parameter) continue;
+    const v = toNumber(p.value);
+    const t = toIsoUtc(String(p.time ?? ""));
+    if (v === null || !t) continue;
+    if (!unit && p.unit_of_measure) unit = normalizeUnit(String(p.unit_of_measure));
+    byTime.set(t, v);
+  }
+  const points = [...byTime.entries()].map(([t, v]) => ({ t, v })).sort((a, b) => a.t.localeCompare(b.t));
+  return { points, unit };
+}
+
+/**
+ * Readings for one site over the trailing window. Tries 00060 (discharge) first, then 00065 (gage height)
+ * unless `parameter` is fixed. Returns null when neither series has points. Server-side only (uses the
+ * optional API key); the route caches the result at the CDN.
+ */
+export async function fetchFlowHistory(
+  site: string,
+  hours: number,
+  opts: FetchUsgsOptions & { parameter?: FlowParameter } = {},
+): Promise<FlowHistory | null> {
+  const fetchImpl = opts.fetchImpl ?? fetch;
+  const now = opts.now ?? new Date();
+  const start = new Date(now.getTime() - hours * 3600e3);
+  const headers: Record<string, string> = { Accept: "application/json" };
+  if (opts.apiKey) headers["X-Api-Key"] = opts.apiKey;
+  const params: FlowParameter[] = opts.parameter ? [opts.parameter] : ["00060", "00065"];
+  for (const parameter of params) {
+    const json = await getJson<OgcFeatureCollection>(buildContinuousUrl(site, parameter, start, now), { headers, cache: "no-store" }, fetchImpl, opts.timeoutMs ?? 15000);
+    const { points, unit } = normalizeContinuous(json, site, parameter);
+    if (points.length > 0) return { site: normalizeSiteId(site), parameter, unit: unit || (parameter === "00060" ? "ft3/s" : "ft"), points };
+  }
+  return null;
 }

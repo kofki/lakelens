@@ -119,8 +119,8 @@ export function SectionTabs({ sections, className }: SectionTabsProps) {
                   "inline-flex min-h-11 items-center whitespace-nowrap rounded-full border px-4 text-sm font-bold transition-colors",
                   "md:min-h-12 md:w-full md:justify-center md:rounded-none md:border-x-0 md:border-t-0 md:border-b-[3px] md:bg-transparent md:px-2 md:text-[0.88rem]",
                   isActive
-                    ? "border-cocoa bg-cocoa text-cream md:border-b-mocha md:text-cocoa"
-                    : "border-mist bg-white text-cocoa hover:bg-mist/40 md:border-b-transparent md:text-mocha md:hover:bg-mist/30 md:hover:text-cocoa",
+                    ? "border-brown bg-brown text-white md:border-b-taupe md:text-brown"
+                    : "border-mist bg-white text-cocoa hover:border-moss md:border-b-transparent md:text-mocha md:hover:bg-mist/30 md:hover:text-brown",
                 )}
               >
                 {s.label}

@@ -29,10 +29,14 @@ export const MAP_ATTRIBUTION = "OpenFreeMap © OpenMapTiles Data from OpenStreet
  * Brand recolour applied once the style has loaded. Layer ids come from the positron
  * style; each is guarded with getLayer() so other styles simply skip what they lack.
  */
-const BRAND_PAINT: ReadonlyArray<readonly [layerId: string, property: string, value: string]> = [
-  ["background", "background-color", "#fef8f1"], // cream
-  ["water", "fill-color", "#cbeaed"], // aqua
-  ["waterway", "line-color", "#8fd3da"],
+const BRAND_PAINT: ReadonlyArray<readonly [layerId: string, property: string, value: string | number]> = [
+  ["background", "background-color", "#f5f3ea"], // ivory (--color-cream)
+  ["water", "fill-color", "#cfeff2"], // spring water
+  ["waterway", "line-color", "#7fd0d8"],
+  ["park", "fill-color", "#dfe9d0"], // sage parks
+  ["park", "fill-opacity", 0.9],
+  ["landcover_wood", "fill-color", "#cfe0bf"], // sage wood
+  ["landcover_grass", "fill-color", "#e3ebd3"],
 ];
 
 export function applyBrandPaint(map: MaplibreMap): void {

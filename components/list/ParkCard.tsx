@@ -17,7 +17,7 @@ import { describeParkKind, formatDistance, statusSourceLabel } from "./parkListU
 
 export interface ParkCardProps {
   item: ParkWithStatus;
-  /** Highlighted (aria-current + orange ring) and scrolled into view when true. */
+  /** Highlighted (aria-current + amber ring) and scrolled into view when true. */
   selected?: boolean;
   /**
    * When provided (desktop split view) clicking the card selects the park on the map
@@ -54,11 +54,11 @@ export function ParkCard({ item, selected = false, onSelect }: ParkCardProps) {
       onClick={selectable ? () => onSelect(park.id) : undefined}
       className={cn("rounded-card", selectable && "cursor-pointer", selected && "ring-2 ring-sunset ring-offset-2 ring-offset-white")}
     >
-      <Card as="article" padded={false} className="relative overflow-hidden transition-shadow focus-within:shadow-sheet hover:shadow-sheet">
+      <Card as="article" padded={false} interactive className="relative overflow-hidden">
         <div className="flex gap-3 p-3">
           <ParkPhoto src={park.photo_url} className="size-20 shrink-0 rounded-xl" />
           <div className="min-w-0 flex-1">
-            <h3 className="text-base font-extrabold leading-tight text-cocoa">
+            <h3 className="text-base font-extrabold leading-tight text-ink">
               <Link
                 href={`/park/${park.slug}`}
                 onClick={selectable ? (e) => e.stopPropagation() : undefined}
@@ -70,7 +70,7 @@ export function ParkCard({ item, selected = false, onSelect }: ParkCardProps) {
             <p className="mt-0.5 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-mocha">
               <span>{describeParkKind(park)}</span>
               {distance && (
-                <span className="inline-flex items-center gap-1 font-bold text-cocoa">
+                <span className="inline-flex items-center gap-1 rounded-full bg-aqua px-2 py-0.5 font-bold text-cyan-deep">
                   <MapPin aria-hidden="true" focusable="false" className="size-3" />
                   {distance}
                 </span>
@@ -83,7 +83,7 @@ export function ParkCard({ item, selected = false, onSelect }: ParkCardProps) {
             </div>
           </div>
         </div>
-        <div className="space-y-1.5 border-t border-mist/60 px-3 py-2">
+        <div className="space-y-1.5 border-t border-mist-light px-3 py-2">
           {hasConditionData(item) ? (
             <StatRow items={conditionStatItems(item)} />
           ) : (
@@ -104,7 +104,7 @@ export function ParkCard({ item, selected = false, onSelect }: ParkCardProps) {
                   e.stopPropagation();
                   onSelect(park.id);
                 }}
-                className="inline-flex min-h-11 items-center gap-1 rounded-full px-2 text-xs font-bold text-cocoa hover:bg-mist/50"
+                className="inline-flex min-h-11 items-center gap-1 rounded-full px-2 text-xs font-bold text-brown hover:bg-mist-light"
               >
                 <MapPin aria-hidden="true" focusable="false" className="size-3.5" />
                 Show on map

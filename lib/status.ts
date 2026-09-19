@@ -11,8 +11,12 @@ export interface StatusMeta {
   shortLabel: string;
   /** Tailwind token name from app/globals.css, e.g. "status-open" */
   colorToken: string;
-  /** Hex for inline styles (map markers). Passes 3:1 on white. */
+  /** Text colour hex (AA on the pill background). */
   hex: string;
+  /** Pill/marker background hex (beachlens.net pastel). */
+  bgHex: string;
+  /** Border/marker edge hex (3:1 on white). */
+  edgeHex: string;
   icon: "CircleCheck" | "Clock" | "Ban" | "OctagonX" | "CircleHelp";
   description: string;
 }
@@ -22,7 +26,9 @@ export const STATUS_META: Record<StatusLevel, StatusMeta> = {
     label: "Open",
     shortLabel: "Open",
     colorToken: "status-open",
-    hex: "#2e7d32",
+    hex: "#14532d",
+    bgHex: "#dcfce7",
+    edgeHex: "#16a34a",
     icon: "CircleCheck",
     description: "No closure expected right now.",
   },
@@ -30,7 +36,9 @@ export const STATUS_META: Record<StatusLevel, StatusMeta> = {
     label: "Likely full soon",
     shortLabel: "Filling",
     colorToken: "status-likely",
-    hex: "#c25e00",
+    hex: "#7c4a03",
+    bgHex: "#fef3c7",
+    edgeHex: "#d97706",
     icon: "Clock",
     description: "Our estimate says this park may reach capacity today.",
   },
@@ -38,7 +46,9 @@ export const STATUS_META: Record<StatusLevel, StatusMeta> = {
     label: "Full / turned away",
     shortLabel: "Full",
     colorToken: "status-full",
-    hex: "#c62828",
+    hex: "#991b1b",
+    bgHex: "#fee2e2",
+    edgeHex: "#dc2626",
     icon: "Ban",
     description: "Visitors report being turned away at the gate.",
   },
@@ -46,7 +56,9 @@ export const STATUS_META: Record<StatusLevel, StatusMeta> = {
     label: "Closed",
     shortLabel: "Closed",
     colorToken: "status-closed",
-    hex: "#3d2518",
+    hex: "#7f1d1d",
+    bgHex: "#fecaca",
+    edgeHex: "#7f1d1d",
     icon: "OctagonX",
     description: "An official notice says swimming is closed.",
   },
@@ -54,7 +66,9 @@ export const STATUS_META: Record<StatusLevel, StatusMeta> = {
     label: "Status unknown",
     shortLabel: "?",
     colorToken: "status-unknown",
-    hex: "#6d5546",
+    hex: "#374151",
+    bgHex: "#eef0ea",
+    edgeHex: "#6b7280",
     icon: "CircleHelp",
     description: "Not enough data yet.",
   },

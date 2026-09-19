@@ -1,0 +1,447 @@
+{
+  "alfred-b-maclay-gardens-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": "02329000",
+    "gauge_distance_km": 12.2,
+    "site_names": {
+      "02329000": "OCHLOCKONEE RIVER NR HAVANA, FLA."
+    }
+  },
+  "anastasia-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": null,
+    "gauge_distance_km": null,
+    "site_names": {}
+  },
+  "anclote-key-preserve-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": "02309447",
+    "gauge_distance_km": 14,
+    "site_names": {
+      "02309447": "BEE BRANCH NEAR PALM HARBOR FL"
+    }
+  },
+  "avalon-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": "02253500",
+    "gauge_distance_km": 9.1,
+    "site_names": {
+      "02253500": "SOUTH CANAL NEAR VERO BEACH, FL"
+    }
+  },
+  "bahia-honda-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": null,
+    "gauge_distance_km": null,
+    "site_names": {}
+  },
+  "bald-point-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": null,
+    "gauge_distance_km": null,
+    "site_names": {}
+  },
+  "big-lagoon-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": null,
+    "gauge_distance_km": null,
+    "site_names": {}
+  },
+  "bill-baggs-cape-florida-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": null,
+    "gauge_distance_km": null,
+    "site_names": {}
+  },
+  "blackwater-river-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": "02370500",
+    "gauge_distance_km": 9.2,
+    "site_names": {
+      "02370500": "BIG COLDWATER CREEK NR MILTON, FLA."
+    }
+  },
+  "caladesi-island-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": "02309421",
+    "gauge_distance_km": 6.9,
+    "site_names": {
+      "02309421": "CURLEW CREEK AT BELCHER ROAD NEAR OZONA FL"
+    }
+  },
+  "camp-helen-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": null,
+    "gauge_distance_km": null,
+    "site_names": {}
+  },
+  "cayo-costa-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": null,
+    "gauge_distance_km": null,
+    "site_names": {}
+  },
+  "curry-hammock-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": null,
+    "gauge_distance_km": null,
+    "site_names": {}
+  },
+  "de-leon-springs-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": "02236000",
+    "gauge_distance_km": 14.8,
+    "site_names": {
+      "02236000": "ST. JOHNS RIVER NEAR DE LAND, FL"
+    }
+  },
+  "deer-lake-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": null,
+    "gauge_distance_km": null,
+    "site_names": {}
+  },
+  "delnor-wiggins-pass-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": "02291524",
+    "gauge_distance_km": 9.8,
+    "site_names": {
+      "02291524": "SPRING CREEK HEADWATER NEAR BONITA SPRINGS, FL"
+    }
+  },
+  "don-pedro-island-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": null,
+    "gauge_distance_km": null,
+    "site_names": {}
+  },
+  "dr-julian-g-bruce-st-george-island-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": null,
+    "gauge_distance_km": null,
+    "site_names": {}
+  },
+  "dr-von-d-mizell-eula-johnson-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": null,
+    "gauge_distance_km": null,
+    "site_names": {}
+  },
+  "edward-ball-wakulla-springs-state-park": {
+    "usgs_site_id": "02327000",
+    "river_gauge_site_id": "02327022",
+    "gauge_distance_km": 5,
+    "site_names": {
+      "02327000": "WAKULLA SPRING NR CRAWFORDVILLE, FL",
+      "02327022": "WAKULLA RIVER NEAR CRAWFORDVILLE, FL"
+    }
+  },
+  "egmont-key-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": null,
+    "gauge_distance_km": null,
+    "site_names": {}
+  },
+  "falling-waters-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": null,
+    "gauge_distance_km": null,
+    "site_names": {}
+  },
+  "fanning-springs-state-park": {
+    "usgs_site_id": "02323502",
+    "river_gauge_site_id": "02323500",
+    "gauge_distance_km": 0.5,
+    "site_names": {
+      "02323502": "FANNING SPRINGS NR WILCOX FLA",
+      "02323500": "SUWANNEE RIVER NEAR WILCOX, FLA."
+    }
+  },
+  "florida-caverns-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": "02358789",
+    "gauge_distance_km": 4.7,
+    "site_names": {
+      "02358789": "CHIPOLA RIVER AT MARIANNA FL"
+    }
+  },
+  "fort-clinch-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": null,
+    "gauge_distance_km": null,
+    "site_names": {}
+  },
+  "fort-pierce-inlet-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": null,
+    "gauge_distance_km": null,
+    "site_names": {}
+  },
+  "fort-zachary-taylor-historic-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": null,
+    "gauge_distance_km": null,
+    "site_names": {}
+  },
+  "gamble-rogers-memorial-state-recreation-area-at-flagler-beach": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": null,
+    "gauge_distance_km": null,
+    "site_names": {}
+  },
+  "gasparilla-island-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": null,
+    "gauge_distance_km": null,
+    "site_names": {}
+  },
+  "grayton-beach-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": null,
+    "gauge_distance_km": null,
+    "site_names": {}
+  },
+  "henderson-beach-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": null,
+    "gauge_distance_km": null,
+    "site_names": {}
+  },
+  "honeymoon-island-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": "02309447",
+    "gauge_distance_km": 6.4,
+    "site_names": {
+      "02309447": "BEE BRANCH NEAR PALM HARBOR FL"
+    }
+  },
+  "hugh-taylor-birch-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": null,
+    "gauge_distance_km": null,
+    "site_names": {}
+  },
+  "indian-key-historic-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": null,
+    "gauge_distance_km": null,
+    "site_names": {}
+  },
+  "john-d-macarthur-beach-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": null,
+    "gauge_distance_km": null,
+    "site_names": {}
+  },
+  "john-pennekamp-coral-reef-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": null,
+    "gauge_distance_km": null,
+    "site_names": {}
+  },
+  "lafayette-blue-springs-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": "02320000",
+    "gauge_distance_km": 8.2,
+    "site_names": {
+      "02320000": "SUWANNEE RIVER AT LURAVILLE, FLA."
+    }
+  },
+  "lake-louisa-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": "02236500",
+    "gauge_distance_km": 0.1,
+    "site_names": {
+      "02236500": "BIG CREEK NEAR CLERMONT, FL"
+    }
+  },
+  "lake-manatee-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": "02300018",
+    "gauge_distance_km": 9.8,
+    "site_names": {
+      "02300018": "GAMBLE CREEK NEAR PARRISH FL"
+    }
+  },
+  "lignumvitae-key-botanical-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": null,
+    "gauge_distance_km": null,
+    "site_names": {}
+  },
+  "little-talbot-island-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": "02246825",
+    "gauge_distance_km": 9.9,
+    "site_names": {
+      "02246825": "CLAPBOARD CREEK NR JACKSONVILLE, FL"
+    }
+  },
+  "long-key-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": null,
+    "gauge_distance_km": null,
+    "site_names": {}
+  },
+  "lovers-key-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": "02291524",
+    "gauge_distance_km": 8.5,
+    "site_names": {
+      "02291524": "SPRING CREEK HEADWATER NEAR BONITA SPRINGS, FL"
+    }
+  },
+  "madison-blue-spring-state-park": {
+    "usgs_site_id": "02319302",
+    "river_gauge_site_id": "02319394",
+    "gauge_distance_km": 9.8,
+    "site_names": {
+      "02319302": "MADISON BLUE SPRING NR BLUE SPRINGS, FL",
+      "02319394": "WITHLACOOCHEE RIVER NR LEE, FLA"
+    }
+  },
+  "manatee-springs-state-park": {
+    "usgs_site_id": "02323566",
+    "river_gauge_site_id": "02323500",
+    "gauge_distance_km": 11,
+    "site_names": {
+      "02323566": "MANATEE SPRING NR CHIEFLAND FLA",
+      "02323500": "SUWANNEE RIVER NEAR WILCOX, FLA."
+    }
+  },
+  "mike-roess-gold-head-branch-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": null,
+    "gauge_distance_km": null,
+    "site_names": {}
+  },
+  "north-peninsula-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": null,
+    "gauge_distance_km": null,
+    "site_names": {}
+  },
+  "oleno-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": "02321898",
+    "gauge_distance_km": 2.3,
+    "site_names": {
+      "02321898": "SANTA FE RIVER AT O'LENO STATE PARK FLA"
+    }
+  },
+  "ochlockonee-river-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": "02327100",
+    "gauge_distance_km": 14,
+    "site_names": {
+      "02327100": "SOPCHOPPY RIVER NR SOPCHOPPY, FLA."
+    }
+  },
+  "oleta-river-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": "02286328",
+    "gauge_distance_km": 5.9,
+    "site_names": {
+      "02286328": "C-8 CANAL AT NE 135 ST AT NORTH MIAMI, FL"
+    }
+  },
+  "oscar-scherer-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": "02298880",
+    "gauge_distance_km": 10.4,
+    "site_names": {
+      "02298880": "MYAKKA RIVER AT CONTROL NEAR LAUREL FL"
+    }
+  },
+  "perdido-key-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": null,
+    "gauge_distance_km": null,
+    "site_names": {}
+  },
+  "ponce-de-leon-springs-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": "02365500",
+    "gauge_distance_km": 12.1,
+    "site_names": {
+      "02365500": "CHOCTAWHATCHEE RIVER AT CARYVILLE, FLA."
+    }
+  },
+  "san-pedro-underwater-archaeological-preserve-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": null,
+    "gauge_distance_km": null,
+    "site_names": {}
+  },
+  "sebastian-inlet-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": "02251500",
+    "gauge_distance_km": 7.1,
+    "site_names": {
+      "02251500": "NORTH PRONG SAINT SEBASTIAN RIVER NEAR MICCO, FL"
+    }
+  },
+  "st-andrews-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": null,
+    "gauge_distance_km": null,
+    "site_names": {}
+  },
+  "st-lucie-inlet-preserve-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": "02276998",
+    "gauge_distance_km": 14.8,
+    "site_names": {
+      "02276998": "ST LUCIE CANAL ABV S-80 NR STUART FL"
+    }
+  },
+  "stump-pass-beach-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": null,
+    "gauge_distance_km": null,
+    "site_names": {}
+  },
+  "th-stone-memorial-st-joseph-peninsula-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": null,
+    "gauge_distance_km": null,
+    "site_names": {}
+  },
+  "topsail-hill-preserve-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": null,
+    "gauge_distance_km": null,
+    "site_names": {}
+  },
+  "troy-spring-state-park": {
+    "usgs_site_id": "02320250",
+    "river_gauge_site_id": "02320500",
+    "gauge_distance_km": 8.5,
+    "site_names": {
+      "02320250": "TROY SPRING NEAR BRANFORD FLA",
+      "02320500": "SUWANNEE RIVER AT BRANFORD, FLA."
+    }
+  },
+  "weeki-wachee-springs-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": "02310525",
+    "gauge_distance_km": 0.2,
+    "site_names": {
+      "02310525": "WEEKI WACHEE RIVER NEAR BROOKSVILLE FL"
+    }
+  },
+  "wes-skiles-peacock-springs-state-park": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": "02320000",
+    "gauge_distance_km": 4.9,
+    "site_names": {
+      "02320000": "SUWANNEE RIVER AT LURAVILLE, FLA."
+    }
+  },
+  "william-j-billy-joe-rish-recreation-area": {
+    "usgs_site_id": null,
+    "river_gauge_site_id": null,
+    "gauge_distance_km": null,
+    "site_names": {}
+  }
+}
