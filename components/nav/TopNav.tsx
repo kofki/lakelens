@@ -50,7 +50,7 @@ export function TopNav() {
           <Wordmark />
         </Link>
 
-        <ul className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center gap-1 lg:gap-2">
+        <ul className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center gap-0.5 lg:gap-2">
           {LINKS.map(({ href, label }) => {
             const active = isActive(href, pathname);
             return (
@@ -73,7 +73,7 @@ export function TopNav() {
         <div className="flex items-center gap-3">
           <Link
             href="/list"
-            className="inline-flex min-h-11 items-center justify-center rounded-full border-2 border-cocoa px-5 text-[0.95rem] font-bold text-cocoa transition-colors hover:bg-cocoa hover:text-white"
+            className="hidden min-h-11 items-center justify-center rounded-full border-2 border-cocoa px-5 text-[0.95rem] font-bold text-cocoa transition-colors hover:bg-cocoa hover:text-white lg:inline-flex"
           >
             Explore parks
           </Link>

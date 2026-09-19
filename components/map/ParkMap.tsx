@@ -15,7 +15,7 @@ import {
 } from "@vis.gl/react-maplibre";
 import type { ParkWithStatus } from "@/lib/types";
 import type { LatLng } from "@/lib/distance";
-import { FLORIDA_BOUNDS, LABEL_ZOOM, MAP_ARIA_LABEL, MAP_STYLE_URL, applyBrandPaint } from "./mapStyle";
+import { FALLBACK_MAP_STYLE_URL, FLORIDA_BOUNDS, LABEL_ZOOM, MAP_ARIA_LABEL, MAP_STYLE_URL, applyBrandPaint } from "./mapStyle";
 import { useWebGL2 } from "./useWebGL2";
 import { MapSkeleton } from "./MapSkeleton";
 import { MapUnavailable } from "./MapUnavailable";
@@ -72,6 +72,9 @@ function ParkMapInner({
   }, [parks]);
   const [showLabels, setShowLabels] = useState(false);
   const [tileError, setTileError] = useState(false);
+  /** Swapped to the keyless Versatiles style if OpenFreeMap fails to load its style/tiles. */
+  const [styleUrl, setStyleUrl] = useState(MAP_STYLE_URL);
+  const sourceErrors = useRef(0);
   /** true once the user pans/zooms; until then inset changes re-fit the whole state */
   const interactedRef = useRef(false);
 
@@ -144,10 +147,22 @@ function ParkMapInner({
     setShowLabels(e.viewState.zoom >= LABEL_ZOOM);
   }, []);
 
-  const handleError = useCallback((e: ErrorEvent) => {
-    console.warn("[LakeLens map]", e.error?.message ?? e);
-    setTileError(true);
-  }, []);
+  const handleError = useCallback(
+    (e: ErrorEvent) => {
+      const message = e.error?.message ?? String(e);
+      console.warn("[LakeLens map]", message);
+      // A style/TileJSON/tile fetch failure means the basemap provider is down for this
+      // visitor: after a couple of them, fall back to the alternate keyless style once.
+      if (/fetch|style|source|tile|network/i.test(message)) sourceErrors.current += 1;
+      if (sourceErrors.current >= 2 && styleUrl === MAP_STYLE_URL && FALLBACK_MAP_STYLE_URL !== MAP_STYLE_URL) {
+        setStyleUrl(FALLBACK_MAP_STYLE_URL);
+        sourceErrors.current = 0;
+        return;
+      }
+      setTileError(true);
+    },
+    [styleUrl],
+  );
 
   const controlOffset = { marginTop: topInsetPx + 8 };
 
@@ -161,7 +176,7 @@ function ParkMapInner({
     >
       <MapGL
         ref={mapRef}
-        mapStyle={MAP_STYLE_URL}
+        mapStyle={styleUrl}
         initialViewState={{
           longitude: -83.3,
           latitude: 28.4,
