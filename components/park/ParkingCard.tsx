@@ -57,10 +57,10 @@ export function ParkingCard({ park, lots }: ParkingCardProps) {
           {park.entrance_notes && <p className="mt-2 text-sm text-cocoa/85">{park.entrance_notes}</p>}
         </Card>
       ) : (
-        <ul className="space-y-3">
+        <ul className={sorted.length > 1 ? "space-y-3 md:grid md:grid-cols-2 md:gap-3 md:space-y-0" : "space-y-3"}>
           {sorted.map((lot) => (
             <li key={lot.id}>
-              <Card as="article" className="space-y-2">
+              <Card as="article" className="h-full space-y-2">
                 <div className="flex flex-wrap items-center gap-2">
                   <h3 className="flex items-center gap-1.5 font-extrabold text-cocoa">
                     <Car aria-hidden="true" focusable="false" className="size-4 text-sunset" />
@@ -97,7 +97,9 @@ export function ParkingCard({ park, lots }: ParkingCardProps) {
         </p>
       )}
 
-      <MiniMapLazy center={{ lat: park.lat, lng: park.lng }} parkName={park.name} lots={sorted} className="h-48 w-full overflow-hidden rounded-card" />
+      <div className="lg:hidden">
+        <MiniMapLazy center={{ lat: park.lat, lng: park.lng }} parkName={park.name} lots={sorted} className="w-full overflow-hidden rounded-card" />
+      </div>
 
       {park.official_url && (
         <p className="text-xs text-cocoa/75">

@@ -80,7 +80,9 @@ export function ParkPreviewCard({ item, onClose, onHeightChange, style, classNam
       tabIndex={-1}
       onKeyDown={onKeyDown}
       style={style}
-      className={cn("absolute inset-x-3 z-20 mx-auto max-w-xl outline-none", className)}
+      // Callers position the card (fixed above the sheet on phones, docked in the map
+      // panel on desktop); the default is the floating phone placement.
+      className={cn("z-20 outline-none", className ?? "absolute inset-x-3 mx-auto max-w-xl")}
     >
       <Card as="article" padded={false} className="overflow-hidden">
         <div className="flex gap-3 p-3">

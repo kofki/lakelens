@@ -1,28 +1,19 @@
 import type { ParkBundle } from "@/lib/types";
 import { STATUS_META } from "@/lib/status";
 import { formatLocalDate, formatLocalTime, relativeTime } from "@/lib/freshness";
-import { Card } from "@/components/ui/Card";
 import { LastUpdated } from "@/components/ui/LastUpdated";
 import { StatusPill } from "@/components/ui/StatusPill";
 import { Badge } from "@/components/ui/Badge";
-import { STATUS_SOURCE_TEXT, newestIso } from "./format";
+import { CONFIDENCE_TEXT, STATUS_SOURCE_TEXT, newestIso } from "./format";
 
-export interface SectionLink {
-  id: string;
-  label: string;
-}
+export type { SectionLink } from "./SectionTabs";
 
 export interface StatusHeaderProps {
   bundle: ParkBundle;
   now: Date;
-  sections: SectionLink[];
+  /** @deprecated Jump links now live in <SectionTabs>; this prop is ignored. */
+  sections?: import("./SectionTabs").SectionLink[];
 }
-
-const CONFIDENCE_TEXT = {
-  high: "High confidence",
-  medium: "Medium confidence",
-  low: "Low confidence",
-} as const;
 
 /** Data sources that fed this page, for the "Sourced from …" line. */
 function sourcesLine(bundle: ParkBundle): string {
@@ -36,22 +27,30 @@ function sourcesLine(bundle: ParkBundle): string {
 }
 
 /**
- * Status pill + plain-language evidence + attribution line + section jump links.
+ * Status pill + plain-language evidence + attribution line.
  * Status is always icon + text; the "Estimate" badge appears whenever the level is inferred.
+ * On md+ the pill also sits beside the title in <Hero>, so here it is phone-only.
  */
-export function StatusHeader({ bundle, now, sections }: StatusHeaderProps) {
+export function StatusHeader({ bundle, now }: StatusHeaderProps) {
   const { status, park } = bundle;
   const conditionsAt = newestIso(bundle.usgsFetchedAt, bundle.weatherFetchedAt);
   const meta = STATUS_META[status.level];
 
   return (
-    <Card as="section" className="space-y-4">
-      <div className="flex flex-wrap items-center gap-2">
+    <section
+      id="status"
+      aria-labelledby="status-heading"
+      className="scroll-mt-4 space-y-4 rounded-card border border-mist/60 bg-white p-4 shadow-card"
+    >
+      <h2 id="status-heading" className="sr-only">
+        Status
+      </h2>
+      <div className="flex flex-wrap items-center gap-2 md:hidden">
         <StatusPill level={status.level} size="lg" estimate={status.isEstimate} />
         <span className="text-sm font-bold text-cocoa/75">{CONFIDENCE_TEXT[status.confidence]}</span>
       </div>
 
-      <p className="text-base text-cocoa">{meta.description}</p>
+      <p className="text-base text-cocoa md:text-lg md:font-bold">{meta.description}</p>
 
       {status.predictedTime && status.level === "likely_full" && (
         <p className="text-sm font-bold text-cocoa">
@@ -62,7 +61,7 @@ export function StatusHeader({ bundle, now, sections }: StatusHeaderProps) {
 
       {status.reasons.length > 0 && (
         <div>
-          <h2 className="text-sm font-extrabold text-cocoa/75">Why we say this</h2>
+          <h3 className="text-sm font-extrabold text-cocoa/75">Why we say this</h3>
           <ul className="mt-1 list-disc space-y-1 pl-5 text-sm text-cocoa">
             {status.reasons.map((r, i) => (
               <li key={`${i}-${r}`}>{r}</li>
@@ -94,23 +93,6 @@ export function StatusHeader({ bundle, now, sections }: StatusHeaderProps) {
           </p>
         )}
       </div>
-
-      {sections.length > 0 && (
-        <nav aria-label="Sections on this page" className="-mx-4 overflow-x-auto px-4">
-          <ul className="flex gap-2 pb-1">
-            {sections.map((s) => (
-              <li key={s.id} className="shrink-0">
-                <a
-                  href={`#${s.id}`}
-                  className="inline-flex min-h-11 items-center rounded-full border border-mist bg-cream px-4 text-sm font-bold text-cocoa hover:bg-mist/40"
-                >
-                  {s.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      )}
-    </Card>
+    </section>
   );
 }

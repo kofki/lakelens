@@ -10,9 +10,13 @@ export interface ParkListProps {
   emptyTitle?: string;
   emptyBody?: string;
   className?: string;
+  /** Park to highlight (desktop split view: the marker selected on the map). */
+  selectedId?: string | null;
+  /** When set, cards become selectable (click selects on the map; only the name link navigates). */
+  onSelect?: (id: string) => void;
 }
 
-/** Server-safe list of ParkCards. Sorting (and distance annotation) happens here. */
+/** List of ParkCards. Sorting (and distance annotation) happens here. */
 export function ParkList({
   parks,
   userLocation,
@@ -20,6 +24,8 @@ export function ParkList({
   emptyTitle = "No parks match",
   emptyBody = "Try clearing a filter or searching for a different name.",
   className,
+  selectedId = null,
+  onSelect,
 }: ParkListProps) {
   const items = sortParks(withDistances(parks, userLocation), sort);
   if (items.length === 0) {
@@ -29,7 +35,7 @@ export function ParkList({
     <ul className={className ?? "flex flex-col gap-3"} aria-label="Parks">
       {items.map((item) => (
         <li key={item.park.id}>
-          <ParkCard item={item} />
+          <ParkCard item={item} selected={item.park.id === selectedId} onSelect={onSelect} />
         </li>
       ))}
     </ul>

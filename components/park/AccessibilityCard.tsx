@@ -14,7 +14,6 @@ import {
 import type { Accessibility, Park } from "@/lib/types";
 import { isAccessibleEntry } from "@/lib/distance";
 import { Badge } from "@/components/ui/Badge";
-import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { EmptyState } from "@/components/ui/EmptyState";
 import { LastUpdated } from "@/components/ui/LastUpdated";
@@ -82,11 +81,11 @@ export function AccessibilityCard({ park, accessibility }: AccessibilityCardProp
           <AccessibilityIcon aria-hidden="true" focusable="false" className="size-5 shrink-0" />
           {accessible ? "Wheelchair-accessible water entry" : "Wheelchair-accessible water entry not confirmed"}
         </p>
-        <dl className="divide-y divide-mist">
+        <dl className="divide-y divide-mist md:grid md:grid-cols-2 md:gap-x-6 md:divide-y-0">
           {rows.map((r) => {
             const Icon = r.icon;
             return (
-              <div key={r.label} className="flex items-start gap-3 py-2">
+              <div key={r.label} className="flex items-start gap-3 py-2 md:border-b md:border-mist">
                 <dt className="flex min-w-0 flex-1 items-center gap-2 text-sm text-cocoa/75">
                   <Icon aria-hidden="true" focusable="false" className="size-4 shrink-0 text-sunset" />
                   <span>{r.label}</span>

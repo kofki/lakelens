@@ -65,7 +65,7 @@ export function ConditionsCard({ bundle, now }: ConditionsCardProps) {
       </p>
 
       {weather ? (
-        <div className="mt-3 flex flex-wrap items-end justify-between gap-3">
+        <div className="mt-3 flex flex-wrap items-end justify-between gap-3 md:flex-col md:items-stretch">
           <div>
             <p className="text-5xl font-extrabold leading-none text-cocoa">
               {weather.current.tempF !== null ? `${Math.round(weather.current.tempF)}°F` : "—"}
@@ -74,9 +74,9 @@ export function ConditionsCard({ bundle, now }: ConditionsCardProps) {
             <LastUpdated at={weatherFetchedAt} source={providerLabel(weather.provider)} stale={weatherStale} className="mt-1" />
           </div>
           {weather.daily.length > 0 && (
-            <ol className="flex gap-2 overflow-x-auto pb-1" aria-label="Seven-day outlook">
+            <ol className="flex gap-2 overflow-x-auto pb-1 md:grid md:grid-cols-7 md:overflow-visible" aria-label="Seven-day outlook">
               {weather.daily.slice(0, 7).map((d) => (
-                <li key={d.date} className="min-w-14 rounded-xl bg-cream px-2 py-1.5 text-center">
+                <li key={d.date} className="min-w-14 rounded-xl bg-cream px-2 py-1.5 text-center md:min-w-0">
                   <p className="text-xs font-extrabold text-cocoa">{d.name || formatLocalDate(`${d.date}T12:00:00Z`)}</p>
                   <p className="text-sm font-bold text-cocoa">{d.highF !== null ? `${Math.round(d.highF)}°` : "—"}</p>
                   <p className="text-xs text-mocha">{d.lowF !== null ? `${Math.round(d.lowF)}°` : ""}</p>
@@ -90,7 +90,7 @@ export function ConditionsCard({ bundle, now }: ConditionsCardProps) {
         <p className="mt-3 text-sm text-mocha">Weather isn&apos;t available for this park yet.</p>
       )}
 
-      <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
+      <div className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-3">
         <StatTile
           icon={<Thermometer aria-hidden="true" focusable="false" />}
           label="Water temp"

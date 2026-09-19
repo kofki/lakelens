@@ -15,19 +15,20 @@ export const metadata: Metadata = {
 export default function OfflinePage() {
   return (
     <>
-      <div className="mx-auto w-full max-w-2xl flex-1 px-4 py-6">
-        <Wordmark className="mb-6" />
-        <Card as="section" className="space-y-4 text-center">
+      <div className="mx-auto w-full max-w-[1100px] flex-1 px-6 py-10 md:py-16">
+        <Wordmark className="mb-6 md:hidden" />
+        <Card as="section" className="mx-auto max-w-2xl space-y-4 text-center md:p-10">
           <div aria-hidden="true" className="mx-auto inline-flex rounded-full bg-peach p-4 text-cocoa">
             <WifiOff className="size-8" />
           </div>
-          <h1 className="text-2xl font-extrabold">You&rsquo;re offline</h1>
+          <h1 className="text-2xl font-extrabold md:text-4xl">You&rsquo;re offline</h1>
           <p className="mx-auto max-w-prose text-cocoa/75">
             LakeLens needs a connection to show live status, water conditions and reports. Park status changes
             quickly, so we don&rsquo;t show old data as if it were current.
           </p>
           <p className="mx-auto max-w-prose text-sm text-cocoa/75">
-            When you&rsquo;re back online, reload this page. If you are at a park, follow posted signs and staff.
+            When you&rsquo;re back online, reload this page. If you are at a park, follow posted signs and
+            staff.
           </p>
           <ButtonLink href="/" size="lg">
             Try again

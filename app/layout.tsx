@@ -5,6 +5,7 @@ import "./globals.css";
 import "@/components/nav/nav.css";
 import { SkipLink } from "@/components/a11y/SkipLink";
 import { BottomNav } from "@/components/nav/BottomNav";
+import { TopNav } from "@/components/nav/TopNav";
 import { InstallHint } from "@/components/pwa/InstallHint";
 import { RegisterSW } from "@/components/pwa/RegisterSW";
 
@@ -55,10 +56,14 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
     <html lang="en" className={`${nunito.variable} h-full`}>
       <body className="flex min-h-full flex-col bg-cream text-cocoa">
         <SkipLink />
+        <TopNav />
+        {/* Bottom padding clears the mobile BottomNav; top padding clears the desktop TopNav.
+         * The footer is not rendered here so the map page stays full-height: content pages
+         * render <SiteFooter /> themselves. */}
         <main
           id="main"
           tabIndex={-1}
-          className="flex flex-1 flex-col outline-none pb-[calc(var(--bottom-nav-h)+env(safe-area-inset-bottom))]"
+          className="flex flex-1 flex-col outline-none pb-[calc(var(--bottom-nav-h)+env(safe-area-inset-bottom))] md:pb-0 md:pt-[var(--top-nav-h)]"
         >
           {children}
         </main>

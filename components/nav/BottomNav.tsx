@@ -24,16 +24,16 @@ function isActive(href: Tab["href"], pathname: string): boolean {
 }
 
 /**
- * Fixed bottom tab bar (Map / List / Report / About). Height = --bottom-nav-h (nav.css)
- * plus the iOS safe area. Active tab is marked with aria-current, a peach icon pill and
- * heavier text, never colour alone.
+ * Fixed bottom tab bar (Map / List / Report / About), mobile only: hidden on md+ where
+ * TopNav takes over. Height = --bottom-nav-h (nav.css) plus the iOS safe area. Active tab
+ * is marked with aria-current, a peach icon pill and heavier text, never colour alone.
  */
 export function BottomNav() {
   const pathname = usePathname() ?? "/";
   return (
     <nav
-      aria-label="Primary"
-      className="bottom-nav fixed inset-x-0 bottom-0 z-40 border-t border-mist bg-white/95 backdrop-blur"
+      aria-label="Primary (mobile)"
+      className="bottom-nav fixed inset-x-0 bottom-0 z-40 border-t border-mist bg-white/95 backdrop-blur md:hidden"
     >
       <ul className="mx-auto flex h-[var(--bottom-nav-h)] max-w-2xl items-stretch">
         {TABS.map(({ href, label, icon: Icon }) => {

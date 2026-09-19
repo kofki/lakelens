@@ -88,7 +88,7 @@ export function InstallHint() {
   return (
     <aside
       aria-label="Install LakeLens"
-      className="fixed inset-x-3 z-50 mx-auto max-w-lg rounded-card border border-mist bg-white p-3 shadow-sheet"
+      className="fixed inset-x-3 z-50 mx-auto max-w-lg rounded-card border border-mist bg-white p-3 shadow-sheet md:hidden"
       style={{ bottom: "calc(var(--bottom-nav-h) + env(safe-area-inset-bottom, 0px) + 12px)" }}
     >
       <div className="flex items-start gap-3">

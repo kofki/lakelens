@@ -1,5 +1,8 @@
-/* Bottom navigation height, read by pages to pad content and size the map. */
+/* Navigation heights, read by pages to pad content and size the map.
+ * --top-nav-h: fixed desktop TopNav (md+ only).
+ * --bottom-nav-h: fixed mobile BottomNav (below md), plus the iOS safe area. */
 :root {
+  --top-nav-h: 72px;
   --bottom-nav-h: 64px;
 }
 
@@ -7,8 +10,16 @@
   padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
+/* Keep in-page anchor targets clear of the fixed top nav on desktop. */
+@media (min-width: 768px) {
+  html {
+    scroll-padding-top: calc(var(--top-nav-h) + 16px);
+  }
+}
+
 @media print {
-  .bottom-nav {
+  .bottom-nav,
+  .top-nav {
     display: none;
   }
 }
