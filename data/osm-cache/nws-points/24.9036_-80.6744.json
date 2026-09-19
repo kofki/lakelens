@@ -1,0 +1,110 @@
+{
+  "@context": [
+    "https://geojson.org/geojson-ld/geojson-context.jsonld",
+    {
+      "@version": "1.1",
+      "wx": "https://api.weather.gov/ontology#",
+      "s": "https://schema.org/",
+      "geo": "http://www.opengis.net/ont/geosparql#",
+      "unit": "http://codes.wmo.int/common/unit/",
+      "@vocab": "https://api.weather.gov/ontology#",
+      "geometry": {
+        "@id": "s:GeoCoordinates",
+        "@type": "geo:wktLiteral"
+      },
+      "city": "s:addressLocality",
+      "state": "s:addressRegion",
+      "distance": {
+        "@id": "s:Distance",
+        "@type": "s:QuantitativeValue"
+      },
+      "bearing": {
+        "@type": "s:QuantitativeValue"
+      },
+      "value": {
+        "@id": "s:value"
+      },
+      "unitCode": {
+        "@id": "s:unitCode",
+        "@type": "@id"
+      },
+      "forecastOffice": {
+        "@type": "@id"
+      },
+      "forecastGridData": {
+        "@type": "@id"
+      },
+      "publicZone": {
+        "@type": "@id"
+      },
+      "county": {
+        "@type": "@id"
+      }
+    }
+  ],
+  "id": "https://api.weather.gov/points/24.9036,-80.6744",
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      -80.6744,
+      24.9036
+    ]
+  },
+  "properties": {
+    "@id": "https://api.weather.gov/points/24.9036,-80.6744",
+    "@type": "wx:Point",
+    "cwa": "KEY",
+    "type": "marine",
+    "forecastOffice": "https://api.weather.gov/offices/KEY",
+    "gridId": "KEY",
+    "gridX": 104,
+    "gridY": 68,
+    "forecast": "https://api.weather.gov/gridpoints/KEY/104,68/forecast",
+    "forecastHourly": "https://api.weather.gov/gridpoints/KEY/104,68/forecast/hourly",
+    "forecastGridData": "https://api.weather.gov/gridpoints/KEY/104,68",
+    "observationStations": "https://api.weather.gov/gridpoints/KEY/104,68/stations",
+    "relativeLocation": {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.543296,
+          24.9843519
+        ]
+      },
+      "properties": {
+        "city": "Islamorada, Village of Islands",
+        "state": "FL",
+        "distance": {
+          "unitCode": "wmoUnit:m",
+          "value": 1193.0578681539
+        },
+        "bearing": {
+          "unitCode": "wmoUnit:degree_(angle)",
+          "value": 235
+        }
+      }
+    },
+    "forecastZone": "https://api.weather.gov/zones/forecast/GMZ031",
+    "timeZone": "America/New_York",
+    "radarStation": "KAMX",
+    "astronomicalData": {
+      "sunrise": "2026-09-19T07:10:16-04:00",
+      "sunset": "2026-09-19T19:22:30-04:00",
+      "transit": "2026-09-19T13:16:23-04:00",
+      "civilTwilightBegin": "2026-09-19T06:47:31-04:00",
+      "civilTwilightEnd": "2026-09-19T19:45:15-04:00",
+      "nauticalTwilightBegin": "2026-09-19T06:20:56-04:00",
+      "nauticalTwilightEnd": "2026-09-19T20:11:50-04:00",
+      "astronomicalTwilightBegin": "2026-09-19T05:54:10-04:00",
+      "astronomicalTwilightEnd": "2026-09-19T20:38:36-04:00"
+    },
+    "nwr": {
+      "transmitter": null,
+      "sameCode": null,
+      "areaBroadcast": null,
+      "pointBroadcast": "https://api.weather.gov/points/24.9036,-80.6744/radio"
+    }
+  }
+}

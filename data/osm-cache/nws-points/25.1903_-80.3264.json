@@ -1,0 +1,110 @@
+{
+  "@context": [
+    "https://geojson.org/geojson-ld/geojson-context.jsonld",
+    {
+      "@version": "1.1",
+      "wx": "https://api.weather.gov/ontology#",
+      "s": "https://schema.org/",
+      "geo": "http://www.opengis.net/ont/geosparql#",
+      "unit": "http://codes.wmo.int/common/unit/",
+      "@vocab": "https://api.weather.gov/ontology#",
+      "geometry": {
+        "@id": "s:GeoCoordinates",
+        "@type": "geo:wktLiteral"
+      },
+      "city": "s:addressLocality",
+      "state": "s:addressRegion",
+      "distance": {
+        "@id": "s:Distance",
+        "@type": "s:QuantitativeValue"
+      },
+      "bearing": {
+        "@type": "s:QuantitativeValue"
+      },
+      "value": {
+        "@id": "s:value"
+      },
+      "unitCode": {
+        "@id": "s:unitCode",
+        "@type": "@id"
+      },
+      "forecastOffice": {
+        "@type": "@id"
+      },
+      "forecastGridData": {
+        "@type": "@id"
+      },
+      "publicZone": {
+        "@type": "@id"
+      },
+      "county": {
+        "@type": "@id"
+      }
+    }
+  ],
+  "id": "https://api.weather.gov/points/25.1903,-80.3264",
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      -80.3264,
+      25.1903
+    ]
+  },
+  "properties": {
+    "@id": "https://api.weather.gov/points/25.1903,-80.3264",
+    "@type": "wx:Point",
+    "cwa": "KEY",
+    "type": "marine",
+    "forecastOffice": "https://api.weather.gov/offices/KEY",
+    "gridId": "KEY",
+    "gridX": 116,
+    "gridY": 82,
+    "forecast": "https://api.weather.gov/gridpoints/KEY/116,82/forecast",
+    "forecastHourly": "https://api.weather.gov/gridpoints/KEY/116,82/forecast/hourly",
+    "forecastGridData": "https://api.weather.gov/gridpoints/KEY/116,82",
+    "observationStations": "https://api.weather.gov/gridpoints/KEY/116,82/stations",
+    "relativeLocation": {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.3215663,
+          25.2607543
+        ]
+      },
+      "properties": {
+        "city": "North Key Largo",
+        "state": "FL",
+        "distance": {
+          "unitCode": "wmoUnit:m",
+          "value": 1808.5839048981
+        },
+        "bearing": {
+          "unitCode": "wmoUnit:degree_(angle)",
+          "value": 183
+        }
+      }
+    },
+    "forecastZone": "https://api.weather.gov/zones/forecast/GMZ042",
+    "timeZone": "America/New_York",
+    "radarStation": "KAMX",
+    "astronomicalData": {
+      "sunrise": "2026-09-19T07:08:50-04:00",
+      "sunset": "2026-09-19T19:21:09-04:00",
+      "transit": "2026-09-19T13:15:00-04:00",
+      "civilTwilightBegin": "2026-09-19T06:46:02-04:00",
+      "civilTwilightEnd": "2026-09-19T19:43:57-04:00",
+      "nauticalTwilightBegin": "2026-09-19T06:19:23-04:00",
+      "nauticalTwilightEnd": "2026-09-19T20:10:36-04:00",
+      "astronomicalTwilightBegin": "2026-09-19T05:52:33-04:00",
+      "astronomicalTwilightEnd": "2026-09-19T20:37:27-04:00"
+    },
+    "nwr": {
+      "transmitter": null,
+      "sameCode": null,
+      "areaBroadcast": null,
+      "pointBroadcast": "https://api.weather.gov/points/25.1903,-80.3264/radio"
+    }
+  }
+}

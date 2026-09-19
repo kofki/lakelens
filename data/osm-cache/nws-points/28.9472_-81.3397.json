@@ -1,0 +1,112 @@
+{
+  "@context": [
+    "https://geojson.org/geojson-ld/geojson-context.jsonld",
+    {
+      "@version": "1.1",
+      "wx": "https://api.weather.gov/ontology#",
+      "s": "https://schema.org/",
+      "geo": "http://www.opengis.net/ont/geosparql#",
+      "unit": "http://codes.wmo.int/common/unit/",
+      "@vocab": "https://api.weather.gov/ontology#",
+      "geometry": {
+        "@id": "s:GeoCoordinates",
+        "@type": "geo:wktLiteral"
+      },
+      "city": "s:addressLocality",
+      "state": "s:addressRegion",
+      "distance": {
+        "@id": "s:Distance",
+        "@type": "s:QuantitativeValue"
+      },
+      "bearing": {
+        "@type": "s:QuantitativeValue"
+      },
+      "value": {
+        "@id": "s:value"
+      },
+      "unitCode": {
+        "@id": "s:unitCode",
+        "@type": "@id"
+      },
+      "forecastOffice": {
+        "@type": "@id"
+      },
+      "forecastGridData": {
+        "@type": "@id"
+      },
+      "publicZone": {
+        "@type": "@id"
+      },
+      "county": {
+        "@type": "@id"
+      }
+    }
+  ],
+  "id": "https://api.weather.gov/points/28.9472,-81.3397",
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      -81.3397,
+      28.9472
+    ]
+  },
+  "properties": {
+    "@id": "https://api.weather.gov/points/28.9472,-81.3397",
+    "@type": "wx:Point",
+    "cwa": "MLB",
+    "type": "land",
+    "forecastOffice": "https://api.weather.gov/offices/MLB",
+    "gridId": "MLB",
+    "gridX": 26,
+    "gridY": 86,
+    "forecast": "https://api.weather.gov/gridpoints/MLB/26,86/forecast",
+    "forecastHourly": "https://api.weather.gov/gridpoints/MLB/26,86/forecast/hourly",
+    "forecastGridData": "https://api.weather.gov/gridpoints/MLB/26,86",
+    "observationStations": "https://api.weather.gov/gridpoints/MLB/26,86/stations",
+    "relativeLocation": {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.2833393,
+          28.93728
+        ]
+      },
+      "properties": {
+        "city": "Orange City",
+        "state": "FL",
+        "distance": {
+          "unitCode": "wmoUnit:m",
+          "value": 2636.2982389061
+        },
+        "bearing": {
+          "unitCode": "wmoUnit:degree_(angle)",
+          "value": 281
+        }
+      }
+    },
+    "forecastZone": "https://api.weather.gov/zones/forecast/FLZ041",
+    "county": "https://api.weather.gov/zones/county/FLC127",
+    "fireWeatherZone": "https://api.weather.gov/zones/fire/FLZ041",
+    "timeZone": "America/New_York",
+    "radarStation": "KMLB",
+    "astronomicalData": {
+      "sunrise": "2026-09-19T07:12:21-04:00",
+      "sunset": "2026-09-19T19:25:45-04:00",
+      "transit": "2026-09-19T13:19:03-04:00",
+      "civilTwilightBegin": "2026-09-19T06:48:45-04:00",
+      "civilTwilightEnd": "2026-09-19T19:49:20-04:00",
+      "nauticalTwilightBegin": "2026-09-19T06:21:09-04:00",
+      "nauticalTwilightEnd": "2026-09-19T20:16:57-04:00",
+      "astronomicalTwilightBegin": "2026-09-19T05:53:17-04:00",
+      "astronomicalTwilightEnd": "2026-09-19T20:44:48-04:00"
+    },
+    "nwr": {
+      "transmitter": "KIH26",
+      "sameCode": "012127",
+      "areaBroadcast": "https://api.weather.gov/radio/KIH26/broadcast",
+      "pointBroadcast": "https://api.weather.gov/points/28.9472,-81.3397/radio"
+    }
+  }
+}

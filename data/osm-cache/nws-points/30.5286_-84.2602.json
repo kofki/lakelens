@@ -1,0 +1,112 @@
+{
+  "@context": [
+    "https://geojson.org/geojson-ld/geojson-context.jsonld",
+    {
+      "@version": "1.1",
+      "wx": "https://api.weather.gov/ontology#",
+      "s": "https://schema.org/",
+      "geo": "http://www.opengis.net/ont/geosparql#",
+      "unit": "http://codes.wmo.int/common/unit/",
+      "@vocab": "https://api.weather.gov/ontology#",
+      "geometry": {
+        "@id": "s:GeoCoordinates",
+        "@type": "geo:wktLiteral"
+      },
+      "city": "s:addressLocality",
+      "state": "s:addressRegion",
+      "distance": {
+        "@id": "s:Distance",
+        "@type": "s:QuantitativeValue"
+      },
+      "bearing": {
+        "@type": "s:QuantitativeValue"
+      },
+      "value": {
+        "@id": "s:value"
+      },
+      "unitCode": {
+        "@id": "s:unitCode",
+        "@type": "@id"
+      },
+      "forecastOffice": {
+        "@type": "@id"
+      },
+      "forecastGridData": {
+        "@type": "@id"
+      },
+      "publicZone": {
+        "@type": "@id"
+      },
+      "county": {
+        "@type": "@id"
+      }
+    }
+  ],
+  "id": "https://api.weather.gov/points/30.5286,-84.2602",
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      -84.2602,
+      30.5286
+    ]
+  },
+  "properties": {
+    "@id": "https://api.weather.gov/points/30.5286,-84.2602",
+    "@type": "wx:Point",
+    "cwa": "TAE",
+    "type": "land",
+    "forecastOffice": "https://api.weather.gov/offices/TAE",
+    "gridId": "TAE",
+    "gridX": 85,
+    "gridY": 90,
+    "forecast": "https://api.weather.gov/gridpoints/TAE/85,90/forecast",
+    "forecastHourly": "https://api.weather.gov/gridpoints/TAE/85,90/forecast/hourly",
+    "forecastGridData": "https://api.weather.gov/gridpoints/TAE/85,90",
+    "observationStations": "https://api.weather.gov/gridpoints/TAE/85,90/stations",
+    "relativeLocation": {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.2522719,
+          30.4535287
+        ]
+      },
+      "properties": {
+        "city": "Tallahassee",
+        "state": "FL",
+        "distance": {
+          "unitCode": "wmoUnit:m",
+          "value": 0
+        },
+        "bearing": {
+          "unitCode": "wmoUnit:degree_(angle)",
+          "value": 0
+        }
+      }
+    },
+    "forecastZone": "https://api.weather.gov/zones/forecast/FLZ017",
+    "county": "https://api.weather.gov/zones/county/FLC073",
+    "fireWeatherZone": "https://api.weather.gov/zones/fire/FLZ017",
+    "timeZone": "America/New_York",
+    "radarStation": "KTLH",
+    "astronomicalData": {
+      "sunrise": "2026-09-19T07:23:47-04:00",
+      "sunset": "2026-09-19T19:37:40-04:00",
+      "transit": "2026-09-19T13:30:43-04:00",
+      "civilTwilightBegin": "2026-09-19T06:59:49-04:00",
+      "civilTwilightEnd": "2026-09-19T20:01:38-04:00",
+      "nauticalTwilightBegin": "2026-09-19T06:31:45-04:00",
+      "nauticalTwilightEnd": "2026-09-19T20:29:42-04:00",
+      "astronomicalTwilightBegin": "2026-09-19T06:03:23-04:00",
+      "astronomicalTwilightEnd": "2026-09-19T20:58:04-04:00"
+    },
+    "nwr": {
+      "transmitter": "KIH24",
+      "sameCode": "012073",
+      "areaBroadcast": "https://api.weather.gov/radio/KIH24/broadcast",
+      "pointBroadcast": "https://api.weather.gov/points/30.5286,-84.2602/radio"
+    }
+  }
+}

@@ -1,0 +1,3592 @@
+{
+  "meta": {
+    "source": "FDEP OpenData PARKS_BOUNDARIES (ArcGIS REST), WGS84 centroids computed by scripts/fetch-fdep-parks.ts",
+    "layer": "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/PARKS_BOUNDARIES/MapServer/0",
+    "query": "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/PARKS_BOUNDARIES/MapServer/0/query?where=1%3D1&outFields=UNIT_ID%2CSITE_NAME%2CURL%2CADDRESS%2CCOUNTY%2CACREAGE%2CPUBLIC_ACC%2CWEB_ALIAS&outSR=4326&returnGeometry=true&geometryPrecision=6&f=json",
+    "fetched_at": "2026-09-19T05:52:07.838Z",
+    "note": "lat/lng is the park boundary centroid, not the swim area."
+  },
+  "count": 179,
+  "parks": [
+    {
+      "unit_id": "S00001",
+      "site_name": "Addison Blockhouse Historic State Park",
+      "slug": "addison-blockhouse-historic-state-park",
+      "name_slug": "addison-blockhouse-historic-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/addison-blockhouse-historic-state-park",
+      "address": "2099 N Beach Street, Ormond Beach, FL 32174",
+      "county": "Volusia",
+      "acreage": 147.9,
+      "lat": 29.3322,
+      "lng": -81.09561,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -81.10131,
+        29.32546,
+        -81.09075,
+        29.33808
+      ],
+      "ring_count": 9
+    },
+    {
+      "unit_id": "S00251",
+      "site_name": "Alafia River State Park",
+      "slug": "alafia-river-state-park",
+      "name_slug": "alafia-river-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/alafia-river-state-park",
+      "address": "14326 South County Road 39, Lithia, FL 33547",
+      "county": "Hillsborough",
+      "acreage": 7717.8,
+      "lat": 27.77345,
+      "lng": -82.1201,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.15009,
+        27.74092,
+        -82.0839,
+        27.8068
+      ],
+      "ring_count": 2
+    },
+    {
+      "unit_id": "S00002",
+      "site_name": "Alfred B. Maclay Gardens State Park",
+      "slug": "maclaygardens",
+      "name_slug": "alfred-b-maclay-gardens-state-park",
+      "url": "https://www.floridastateparks.org/MaclayGardens",
+      "address": "3540 Thomasville Rd., Tallahassee, FL 32309",
+      "county": "Leon",
+      "acreage": 1170.2,
+      "lat": 30.52859,
+      "lng": -84.26017,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -84.27755,
+        30.51232,
+        -84.24204,
+        30.54008
+      ],
+      "ring_count": 3
+    },
+    {
+      "unit_id": "S00229",
+      "site_name": "Allen David Broussard Catfish Creek Preserve State Park",
+      "slug": "allen-david-broussard-catfish-creek-preserve-state-park",
+      "name_slug": "allen-david-broussard-catfish-creek-preserve-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/allen-david-broussard-catfish-creek-preserve-state-park",
+      "address": "4335 Firetower Rd., Haines City, FL 33844",
+      "county": "Polk",
+      "acreage": 8403.7,
+      "lat": 27.97738,
+      "lng": -81.45321,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -81.51683,
+        27.94354,
+        -81.38203,
+        28.00866
+      ],
+      "ring_count": 13
+    },
+    {
+      "unit_id": "S00192",
+      "site_name": "Amelia Island State Park",
+      "slug": "amelia-island",
+      "name_slug": "amelia-island-state-park",
+      "url": "https://www.floridastateparks.org/park/Amelia-Island",
+      "address": "9549 1st Coast Hwy., Fernandina Beach, FL 32034",
+      "county": "Nassau",
+      "acreage": 235.7,
+      "lat": 30.52042,
+      "lng": -81.43925,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -81.44606,
+        30.51391,
+        -81.43424,
+        30.52609
+      ],
+      "ring_count": 3
+    },
+    {
+      "unit_id": "S00003",
+      "site_name": "Anastasia State Park",
+      "slug": "anastasia",
+      "name_slug": "anastasia-state-park",
+      "url": "https://www.floridastateparks.org/anastasia",
+      "address": "300 Anastasia Park Rd., St. Augustine, FL 32080",
+      "county": "St. Johns",
+      "acreage": 1593.2,
+      "lat": 29.88558,
+      "lng": -81.27907,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -81.29411,
+        29.85941,
+        -81.26561,
+        29.90891
+      ],
+      "ring_count": 3
+    },
+    {
+      "unit_id": "S00004",
+      "site_name": "Anclote Key Preserve State Park",
+      "slug": "anclote-key-preserve-state-park",
+      "name_slug": "anclote-key-preserve-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/anclote-key-preserve-state-park",
+      "address": "Tarpon Springs, FL 34689",
+      "county": "Pinellas, Pasco",
+      "acreage": 12209.6,
+      "lat": 28.17722,
+      "lng": -82.84014,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.86148,
+        28.09554,
+        -82.82288,
+        28.24983
+      ],
+      "ring_count": 3
+    },
+    {
+      "unit_id": "S00269",
+      "site_name": "Anderson's Landing (Managed by Manatee Springs State Park)",
+      "slug": null,
+      "name_slug": "andersons-landing-managed-by-manatee-springs-state-park",
+      "url": "http://www.billsfishcamp.com/",
+      "address": "23103 Se 349 Hwy, Suwannee, Fl 32692",
+      "county": "Dixie",
+      "acreage": 2.7,
+      "lat": 29.32978,
+      "lng": -83.14377,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -83.14443,
+        29.32921,
+        -83.14298,
+        29.33045
+      ],
+      "ring_count": 1
+    },
+    {
+      "unit_id": "S00261",
+      "site_name": "Atlantic Ridge Preserve State Park",
+      "slug": "atlantic-ridge-preserve-state-park",
+      "name_slug": "atlantic-ridge-preserve-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/atlantic-ridge-preserve-state-park",
+      "address": "8120 SE Paulson Ave., Stuart, FL 34997",
+      "county": "Martin",
+      "acreage": 4886.1,
+      "lat": 27.09356,
+      "lng": -80.21313,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -80.24957,
+        27.05829,
+        -80.18237,
+        27.12143
+      ],
+      "ring_count": 1
+    },
+    {
+      "unit_id": "S00202",
+      "site_name": "Avalon State Park",
+      "slug": "avalon-state-park",
+      "name_slug": "avalon-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/avalon-state-park",
+      "address": "5400 A1A Fort Pierce, FL 34949",
+      "county": "St. Lucie",
+      "acreage": 657.6,
+      "lat": 27.54392,
+      "lng": -80.32474,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -80.33732,
+        27.53458,
+        -80.31442,
+        27.55517
+      ],
+      "ring_count": 6
+    },
+    {
+      "unit_id": "S00005",
+      "site_name": "Bahia Honda State Park",
+      "slug": "bahiahonda",
+      "name_slug": "bahia-honda-state-park",
+      "url": "https://www.floridastateparks.org/BahiaHonda",
+      "address": "36850 Overseas Hwy., Big Pine Key, FL 33043",
+      "county": "Monroe",
+      "acreage": 496.7,
+      "lat": 24.66638,
+      "lng": -81.26225,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -81.28392,
+        24.64763,
+        -81.24972,
+        24.6753
+      ],
+      "ring_count": 3
+    },
+    {
+      "unit_id": "S00257",
+      "site_name": "Bald Point State Park",
+      "slug": "bald-point-state-park",
+      "name_slug": "bald-point-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/bald-point-state-park",
+      "address": "146 Box Cut Rd., Alligator Point, FL 32346",
+      "county": "Franklin",
+      "acreage": 12152.2,
+      "lat": 29.94806,
+      "lng": -84.40466,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -84.49016,
+        29.89803,
+        -84.33418,
+        30.00216
+      ],
+      "ring_count": 22
+    },
+    {
+      "unit_id": "S00128",
+      "site_name": "Big Lagoon State Park",
+      "slug": "big-lagoon-state-park",
+      "name_slug": "big-lagoon-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/big-lagoon-state-park",
+      "address": "12301 Gulf Beach Hwy., Pensacola, FL 32507",
+      "county": "Escambia",
+      "acreage": 706.8,
+      "lat": 30.31529,
+      "lng": -87.41069,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -87.42606,
+        30.30785,
+        -87.39663,
+        30.32251
+      ],
+      "ring_count": 1
+    },
+    {
+      "unit_id": "S00213",
+      "site_name": "Big Shoals State Park",
+      "slug": "big-shoals-state-park",
+      "name_slug": "big-shoals-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/big-shoals-state-park",
+      "address": "11330 Southeast County Rd., 135 White Springs, FL 32096",
+      "county": "Hamilton, Columbia",
+      "acreage": 1681,
+      "lat": 30.339,
+      "lng": -82.70856,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.74429,
+        30.32132,
+        -82.67645,
+        30.35979
+      ],
+      "ring_count": 4
+    },
+    {
+      "unit_id": "S00187",
+      "site_name": "Big Talbot Island State Park",
+      "slug": "big-talbot-island-state-park",
+      "name_slug": "big-talbot-island-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/big-talbot-island-state-park",
+      "address": "15500 Buccaneer Trail, Jacksonville, FL 32226",
+      "county": "Duval",
+      "acreage": 2679.4,
+      "lat": 30.48049,
+      "lng": -81.44563,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -81.47027,
+        30.44576,
+        -81.42258,
+        30.519
+      ],
+      "ring_count": 23
+    },
+    {
+      "unit_id": "S00011",
+      "site_name": "Bill Baggs Cape Florida State Park",
+      "slug": "bill-baggs-cape-florida-state-park",
+      "name_slug": "bill-baggs-cape-florida-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/bill-baggs-cape-florida-state-park",
+      "address": "1200 S Crandon Blvd., Key Biscayne, FL 33149",
+      "county": "Dade",
+      "acreage": 506.4,
+      "lat": 25.67552,
+      "lng": -80.15907,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -80.17123,
+        25.66465,
+        -80.15188,
+        25.6831
+      ],
+      "ring_count": 1
+    },
+    {
+      "unit_id": "S00231",
+      "site_name": "Blackwater Heritage State Trail",
+      "slug": "blackwater-heritage-state-trail",
+      "name_slug": "blackwater-heritage-state-trail",
+      "url": "https://www.floridastateparks.org/parks-and-trails/blackwater-heritage-state-trail",
+      "address": "5533 Alabama Street, Milton, FL 32564",
+      "county": "Santa Rosa",
+      "acreage": 308.5,
+      "lat": 30.69041,
+      "lng": -87.02574,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -87.05185,
+        30.60843,
+        -86.98244,
+        30.73973
+      ],
+      "ring_count": 27
+    },
+    {
+      "unit_id": "S00008",
+      "site_name": "Blackwater River State Park",
+      "slug": "blackwater-river-state-park",
+      "name_slug": "blackwater-river-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/blackwater-river-state-park",
+      "address": "7720 Deaton Bridge Rd., Holt, FL 32564",
+      "county": "Santa Rosa",
+      "acreage": 635.8,
+      "lat": 30.70738,
+      "lng": -86.87561,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -86.88513,
+        30.69996,
+        -86.86724,
+        30.71563
+      ],
+      "ring_count": 2
+    },
+    {
+      "unit_id": "S00101",
+      "site_name": "Blue Spring State Park",
+      "slug": "blue-spring-state-park",
+      "name_slug": "blue-spring-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/blue-spring-state-park",
+      "address": "2100 W French Ave., Orange City, FL 32763",
+      "county": "Volusia",
+      "acreage": 2659.1,
+      "lat": 28.94799,
+      "lng": -81.34113,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -81.35602,
+        28.91942,
+        -81.33199,
+        28.98468
+      ],
+      "ring_count": 4
+    },
+    {
+      "unit_id": "S00139",
+      "site_name": "Bulow Creek State Park",
+      "slug": "bulow-creek-state-park",
+      "name_slug": "bulow-creek-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/bulow-creek-state-park",
+      "address": "3335 Old Dixie Hwy., Ormond Beach, FL 32174",
+      "county": "Flagler, Volusia",
+      "acreage": 5708.7,
+      "lat": 29.37871,
+      "lng": -81.11553,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -81.14539,
+        29.31678,
+        -81.08452,
+        29.43434
+      ],
+      "ring_count": 40
+    },
+    {
+      "unit_id": "S00009",
+      "site_name": "Bulow Plantation Ruins Historic State Park",
+      "slug": "bulow-plantation-ruins-historic-state-park",
+      "name_slug": "bulow-plantation-ruins-historic-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/bulow-plantation-ruins-historic-state-park",
+      "address": "3501 Old Kings Rd., Flagler Beach, FL 32136",
+      "county": "Flagler",
+      "acreage": 148,
+      "lat": 29.43456,
+      "lng": -81.14268,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -81.15029,
+        29.43004,
+        -81.1353,
+        29.43929
+      ],
+      "ring_count": 2
+    },
+    {
+      "unit_id": "S00010",
+      "site_name": "Caladesi Island State Park",
+      "slug": "caladesi-island-state-park",
+      "name_slug": "caladesi-island-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/caladesi-island-state-park",
+      "address": "Dunedin, FL 34698",
+      "county": "Pinellas",
+      "acreage": 2420,
+      "lat": 28.02104,
+      "lng": -82.81406,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.82688,
+        27.99215,
+        -82.80285,
+        28.05413
+      ],
+      "ring_count": 2
+    },
+    {
+      "unit_id": "S00247",
+      "site_name": "Camp Helen State Park",
+      "slug": "camp-helen-state-park",
+      "name_slug": "camp-helen-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/camp-helen-state-park",
+      "address": "23937 Panama City Beach Pkwy., Panama City Beach, FL 32413",
+      "county": "Bay",
+      "acreage": 223.3,
+      "lat": 30.273,
+      "lng": -85.99192,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -85.99587,
+        30.26714,
+        -85.98667,
+        30.2808
+      ],
+      "ring_count": 2
+    },
+    {
+      "unit_id": "S00127",
+      "site_name": "Cayo Costa State Park",
+      "slug": "cayo-costa-state-park",
+      "name_slug": "cayo-costa-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/cayo-costa-state-park",
+      "address": "Captiva, FL 33924",
+      "county": "Lee",
+      "acreage": 2666.9,
+      "lat": 26.66039,
+      "lng": -82.24014,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.26318,
+        26.5563,
+        -82.15917,
+        26.70748
+      ],
+      "ring_count": 182
+    },
+    {
+      "unit_id": "S00012",
+      "site_name": "Cedar Key Museum State Park",
+      "slug": "cedar-key-museum-state-park",
+      "name_slug": "cedar-key-museum-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/cedar-key-museum-state-park",
+      "address": "12231 SW 166 Ct., Cedar Key, FL 32625",
+      "county": "Levy",
+      "acreage": 18.6,
+      "lat": 29.15222,
+      "lng": -83.04899,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -83.05145,
+        29.14998,
+        -83.0473,
+        29.15458
+      ],
+      "ring_count": 1
+    },
+    {
+      "unit_id": "S00136",
+      "site_name": "Cedar Key Scrub State Reserve",
+      "slug": "cedar-key-scrub-state-reserve",
+      "name_slug": "cedar-key-scrub-state-reserve",
+      "url": "https://www.floridastateparks.org/parks-and-trails/cedar-key-scrub-state-reserve",
+      "address": "SR 24, Cedar Key, FL 32625",
+      "county": "Levy",
+      "acreage": 6784.3,
+      "lat": 29.20031,
+      "lng": -83.03019,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -83.0545,
+        29.15697,
+        -82.97524,
+        29.23221
+      ],
+      "ring_count": 7
+    },
+    {
+      "unit_id": "S00029",
+      "site_name": "Charlotte Harbor Preserve State Park",
+      "slug": "charlotte-harbor-preserve-state-park",
+      "name_slug": "charlotte-harbor-preserve-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/charlotte-harbor-preserve-state-park",
+      "address": "12301 Burnt Store Rd., Punta Gorda, FL 33955",
+      "county": "Lee, Charlotte",
+      "acreage": 45507.2,
+      "lat": 26.78545,
+      "lng": -82.1367,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.30858,
+        26.49338,
+        -81.99972,
+        26.99567
+      ],
+      "ring_count": 466
+    },
+    {
+      "unit_id": "S00035",
+      "site_name": "Cockroach Bay Preserve State Park",
+      "slug": "cockroach-bay-preserve-state-park",
+      "name_slug": "cockroach-bay-preserve-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/cockroach-bay-preserve-state-park",
+      "address": "End Of Cockroach Bay Rd., Ruskin, FL 33570",
+      "county": "Hillsborough",
+      "acreage": 617.9,
+      "lat": 27.70207,
+      "lng": -82.49308,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.53491,
+        27.66967,
+        -82.45205,
+        27.72244
+      ],
+      "ring_count": 224
+    },
+    {
+      "unit_id": "S00013",
+      "site_name": "Collier-Seminole State Park",
+      "slug": "collier-seminole-state-park",
+      "name_slug": "collier-seminole-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/collier-seminole-state-park",
+      "address": "20200 E Tamiami Trail, Naples, FL 34114",
+      "county": "Collier",
+      "acreage": 7270.8,
+      "lat": 25.97565,
+      "lng": -81.60043,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -81.62183,
+        25.93229,
+        -81.57092,
+        26.00603
+      ],
+      "ring_count": 3
+    },
+    {
+      "unit_id": "S00273",
+      "site_name": "Colt Creek State Park",
+      "slug": "colt-creek-state-park",
+      "name_slug": "colt-creek-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/colt-creek-state-park",
+      "address": "16000 State Road 471, Lakeland, FL 33809",
+      "county": "Polk",
+      "acreage": 5067,
+      "lat": 28.28529,
+      "lng": -82.03916,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.05544,
+        28.252,
+        -82.0231,
+        28.3176
+      ],
+      "ring_count": 1
+    },
+    {
+      "unit_id": "S00014",
+      "site_name": "Constitution Convention Museum State Park",
+      "slug": "constitution-convention-museum-state-park",
+      "name_slug": "constitution-convention-museum-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/constitution-convention-museum-state-park",
+      "address": "200 Allen Memorial Way, Port St Joe, FL 32456",
+      "county": "Gulf",
+      "acreage": 13.2,
+      "lat": 29.79325,
+      "lng": -85.2985,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -85.30153,
+        29.79252,
+        -85.29544,
+        29.79397
+      ],
+      "ring_count": 1
+    },
+    {
+      "unit_id": "S00017",
+      "site_name": "Crystal River Archaeological State Park",
+      "slug": "crystal-river-archaeological-state-park",
+      "name_slug": "crystal-river-archaeological-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/crystal-river-archaeological-state-park",
+      "address": "3400 N Museum Pt., Crystal River, FL 34428",
+      "county": "Citrus",
+      "acreage": 61.5,
+      "lat": 28.90783,
+      "lng": -82.63683,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.64693,
+        28.90467,
+        -82.62593,
+        28.9106
+      ],
+      "ring_count": 11
+    },
+    {
+      "unit_id": "S00019",
+      "site_name": "Crystal River Preserve State Park",
+      "slug": "crystal-river-preserve-state-park",
+      "name_slug": "crystal-river-preserve-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/crystal-river-preserve-state-park",
+      "address": "3266 N Sailboat Avenue, Crystal River, FL 34428",
+      "county": "Citrus",
+      "acreage": 27679.3,
+      "lat": 28.8584,
+      "lng": -82.64888,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.75,
+        28.77359,
+        -82.5833,
+        28.959
+      ],
+      "ring_count": 974
+    },
+    {
+      "unit_id": "S00228",
+      "site_name": "Curry Hammock State Park",
+      "slug": "curry-hammock-state-park",
+      "name_slug": "curry-hammock-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/curry-hammock-state-park",
+      "address": "56200 Overseas Hwy., Marathon, FL 33050",
+      "county": "Monroe",
+      "acreage": 1056.1,
+      "lat": 24.74413,
+      "lng": -80.98907,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -81.01479,
+        24.73353,
+        -80.93472,
+        24.7757
+      ],
+      "ring_count": 6
+    },
+    {
+      "unit_id": "S00018",
+      "site_name": "Dade Battlefield Historic State Park",
+      "slug": "dade-battlefield-historic-state-park",
+      "name_slug": "dade-battlefield-historic-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/dade-battlefield-historic-state-park",
+      "address": "7200 CR 603, Bushnell, FL 33513",
+      "county": "Sumter",
+      "acreage": 120.9,
+      "lat": 28.65223,
+      "lng": -82.12704,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.13323,
+        28.6504,
+        -82.12081,
+        28.65408
+      ],
+      "ring_count": 1
+    },
+    {
+      "unit_id": "S00190",
+      "site_name": "Dagny Johnson Key Largo Hammock Botanical State Park",
+      "slug": "dagny-johnson-key-largo-hammock-botanical-state-park",
+      "name_slug": "dagny-johnson-key-largo-hammock-botanical-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/dagny-johnson-key-largo-hammock-botanical-state-park",
+      "address": "County Road 905 & Mile Marker 106, Key Largo, FL 33037",
+      "county": "Monroe",
+      "acreage": 2599.6,
+      "lat": 25.24829,
+      "lng": -80.31777,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -80.37399,
+        25.17093,
+        -80.27834,
+        25.30522
+      ],
+      "ring_count": 84
+    },
+    {
+      "unit_id": "S00145",
+      "site_name": "De Leon Springs State Park",
+      "slug": "de-leon-springs-state-park",
+      "name_slug": "de-leon-springs-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/de-leon-springs-state-park",
+      "address": "601 Ponce De Leon Blvd., De Leon Springs, FL 32130",
+      "county": "Volusia",
+      "acreage": 624.8,
+      "lat": 29.14099,
+      "lng": -81.37215,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -81.38104,
+        29.13129,
+        -81.36022,
+        29.15134
+      ],
+      "ring_count": 1
+    },
+    {
+      "unit_id": "S00248",
+      "site_name": "Deer Lake State Park",
+      "slug": "deer-lake-state-park",
+      "name_slug": "deer-lake-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/deer-lake-state-park",
+      "address": "6350 East County Road 30-A, Santa Rosa Beach, FL 32459",
+      "county": "Walton",
+      "acreage": 2009.4,
+      "lat": 30.31056,
+      "lng": -86.06509,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -86.08805,
+        30.29742,
+        -86.04557,
+        30.32098
+      ],
+      "ring_count": 2
+    },
+    {
+      "unit_id": "S00091",
+      "site_name": "Delnor-Wiggins Pass State Park",
+      "slug": "delnor-wiggins-pass-state-park",
+      "name_slug": "delnor-wiggins-pass-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/delnor-wiggins-pass-state-park",
+      "address": "11135 Gulf Shore Dr., Naples, FL 34108",
+      "county": "Collier",
+      "acreage": 199.7,
+      "lat": 26.28147,
+      "lng": -81.82843,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -81.83241,
+        26.27249,
+        -81.82487,
+        26.28922
+      ],
+      "ring_count": 1
+    },
+    {
+      "unit_id": "S00109",
+      "site_name": "Devil's Millhopper Geological State Park",
+      "slug": "devils-millhopper-geological-state-park",
+      "name_slug": "devils-millhopper-geological-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/devils-millhopper-geological-state-park",
+      "address": "4732 Millhopper Rd., Gainesville, FL 32653",
+      "county": "Alachua",
+      "acreage": 67.2,
+      "lat": 29.70697,
+      "lng": -82.3952,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.39738,
+        29.70338,
+        -82.39305,
+        29.71061
+      ],
+      "ring_count": 1
+    },
+    {
+      "unit_id": "S00201",
+      "site_name": "Don Pedro Island State Park",
+      "slug": "don-pedro-island-state-park",
+      "name_slug": "don-pedro-island-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/don-pedro-island-state-park",
+      "address": "8450 Placida Rd., Cape Haze, FL 33946",
+      "county": "Charlotte",
+      "acreage": 251.8,
+      "lat": 26.85223,
+      "lng": -82.30251,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.30984,
+        26.83957,
+        -82.29687,
+        26.86289
+      ],
+      "ring_count": 3
+    },
+    {
+      "unit_id": "S00068",
+      "site_name": "Dr. Julian G. Bruce St. George Island State Park",
+      "slug": "dr-julian-g-bruce-st-george-island-state-park",
+      "name_slug": "dr-julian-g-bruce-st-george-island-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/dr-julian-g-bruce-st-george-island-state-park",
+      "address": "1900 E Gulf Beach Dr., St George Island, FL 32328",
+      "county": "Franklin",
+      "acreage": 2073.2,
+      "lat": 29.72116,
+      "lng": -84.74786,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -84.80166,
+        29.68251,
+        -84.69076,
+        29.77312
+      ],
+      "ring_count": 3
+    },
+    {
+      "unit_id": "S00107",
+      "site_name": "Dr. Von D. Mizell-Eula Johnson State Park",
+      "slug": "mizell",
+      "name_slug": "dr-von-d-mizell-eula-johnson-state-park",
+      "url": "https://www.floridastateparks.org/mizell",
+      "address": "6503 N Ocean Drive, Dania Bch, FL 33004",
+      "county": "Broward",
+      "acreage": 344.7,
+      "lat": 26.07497,
+      "lng": -80.11146,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -80.11469,
+        26.05347,
+        -80.10707,
+        26.09246
+      ],
+      "ring_count": 2
+    },
+    {
+      "unit_id": "S00189",
+      "site_name": "Dudley Farm Historic State Park",
+      "slug": "dudley-farm-historic-state-park",
+      "name_slug": "dudley-farm-historic-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/dudley-farm-historic-state-park",
+      "address": "18730 W. Newberry Rd., Newberry, FL 32669",
+      "county": "Alachua",
+      "acreage": 333.5,
+      "lat": 29.65989,
+      "lng": -82.54267,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.54872,
+        29.6544,
+        -82.53616,
+        29.66504
+      ],
+      "ring_count": 1
+    },
+    {
+      "unit_id": "S00264",
+      "site_name": "Dunns Creek State Park",
+      "slug": "dunnscreek",
+      "name_slug": "dunns-creek-state-park",
+      "url": "https://www.floridastateparks.org/DunnsCreek",
+      "address": "320 Sisco Rd., Pomona Park, FL 32181",
+      "county": "Putnam",
+      "acreage": 6352.5,
+      "lat": 29.54618,
+      "lng": -81.59853,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -81.6298,
+        29.51971,
+        -81.55662,
+        29.57521
+      ],
+      "ring_count": 1
+    },
+    {
+      "unit_id": "S00223",
+      "site_name": "Econfina River State Park",
+      "slug": "econfina-river-state-park",
+      "name_slug": "econfina-river-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/econfina-river-state-park",
+      "address": "4741 Econfina River Rd., Lamont, FL 32336",
+      "county": "Taylor",
+      "acreage": 4585.3,
+      "lat": 30.06937,
+      "lng": -83.92084,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -83.96874,
+        30.04082,
+        -83.88398,
+        30.09607
+      ],
+      "ring_count": 205
+    },
+    {
+      "unit_id": "S00020",
+      "site_name": "Eden Gardens State Park",
+      "slug": "eden-gardens-state-park",
+      "name_slug": "eden-gardens-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/eden-gardens-state-park",
+      "address": "181 Eden Gardens Rd., Santa Rosa Beach, FL 32450",
+      "county": "Walton",
+      "acreage": 167.7,
+      "lat": 30.37151,
+      "lng": -86.1225,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -86.12867,
+        30.36531,
+        -86.1157,
+        30.37618
+      ],
+      "ring_count": 4
+    },
+    {
+      "unit_id": "S00204",
+      "site_name": "Edward Ball Wakulla Springs State Park",
+      "slug": "edward-ball-wakulla-springs-state-park",
+      "name_slug": "edward-ball-wakulla-springs-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/edward-ball-wakulla-springs-state-park",
+      "address": "465 Wakulla Park Dr., Wakulla Springs, FL 32327",
+      "county": "Wakulla",
+      "acreage": 6781.3,
+      "lat": 30.24193,
+      "lng": -84.30282,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -84.36154,
+        30.20111,
+        -84.24769,
+        30.30328
+      ],
+      "ring_count": 15
+    },
+    {
+      "unit_id": "S00222",
+      "site_name": "Egmont Key State Park",
+      "slug": "egmont-key-state-park",
+      "name_slug": "egmont-key-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/egmont-key-state-park",
+      "address": "St. Petersburg, FL 33715",
+      "county": "Hillsborough",
+      "acreage": 310.8,
+      "lat": 27.5908,
+      "lng": -82.76145,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.76555,
+        27.575,
+        -82.75546,
+        27.60314
+      ],
+      "ring_count": 1
+    },
+    {
+      "unit_id": "S00218",
+      "site_name": "Ellie Schiller Homosassa Springs Wildlife State Park",
+      "slug": "ellie-schiller-homosassa-springs-wildlife-state-park",
+      "name_slug": "ellie-schiller-homosassa-springs-wildlife-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/ellie-schiller-homosassa-springs-wildlife-state-park",
+      "address": "4150 S Suncoast Blvd., Homosassa, FL 34446",
+      "county": "Citrus",
+      "acreage": 200.9,
+      "lat": 28.80072,
+      "lng": -82.58416,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.59167,
+        28.797,
+        -82.57661,
+        28.80357
+      ],
+      "ring_count": 3
+    },
+    {
+      "unit_id": "S00030",
+      "site_name": "Estero Bay Preserve State Park",
+      "slug": "estero-bay-preserve-state-park",
+      "name_slug": "estero-bay-preserve-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/estero-bay-preserve-state-park",
+      "address": "3800 Corkscrew Road, Estero, FL 33928",
+      "county": "Lee",
+      "acreage": 11382.8,
+      "lat": 26.4647,
+      "lng": -81.89172,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.00775,
+        26.33095,
+        -81.8333,
+        26.51569
+      ],
+      "ring_count": 141
+    },
+    {
+      "unit_id": "S00114",
+      "site_name": "Fakahatchee Strand Preserve State Park",
+      "slug": "fakahatchee-strand-preserve-state-park",
+      "name_slug": "fakahatchee-strand-preserve-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/fakahatchee-strand-preserve-state-park",
+      "address": "137 Coastline Dr., Copeland, FL 34137",
+      "county": "Collier",
+      "acreage": 80158.5,
+      "lat": 26.02119,
+      "lng": -81.42177,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -81.51304,
+        25.85369,
+        -81.3445,
+        26.15433
+      ],
+      "ring_count": 824
+    },
+    {
+      "unit_id": "S00021",
+      "site_name": "Falling Waters State Park",
+      "slug": "falling-waters-state-park",
+      "name_slug": "falling-waters-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/falling-waters-state-park",
+      "address": "1130 State Park Rd., Chipley, FL 32428",
+      "county": "Washington",
+      "acreage": 166.2,
+      "lat": 30.72843,
+      "lng": -85.52954,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -85.53363,
+        30.72394,
+        -85.52524,
+        30.73412
+      ],
+      "ring_count": 2
+    },
+    {
+      "unit_id": "S00241",
+      "site_name": "Fanning Springs State Park",
+      "slug": "fanning-springs-state-park",
+      "name_slug": "fanning-springs-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/fanning-springs-state-park",
+      "address": "11650 NW 115th Street, Chiefland, FL 32034",
+      "county": "Levy",
+      "acreage": 196.6,
+      "lat": 29.58658,
+      "lng": -82.9332,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.94314,
+        29.58216,
+        -82.92559,
+        29.59107
+      ],
+      "ring_count": 4
+    },
+    {
+      "unit_id": "S00022",
+      "site_name": "Faver-Dykes State Park",
+      "slug": "faver-dykes-state-park",
+      "name_slug": "faver-dykes-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/faver-dykes-state-park",
+      "address": "1000 Faver-Dykes Rd., St. Augustine, FL 32181",
+      "county": "St. Johns",
+      "acreage": 6027.6,
+      "lat": 29.68702,
+      "lng": -81.26501,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -81.29938,
+        29.65923,
+        -81.21926,
+        29.71559
+      ],
+      "ring_count": 7
+    },
+    {
+      "unit_id": "S00023",
+      "site_name": "Fernandina Plaza Historic State Park",
+      "slug": "fernandina-plaza-historic-state-park",
+      "name_slug": "fernandina-plaza-historic-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/fernandina-plaza-historic-state-park",
+      "address": "Estrada Street, Fernandina Beach, FL 32034",
+      "county": "Nassau",
+      "acreage": 0.8,
+      "lat": 30.68868,
+      "lng": -81.45655,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -81.45689,
+        30.68841,
+        -81.45624,
+        30.68897
+      ],
+      "ring_count": 1
+    },
+    {
+      "unit_id": "S00025",
+      "site_name": "Florida Caverns State Park",
+      "slug": "florida-caverns-state-park",
+      "name_slug": "florida-caverns-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/florida-caverns-state-park",
+      "address": "3345 Caverns Rd., Marianna, FL 32446",
+      "county": "Jackson",
+      "acreage": 1449.6,
+      "lat": 30.81286,
+      "lng": -85.23396,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -85.25332,
+        30.79915,
+        -85.21209,
+        30.82759
+      ],
+      "ring_count": 2
+    },
+    {
+      "unit_id": "S00263",
+      "site_name": "Florida Keys Overseas Heritage Trail",
+      "slug": "florida-keys-overseas-heritage-trail",
+      "name_slug": "florida-keys-overseas-heritage-trail",
+      "url": "https://www.floridastateparks.org/parks-and-trails/florida-keys-overseas-heritage-trail",
+      "address": "3 La Croix Court, Key Largo, FL 33037",
+      "county": "Monroe",
+      "acreage": 775.1,
+      "lat": 24.89418,
+      "lng": -80.8249,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -81.78845,
+        24.54749,
+        -80.35102,
+        25.19472
+      ],
+      "ring_count": 36
+    },
+    {
+      "unit_id": "S00026",
+      "site_name": "Forest Capital Museum State Park",
+      "slug": "forest-capital-museum-state-park",
+      "name_slug": "forest-capital-museum-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/forest-capital-museum-state-park",
+      "address": "204 Forest Park Dr., Perry, FL 32348",
+      "county": "Taylor",
+      "acreage": 10.2,
+      "lat": 30.08041,
+      "lng": -83.56909,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -83.57143,
+        30.07987,
+        -83.56621,
+        30.08083
+      ],
+      "ring_count": 1
+    },
+    {
+      "unit_id": "S00027",
+      "site_name": "Fort Clinch State Park",
+      "slug": "fortclinch",
+      "name_slug": "fort-clinch-state-park",
+      "url": "https://www.floridastateparks.org/fortclinch",
+      "address": "2601 Atlantic Ave., Fernandina Beach, FL 32034",
+      "county": "Nassau",
+      "acreage": 2219.5,
+      "lat": 30.69404,
+      "lng": -81.47303,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -81.54328,
+        30.66789,
+        -81.4251,
+        30.71578
+      ],
+      "ring_count": 35
+    },
+    {
+      "unit_id": "S00096",
+      "site_name": "Fort Cooper State Park",
+      "slug": "fort-cooper-state-park",
+      "name_slug": "fort-cooper-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/fort-cooper-state-park",
+      "address": "3100 S Old Floral City Rd., Inverness, FL 34450",
+      "county": "Citrus",
+      "acreage": 708.1,
+      "lat": 28.80823,
+      "lng": -82.30411,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.31365,
+        28.79922,
+        -82.29521,
+        28.81775
+      ],
+      "ring_count": 1
+    },
+    {
+      "unit_id": "S00227",
+      "site_name": "Fort George Island Cultural State Park",
+      "slug": "fort-george-island-cultural-state-park",
+      "name_slug": "fort-george-island-cultural-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/fort-george-island-cultural-state-park",
+      "address": "11241 Fort George Rd., Jacksonville, FL 32226",
+      "county": "Duval",
+      "acreage": 820.6,
+      "lat": 30.42494,
+      "lng": -81.43055,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -81.43971,
+        30.40629,
+        -81.42286,
+        30.43938
+      ],
+      "ring_count": 14
+    },
+    {
+      "unit_id": "S00255",
+      "site_name": "Fort Mose Historic State Park",
+      "slug": "fort-mose-historic-state-park",
+      "name_slug": "fort-mose-historic-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/fort-mose-historic-state-park",
+      "address": "15 Fort Mose Trail, St. Augustine, FL 32084",
+      "county": "St. Johns",
+      "acreage": 41.4,
+      "lat": 29.92948,
+      "lng": -81.32255,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -81.32644,
+        29.92751,
+        -81.31875,
+        29.93096
+      ],
+      "ring_count": 1
+    },
+    {
+      "unit_id": "S00106",
+      "site_name": "Fort Pierce Inlet State Park",
+      "slug": "fort-pierce-inlet-state-park",
+      "name_slug": "fort-pierce-inlet-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/fort-pierce-inlet-state-park",
+      "address": "905 Shorewinds Dr., Ft Pierce, FL 34949",
+      "county": "St. Lucie",
+      "acreage": 727.6,
+      "lat": 27.48724,
+      "lng": -80.30845,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -80.32219,
+        27.47205,
+        -80.28963,
+        27.50532
+      ],
+      "ring_count": 3
+    },
+    {
+      "unit_id": "S00125",
+      "site_name": "Fort Zachary Taylor Historic State Park",
+      "slug": "fort-zachary-taylor-historic-state-park",
+      "name_slug": "fort-zachary-taylor-historic-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/fort-zachary-taylor-historic-state-park",
+      "address": "601 Howard England Way, Key West, FL 33040",
+      "county": "Monroe",
+      "acreage": 55.7,
+      "lat": 24.54655,
+      "lng": -81.81057,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -81.81336,
+        24.54396,
+        -81.80803,
+        24.55058
+      ],
+      "ring_count": 1
+    },
+    {
+      "unit_id": "S00065",
+      "site_name": "Fred Gannon Rocky Bayou State Park",
+      "slug": "fred-gannon-rocky-bayou-state-park",
+      "name_slug": "fred-gannon-rocky-bayou-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/fred-gannon-rocky-bayou-state-park",
+      "address": "4281 State Road 20, Niceville, FL 32578",
+      "county": "Okaloosa",
+      "acreage": 346.7,
+      "lat": 30.49611,
+      "lng": -86.42647,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -86.43886,
+        30.48962,
+        -86.41915,
+        30.50308
+      ],
+      "ring_count": 1
+    },
+    {
+      "unit_id": "S00271",
+      "site_name": "Gainesville-to-Hawthorne State Trail",
+      "slug": "gainesville-hawthorne-state-trail",
+      "name_slug": "gainesville-to-hawthorne-state-trail",
+      "url": "https://www.floridastateparks.org/parks-and-trails/gainesville-hawthorne-state-trail",
+      "address": "3400 SE 15 Street, Gainesville,FL 32641",
+      "county": "Alachua",
+      "acreage": 140.2,
+      "lat": 29.59512,
+      "lng": -82.17264,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.30832,
+        29.58718,
+        -82.08703,
+        29.61546
+      ],
+      "ring_count": 1
+    },
+    {
+      "unit_id": "S00024",
+      "site_name": "Gamble Rogers Memorial State Recreation Area at Flagler Beach",
+      "slug": "gamble-rogers-memorial-state-recreation-area-flagler-beach",
+      "name_slug": "gamble-rogers-memorial-state-recreation-area-at-flagler-beach",
+      "url": "https://www.floridastateparks.org/parks-and-trails/gamble-rogers-memorial-state-recreation-area-flagler-beach",
+      "address": "3100 South A1A Hwy., Flagler Beach, FL 32136",
+      "county": "Flagler",
+      "acreage": 133.7,
+      "lat": 29.43769,
+      "lng": -81.11084,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -81.11445,
+        29.43414,
+        -81.10623,
+        29.44166
+      ],
+      "ring_count": 3
+    },
+    {
+      "unit_id": "S00191",
+      "site_name": "Gasparilla Island State Park",
+      "slug": "gasparilla-island-state-park",
+      "name_slug": "gasparilla-island-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/gasparilla-island-state-park",
+      "address": "880 Belcher Rd., Boca Grande, FL 33921",
+      "county": "Lee",
+      "acreage": 130.1,
+      "lat": 26.73099,
+      "lng": -82.26118,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.26445,
+        26.71666,
+        -82.25814,
+        26.74357
+      ],
+      "ring_count": 5
+    },
+    {
+      "unit_id": "S00225",
+      "site_name": "General James A. Van Fleet State Trail",
+      "slug": "general-james-van-fleet-state-trail",
+      "name_slug": "general-james-a-van-fleet-state-trail",
+      "url": "https://www.floridastateparks.org/parks-and-trails/general-james-van-fleet-state-trail",
+      "address": "7683 Berkley Road, Polk City, FL 33968",
+      "county": "Sumter, Lake, Polk",
+      "acreage": 421.7,
+      "lat": 28.39484,
+      "lng": -81.89783,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -81.97706,
+        28.17848,
+        -81.82702,
+        28.5792
+      ],
+      "ring_count": 2
+    },
+    {
+      "unit_id": "S00262",
+      "site_name": "George Crady Bridge Fishing Pier State Park",
+      "slug": "george-crady-bridge-fishing-pier-state-park",
+      "name_slug": "george-crady-bridge-fishing-pier-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/george-crady-bridge-fishing-pier-state-park",
+      "address": "9549 1st Coast Hwy., Fernandina Beach, FL 32034",
+      "county": "Nassau, Duval",
+      "acreage": 110.5,
+      "lat": 30.51825,
+      "lng": -81.4576,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -81.46265,
+        30.5113,
+        -81.44324,
+        30.52405
+      ],
+      "ring_count": 1
+    },
+    {
+      "unit_id": "S00033",
+      "site_name": "Grayton Beach State Park",
+      "slug": "graytonbeach",
+      "name_slug": "grayton-beach-state-park",
+      "url": "https://www.floridastateparks.org/graytonbeach",
+      "address": "357 Main Park Rd., Santa Rosa Beach, FL 32459",
+      "county": "Walton",
+      "acreage": 2187.4,
+      "lat": 30.33611,
+      "lng": -86.15777,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -86.19664,
+        30.32115,
+        -86.12814,
+        30.34467
+      ],
+      "ring_count": 6
+    },
+    {
+      "unit_id": "S00126",
+      "site_name": "Haw Creek Preserve State Park",
+      "slug": "haw-creek-preserve-state-park",
+      "name_slug": "haw-creek-preserve-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/haw-creek-preserve-state-park",
+      "address": "C/O Tomoka State Park, Ormond Beach, FL 32174",
+      "county": "Flagler, Volusia, Putnam",
+      "acreage": 3061.7,
+      "lat": 29.38608,
+      "lng": -81.42302,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -81.45417,
+        29.37033,
+        -81.38724,
+        29.40879
+      ],
+      "ring_count": 2
+    },
+    {
+      "unit_id": "S00186",
+      "site_name": "Henderson Beach State Park",
+      "slug": "henderson-beach-state-park",
+      "name_slug": "henderson-beach-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/henderson-beach-state-park",
+      "address": "17000 Emerald Coast Pkwy., Destin, FL 32541",
+      "county": "Okaloosa",
+      "acreage": 251.3,
+      "lat": 30.38452,
+      "lng": -86.44249,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -86.45365,
+        30.38171,
+        -86.43205,
+        30.38709
+      ],
+      "ring_count": 2
+    },
+    {
+      "unit_id": "S00036",
+      "site_name": "Highlands Hammock State Park",
+      "slug": "highlands-hammock-state-park",
+      "name_slug": "highlands-hammock-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/highlands-hammock-state-park",
+      "address": "5931 Hammock Rd., Sebring, FL 33872",
+      "county": "Highlands, Hardee",
+      "acreage": 9237.7,
+      "lat": 27.45041,
+      "lng": -81.53501,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -81.56777,
+        27.41234,
+        -81.48624,
+        27.48565
+      ],
+      "ring_count": 8
+    },
+    {
+      "unit_id": "S00037",
+      "site_name": "Hillsborough River State Park",
+      "slug": "hillsborough-river-state-park",
+      "name_slug": "hillsborough-river-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/hillsborough-river-state-park",
+      "address": "15402 US 301 N, Thonotosassa, FL 33592",
+      "county": "Hillsborough",
+      "acreage": 3319.2,
+      "lat": 28.12185,
+      "lng": -82.25777,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.29925,
+        28.08363,
+        -82.21534,
+        28.15665
+      ],
+      "ring_count": 11
+    },
+    {
+      "unit_id": "S00120",
+      "site_name": "Honeymoon Island State Park",
+      "slug": "honeymoonisland",
+      "name_slug": "honeymoon-island-state-park",
+      "url": "https://www.floridastateparks.org/honeymoonisland",
+      "address": "No. 1 Causeway Blvd., Dunedin, FL 34698",
+      "county": "Pinellas",
+      "acreage": 2824.5,
+      "lat": 28.07509,
+      "lng": -82.82871,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.84858,
+        28.04893,
+        -82.80958,
+        28.09575
+      ],
+      "ring_count": 1
+    },
+    {
+      "unit_id": "S00038",
+      "site_name": "Hontoon Island State Park",
+      "slug": "hontoon-island-state-park",
+      "name_slug": "hontoon-island-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/hontoon-island-state-park",
+      "address": "2309 River Ridge Rd., Deland, FL 32720",
+      "county": "Volusia, Lake",
+      "acreage": 1653.8,
+      "lat": 28.96533,
+      "lng": -81.36302,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -81.38369,
+        28.94873,
+        -81.34751,
+        28.9784
+      ],
+      "ring_count": 3
+    },
+    {
+      "unit_id": "S00039",
+      "site_name": "Hugh Taylor Birch State Park",
+      "slug": "hughtaylorbirch",
+      "name_slug": "hugh-taylor-birch-state-park",
+      "url": "https://www.floridastateparks.org/HughTaylorBirch",
+      "address": "3109 E Sunrise Blvd., Ft Lauderdale, FL 33304",
+      "county": "Broward",
+      "acreage": 162.5,
+      "lat": 26.14535,
+      "lng": -80.105,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -80.10795,
+        26.13821,
+        -80.10199,
+        26.15272
+      ],
+      "ring_count": 2
+    },
+    {
+      "unit_id": "S00086",
+      "site_name": "Ichetucknee Springs State Park",
+      "slug": "ichetucknee-springs-state-park",
+      "name_slug": "ichetucknee-springs-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/ichetucknee-springs-state-park",
+      "address": "12087 SW US Hwy 27, Ft. White, FL 32038",
+      "county": "Columbia, Suwannee",
+      "acreage": 2532,
+      "lat": 29.97561,
+      "lng": -82.76296,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.79346,
+        29.94949,
+        -82.69394,
+        30.07206
+      ],
+      "ring_count": 6
+    },
+    {
+      "unit_id": "S00282",
+      "site_name": "Ichetucknee Trace",
+      "slug": null,
+      "name_slug": "ichetucknee-trace",
+      "url": null,
+      "address": "12087 SW US Hwy 27, Ft. White, FL 32038",
+      "county": "Columbia",
+      "acreage": 822.3,
+      "lat": 30.04593,
+      "lng": -82.72578,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.73568,
+        30.03419,
+        -82.71063,
+        30.05551
+      ],
+      "ring_count": 1
+    },
+    {
+      "unit_id": "S00095",
+      "site_name": "Indian Key Historic State Park",
+      "slug": "indiankey",
+      "name_slug": "indian-key-historic-state-park",
+      "url": "https://www.floridastateparks.org/IndianKey",
+      "address": "Mile Marker 78.5, Atlantic side, Offshore from Islamorada",
+      "county": "Monroe",
+      "acreage": 111.3,
+      "lat": 24.88356,
+      "lng": -80.67749,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -80.68565,
+        24.87671,
+        -80.55538,
+        24.97289
+      ],
+      "ring_count": 4
+    },
+    {
+      "unit_id": "S00028",
+      "site_name": "Indian River Lagoon Preserve State Park",
+      "slug": "indian-river-lagoon-preserve-state-park",
+      "name_slug": "indian-river-lagoon-preserve-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/indian-river-lagoon-preserve-state-park",
+      "address": "Old Florida Trail, Melbourne Beach, FL 32951",
+      "county": "Brevard",
+      "acreage": 564,
+      "lat": 27.9356,
+      "lng": -80.50218,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -80.51404,
+        27.91589,
+        -80.49295,
+        27.95006
+      ],
+      "ring_count": 8
+    },
+    {
+      "unit_id": "S00140",
+      "site_name": "John D. MacArthur Beach State Park",
+      "slug": "john-d-macarthur-beach-state-park",
+      "name_slug": "john-d-macarthur-beach-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/john-d-macarthur-beach-state-park",
+      "address": "10900 Jack Nichlaus Drive, North Palm Beach, FL 33408",
+      "county": "Palm Beach",
+      "acreage": 436.4,
+      "lat": 26.82615,
+      "lng": -80.04278,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -80.05027,
+        26.81151,
+        -80.0353,
+        26.8365
+      ],
+      "ring_count": 5
+    },
+    {
+      "unit_id": "S00042",
+      "site_name": "John Gorrie Museum State Park",
+      "slug": "john-gorrie-museum-state-park",
+      "name_slug": "john-gorrie-museum-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/john-gorrie-museum-state-park",
+      "address": "46 5th Street, Apalachicola, FL 32320",
+      "county": "Franklin",
+      "acreage": 1,
+      "lat": 29.72504,
+      "lng": -84.98559,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -84.98606,
+        29.7244,
+        -84.98507,
+        29.72572
+      ],
+      "ring_count": 3
+    },
+    {
+      "unit_id": "S00015",
+      "site_name": "John Pennekamp Coral Reef State Park",
+      "slug": "john-pennekamp-coral-reef-state-park",
+      "name_slug": "john-pennekamp-coral-reef-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/john-pennekamp-coral-reef-state-park",
+      "address": "Mile Marker 102.5 Overseas Hwy., Key Largo, FL 33037",
+      "county": "Monroe",
+      "acreage": 63881.4,
+      "lat": 25.18031,
+      "lng": -80.32638,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -80.47676,
+        25.02076,
+        -80.19415,
+        25.35213
+      ],
+      "ring_count": 41
+    },
+    {
+      "unit_id": "S00043",
+      "site_name": "Jonathan Dickinson State Park",
+      "slug": "jonathan-dickinson-state-park",
+      "name_slug": "jonathan-dickinson-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/jonathan-dickinson-state-park",
+      "address": "16450 SE Federal Hwy., Hobe Sound, FL 33455",
+      "county": "Martin,Palm Beach",
+      "acreage": 10441.7,
+      "lat": 27.00857,
+      "lng": -80.13897,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -80.17525,
+        26.97095,
+        -80.0954,
+        27.04579
+      ],
+      "ring_count": 10
+    },
+    {
+      "unit_id": "S00031",
+      "site_name": "Judah P. Benjamin Confederate Memorial at Gamble Plantation Historic State Park",
+      "slug": "judah-p-benjamin-confederate-memorial-gamble-plantation-historic-state-park",
+      "name_slug": "judah-p-benjamin-confederate-memorial-at-gamble-plantation-historic-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/judah-p-benjamin-confederate-memorial-gamble-plantation-historic-state-park",
+      "address": "3708 Patten Avenue, Ellenton, FL 34222",
+      "county": "Manatee",
+      "acreage": 33,
+      "lat": 27.52786,
+      "lng": -82.52683,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.5281,
+        27.52184,
+        -82.52538,
+        27.53295
+      ],
+      "ring_count": 2
+    },
+    {
+      "unit_id": "S00252",
+      "site_name": "Kissimmee Prairie Preserve State Park",
+      "slug": "kissimmee-prairie-preserve-state-park",
+      "name_slug": "kissimmee-prairie-preserve-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/kissimmee-prairie-preserve-state-park",
+      "address": "33104 NW 192nd Ave., Okeechobee, FL 34972",
+      "county": "Okeechobee, Osceola",
+      "acreage": 58124.2,
+      "lat": 27.5815,
+      "lng": -81.06789,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -81.20603,
+        27.48142,
+        -80.92422,
+        27.66406
+      ],
+      "ring_count": 1
+    },
+    {
+      "unit_id": "S00045",
+      "site_name": "Koreshan State Park",
+      "slug": "koreshan-state-park",
+      "name_slug": "koreshan-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/koreshan-state-park",
+      "address": "3800 Corkscrew Road, Estero, FL 33928",
+      "county": "Lee",
+      "acreage": 196.2,
+      "lat": 26.43527,
+      "lng": -81.81669,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -81.82305,
+        26.43114,
+        -81.81094,
+        26.44085
+      ],
+      "ring_count": 2
+    },
+    {
+      "unit_id": "S00272",
+      "site_name": "Lafayette Blue Springs State Park",
+      "slug": "lafayette-blue-springs-state-park",
+      "name_slug": "lafayette-blue-springs-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/lafayette-blue-springs-state-park",
+      "address": "799 NW Blue Spring Rd., Mayo, FL 32066",
+      "county": "Lafayette",
+      "acreage": 713.9,
+      "lat": 30.1487,
+      "lng": -83.23566,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -83.24477,
+        30.12145,
+        -83.22501,
+        30.16576
+      ],
+      "ring_count": 2
+    },
+    {
+      "unit_id": "S00046",
+      "site_name": "Lake Griffin State Park",
+      "slug": "lake-griffin-state-park",
+      "name_slug": "lake-griffin-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/lake-griffin-state-park",
+      "address": "3089 US Highway 441/27, Fruitland Park, FL 34731",
+      "county": "Lake",
+      "acreage": 620.7,
+      "lat": 28.86175,
+      "lng": -81.89375,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -81.90317,
+        28.84964,
+        -81.88084,
+        28.87245
+      ],
+      "ring_count": 2
+    },
+    {
+      "unit_id": "S00047",
+      "site_name": "Lake Jackson Mounds Archaeological State Park",
+      "slug": "lake-jackson-mounds-archaeological-state-park",
+      "name_slug": "lake-jackson-mounds-archaeological-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/lake-jackson-mounds-archaeological-state-park",
+      "address": "3600 Indian Mounds Rd., Tallahassee, FL 32303",
+      "county": "Leon",
+      "acreage": 199.8,
+      "lat": 30.50108,
+      "lng": -84.31464,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -84.3215,
+        30.4975,
+        -84.30809,
+        30.50727
+      ],
+      "ring_count": 2
+    },
+    {
+      "unit_id": "S00245",
+      "site_name": "Lake June-in-Winter Scrub Preserve State Park",
+      "slug": "lake-june-winter-scrub-preserve-state-park",
+      "name_slug": "lake-june-in-winter-scrub-preserve-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/lake-june-winter-scrub-preserve-state-park",
+      "address": "Daffodil Rd., Lake Placid, FL 33852",
+      "county": "Highlands",
+      "acreage": 845.7,
+      "lat": 27.2956,
+      "lng": -81.41933,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -81.42512,
+        27.28182,
+        -81.40554,
+        27.31635
+      ],
+      "ring_count": 1
+    },
+    {
+      "unit_id": "S00087",
+      "site_name": "Lake Kissimmee State Park",
+      "slug": "lake-kissimmee-state-park",
+      "name_slug": "lake-kissimmee-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/lake-kissimmee-state-park",
+      "address": "14248 Camp Mack Rd., Lake Wales, FL 33898",
+      "county": "Polk, Osceola",
+      "acreage": 5893.2,
+      "lat": 27.94071,
+      "lng": -81.36854,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -81.41295,
+        27.91064,
+        -81.33611,
+        27.97252
+      ],
+      "ring_count": 1
+    },
+    {
+      "unit_id": "S00108",
+      "site_name": "Lake Louisa State Park",
+      "slug": "lake-louisa-state-park",
+      "name_slug": "lake-louisa-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/lake-louisa-state-park",
+      "address": "7305 US Hwy 27, Clermont, FL 34714",
+      "county": "Lake",
+      "acreage": 4608.1,
+      "lat": 28.44704,
+      "lng": -81.74114,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -81.94287,
+        28.4191,
+        -81.70622,
+        28.52187
+      ],
+      "ring_count": 4
+    },
+    {
+      "unit_id": "S00088",
+      "site_name": "Lake Manatee State Park",
+      "slug": "lake-manatee-state-park",
+      "name_slug": "lake-manatee-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/lake-manatee-state-park",
+      "address": "20007 SR 64 Bradenton, FL 34202",
+      "county": "Manatee",
+      "acreage": 548.9,
+      "lat": 27.47846,
+      "lng": -82.33725,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.35223,
+        27.47465,
+        -82.30463,
+        27.48499
+      ],
+      "ring_count": 4
+    },
+    {
+      "unit_id": "S00093",
+      "site_name": "Lake Talquin State Park",
+      "slug": "lake-talquin",
+      "name_slug": "lake-talquin-state-park",
+      "url": "https://www.floridastateparks.org/park/Lake-Talquin",
+      "address": "14850 Jack Vause Landing Rd., Tallahassee, FL 32310",
+      "county": "Leon",
+      "acreage": 490.1,
+      "lat": 30.42457,
+      "lng": -84.56557,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -84.6545,
+        30.38557,
+        -84.5247,
+        30.44313
+      ],
+      "ring_count": 4
+    },
+    {
+      "unit_id": "S00249",
+      "site_name": "Letchworth-Love Mounds Archaeological State Park",
+      "slug": "letchworth-love-mounds-archaeological-state-park",
+      "name_slug": "letchworth-love-mounds-archaeological-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/letchworth-love-mounds-archaeological-state-park",
+      "address": "4500 Sunray Road South, Tallahassee, FL 32309",
+      "county": "Jefferson",
+      "acreage": 190.1,
+      "lat": 30.51793,
+      "lng": -83.99031,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -83.99488,
+        30.51215,
+        -83.98372,
+        30.5219
+      ],
+      "ring_count": 2
+    },
+    {
+      "unit_id": "S00097",
+      "site_name": "Lignumvitae Key Botanical State Park",
+      "slug": "lignumvitae-key-botanical-state-park",
+      "name_slug": "lignumvitae-key-botanical-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/lignumvitae-key-botanical-state-park",
+      "address": "77200 Overseas Hwy., Islamorada, FL 33001",
+      "county": "Monroe",
+      "acreage": 10724.2,
+      "lat": 24.90359,
+      "lng": -80.68441,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -80.73009,
+        24.87267,
+        -80.6499,
+        24.9493
+      ],
+      "ring_count": 6
+    },
+    {
+      "unit_id": "S00115",
+      "site_name": "Little Manatee River State Park",
+      "slug": "little-manatee-river-state-park",
+      "name_slug": "little-manatee-river-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/little-manatee-river-state-park",
+      "address": "215 Lightfoot Rd., Wimauma, FL 33598",
+      "county": "Hillsborough",
+      "acreage": 2493.6,
+      "lat": 27.67318,
+      "lng": -82.37073,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.40249,
+        27.65765,
+        -82.34406,
+        27.68855
+      ],
+      "ring_count": 1
+    },
+    {
+      "unit_id": "S00049",
+      "site_name": "Little Talbot Island State Park",
+      "slug": "little-talbot-island-state-park",
+      "name_slug": "little-talbot-island-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/little-talbot-island-state-park",
+      "address": "12157 Heckscher Dr., Jacksonville, FL 32226",
+      "county": "Duval",
+      "acreage": 1536.1,
+      "lat": 30.4553,
+      "lng": -81.41531,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -81.42388,
+        30.42106,
+        -81.40595,
+        30.48747
+      ],
+      "ring_count": 2
+    },
+    {
+      "unit_id": "S00050",
+      "site_name": "Long Key State Park",
+      "slug": "long-key-state-park",
+      "name_slug": "long-key-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/long-key-state-park",
+      "address": "67400 Overseas Hwy.,  Long Key, FL 33001",
+      "county": "Monroe",
+      "acreage": 1001.8,
+      "lat": 24.81701,
+      "lng": -80.80827,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -80.84201,
+        24.80575,
+        -80.78687,
+        24.8349
+      ],
+      "ring_count": 6
+    },
+    {
+      "unit_id": "S00193",
+      "site_name": "Lovers Key State Park",
+      "slug": "lovers-key-state-park",
+      "name_slug": "lovers-key-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/lovers-key-state-park",
+      "address": "8700 Estero Blvd., Ft Myers Beach, FL 33931",
+      "county": "Lee",
+      "acreage": 1442.4,
+      "lat": 26.3912,
+      "lng": -81.86913,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -81.88653,
+        26.37703,
+        -81.85466,
+        26.40366
+      ],
+      "ring_count": 2
+    },
+    {
+      "unit_id": "S00124",
+      "site_name": "Lower Wekiva River Preserve State Park",
+      "slug": "lower-wekiva-river-preserve-state-park",
+      "name_slug": "lower-wekiva-river-preserve-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/lower-wekiva-river-preserve-state-park",
+      "address": "8300 W. State Road 46, Sanford, FL 32712",
+      "county": "Lake, Seminole",
+      "acreage": 18038.1,
+      "lat": 28.90577,
+      "lng": -81.38761,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -81.42974,
+        28.81498,
+        -81.3483,
+        29.01003
+      ],
+      "ring_count": 6
+    },
+    {
+      "unit_id": "S00051",
+      "site_name": "Madira Bickel Mound State Archaeological Site",
+      "slug": "madira-bickel-mound-state-archaeological-site",
+      "name_slug": "madira-bickel-mound-state-archaeological-site",
+      "url": "https://www.floridastateparks.org/parks-and-trails/madira-bickel-mound-state-archaeological-site",
+      "address": "955 Bayshore Dr., Terra Ceia, FL 34250",
+      "county": "Manatee",
+      "acreage": 9.2,
+      "lat": 27.56591,
+      "lng": -82.5922,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.59327,
+        27.56498,
+        -82.59119,
+        27.56679
+      ],
+      "ring_count": 3
+    },
+    {
+      "unit_id": "S00268",
+      "site_name": "Madison Blue Spring State Park",
+      "slug": "madison-blue-spring-state-park",
+      "name_slug": "madison-blue-spring-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/madison-blue-spring-state-park",
+      "address": "8300 NE State Road 6, Lee, FL 32059",
+      "county": "Madison",
+      "acreage": 50.9,
+      "lat": 30.47863,
+      "lng": -83.24518,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -83.24838,
+        30.47485,
+        -83.24198,
+        30.48197
+      ],
+      "ring_count": 1
+    },
+    {
+      "unit_id": "S00053",
+      "site_name": "Manatee Springs State Park",
+      "slug": "manatee-springs-state-park",
+      "name_slug": "manatee-springs-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/manatee-springs-state-park",
+      "address": "11650 NW 115 St., Chiefland, FL 32626",
+      "county": "Levy",
+      "acreage": 2746.2,
+      "lat": 29.49485,
+      "lng": -82.97029,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.98581,
+        29.46228,
+        -82.95192,
+        29.52114
+      ],
+      "ring_count": 2
+    },
+    {
+      "unit_id": "S00275",
+      "site_name": "Marjorie Harris Carr Cross Florida Greenways State Recreation and Conservation Area",
+      "slug": "marjorie-harris-carr-cross-florida-greenway",
+      "name_slug": "marjorie-harris-carr-cross-florida-greenways-state-recreation-and-conservation-area",
+      "url": "https://www.floridastateparks.org/parks-and-trails/marjorie-harris-carr-cross-florida-greenway",
+      "address": "8282 S.E. Highway 314., Ocala, FL 34470",
+      "county": "Citrus, Levy, Marion, Putnam",
+      "acreage": 75207.6,
+      "lat": 29.28867,
+      "lng": -82.0674,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.88179,
+        28.93953,
+        -81.66142,
+        29.62911
+      ],
+      "ring_count": 135
+    },
+    {
+      "unit_id": "S00089",
+      "site_name": "Marjorie Kinnan Rawlings Historic State Park",
+      "slug": "marjorie-kinnan-rawlings-historic-state-park",
+      "name_slug": "marjorie-kinnan-rawlings-historic-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/marjorie-kinnan-rawlings-historic-state-park",
+      "address": "18700 South CR 325, Hawthorne, FL 32640",
+      "county": "Alachua",
+      "acreage": 124.3,
+      "lat": 29.48085,
+      "lng": -82.15862,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.16589,
+        29.47814,
+        -82.15135,
+        29.48374
+      ],
+      "ring_count": 2
+    },
+    {
+      "unit_id": "S00032",
+      "site_name": "Mike Roess Gold Head Branch State Park",
+      "slug": "mike-roess-gold-head-branch-state-park",
+      "name_slug": "mike-roess-gold-head-branch-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/mike-roess-gold-head-branch-state-park",
+      "address": "6239 SR 21, Keystone Heights, FL 32656",
+      "county": "Clay",
+      "acreage": 2366.9,
+      "lat": 29.83692,
+      "lng": -81.95012,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -81.97719,
+        29.81633,
+        -81.93069,
+        29.85666
+      ],
+      "ring_count": 2
+    },
+    {
+      "unit_id": "S00055",
+      "site_name": "Mound Key Archaeological State Park",
+      "slug": "mound-key-archaeological-state-park",
+      "name_slug": "mound-key-archaeological-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/mound-key-archaeological-state-park",
+      "address": "26.42222, -81.86527, Offshore island",
+      "county": "Lee",
+      "acreage": 127.8,
+      "lat": 26.42244,
+      "lng": -81.86411,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -81.8684,
+        26.41832,
+        -81.86011,
+        26.42732
+      ],
+      "ring_count": 1
+    },
+    {
+      "unit_id": "S00056",
+      "site_name": "Myakka River State Park",
+      "slug": "myakka-river-state-park",
+      "name_slug": "myakka-river-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/myakka-river-state-park",
+      "address": "13208 State Rd. 72, Sarasota, FL 34241",
+      "county": "Manatee, Sarasota",
+      "acreage": 37197.7,
+      "lat": 27.2263,
+      "lng": -82.26661,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.35675,
+        27.17914,
+        -82.155,
+        27.29856
+      ],
+      "ring_count": 2
+    },
+    {
+      "unit_id": "S00057",
+      "site_name": "Natural Bridge Battlefield Historic State Park",
+      "slug": "natural-bridge-battlefield-historic-state-park",
+      "name_slug": "natural-bridge-battlefield-historic-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/natural-bridge-battlefield-historic-state-park",
+      "address": "7502 Natural Bridge Rd., Tallahassee, FL 32309",
+      "county": "Leon",
+      "acreage": 2121.4,
+      "lat": 30.30069,
+      "lng": -84.13507,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -84.16156,
+        30.27396,
+        -84.10328,
+        30.32152
+      ],
+      "ring_count": 4
+    },
+    {
+      "unit_id": "S00253",
+      "site_name": "Nature Coast State Trail",
+      "slug": "nature-coast-state-trail",
+      "name_slug": "nature-coast-state-trail",
+      "url": "https://www.floridastateparks.org/parks-and-trails/nature-coast-state-trail",
+      "address": "18020 NW Hwy 19, Fanning Springs, FL 32693",
+      "county": "Dixie, Gilchrist, Levy",
+      "acreage": 656.3,
+      "lat": 29.60243,
+      "lng": -82.91152,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -83.14992,
+        29.47484,
+        -82.66257,
+        29.65232
+      ],
+      "ring_count": 3
+    },
+    {
+      "unit_id": "S00276",
+      "site_name": "Ney Landrum State Park",
+      "slug": "ney-landrum-state-park",
+      "name_slug": "ney-landrum-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/ney-landrum-state-park",
+      "address": "11950 Tram Rd., Tallahassee, FL 32311",
+      "county": "Leon, Jefferson",
+      "acreage": 2590,
+      "lat": 30.39165,
+      "lng": -84.08447,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -84.10652,
+        30.3615,
+        -84.05843,
+        30.42143
+      ],
+      "ring_count": 2
+    },
+    {
+      "unit_id": "S00254",
+      "site_name": "North Peninsula State Park",
+      "slug": "north-peninsula-state-park",
+      "name_slug": "north-peninsula-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/north-peninsula-state-park",
+      "address": "40 Highbridge Rd., Ormond By The Sea, FL 32176",
+      "county": "Volusia",
+      "acreage": 556.1,
+      "lat": 29.40856,
+      "lng": -81.09675,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -81.10564,
+        29.38941,
+        -81.08489,
+        29.42717
+      ],
+      "ring_count": 7
+    },
+    {
+      "unit_id": "S00060",
+      "site_name": "O'Leno State Park",
+      "slug": "oleno-state-park",
+      "name_slug": "oleno-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/oleno-state-park",
+      "address": "410 SE O'Leno Park Road, High Springs, FL 32643",
+      "county": "Alachua, Columbia",
+      "acreage": 2372.4,
+      "lat": 29.91356,
+      "lng": -82.57779,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.60838,
+        29.89728,
+        -82.55921,
+        29.93095
+      ],
+      "ring_count": 4
+    },
+    {
+      "unit_id": "S00059",
+      "site_name": "Ochlockonee River State Park",
+      "slug": "ochlockonee-river-state-park",
+      "name_slug": "ochlockonee-river-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/ochlockonee-river-state-park",
+      "address": "429 State Park Rd., Sopchoppy, FL 32358",
+      "county": "Wakulla",
+      "acreage": 546.5,
+      "lat": 30.00344,
+      "lng": -84.48625,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -84.50388,
+        29.99604,
+        -84.46974,
+        30.01077
+      ],
+      "ring_count": 2
+    },
+    {
+      "unit_id": "S00277",
+      "site_name": "Okeechobee Battlefield Historic State Park",
+      "slug": "okeechobee-battlefield-historic-state-park",
+      "name_slug": "okeechobee-battlefield-historic-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/okeechobee-battlefield-historic-state-park",
+      "address": "3500 SE 38th Ave., Okeechobee, FL 34974",
+      "county": "Okeechobee",
+      "acreage": 145.3,
+      "lat": 27.21304,
+      "lng": -80.78487,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -80.7898,
+        27.20795,
+        -80.78045,
+        27.2167
+      ],
+      "ring_count": 1
+    },
+    {
+      "unit_id": "S00138",
+      "site_name": "Oleta River State Park",
+      "slug": "oletariver",
+      "name_slug": "oleta-river-state-park",
+      "url": "https://www.floridastateparks.org/OletaRiver",
+      "address": "3400 NE 163rd Street N, Miami, FL 33160",
+      "county": "Dade",
+      "acreage": 1032.8,
+      "lat": 25.91651,
+      "lng": -80.13871,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -80.15479,
+        25.89799,
+        -80.12753,
+        25.9296
+      ],
+      "ring_count": 3
+    },
+    {
+      "unit_id": "S00061",
+      "site_name": "Olustee Battlefield Historic State Park",
+      "slug": "olustee-battlefield-historic-state-park",
+      "name_slug": "olustee-battlefield-historic-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/olustee-battlefield-historic-state-park",
+      "address": "5815 Battlefield Trail Rd., Olustee, FL 32087",
+      "county": "Baker",
+      "acreage": 617.1,
+      "lat": 30.21847,
+      "lng": -82.38254,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.39932,
+        30.21015,
+        -82.3592,
+        30.22445
+      ],
+      "ring_count": 1
+    },
+    {
+      "unit_id": "S00260",
+      "site_name": "Orman House Historic State Park",
+      "slug": "orman-house-historic-state-park",
+      "name_slug": "orman-house-historic-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/orman-house-historic-state-park",
+      "address": "177 5th Street,  Apalachicola, FL 32320",
+      "county": "Franklin",
+      "acreage": 9,
+      "lat": 29.73108,
+      "lng": -84.99101,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -84.99297,
+        29.72947,
+        -84.98928,
+        29.73244
+      ],
+      "ring_count": 1
+    },
+    {
+      "unit_id": "S00062",
+      "site_name": "Oscar Scherer State Park",
+      "slug": "oscar-scherer-state-park",
+      "name_slug": "oscar-scherer-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/oscar-scherer-state-park",
+      "address": "1843 S Tamiami Trail, Osprey, FL 34229",
+      "county": "Sarasota",
+      "acreage": 1396.3,
+      "lat": 27.18073,
+      "lng": -82.46023,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.47805,
+        27.16759,
+        -82.44905,
+        27.19625
+      ],
+      "ring_count": 2
+    },
+    {
+      "unit_id": "S00266",
+      "site_name": "Palatka-to-Lake Butler State Trail",
+      "slug": "palatka-lake-butler-state-trail",
+      "name_slug": "palatka-to-lake-butler-state-trail",
+      "url": "https://www.floridastateparks.org/parks-and-trails/palatka-lake-butler-state-trail",
+      "address": "6065 Twin Lakes Rd., Keystone Heights, FL 32656",
+      "county": "Bradford, Clay, Putnam, Union",
+      "acreage": 613.9,
+      "lat": 29.81078,
+      "lng": -82.0134,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.34431,
+        29.66768,
+        -81.69623,
+        30.02301
+      ],
+      "ring_count": 3
+    },
+    {
+      "unit_id": "S00283",
+      "site_name": "Palatka-to-St. Augustine State Trail",
+      "slug": "palatka-st-augustine-state-trail",
+      "name_slug": "palatka-to-st-augustine-state-trail",
+      "url": "https://www.floridastateparks.org/parks-and-trails/palatka-st-augustine-state-trail",
+      "address": "State Road 207., Armstrong, FL 32033",
+      "county": "St. Johns",
+      "acreage": 56.2,
+      "lat": 29.73778,
+      "lng": -81.49331,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -81.60116,
+        29.65111,
+        -81.39058,
+        29.83487
+      ],
+      "ring_count": 19
+    },
+    {
+      "unit_id": "S00118",
+      "site_name": "Paynes Creek Historic State Park",
+      "slug": "paynes-creek-historic-state-park",
+      "name_slug": "paynes-creek-historic-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/paynes-creek-historic-state-park",
+      "address": "888 Lake Branch Rd., Bowling Green, FL 33834",
+      "county": "Hardee",
+      "acreage": 398.6,
+      "lat": 27.61978,
+      "lng": -81.81033,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -81.81757,
+        27.61315,
+        -81.80138,
+        27.6276
+      ],
+      "ring_count": 1
+    },
+    {
+      "unit_id": "S00092",
+      "site_name": "Paynes Prairie Preserve State Park",
+      "slug": "paynes-prairie-preserve-state-park",
+      "name_slug": "paynes-prairie-preserve-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/paynes-prairie-preserve-state-park",
+      "address": "100 Savannah Blvd., Micanopy, FL 32667",
+      "county": "Alachua",
+      "acreage": 21561.7,
+      "lat": 29.57714,
+      "lng": -82.30755,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.3935,
+        29.50603,
+        -82.23997,
+        29.62993
+      ],
+      "ring_count": 10
+    },
+    {
+      "unit_id": "S00135",
+      "site_name": "Perdido Key State Park",
+      "slug": "perdido-key-state-park",
+      "name_slug": "perdido-key-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/perdido-key-state-park",
+      "address": "15301 Perdido Key Dr., Pensacola, FL 32507",
+      "county": "Escambia",
+      "acreage": 302.9,
+      "lat": 30.292,
+      "lng": -87.46874,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -87.48612,
+        30.28773,
+        -87.45306,
+        30.29644
+      ],
+      "ring_count": 3
+    },
+    {
+      "unit_id": "S00094",
+      "site_name": "Ponce de Leon Springs State Park",
+      "slug": "ponce-de-leon-springs-state-park",
+      "name_slug": "ponce-de-leon-springs-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/ponce-de-leon-springs-state-park",
+      "address": "2860 Ponce De Leon Springs Rd., Ponce De Leon, FL 32455",
+      "county": "Holmes, Walton",
+      "acreage": 380.8,
+      "lat": 30.70884,
+      "lng": -85.92743,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -85.93601,
+        30.69973,
+        -85.91948,
+        30.72418
+      ],
+      "ring_count": 7
+    },
+    {
+      "unit_id": "S00278",
+      "site_name": "Price's Scrub State Park",
+      "slug": "prices-scrub-state-park",
+      "name_slug": "prices-scrub-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/prices-scrub-state-park",
+      "address": "17930 NW Hwy 320, Micanopy, FL 32667",
+      "county": "Marion",
+      "acreage": 1201.2,
+      "lat": 29.46716,
+      "lng": -82.28457,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.30635,
+        29.45383,
+        -82.26969,
+        29.48425
+      ],
+      "ring_count": 2
+    },
+    {
+      "unit_id": "S00016",
+      "site_name": "Pumpkin Hill Creek Preserve State Park",
+      "slug": "pumpkin-hill-creek-preserve-state-park",
+      "name_slug": "pumpkin-hill-creek-preserve-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/pumpkin-hill-creek-preserve-state-park",
+      "address": "13802 Pumpkin Hill Road, Jacksonville, FL 32226",
+      "county": "Duval",
+      "acreage": 4316.8,
+      "lat": 30.47184,
+      "lng": -81.51242,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -81.55398,
+        30.4448,
+        -81.46832,
+        30.51035
+      ],
+      "ring_count": 20
+    },
+    {
+      "unit_id": "S00211",
+      "site_name": "Rainbow Springs State Park",
+      "slug": "rainbow-springs-state-park",
+      "name_slug": "rainbow-springs-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/rainbow-springs-state-park",
+      "address": "19158 SW 81st Place Rd., Dunnellon, FL 34432",
+      "county": "Marion",
+      "acreage": 1584.4,
+      "lat": 29.08183,
+      "lng": -82.42674,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.44995,
+        29.05232,
+        -82.41384,
+        29.10844
+      ],
+      "ring_count": 6
+    },
+    {
+      "unit_id": "S00085",
+      "site_name": "Ravine Gardens State Park",
+      "slug": "ravine-gardens-state-park",
+      "name_slug": "ravine-gardens-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/ravine-gardens-state-park",
+      "address": "1600 Twigg St., Palatka, FL 32177",
+      "county": "Putnam",
+      "acreage": 152.9,
+      "lat": 29.63274,
+      "lng": -81.64142,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -81.65,
+        29.62882,
+        -81.63497,
+        29.63803
+      ],
+      "ring_count": 2
+    },
+    {
+      "unit_id": "S00117",
+      "site_name": "River Rise Preserve State Park",
+      "slug": "riverrise",
+      "name_slug": "river-rise-preserve-state-park",
+      "url": "https://www.floridastateparks.org/RiverRise",
+      "address": "373 Southwest US Hwy 27, High Springs, FL 32643",
+      "county": "Alachua, Columbia",
+      "acreage": 4005.5,
+      "lat": 29.87107,
+      "lng": -82.60199,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.64219,
+        29.84304,
+        -82.56843,
+        29.9021
+      ],
+      "ring_count": 4
+    },
+    {
+      "unit_id": "S00150",
+      "site_name": "Rock Springs Run State Reserve",
+      "slug": "rock-springs-run-state-reserve",
+      "name_slug": "rock-springs-run-state-reserve",
+      "url": "https://www.floridastateparks.org/parks-and-trails/rock-springs-run-state-reserve",
+      "address": "30601 CR 433, Sorrento, FL 32776",
+      "county": "Orange, Lake, Seminole",
+      "acreage": 14164.8,
+      "lat": 28.77225,
+      "lng": -81.4535,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -81.51726,
+        28.71342,
+        -81.41308,
+        28.81681
+      ],
+      "ring_count": 4
+    },
+    {
+      "unit_id": "S00175",
+      "site_name": "Ruth B. Kirby Gilchrist Blue Springs State Park",
+      "slug": "gilchrist-blue-springs-state-park",
+      "name_slug": "ruth-b-kirby-gilchrist-blue-springs-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/gilchrist-blue-springs-state-park",
+      "address": "7450 NE 60th St., High Springs, FL 32643",
+      "county": "Gilchrist",
+      "acreage": 402.4,
+      "lat": 29.82758,
+      "lng": -82.6812,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.69155,
+        29.81678,
+        -82.67453,
+        29.83402
+      ],
+      "ring_count": 2
+    },
+    {
+      "unit_id": "S00119",
+      "site_name": "San Felasco Hammock Preserve State Park",
+      "slug": "san-felasco-hammock-preserve-state-park",
+      "name_slug": "san-felasco-hammock-preserve-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/san-felasco-hammock-preserve-state-park",
+      "address": "12720 NW 109 Lane, Alachua, FL 32615",
+      "county": "Alachua",
+      "acreage": 7362.6,
+      "lat": 29.74081,
+      "lng": -82.44998,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.48101,
+        29.70354,
+        -82.41806,
+        29.77726
+      ],
+      "ring_count": 3
+    },
+    {
+      "unit_id": "S00071",
+      "site_name": "San Marcos de Apalache Historic State Park",
+      "slug": "san-marcos-de-apalache-historic-state-park",
+      "name_slug": "san-marcos-de-apalache-historic-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/san-marcos-de-apalache-historic-state-park",
+      "address": "148 Old Fort Rd., St. Marks, FL 32355",
+      "county": "Wakulla",
+      "acreage": 15.4,
+      "lat": 30.15211,
+      "lng": -84.21034,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -84.21196,
+        30.15002,
+        -84.20814,
+        30.15337
+      ],
+      "ring_count": 2
+    },
+    {
+      "unit_id": "S00226",
+      "site_name": "San Pedro Underwater Archaeological Preserve State Park",
+      "slug": "san-pedro-underwater-archaeological-preserve-state-park",
+      "name_slug": "san-pedro-underwater-archaeological-preserve-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/san-pedro-underwater-archaeological-preserve-state-park",
+      "address": "77200 Overseas Hwy., Islamorada, FL 33001",
+      "county": "Monroe",
+      "acreage": 651.2,
+      "lat": 24.86337,
+      "lng": -80.67992,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -80.68898,
+        24.8551,
+        -80.67085,
+        24.87164
+      ],
+      "ring_count": 1
+    },
+    {
+      "unit_id": "S00130",
+      "site_name": "Savannas Preserve State Park",
+      "slug": "savannas-preserve-state-park",
+      "name_slug": "savannas-preserve-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/savannas-preserve-state-park",
+      "address": "9551 Gumbo Limbo Lane, Jensen Beach, FL 34957",
+      "county": "St. Lucie, Martin",
+      "acreage": 6996.1,
+      "lat": 27.31618,
+      "lng": -80.28682,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -80.36218,
+        27.24522,
+        -80.23633,
+        27.40585
+      ],
+      "ring_count": 49
+    },
+    {
+      "unit_id": "S00230",
+      "site_name": "Seabranch Preserve State Park",
+      "slug": "seabranch-preserve-state-park",
+      "name_slug": "seabranch-preserve-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/seabranch-preserve-state-park",
+      "address": "6093 SE Dixie Highway, Stuart, FL 34997",
+      "county": "Martin",
+      "acreage": 921.5,
+      "lat": 27.13533,
+      "lng": -80.16826,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -80.18984,
+        27.12298,
+        -80.15228,
+        27.14604
+      ],
+      "ring_count": 1
+    },
+    {
+      "unit_id": "S00072",
+      "site_name": "Sebastian Inlet State Park",
+      "slug": "sebastian-inlet-state-park",
+      "name_slug": "sebastian-inlet-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/sebastian-inlet-state-park",
+      "address": "9700 South A1A Hwy., Melbourne Bch, FL 32951",
+      "county": "Brevard, Indian River",
+      "acreage": 972.2,
+      "lat": 27.86017,
+      "lng": -80.4522,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -80.47038,
+        27.83287,
+        -80.43264,
+        27.88346
+      ],
+      "ring_count": 15
+    },
+    {
+      "unit_id": "S00300",
+      "site_name": "Shoal River Headwaters State Park",
+      "slug": "shoalriverheadwaters",
+      "name_slug": "shoal-river-headwaters-state-park",
+      "url": "https://www.floridastateparks.org/shoalriverheadwaters",
+      "address": "2239 Kings Lake Rd., DeFuniak Springs, FL 32433",
+      "county": "Walton",
+      "acreage": 2480.4,
+      "lat": 30.77288,
+      "lng": -86.22933,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -86.25252,
+        30.75766,
+        -86.20581,
+        30.78936
+      ],
+      "ring_count": 2
+    },
+    {
+      "unit_id": "S00203",
+      "site_name": "Silver Springs State Park",
+      "slug": "silversprings",
+      "name_slug": "silver-springs-state-park",
+      "url": "https://www.floridastateparks.org/silversprings",
+      "address": "1425 NE 58th Ave., Ocala, FL 34470",
+      "county": "Marion",
+      "acreage": 4751,
+      "lat": 29.2034,
+      "lng": -82.0217,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.05768,
+        29.1813,
+        -81.98649,
+        29.2193
+      ],
+      "ring_count": 2
+    },
+    {
+      "unit_id": "S00236",
+      "site_name": "Skyway Fishing Pier State Park",
+      "slug": "skyway-fishing-pier-state-park",
+      "name_slug": "skyway-fishing-pier-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/skyway-fishing-pier-state-park",
+      "address": "4905 34th St. S #5000, St. Petersburg, FL 33711",
+      "county": "Pinellas, Hillsborough, Manatee",
+      "acreage": 16.5,
+      "lat": 27.61955,
+      "lng": -82.65471,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.67795,
+        27.58521,
+        -82.61622,
+        27.65446
+      ],
+      "ring_count": 4
+    },
+    {
+      "unit_id": "S00279",
+      "site_name": "South Fork State Park",
+      "slug": "beker-south-fork",
+      "name_slug": "south-fork-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/beker-south-fork",
+      "address": "20007 SR 64, Bradenton, FL 34202",
+      "county": "Manatee",
+      "acreage": 1129.4,
+      "lat": 27.61618,
+      "lng": -82.25156,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.27976,
+        27.5875,
+        -82.22318,
+        27.62895
+      ],
+      "ring_count": 1
+    },
+    {
+      "unit_id": "S00067",
+      "site_name": "St. Andrews State Park",
+      "slug": "st-andrews-state-park",
+      "name_slug": "st-andrews-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/st-andrews-state-park",
+      "address": "4607 State Park Lane, Panama City, FL 32408",
+      "county": "Bay",
+      "acreage": 1167.1,
+      "lat": 30.11854,
+      "lng": -85.72031,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -85.74562,
+        30.08978,
+        -85.6774,
+        30.1418
+      ],
+      "ring_count": 31
+    },
+    {
+      "unit_id": "S00070",
+      "site_name": "St. Lucie Inlet Preserve State Park",
+      "slug": "st-lucie-inlet-preserve-state-park",
+      "name_slug": "st-lucie-inlet-preserve-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/st-lucie-inlet-preserve-state-park",
+      "address": "End of Cove Rd., Port Salerno, FL 34997",
+      "county": "Martin",
+      "acreage": 4841.4,
+      "lat": 27.13424,
+      "lng": -80.14018,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -80.17451,
+        27.09748,
+        -80.11038,
+        27.16509
+      ],
+      "ring_count": 1
+    },
+    {
+      "unit_id": "S00040",
+      "site_name": "St. Sebastian River Preserve State Park",
+      "slug": "st-sebastian-river-preserve-state-park",
+      "name_slug": "st-sebastian-river-preserve-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/st-sebastian-river-preserve-state-park",
+      "address": "1000 Buffer Preserve Drive, Fellsmere, FL 32948",
+      "county": "Brevard, Indian River",
+      "acreage": 21629.4,
+      "lat": 27.82098,
+      "lng": -80.56183,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -80.6229,
+        27.76736,
+        -80.50477,
+        27.86679
+      ],
+      "ring_count": 14
+    },
+    {
+      "unit_id": "S00137",
+      "site_name": "Stephen Foster Folk Culture Center State Park",
+      "slug": "stephen-foster-folk-culture-center-state-park",
+      "name_slug": "stephen-foster-folk-culture-center-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/stephen-foster-folk-culture-center-state-park",
+      "address": "11016 Lillian Saunders Drive, White Springs, FL 32096",
+      "county": "Hamilton, Columbia",
+      "acreage": 903.9,
+      "lat": 30.33195,
+      "lng": -82.7788,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.7947,
+        30.32334,
+        -82.75913,
+        30.34477
+      ],
+      "ring_count": 4
+    },
+    {
+      "unit_id": "S00099",
+      "site_name": "Stump Pass Beach State Park",
+      "slug": "stump-pass-beach-state-park",
+      "name_slug": "stump-pass-beach-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/stump-pass-beach-state-park",
+      "address": "900 Gulf Blvd., Englewood, FL 34233",
+      "county": "Charlotte",
+      "acreage": 232.1,
+      "lat": 26.90531,
+      "lng": -82.34472,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.35344,
+        26.89671,
+        -82.33822,
+        26.91346
+      ],
+      "ring_count": 3
+    },
+    {
+      "unit_id": "S00073",
+      "site_name": "Suwannee River State Park",
+      "slug": "suwannee-river-state-park",
+      "name_slug": "suwannee-river-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/suwannee-river-state-park",
+      "address": "3631 201st Path, Live Oak, FL 32060",
+      "county": "Hamilton, Madison, Suwannee",
+      "acreage": 1932.8,
+      "lat": 30.40175,
+      "lng": -83.16079,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -83.17934,
+        30.37605,
+        -83.13172,
+        30.42832
+      ],
+      "ring_count": 13
+    },
+    {
+      "unit_id": "S00269",
+      "site_name": "Suwannee River Wilderness Trail",
+      "slug": "suwannee-river-wilderness-state-trail",
+      "name_slug": "suwannee-river-wilderness-trail",
+      "url": "https://www.floridastateparks.org/parks-and-trails/suwannee-river-wilderness-state-trail",
+      "address": "4298 NW County Road 292, Mayo, FL 32066",
+      "county": "Dixie, Hamilton, Lafayette, Suwannee",
+      "acreage": 74,
+      "lat": 30.22241,
+      "lng": -83.16954,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -83.25517,
+        30.03404,
+        -82.85544,
+        30.43154
+      ],
+      "ring_count": 5
+    },
+    {
+      "unit_id": "S00069",
+      "site_name": "T.H. Stone Memorial St. Joseph Peninsula State Park",
+      "slug": "t-h-stone-memorial-st-joseph-peninsula-state-park",
+      "name_slug": "th-stone-memorial-st-joseph-peninsula-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/t-h-stone-memorial-st-joseph-peninsula-state-park",
+      "address": "8899 Cape San Blas Rd., Port St. Joe, FL 32456",
+      "county": "Gulf",
+      "acreage": 2703.8,
+      "lat": 29.82385,
+      "lng": -85.40615,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -85.41724,
+        29.74469,
+        -85.38464,
+        29.87911
+      ],
+      "ring_count": 1
+    },
+    {
+      "unit_id": "S00207",
+      "site_name": "Tallahassee-St. Marks Historic Railroad State Trail",
+      "slug": "tallahassee-st-marks-historic-railroad-state-trail",
+      "name_slug": "tallahassee-st-marks-historic-railroad-state-trail",
+      "url": "https://www.floridastateparks.org/parks-and-trails/tallahassee-st-marks-historic-railroad-state-trail",
+      "address": "1358 Old Woodville Rd., Crawfordville, FL 32327",
+      "county": "Leon, Wakulla",
+      "acreage": 150.8,
+      "lat": 30.25892,
+      "lng": -84.23739,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -84.27034,
+        30.15434,
+        -84.2042,
+        30.37537
+      ],
+      "ring_count": 4
+    },
+    {
+      "unit_id": "S00299",
+      "site_name": "Tarkiln Bayou Preserve State Park",
+      "slug": "tarkiln-bayou-preserve-state-park",
+      "name_slug": "tarkiln-bayou-preserve-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/tarkiln-bayou-preserve-state-park",
+      "address": "2401 Bauer Rd., Pensacola, FL 32507",
+      "county": "Escambia",
+      "acreage": 4544.6,
+      "lat": 30.3605,
+      "lng": -87.39108,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -87.44175,
+        30.32503,
+        -87.34894,
+        30.38989
+      ],
+      "ring_count": 8
+    },
+    {
+      "unit_id": "S00041",
+      "site_name": "Terra Ceia Preserve State Park",
+      "slug": "terra-ceia-preserve-state-park",
+      "name_slug": "terra-ceia-preserve-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/terra-ceia-preserve-state-park",
+      "address": "130 Terra Ceia Rd., Terra Ceia, FL 34606",
+      "county": "Manatee",
+      "acreage": 1948,
+      "lat": 27.59781,
+      "lng": -82.56214,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.58216,
+        27.57786,
+        -82.53976,
+        27.6239
+      ],
+      "ring_count": 41
+    },
+    {
+      "unit_id": "S00105",
+      "site_name": "The Barnacle Historic State Park",
+      "slug": "barnacle-historic-state-park",
+      "name_slug": "the-barnacle-historic-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/barnacle-historic-state-park",
+      "address": "3485 Main Hwy., Coconut Grove, FL 33133",
+      "county": "Dade",
+      "acreage": 9.6,
+      "lat": 25.72381,
+      "lng": -80.24197,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -80.25372,
+        25.71043,
+        -80.23884,
+        25.72669
+      ],
+      "ring_count": 2
+    },
+    {
+      "unit_id": "S00075",
+      "site_name": "Three Rivers State Park",
+      "slug": "three-rivers-state-park",
+      "name_slug": "three-rivers-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/three-rivers-state-park",
+      "address": "7908 Three Rivers Park Rd., Sneads, FL 32460",
+      "county": "Jackson",
+      "acreage": 658.8,
+      "lat": 30.73935,
+      "lng": -84.92405,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -84.93878,
+        30.72783,
+        -84.90747,
+        30.74793
+      ],
+      "ring_count": 1
+    },
+    {
+      "unit_id": "S00260",
+      "site_name": "Three Servicemen Memorial (Managed by Orman House)",
+      "slug": "orman-house-historic-state-park",
+      "name_slug": "three-servicemen-memorial-managed-by-orman-house",
+      "url": "https://www.floridastateparks.org/parks-and-trails/orman-house-historic-state-park",
+      "address": "177 5Th St  Apalachicola, Fl 32320",
+      "county": "Franklin",
+      "acreage": 1.2,
+      "lat": 29.73041,
+      "lng": -84.98949,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -84.98999,
+        29.72994,
+        -84.98891,
+        29.73086
+      ],
+      "ring_count": 1
+    },
+    {
+      "unit_id": "S00076",
+      "site_name": "Tomoka State Park",
+      "slug": "tomoka-state-park",
+      "name_slug": "tomoka-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/tomoka-state-park",
+      "address": "2099 N Beach St., Ormond Beach, FL 32174",
+      "county": "Volusia",
+      "acreage": 1628,
+      "lat": 29.31941,
+      "lng": -81.08305,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -81.09489,
+        29.29273,
+        -81.07078,
+        29.35691
+      ],
+      "ring_count": 3
+    },
+    {
+      "unit_id": "S00250",
+      "site_name": "Topsail Hill Preserve State Park",
+      "slug": "topsail-hill-preserve-state-park",
+      "name_slug": "topsail-hill-preserve-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/topsail-hill-preserve-state-park",
+      "address": "7525 W Scenic Hwy 30A, Santa Rosa Beach, FL 32459",
+      "county": "Walton",
+      "acreage": 1643,
+      "lat": 30.36756,
+      "lng": -86.2903,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -86.31678,
+        30.35489,
+        -86.26301,
+        30.3778
+      ],
+      "ring_count": 3
+    },
+    {
+      "unit_id": "S00077",
+      "site_name": "Torreya State Park",
+      "slug": "torreya-state-park",
+      "name_slug": "torreya-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/torreya-state-park",
+      "address": "2576 NW Torreya Park Road, Bristol, FL 32321",
+      "county": "Liberty, Gadsden",
+      "acreage": 14869.1,
+      "lat": 30.54875,
+      "lng": -84.9216,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -84.97253,
+        30.47302,
+        -84.86137,
+        30.69426
+      ],
+      "ring_count": 32
+    },
+    {
+      "unit_id": "S00243",
+      "site_name": "Troy Spring State Park",
+      "slug": "troy-spring-state-park",
+      "name_slug": "troy-spring-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/troy-spring-state-park",
+      "address": "674 Troy Spring Rd., Branford, FL 32008",
+      "county": "Lafayette",
+      "acreage": 83.6,
+      "lat": 30.00286,
+      "lng": -82.99711,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.99911,
+        29.99816,
+        -82.9948,
+        30.00772
+      ],
+      "ring_count": 1
+    },
+    {
+      "unit_id": "S00100",
+      "site_name": "Waccasassa Bay Preserve State Park",
+      "slug": "waccasassa-bay-preserve-state-park",
+      "name_slug": "waccasassa-bay-preserve-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/waccasassa-bay-preserve-state-park",
+      "address": "8312 SW 125th Ct., Cedar Key, FL 32625",
+      "county": "Levy",
+      "acreage": 34387.6,
+      "lat": 29.14893,
+      "lng": -82.8316,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.98359,
+        29.036,
+        -82.71876,
+        29.21405
+      ],
+      "ring_count": 86
+    },
+    {
+      "unit_id": "S00079",
+      "site_name": "Washington Oaks Gardens State Park",
+      "slug": "washington-oaks-gardens-state-park",
+      "name_slug": "washington-oaks-gardens-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/washington-oaks-gardens-state-park",
+      "address": "6400 N Oceanshore Blvd., Palm Coast, FL 32137",
+      "county": "Flagler",
+      "acreage": 419.6,
+      "lat": 29.63421,
+      "lng": -81.20565,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -81.21233,
+        29.62026,
+        -81.19735,
+        29.64364
+      ],
+      "ring_count": 2
+    },
+    {
+      "unit_id": "S00281",
+      "site_name": "Weeki Wachee Springs State Park",
+      "slug": "weeki-wachee-springs-state-park",
+      "name_slug": "weeki-wachee-springs-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/weeki-wachee-springs-state-park",
+      "address": "6131 Commercial Way, Spring Hill, FL 34606",
+      "county": "Hernando",
+      "acreage": 927.8,
+      "lat": 28.52005,
+      "lng": -82.58434,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.59899,
+        28.51018,
+        -82.56731,
+        28.53778
+      ],
+      "ring_count": 4
+    },
+    {
+      "unit_id": "S00080",
+      "site_name": "Wekiwa Springs State Park",
+      "slug": "wekiwa-springs-state-park",
+      "name_slug": "wekiwa-springs-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/wekiwa-springs-state-park",
+      "address": "1800 Wekiwa Circle, Apopka, FL 32712",
+      "county": "Seminole, Orange, Lake",
+      "acreage": 9175.5,
+      "lat": 28.74795,
+      "lng": -81.47973,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -81.54208,
+        28.70579,
+        -81.385,
+        28.8117
+      ],
+      "ring_count": 12
+    },
+    {
+      "unit_id": "S00259",
+      "site_name": "Werner-Boyce Salt Springs State Park",
+      "slug": "werner-boyce-salt-springs-state-park",
+      "name_slug": "werner-boyce-salt-springs-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/werner-boyce-salt-springs-state-park",
+      "address": "9120 Old Post Road, Port Richey, FL 34668",
+      "county": "Pasco",
+      "acreage": 3377.9,
+      "lat": 28.31519,
+      "lng": -82.72051,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.74371,
+        28.28413,
+        -82.70381,
+        28.34941
+      ],
+      "ring_count": 1
+    },
+    {
+      "unit_id": "S00215",
+      "site_name": "Wes Skiles Peacock Springs State Park",
+      "slug": "wes-skiles-peacock-springs-state-park",
+      "name_slug": "wes-skiles-peacock-springs-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/wes-skiles-peacock-springs-state-park",
+      "address": "18181 185th Rd., Live Oak, FL 32060",
+      "county": "Suwannee",
+      "acreage": 761,
+      "lat": 30.13162,
+      "lng": -83.13637,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -83.14696,
+        30.11873,
+        -83.13026,
+        30.14421
+      ],
+      "ring_count": 2
+    },
+    {
+      "unit_id": "S00069",
+      "site_name": "William J \"Billy Joe\" Rish Recreation Area",
+      "slug": "william-j-billy-joe-rish-recreation-area",
+      "name_slug": "william-j-billy-joe-rish-recreation-area",
+      "url": "https://www.floridastateparks.org/parks-and-trails/william-j-billy-joe-rish-recreation-area",
+      "address": "8899 Cape San Blas Rd., Port St. Joe, FL 32456",
+      "county": "Gulf",
+      "acreage": 88.4,
+      "lat": 29.72597,
+      "lng": -85.38954,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -85.39322,
+        29.71927,
+        -85.38744,
+        29.73019
+      ],
+      "ring_count": 2
+    },
+    {
+      "unit_id": "S00206",
+      "site_name": "Windley Key Fossil Reef Geological State Park",
+      "slug": "windley-key-fossil-reef-geological-state-park",
+      "name_slug": "windley-key-fossil-reef-geological-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/windley-key-fossil-reef-geological-state-park",
+      "address": "84900 Overseas Highway, Islamorada, FL 33036",
+      "county": "Monroe",
+      "acreage": 320.4,
+      "lat": 24.95712,
+      "lng": -80.59512,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -80.60018,
+        24.94832,
+        -80.58863,
+        24.96681
+      ],
+      "ring_count": 1
+    },
+    {
+      "unit_id": "S00280",
+      "site_name": "Wingate Creek State Park",
+      "slug": "beker-wingate-creek",
+      "name_slug": "wingate-creek-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/beker-wingate-creek",
+      "address": "20007 SR 64, Bradenton, FL 34202",
+      "county": "Manatee",
+      "acreage": 614.2,
+      "lat": 27.44647,
+      "lng": -82.14313,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.14844,
+        27.43375,
+        -82.13662,
+        27.45969
+      ],
+      "ring_count": 1
+    },
+    {
+      "unit_id": "S00224",
+      "site_name": "Withlacoochee State Trail",
+      "slug": "withlacoochee-state-trail",
+      "name_slug": "withlacoochee-state-trail",
+      "url": "https://www.floridastateparks.org/parks-and-trails/withlacoochee-state-trail",
+      "address": "2246 W Magenta Dr., Citrus Springs, FL 34434",
+      "county": "Citrus, Hernando, Pasco",
+      "acreage": 761.6,
+      "lat": 28.71999,
+      "lng": -82.29726,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.47199,
+        28.44483,
+        -82.18871,
+        29.02894
+      ],
+      "ring_count": 1
+    },
+    {
+      "unit_id": "S00123",
+      "site_name": "Ybor City Museum State Park",
+      "slug": "ybor-city-museum-state-park",
+      "name_slug": "ybor-city-museum-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/ybor-city-museum-state-park",
+      "address": "1818 E. 9th Avenue, Tampa, FL 33605",
+      "county": "Hillsborough",
+      "acreage": 0.9,
+      "lat": 27.96192,
+      "lng": -82.43862,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.43915,
+        27.96176,
+        -82.43807,
+        27.96218
+      ],
+      "ring_count": 1
+    },
+    {
+      "unit_id": "S00081",
+      "site_name": "Yellow Bluff Fort Historic State Park",
+      "slug": "yellow-bluff-fort-historic-state-park",
+      "name_slug": "yellow-bluff-fort-historic-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/yellow-bluff-fort-historic-state-park",
+      "address": "9400 New Berlin Rd., Jacksonville, FL 32226",
+      "county": "Duval",
+      "acreage": 1.7,
+      "lat": 30.39963,
+      "lng": -81.55624,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -81.55694,
+        30.39919,
+        -81.55554,
+        30.40008
+      ],
+      "ring_count": 1
+    },
+    {
+      "unit_id": "S00007",
+      "site_name": "Yellow River Marsh Preserve State Park",
+      "slug": "yellow-river-marsh-preserve-state-park",
+      "name_slug": "yellow-river-marsh-preserve-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/yellow-river-marsh-preserve-state-park",
+      "address": "7720 Deaton Bridge Rd., Holt, FL 32564",
+      "county": "Santa Rosa",
+      "acreage": 1082.7,
+      "lat": 30.501,
+      "lng": -87.06609,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -87.07787,
+        30.47171,
+        -87.04821,
+        30.54416
+      ],
+      "ring_count": 13
+    },
+    {
+      "unit_id": "S00082",
+      "site_name": "Yulee Sugar Mill Ruins Historic State Park",
+      "slug": "yulee-sugar-mill-ruins-historic-state-park",
+      "name_slug": "yulee-sugar-mill-ruins-historic-state-park",
+      "url": "https://www.floridastateparks.org/parks-and-trails/yulee-sugar-mill-ruins-historic-state-park",
+      "address": "10465 W Yulee Dr., Homosassa, FL 34448",
+      "county": "Citrus",
+      "acreage": 4.6,
+      "lat": 28.78368,
+      "lng": -82.60757,
+      "centroid_method": "shoelace",
+      "bbox": [
+        -82.60837,
+        28.78287,
+        -82.60677,
+        28.78434
+      ],
+      "ring_count": 2
+    }
+  ]
+}

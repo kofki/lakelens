@@ -1,0 +1,464 @@
+/**
+ * Ingest normalizer tests against live fixtures captured 2026-09-19 (tests/fixtures/*).
+ * No network: fetchers are exercised with an injected fetchImpl.
+ */
+import { describe, expect, it } from "vitest";
+import {
+  applySiteQuirks,
+  buildUsgsPayloadForPark,
+  dedupeNewest,
+  fetchUsgsLatest,
+  fetchUsgsLatestDetailed,
+  flowFlagFor,
+  normalizeLegacy,
+  normalizeOgc,
+  normalizeUnit,
+  type LegacyResponse,
+  type OgcFeatureCollection,
+} from "@/lib/ingest/usgs";
+import {
+  matchAlertsToPark,
+  normalizeNws,
+  nwsFetchJson,
+  nwsHeaders,
+  parsePoints,
+  parseWindMph,
+  roundCoord,
+  ugcCode,
+  weekdayShort,
+  type NwsAlertFeature,
+  type NwsForecastResponse,
+  type NwsPointsResponse,
+} from "@/lib/ingest/nws";
+import { buildOpenMeteoUrl, normalizeOpenMeteo, offsetString, wmoText, type OpenMeteoResponse } from "@/lib/ingest/openMeteo";
+import { normalizeLongWeekends, normalizeNagerHolidays, type NagerHoliday, type NagerLongWeekend } from "@/lib/ingest/holidays";
+import { manualAlertHash, nwsAlertHash, sha256Hex } from "@/lib/ingest/hash";
+import type { UsgsReading } from "@/lib/types";
+
+import ogcFixture from "./fixtures/usgs-latest.json";
+import legacyFixture from "./fixtures/usgs-legacy.json";
+import pointsFixture from "./fixtures/nws-points.json";
+import forecastFixture from "./fixtures/nws-forecast.json";
+import hourlyFixture from "./fixtures/nws-hourly.json";
+import alertsFixture from "./fixtures/nws-alerts-fl.json";
+import openMeteoFixture from "./fixtures/open-meteo.json";
+import nagerFixture from "./fixtures/nager-2026.json";
+import longWeekendFixture from "./fixtures/nager-longweekend-2026.json";
+
+const ogc = ogcFixture as unknown as OgcFeatureCollection;
+const legacy = legacyFixture as unknown as LegacyResponse;
+const points = pointsFixture as unknown as NwsPointsResponse;
+const forecast = forecastFixture as unknown as NwsForecastResponse;
+const hourly = hourlyFixture as unknown as NwsForecastResponse;
+const alerts = (alertsFixture as unknown as { features: NwsAlertFeature[] }).features;
+const openMeteo = openMeteoFixture as unknown as OpenMeteoResponse;
+const nager = nagerFixture as unknown as NagerHoliday[];
+const longWeekends = longWeekendFixture as unknown as NagerLongWeekend[];
+
+/** Fixtures were captured ~2026-09-19T05:41Z; "now" is an hour later. */
+const NOW = new Date("2026-09-19T06:45:00Z");
+
+function jsonResponse(body: unknown, status = 200): Response {
+  return new Response(JSON.stringify(body), { status, headers: { "content-type": "application/json" } });
+}
+
+// ---------------------------------------------------------------- USGS
+
+describe("usgs normalizeOgc", () => {
+  const readings = normalizeOgc(ogc, NOW);
+
+  it("parses every feature and converts string values to numbers", () => {
+    expect(readings).toHaveLength(21);
+    const fortWhiteFlow = readings.find((r) => r.site === "02322500" && r.parameter === "00060");
+    expect(fortWhiteFlow?.value).toBe(671);
+    expect(typeof fortWhiteFlow?.value).toBe("number");
+    const gage = readings.find((r) => r.site === "02322500" && r.parameter === "00065");
+    expect(gage?.value).toBe(0.07);
+  });
+
+  it("strips the USGS- prefix and normalizes units", () => {
+    expect(readings.every((r) => /^\d{8}$/.test(r.site))).toBe(true);
+    expect(readings.find((r) => r.parameter === "00060")?.unit).toBe("ft3/s");
+    expect(readings.find((r) => r.parameter === "00010")?.unit).toBe("degC");
+    expect(readings.find((r) => r.parameter === "00065")?.unit).toBe("ft");
+    expect(normalizeUnit("ft^3/s")).toBe("ft3/s");
+    expect(normalizeUnit("deg C")).toBe("degC");
+  });
+
+  it("emits ISO UTC timestamps and provisional flags", () => {
+    const r = readings.find((x) => x.site === "02322700" && x.parameter === "00060")!;
+    expect(r.time).toBe("2026-09-19T04:45:00.000Z");
+    expect(r.provisional).toBe(true);
+  });
+
+  it("flags readings older than 6 h as stale (Rainbow water temp from Nov 2025)", () => {
+    const rainbowTemp = readings.filter((r) => r.site === "02313098" && r.parameter === "00010");
+    expect(rainbowTemp.length).toBeGreaterThan(0);
+    expect(rainbowTemp.every((r) => r.stale)).toBe(true);
+    const rainbowFlow = readings.find((r) => r.site === "02313098" && r.parameter === "00060")!;
+    expect(rainbowFlow.stale).toBe(false);
+  });
+
+  it("stale threshold is relative to `now`", () => {
+    const later = normalizeOgc(ogc, new Date("2026-09-19T12:00:00Z"));
+    expect(later.find((r) => r.site === "02322700" && r.parameter === "00060")?.stale).toBe(true);
+  });
+
+  it("skips unknown parameters and non-numeric values", () => {
+    const junk: OgcFeatureCollection = {
+      features: [
+        { properties: { monitoring_location_id: "USGS-1", parameter_code: "00095", time: "2026-09-19T00:00:00Z", value: "450", unit_of_measure: "uS/cm" } },
+        { properties: { monitoring_location_id: "USGS-1", parameter_code: "00060", time: "2026-09-19T00:00:00Z", value: "n/a", unit_of_measure: "ft^3/s" } },
+        { properties: { monitoring_location_id: "USGS-1", parameter_code: "00060", time: "2026-09-19T00:00:00Z", value: null, unit_of_measure: "ft^3/s" } },
+      ],
+    };
+    expect(normalizeOgc(junk, NOW)).toHaveLength(0);
+  });
+});
+
+describe("usgs normalizeLegacy", () => {
+  const readings = normalizeLegacy(legacy, NOW);
+
+  it("parses WaterML-JSON and converts site-local offsets to UTC", () => {
+    expect(readings.length).toBeGreaterThanOrEqual(20);
+    const r = readings.find((x) => x.site === "02235500" && x.parameter === "00060")!;
+    expect(r.value).toBe(174);
+    expect(r.unit).toBe("ft3/s");
+    expect(r.time).toBe("2026-09-19T04:15:00.000Z");
+    expect(r.provisional).toBe(true);
+  });
+
+  it("drops noDataValue readings", () => {
+    const junk: LegacyResponse = {
+      value: {
+        timeSeries: [
+          {
+            sourceInfo: { siteCode: [{ value: "02322700" }] },
+            variable: { variableCode: [{ value: "00060" }], unit: { unitCode: "ft3/s" }, noDataValue: -999999 },
+            values: [{ value: [{ value: "-999999", qualifiers: ["P"], dateTime: "2026-09-19T00:00:00.000-04:00" }] }],
+          },
+        ],
+      },
+    };
+    expect(normalizeLegacy(junk, NOW)).toHaveLength(0);
+  });
+});
+
+describe("usgs dedupe + site quirks", () => {
+  it("keeps only the newest reading per (site, parameter)", () => {
+    const raw = normalizeOgc(ogc, NOW);
+    expect(raw.filter((r) => r.site === "02313098" && r.parameter === "00010")).toHaveLength(2);
+    const deduped = dedupeNewest(raw);
+    expect(deduped.filter((r) => r.site === "02313098" && r.parameter === "00010")).toHaveLength(1);
+    const keys = new Set(deduped.map((r) => `${r.site}:${r.parameter}`));
+    expect(keys.size).toBe(deduped.length);
+  });
+
+  it("prefers the newest when duplicates differ in time", () => {
+    const a: UsgsReading = { site: "1", parameter: "00060", value: 1, unit: "ft3/s", time: "2026-09-19T00:00:00.000Z", stale: false, provisional: true };
+    const b: UsgsReading = { ...a, value: 2, time: "2026-09-19T01:00:00.000Z" };
+    expect(dedupeNewest([a, b])[0].value).toBe(2);
+    expect(dedupeNewest([b, a])[0].value).toBe(2);
+  });
+
+  it("drops 00065 for 02322500 (arbitrary datum) and keeps 63160 instead", () => {
+    const prepared = applySiteQuirks(dedupeNewest(normalizeOgc(ogc, NOW)));
+    expect(prepared.find((r) => r.site === "02322500" && r.parameter === "00065")).toBeUndefined();
+    expect(prepared.find((r) => r.site === "02322500" && r.parameter === "63160")?.value).toBe(20.13);
+    // other sites keep their gage height
+    expect(prepared.find((r) => r.site === "02322700" && r.parameter === "00065")?.value).toBe(14.83);
+  });
+});
+
+describe("usgs flow flag + park payload", () => {
+  it("flowFlagFor uses per-site baselines with a 1.5x threshold", () => {
+    expect(flowFlagFor("02322500", 671)).toBe("normal");
+    expect(flowFlagFor("02322500", 1800)).toBe("normal"); // exactly 1.5x is not "high"
+    expect(flowFlagFor("02322500", 1801)).toBe("high");
+    expect(flowFlagFor("02322400", 100)).toBe("unknown"); // Ginnie has no discharge baseline
+    expect(flowFlagFor("02322700", null)).toBe("unknown");
+  });
+
+  const mk = (site: string, parameter: UsgsReading["parameter"], value: number, stale = false): UsgsReading => ({
+    site,
+    parameter,
+    value,
+    unit: parameter === "00060" ? "ft3/s" : parameter === "00010" ? "degC" : "ft",
+    time: stale ? "2025-11-14T18:45:00.000Z" : "2026-09-19T05:15:00.000Z",
+    stale,
+    provisional: true,
+  });
+
+  it("merges the park's own gauge with its river gauge and uses the river discharge for Ginnie", () => {
+    const readingsBySite = {
+      "02322400": [mk("02322400", "00010", 22.6), mk("02322400", "00065", 20.79)],
+      "02322500": [mk("02322500", "00060", 2000), mk("02322500", "63160", 20.13)],
+    };
+    const payload = buildUsgsPayloadForPark(
+      { usgs_site_id: "02322400", river_gauge_site_id: "02322500", gauge_distance_km: 2.0 },
+      readingsBySite,
+      "2026-09-19T06:00:00.000Z",
+    );
+    expect(payload.source).toBe("usgs-ogc");
+    expect(payload.readings).toHaveLength(4);
+    expect(payload.flowFlag).toBe("high");
+    expect(payload.flowNote).toContain("Santa Fe River near Fort White");
+    expect(payload.flowNote).toContain("2.0 km away");
+    expect(payload.flowNote).toContain("2,000 cfs");
+  });
+
+  it("is normal at typical flow and unknown when the only discharge is stale", () => {
+    const normal = buildUsgsPayloadForPark({ usgs_site_id: "02322700", river_gauge_site_id: null }, { "02322700": [mk("02322700", "00060", 218)] }, NOW, "usgs-legacy");
+    expect(normal.flowFlag).toBe("normal");
+    expect(normal.source).toBe("usgs-legacy");
+    expect(normal.fetchedAt).toBe(NOW.toISOString());
+
+    const stale = buildUsgsPayloadForPark({ usgs_site_id: "02322700", river_gauge_site_id: null }, { "02322700": [mk("02322700", "00060", 218, true)] }, NOW);
+    expect(stale.flowFlag).toBe("unknown");
+    expect(stale.flowNote).toMatch(/more than 6 hours old/);
+  });
+
+  it("handles parks without any gauge", () => {
+    const none = buildUsgsPayloadForPark({ usgs_site_id: null, river_gauge_site_id: null }, {}, NOW);
+    expect(none.readings).toHaveLength(0);
+    expect(none.flowFlag).toBe("unknown");
+    expect(none.flowNote).toMatch(/no USGS gauge/);
+  });
+});
+
+describe("usgs fetchUsgsLatest", () => {
+  it("uses the OGC endpoint and groups readings by bare site id", async () => {
+    const calls: string[] = [];
+    const fetchImpl = (async (input: RequestInfo | URL) => {
+      calls.push(String(input));
+      return jsonResponse(ogc);
+    }) as typeof fetch;
+    const bySite = await fetchUsgsLatest(["02322700", "USGS-02322500"], { fetchImpl, now: NOW, apiKey: "k" });
+    expect(calls).toHaveLength(1);
+    expect(calls[0]).toContain("api.waterdata.usgs.gov");
+    expect(calls[0]).toContain("monitoring_location_id=USGS-02322700%2CUSGS-02322500");
+    expect(Object.keys(bySite)).toContain("02322700");
+    expect(bySite["02322500"].find((r) => r.parameter === "00065")).toBeUndefined();
+    expect(bySite["02322500"].find((r) => r.parameter === "63160")?.value).toBe(20.13);
+  });
+
+  it("falls back to the legacy IV service when the OGC call fails", async () => {
+    const calls: string[] = [];
+    const fetchImpl = (async (input: RequestInfo | URL) => {
+      const url = String(input);
+      calls.push(url);
+      if (url.includes("api.waterdata.usgs.gov")) return jsonResponse({ error: "boom" }, 503);
+      return jsonResponse(legacy);
+    }) as typeof fetch;
+    const result = await fetchUsgsLatestDetailed(["02322700"], { fetchImpl, now: NOW });
+    expect(calls).toHaveLength(2);
+    expect(calls[1]).toContain("waterservices.usgs.gov/nwis/iv");
+    expect(result.source).toBe("usgs-legacy");
+    expect(result.fallbackReason).toMatch(/HTTP 503/);
+    expect(result.readingsBySite["02322700"].find((r) => r.parameter === "00060")?.value).toBe(218);
+  });
+
+  it("returns an empty map for no site ids without calling the network", async () => {
+    const fetchImpl = (async () => {
+      throw new Error("should not be called");
+    }) as unknown as typeof fetch;
+    expect(await fetchUsgsLatest([], { fetchImpl })).toEqual({});
+  });
+});
+
+// ---------------------------------------------------------------- NWS
+
+describe("nws helpers", () => {
+  it("rounds coordinates to 4 dp (5 dp => 301 upstream)", () => {
+    expect(roundCoord(29.98412)).toBe(29.9841);
+    expect(roundCoord(-82.76234)).toBe(-82.7623);
+  });
+
+  it("extracts UGC codes from zone/county URLs or bare codes", () => {
+    expect(ugcCode("https://api.weather.gov/zones/forecast/FLZ021")).toBe("FLZ021");
+    expect(ugcCode("https://api.weather.gov/zones/county/FLC121")).toBe("FLC121");
+    expect(ugcCode("flc083")).toBe("FLC083");
+    expect(ugcCode("nonsense")).toBeNull();
+    expect(ugcCode(null)).toBeNull();
+  });
+
+  it("sends the required headers", () => {
+    const h = nwsHeaders("LakeLens-test/0.1 (test)");
+    expect(h["User-Agent"]).toBe("LakeLens-test/0.1 (test)");
+    expect(h.Accept).toBe("application/geo+json");
+  });
+
+  it("parses wind strings and weekday names", () => {
+    expect(parseWindMph("0 to 8 mph")).toBe(8);
+    expect(parseWindMph("1 mph")).toBe(1);
+    expect(parseWindMph(null)).toBeNull();
+    expect(weekdayShort("2026-09-19")).toBe("Sat");
+  });
+
+  it("parsePoints returns grid + zone/county codes", () => {
+    const p = parsePoints(points);
+    expect(p).toMatchObject({ gridId: "JAX", gridX: 25, gridY: 45, zone: "FLZ021", county: "FLC121", timeZone: "America/New_York" });
+    expect(p.forecastHourly).toBe("https://api.weather.gov/gridpoints/JAX/25,45/forecast/hourly");
+  });
+
+  it("retries on 5xx and then succeeds; does not retry on 4xx", async () => {
+    let n = 0;
+    const flaky = (async () => (++n < 3 ? jsonResponse({}, 502) : jsonResponse({ ok: 1 }))) as typeof fetch;
+    const out = await nwsFetchJson<{ ok: number }>("https://api.weather.gov/x", { fetchImpl: flaky, retryDelaysMs: [0, 0] });
+    expect(out.ok).toBe(1);
+    expect(n).toBe(3);
+
+    let m = 0;
+    const forbidden = (async () => {
+      m++;
+      return jsonResponse({}, 403);
+    }) as typeof fetch;
+    await expect(nwsFetchJson("https://api.weather.gov/x", { fetchImpl: forbidden, retryDelaysMs: [0, 0] })).rejects.toThrow(/403/);
+    expect(m).toBe(1);
+  });
+});
+
+describe("nws matchAlertsToPark (UGC county/zone)", () => {
+  it("matches the Dunnellon flood warning to a Marion County park and not to Columbia County", () => {
+    expect(alerts.length).toBeGreaterThan(0);
+    const rainbow = matchAlertsToPark(alerts, { nws_zone: "FLZ043", nws_county: "FLC083" });
+    expect(rainbow).toHaveLength(1);
+    expect(rainbow[0].properties.event).toBe("Flood Warning");
+    const ichetucknee = matchAlertsToPark(alerts, { nws_zone: "FLZ021", nws_county: "FLC121" });
+    expect(ichetucknee).toHaveLength(0);
+  });
+
+  it("accepts full zone/county URLs as stored from /points", () => {
+    const m = matchAlertsToPark(alerts, { nws_zone: null, nws_county: "https://api.weather.gov/zones/county/FLC017" });
+    expect(m).toHaveLength(1);
+  });
+
+  it("ignores Cancel messages and parks without codes", () => {
+    const cancelled: NwsAlertFeature[] = alerts.map((f) => ({ ...f, properties: { ...f.properties, messageType: "Cancel" } }));
+    expect(matchAlertsToPark(cancelled, { nws_zone: null, nws_county: "FLC083" })).toHaveLength(0);
+    expect(matchAlertsToPark(alerts, { nws_zone: null, nws_county: null })).toHaveLength(0);
+  });
+});
+
+describe("nws normalizeNws", () => {
+  const payload = normalizeNws(forecast, hourly, "2026-09-19T05:45:00.000Z");
+
+  it("builds the WeatherPayload shape with provider nws", () => {
+    expect(payload.provider).toBe("nws");
+    expect(payload.fetchedAt).toBe("2026-09-19T05:45:00.000Z");
+    expect(payload.current.tempF).toBe(75);
+    expect(payload.current.shortForecast).toBe("Mostly Clear");
+    expect(payload.current.humidity).toBe(84);
+    expect(payload.current.windMph).toBe(1);
+    expect(payload.current.icon).toContain("api.weather.gov/icons");
+  });
+
+  it("derives today's high/low/rain from the 12-h periods", () => {
+    expect(payload.today.highF).toBe(93);
+    expect(payload.today.lowF).toBe(70);
+    expect(payload.today.rainProbMax).toBeGreaterThanOrEqual(18);
+  });
+
+  it("keeps 24 hourly entries with local-offset times and up to 7 daily entries", () => {
+    expect(payload.hourly).toHaveLength(24);
+    expect(payload.hourly[0].time).toBe("2026-09-19T01:00:00-04:00");
+    expect(payload.daily.length).toBeGreaterThanOrEqual(6);
+    expect(payload.daily.length).toBeLessThanOrEqual(7);
+    expect(payload.daily[0]).toMatchObject({ date: "2026-09-19", name: "Sat", highF: 93 });
+    expect(payload.daily[1].name).toBe("Sun");
+  });
+
+  it("tolerates a missing hourly response", () => {
+    const p = normalizeNws(forecast, null, "2026-09-19T05:45:00.000Z");
+    expect(p.hourly).toHaveLength(0);
+    expect(p.current.tempF).toBe(70); // first 12-h period
+    expect(p.today.highF).toBe(93);
+  });
+});
+
+// ---------------------------------------------------------------- Open-Meteo
+
+describe("open-meteo", () => {
+  const payload = normalizeOpenMeteo(openMeteo, "2026-09-19T05:45:00.000Z");
+
+  it("maps WMO codes to plain text", () => {
+    expect(wmoText(0)).toBe("Clear sky");
+    expect(wmoText(3)).toBe("Overcast");
+    expect(wmoText(95)).toBe("Thunderstorm");
+    expect(wmoText(null)).toBe("");
+    expect(wmoText(42)).toBe("Unknown conditions");
+  });
+
+  it("formats UTC offsets", () => {
+    expect(offsetString(-14400)).toBe("-04:00");
+    expect(offsetString(19800)).toBe("+05:30");
+    expect(offsetString(0)).toBe("+00:00");
+  });
+
+  it("builds the documented request", () => {
+    const url = buildOpenMeteoUrl(29.9839, -82.7619);
+    expect(url).toContain("temperature_unit=fahrenheit");
+    expect(url).toContain("timezone=America%2FNew_York");
+    expect(url).toContain("forecast_days=7");
+    expect(url).toContain("daily=weather_code%2Ctemperature_2m_max");
+  });
+
+  it("produces the same WeatherPayload shape as NWS with provider open-meteo", () => {
+    expect(payload.provider).toBe("open-meteo");
+    expect(payload.current.tempF).toBe(73.7);
+    expect(payload.current.shortForecast).toBe("Overcast");
+    expect(payload.current.windMph).toBe(3.1);
+    expect(payload.current.humidity).toBe(85);
+    expect(payload.today).toEqual({ highF: 91.5, lowF: 69.5, rainProbMax: 12 });
+    expect(payload.daily).toHaveLength(7);
+    expect(payload.daily[0]).toMatchObject({ date: "2026-09-19", name: "Sat", shortForecast: "Overcast", icon: null });
+    expect(payload.daily[2].shortForecast).toBe("Light drizzle");
+  });
+
+  it("hourly starts at the current hour and carries the local offset", () => {
+    expect(payload.hourly).toHaveLength(24);
+    expect(payload.hourly[0].time).toBe("2026-09-19T01:00-04:00");
+    expect(typeof payload.hourly[0].tempF).toBe("number");
+    expect(typeof payload.hourly[0].rainProb).toBe("number");
+  });
+});
+
+// ---------------------------------------------------------------- Holidays
+
+describe("nager holidays", () => {
+  it("keeps only global public holidays (observed federal dates) and dedupes by date", () => {
+    const holidays = normalizeNagerHolidays(nager);
+    expect(holidays).toHaveLength(10);
+    expect(holidays.map((h) => h.date)).toEqual([
+      "2026-01-01",
+      "2026-01-19",
+      "2026-02-16",
+      "2026-05-25",
+      "2026-06-19",
+      "2026-07-03",
+      "2026-09-07",
+      "2026-11-11",
+      "2026-11-26",
+      "2026-12-25",
+    ]);
+    expect(holidays.find((h) => h.date === "2026-07-03")?.name).toBe("Independence Day");
+    expect(holidays.some((h) => /Good Friday|Truman|Columbus/i.test(h.name))).toBe(false);
+  });
+
+  it("maps long weekends to start_date/end_date", () => {
+    const lw = normalizeLongWeekends(longWeekends);
+    expect(lw).toHaveLength(9);
+    expect(lw[0]).toEqual({ start_date: "2026-01-01", end_date: "2026-01-04" });
+    expect(lw.some((w) => w.start_date === "2026-09-05" && w.end_date === "2026-09-07")).toBe(true);
+  });
+});
+
+// ---------------------------------------------------------------- hashes
+
+describe("alert hashes", () => {
+  it("are stable sha256 hex digests", () => {
+    expect(sha256Hex("abc")).toBe("ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad");
+    expect(manualAlertHash("p1", "closure", "  Swim area closed ")).toBe(manualAlertHash("p1", "closure", "Swim area closed"));
+    expect(nwsAlertHash("p1", "urn:1", "h")).not.toBe(nwsAlertHash("p2", "urn:1", "h"));
+  });
+});

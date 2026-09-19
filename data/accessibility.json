@@ -1,0 +1,131 @@
+{
+  "_note": "Shape: { [park_slug]: Omit<Accessibility, 'park_id' | 'updated_at'> & { sources: string[] } }. Every value comes from an official statement; anything not stated is 'unknown' / null. verified=true only when an official page describes the item (water entry, restrooms, loaner chair, service animals); otherwise verified=false and `source` explains what the official page does and does not say. Water-entry vocabulary: water_access yes/limited/no/unknown = can a wheelchair user get into the water; entry_type = the main way into the water. isAccessibleEntry() in lib/distance.ts treats (water_access yes|limited AND entry_type ramp|dock_ladder) OR wheelchair_loaner=true as accessible.",
+  "ichetucknee-springs-state-park": {
+    "water_access": "limited",
+    "entry_type": "other",
+    "ada_parking": null,
+    "parking_to_water_m": null,
+    "accessible_restroom": true,
+    "surface": "paved",
+    "wheelchair_loaner": null,
+    "handrails": true,
+    "shade": null,
+    "depth_at_entry_note": "Head Spring: one staff/volunteer-assisted chair lift plus a staircase with handrails; stairs may be slippery. Blue Hole: staircase with handrails, deep with strong current (strong swimmers only). Dampier's Landing (tubing): 0.25-mile paved trail and ramp to the water's edge, rocky sloped entry. South Takeout: paved ramp and concrete stairway with handrails in the water; wheelchair-accessible tram carries wheelchairs to the takeout.",
+    "service_animals_note": "Service animals are not allowed in the swimming areas or on tubes (official).",
+    "verified": true,
+    "source": "Official accessible-features page (all restrooms have at least one ADA stall; wheelchair-accessible picnic pads; no ADA parking count or loaner chair published).",
+    "sources": [
+      "https://www.floridastateparks.org/parks-and-trails/ichetucknee-springs-state-park/accessible-features-0"
+    ]
+  },
+  "ginnie-springs": {
+    "water_access": "unknown",
+    "entry_type": "stairs",
+    "ada_parking": null,
+    "parking_to_water_m": null,
+    "accessible_restroom": null,
+    "surface": "boardwalk",
+    "wheelchair_loaner": null,
+    "handrails": true,
+    "shade": null,
+    "depth_at_entry_note": "Each spring has sun decks and sturdy stairs with railings into the water (facilities page). No statement about wheelchair water entry.",
+    "service_animals_note": "No pets allowed; the park publishes no service-animal statement.",
+    "verified": false,
+    "source": "Inferred from ginniespringsoutdoors.com facilities page - no ADA parking, accessible-restroom or wheelchair statements (the site's /accessibility/ page is a website WCAG statement, not park access).",
+    "sources": [
+      "https://ginniespringsoutdoors.com/plan-your-visit/facilities/",
+      "https://ginniespringsoutdoors.com/plan-your-visit/rules-policies/"
+    ]
+  },
+  "poe-springs-park": {
+    "water_access": "unknown",
+    "entry_type": "unknown",
+    "ada_parking": null,
+    "parking_to_water_m": null,
+    "accessible_restroom": null,
+    "surface": "unknown",
+    "wheelchair_loaner": null,
+    "handrails": null,
+    "shade": null,
+    "depth_at_entry_note": "Not published. (Photos show concrete steps with a handrail into the spring pool - unverified.)",
+    "service_animals_note": "Not published; county ADA coordinator: ADA@alachuacounty.us, 352-374-5275.",
+    "verified": false,
+    "source": "Alachua County park page lists pavilions, restrooms, boardwalk, boat launch and an ADA coordinator contact only - no on-site accessibility details.",
+    "sources": [
+      "https://alachuacounty.us/Depts/Parks/Pages/Details.aspx?park=Poe+Springs+Park"
+    ]
+  },
+  "gilchrist-blue-springs-state-park": {
+    "water_access": "unknown",
+    "entry_type": "unknown",
+    "ada_parking": null,
+    "parking_to_water_m": null,
+    "accessible_restroom": null,
+    "surface": "unknown",
+    "wheelchair_loaner": null,
+    "handrails": null,
+    "shade": null,
+    "depth_at_entry_note": "Not published. Swim entrance, launch and bathrooms are being rebuilt (no water activities since Oct 29, 2025); a third-party summary says the renovation includes an ADA path to the springhead - unverified. Port-o-lets only until renovations finish.",
+    "service_animals_note": "Service animals are welcome (official accessible-amenities list).",
+    "verified": false,
+    "source": "Official experiences-amenities page lists accessible concession, picnic facilities and campsites only - no water-entry, ADA parking or restroom statements.",
+    "sources": [
+      "https://www.floridastateparks.org/parks-and-trails/ruth-b-kirby-gilchrist-blue-springs-state-park/experiences-amenities",
+      "https://www.floridastateparks.org/learn/construction-renovations-ruth-b-kirby-gilchrist-blue-springs-state-park"
+    ]
+  },
+  "rainbow-springs-state-park": {
+    "water_access": "unknown",
+    "entry_type": "unknown",
+    "ada_parking": null,
+    "parking_to_water_m": null,
+    "accessible_restroom": null,
+    "surface": "paved",
+    "wheelchair_loaner": true,
+    "handrails": null,
+    "shade": null,
+    "depth_at_entry_note": "Swim area is 10-18 ft deep with no shallow end. The park does not describe how wheelchair users enter the water. Pathways were built before ADA guidelines and are steep and uneven in places (brick, concrete and asphalt).",
+    "service_animals_note": "Pets are not permitted in swimming areas; no separate service-animal statement on the park page (system policy excludes service animals from swimming areas).",
+    "verified": true,
+    "source": "Official experiences-amenities page: a wheelchair is available in the gift shop first-come, first-served (driver's licence deposit); campground has ADA restrooms; headsprings restroom accessibility and ADA parking count not published.",
+    "sources": [
+      "https://www.floridastateparks.org/parks-and-trails/rainbow-springs-state-park/experiences-amenities"
+    ]
+  },
+  "blue-spring-state-park": {
+    "water_access": "unknown",
+    "entry_type": "unknown",
+    "ada_parking": null,
+    "parking_to_water_m": null,
+    "accessible_restroom": true,
+    "surface": "boardwalk",
+    "wheelchair_loaner": null,
+    "handrails": null,
+    "shade": null,
+    "depth_at_entry_note": "An accessible boardwalk leads to the spring (official). The park does not describe the swim-dock entry (stairs/ramp/lift) for wheelchair users. Boat tours have a wheelchair lift into the vessel.",
+    "service_animals_note": "Pets including service animals are prohibited on the water (official).",
+    "verified": true,
+    "source": "Official experiences-amenities page: accessible boardwalk to Blue Spring, two bathhouses with accessible showers and stalls, accessible picnic pavilions, cabins and campsites; water-entry method, ADA parking count and loaner chairs not published.",
+    "sources": [
+      "https://www.floridastateparks.org/parks-and-trails/blue-spring-state-park/experiences-amenities"
+    ]
+  },
+  "wekiwa-springs-state-park": {
+    "water_access": "yes",
+    "entry_type": "ramp",
+    "ada_parking": null,
+    "parking_to_water_m": null,
+    "accessible_restroom": null,
+    "surface": "unknown",
+    "wheelchair_loaner": null,
+    "handrails": null,
+    "shade": null,
+    "depth_at_entry_note": "Ramp for spring entry plus a hydraulic swim lift rated to 400 lb, usable alone or with a companion (tell park staff at entry if you want help). The seat can stay in the water until you are ready to get out. Swim area is shallow: under 1 ft to about 5 ft. Two accessible restrooms with showers are in the campground; spring-area restroom accessibility is not stated.",
+    "service_animals_note": "Service animals are welcome in all areas of the park except swimming areas (official).",
+    "verified": true,
+    "source": "Official experiences-amenities page, 'Accessible Amenities': chair lift for spring entry, ramp for spring entry, four accessible campsites; ADA nature center and boardwalk trail.",
+    "sources": [
+      "https://www.floridastateparks.org/parks-and-trails/wekiwa-springs-state-park/experiences-amenities-0"
+    ]
+  }
+}

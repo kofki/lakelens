@@ -1,0 +1,114 @@
+import { Accessibility, Car, ExternalLink, Navigation, SquareParking, TriangleAlert } from "lucide-react";
+import type { Park, ParkingLot } from "@/lib/types";
+import { Badge } from "@/components/ui/Badge";
+import { Card } from "@/components/ui/Card";
+import { Section } from "@/components/ui/Section";
+import { MiniMapLazy } from "@/components/map/MiniMapLazy";
+import { directionsUrl } from "./format";
+
+export interface ParkingCardProps {
+  park: Park;
+  lots: ParkingLot[];
+}
+
+const ROADSIDE_RE = /roadside|no waiting|not wait|do not wait|don't wait|queue on the road|line up on/i;
+
+export function mentionsNoRoadsideWaiting(park: Park, lots: ParkingLot[]): boolean {
+  if (park.entrance_notes && ROADSIDE_RE.test(park.entrance_notes)) return true;
+  return lots.some((l) => l.notes && ROADSIDE_RE.test(l.notes));
+}
+
+/** Curated parking lots with fee / ADA spaces / overflow / notes, a mini map and a directions link. */
+export function ParkingCard({ park, lots }: ParkingCardProps) {
+  const sorted = [...lots].sort((a, b) => Number(a.is_overflow) - Number(b.is_overflow));
+  const roadside = mentionsNoRoadsideWaiting(park, lots);
+
+  return (
+    <Section
+      id="parking"
+      title="Parking"
+      icon={<SquareParking />}
+      action={
+        <a
+          href={directionsUrl(park.lat, park.lng)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex min-h-11 items-center gap-1 rounded-full border border-mist bg-white px-3 text-sm font-bold text-cocoa shadow-card"
+        >
+          <Navigation aria-hidden="true" focusable="false" className="size-4" />
+          Directions
+          <span className="sr-only">(opens in a new tab)</span>
+        </a>
+      }
+    >
+      {roadside && (
+        <div role="note" className="flex gap-2 rounded-card border border-status-likely/40 bg-status-likely/10 p-3 text-sm text-cocoa">
+          <TriangleAlert aria-hidden="true" focusable="false" className="mt-0.5 size-5 shrink-0 text-status-likely" />
+          <p>
+            <strong>No roadside waiting.</strong> When the lot is full, rangers turn cars away — do not queue on the road. Try a
+            backup park instead.
+          </p>
+        </div>
+      )}
+
+      {sorted.length === 0 ? (
+        <Card>
+          <p className="text-sm text-cocoa">No parking details for this park yet.</p>
+          {park.entrance_notes && <p className="mt-2 text-sm text-cocoa/85">{park.entrance_notes}</p>}
+        </Card>
+      ) : (
+        <ul className="space-y-3">
+          {sorted.map((lot) => (
+            <li key={lot.id}>
+              <Card as="article" className="space-y-2">
+                <div className="flex flex-wrap items-center gap-2">
+                  <h3 className="flex items-center gap-1.5 font-extrabold text-cocoa">
+                    <Car aria-hidden="true" focusable="false" className="size-4 text-sunset" />
+                    {lot.name}
+                  </h3>
+                  {lot.is_overflow && <Badge variant="info">Overflow lot</Badge>}
+                  {lot.source === "curated" ? (
+                    <Badge variant="verified">Curated</Badge>
+                  ) : (
+                    <Badge variant="unverified">OpenStreetMap, unverified</Badge>
+                  )}
+                </div>
+                <dl className="grid grid-cols-2 gap-x-3 gap-y-1 text-sm">
+                  <dt className="text-cocoa/75">Fee</dt>
+                  <dd className="font-bold text-cocoa">{lot.fee ?? "Not stated"}</dd>
+                  <dt className="text-cocoa/75">Spaces</dt>
+                  <dd className="font-bold text-cocoa">{lot.capacity != null ? `about ${lot.capacity}` : "Not stated"}</dd>
+                  <dt className="flex items-center gap-1 text-cocoa/75">
+                    <Accessibility aria-hidden="true" focusable="false" className="size-3.5" />
+                    ADA spaces
+                  </dt>
+                  <dd className="font-bold text-cocoa">{lot.ada_spaces != null ? lot.ada_spaces : "Unknown"}</dd>
+                </dl>
+                {lot.notes && <p className="text-sm text-cocoa/85">{lot.notes}</p>}
+              </Card>
+            </li>
+          ))}
+        </ul>
+      )}
+
+      {park.entrance_notes && sorted.length > 0 && (
+        <p className="text-sm text-cocoa/85">
+          <strong>Getting in:</strong> {park.entrance_notes}
+        </p>
+      )}
+
+      <MiniMapLazy center={{ lat: park.lat, lng: park.lng }} parkName={park.name} lots={sorted} className="h-48 w-full overflow-hidden rounded-card" />
+
+      {park.official_url && (
+        <p className="text-xs text-cocoa/75">
+          Parking details entered by hand from the park&apos;s website.{" "}
+          <a href={park.official_url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 font-bold underline">
+            Official site
+            <ExternalLink aria-hidden="true" focusable="false" className="size-3" />
+            <span className="sr-only">(opens in a new tab)</span>
+          </a>
+        </p>
+      )}
+    </Section>
+  );
+}

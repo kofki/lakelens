@@ -1,0 +1,112 @@
+{
+  "@context": [
+    "https://geojson.org/geojson-ld/geojson-context.jsonld",
+    {
+      "@version": "1.1",
+      "wx": "https://api.weather.gov/ontology#",
+      "s": "https://schema.org/",
+      "geo": "http://www.opengis.net/ont/geosparql#",
+      "unit": "http://codes.wmo.int/common/unit/",
+      "@vocab": "https://api.weather.gov/ontology#",
+      "geometry": {
+        "@id": "s:GeoCoordinates",
+        "@type": "geo:wktLiteral"
+      },
+      "city": "s:addressLocality",
+      "state": "s:addressRegion",
+      "distance": {
+        "@id": "s:Distance",
+        "@type": "s:QuantitativeValue"
+      },
+      "bearing": {
+        "@type": "s:QuantitativeValue"
+      },
+      "value": {
+        "@id": "s:value"
+      },
+      "unitCode": {
+        "@id": "s:unitCode",
+        "@type": "@id"
+      },
+      "forecastOffice": {
+        "@type": "@id"
+      },
+      "forecastGridData": {
+        "@type": "@id"
+      },
+      "publicZone": {
+        "@type": "@id"
+      },
+      "county": {
+        "@type": "@id"
+      }
+    }
+  ],
+  "id": "https://api.weather.gov/points/27.8602,-80.4522",
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      -80.4522,
+      27.8602
+    ]
+  },
+  "properties": {
+    "@id": "https://api.weather.gov/points/27.8602,-80.4522",
+    "@type": "wx:Point",
+    "cwa": "MLB",
+    "type": "land",
+    "forecastOffice": "https://api.weather.gov/offices/MLB",
+    "gridId": "MLB",
+    "gridX": 65,
+    "gridY": 42,
+    "forecast": "https://api.weather.gov/gridpoints/MLB/65,42/forecast",
+    "forecastHourly": "https://api.weather.gov/gridpoints/MLB/65,42/forecast/hourly",
+    "forecastGridData": "https://api.weather.gov/gridpoints/MLB/65,42",
+    "observationStations": "https://api.weather.gov/gridpoints/MLB/65,42/stations",
+    "relativeLocation": {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.4882068,
+          27.8353246
+        ]
+      },
+      "properties": {
+        "city": "Roseland",
+        "state": "FL",
+        "distance": {
+          "unitCode": "wmoUnit:m",
+          "value": 2621.9530495909
+        },
+        "bearing": {
+          "unitCode": "wmoUnit:degree_(angle)",
+          "value": 51
+        }
+      }
+    },
+    "forecastZone": "https://api.weather.gov/zones/forecast/FLZ747",
+    "county": "https://api.weather.gov/zones/county/FLC009",
+    "fireWeatherZone": "https://api.weather.gov/zones/fire/FLZ747",
+    "timeZone": "America/New_York",
+    "radarStation": "KMLB",
+    "astronomicalData": {
+      "sunrise": "2026-09-19T07:08:57-04:00",
+      "sunset": "2026-09-19T19:22:02-04:00",
+      "transit": "2026-09-19T13:15:30-04:00",
+      "civilTwilightBegin": "2026-09-19T06:45:37-04:00",
+      "civilTwilightEnd": "2026-09-19T19:45:23-04:00",
+      "nauticalTwilightBegin": "2026-09-19T06:18:18-04:00",
+      "nauticalTwilightEnd": "2026-09-19T20:12:42-04:00",
+      "astronomicalTwilightBegin": "2026-09-19T05:50:45-04:00",
+      "astronomicalTwilightEnd": "2026-09-19T20:40:14-04:00"
+    },
+    "nwr": {
+      "transmitter": "WXJ70",
+      "sameCode": "012009",
+      "areaBroadcast": "https://api.weather.gov/radio/WXJ70/broadcast",
+      "pointBroadcast": "https://api.weather.gov/points/27.8602,-80.4522/radio"
+    }
+  }
+}

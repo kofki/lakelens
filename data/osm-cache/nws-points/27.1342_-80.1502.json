@@ -1,0 +1,112 @@
+{
+  "@context": [
+    "https://geojson.org/geojson-ld/geojson-context.jsonld",
+    {
+      "@version": "1.1",
+      "wx": "https://api.weather.gov/ontology#",
+      "s": "https://schema.org/",
+      "geo": "http://www.opengis.net/ont/geosparql#",
+      "unit": "http://codes.wmo.int/common/unit/",
+      "@vocab": "https://api.weather.gov/ontology#",
+      "geometry": {
+        "@id": "s:GeoCoordinates",
+        "@type": "geo:wktLiteral"
+      },
+      "city": "s:addressLocality",
+      "state": "s:addressRegion",
+      "distance": {
+        "@id": "s:Distance",
+        "@type": "s:QuantitativeValue"
+      },
+      "bearing": {
+        "@type": "s:QuantitativeValue"
+      },
+      "value": {
+        "@id": "s:value"
+      },
+      "unitCode": {
+        "@id": "s:unitCode",
+        "@type": "@id"
+      },
+      "forecastOffice": {
+        "@type": "@id"
+      },
+      "forecastGridData": {
+        "@type": "@id"
+      },
+      "publicZone": {
+        "@type": "@id"
+      },
+      "county": {
+        "@type": "@id"
+      }
+    }
+  ],
+  "id": "https://api.weather.gov/points/27.1342,-80.1502",
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      -80.1502,
+      27.1342
+    ]
+  },
+  "properties": {
+    "@id": "https://api.weather.gov/points/27.1342,-80.1502",
+    "@type": "wx:Point",
+    "cwa": "MLB",
+    "type": "land",
+    "forecastOffice": "https://api.weather.gov/offices/MLB",
+    "gridId": "MLB",
+    "gridX": 80,
+    "gridY": 12,
+    "forecast": "https://api.weather.gov/gridpoints/MLB/80,12/forecast",
+    "forecastHourly": "https://api.weather.gov/gridpoints/MLB/80,12/forecast/hourly",
+    "forecastGridData": "https://api.weather.gov/gridpoints/MLB/80,12",
+    "observationStations": "https://api.weather.gov/gridpoints/MLB/80,12/stations",
+    "relativeLocation": {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.1423675,
+          27.0726627
+        ]
+      },
+      "properties": {
+        "city": "Hobe Sound",
+        "state": "FL",
+        "distance": {
+          "unitCode": "wmoUnit:m",
+          "value": 2162.329676922
+        },
+        "bearing": {
+          "unitCode": "wmoUnit:degree_(angle)",
+          "value": 353
+        }
+      }
+    },
+    "forecastZone": "https://api.weather.gov/zones/forecast/FLZ164",
+    "county": "https://api.weather.gov/zones/county/FLC085",
+    "fireWeatherZone": "https://api.weather.gov/zones/fire/FLZ164",
+    "timeZone": "America/New_York",
+    "radarStation": "KMLB",
+    "astronomicalData": {
+      "sunrise": "2026-09-19T07:07:51-04:00",
+      "sunset": "2026-09-19T19:20:43-04:00",
+      "transit": "2026-09-19T13:14:17-04:00",
+      "civilTwilightBegin": "2026-09-19T06:44:40-04:00",
+      "civilTwilightEnd": "2026-09-19T19:43:55-04:00",
+      "nauticalTwilightBegin": "2026-09-19T06:17:32-04:00",
+      "nauticalTwilightEnd": "2026-09-19T20:11:02-04:00",
+      "astronomicalTwilightBegin": "2026-09-19T05:50:12-04:00",
+      "astronomicalTwilightEnd": "2026-09-19T20:38:23-04:00"
+    },
+    "nwr": {
+      "transmitter": "WWF69",
+      "sameCode": "012085",
+      "areaBroadcast": "https://api.weather.gov/radio/WWF69/broadcast",
+      "pointBroadcast": "https://api.weather.gov/points/27.1342,-80.1502/radio"
+    }
+  }
+}

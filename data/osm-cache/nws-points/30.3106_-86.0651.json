@@ -1,0 +1,112 @@
+{
+  "@context": [
+    "https://geojson.org/geojson-ld/geojson-context.jsonld",
+    {
+      "@version": "1.1",
+      "wx": "https://api.weather.gov/ontology#",
+      "s": "https://schema.org/",
+      "geo": "http://www.opengis.net/ont/geosparql#",
+      "unit": "http://codes.wmo.int/common/unit/",
+      "@vocab": "https://api.weather.gov/ontology#",
+      "geometry": {
+        "@id": "s:GeoCoordinates",
+        "@type": "geo:wktLiteral"
+      },
+      "city": "s:addressLocality",
+      "state": "s:addressRegion",
+      "distance": {
+        "@id": "s:Distance",
+        "@type": "s:QuantitativeValue"
+      },
+      "bearing": {
+        "@type": "s:QuantitativeValue"
+      },
+      "value": {
+        "@id": "s:value"
+      },
+      "unitCode": {
+        "@id": "s:unitCode",
+        "@type": "@id"
+      },
+      "forecastOffice": {
+        "@type": "@id"
+      },
+      "forecastGridData": {
+        "@type": "@id"
+      },
+      "publicZone": {
+        "@type": "@id"
+      },
+      "county": {
+        "@type": "@id"
+      }
+    }
+  ],
+  "id": "https://api.weather.gov/points/30.3106,-86.0651",
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      -86.0651,
+      30.3106
+    ]
+  },
+  "properties": {
+    "@id": "https://api.weather.gov/points/30.3106,-86.0651",
+    "@type": "wx:Point",
+    "cwa": "TAE",
+    "type": "land",
+    "forecastOffice": "https://api.weather.gov/offices/TAE",
+    "gridId": "TAE",
+    "gridX": 17,
+    "gridY": 76,
+    "forecast": "https://api.weather.gov/gridpoints/TAE/17,76/forecast",
+    "forecastHourly": "https://api.weather.gov/gridpoints/TAE/17,76/forecast/hourly",
+    "forecastGridData": "https://api.weather.gov/gridpoints/TAE/17,76",
+    "observationStations": "https://api.weather.gov/gridpoints/TAE/17,76/stations",
+    "relativeLocation": {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.9511477,
+          30.254727
+        ]
+      },
+      "properties": {
+        "city": "Laguna Beach",
+        "state": "FL",
+        "distance": {
+          "unitCode": "wmoUnit:m",
+          "value": 7776.0532063983
+        },
+        "bearing": {
+          "unitCode": "wmoUnit:degree_(angle)",
+          "value": 299
+        }
+      }
+    },
+    "forecastZone": "https://api.weather.gov/zones/forecast/FLZ108",
+    "county": "https://api.weather.gov/zones/county/FLC131",
+    "fireWeatherZone": "https://api.weather.gov/zones/fire/FLZ108",
+    "timeZone": "America/Chicago",
+    "radarStation": "KEVX",
+    "astronomicalData": {
+      "sunrise": "2026-09-19T06:31:02-05:00",
+      "sunset": "2026-09-19T18:44:51-05:00",
+      "transit": "2026-09-19T12:37:57-05:00",
+      "civilTwilightBegin": "2026-09-19T06:07:08-05:00",
+      "civilTwilightEnd": "2026-09-19T19:08:46-05:00",
+      "nauticalTwilightBegin": "2026-09-19T05:39:07-05:00",
+      "nauticalTwilightEnd": "2026-09-19T19:36:46-05:00",
+      "astronomicalTwilightBegin": "2026-09-19T05:10:50-05:00",
+      "astronomicalTwilightEnd": "2026-09-19T20:05:03-05:00"
+    },
+    "nwr": {
+      "transmitter": "KGG67",
+      "sameCode": "012131",
+      "areaBroadcast": "https://api.weather.gov/radio/KGG67/broadcast",
+      "pointBroadcast": "https://api.weather.gov/points/30.3106,-86.0651/radio"
+    }
+  }
+}

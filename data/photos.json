@@ -1,0 +1,61 @@
+{
+  "_note": "Hero photos for deep-coverage parks. All from Wikimedia Commons under public-domain, CC0 or CC-BY licences (no share-alike). Downscaled to <=1600 px wide with sips. Attribution must be shown on the About page.",
+  "photos": {
+    "ichetucknee-springs-state-park": {
+      "file": "/photos/ichetucknee-springs-state-park.jpg",
+      "title": "Ichetucknee Springs Headspring.jpg",
+      "author": "systemslibrarian",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Ichetucknee_Springs_Headspring.jpg"
+    },
+    "ginnie-springs": {
+      "file": "/photos/ginnie-springs.jpg",
+      "title": "FlGinnieSpring.jpg",
+      "author": "State of Florida, photo by H. Means",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:FlGinnieSpring.jpg"
+    },
+    "poe-springs-park": {
+      "file": "/photos/poe-springs-park.jpg",
+      "title": "FlPoeSpring.jpg",
+      "author": "State of Florida, photo by R. Means",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:FlPoeSpring.jpg"
+    },
+    "gilchrist-blue-springs-state-park": {
+      "file": "/photos/gilchrist-blue-springs-state-park.jpg",
+      "title": "Gilchrist Blue Springs State Park.jpg",
+      "author": "Rbrko",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Gilchrist_Blue_Springs_State_Park.jpg"
+    },
+    "rainbow-springs-state-park": {
+      "file": "/photos/rainbow-springs-state-park.jpg",
+      "title": "Rainbow Springs State Park swim area01.jpg",
+      "author": "Ebyabe",
+      "license": "CC BY 2.5",
+      "license_url": "https://creativecommons.org/licenses/by/2.5",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Rainbow_Springs_State_Park_swim_area01.jpg"
+    },
+    "blue-spring-state-park": {
+      "file": "/photos/blue-spring-state-park.jpg",
+      "title": "Manatees at Blue Spring State Park.jpg",
+      "author": "Bkamprath",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Manatees_at_Blue_Spring_State_Park.jpg"
+    },
+    "wekiwa-springs-state-park": {
+      "file": "/photos/wekiwa-springs-state-park.jpg",
+      "title": "Wekiwa Springs State Park.jpg",
+      "author": "Bart Everson",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Wekiwa_Springs_State_Park.jpg"
+    }
+  }
+}

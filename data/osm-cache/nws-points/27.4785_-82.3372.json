@@ -1,0 +1,112 @@
+{
+  "@context": [
+    "https://geojson.org/geojson-ld/geojson-context.jsonld",
+    {
+      "@version": "1.1",
+      "wx": "https://api.weather.gov/ontology#",
+      "s": "https://schema.org/",
+      "geo": "http://www.opengis.net/ont/geosparql#",
+      "unit": "http://codes.wmo.int/common/unit/",
+      "@vocab": "https://api.weather.gov/ontology#",
+      "geometry": {
+        "@id": "s:GeoCoordinates",
+        "@type": "geo:wktLiteral"
+      },
+      "city": "s:addressLocality",
+      "state": "s:addressRegion",
+      "distance": {
+        "@id": "s:Distance",
+        "@type": "s:QuantitativeValue"
+      },
+      "bearing": {
+        "@type": "s:QuantitativeValue"
+      },
+      "value": {
+        "@id": "s:value"
+      },
+      "unitCode": {
+        "@id": "s:unitCode",
+        "@type": "@id"
+      },
+      "forecastOffice": {
+        "@type": "@id"
+      },
+      "forecastGridData": {
+        "@type": "@id"
+      },
+      "publicZone": {
+        "@type": "@id"
+      },
+      "county": {
+        "@type": "@id"
+      }
+    }
+  ],
+  "id": "https://api.weather.gov/points/27.4785,-82.3372",
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      -82.3372,
+      27.4785
+    ]
+  },
+  "properties": {
+    "@id": "https://api.weather.gov/points/27.4785,-82.3372",
+    "@type": "wx:Point",
+    "cwa": "TBW",
+    "type": "land",
+    "forecastOffice": "https://api.weather.gov/offices/TBW",
+    "gridId": "TBW",
+    "gridX": 78,
+    "gridY": 77,
+    "forecast": "https://api.weather.gov/gridpoints/TBW/78,77/forecast",
+    "forecastHourly": "https://api.weather.gov/gridpoints/TBW/78,77/forecast/hourly",
+    "forecastGridData": "https://api.weather.gov/gridpoints/TBW/78,77",
+    "observationStations": "https://api.weather.gov/gridpoints/TBW/78,77/stations",
+    "relativeLocation": {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.3867159,
+          27.4235321
+        ]
+      },
+      "properties": {
+        "city": "Lakewood Ranch",
+        "state": "FL",
+        "distance": {
+          "unitCode": "wmoUnit:m",
+          "value": 1375.9342780637
+        },
+        "bearing": {
+          "unitCode": "wmoUnit:degree_(angle)",
+          "value": 38
+        }
+      }
+    },
+    "forecastZone": "https://api.weather.gov/zones/forecast/FLZ255",
+    "county": "https://api.weather.gov/zones/county/FLC081",
+    "fireWeatherZone": "https://api.weather.gov/zones/fire/FLZ255",
+    "timeZone": "America/New_York",
+    "radarStation": "KTBW",
+    "astronomicalData": {
+      "sunrise": "2026-09-19T07:16:33-04:00",
+      "sunset": "2026-09-19T19:29:31-04:00",
+      "transit": "2026-09-19T13:23:02-04:00",
+      "civilTwilightBegin": "2026-09-19T06:53:18-04:00",
+      "civilTwilightEnd": "2026-09-19T19:52:47-04:00",
+      "nauticalTwilightBegin": "2026-09-19T06:26:05-04:00",
+      "nauticalTwilightEnd": "2026-09-19T20:19:59-04:00",
+      "astronomicalTwilightBegin": "2026-09-19T05:58:39-04:00",
+      "astronomicalTwilightEnd": "2026-09-19T20:47:25-04:00"
+    },
+    "nwr": {
+      "transmitter": "WWG59",
+      "sameCode": "012081",
+      "areaBroadcast": "https://api.weather.gov/radio/WWG59/broadcast",
+      "pointBroadcast": "https://api.weather.gov/points/27.4785,-82.3372/radio"
+    }
+  }
+}

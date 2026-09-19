@@ -1,0 +1,112 @@
+{
+  "@context": [
+    "https://geojson.org/geojson-ld/geojson-context.jsonld",
+    {
+      "@version": "1.1",
+      "wx": "https://api.weather.gov/ontology#",
+      "s": "https://schema.org/",
+      "geo": "http://www.opengis.net/ont/geosparql#",
+      "unit": "http://codes.wmo.int/common/unit/",
+      "@vocab": "https://api.weather.gov/ontology#",
+      "geometry": {
+        "@id": "s:GeoCoordinates",
+        "@type": "geo:wktLiteral"
+      },
+      "city": "s:addressLocality",
+      "state": "s:addressRegion",
+      "distance": {
+        "@id": "s:Distance",
+        "@type": "s:QuantitativeValue"
+      },
+      "bearing": {
+        "@type": "s:QuantitativeValue"
+      },
+      "value": {
+        "@id": "s:value"
+      },
+      "unitCode": {
+        "@id": "s:unitCode",
+        "@type": "@id"
+      },
+      "forecastOffice": {
+        "@type": "@id"
+      },
+      "forecastGridData": {
+        "@type": "@id"
+      },
+      "publicZone": {
+        "@type": "@id"
+      },
+      "county": {
+        "@type": "@id"
+      }
+    }
+  ],
+  "id": "https://api.weather.gov/points/30.3153,-87.4107",
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      -87.4107,
+      30.3153
+    ]
+  },
+  "properties": {
+    "@id": "https://api.weather.gov/points/30.3153,-87.4107",
+    "@type": "wx:Point",
+    "cwa": "MOB",
+    "type": "land",
+    "forecastOffice": "https://api.weather.gov/offices/MOB",
+    "gridId": "MOB",
+    "gridX": 77,
+    "gridY": 52,
+    "forecast": "https://api.weather.gov/gridpoints/MOB/77,52/forecast",
+    "forecastHourly": "https://api.weather.gov/gridpoints/MOB/77,52/forecast/hourly",
+    "forecastGridData": "https://api.weather.gov/gridpoints/MOB/77,52",
+    "observationStations": "https://api.weather.gov/gridpoints/MOB/77,52/stations",
+    "relativeLocation": {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.3169019,
+          30.3506154
+        ]
+      },
+      "properties": {
+        "city": "Pensacola Station",
+        "state": "FL",
+        "distance": {
+          "unitCode": "wmoUnit:m",
+          "value": 5750.6022596284
+        },
+        "bearing": {
+          "unitCode": "wmoUnit:degree_(angle)",
+          "value": 246
+        }
+      }
+    },
+    "forecastZone": "https://api.weather.gov/zones/forecast/FLZ202",
+    "county": "https://api.weather.gov/zones/county/FLC033",
+    "fireWeatherZone": "https://api.weather.gov/zones/fire/FLZ202",
+    "timeZone": "America/Chicago",
+    "radarStation": "KMOB",
+    "astronomicalData": {
+      "sunrise": "2026-09-19T06:36:25-05:00",
+      "sunset": "2026-09-19T18:50:13-05:00",
+      "transit": "2026-09-19T12:43:19-05:00",
+      "civilTwilightBegin": "2026-09-19T06:12:30-05:00",
+      "civilTwilightEnd": "2026-09-19T19:14:08-05:00",
+      "nauticalTwilightBegin": "2026-09-19T05:44:30-05:00",
+      "nauticalTwilightEnd": "2026-09-19T19:42:09-05:00",
+      "astronomicalTwilightBegin": "2026-09-19T05:16:13-05:00",
+      "astronomicalTwilightEnd": "2026-09-19T20:10:26-05:00"
+    },
+    "nwr": {
+      "transmitter": "KEC86",
+      "sameCode": "012033",
+      "areaBroadcast": "https://api.weather.gov/radio/KEC86/broadcast",
+      "pointBroadcast": "https://api.weather.gov/points/30.3153,-87.4107/radio"
+    }
+  }
+}

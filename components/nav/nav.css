@@ -1,0 +1,14 @@
+/* Bottom navigation height, read by pages to pad content and size the map. */
+:root {
+  --bottom-nav-h: 64px;
+}
+
+.bottom-nav {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+@media print {
+  .bottom-nav {
+    display: none;
+  }
+}

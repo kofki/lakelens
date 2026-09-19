@@ -1,0 +1,112 @@
+{
+  "@context": [
+    "https://geojson.org/geojson-ld/geojson-context.jsonld",
+    {
+      "@version": "1.1",
+      "wx": "https://api.weather.gov/ontology#",
+      "s": "https://schema.org/",
+      "geo": "http://www.opengis.net/ont/geosparql#",
+      "unit": "http://codes.wmo.int/common/unit/",
+      "@vocab": "https://api.weather.gov/ontology#",
+      "geometry": {
+        "@id": "s:GeoCoordinates",
+        "@type": "geo:wktLiteral"
+      },
+      "city": "s:addressLocality",
+      "state": "s:addressRegion",
+      "distance": {
+        "@id": "s:Distance",
+        "@type": "s:QuantitativeValue"
+      },
+      "bearing": {
+        "@type": "s:QuantitativeValue"
+      },
+      "value": {
+        "@id": "s:value"
+      },
+      "unitCode": {
+        "@id": "s:unitCode",
+        "@type": "@id"
+      },
+      "forecastOffice": {
+        "@type": "@id"
+      },
+      "forecastGridData": {
+        "@type": "@id"
+      },
+      "publicZone": {
+        "@type": "@id"
+      },
+      "county": {
+        "@type": "@id"
+      }
+    }
+  ],
+  "id": "https://api.weather.gov/points/29.9481,-84.4047",
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      -84.4047,
+      29.9481
+    ]
+  },
+  "properties": {
+    "@id": "https://api.weather.gov/points/29.9481,-84.4047",
+    "@type": "wx:Point",
+    "cwa": "TAE",
+    "type": "land",
+    "forecastOffice": "https://api.weather.gov/offices/TAE",
+    "gridId": "TAE",
+    "gridX": 81,
+    "gridY": 65,
+    "forecast": "https://api.weather.gov/gridpoints/TAE/81,65/forecast",
+    "forecastHourly": "https://api.weather.gov/gridpoints/TAE/81,65/forecast/hourly",
+    "forecastGridData": "https://api.weather.gov/gridpoints/TAE/81,65",
+    "observationStations": "https://api.weather.gov/gridpoints/TAE/81,65/stations",
+    "relativeLocation": {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.3925863,
+          30.0264203
+        ]
+      },
+      "properties": {
+        "city": "Panacea",
+        "state": "FL",
+        "distance": {
+          "unitCode": "wmoUnit:m",
+          "value": 7211.7504885046
+        },
+        "bearing": {
+          "unitCode": "wmoUnit:degree_(angle)",
+          "value": 187
+        }
+      }
+    },
+    "forecastZone": "https://api.weather.gov/zones/forecast/FLZ115",
+    "county": "https://api.weather.gov/zones/county/FLC037",
+    "fireWeatherZone": "https://api.weather.gov/zones/fire/FLZ115",
+    "timeZone": "America/New_York",
+    "radarStation": "KTLH",
+    "astronomicalData": {
+      "sunrise": "2026-09-19T07:24:27-04:00",
+      "sunset": "2026-09-19T19:38:09-04:00",
+      "transit": "2026-09-19T13:31:18-04:00",
+      "civilTwilightBegin": "2026-09-19T07:00:38-04:00",
+      "civilTwilightEnd": "2026-09-19T20:01:59-04:00",
+      "nauticalTwilightBegin": "2026-09-19T06:32:44-04:00",
+      "nauticalTwilightEnd": "2026-09-19T20:29:52-04:00",
+      "astronomicalTwilightBegin": "2026-09-19T06:04:34-04:00",
+      "astronomicalTwilightEnd": "2026-09-19T20:58:03-04:00"
+    },
+    "nwr": {
+      "transmitter": "WWF86",
+      "sameCode": "012037",
+      "areaBroadcast": "https://api.weather.gov/radio/WWF86/broadcast",
+      "pointBroadcast": "https://api.weather.gov/points/29.9481,-84.4047/radio"
+    }
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "@context": [
+    "https://geojson.org/geojson-ld/geojson-context.jsonld",
+    {
+      "@version": "1.1",
+      "wx": "https://api.weather.gov/ontology#",
+      "s": "https://schema.org/",
+      "geo": "http://www.opengis.net/ont/geosparql#",
+      "unit": "http://codes.wmo.int/common/unit/",
+      "@vocab": "https://api.weather.gov/ontology#",
+      "geometry": {
+        "@id": "s:GeoCoordinates",
+        "@type": "geo:wktLiteral"
+      },
+      "city": "s:addressLocality",
+      "state": "s:addressRegion",
+      "distance": {
+        "@id": "s:Distance",
+        "@type": "s:QuantitativeValue"
+      },
+      "bearing": {
+        "@type": "s:QuantitativeValue"
+      },
+      "value": {
+        "@id": "s:value"
+      },
+      "unitCode": {
+        "@id": "s:unitCode",
+        "@type": "@id"
+      },
+      "forecastOffice": {
+        "@type": "@id"
+      },
+      "forecastGridData": {
+        "@type": "@id"
+      },
+      "publicZone": {
+        "@type": "@id"
+      },
+      "county": {
+        "@type": "@id"
+      }
+    }
+  ],
+  "id": "https://api.weather.gov/points/26.3812,-81.8691",
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      -81.8691,
+      26.3812
+    ]
+  },
+  "properties": {
+    "@id": "https://api.weather.gov/points/26.3812,-81.8691",
+    "@type": "wx:Point",
+    "cwa": "TBW",
+    "type": "land",
+    "forecastOffice": "https://api.weather.gov/offices/TBW",
+    "gridId": "TBW",
+    "gridX": 100,
+    "gridY": 31,
+    "forecast": "https://api.weather.gov/gridpoints/TBW/100,31/forecast",
+    "forecastHourly": "https://api.weather.gov/gridpoints/TBW/100,31/forecast/hourly",
+    "forecastGridData": "https://api.weather.gov/gridpoints/TBW/100,31",
+    "observationStations": "https://api.weather.gov/gridpoints/TBW/100,31/stations",
+    "relativeLocation": {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.7842343,
+          26.3550105
+        ]
+      },
+      "properties": {
+        "city": "Bonita Springs",
+        "state": "FL",
+        "distance": {
+          "unitCode": "wmoUnit:m",
+          "value": 0
+        },
+        "bearing": {
+          "unitCode": "wmoUnit:degree_(angle)",
+          "value": 0
+        }
+      }
+    },
+    "forecastZone": "https://api.weather.gov/zones/forecast/FLZ165",
+    "county": "https://api.weather.gov/zones/county/FLC071",
+    "fireWeatherZone": "https://api.weather.gov/zones/fire/FLZ165",
+    "timeZone": "America/New_York",
+    "radarStation": "KTBW",
+    "astronomicalData": {
+      "sunrise": "2026-09-19T07:14:51-04:00",
+      "sunset": "2026-09-19T19:27:29-04:00",
+      "transit": "2026-09-19T13:21:10-04:00",
+      "civilTwilightBegin": "2026-09-19T06:51:48-04:00",
+      "civilTwilightEnd": "2026-09-19T19:50:31-04:00",
+      "nauticalTwilightBegin": "2026-09-19T06:24:52-04:00",
+      "nauticalTwilightEnd": "2026-09-19T20:17:27-04:00",
+      "astronomicalTwilightBegin": "2026-09-19T05:57:44-04:00",
+      "astronomicalTwilightEnd": "2026-09-19T20:44:36-04:00"
+    },
+    "nwr": {
+      "transmitter": "WXK83",
+      "sameCode": "012071",
+      "areaBroadcast": "https://api.weather.gov/radio/WXK83/broadcast",
+      "pointBroadcast": "https://api.weather.gov/points/26.3812,-81.8691/radio"
+    }
+  }
+}

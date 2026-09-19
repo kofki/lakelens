@@ -1,0 +1,15 @@
+# Supabase CLI config for LakeLens.
+# Only the sections we deviate from the CLI defaults are listed; everything else uses defaults.
+# Safe to commit: no secrets live here.
+
+# Local project name used by the CLI (not the hosted project ref; that is set with `supabase link`).
+project_id = "lakelens"
+
+[functions.submit-report]
+# The browser calls this function with the sb_publishable_ key in the `apikey` header.
+# New-format publishable keys are NOT JWTs, so the platform-level JWT gate must be off;
+# the function itself validates the key via withSupabase({ auth: "publishable" }).
+# Deploy honours this file: `npx supabase functions deploy submit-report --use-api`
+# (MCP deploy_edge_function must be called with verify_jwt: false to match).
+verify_jwt = false
+enabled = true

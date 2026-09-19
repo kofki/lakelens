@@ -1,0 +1,112 @@
+{
+  "@context": [
+    "https://geojson.org/geojson-ld/geojson-context.jsonld",
+    {
+      "@version": "1.1",
+      "wx": "https://api.weather.gov/ontology#",
+      "s": "https://schema.org/",
+      "geo": "http://www.opengis.net/ont/geosparql#",
+      "unit": "http://codes.wmo.int/common/unit/",
+      "@vocab": "https://api.weather.gov/ontology#",
+      "geometry": {
+        "@id": "s:GeoCoordinates",
+        "@type": "geo:wktLiteral"
+      },
+      "city": "s:addressLocality",
+      "state": "s:addressRegion",
+      "distance": {
+        "@id": "s:Distance",
+        "@type": "s:QuantitativeValue"
+      },
+      "bearing": {
+        "@type": "s:QuantitativeValue"
+      },
+      "value": {
+        "@id": "s:value"
+      },
+      "unitCode": {
+        "@id": "s:unitCode",
+        "@type": "@id"
+      },
+      "forecastOffice": {
+        "@type": "@id"
+      },
+      "forecastGridData": {
+        "@type": "@id"
+      },
+      "publicZone": {
+        "@type": "@id"
+      },
+      "county": {
+        "@type": "@id"
+      }
+    }
+  ],
+  "id": "https://api.weather.gov/points/29.8369,-81.9501",
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      -81.9501,
+      29.8369
+    ]
+  },
+  "properties": {
+    "@id": "https://api.weather.gov/points/29.8369,-81.9501",
+    "@type": "wx:Point",
+    "cwa": "JAX",
+    "type": "land",
+    "forecastOffice": "https://api.weather.gov/offices/JAX",
+    "gridId": "JAX",
+    "gridX": 57,
+    "gridY": 42,
+    "forecast": "https://api.weather.gov/gridpoints/JAX/57,42/forecast",
+    "forecastHourly": "https://api.weather.gov/gridpoints/JAX/57,42/forecast/hourly",
+    "forecastGridData": "https://api.weather.gov/gridpoints/JAX/57,42",
+    "observationStations": "https://api.weather.gov/gridpoints/JAX/57,42/stations",
+    "relativeLocation": {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.0356145,
+          29.78294
+        ]
+      },
+      "properties": {
+        "city": "Keystone Heights",
+        "state": "FL",
+        "distance": {
+          "unitCode": "wmoUnit:m",
+          "value": 8762.916998413
+        },
+        "bearing": {
+          "unitCode": "wmoUnit:degree_(angle)",
+          "value": 53
+        }
+      }
+    },
+    "forecastZone": "https://api.weather.gov/zones/forecast/FLZ232",
+    "county": "https://api.weather.gov/zones/county/FLC019",
+    "fireWeatherZone": "https://api.weather.gov/zones/fire/FLZ232",
+    "timeZone": "America/New_York",
+    "radarStation": "KJAX",
+    "astronomicalData": {
+      "sunrise": "2026-09-19T07:14:39-04:00",
+      "sunset": "2026-09-19T19:28:19-04:00",
+      "transit": "2026-09-19T13:21:29-04:00",
+      "civilTwilightBegin": "2026-09-19T06:50:51-04:00",
+      "civilTwilightEnd": "2026-09-19T19:52:07-04:00",
+      "nauticalTwilightBegin": "2026-09-19T06:22:59-04:00",
+      "nauticalTwilightEnd": "2026-09-19T20:19:59-04:00",
+      "astronomicalTwilightBegin": "2026-09-19T05:54:51-04:00",
+      "astronomicalTwilightEnd": "2026-09-19T20:48:07-04:00"
+    },
+    "nwr": {
+      "transmitter": "WNG522",
+      "sameCode": "012019",
+      "areaBroadcast": "https://api.weather.gov/radio/WNG522/broadcast",
+      "pointBroadcast": "https://api.weather.gov/points/29.8369,-81.9501/radio"
+    }
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "@context": [
+    "https://geojson.org/geojson-ld/geojson-context.jsonld",
+    {
+      "@version": "1.1",
+      "wx": "https://api.weather.gov/ontology#",
+      "s": "https://schema.org/",
+      "geo": "http://www.opengis.net/ont/geosparql#",
+      "unit": "http://codes.wmo.int/common/unit/",
+      "@vocab": "https://api.weather.gov/ontology#",
+      "geometry": {
+        "@id": "s:GeoCoordinates",
+        "@type": "geo:wktLiteral"
+      },
+      "city": "s:addressLocality",
+      "state": "s:addressRegion",
+      "distance": {
+        "@id": "s:Distance",
+        "@type": "s:QuantitativeValue"
+      },
+      "bearing": {
+        "@type": "s:QuantitativeValue"
+      },
+      "value": {
+        "@id": "s:value"
+      },
+      "unitCode": {
+        "@id": "s:unitCode",
+        "@type": "@id"
+      },
+      "forecastOffice": {
+        "@type": "@id"
+      },
+      "forecastGridData": {
+        "@type": "@id"
+      },
+      "publicZone": {
+        "@type": "@id"
+      },
+      "county": {
+        "@type": "@id"
+      }
+    }
+  ],
+  "id": "https://api.weather.gov/points/30.3676,-86.2903",
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      -86.2903,
+      30.3676
+    ]
+  },
+  "properties": {
+    "@id": "https://api.weather.gov/points/30.3676,-86.2903",
+    "@type": "wx:Point",
+    "cwa": "TAE",
+    "type": "land",
+    "forecastOffice": "https://api.weather.gov/offices/TAE",
+    "gridId": "TAE",
+    "gridX": 8,
+    "gridY": 78,
+    "forecast": "https://api.weather.gov/gridpoints/TAE/8,78/forecast",
+    "forecastHourly": "https://api.weather.gov/gridpoints/TAE/8,78/forecast/hourly",
+    "forecastGridData": "https://api.weather.gov/gridpoints/TAE/8,78",
+    "observationStations": "https://api.weather.gov/gridpoints/TAE/8,78/stations",
+    "relativeLocation": {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.3436306,
+          30.3848811
+        ]
+      },
+      "properties": {
+        "city": "Miramar Beach",
+        "state": "FL",
+        "distance": {
+          "unitCode": "wmoUnit:m",
+          "value": 1710.2104401083
+        },
+        "bearing": {
+          "unitCode": "wmoUnit:degree_(angle)",
+          "value": 110
+        }
+      }
+    },
+    "forecastZone": "https://api.weather.gov/zones/forecast/FLZ108",
+    "county": "https://api.weather.gov/zones/county/FLC131",
+    "fireWeatherZone": "https://api.weather.gov/zones/fire/FLZ108",
+    "timeZone": "America/Chicago",
+    "radarStation": "KEVX",
+    "astronomicalData": {
+      "sunrise": "2026-09-19T06:31:56-05:00",
+      "sunset": "2026-09-19T18:45:45-05:00",
+      "transit": "2026-09-19T12:38:51-05:00",
+      "civilTwilightBegin": "2026-09-19T06:08:00-05:00",
+      "civilTwilightEnd": "2026-09-19T19:09:41-05:00",
+      "nauticalTwilightBegin": "2026-09-19T05:39:59-05:00",
+      "nauticalTwilightEnd": "2026-09-19T19:37:42-05:00",
+      "astronomicalTwilightBegin": "2026-09-19T05:11:41-05:00",
+      "astronomicalTwilightEnd": "2026-09-19T20:06:00-05:00"
+    },
+    "nwr": {
+      "transmitter": "KGG67",
+      "sameCode": "012131",
+      "areaBroadcast": "https://api.weather.gov/radio/KGG67/broadcast",
+      "pointBroadcast": "https://api.weather.gov/points/30.3676,-86.2903/radio"
+    }
+  }
+}

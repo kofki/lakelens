@@ -1,0 +1,13 @@
+{
+  "_note": "Demo-state crowd reports. Seeded with is_sample = true and created_at = now() - minutes_ago at seed time, so the UI must label them 'Sample data'. Re-run the seed before a demo to refresh timestamps. Ichetucknee: three 'turned away' within 30 min => confirmed full + lot full. Rainbow: one 'line at gate'. Blue Spring: one 'got in'. Ginnie: one 'crowded'. Wekiwa: one 'turned away'.",
+  "reports": [
+    { "park_slug": "ichetucknee-springs-state-park", "category": "entry", "value": "turned_away", "note": "North entrance gate closed, ranger said try after 2 pm.", "minutes_ago": 5 },
+    { "park_slug": "ichetucknee-springs-state-park", "category": "entry", "value": "turned_away", "note": "Turned around at the gate, both lots full.", "minutes_ago": 12 },
+    { "park_slug": "ichetucknee-springs-state-park", "category": "entry", "value": "turned_away", "note": null, "minutes_ago": 20 },
+    { "park_slug": "ichetucknee-springs-state-park", "category": "parking", "value": "lot_full", "note": "South entrance lot full, no roadside waiting allowed.", "minutes_ago": 9 },
+    { "park_slug": "rainbow-springs-state-park", "category": "entry", "value": "line", "note": "About 20 cars in line at the headsprings entrance.", "minutes_ago": 30 },
+    { "park_slug": "blue-spring-state-park", "category": "entry", "value": "got_in", "note": "Got in with a reservation, no wait.", "minutes_ago": 15 },
+    { "park_slug": "ginnie-springs", "category": "conditions", "value": "crowded", "note": "Main spring is packed, Devil's Ear quieter.", "minutes_ago": 40 },
+    { "park_slug": "wekiwa-springs-state-park", "category": "entry", "value": "turned_away", "note": "Day-use reservations sold out for today.", "minutes_ago": 8 }
+  ]
+}

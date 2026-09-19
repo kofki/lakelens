@@ -1,0 +1,112 @@
+{
+  "@context": [
+    "https://geojson.org/geojson-ld/geojson-context.jsonld",
+    {
+      "@version": "1.1",
+      "wx": "https://api.weather.gov/ontology#",
+      "s": "https://schema.org/",
+      "geo": "http://www.opengis.net/ont/geosparql#",
+      "unit": "http://codes.wmo.int/common/unit/",
+      "@vocab": "https://api.weather.gov/ontology#",
+      "geometry": {
+        "@id": "s:GeoCoordinates",
+        "@type": "geo:wktLiteral"
+      },
+      "city": "s:addressLocality",
+      "state": "s:addressRegion",
+      "distance": {
+        "@id": "s:Distance",
+        "@type": "s:QuantitativeValue"
+      },
+      "bearing": {
+        "@type": "s:QuantitativeValue"
+      },
+      "value": {
+        "@id": "s:value"
+      },
+      "unitCode": {
+        "@id": "s:unitCode",
+        "@type": "@id"
+      },
+      "forecastOffice": {
+        "@type": "@id"
+      },
+      "forecastGridData": {
+        "@type": "@id"
+      },
+      "publicZone": {
+        "@type": "@id"
+      },
+      "county": {
+        "@type": "@id"
+      }
+    }
+  ],
+  "id": "https://api.weather.gov/points/29.4377,-81.1108",
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      -81.1108,
+      29.4377
+    ]
+  },
+  "properties": {
+    "@id": "https://api.weather.gov/points/29.4377,-81.1108",
+    "@type": "wx:Point",
+    "cwa": "JAX",
+    "type": "land",
+    "forecastOffice": "https://api.weather.gov/offices/JAX",
+    "gridId": "JAX",
+    "gridX": 90,
+    "gridY": 28,
+    "forecast": "https://api.weather.gov/gridpoints/JAX/90,28/forecast",
+    "forecastHourly": "https://api.weather.gov/gridpoints/JAX/90,28/forecast/hourly",
+    "forecastGridData": "https://api.weather.gov/gridpoints/JAX/90,28",
+    "observationStations": "https://api.weather.gov/gridpoints/JAX/90,28/stations",
+    "relativeLocation": {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.13102,
+          29.4738517
+        ]
+      },
+      "properties": {
+        "city": "Flagler Beach",
+        "state": "FL",
+        "distance": {
+          "unitCode": "wmoUnit:m",
+          "value": 0
+        },
+        "bearing": {
+          "unitCode": "wmoUnit:degree_(angle)",
+          "value": 0
+        }
+      }
+    },
+    "forecastZone": "https://api.weather.gov/zones/forecast/FLZ138",
+    "county": "https://api.weather.gov/zones/county/FLC035",
+    "fireWeatherZone": "https://api.weather.gov/zones/fire/FLZ138",
+    "timeZone": "America/New_York",
+    "radarStation": "KJAX",
+    "astronomicalData": {
+      "sunrise": "2026-09-19T07:11:21-04:00",
+      "sunset": "2026-09-19T19:24:54-04:00",
+      "transit": "2026-09-19T13:18:08-04:00",
+      "civilTwilightBegin": "2026-09-19T06:47:39-04:00",
+      "civilTwilightEnd": "2026-09-19T19:48:37-04:00",
+      "nauticalTwilightBegin": "2026-09-19T06:19:54-04:00",
+      "nauticalTwilightEnd": "2026-09-19T20:16:22-04:00",
+      "astronomicalTwilightBegin": "2026-09-19T05:51:53-04:00",
+      "astronomicalTwilightEnd": "2026-09-19T20:44:22-04:00"
+    },
+    "nwr": {
+      "transmitter": "KIH26",
+      "sameCode": "012035",
+      "areaBroadcast": "https://api.weather.gov/radio/KIH26/broadcast",
+      "pointBroadcast": "https://api.weather.gov/points/29.4377,-81.1108/radio"
+    }
+  }
+}

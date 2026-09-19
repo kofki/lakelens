@@ -1,0 +1,110 @@
+{
+  "@context": [
+    "https://geojson.org/geojson-ld/geojson-context.jsonld",
+    {
+      "@version": "1.1",
+      "wx": "https://api.weather.gov/ontology#",
+      "s": "https://schema.org/",
+      "geo": "http://www.opengis.net/ont/geosparql#",
+      "unit": "http://codes.wmo.int/common/unit/",
+      "@vocab": "https://api.weather.gov/ontology#",
+      "geometry": {
+        "@id": "s:GeoCoordinates",
+        "@type": "geo:wktLiteral"
+      },
+      "city": "s:addressLocality",
+      "state": "s:addressRegion",
+      "distance": {
+        "@id": "s:Distance",
+        "@type": "s:QuantitativeValue"
+      },
+      "bearing": {
+        "@type": "s:QuantitativeValue"
+      },
+      "value": {
+        "@id": "s:value"
+      },
+      "unitCode": {
+        "@id": "s:unitCode",
+        "@type": "@id"
+      },
+      "forecastOffice": {
+        "@type": "@id"
+      },
+      "forecastGridData": {
+        "@type": "@id"
+      },
+      "publicZone": {
+        "@type": "@id"
+      },
+      "county": {
+        "@type": "@id"
+      }
+    }
+  ],
+  "id": "https://api.weather.gov/points/27.1242,-80.1302",
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      -80.1302,
+      27.1242
+    ]
+  },
+  "properties": {
+    "@id": "https://api.weather.gov/points/27.1242,-80.1302",
+    "@type": "wx:Point",
+    "cwa": "MLB",
+    "type": "marine",
+    "forecastOffice": "https://api.weather.gov/offices/MLB",
+    "gridId": "MLB",
+    "gridX": 81,
+    "gridY": 12,
+    "forecast": "https://api.weather.gov/gridpoints/MLB/81,12/forecast",
+    "forecastHourly": "https://api.weather.gov/gridpoints/MLB/81,12/forecast/hourly",
+    "forecastGridData": "https://api.weather.gov/gridpoints/MLB/81,12",
+    "observationStations": "https://api.weather.gov/gridpoints/MLB/81,12/stations",
+    "relativeLocation": {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.1018876,
+          27.0269447
+        ]
+      },
+      "properties": {
+        "city": "Jupiter Island",
+        "state": "FL",
+        "distance": {
+          "unitCode": "wmoUnit:m",
+          "value": 2815.0708991424
+        },
+        "bearing": {
+          "unitCode": "wmoUnit:degree_(angle)",
+          "value": 345
+        }
+      }
+    },
+    "forecastZone": "https://api.weather.gov/zones/forecast/AMZ555",
+    "timeZone": "America/New_York",
+    "radarStation": "KMLB",
+    "astronomicalData": {
+      "sunrise": "2026-09-19T07:07:47-04:00",
+      "sunset": "2026-09-19T19:20:38-04:00",
+      "transit": "2026-09-19T13:14:12-04:00",
+      "civilTwilightBegin": "2026-09-19T06:44:35-04:00",
+      "civilTwilightEnd": "2026-09-19T19:43:50-04:00",
+      "nauticalTwilightBegin": "2026-09-19T06:17:28-04:00",
+      "nauticalTwilightEnd": "2026-09-19T20:10:57-04:00",
+      "astronomicalTwilightBegin": "2026-09-19T05:50:08-04:00",
+      "astronomicalTwilightEnd": "2026-09-19T20:38:17-04:00"
+    },
+    "nwr": {
+      "transmitter": null,
+      "sameCode": null,
+      "areaBroadcast": null,
+      "pointBroadcast": "https://api.weather.gov/points/27.1242,-80.1302/radio"
+    }
+  }
+}
