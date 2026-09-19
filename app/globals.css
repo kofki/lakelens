@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+/*
+ * LakeLens design tokens — BeachLens family palette.
+ * Each --color-* becomes bg-*/text-*/border-* utilities (Tailwind v4 @theme).
+ * Light orange (peach) and teal (lagoon) FAIL contrast as text on white:
+ * use them only as fills behind cocoa text/icons.
+ */
+@theme {
+  --color-cream: #fef8f1;
+  --color-sunset: #fe8b00;
+  --color-peach: #feca8a;
+  --color-lagoon: #17e0ee;
+  --color-aqua: #cbeaed;
+  --color-cocoa: #3d2518;
+  --color-mocha: #966e59;
+  --color-taupe: #cab3a5;
+  --color-sand: #ceaa94;
+  --color-mist: #e1d7ce;
+
+  /* Status colours: all pass 3:1 against white (WCAG 1.4.11) and pair with icon + text. */
+  --color-status-open: #2e7d32;
+  --color-status-likely: #c25e00;
+  --color-status-full: #c62828;
+  --color-status-closed: #3d2518;
+  --color-status-unknown: #6d5546;
+
+  --radius-card: 1rem;
+  --shadow-card: 0 4px 16px rgb(61 37 24 / 0.08);
+  --shadow-sheet: 0 -8px 24px rgb(61 37 24 / 0.12);
+}
+
+@theme inline {
+  --font-sans: var(--font-nunito), ui-rounded, system-ui, sans-serif;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-cocoa);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-sunset);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

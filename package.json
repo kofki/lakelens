@@ -1,0 +1,45 @@
+{
+  "name": "lakelens",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "db:types": "supabase gen types typescript --project-id $SUPABASE_PROJECT_REF --schema public > lib/database.types.ts",
+    "seed:build": "node --experimental-strip-types scripts/build-seed.ts",
+    "fn:deploy": "supabase functions deploy submit-report --use-api"
+  },
+  "dependencies": {
+    "@supabase/ssr": "^0.12.7",
+    "@supabase/supabase-js": "^2.116.0",
+    "@vis.gl/react-maplibre": "^8.1.3",
+    "lucide-react": "^1.47.0",
+    "maplibre-gl": "^5.24.0",
+    "next": "16.3.5",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "vaul": "^1.1.2",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^24.13.6",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.5",
+    "supabase": "^2.117.0",
+    "tailwindcss": "^4",
+    "typescript": "^5",
+    "vite": "^8.3.0",
+    "vite-tsconfig-paths": "^6.1.1",
+    "vitest": "^5.0.1"
+  },
+  "engines": {
+    "node": "24.x"
+  }
+}

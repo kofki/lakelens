@@ -1,0 +1,389 @@
+/**
+ * FROZEN SHARED CONTRACT for LakeLens.
+ * Every work package builds against these types. Only the INFRA owner edits this file.
+ * Keep it free of React / Next / map imports so pure lib code and vitest can use it.
+ *
+ * Column names mirror the Postgres schema (snake_case) so rows can be passed through
+ * from Supabase without mapping. Generated `lib/database.types.ts` is the source of
+ * truth for DB shapes once created; these interfaces are the app-level view.
+ */
+
+// ---------- enums (mirrored as CHECK constraints in SQL) ----------
+export type StatusLevel = "open" | "likely_full" | "full" | "closed" | "unknown";
+export type CoverageTier = "basic" | "deep";
+export type ParkType = "spring" | "lake" | "river" | "beach";
+export type Operator = "state" | "county" | "private";
+export type Guarded = "yes" | "no" | "unknown";
+export type WaterAccess = "yes" | "limited" | "no" | "unknown";
+export type EntryType = "ramp" | "stairs" | "dock_ladder" | "sloped_bank" | "sand" | "other" | "unknown";
+export type Surface = "paved" | "boardwalk" | "sand" | "natural" | "unknown";
+export type AlertKind = "closure" | "notice" | "nws";
+export type ConditionsSource = "usgs" | "nws" | "open-meteo";
+export type ReportCategory = "entry" | "conditions" | "parking" | "accessibility";
+
+export const REPORT_VALUES = {
+  entry: ["got_in", "turned_away", "line"],
+  conditions: ["crowded", "water_high", "water_murky", "gator", "launch_closed"],
+  parking: ["lot_full", "overflow_open"],
+  accessibility: ["ramp_blocked", "wheelchair_available", "restroom_closed"],
+} as const satisfies Record<ReportCategory, readonly string[]>;
+
+export type ReportValue = (typeof REPORT_VALUES)[ReportCategory][number];
+
+/** Plain-language labels for one-tap report buttons and report cards. */
+export const REPORT_VALUE_LABELS: Record<ReportValue, string> = {
+  got_in: "Got in",
+  turned_away: "Turned away",
+  line: "Line at gate",
+  crowded: "Crowded",
+  water_high: "Water high",
+  water_murky: "Water murky",
+  gator: "Gator sighting",
+  launch_closed: "Launch closed",
+  lot_full: "Lot full",
+  overflow_open: "Overflow lot open",
+  ramp_blocked: "Ramp blocked",
+  wheelchair_available: "Wheelchair available",
+  restroom_closed: "Accessible restroom closed",
+};
+
+export const REPORT_CATEGORY_LABELS: Record<ReportCategory, string> = {
+  entry: "Entry",
+  conditions: "Conditions",
+  parking: "Parking",
+  accessibility: "Accessibility",
+};
+
+// ---------- database rows ----------
+export interface ParkRules {
+  alcohol?: string;
+  tubing?: string;
+  pets?: string;
+  life_jackets?: string;
+  other?: string[];
+}
+
+export interface SwimSeason {
+  /** "MM-DD" inclusive open date, e.g. "04-01" */
+  open: string;
+  /** "MM-DD" inclusive close date, e.g. "11-14" */
+  close: string;
+  note?: string;
+}
+
+export interface NwsGrid {
+  gridId: string;
+  gridX: number;
+  gridY: number;
+  forecast: string;
+  forecastHourly: string;
+}
+
+export interface Park {
+  id: string;
+  slug: string;
+  name: string;
+  type: ParkType;
+  operator: Operator;
+  lat: number;
+  lng: number;
+  coverage_tier: CoverageTier;
+  swimming_verified: boolean;
+  guarded: Guarded;
+  hours: string | null;
+  fees: string | null;
+  reservation_required: boolean;
+  reservation_url: string | null;
+  rules: ParkRules;
+  usgs_site_id: string | null;
+  river_gauge_site_id: string | null;
+  gauge_distance_km: number | null;
+  nws_grid: NwsGrid | null;
+  nws_zone: string | null;
+  nws_county: string | null;
+  /** "HH:MM" local time the park typically fills on weekends/holidays, or null */
+  typical_closure_time: string | null;
+  cavern_warning: boolean;
+  safety_notes: string | null;
+  official_url: string | null;
+  photo_url: string | null;
+  entrance_notes: string | null;
+  swim_season: SwimSeason | null;
+  description: string | null;
+  updated_at: string;
+}
+
+export interface Accessibility {
+  park_id: string;
+  water_access: WaterAccess;
+  entry_type: EntryType;
+  ada_parking: boolean | null;
+  parking_to_water_m: number | null;
+  accessible_restroom: boolean | null;
+  surface: Surface;
+  wheelchair_loaner: boolean | null;
+  handrails: boolean | null;
+  shade: boolean | null;
+  depth_at_entry_note: string | null;
+  service_animals_note: string | null;
+  verified: boolean;
+  source: string | null;
+  updated_at: string;
+}
+
+export interface ParkingLot {
+  id: string;
+  park_id: string;
+  name: string;
+  lat: number;
+  lng: number;
+  fee: string | null;
+  capacity: number | null;
+  ada_spaces: number | null;
+  is_overflow: boolean;
+  source: "osm" | "curated";
+  notes: string | null;
+}
+
+export interface ParkAlert {
+  id: string;
+  park_id: string;
+  kind: AlertKind;
+  text: string;
+  /** "manual", "nws", ... */
+  source: string;
+  official_url: string | null;
+  severity: string | null;
+  starts_at: string | null;
+  ends_at: string | null;
+  hash: string;
+  first_seen: string;
+  last_seen: string;
+  active: boolean;
+  last_checked_at: string | null;
+}
+
+export interface ConditionsSnapshot<P = unknown> {
+  id: string;
+  park_id: string;
+  source: ConditionsSource;
+  payload: P;
+  fetched_at: string;
+}
+
+export interface Report {
+  id: string;
+  park_id: string;
+  category: ReportCategory;
+  value: ReportValue;
+  note: string | null;
+  photo_url: string | null;
+  device_id: string;
+  is_sample: boolean;
+  created_at: string;
+}
+
+export interface ReportConfirmation {
+  id: string;
+  report_id: string;
+  device_id: string;
+  response: "still_true" | "no_longer";
+  created_at: string;
+}
+
+export interface Holiday {
+  date: string; // YYYY-MM-DD (observed date)
+  name: string;
+}
+
+export interface LongWeekend {
+  start_date: string; // YYYY-MM-DD
+  end_date: string; // YYYY-MM-DD
+}
+
+export interface CalendarEvent {
+  start: string; // YYYY-MM-DD
+  end: string; // YYYY-MM-DD inclusive
+  name: string;
+  /** crowd weight added to the prediction score, default 1 */
+  weight?: number;
+}
+
+// ---------- ingest payloads (stored in conditions_snapshots.payload) ----------
+export type UsgsParameter = "00060" | "00065" | "00010" | "63160";
+
+export interface UsgsReading {
+  site: string; // "02322700"
+  parameter: UsgsParameter;
+  value: number;
+  unit: string; // "ft3/s" | "ft" | "degC"
+  time: string; // ISO UTC
+  stale: boolean; // older than 6 h at fetch time
+  provisional: boolean;
+}
+
+export interface UsgsPayload {
+  source: "usgs-ogc" | "usgs-legacy";
+  fetchedAt: string;
+  readings: UsgsReading[];
+  /** "high" when discharge is well above a typical baseline; see lib/ingest/usgs.ts */
+  flowFlag: "normal" | "high" | "unknown";
+  flowNote: string | null;
+}
+
+export interface WeatherHour {
+  time: string; // ISO local with offset
+  tempF: number | null;
+  rainProb: number | null;
+  shortForecast: string;
+}
+
+export interface WeatherDay {
+  date: string; // YYYY-MM-DD
+  name: string; // "Sat"
+  highF: number | null;
+  lowF: number | null;
+  rainProb: number | null;
+  shortForecast: string;
+  icon: string | null;
+}
+
+export interface WeatherPayload {
+  provider: "nws" | "open-meteo";
+  fetchedAt: string;
+  current: {
+    tempF: number | null;
+    shortForecast: string;
+    windMph: number | null;
+    humidity: number | null;
+    icon: string | null;
+  };
+  today: {
+    highF: number | null;
+    lowF: number | null;
+    rainProbMax: number | null;
+  };
+  hourly: WeatherHour[];
+  daily: WeatherDay[];
+}
+
+// ---------- derived / computed ----------
+export interface DayContext {
+  date: string; // YYYY-MM-DD local
+  isWeekend: boolean;
+  isHoliday: boolean;
+  holidayName: string | null;
+  isHolidayWeekend: boolean;
+  events: string[];
+  eventWeight: number;
+}
+
+export type PredictionLevel = "none" | "possible" | "likely" | "closed";
+
+export interface Prediction {
+  level: PredictionLevel;
+  /** ISO timestamp of the predicted fill time, or null if no closure expected */
+  predictedTime: string | null;
+  /** Human label, e.g. "around 10:15 AM" */
+  predictedTimeLabel: string | null;
+  confidence: "low" | "medium" | "high";
+  score: number;
+  reasons: string[];
+  isEstimate: true;
+}
+
+export type ReportSignal = "none" | "reported" | "confirmed";
+
+export interface ReportSummary {
+  signal: ReportSignal;
+  category: ReportCategory | null;
+  value: ReportValue | null;
+  /** matching reports inside the 2 h window */
+  count: number;
+  /** "still_true" confirmations on those reports */
+  confirmations: number;
+  freshestAt: string | null;
+  /** a contradicting report (e.g. got_in after turned_away) exists */
+  contradicted: boolean;
+  confidence: "low" | "medium" | "high";
+  /** what this signal implies for the park status, if anything */
+  impliesLevel: StatusLevel | null;
+  /** number of sample (seeded) reports included, for labelling */
+  sampleCount: number;
+}
+
+export type StatusSource =
+  | "alert"
+  | "seasonal"
+  | "confirmed_reports"
+  | "report_prediction"
+  | "prediction"
+  | "unknown";
+
+export interface ParkStatus {
+  level: StatusLevel;
+  source: StatusSource;
+  confidence: "low" | "medium" | "high";
+  /** plain-language evidence shown in the UI, in priority order */
+  reasons: string[];
+  updatedAt: string | null;
+  isEstimate: boolean;
+  predictedTime: string | null;
+}
+
+export interface Filters {
+  accessibleEntry: boolean;
+  guardedOnly: boolean;
+  deepOnly: boolean;
+}
+
+export const DEFAULT_FILTERS: Filters = { accessibleEntry: false, guardedOnly: false, deepOnly: false };
+
+export interface ParkWithStatus {
+  park: Park;
+  status: ParkStatus;
+  prediction: Prediction | null;
+  accessibility: Accessibility | null;
+  usgs: UsgsPayload | null;
+  usgsFetchedAt: string | null;
+  weather: WeatherPayload | null;
+  weatherFetchedAt: string | null;
+  alerts: ParkAlert[];
+  reportSummary: ReportSummary;
+  distanceKm: number | null;
+}
+
+export interface ParkBundle extends ParkWithStatus {
+  parkingLots: ParkingLot[];
+  reports: Report[];
+  confirmations: ReportConfirmation[];
+  backups: BackupSuggestion[];
+}
+
+export interface BackupSuggestion {
+  park: Park;
+  status: ParkStatus;
+  accessibility: Accessibility | null;
+  distanceKm: number;
+  driveMinutes: number;
+  parkingSummary: string | null;
+}
+
+// ---------- API payloads ----------
+export interface SubmitReportInput {
+  park_id: string;
+  category: ReportCategory;
+  value: ReportValue;
+  note?: string | null;
+  photo_url?: string | null;
+  device_id: string;
+}
+
+export interface ConfirmReportInput {
+  type: "confirmation";
+  report_id: string;
+  device_id: string;
+  response: "still_true" | "no_longer";
+}
+
+export type CronJob = "usgs" | "weather" | "alerts" | "holidays" | "prune";
