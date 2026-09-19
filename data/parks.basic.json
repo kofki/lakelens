@@ -16,7 +16,7 @@
     "note": "Basic tier: swimming listed by Florida State Parks. Parks with `enriched_at` have hours/fees/rules/safety/description verified against their official floridastateparks.org pages on that date (browser capture); rules.alcohol cites F.A.C. 62D-2.014 (statewide) and rules.pets 'not in swim area' is the statewide pet policy unless the park page says so. Others still carry system-default hours and unverified fees/rules.",
     "nws_points_resolved_at": "2026-09-19T05:54:38.896Z",
     "nws_points_source": "https://api.weather.gov/points/{lat},{lng}",
-    "enrichment_updated_at": "2026-09-19T21:37:28.982Z"
+    "enrichment_updated_at": "2026-09-19T21:45:04.144Z"
   },
   "parks": [
     {
@@ -56,7 +56,7 @@
       "cavern_warning": false,
       "safety_notes": "Swimming is in Lake Hall, a natural lake, so expect limited visibility and a natural bottom. Boats with gas motors are not allowed on the lake, but paddlers share the water with swimmers.",
       "official_url": "https://www.floridastateparks.org/MaclayGardens",
-      "photo_url": null,
+      "photo_url": "/photos/basic/alfred-b-maclay-gardens-state-park.jpg",
       "entrance_notes": "3540 Thomasville Road, Tallahassee FL 32309 (850-487-4556), on US 319 north of I-10. No day-use reservations. Pets, food and drink are not permitted inside the formal gardens. Coordinates are the park centroid, not the swim area.",
       "swim_season": null,
       "description": "Best known for its historic ornamental gardens, this Tallahassee park also has Lake Hall, where you can swim, fish and paddle from a lakeshore picnic area with pavilions and grills. Two short nature trails overlook the lake.",
@@ -67,7 +67,8 @@
         "https://api.weather.gov/points/30.5286,-84.2602 (NWS forecast grid, zone and county)",
         "https://www.floridastateparks.org/parks-and-trails/alfred-b-maclay-gardens-state-park (browser, 2026-09-19)",
         "https://www.floridastateparks.org/parks-and-trails/alfred-b-maclay-gardens-state-park/hours-fees",
-        "https://www.flrules.org/gateway/ruleno.asp?id=62D-2.014 (alcohol prohibited in state parks)"
+        "https://www.flrules.org/gateway/ruleno.asp?id=62D-2.014 (alcohol prohibited in state parks)",
+        "https://commons.wikimedia.org/wiki/File:07-09-30_LkHall2.JPG (photo)"
       ],
       "enriched_at": "2026-09-19"
     },
@@ -80,12 +81,19 @@
       "lng": -81.27907,
       "coverage_tier": "basic",
       "swimming_verified": true,
-      "guarded": "unknown",
-      "hours": "8 a.m. to sundown, 365 days",
-      "fees": null,
+      "guarded": "yes",
+      "hours": "8 a.m. to sundown, 365 days a year. Lifeguard at the designated swim area Memorial Day through Labor Day.",
+      "fees": "$8 per vehicle (up to 8 people); $4 single-occupant vehicle; $2 pedestrians, bicyclists and extra passengers.",
       "reservation_required": false,
       "reservation_url": null,
-      "rules": {},
+      "rules": {
+        "alcohol": "Prohibited in the park, except that registered campers may drink within their own campsite.",
+        "pets": "Pets are prohibited on the beach; elsewhere they follow the Florida State Parks pet policy (6-foot leash).",
+        "other": [
+          "Motor vehicles are not allowed on the beach; bikes and pedestrians are.",
+          "Do not enter the sand dunes."
+        ]
+      },
       "usgs_site_id": null,
       "river_gauge_site_id": null,
       "gauge_distance_km": null,
@@ -100,18 +108,23 @@
       "nws_county": "FLC109",
       "typical_closure_time": null,
       "cavern_warning": false,
-      "safety_notes": null,
+      "safety_notes": "A lifeguard watches the designated swimming area (at the beach access ramp behind the Island Beach Shop and Grill) from Memorial Day through Labor Day only; the rest of the four-mile beach is unguarded year-round. Ocean swimming carries rip-current risk - heed posted warnings. Stay off the dunes.",
       "official_url": "https://www.floridastateparks.org/anastasia",
-      "photo_url": null,
-      "entrance_notes": "Coordinates are the park centroid, not the swim area. Address: 300 Anastasia Park Road St. Augustine, FL 32080.",
+      "photo_url": "/photos/basic/anastasia-state-park.jpg",
+      "entrance_notes": "300 Anastasia Park Road, St. Augustine FL 32080 (904-461-2033), off A1A on Anastasia Island. No day-use reservations. About 350 parking spaces; on busy weekends and holidays the lots fill, but space usually opens again an hour or two later. Overnight parking not permitted. Coordinates are the park centroid, not the swim area.",
       "swim_season": null,
-      "description": null,
+      "description": "Four miles of wide Atlantic beach next to St. Augustine, with a seasonally lifeguarded swim area, beach boardwalks and Mobi-Mats, a beach shop and grill, watersports rentals on Salt Run and a large campground in the maritime hammock.",
       "sources": [
         "https://www.floridastateparks.org/parks-and-trails?parks%5B0%5D=experiences%3A262 (Swimming experience filter, captured with a browser 2026-09-19)",
         "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/PARKS_BOUNDARIES/MapServer/0 (park boundary centroid, St. Johns County)",
         "https://www.floridastateparks.org/anastasia",
-        "https://api.weather.gov/points/29.8856,-81.2791 (NWS forecast grid, zone and county)"
-      ]
+        "https://api.weather.gov/points/29.8856,-81.2791 (NWS forecast grid, zone and county)",
+        "https://www.floridastateparks.org/parks-and-trails/anastasia-state-park (browser, 2026-09-19)",
+        "https://www.floridastateparks.org/parks-and-trails/anastasia-state-park/hours-fees",
+        "https://www.floridastateparks.org/parks-and-trails/anastasia-state-park/experiences-amenities",
+        "https://commons.wikimedia.org/wiki/File:A1A_Scenic_and_Historic_Coastal_Byway_-_Greetings_from_Anastasia_State_Park_-_NARA_-_7716676.jpg (photo)"
+      ],
+      "enriched_at": "2026-09-19"
     },
     {
       "slug": "anclote-key-preserve-state-park",
@@ -144,7 +157,7 @@
       "cavern_warning": false,
       "safety_notes": null,
       "official_url": "https://www.floridastateparks.org/Anclote-Key",
-      "photo_url": null,
+      "photo_url": "/photos/basic/anclote-key-preserve-state-park.jpg",
       "entrance_notes": "Coordinates are the park centroid, not the swim area. Address: Offshore Tarpon Springs, FL 34689. Reachable only by boat or ferry — check the official page for access.",
       "swim_season": null,
       "description": null,
@@ -152,7 +165,8 @@
         "https://www.floridastateparks.org/parks-and-trails?parks%5B0%5D=experiences%3A262 (Swimming experience filter, captured with a browser 2026-09-19)",
         "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/PARKS_BOUNDARIES/MapServer/0 (park boundary centroid, Pinellas, Pasco County)",
         "https://www.floridastateparks.org/Anclote-Key",
-        "https://api.weather.gov/points/28.1772,-82.8401 (NWS forecast grid; zone/county taken from the nearest land point 28.1872,-82.8501, ~1.5 km from the centroid, because the centroid is offshore)"
+        "https://api.weather.gov/points/28.1772,-82.8401 (NWS forecast grid; zone/county taken from the nearest land point 28.1872,-82.8501, ~1.5 km from the centroid, because the centroid is offshore)",
+        "https://commons.wikimedia.org/wiki/File:Evening_on_Anclote_Key.jpg (photo)"
       ]
     },
     {
@@ -206,12 +220,19 @@
       "lng": -81.26225,
       "coverage_tier": "basic",
       "swimming_verified": true,
-      "guarded": "unknown",
-      "hours": "8 a.m. to sundown, 365 days",
-      "fees": null,
+      "guarded": "no",
+      "hours": "8 a.m. to sundown, 365 days a year.",
+      "fees": "$8 per vehicle (2-8 people) plus a 50-cent Monroe County surcharge per person; $4.50 single-occupant vehicle or motorcycle; $2.50 pedestrians, bicyclists and extra passengers (surcharge included). Boat ramp $10 plus entry.",
       "reservation_required": false,
       "reservation_url": null,
-      "rules": {},
+      "rules": {
+        "alcohol": "Prohibited. Alcoholic beverages are not allowed in Florida state parks (F.A.C. 62D-2.014).",
+        "pets": "Very limited pet access: pets are not allowed on the beaches, in the water, cabins, bathhouses, pavilions or concession; 6-foot handheld leash elsewhere.",
+        "other": [
+          "Snorkelers and divers must fly a diver-down flag.",
+          "Take nothing but photos - no collecting coral or marine life."
+        ]
+      },
       "usgs_site_id": null,
       "river_gauge_site_id": null,
       "gauge_distance_km": null,
@@ -226,18 +247,24 @@
       "nws_county": "FLC087",
       "typical_closure_time": null,
       "cavern_warning": false,
-      "safety_notes": null,
+      "safety_notes": "No lifeguards are provided - use caution and follow the beach warning flags. The water is shallow with very mild currents, except near the Bahia Honda Channel where currents can be very swift - stay away from it. Water is mid-80s F in summer and low-70s in winter; visibility drops when wind stirs the sand. Shade is limited - bring or rent an umbrella.",
       "official_url": "https://www.floridastateparks.org/BahiaHonda",
-      "photo_url": null,
-      "entrance_notes": "Coordinates are the park centroid, not the swim area. Address: 36850 Overseas Highway Big Pine Key, FL 33043.",
+      "photo_url": "/photos/basic/bahia-honda-state-park.jpg",
+      "entrance_notes": "36850 Overseas Highway (US 1, MM 37), Big Pine Key FL 33043 (305-872-2353). No day-use reservations. The park may close when day-use areas reach capacity and arriving visitors are asked to come back later - arrive early on weekends and holidays. Boat-trailer parking at the marina is limited and fills on holidays (advance booking via the concessionaire, 305-872-3210). The road to the cabins/Bayside has a 6 ft 8 in clearance under the bridge. Coordinates are the park centroid, not the swim area.",
       "swim_season": null,
-      "description": null,
+      "description": "A Lower Keys park with three beaches - Loggerhead and Sandspur on the Atlantic side and Calusa on Florida Bay - plus some of the best nearshore snorkeling in the Keys in 4-6 feet of clear water. It is so popular that the day-use areas often hit capacity on weekends and holidays.",
       "sources": [
         "https://www.floridastateparks.org/parks-and-trails?parks%5B0%5D=experiences%3A262 (Swimming experience filter, captured with a browser 2026-09-19)",
         "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/PARKS_BOUNDARIES/MapServer/0 (park boundary centroid, Monroe County)",
         "https://www.floridastateparks.org/BahiaHonda",
-        "https://api.weather.gov/points/24.6664,-81.2622 (NWS forecast grid, zone and county)"
-      ]
+        "https://api.weather.gov/points/24.6664,-81.2622 (NWS forecast grid, zone and county)",
+        "https://www.floridastateparks.org/parks-and-trails/bahia-honda-state-park (browser, 2026-09-19; capacity notice)",
+        "https://www.floridastateparks.org/parks-and-trails/bahia-honda-state-park/hours-fees",
+        "https://www.floridastateparks.org/parks-and-trails/bahia-honda-state-park/experiences-amenities",
+        "https://www.flrules.org/gateway/ruleno.asp?id=62D-2.014 (alcohol prohibited in state parks)",
+        "https://commons.wikimedia.org/wiki/File:Sunset_from_Bahia_Honda_State_Park_Dec_2019_1.jpg (photo)"
+      ],
+      "enriched_at": "2026-09-19"
     },
     {
       "slug": "bald-point-state-park",
@@ -354,7 +381,7 @@
       "cavern_warning": false,
       "safety_notes": null,
       "official_url": "https://www.floridastateparks.org/parks-and-trails/bill-baggs-cape-florida-state-park",
-      "photo_url": null,
+      "photo_url": "/photos/basic/bill-baggs-cape-florida-state-park.jpg",
       "entrance_notes": "Coordinates are the park centroid, not the swim area. Address: 1200 S. Crandon Blvd. Key Biscayne, FL 33149.",
       "swim_season": null,
       "description": null,
@@ -362,7 +389,8 @@
         "https://www.floridastateparks.org/parks-and-trails?parks%5B0%5D=experiences%3A262 (Swimming experience filter, captured with a browser 2026-09-19)",
         "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/PARKS_BOUNDARIES/MapServer/0 (park boundary centroid, Dade County)",
         "https://www.floridastateparks.org/parks-and-trails/bill-baggs-cape-florida-state-park",
-        "https://api.weather.gov/points/25.6755,-80.1591 (NWS forecast grid, zone and county)"
+        "https://api.weather.gov/points/25.6755,-80.1591 (NWS forecast grid, zone and county)",
+        "https://commons.wikimedia.org/wiki/File:Cape_Florida_Beach_1.jpg (photo)"
       ]
     },
     {
@@ -402,7 +430,7 @@
       "cavern_warning": false,
       "safety_notes": "Lifeguards are not on duty; the park recommends that anyone who is not a strong swimmer wear a U.S. Coast Guard-approved life jacket. The river is tannin-tinted but clear over white sandbars, with current and shifting sand; water levels change - call 850-983-5363 for current levels. There is no river access below Deaton Bridge and a major blockage downstream.",
       "official_url": "https://www.floridastateparks.org/parks-and-trails/blackwater-river-state-park",
-      "photo_url": null,
+      "photo_url": "/photos/basic/blackwater-river-state-park.jpg",
       "entrance_notes": "7720 Deaton Bridge Road, Milton FL 32564 (850-983-5363); GPS routing is unreliable - double-check directions. No reservations; pay at the honor box. Three paved river-access lots plus a dirt canoe-trail lot: the Deaton Bridge lots are small and fill early on summer weekends and holidays, so use the pavilion parking area half a mile north of the bridge, which has plenty of space and a boardwalk to the main swim area. Coordinates are the park centroid, not the swim area.",
       "swim_season": null,
       "description": "Two miles of the golden-brown, sand-bottomed Blackwater River run through this Panhandle park near Milton, with white sandbar beaches, a boardwalk to the main swimming area, two large pavilions and an outdoor shower. Tubing and paddling end at Deaton Bridge inside the park.",
@@ -414,7 +442,8 @@
         "https://www.floridastateparks.org/parks-and-trails/blackwater-river-state-park (browser, 2026-09-19)",
         "https://www.floridastateparks.org/parks-and-trails/blackwater-river-state-park/hours-fees",
         "https://www.floridastateparks.org/parks-and-trails/blackwater-river-state-park/experiences-amenities",
-        "https://www.flrules.org/gateway/ruleno.asp?id=62D-2.014 (alcohol prohibited in state parks)"
+        "https://www.flrules.org/gateway/ruleno.asp?id=62D-2.014 (alcohol prohibited in state parks)",
+        "https://commons.wikimedia.org/wiki/File:Blackwater_River_State_Park_River_01.jpg (photo)"
       ],
       "enriched_at": "2026-09-19"
     },
@@ -428,11 +457,18 @@
       "coverage_tier": "basic",
       "swimming_verified": true,
       "guarded": "unknown",
-      "hours": "8 a.m. to sundown, 365 days",
-      "fees": null,
+      "hours": "8 a.m. to sundown, 365 days a year. Ferry from Honeymoon Island allows a four-hour stay.",
+      "fees": "Boat-in only: $6 per boat (up to 8 people), $2 each extra person, $2 per kayaker. By ferry: Honeymoon Island entry ($8 per vehicle) plus the Caladesi Connection ferry, $20 adults, $10 ages 6-12, under 6 free.",
       "reservation_required": false,
       "reservation_url": null,
-      "rules": {},
+      "rules": {
+        "alcohol": "Prohibited (stated on the park's picnicking page).",
+        "pets": "Pets are never allowed on the beach or on the ferry; elsewhere on a 6-foot handheld leash.",
+        "other": [
+          "Swim only in designated areas.",
+          "Live shelling is prohibited."
+        ]
+      },
       "usgs_site_id": null,
       "river_gauge_site_id": null,
       "gauge_distance_km": null,
@@ -447,18 +483,23 @@
       "nws_county": "FLC103",
       "typical_closure_time": null,
       "cavern_warning": false,
-      "safety_notes": null,
+      "safety_notes": "Gulf beach reached only by boat or ferry; swim in the designated areas and follow the beach warning flags. No lifeguard is mentioned on the official page - treat as unguarded. Since Hurricane Helene the marina has no power or water and food service may be limited (notice effective June 29, 2026).",
       "official_url": "https://www.floridastateparks.org/parks-and-trails/caladesi-island-state-park",
-      "photo_url": null,
-      "entrance_notes": "Coordinates are the park centroid, not the swim area. Address: Offshore island Dunedin, FL 34698. Reachable only by boat or ferry — check the official page for access.",
+      "photo_url": "/photos/basic/caladesi-island-state-park.jpg",
+      "entrance_notes": "Offshore island, Dunedin FL 34698 (727-241-6126). No park reservations; ferry tickets are sold at Honeymoon Island State Park (no pets on the ferry). Private boats use the C-Dock (26 slips) or T-Dock for day use; no overnight docking during repairs. Coordinates are the park centroid, not the swim area.",
       "swim_season": null,
-      "description": null,
+      "description": "An undeveloped barrier island off Dunedin with quiet Gulf beaches, boardwalks, mangrove paddling trails and a small cafe, reachable only by private boat or the ferry from Honeymoon Island. Day-use has reopened after Hurricane Helene with limited marina facilities.",
       "sources": [
         "https://www.floridastateparks.org/parks-and-trails?parks%5B0%5D=experiences%3A262 (Swimming experience filter, captured with a browser 2026-09-19)",
         "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/PARKS_BOUNDARIES/MapServer/0 (park boundary centroid, Pinellas County)",
         "https://www.floridastateparks.org/parks-and-trails/caladesi-island-state-park",
-        "https://api.weather.gov/points/28.0210,-82.8141 (NWS forecast grid; zone/county taken from the nearest land point 28.021,-82.8241, ~1 km from the centroid, because the centroid is offshore)"
-      ]
+        "https://api.weather.gov/points/28.0210,-82.8141 (NWS forecast grid; zone/county taken from the nearest land point 28.021,-82.8241, ~1 km from the centroid, because the centroid is offshore)",
+        "https://commons.wikimedia.org/wiki/File:Sunset_Over_Hurricane_Pass_(7853564074).jpg (photo)",
+        "https://www.floridastateparks.org/parks-and-trails/caladesi-island-state-park (browser, 2026-09-19; storm-damage notice)",
+        "https://www.floridastateparks.org/parks-and-trails/caladesi-island-state-park/hours-fees",
+        "https://www.floridastateparks.org/parks-and-trails/caladesi-island-state-park/experiences-amenities"
+      ],
+      "enriched_at": "2026-09-19"
     },
     {
       "slug": "camp-helen-state-park",
@@ -533,7 +574,7 @@
       "cavern_warning": false,
       "safety_notes": null,
       "official_url": "https://www.floridastateparks.org/CayoCosta",
-      "photo_url": null,
+      "photo_url": "/photos/basic/cayo-costa-state-park.jpg",
       "entrance_notes": "Coordinates are the park centroid, not the swim area. Address: 4 Nautical Miles West of Pine Island (26.685789, -82.245381) Cayo Costa, FL 33922. Reachable only by boat or ferry — check the official page for access.",
       "swim_season": null,
       "description": null,
@@ -541,7 +582,8 @@
         "https://www.floridastateparks.org/parks-and-trails?parks%5B0%5D=experiences%3A262 (Swimming experience filter, captured with a browser 2026-09-19)",
         "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/PARKS_BOUNDARIES/MapServer/0 (park boundary centroid, Lee County)",
         "https://www.floridastateparks.org/CayoCosta",
-        "https://api.weather.gov/points/26.6604,-82.2401 (NWS forecast grid, zone and county)"
+        "https://api.weather.gov/points/26.6604,-82.2401 (NWS forecast grid, zone and county)",
+        "https://commons.wikimedia.org/wiki/File:Captiva_Pass_&_Cayo_Costa_Island_(Pine_Island_Sound,_Florida,_USA)_(26162433405).jpg (photo)"
       ]
     },
     {
@@ -575,7 +617,7 @@
       "cavern_warning": false,
       "safety_notes": null,
       "official_url": "https://www.floridastateparks.org/parks-and-trails/curry-hammock-state-park",
-      "photo_url": null,
+      "photo_url": "/photos/basic/curry-hammock-state-park.jpg",
       "entrance_notes": "Coordinates are the park centroid, not the swim area. Address: 56200 Overseas Highway Marathon, FL 33050.",
       "swim_season": null,
       "description": null,
@@ -583,7 +625,8 @@
         "https://www.floridastateparks.org/parks-and-trails?parks%5B0%5D=experiences%3A262 (Swimming experience filter, captured with a browser 2026-09-19)",
         "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/PARKS_BOUNDARIES/MapServer/0 (park boundary centroid, Monroe County)",
         "https://www.floridastateparks.org/parks-and-trails/curry-hammock-state-park",
-        "https://api.weather.gov/points/24.7441,-80.9891 (NWS forecast grid, zone and county)"
+        "https://api.weather.gov/points/24.7441,-80.9891 (NWS forecast grid, zone and county)",
+        "https://commons.wikimedia.org/wiki/File:Florida_Keys_Scenic_Highway_-_Kayaking_in_Curry_Hammock_State_Park_-_NARA_-_7718446.jpg (photo)"
       ]
     },
     {
@@ -617,7 +660,7 @@
       "cavern_warning": false,
       "safety_notes": null,
       "official_url": "https://www.floridastateparks.org/parks-and-trails/de-leon-springs-state-park",
-      "photo_url": null,
+      "photo_url": "/photos/basic/de-leon-springs-state-park.jpg",
       "entrance_notes": "Coordinates are the park centroid, not the swim area. Address: 601 Ponce De Leon Blvd. De Leon Springs, FL 32130.",
       "swim_season": null,
       "description": null,
@@ -625,7 +668,8 @@
         "https://www.floridastateparks.org/parks-and-trails?parks%5B0%5D=experiences%3A262 (Swimming experience filter, captured with a browser 2026-09-19)",
         "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/PARKS_BOUNDARIES/MapServer/0 (park boundary centroid, Volusia County)",
         "https://www.floridastateparks.org/parks-and-trails/de-leon-springs-state-park",
-        "https://api.weather.gov/points/29.1410,-81.3722 (NWS forecast grid, zone and county)"
+        "https://api.weather.gov/points/29.1410,-81.3722 (NWS forecast grid, zone and county)",
+        "https://commons.wikimedia.org/wiki/File:De_Leon_Springs_State_Park01.jpg (photo)"
       ]
     },
     {
@@ -659,7 +703,7 @@
       "cavern_warning": false,
       "safety_notes": null,
       "official_url": "https://www.floridastateparks.org/parks-and-trails/deer-lake-state-park",
-      "photo_url": null,
+      "photo_url": "/photos/basic/deer-lake-state-park.jpg",
       "entrance_notes": "Coordinates are the park centroid, not the swim area. Address: 6350 E. County Road 30-A Santa Rosa, FL 32459.",
       "swim_season": null,
       "description": null,
@@ -667,7 +711,8 @@
         "https://www.floridastateparks.org/parks-and-trails?parks%5B0%5D=experiences%3A262 (Swimming experience filter, captured with a browser 2026-09-19)",
         "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/PARKS_BOUNDARIES/MapServer/0 (park boundary centroid, Walton County)",
         "https://www.floridastateparks.org/parks-and-trails/deer-lake-state-park",
-        "https://api.weather.gov/points/30.3106,-86.0651 (NWS forecast grid, zone and county)"
+        "https://api.weather.gov/points/30.3106,-86.0651 (NWS forecast grid, zone and county)",
+        "https://commons.wikimedia.org/wiki/File:DeerLakeSP.JPG (photo)"
       ]
     },
     {
@@ -701,7 +746,7 @@
       "cavern_warning": false,
       "safety_notes": null,
       "official_url": "https://www.floridastateparks.org/parks-and-trails/delnor-wiggins-pass-state-park",
-      "photo_url": null,
+      "photo_url": "/photos/basic/delnor-wiggins-pass-state-park.jpg",
       "entrance_notes": "Coordinates are the park centroid, not the swim area. Address: 11135 Gulfshore Drive Naples, FL 34108.",
       "swim_season": null,
       "description": null,
@@ -709,7 +754,8 @@
         "https://www.floridastateparks.org/parks-and-trails?parks%5B0%5D=experiences%3A262 (Swimming experience filter, captured with a browser 2026-09-19)",
         "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/PARKS_BOUNDARIES/MapServer/0 (park boundary centroid, Collier County)",
         "https://www.floridastateparks.org/parks-and-trails/delnor-wiggins-pass-state-park",
-        "https://api.weather.gov/points/26.2815,-81.8284 (NWS forecast grid, zone and county)"
+        "https://api.weather.gov/points/26.2815,-81.8284 (NWS forecast grid, zone and county)",
+        "https://commons.wikimedia.org/wiki/File:Delnor-Wiggins_Pass_www.florida-infos.com_-_panoramio.jpg (photo)"
       ]
     },
     {
@@ -785,7 +831,7 @@
       "cavern_warning": false,
       "safety_notes": null,
       "official_url": "https://www.floridastateparks.org/parks-and-trails/dr-julian-g-bruce-st-george-island-state-park",
-      "photo_url": null,
+      "photo_url": "/photos/basic/dr-julian-g-bruce-st-george-island-state-park.jpg",
       "entrance_notes": "Coordinates are the park centroid, not the swim area. Address: 1900 E. Gulf Beach Drive St. George Island, FL 32328.",
       "swim_season": null,
       "description": null,
@@ -793,7 +839,8 @@
         "https://www.floridastateparks.org/parks-and-trails?parks%5B0%5D=experiences%3A262 (Swimming experience filter, captured with a browser 2026-09-19)",
         "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/PARKS_BOUNDARIES/MapServer/0 (park boundary centroid, Franklin County)",
         "https://www.floridastateparks.org/parks-and-trails/dr-julian-g-bruce-st-george-island-state-park",
-        "https://api.weather.gov/points/29.7212,-84.7479 (NWS forecast grid, zone and county)"
+        "https://api.weather.gov/points/29.7212,-84.7479 (NWS forecast grid, zone and county)",
+        "https://commons.wikimedia.org/wiki/File:Dr._Julian_G._Bruce_St._George_Island_State_Park_-_Beach.jpg (photo)"
       ]
     },
     {
@@ -827,7 +874,7 @@
       "cavern_warning": false,
       "safety_notes": null,
       "official_url": "https://www.floridastateparks.org/mizell",
-      "photo_url": null,
+      "photo_url": "/photos/basic/dr-von-d-mizell-eula-johnson-state-park.jpg",
       "entrance_notes": "Coordinates are the park centroid, not the swim area. Address: 6503 N. Ocean Drive Dania Beach, FL 33004.",
       "swim_season": null,
       "description": null,
@@ -835,7 +882,8 @@
         "https://www.floridastateparks.org/parks-and-trails?parks%5B0%5D=experiences%3A262 (Swimming experience filter, captured with a browser 2026-09-19)",
         "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/PARKS_BOUNDARIES/MapServer/0 (park boundary centroid, Broward County)",
         "https://www.floridastateparks.org/mizell",
-        "https://api.weather.gov/points/26.0750,-80.1115 (NWS forecast grid, zone and county)"
+        "https://api.weather.gov/points/26.0750,-80.1115 (NWS forecast grid, zone and county)",
+        "https://commons.wikimedia.org/wiki/File:Chaude_journée_au_lagon._Nice_hot_day_at_the_lagoon_in_John_U._Lloyd_State_Park,_Dania_Beach,_Florida_-_panoramio.jpg (photo)"
       ]
     },
     {
@@ -876,7 +924,7 @@
       "cavern_warning": true,
       "safety_notes": "The spring water is about 69-70 F year-round. Alligators and manatees live in the spring and river, so swim only inside the designated swimming area near the spring head. A 22-foot dive/observation tower stands over deep water. The swim area closes when thunderstorms threaten. Recreational scuba is not allowed in the spring or swim area; the vent is a cave system and cave diving is only for certified cave divers at Emerald Sink (Clear Cut Sink closed for research from June 14, 2026).",
       "official_url": "https://www.floridastateparks.org/WakullaSprings",
-      "photo_url": null,
+      "photo_url": "/photos/basic/edward-ball-wakulla-springs-state-park.jpg",
       "entrance_notes": "465 Wakulla Park Drive, Wakulla Springs FL 32327 (850-561-7276), off SR 61 south of Tallahassee. No day-use reservations. Coordinates are the park centroid, not the swim area.",
       "swim_season": null,
       "description": "One of the world's largest and deepest freshwater springs, with 70 F water, a 22-foot dive and observation tower and a grassy beach along the Wakulla River, all beside a 1930s lodge and guided riverboat tours. Swimming is allowed only in the designated area near the spring head.",
@@ -888,7 +936,8 @@
         "https://www.floridastateparks.org/parks-and-trails/edward-ball-wakulla-springs-state-park (browser, 2026-09-19)",
         "https://www.floridastateparks.org/parks-and-trails/edward-ball-wakulla-springs-state-park/hours-fees",
         "https://www.floridastateparks.org/parks-and-trails/edward-ball-wakulla-springs-state-park/experiences-amenities",
-        "https://www.flrules.org/gateway/ruleno.asp?id=62D-2.014 (alcohol prohibited in state parks)"
+        "https://www.flrules.org/gateway/ruleno.asp?id=62D-2.014 (alcohol prohibited in state parks)",
+        "https://commons.wikimedia.org/wiki/File:Wakulla-springs_2009-05-04T18_56_40.jpg (photo)"
       ],
       "enriched_at": "2026-09-19"
     },
@@ -923,7 +972,7 @@
       "cavern_warning": false,
       "safety_notes": null,
       "official_url": "https://www.floridastateparks.org/parks-and-trails/egmont-key-state-park",
-      "photo_url": null,
+      "photo_url": "/photos/basic/egmont-key-state-park.jpg",
       "entrance_notes": "Coordinates are the park centroid, not the swim area. Address: 4905 34th St. South, #5000 St. Petersburg, FL 33711.",
       "swim_season": null,
       "description": null,
@@ -931,7 +980,8 @@
         "https://www.floridastateparks.org/parks-and-trails?parks%5B0%5D=experiences%3A262 (Swimming experience filter, captured with a browser 2026-09-19)",
         "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/PARKS_BOUNDARIES/MapServer/0 (park boundary centroid, Hillsborough County)",
         "https://www.floridastateparks.org/parks-and-trails/egmont-key-state-park",
-        "https://api.weather.gov/points/27.5908,-82.7614 (NWS forecast grid, zone and county)"
+        "https://api.weather.gov/points/27.5908,-82.7614 (NWS forecast grid, zone and county)",
+        "https://commons.wikimedia.org/wiki/File:Egmont_key_north_battery_(1).jpg (photo)"
       ]
     },
     {
@@ -971,7 +1021,7 @@
       "cavern_warning": false,
       "safety_notes": "The swimming lake is a small (two-acre) freshwater lake with a white sand beach; no lifeguard is stated on the official page, so treat it as unguarded. The waterfall and sinkholes are on a separate boardwalk trail - the sinkholes are up to 100 feet deep, so stay on the boardwalk. Waterfall flow depends on recent rain.",
       "official_url": "https://www.floridastateparks.org/parks-and-trails/falling-waters-state-park",
-      "photo_url": null,
+      "photo_url": "/photos/basic/falling-waters-state-park.jpg",
       "entrance_notes": "1130 State Park Road, Chipley FL 32428 (850-638-6130), about 3 miles south of I-10 exit 120. No day-use reservations. Picnic pavilions are first-come unless reserved. Coordinates are the park centroid, not the swim area.",
       "swim_season": null,
       "description": "Home to Florida's highest waterfall, which drops 73 feet into a sinkhole, plus a two-acre lake with a white sand beach, rinse shower, restrooms and changing space for swimmers. The hilly park sits a few miles south of I-10 near Chipley.",
@@ -983,7 +1033,8 @@
         "https://www.floridastateparks.org/parks-and-trails/falling-waters-state-park (browser, 2026-09-19)",
         "https://www.floridastateparks.org/parks-and-trails/falling-waters-state-park/hours-fees",
         "https://www.floridastateparks.org/parks-and-trails/falling-waters-state-park/experiences-amenities",
-        "https://www.flrules.org/gateway/ruleno.asp?id=62D-2.014 (alcohol prohibited in state parks)"
+        "https://www.flrules.org/gateway/ruleno.asp?id=62D-2.014 (alcohol prohibited in state parks)",
+        "https://commons.wikimedia.org/wiki/File:Falling_Waters_State_Park_2.jpg (photo)"
       ],
       "enriched_at": "2026-09-19"
     },
@@ -1018,7 +1069,7 @@
       "cavern_warning": false,
       "safety_notes": null,
       "official_url": "https://www.floridastateparks.org/parks-and-trails/fanning-springs-state-park",
-      "photo_url": null,
+      "photo_url": "/photos/basic/fanning-springs-state-park.jpg",
       "entrance_notes": "Coordinates are the park centroid, not the swim area. Address: 18020 N.W. Highway 19 Fanning Springs, FL 32693.",
       "swim_season": null,
       "description": null,
@@ -1026,7 +1077,8 @@
         "https://www.floridastateparks.org/parks-and-trails?parks%5B0%5D=experiences%3A262 (Swimming experience filter, captured with a browser 2026-09-19)",
         "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/PARKS_BOUNDARIES/MapServer/0 (park boundary centroid, Levy County)",
         "https://www.floridastateparks.org/parks-and-trails/fanning-springs-state-park",
-        "https://api.weather.gov/points/29.5866,-82.9332 (NWS forecast grid, zone and county)"
+        "https://api.weather.gov/points/29.5866,-82.9332 (NWS forecast grid, zone and county)",
+        "https://commons.wikimedia.org/wiki/File:Fanning_Springs_Park_springs01.jpg (photo)"
       ]
     },
     {
@@ -1067,7 +1119,7 @@
       "cavern_warning": true,
       "safety_notes": "No lifeguards on duty - swim at your own risk. The Blue Hole swimming area is about 35 feet deep. Because it sits next to the Chipola River it sometimes has dark water and may close when the river floods. The park is a cave system: guided cave tours are on land, and moving water in the park is dangerous.",
       "official_url": "https://www.floridastateparks.org/parks-and-trails/florida-caverns-state-park",
-      "photo_url": null,
+      "photo_url": "/photos/basic/florida-caverns-state-park.jpg",
       "entrance_notes": "3345 Caverns Road, Marianna FL 32446 (850-482-1228), in the Central time zone. No day-use reservations; cave tour tickets are first-come at the gift shop from 9 a.m. CST and often sell out on weekends. Park at the Blue Hole day-use area for swimming. Coordinates are the park centroid, not the swim area.",
       "swim_season": null,
       "description": "Florida's only state park with guided tours through a large limestone cave, plus the Blue Hole, a deep spring-fed swimming area beside the Chipola River. The swim area can turn dark or close when the river is high.",
@@ -1079,7 +1131,8 @@
         "https://www.floridastateparks.org/parks-and-trails/florida-caverns-state-park (browser, 2026-09-19)",
         "https://www.floridastateparks.org/parks-and-trails/florida-caverns-state-park/hours-fees",
         "https://www.floridastateparks.org/parks-and-trails/florida-caverns-state-park/experiences-amenities",
-        "https://www.flrules.org/gateway/ruleno.asp?id=62D-2.014 (alcohol prohibited in state parks)"
+        "https://www.flrules.org/gateway/ruleno.asp?id=62D-2.014 (alcohol prohibited in state parks)",
+        "https://commons.wikimedia.org/wiki/File:Spring_Run_-_Florida_Caverns_State_Park_-_panoramio.jpg (photo)"
       ],
       "enriched_at": "2026-09-19"
     },
@@ -1114,7 +1167,7 @@
       "cavern_warning": false,
       "safety_notes": null,
       "official_url": "https://www.floridastateparks.org/fortclinch",
-      "photo_url": null,
+      "photo_url": "/photos/basic/fort-clinch-state-park.jpg",
       "entrance_notes": "Coordinates are the park centroid, not the swim area. Address: 2601 Atlantic Ave. Fernandina Beach, FL 32034.",
       "swim_season": null,
       "description": null,
@@ -1122,7 +1175,8 @@
         "https://www.floridastateparks.org/parks-and-trails?parks%5B0%5D=experiences%3A262 (Swimming experience filter, captured with a browser 2026-09-19)",
         "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/PARKS_BOUNDARIES/MapServer/0 (park boundary centroid, Nassau County)",
         "https://www.floridastateparks.org/fortclinch",
-        "https://api.weather.gov/points/30.6940,-81.4730 (NWS forecast grid, zone and county)"
+        "https://api.weather.gov/points/30.6940,-81.4730 (NWS forecast grid, zone and county)",
+        "https://commons.wikimedia.org/wiki/File:FortClinchAir.jpg (photo)"
       ]
     },
     {
@@ -1176,12 +1230,20 @@
       "lng": -81.81057,
       "coverage_tier": "basic",
       "swimming_verified": true,
-      "guarded": "unknown",
-      "hours": "8 a.m. to sundown, 365 days",
-      "fees": null,
+      "guarded": "no",
+      "hours": "8 a.m. to sundown, 365 days a year; the fort closes at 5 p.m. Concession open 10 a.m. to 5 p.m.",
+      "fees": "$6 per vehicle (up to 8 people) plus a 50-cent Monroe County surcharge per person; $4.50 single-occupant vehicle or motorcycle; $2.50 pedestrians, bicyclists and extra passengers (surcharge included).",
       "reservation_required": false,
       "reservation_url": null,
-      "rules": {},
+      "rules": {
+        "alcohol": "Prohibited. Alcoholic beverages are not allowed in Florida state parks (F.A.C. 62D-2.014).",
+        "pets": "The park lists no pet amenity; under the statewide pet policy pets are not allowed on the beach or in the water.",
+        "other": [
+          "Hard-bottom flotation devices, kayaks and paddleboards must stay outside the swim buoys.",
+          "Scuba divers need a dive flag and a buddy.",
+          "Water only at the rinse showers - no soap."
+        ]
+      },
       "usgs_site_id": null,
       "river_gauge_site_id": null,
       "gauge_distance_km": null,
@@ -1196,18 +1258,24 @@
       "nws_county": "FLC087",
       "typical_closure_time": null,
       "cavern_warning": false,
-      "safety_notes": null,
+      "safety_notes": "No lifeguards on duty - swim at your own risk. The beach is sand and pebbles with a rocky sea bottom, so water shoes are recommended. It sits beside the main shipping channel, whose currents keep the water clear but can be strong beyond the breakwaters; hard-bottom floats and paddlecraft must stay outside the swim buoys.",
       "official_url": "https://www.floridastateparks.org/parks-and-trails/fort-zachary-taylor-historic-state-park",
-      "photo_url": null,
-      "entrance_notes": "Coordinates are the park centroid, not the swim area. Address: 601 Howard England Way Key West, FL 33040.",
+      "photo_url": "/photos/basic/fort-zachary-taylor-historic-state-park.jpg",
+      "entrance_notes": "601 Howard England Way, Key West FL 33040 (305-292-6713), at the end of Southard Street through the Truman Annex. No day-use reservations; there is a dedicated entry lane for cyclists and walkers, and plenty of bike racks. Pack in, pack out. Coordinates are the park centroid, not the swim area.",
       "swim_season": null,
-      "description": null,
+      "description": "Key West's favourite beach, a sand-and-pebble shore beside a Civil War fort at the southern tip of the island, with shallow clear water, beach snorkeling along the breakwaters, a shaded picnic area under the trees and a cafe. Water shoes are a must on the rocky bottom.",
       "sources": [
         "https://www.floridastateparks.org/parks-and-trails?parks%5B0%5D=experiences%3A262 (Swimming experience filter, captured with a browser 2026-09-19)",
         "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/PARKS_BOUNDARIES/MapServer/0 (park boundary centroid, Monroe County)",
         "https://www.floridastateparks.org/parks-and-trails/fort-zachary-taylor-historic-state-park",
-        "https://api.weather.gov/points/24.5465,-81.8106 (NWS forecast grid, zone and county)"
-      ]
+        "https://api.weather.gov/points/24.5465,-81.8106 (NWS forecast grid, zone and county)",
+        "https://commons.wikimedia.org/wiki/File:Fort_Zachary_Taylor_Beach_-_panoramio.jpg (photo)",
+        "https://www.floridastateparks.org/parks-and-trails/fort-zachary-taylor-historic-state-park (browser, 2026-09-19)",
+        "https://www.floridastateparks.org/parks-and-trails/fort-zachary-taylor-historic-state-park/hours-fees",
+        "https://www.floridastateparks.org/parks-and-trails/fort-zachary-taylor-historic-state-park/experiences-amenities",
+        "https://www.flrules.org/gateway/ruleno.asp?id=62D-2.014 (alcohol prohibited in state parks)"
+      ],
+      "enriched_at": "2026-09-19"
     },
     {
       "slug": "gamble-rogers-memorial-state-recreation-area-at-flagler-beach",
@@ -1282,7 +1350,7 @@
       "cavern_warning": false,
       "safety_notes": null,
       "official_url": "https://www.floridastateparks.org/parks-and-trails/gasparilla-island-state-park",
-      "photo_url": null,
+      "photo_url": "/photos/basic/gasparilla-island-state-park.jpg",
       "entrance_notes": "Coordinates are the park centroid, not the swim area. Address: 880 Belcher Road Boca Grande, FL 33921.",
       "swim_season": null,
       "description": null,
@@ -1290,7 +1358,8 @@
         "https://www.floridastateparks.org/parks-and-trails?parks%5B0%5D=experiences%3A262 (Swimming experience filter, captured with a browser 2026-09-19)",
         "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/PARKS_BOUNDARIES/MapServer/0 (park boundary centroid, Lee County)",
         "https://www.floridastateparks.org/parks-and-trails/gasparilla-island-state-park",
-        "https://api.weather.gov/points/26.7310,-82.2612 (NWS forecast grid, zone and county)"
+        "https://api.weather.gov/points/26.7310,-82.2612 (NWS forecast grid, zone and county)",
+        "https://commons.wikimedia.org/wiki/File:Beach_at_Gasparilla_Island_State_Park,_FL.jpg (photo)"
       ]
     },
     {
@@ -1302,12 +1371,18 @@
       "lng": -86.15777,
       "coverage_tier": "basic",
       "swimming_verified": true,
-      "guarded": "unknown",
-      "hours": "8 a.m. to sundown, 365 days",
-      "fees": null,
+      "guarded": "no",
+      "hours": "8 a.m. to sundown, 365 days a year; gates close at sunset.",
+      "fees": "$5 per vehicle (2-8 people); $4 single-occupant vehicle; $2 pedestrians, bicyclists and extra passengers.",
       "reservation_required": false,
       "reservation_url": null,
-      "rules": {},
+      "rules": {
+        "alcohol": "Prohibited. Alcoholic beverages are not allowed in Florida state parks (F.A.C. 62D-2.014).",
+        "pets": "Pets on a 6-foot leash are allowed in designated day-use areas but not on the beach, bathing areas, playgrounds, cabins or buildings.",
+        "other": [
+          "Jet-propelled watercraft are prohibited on Western Lake."
+        ]
+      },
       "usgs_site_id": null,
       "river_gauge_site_id": null,
       "gauge_distance_km": null,
@@ -1322,18 +1397,24 @@
       "nws_county": "FLC131",
       "typical_closure_time": null,
       "cavern_warning": false,
-      "safety_notes": null,
+      "safety_notes": "No lifeguards - swim at your own risk in Gulf surf; watch the beach warning flags. The park frequently reaches capacity in high season and closes to all day visitors, including pedestrians and cyclists, for several hours at a time.",
       "official_url": "https://www.floridastateparks.org/graytonbeach",
-      "photo_url": null,
-      "entrance_notes": "Coordinates are the park centroid, not the swim area. Address: 357 Main Park Road Santa Rosa Beach, FL 32459.",
+      "photo_url": "/photos/basic/grayton-beach-state-park.jpg",
+      "entrance_notes": "357 Main Park Road, Santa Rosa Beach FL 32459 (850-267-8300), off CR 30A. No day-use reservations. Since June 2024 the park frequently hits capacity and temporarily closes to day visitors (including pedestrians and cyclists) for several hours; campers with reservations are still admitted. Arrive early in summer. Coordinates are the park centroid, not the swim area.",
       "swim_season": null,
-      "description": null,
+      "description": "A mile of sugar-white Gulf beach on Scenic 30A that regularly ranks among the best in the country, backed by dunes, Western Lake (a rare coastal dune lake) and four miles of trails, with cabins and campgrounds in the pines. Mobi-Mats and a beach wheelchair make the beach reachable.",
       "sources": [
         "https://www.floridastateparks.org/parks-and-trails?parks%5B0%5D=experiences%3A262 (Swimming experience filter, captured with a browser 2026-09-19)",
         "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/PARKS_BOUNDARIES/MapServer/0 (park boundary centroid, Walton County)",
         "https://www.floridastateparks.org/graytonbeach",
-        "https://api.weather.gov/points/30.3361,-86.1578 (NWS forecast grid, zone and county)"
-      ]
+        "https://api.weather.gov/points/30.3361,-86.1578 (NWS forecast grid, zone and county)",
+        "https://www.floridastateparks.org/parks-and-trails/grayton-beach-state-park (browser, 2026-09-19; capacity notice)",
+        "https://www.floridastateparks.org/parks-and-trails/grayton-beach-state-park/hours-fees",
+        "https://www.floridastateparks.org/parks-and-trails/grayton-beach-state-park/experiences-amenities",
+        "https://www.flrules.org/gateway/ruleno.asp?id=62D-2.014 (alcohol prohibited in state parks)",
+        "https://commons.wikimedia.org/wiki/File:Beach_sand_(Grayton_Beach_State_Park).jpg (photo)"
+      ],
+      "enriched_at": "2026-09-19"
     },
     {
       "slug": "henderson-beach-state-park",
@@ -1345,11 +1426,19 @@
       "coverage_tier": "basic",
       "swimming_verified": true,
       "guarded": "unknown",
-      "hours": "8 a.m. to sundown, 365 days",
-      "fees": null,
+      "hours": "8 a.m. to sundown, 365 days a year.",
+      "fees": "$6 per vehicle (2-8 people); $4 single-occupant vehicle; $2 pedestrians, bicyclists and extra passengers - plus a day-use reservation.",
       "reservation_required": true,
-      "reservation_url": "https://reserve.floridastateparks.org/",
-      "rules": {},
+      "reservation_url": "https://reserve.floridastateparks.org/Web/#!park/26",
+      "rules": {
+        "alcohol": "Prohibited in all day-use areas, including pavilions and the beach.",
+        "pets": "Pets are allowed in parking lots, on the nature trail and on day-use sidewalks only - not on the beach, in playgrounds or in buildings; 6-foot leash, never left in vehicles.",
+        "other": [
+          "No glass, fires or animals on the beach.",
+          "Follow the beach warning flags; double red means no swimming.",
+          "No hygiene products at the rinse stations."
+        ]
+      },
       "usgs_site_id": null,
       "river_gauge_site_id": null,
       "gauge_distance_km": null,
@@ -1364,18 +1453,23 @@
       "nws_county": "FLC091",
       "typical_closure_time": null,
       "cavern_warning": false,
-      "safety_notes": null,
+      "safety_notes": "Gulf beach with surf and rip currents: check the warning flags at the entrance station and beach (double red = no swimming, red = high hazard, yellow = caution, green = calm, purple = marine pests). No lifeguard is mentioned on the official page. No glass, fires or animals on the beach.",
       "official_url": "https://www.floridastateparks.org/parks-and-trails/henderson-beach-state-park",
       "photo_url": null,
-      "entrance_notes": "Coordinates are the park centroid, not the swim area. Address: 17000 Emerald Coast Parkway Destin, FL 32541.",
+      "entrance_notes": "17000 Emerald Coast Parkway (US 98), Destin FL 32541 (850-837-7550). DAY-USE RESERVATIONS REQUIRED for all visitors since May 15, 2026 - book before you go. 422 day-use parking spaces plus 24 RV and 20 ADA spaces. Pavilions cannot be reserved for daytime use May-September because of heavy visitation. Playground closed for maintenance (since March 2025). Coordinates are the park centroid, not the swim area.",
       "swim_season": null,
-      "description": null,
+      "description": "More than a mile of sugar-white Gulf beach backed by 30-foot dunes in the middle of Destin, with six pavilions, restrooms and rinse showers reached by beach boardwalks. Since May 15, 2026 every visitor needs a day-use reservation to enter.",
       "sources": [
         "https://www.floridastateparks.org/parks-and-trails?parks%5B0%5D=experiences%3A262 (Swimming experience filter, captured with a browser 2026-09-19)",
         "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/PARKS_BOUNDARIES/MapServer/0 (park boundary centroid, Okaloosa County)",
         "https://www.floridastateparks.org/parks-and-trails/henderson-beach-state-park",
-        "https://api.weather.gov/points/30.3845,-86.4425 (NWS forecast grid, zone and county)"
-      ]
+        "https://api.weather.gov/points/30.3845,-86.4425 (NWS forecast grid, zone and county)",
+        "https://www.floridastateparks.org/parks-and-trails/henderson-beach-state-park (browser, 2026-09-19; 'Day-use reservations required' notice)",
+        "https://www.floridastateparks.org/parks-and-trails/henderson-beach-state-park/hours-fees",
+        "https://www.floridastateparks.org/parks-and-trails/henderson-beach-state-park/experiences-amenities",
+        "https://www.floridastateparks.org/learn/frequently-asked-questions-1 (day-use reservation FAQ)"
+      ],
+      "enriched_at": "2026-09-19"
     },
     {
       "slug": "honeymoon-island-state-park",
@@ -1386,12 +1480,18 @@
       "lng": -82.82871,
       "coverage_tier": "basic",
       "swimming_verified": true,
-      "guarded": "unknown",
-      "hours": "8 a.m. to sundown, 365 days",
-      "fees": null,
+      "guarded": "no",
+      "hours": "8 a.m. to sundown, 365 days a year.",
+      "fees": "$8 per vehicle (up to 8 people); $4 single-occupant vehicle; $2 pedestrians, bicyclists and extra passengers. Sunset fee $4 per vehicle in the last hour before closing.",
       "reservation_required": false,
       "reservation_url": null,
-      "rules": {},
+      "rules": {
+        "alcohol": "Prohibited. Alcoholic beverages are not allowed in Florida state parks (F.A.C. 62D-2.014).",
+        "pets": "Dogs are allowed only on the pet beach at the southern tip of the island and on the nature trail, on a 6-foot handheld leash; not on the main swimming beach.",
+        "other": [
+          "Swim only in the designated areas on the main beach; do not enter the water at the northern cut in the sand spit."
+        ]
+      },
       "usgs_site_id": null,
       "river_gauge_site_id": null,
       "gauge_distance_km": null,
@@ -1406,18 +1506,24 @@
       "nws_county": "FLC103",
       "typical_closure_time": null,
       "cavern_warning": false,
-      "safety_notes": null,
+      "safety_notes": "Lifeguards are not provided - use caution and watch the beach warning flags (double red = no swimming, yellow = caution, green = calm, purple = marine pests). Since April 2024 erosion has cut the northern mile of the sand spit off from the island: deep water, fast-changing depth, hidden hazards and strong currents - do not wade or swim through the cut.",
       "official_url": "https://www.floridastateparks.org/honeymoonisland",
-      "photo_url": null,
-      "entrance_notes": "Coordinates are the park centroid, not the swim area. Address: #1 Causeway Blvd. Dunedin, FL 34698.",
+      "photo_url": "/photos/basic/honeymoon-island-state-park.jpg",
+      "entrance_notes": "#1 Causeway Blvd, Dunedin FL 34698 (727-241-6106), at the end of the Dunedin Causeway (SR 586). No day-use reservations. Separate parking lots for the beach, picnic area and nature center; the park is very busy on weekends. Coordinates are the park centroid, not the swim area.",
       "swim_season": null,
-      "description": null,
+      "description": "One of Florida's most visited state parks, a short drive from Tampa, with four miles of Gulf beach, designated swimming areas on the main beach, a dog beach at the south end and boardwalks with rinse showers. It is also the ferry terminal for Caladesi Island.",
       "sources": [
         "https://www.floridastateparks.org/parks-and-trails?parks%5B0%5D=experiences%3A262 (Swimming experience filter, captured with a browser 2026-09-19)",
         "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/PARKS_BOUNDARIES/MapServer/0 (park boundary centroid, Pinellas County)",
         "https://www.floridastateparks.org/honeymoonisland",
-        "https://api.weather.gov/points/28.0751,-82.8287 (NWS forecast grid, zone and county)"
-      ]
+        "https://api.weather.gov/points/28.0751,-82.8287 (NWS forecast grid, zone and county)",
+        "https://www.floridastateparks.org/parks-and-trails/honeymoon-island-state-park (browser, 2026-09-19; sand-spit cut notice)",
+        "https://www.floridastateparks.org/parks-and-trails/honeymoon-island-state-park/hours-fees",
+        "https://www.floridastateparks.org/parks-and-trails/honeymoon-island-state-park/experiences-amenities",
+        "https://www.flrules.org/gateway/ruleno.asp?id=62D-2.014 (alcohol prohibited in state parks)",
+        "https://commons.wikimedia.org/wiki/File:Honeymoon_Island_State_Park_(Image_1).jpg (photo)"
+      ],
+      "enriched_at": "2026-09-19"
     },
     {
       "slug": "hugh-taylor-birch-state-park",
@@ -1450,7 +1556,7 @@
       "cavern_warning": false,
       "safety_notes": null,
       "official_url": "https://www.floridastateparks.org/HughTaylorBirch",
-      "photo_url": null,
+      "photo_url": "/photos/basic/hugh-taylor-birch-state-park.jpg",
       "entrance_notes": "Coordinates are the park centroid, not the swim area. Address: 3109 E. Sunrise Blvd. Fort Lauderdale, FL 33304.",
       "swim_season": null,
       "description": null,
@@ -1458,7 +1564,8 @@
         "https://www.floridastateparks.org/parks-and-trails?parks%5B0%5D=experiences%3A262 (Swimming experience filter, captured with a browser 2026-09-19)",
         "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/PARKS_BOUNDARIES/MapServer/0 (park boundary centroid, Broward County)",
         "https://www.floridastateparks.org/HughTaylorBirch",
-        "https://api.weather.gov/points/26.1454,-80.1050 (NWS forecast grid, zone and county)"
+        "https://api.weather.gov/points/26.1454,-80.1050 (NWS forecast grid, zone and county)",
+        "https://commons.wikimedia.org/wiki/File:Hugh_Taylor_Birch_State_Park.jpg (photo)"
       ]
     },
     {
@@ -1492,7 +1599,7 @@
       "cavern_warning": false,
       "safety_notes": null,
       "official_url": "https://www.floridastateparks.org/IndianKey",
-      "photo_url": null,
+      "photo_url": "/photos/basic/indian-key-historic-state-park.jpg",
       "entrance_notes": "Coordinates are the park centroid, not the swim area. Address: Offshore Island Islamorada, FL 33036. Reachable only by boat or ferry — check the official page for access.",
       "swim_season": null,
       "description": null,
@@ -1500,7 +1607,8 @@
         "https://www.floridastateparks.org/parks-and-trails?parks%5B0%5D=experiences%3A262 (Swimming experience filter, captured with a browser 2026-09-19)",
         "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/PARKS_BOUNDARIES/MapServer/0 (park boundary centroid, Monroe County)",
         "https://www.floridastateparks.org/IndianKey",
-        "https://api.weather.gov/points/24.8836,-80.6775 (NWS forecast grid; zone/county taken from the nearest land point 24.8936,-80.6675, ~1.5 km from the centroid, because the centroid is offshore)"
+        "https://api.weather.gov/points/24.8836,-80.6775 (NWS forecast grid; zone/county taken from the nearest land point 24.8936,-80.6675, ~1.5 km from the centroid, because the centroid is offshore)",
+        "https://commons.wikimedia.org/wiki/File:Florida_Keys_Scenic_Highway_-_Over_Indian_Key_-_NARA_-_7718445.jpg (photo)"
       ]
     },
     {
@@ -1534,7 +1642,7 @@
       "cavern_warning": false,
       "safety_notes": null,
       "official_url": "https://www.floridastateparks.org/parks-and-trails/john-d-macarthur-beach-state-park",
-      "photo_url": null,
+      "photo_url": "/photos/basic/john-d-macarthur-beach-state-park.jpg",
       "entrance_notes": "Coordinates are the park centroid, not the swim area. Address: 10900 Jack Nicklaus Drive North Palm Beach, FL 33408.",
       "swim_season": null,
       "description": null,
@@ -1542,7 +1650,8 @@
         "https://www.floridastateparks.org/parks-and-trails?parks%5B0%5D=experiences%3A262 (Swimming experience filter, captured with a browser 2026-09-19)",
         "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/PARKS_BOUNDARIES/MapServer/0 (park boundary centroid, Palm Beach County)",
         "https://www.floridastateparks.org/parks-and-trails/john-d-macarthur-beach-state-park",
-        "https://api.weather.gov/points/26.8261,-80.0428 (NWS forecast grid, zone and county)"
+        "https://api.weather.gov/points/26.8261,-80.0428 (NWS forecast grid, zone and county)",
+        "https://commons.wikimedia.org/wiki/File:Beach_with_birds_-_John_D._MacArthur_Beach_State_Park.jpg (photo)"
       ]
     },
     {
@@ -1554,12 +1663,20 @@
       "lng": -80.32638,
       "coverage_tier": "basic",
       "swimming_verified": true,
-      "guarded": "unknown",
-      "hours": "8 a.m. to sundown, 365 days",
-      "fees": null,
+      "guarded": "no",
+      "hours": "8 a.m. to sunset, 365 days a year. Glass-bottom and snorkel boat tours run daily, weather permitting.",
+      "fees": "$8 per vehicle plus 50 cents per person (up to 8), $2.50 each additional person; $4.50 single-occupant vehicle; $2.50 pedestrian or bicyclist. Boat ramp $10 per vessel. Boat tours and rentals extra.",
       "reservation_required": false,
       "reservation_url": null,
-      "rules": {},
+      "rules": {
+        "alcohol": "Prohibited except for registered campers within their own campsite.",
+        "pets": "Pets are permitted under the Florida State Parks pet policy (6-foot leash) but not on the beaches or in the water (statewide rule).",
+        "other": [
+          "Swimming or snorkeling outside the designated swim areas is prohibited unless a diver-down flag is displayed.",
+          "Scuba: dive in pairs within your certification, fly a dive flag, no spearfishing, finish one hour before sunset.",
+          "Keep 50 feet from manatees."
+        ]
+      },
       "usgs_site_id": null,
       "river_gauge_site_id": null,
       "gauge_distance_km": null,
@@ -1572,20 +1689,25 @@
       },
       "nws_zone": "FLZ076",
       "nws_county": "FLC087",
-      "typical_closure_time": null,
+      "typical_closure_time": "13:00",
       "cavern_warning": false,
-      "safety_notes": null,
+      "safety_notes": "No lifeguards on duty - swim at your own risk at Cannon Beach and Far Beach, the two small human-made beaches. Any swimming or snorkeling outside the designated swim areas requires a properly displayed diver-down flag. Manatees or crocodiles are occasionally in the marina and Largo Sound. Boat traffic is heavy around the marina.",
       "official_url": "https://www.floridastateparks.org/parks-and-trails/john-pennekamp-coral-reef-state-park",
-      "photo_url": null,
-      "entrance_notes": "Coordinates are the park centroid, not the swim area. Address: 102601 Overseas Highway Key Largo, FL 33037.",
+      "photo_url": "/photos/basic/john-pennekamp-coral-reef-state-park.jpg",
+      "entrance_notes": "102601 Overseas Highway (US 1, MM 102.5), Key Largo FL 33037 (305-676-3777). No day-use reservations, though boat tours should be booked ahead. 351 parking spaces: on weekends and holidays parking usually fills in the early afternoon and the park closes temporarily until spaces open; pavilion rental does not guarantee entry. Boat-trailer parking is limited to 40 and can fill before noon, and is further reduced by construction (one boat ramp closed from July 22, 2026). Coordinates are the park centroid, not the swim area.",
       "swim_season": null,
-      "description": null,
+      "description": "The country's first undersea park at Key Largo, best known for glass-bottom, snorkel and dive boat trips to the reefs, with two small beaches - Cannon Beach, where a 1715 shipwreck's artifacts sit 100 feet offshore for snorkelers, and Far Beach for swimming under the palms. Parking fills by early afternoon on weekends and holidays.",
       "sources": [
         "https://www.floridastateparks.org/parks-and-trails?parks%5B0%5D=experiences%3A262 (Swimming experience filter, captured with a browser 2026-09-19)",
         "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/PARKS_BOUNDARIES/MapServer/0 (park boundary centroid, Monroe County)",
         "https://www.floridastateparks.org/parks-and-trails/john-pennekamp-coral-reef-state-park",
-        "https://api.weather.gov/points/25.1803,-80.3264 (NWS forecast grid; zone/county taken from the nearest land point 25.2003,-80.3464, ~3 km from the centroid, because the centroid is offshore)"
-      ]
+        "https://api.weather.gov/points/25.1803,-80.3264 (NWS forecast grid; zone/county taken from the nearest land point 25.2003,-80.3464, ~3 km from the centroid, because the centroid is offshore)",
+        "https://commons.wikimedia.org/wiki/File:SNORKELING_AT_JOHN_PENNEKAMP_CORAL_REEF_STATE_PARK_NEAR_KEY_LARGO_-_NARA_-_548683.jpg (photo)",
+        "https://www.floridastateparks.org/parks-and-trails/john-pennekamp-coral-reef-state-park (browser, 2026-09-19; construction notice)",
+        "https://www.floridastateparks.org/parks-and-trails/john-pennekamp-coral-reef-state-park/hours-fees",
+        "https://www.floridastateparks.org/parks-and-trails/john-pennekamp-coral-reef-state-park/experiences-amenities"
+      ],
+      "enriched_at": "2026-09-19"
     },
     {
       "slug": "lafayette-blue-springs-state-park",
@@ -1618,7 +1740,7 @@
       "cavern_warning": false,
       "safety_notes": null,
       "official_url": "https://www.floridastateparks.org/parks-and-trails/lafayette-blue-springs-state-park",
-      "photo_url": null,
+      "photo_url": "/photos/basic/lafayette-blue-springs-state-park.jpg",
       "entrance_notes": "Coordinates are the park centroid, not the swim area. Address: 799 N.W. Blue Spring Road Mayo, FL 32066.",
       "swim_season": null,
       "description": null,
@@ -1626,7 +1748,8 @@
         "https://www.floridastateparks.org/parks-and-trails?parks%5B0%5D=experiences%3A262 (Swimming experience filter, captured with a browser 2026-09-19)",
         "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/PARKS_BOUNDARIES/MapServer/0 (park boundary centroid, Lafayette County)",
         "https://www.floridastateparks.org/parks-and-trails/lafayette-blue-springs-state-park",
-        "https://api.weather.gov/points/30.1487,-83.2357 (NWS forecast grid, zone and county)"
+        "https://api.weather.gov/points/30.1487,-83.2357 (NWS forecast grid, zone and county)",
+        "https://commons.wikimedia.org/wiki/File:Lafayette_Blue_Springs_State_Park_(Lafayette_County,FL).jpg (photo)"
       ]
     },
     {
@@ -1667,7 +1790,7 @@
       "cavern_warning": false,
       "safety_notes": "No lifeguards on duty - swim at your own risk, and only in the designated swimming area on Lake Louisa; swimming is not permitted in the park's other lakes. The water is tea-coloured from natural tannins, so you may not be able to see the bottom even in shallow water. The beach bathhouse has cold, non-potable water only.",
       "official_url": "https://www.floridastateparks.org/parks-and-trails/lake-louisa-state-park",
-      "photo_url": null,
+      "photo_url": "/photos/basic/lake-louisa-state-park.jpg",
       "entrance_notes": "7305 US Highway 27, Clermont FL 34714 (352-394-3969). No day-use reservations. The Lake Louisa day-use area (swimming, picnic tables and grills) is first-come, first-served - arrive soon after opening on busy days to get a table. Coordinates are the park centroid, not the swim area.",
       "swim_season": null,
       "description": "A large park 30 minutes from Orlando with rolling hills, 20 miles of trails and several lakes; swimming is allowed in a designated area on tannin-stained Lake Louisa, next to a shaded picnic area, bathhouse and fully accessible playground. Dixie Lake has boat rentals and cabins.",
@@ -1679,7 +1802,8 @@
         "https://www.floridastateparks.org/parks-and-trails/lake-louisa-state-park (browser, 2026-09-19)",
         "https://www.floridastateparks.org/parks-and-trails/lake-louisa-state-park/hours-fees",
         "https://www.floridastateparks.org/parks-and-trails/lake-louisa-state-park/experiences-amenities",
-        "https://www.flrules.org/gateway/ruleno.asp?id=62D-2.014 (alcohol prohibited in state parks)"
+        "https://www.flrules.org/gateway/ruleno.asp?id=62D-2.014 (alcohol prohibited in state parks)",
+        "https://commons.wikimedia.org/wiki/File:Lake_Louisa_state_park_(13930440317).jpg (photo)"
       ],
       "enriched_at": "2026-09-19"
     },
@@ -1768,7 +1892,7 @@
       "cavern_warning": false,
       "safety_notes": null,
       "official_url": "https://www.floridastateparks.org/LignumvitaeKey",
-      "photo_url": null,
+      "photo_url": "/photos/basic/lignumvitae-key-botanical-state-park.jpg",
       "entrance_notes": "Coordinates are the park centroid, not the swim area. Address: 77200 Overseas Highway Islamorada, FL 33036.",
       "swim_season": null,
       "description": null,
@@ -1776,7 +1900,8 @@
         "https://www.floridastateparks.org/parks-and-trails?parks%5B0%5D=experiences%3A262 (Swimming experience filter, captured with a browser 2026-09-19)",
         "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/PARKS_BOUNDARIES/MapServer/0 (park boundary centroid, Monroe County)",
         "https://www.floridastateparks.org/LignumvitaeKey",
-        "https://api.weather.gov/points/24.9036,-80.6844 (NWS forecast grid; zone/county taken from the nearest land point 24.9036,-80.6544, ~3 km from the centroid, because the centroid is offshore)"
+        "https://api.weather.gov/points/24.9036,-80.6844 (NWS forecast grid; zone/county taken from the nearest land point 24.9036,-80.6544, ~3 km from the centroid, because the centroid is offshore)",
+        "https://commons.wikimedia.org/wiki/File:Lignumvitae_Key_Botanical_SP_20230715.jpg (photo)"
       ]
     },
     {
@@ -1852,7 +1977,7 @@
       "cavern_warning": false,
       "safety_notes": null,
       "official_url": "https://www.floridastateparks.org/parks-and-trails/long-key-state-park",
-      "photo_url": null,
+      "photo_url": "/photos/basic/long-key-state-park.jpg",
       "entrance_notes": "Coordinates are the park centroid, not the swim area. Address: 67400 Overseas Highway Long Key, FL 33001.",
       "swim_season": null,
       "description": null,
@@ -1860,7 +1985,8 @@
         "https://www.floridastateparks.org/parks-and-trails?parks%5B0%5D=experiences%3A262 (Swimming experience filter, captured with a browser 2026-09-19)",
         "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/PARKS_BOUNDARIES/MapServer/0 (park boundary centroid, Monroe County)",
         "https://www.floridastateparks.org/parks-and-trails/long-key-state-park",
-        "https://api.weather.gov/points/24.8170,-80.8083 (NWS forecast grid; zone/county taken from the nearest land point 24.817,-80.7983, ~1 km from the centroid, because the centroid is offshore)"
+        "https://api.weather.gov/points/24.8170,-80.8083 (NWS forecast grid; zone/county taken from the nearest land point 24.817,-80.7983, ~1 km from the centroid, because the centroid is offshore)",
+        "https://commons.wikimedia.org/wiki/File:Gfp-florida-keys-long-key-state-park-landscape-view.jpg (photo)"
       ]
     },
     {
@@ -1894,7 +2020,7 @@
       "cavern_warning": false,
       "safety_notes": null,
       "official_url": "https://www.floridastateparks.org/Lovers-Key",
-      "photo_url": null,
+      "photo_url": "/photos/basic/lovers-key-state-park.jpg",
       "entrance_notes": "Coordinates are the park centroid, not the swim area. Address: 8700 Estero Blvd. Bonita Springs, FL 33931. Reachable only by boat or ferry — check the official page for access.",
       "swim_season": null,
       "description": null,
@@ -1902,7 +2028,8 @@
         "https://www.floridastateparks.org/parks-and-trails?parks%5B0%5D=experiences%3A262 (Swimming experience filter, captured with a browser 2026-09-19)",
         "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/PARKS_BOUNDARIES/MapServer/0 (park boundary centroid, Lee County)",
         "https://www.floridastateparks.org/Lovers-Key",
-        "https://api.weather.gov/points/26.3912,-81.8691 (NWS forecast grid; zone/county taken from the nearest land point 26.3812,-81.8691, ~1.1 km from the centroid, because the centroid is offshore)"
+        "https://api.weather.gov/points/26.3912,-81.8691 (NWS forecast grid; zone/county taken from the nearest land point 26.3812,-81.8691, ~1.1 km from the centroid, because the centroid is offshore)",
+        "https://commons.wikimedia.org/wiki/File:Lovers_Key_State_Park,_Fort_Myers_Beach,_United_States_(Unsplash_ChCOEoGgxQo).jpg (photo)"
       ]
     },
     {
@@ -1978,7 +2105,7 @@
       "cavern_warning": false,
       "safety_notes": null,
       "official_url": "https://www.floridastateparks.org/parks-and-trails/manatee-springs-state-park",
-      "photo_url": null,
+      "photo_url": "/photos/basic/manatee-springs-state-park.jpg",
       "entrance_notes": "Coordinates are the park centroid, not the swim area. Address: 11650 N.W. 115 St. Chiefland, FL 32626.",
       "swim_season": null,
       "description": null,
@@ -1986,7 +2113,8 @@
         "https://www.floridastateparks.org/parks-and-trails?parks%5B0%5D=experiences%3A262 (Swimming experience filter, captured with a browser 2026-09-19)",
         "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/PARKS_BOUNDARIES/MapServer/0 (park boundary centroid, Levy County)",
         "https://www.floridastateparks.org/parks-and-trails/manatee-springs-state-park",
-        "https://api.weather.gov/points/29.4948,-82.9703 (NWS forecast grid, zone and county)"
+        "https://api.weather.gov/points/29.4948,-82.9703 (NWS forecast grid, zone and county)",
+        "https://commons.wikimedia.org/wiki/File:Manatee_Springs_State_Park_Florida_springs01.jpg (photo)"
       ]
     },
     {
@@ -2172,7 +2300,7 @@
       "cavern_warning": false,
       "safety_notes": "The swimming area is on the Dead River near its junction with the tidal Ochlockonee River, so expect dark water, current and boat traffic from the nearby ramp. No lifeguard is mentioned on the official page - treat it as unguarded.",
       "official_url": "https://www.floridastateparks.org/parks-and-trails/ochlockonee-river-state-park",
-      "photo_url": null,
+      "photo_url": "/photos/basic/ochlockonee-river-state-park.jpg",
       "entrance_notes": "429 State Park Road, Sopchoppy FL 32358 (850-962-2771), off US 319 south of Sopchoppy. No day-use reservations. Pavilions are first-come unless reserved. Coordinates are the park centroid, not the swim area.",
       "swim_season": null,
       "description": "A quiet longleaf-pine park near Sopchoppy where the Ochlockonee and Dead rivers meet, with a small swimming area, outdoor showers and pavilions in the day-use area beside an accessible boat ramp and kayak launch.",
@@ -2184,7 +2312,8 @@
         "https://www.floridastateparks.org/parks-and-trails/ochlockonee-river-state-park (browser, 2026-09-19)",
         "https://www.floridastateparks.org/parks-and-trails/ochlockonee-river-state-park/hours-fees",
         "https://www.floridastateparks.org/parks-and-trails/ochlockonee-river-state-park/experiences-amenities",
-        "https://www.flrules.org/gateway/ruleno.asp?id=62D-2.014 (alcohol prohibited in state parks)"
+        "https://www.flrules.org/gateway/ruleno.asp?id=62D-2.014 (alcohol prohibited in state parks)",
+        "https://commons.wikimedia.org/wiki/File:Day_Use_Area_-_Ochlockonee_River_State_Park_-_panoramio.jpg (photo)"
       ],
       "enriched_at": "2026-09-19"
     },
@@ -2219,7 +2348,7 @@
       "cavern_warning": false,
       "safety_notes": null,
       "official_url": "https://www.floridastateparks.org/OletaRiver",
-      "photo_url": null,
+      "photo_url": "/photos/basic/oleta-river-state-park.jpg",
       "entrance_notes": "Coordinates are the park centroid, not the swim area. Address: 3400 N.E. 163rd St. North Miami Beach, FL 33160.",
       "swim_season": null,
       "description": null,
@@ -2227,7 +2356,8 @@
         "https://www.floridastateparks.org/parks-and-trails?parks%5B0%5D=experiences%3A262 (Swimming experience filter, captured with a browser 2026-09-19)",
         "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/PARKS_BOUNDARIES/MapServer/0 (park boundary centroid, Dade County)",
         "https://www.floridastateparks.org/OletaRiver",
-        "https://api.weather.gov/points/25.9165,-80.1387 (NWS forecast grid, zone and county)"
+        "https://api.weather.gov/points/25.9165,-80.1387 (NWS forecast grid, zone and county)",
+        "https://commons.wikimedia.org/wiki/File:Oleta_River_State_Park_Biscayne_Bay_view_-_panoramio.jpg (photo)"
       ]
     },
     {
@@ -2268,7 +2398,7 @@
       "cavern_warning": false,
       "safety_notes": "Lake Osprey is a small freshwater lake with a roped-off swimming area; the official page does not mention a lifeguard, so treat it as unguarded. Fishing is allowed on the lake but not inside the swim ropes. Cold-water showers only at the beach bathhouse.",
       "official_url": "https://www.floridastateparks.org/parks-and-trails/oscar-scherer-state-park",
-      "photo_url": null,
+      "photo_url": "/photos/basic/oscar-scherer-state-park.jpg",
       "entrance_notes": "1843 S. Tamiami Trail (US 41), Osprey FL 34229 (941-483-5956). No day-use reservations. Swimming is at the Lake Osprey Picnic Area, which has its own parking, bathhouse and playground. Coordinates are the park centroid, not the swim area.",
       "swim_season": null,
       "description": "A scrub-jay preserve tucked between Sarasota-area suburbs, with Lake Osprey - the only freshwater swimming lake in Sarasota County - offering a sandy beach, roped swim area, snorkeling, bathhouse and pavilions beside a nature center. The paved Legacy Trail runs through the park.",
@@ -2279,7 +2409,8 @@
         "https://api.weather.gov/points/27.1807,-82.4602 (NWS forecast grid, zone and county)",
         "https://www.floridastateparks.org/parks-and-trails/oscar-scherer-state-park (browser, 2026-09-19)",
         "https://www.floridastateparks.org/parks-and-trails/oscar-scherer-state-park/hours-fees",
-        "https://www.floridastateparks.org/parks-and-trails/oscar-scherer-state-park/experiences-amenities"
+        "https://www.floridastateparks.org/parks-and-trails/oscar-scherer-state-park/experiences-amenities",
+        "https://commons.wikimedia.org/wiki/File:Lake_Osprey.jpg (photo)"
       ],
       "enriched_at": "2026-09-19"
     },
@@ -2451,7 +2582,7 @@
       "cavern_warning": false,
       "safety_notes": null,
       "official_url": "https://www.floridastateparks.org/Sebastian-Inlet",
-      "photo_url": null,
+      "photo_url": "/photos/basic/sebastian-inlet-state-park.jpg",
       "entrance_notes": "Coordinates are the park centroid, not the swim area. Address: 9700 South Highway A1A Melbourne Beach, FL 32951.",
       "swim_season": null,
       "description": null,
@@ -2459,7 +2590,8 @@
         "https://www.floridastateparks.org/parks-and-trails?parks%5B0%5D=experiences%3A262 (Swimming experience filter, captured with a browser 2026-09-19)",
         "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/PARKS_BOUNDARIES/MapServer/0 (park boundary centroid, Brevard, Indian River County)",
         "https://www.floridastateparks.org/Sebastian-Inlet",
-        "https://api.weather.gov/points/27.8602,-80.4522 (NWS forecast grid, zone and county)"
+        "https://api.weather.gov/points/27.8602,-80.4522 (NWS forecast grid, zone and county)",
+        "https://commons.wikimedia.org/wiki/File:Florida_view_of_Sebastian_inlet_-_USACE-p15141coll5-10608.jpeg (photo)"
       ]
     },
     {
@@ -2472,11 +2604,18 @@
       "coverage_tier": "basic",
       "swimming_verified": true,
       "guarded": "unknown",
-      "hours": "8 a.m. to sundown, 365 days",
-      "fees": null,
+      "hours": "8 a.m. to sundown, 365 days a year. Shell Island shuttle runs seasonally, March through Labor Day.",
+      "fees": "$8 per vehicle (2-8 people); $4 single-occupant vehicle; $2 pedestrians, bicyclists and extra passengers; exact change at the cash drop-box, cards accepted. With a boat: $12 (one person) or $16 (2-8 people). Shell Island shuttle tickets extra.",
       "reservation_required": false,
       "reservation_url": null,
-      "rules": {},
+      "rules": {
+        "alcohol": "Prohibited. Alcoholic beverages are not allowed in Florida state parks (F.A.C. 62D-2.014).",
+        "pets": "Pets on a 6-foot leash may use picnic areas and trails but are not allowed on the beach, wetlands, boardwalks, playground or in buildings.",
+        "other": [
+          "Scuba: dive in pairs, fly a diver-down flag, finish one hour before sunset; no spearfishing in the park.",
+          "Keep at least 50 feet from manatees."
+        ]
+      },
       "usgs_site_id": null,
       "river_gauge_site_id": null,
       "gauge_distance_km": null,
@@ -2491,18 +2630,24 @@
       "nws_county": "FLC005",
       "typical_closure_time": null,
       "cavern_warning": false,
-      "safety_notes": null,
+      "safety_notes": "Two swimming areas: the open Gulf beach (surf, rip currents, popular for surfing) and the calmer jetty lagoon on the inlet side. The official page does not mention lifeguards - treat as unguarded. Snorkelers and divers work the rock jetties; keep 50 feet from manatees and finish dives an hour before sunset.",
       "official_url": "https://www.floridastateparks.org/parks-and-trails/st-andrews-state-park",
-      "photo_url": null,
-      "entrance_notes": "Coordinates are the park centroid, not the swim area. Address: 4607 State Park Lane Panama City, FL 32408.",
+      "photo_url": "/photos/basic/st-andrews-state-park.jpg",
+      "entrance_notes": "4607 State Park Lane, Panama City Beach FL 32408 (850-708-6100), at the east end of Thomas Drive. No day-use reservations. Two parking areas serve the beaches; pavilions are first-come. Campground construction is under way - stay out of the work zone. Visitor center and amphitheater currently unavailable. Coordinates are the park centroid, not the swim area.",
       "swim_season": null,
-      "description": null,
+      "description": "A mile and a half of white-sand Gulf beach at the mouth of St. Andrews Bay in Panama City Beach, with a sheltered jetty lagoon for swimming and snorkeling, boardwalks, concessions and a campground on Grand Lagoon. Seasonal shuttles run to Shell Island across the pass.",
       "sources": [
         "https://www.floridastateparks.org/parks-and-trails?parks%5B0%5D=experiences%3A262 (Swimming experience filter, captured with a browser 2026-09-19)",
         "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/PARKS_BOUNDARIES/MapServer/0 (park boundary centroid, Bay County)",
         "https://www.floridastateparks.org/parks-and-trails/st-andrews-state-park",
-        "https://api.weather.gov/points/30.1185,-85.7203 (NWS forecast grid, zone and county)"
-      ]
+        "https://api.weather.gov/points/30.1185,-85.7203 (NWS forecast grid, zone and county)",
+        "https://www.floridastateparks.org/parks-and-trails/st-andrews-state-park (browser, 2026-09-19)",
+        "https://www.floridastateparks.org/parks-and-trails/st-andrews-state-park/hours-fees",
+        "https://www.floridastateparks.org/parks-and-trails/st-andrews-state-park/experiences-amenities",
+        "https://www.flrules.org/gateway/ruleno.asp?id=62D-2.014 (alcohol prohibited in state parks)",
+        "https://commons.wikimedia.org/wiki/File:St_Andrews_State_Park_Inlet.jpg (photo)"
+      ],
+      "enriched_at": "2026-09-19"
     },
     {
       "slug": "st-lucie-inlet-preserve-state-park",
@@ -2535,7 +2680,7 @@
       "cavern_warning": false,
       "safety_notes": null,
       "official_url": "https://www.floridastateparks.org/parks-and-trails/st-lucie-inlet-preserve-state-park",
-      "photo_url": null,
+      "photo_url": "/photos/basic/st-lucie-inlet-preserve-state-park.jpg",
       "entrance_notes": "Coordinates are the park centroid, not the swim area. Address: Offshore Island Port Salerno, FL 34997. Reachable only by boat or ferry — check the official page for access.",
       "swim_season": null,
       "description": null,
@@ -2543,7 +2688,8 @@
         "https://www.floridastateparks.org/parks-and-trails?parks%5B0%5D=experiences%3A262 (Swimming experience filter, captured with a browser 2026-09-19)",
         "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/PARKS_BOUNDARIES/MapServer/0 (park boundary centroid, Martin County)",
         "https://www.floridastateparks.org/parks-and-trails/st-lucie-inlet-preserve-state-park",
-        "https://api.weather.gov/points/27.1342,-80.1402 (NWS forecast grid; zone/county taken from the nearest land point 27.1342,-80.1502, ~1 km from the centroid, because the centroid is offshore)"
+        "https://api.weather.gov/points/27.1342,-80.1402 (NWS forecast grid; zone/county taken from the nearest land point 27.1342,-80.1502, ~1 km from the centroid, because the centroid is offshore)",
+        "https://commons.wikimedia.org/wiki/File:St_Lucie_Inlet_aerial_view.jpg (photo)"
       ]
     },
     {
@@ -2619,7 +2765,7 @@
       "cavern_warning": false,
       "safety_notes": null,
       "official_url": "https://www.floridastateparks.org/parks-and-trails/th-stone-memorial-st-joseph-peninsula-state-park",
-      "photo_url": null,
+      "photo_url": "/photos/basic/th-stone-memorial-st-joseph-peninsula-state-park.jpg",
       "entrance_notes": "Coordinates are the park centroid, not the swim area. Address: 8899 Cape San Blas Road Port St. Joe, FL 32456.",
       "swim_season": null,
       "description": null,
@@ -2627,7 +2773,8 @@
         "https://www.floridastateparks.org/parks-and-trails?parks%5B0%5D=experiences%3A262 (Swimming experience filter, captured with a browser 2026-09-19)",
         "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/PARKS_BOUNDARIES/MapServer/0 (park boundary centroid, Gulf County)",
         "https://www.floridastateparks.org/parks-and-trails/th-stone-memorial-st-joseph-peninsula-state-park",
-        "https://api.weather.gov/points/29.8239,-85.4061 (NWS forecast grid; zone/county taken from the nearest land point 29.8138,-85.4162, ~1.5 km from the centroid, because the centroid is offshore)"
+        "https://api.weather.gov/points/29.8239,-85.4061 (NWS forecast grid; zone/county taken from the nearest land point 29.8138,-85.4162, ~1.5 km from the centroid, because the centroid is offshore)",
+        "https://commons.wikimedia.org/wiki/File:Near_Eagle_Harbor_St_Joe_Peninsula_State_Park_-_panoramio.jpg (photo)"
       ]
     },
     {
@@ -2661,7 +2808,7 @@
       "cavern_warning": false,
       "safety_notes": null,
       "official_url": "https://www.floridastateparks.org/parks-and-trails/topsail-hill-preserve-state-park",
-      "photo_url": null,
+      "photo_url": "/photos/basic/topsail-hill-preserve-state-park.jpg",
       "entrance_notes": "Coordinates are the park centroid, not the swim area. Address: 7525 W. County Highway 30A Santa Rosa Beach, FL 32459.",
       "swim_season": null,
       "description": null,
@@ -2669,7 +2816,8 @@
         "https://www.floridastateparks.org/parks-and-trails?parks%5B0%5D=experiences%3A262 (Swimming experience filter, captured with a browser 2026-09-19)",
         "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/PARKS_BOUNDARIES/MapServer/0 (park boundary centroid, Walton County)",
         "https://www.floridastateparks.org/parks-and-trails/topsail-hill-preserve-state-park",
-        "https://api.weather.gov/points/30.3676,-86.2903 (NWS forecast grid, zone and county)"
+        "https://api.weather.gov/points/30.3676,-86.2903 (NWS forecast grid, zone and county)",
+        "https://commons.wikimedia.org/wiki/File:USA_-_Florida_-_Topsail_Hill_Preserve_State_Park_-_53416502046.jpg (photo)"
       ]
     },
     {
@@ -2703,7 +2851,7 @@
       "cavern_warning": false,
       "safety_notes": null,
       "official_url": "https://www.floridastateparks.org/parks-and-trails/troy-spring-state-park",
-      "photo_url": null,
+      "photo_url": "/photos/basic/troy-spring-state-park.jpg",
       "entrance_notes": "Coordinates are the park centroid, not the swim area. Address: 674 N.E. Troy Springs Road Branford, FL 32008.",
       "swim_season": null,
       "description": null,
@@ -2711,7 +2859,8 @@
         "https://www.floridastateparks.org/parks-and-trails?parks%5B0%5D=experiences%3A262 (Swimming experience filter, captured with a browser 2026-09-19)",
         "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/PARKS_BOUNDARIES/MapServer/0 (park boundary centroid, Lafayette County)",
         "https://www.floridastateparks.org/parks-and-trails/troy-spring-state-park",
-        "https://api.weather.gov/points/30.0029,-82.9971 (NWS forecast grid, zone and county)"
+        "https://api.weather.gov/points/30.0029,-82.9971 (NWS forecast grid, zone and county)",
+        "https://commons.wikimedia.org/wiki/File:FlTroySpring.jpg (photo)"
       ]
     },
     {
@@ -2745,7 +2894,7 @@
       "cavern_warning": false,
       "safety_notes": null,
       "official_url": "https://www.floridastateparks.org/WeekiWachee",
-      "photo_url": null,
+      "photo_url": "/photos/basic/weeki-wachee-springs-state-park.jpg",
       "entrance_notes": "Coordinates are the park centroid, not the swim area. Address: 6131 Commercial Way Weeki Wachee, FL 34606.",
       "swim_season": null,
       "description": null,
@@ -2753,7 +2902,8 @@
         "https://www.floridastateparks.org/parks-and-trails?parks%5B0%5D=experiences%3A262 (Swimming experience filter, captured with a browser 2026-09-19)",
         "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/PARKS_BOUNDARIES/MapServer/0 (park boundary centroid, Hernando County)",
         "https://www.floridastateparks.org/WeekiWachee",
-        "https://api.weather.gov/points/28.5201,-82.5843 (NWS forecast grid, zone and county)"
+        "https://api.weather.gov/points/28.5201,-82.5843 (NWS forecast grid, zone and county)",
+        "https://commons.wikimedia.org/wiki/File:Weeki_Wachee_spring_10079u.jpg (photo)"
       ]
     },
     {
@@ -2795,7 +2945,7 @@
       "cavern_warning": true,
       "safety_notes": "No lifeguard on duty - swim at your own risk. Swimming and snorkeling are allowed only in Peacock Springs and Orange Grove Sink and depend on seasonal water levels. These springs open into one of the longest underwater cave systems in the country (nearly 33,000 feet surveyed): only certified cave and cavern divers may enter the caves, in teams of two or more, and open-water divers are limited to Orange Grove Sink without lights. No potable water in the park.",
       "official_url": "https://www.floridastateparks.org/parks-and-trails/wes-skiles-peacock-springs-state-park",
-      "photo_url": null,
+      "photo_url": "/photos/basic/wes-skiles-peacock-springs-state-park.jpg",
       "entrance_notes": "18532 180th Street, Live Oak FL 32060 (386-294-3667). No reservations; pay at the honor box. Two parking areas, each with a portable restroom and changing room; facilities are limited and there is no drinking water. Coordinates are the park centroid, not the swim area.",
       "swim_season": null,
       "description": "A quiet Suwannee County park with two major springs, a spring run and six sinkholes over one of the longest underwater cave systems in the United States. Swimming in Peacock Springs and Orange Grove Sink is popular in summer, and a shaded interpretive trail traces the caves below.",
@@ -2807,7 +2957,8 @@
         "https://www.floridastateparks.org/parks-and-trails/wes-skiles-peacock-springs-state-park (browser, 2026-09-19)",
         "https://www.floridastateparks.org/parks-and-trails/wes-skiles-peacock-springs-state-park/hours-fees",
         "https://www.floridastateparks.org/parks-and-trails/wes-skiles-peacock-springs-state-park/experiences-amenities",
-        "https://www.flrules.org/gateway/ruleno.asp?id=62D-2.014 (alcohol prohibited in state parks)"
+        "https://www.flrules.org/gateway/ruleno.asp?id=62D-2.014 (alcohol prohibited in state parks)",
+        "https://commons.wikimedia.org/wiki/File:Wes_Skiles_Peacock_Springs_State_Park,_Luraville,_Florida_(40488890521).jpg (photo)"
       ],
       "enriched_at": "2026-09-19"
     },

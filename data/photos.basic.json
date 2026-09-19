@@ -1,0 +1,365 @@
+{
+  "_note": "Hero photos for basic-tier parks. All from Wikimedia Commons under public-domain, CC0 or CC-BY licences (no share-alike). Downscaled to <=1600 px wide with sips. Attribution must be shown on the About page. Same shape as data/photos.json.",
+  "photos": {
+    "edward-ball-wakulla-springs-state-park": {
+      "file": "/photos/basic/edward-ball-wakulla-springs-state-park.jpg",
+      "title": "Wakulla-springs 2009-05-04T18 56 40.jpg",
+      "author": "Hannes Grobe (talk)",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Wakulla-springs_2009-05-04T18_56_40.jpg"
+    },
+    "florida-caverns-state-park": {
+      "file": "/photos/basic/florida-caverns-state-park.jpg",
+      "title": "Spring Run - Florida Caverns State Park - panoramio.jpg",
+      "author": "Mike Tilley",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Spring_Run_-_Florida_Caverns_State_Park_-_panoramio.jpg"
+    },
+    "wes-skiles-peacock-springs-state-park": {
+      "file": "/photos/basic/wes-skiles-peacock-springs-state-park.jpg",
+      "title": "Wes Skiles Peacock Springs State Park, Luraville, Florida (40488890521).jpg",
+      "author": "Judy Gallagher",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Wes_Skiles_Peacock_Springs_State_Park,_Luraville,_Florida_(40488890521).jpg"
+    },
+    "alfred-b-maclay-gardens-state-park": {
+      "file": "/photos/basic/alfred-b-maclay-gardens-state-park.jpg",
+      "title": "07-09-30 LkHall2.JPG",
+      "author": "Tim Ross",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:07-09-30_LkHall2.JPG"
+    },
+    "falling-waters-state-park": {
+      "file": "/photos/basic/falling-waters-state-park.jpg",
+      "title": "Falling Waters State Park 2.jpg",
+      "author": "Balon Greyjoy",
+      "license": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Falling_Waters_State_Park_2.jpg"
+    },
+    "lake-louisa-state-park": {
+      "file": "/photos/basic/lake-louisa-state-park.jpg",
+      "title": "Lake Louisa state park (13930440317).jpg",
+      "author": "Chad Sparkes from Kissimmee,Florida, United States",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Lake_Louisa_state_park_(13930440317).jpg"
+    },
+    "oscar-scherer-state-park": {
+      "file": "/photos/basic/oscar-scherer-state-park.jpg",
+      "title": "Lake Osprey.jpg",
+      "author": "AMaken",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Lake_Osprey.jpg"
+    },
+    "blackwater-river-state-park": {
+      "file": "/photos/basic/blackwater-river-state-park.jpg",
+      "title": "Blackwater River State Park River 01.jpg",
+      "author": "Operator 16",
+      "license": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Blackwater_River_State_Park_River_01.jpg"
+    },
+    "ochlockonee-river-state-park": {
+      "file": "/photos/basic/ochlockonee-river-state-park.jpg",
+      "title": "Day Use Area - Ochlockonee River State Park - panoramio.jpg",
+      "author": "Mike Tilley",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Day_Use_Area_-_Ochlockonee_River_State_Park_-_panoramio.jpg"
+    },
+    "honeymoon-island-state-park": {
+      "file": "/photos/basic/honeymoon-island-state-park.jpg",
+      "title": "Honeymoon Island State Park (Image 1).jpg",
+      "author": "Christopher Hollis",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Honeymoon_Island_State_Park_(Image_1).jpg"
+    },
+    "st-andrews-state-park": {
+      "file": "/photos/basic/st-andrews-state-park.jpg",
+      "title": "St Andrews State Park Inlet.jpg",
+      "author": "Balon Greyjoy",
+      "license": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source_url": "https://commons.wikimedia.org/wiki/File:St_Andrews_State_Park_Inlet.jpg"
+    },
+    "anastasia-state-park": {
+      "file": "/photos/basic/anastasia-state-park.jpg",
+      "title": "A1A Scenic and Historic Coastal Byway - Greetings from Anastasia State Park - NARA - 7716676.jpg",
+      "author": "S. Clyde",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:A1A_Scenic_and_Historic_Coastal_Byway_-_Greetings_from_Anastasia_State_Park_-_NARA_-_7716676.jpg"
+    },
+    "anclote-key-preserve-state-park": {
+      "file": "/photos/basic/anclote-key-preserve-state-park.jpg",
+      "title": "Evening on Anclote Key.jpg",
+      "author": "Trougnouf",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Evening_on_Anclote_Key.jpg"
+    },
+    "bahia-honda-state-park": {
+      "file": "/photos/basic/bahia-honda-state-park.jpg",
+      "title": "Sunset from Bahia Honda State Park Dec 2019 1.jpg",
+      "author": "4300streetcar",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Sunset_from_Bahia_Honda_State_Park_Dec_2019_1.jpg"
+    },
+    "bill-baggs-cape-florida-state-park": {
+      "file": "/photos/basic/bill-baggs-cape-florida-state-park.jpg",
+      "title": "Cape Florida Beach 1.jpg",
+      "author": "Wilfredor",
+      "license": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Cape_Florida_Beach_1.jpg"
+    },
+    "caladesi-island-state-park": {
+      "file": "/photos/basic/caladesi-island-state-park.jpg",
+      "title": "Sunset Over Hurricane Pass (7853564074).jpg",
+      "author": "Trish Hartmann from Tampa, Florida, USA",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Sunset_Over_Hurricane_Pass_(7853564074).jpg"
+    },
+    "cayo-costa-state-park": {
+      "file": "/photos/basic/cayo-costa-state-park.jpg",
+      "title": "Captiva Pass & Cayo Costa Island (Pine Island Sound, Florida, USA) (26162433405).jpg",
+      "author": "James St. John",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Captiva_Pass_%26_Cayo_Costa_Island_(Pine_Island_Sound,_Florida,_USA)_(26162433405).jpg"
+    },
+    "curry-hammock-state-park": {
+      "file": "/photos/basic/curry-hammock-state-park.jpg",
+      "title": "Florida Keys Scenic Highway - Kayaking in Curry Hammock State Park - NARA - 7718446.jpg",
+      "author": "Unknown authorUnknown author or not provided",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Florida_Keys_Scenic_Highway_-_Kayaking_in_Curry_Hammock_State_Park_-_NARA_-_7718446.jpg"
+    },
+    "deer-lake-state-park": {
+      "file": "/photos/basic/deer-lake-state-park.jpg",
+      "title": "DeerLakeSP.JPG",
+      "author": "Staugbeachbum at English Wikipedia",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:DeerLakeSP.JPG"
+    },
+    "delnor-wiggins-pass-state-park": {
+      "file": "/photos/basic/delnor-wiggins-pass-state-park.jpg",
+      "title": "Delnor-Wiggins Pass www.florida-infos.com - panoramio.jpg",
+      "author": "Franz Stellbrink",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Delnor-Wiggins_Pass_www.florida-infos.com_-_panoramio.jpg"
+    },
+    "dr-julian-g-bruce-st-george-island-state-park": {
+      "file": "/photos/basic/dr-julian-g-bruce-st-george-island-state-park.jpg",
+      "title": "Dr. Julian G. Bruce St. George Island State Park - Beach.jpg",
+      "author": "Operator 16",
+      "license": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Dr._Julian_G._Bruce_St._George_Island_State_Park_-_Beach.jpg"
+    },
+    "dr-von-d-mizell-eula-johnson-state-park": {
+      "file": "/photos/basic/dr-von-d-mizell-eula-johnson-state-park.jpg",
+      "title": "Chaude journée au lagon. Nice hot day at the lagoon in John U. Lloyd State Park, Dania Beach, Florida - panoramio.jpg",
+      "author": "Richard Mc Neil",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Chaude_journ%C3%A9e_au_lagon._Nice_hot_day_at_the_lagoon_in_John_U._Lloyd_State_Park,_Dania_Beach,_Florida_-_panoramio.jpg"
+    },
+    "egmont-key-state-park": {
+      "file": "/photos/basic/egmont-key-state-park.jpg",
+      "title": "Egmont key north battery (1).jpg",
+      "author": "Ramos Keith, U.S. Fish and Wildlife Service",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Egmont_key_north_battery_(1).jpg"
+    },
+    "fort-zachary-taylor-historic-state-park": {
+      "file": "/photos/basic/fort-zachary-taylor-historic-state-park.jpg",
+      "title": "Fort Zachary Taylor Beach - panoramio.jpg",
+      "author": "Robbtronic",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Fort_Zachary_Taylor_Beach_-_panoramio.jpg"
+    },
+    "gasparilla-island-state-park": {
+      "file": "/photos/basic/gasparilla-island-state-park.jpg",
+      "title": "Beach at Gasparilla Island State Park, FL.jpg",
+      "author": "Saph668",
+      "license": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Beach_at_Gasparilla_Island_State_Park,_FL.jpg"
+    },
+    "grayton-beach-state-park": {
+      "file": "/photos/basic/grayton-beach-state-park.jpg",
+      "title": "Beach sand (Grayton Beach State Park).jpg",
+      "author": "Paul and Jill",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Beach_sand_(Grayton_Beach_State_Park).jpg"
+    },
+    "hugh-taylor-birch-state-park": {
+      "file": "/photos/basic/hugh-taylor-birch-state-park.jpg",
+      "title": "Hugh Taylor Birch State Park.jpg",
+      "author": "Gknor",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Hugh_Taylor_Birch_State_Park.jpg"
+    },
+    "indian-key-historic-state-park": {
+      "file": "/photos/basic/indian-key-historic-state-park.jpg",
+      "title": "Florida Keys Scenic Highway - Over Indian Key - NARA - 7718445.jpg",
+      "author": "Unknown authorUnknown author or not provided",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Florida_Keys_Scenic_Highway_-_Over_Indian_Key_-_NARA_-_7718445.jpg"
+    },
+    "john-d-macarthur-beach-state-park": {
+      "file": "/photos/basic/john-d-macarthur-beach-state-park.jpg",
+      "title": "Beach with birds - John D. MacArthur Beach State Park.jpg",
+      "author": "RicoRico",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Beach_with_birds_-_John_D._MacArthur_Beach_State_Park.jpg"
+    },
+    "john-pennekamp-coral-reef-state-park": {
+      "file": "/photos/basic/john-pennekamp-coral-reef-state-park.jpg",
+      "title": "SNORKELING AT JOHN PENNEKAMP CORAL REEF STATE PARK NEAR KEY LARGO - NARA - 548683.jpg",
+      "author": "Flip Schulke",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:SNORKELING_AT_JOHN_PENNEKAMP_CORAL_REEF_STATE_PARK_NEAR_KEY_LARGO_-_NARA_-_548683.jpg"
+    },
+    "lignumvitae-key-botanical-state-park": {
+      "file": "/photos/basic/lignumvitae-key-botanical-state-park.jpg",
+      "title": "Lignumvitae Key Botanical SP 20230715.jpg",
+      "author": "Jstuby",
+      "license": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Lignumvitae_Key_Botanical_SP_20230715.jpg"
+    },
+    "long-key-state-park": {
+      "file": "/photos/basic/long-key-state-park.jpg",
+      "title": "Gfp-florida-keys-long-key-state-park-landscape-view.jpg",
+      "author": "Yinan Chen",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Gfp-florida-keys-long-key-state-park-landscape-view.jpg"
+    },
+    "lovers-key-state-park": {
+      "file": "/photos/basic/lovers-key-state-park.jpg",
+      "title": "Lovers Key State Park, Fort Myers Beach, United States (Unsplash ChCOEoGgxQo).jpg",
+      "author": "Eddie Kopp fiveohfilms",
+      "license": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Lovers_Key_State_Park,_Fort_Myers_Beach,_United_States_(Unsplash_ChCOEoGgxQo).jpg"
+    },
+    "oleta-river-state-park": {
+      "file": "/photos/basic/oleta-river-state-park.jpg",
+      "title": "Oleta River State Park Biscayne Bay view - panoramio.jpg",
+      "author": "quyentr",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Oleta_River_State_Park_Biscayne_Bay_view_-_panoramio.jpg"
+    },
+    "sebastian-inlet-state-park": {
+      "file": "/photos/basic/sebastian-inlet-state-park.jpg",
+      "title": "Florida view of Sebastian inlet - USACE-p15141coll5-10608.jpeg",
+      "author": "U.S. Army Corps of Engineers",
+      "license": "Public domain",
+      "license_url": "https://commons.wikimedia.org/wiki/Template:PD-USGov",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Florida_view_of_Sebastian_inlet_-_USACE-p15141coll5-10608.jpeg"
+    },
+    "th-stone-memorial-st-joseph-peninsula-state-park": {
+      "file": "/photos/basic/th-stone-memorial-st-joseph-peninsula-state-park.jpg",
+      "title": "Near Eagle Harbor St Joe Peninsula State Park - panoramio.jpg",
+      "author": "Mike Tilley",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Near_Eagle_Harbor_St_Joe_Peninsula_State_Park_-_panoramio.jpg"
+    },
+    "topsail-hill-preserve-state-park": {
+      "file": "/photos/basic/topsail-hill-preserve-state-park.jpg",
+      "title": "USA - Florida - Topsail Hill Preserve State Park - 53416502046.jpg",
+      "author": "Alexander Hatley",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:USA_-_Florida_-_Topsail_Hill_Preserve_State_Park_-_53416502046.jpg"
+    },
+    "st-lucie-inlet-preserve-state-park": {
+      "file": "/photos/basic/st-lucie-inlet-preserve-state-park.jpg",
+      "title": "St Lucie Inlet aerial view.jpg",
+      "author": "Tony Santana, U.S. Army Corps of Engineers",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:St_Lucie_Inlet_aerial_view.jpg"
+    },
+    "fort-clinch-state-park": {
+      "file": "/photos/basic/fort-clinch-state-park.jpg",
+      "title": "FortClinchAir.jpg",
+      "author": "Fl295 at English Wikipedia",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:FortClinchAir.jpg"
+    },
+    "de-leon-springs-state-park": {
+      "file": "/photos/basic/de-leon-springs-state-park.jpg",
+      "title": "De Leon Springs State Park01.jpg",
+      "author": "Ebyabe",
+      "license": "CC BY 2.5",
+      "license_url": "https://creativecommons.org/licenses/by/2.5",
+      "source_url": "https://commons.wikimedia.org/wiki/File:De_Leon_Springs_State_Park01.jpg"
+    },
+    "fanning-springs-state-park": {
+      "file": "/photos/basic/fanning-springs-state-park.jpg",
+      "title": "Fanning Springs Park springs01.jpg",
+      "author": "Ebyabe",
+      "license": "CC BY 2.5",
+      "license_url": "https://creativecommons.org/licenses/by/2.5",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Fanning_Springs_Park_springs01.jpg"
+    },
+    "manatee-springs-state-park": {
+      "file": "/photos/basic/manatee-springs-state-park.jpg",
+      "title": "Manatee Springs State Park Florida springs01.jpg",
+      "author": "Ebyabe",
+      "license": "CC BY 2.5",
+      "license_url": "https://creativecommons.org/licenses/by/2.5",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Manatee_Springs_State_Park_Florida_springs01.jpg"
+    },
+    "lafayette-blue-springs-state-park": {
+      "file": "/photos/basic/lafayette-blue-springs-state-park.jpg",
+      "title": "Lafayette Blue Springs State Park (Lafayette County,FL).jpg",
+      "author": "Paul Clark",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Lafayette_Blue_Springs_State_Park_(Lafayette_County,FL).jpg"
+    },
+    "troy-spring-state-park": {
+      "file": "/photos/basic/troy-spring-state-park.jpg",
+      "title": "FlTroySpring.jpg",
+      "author": "State of Florida, photo by T. Scott",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:FlTroySpring.jpg"
+    },
+    "weeki-wachee-springs-state-park": {
+      "file": "/photos/basic/weeki-wachee-springs-state-park.jpg",
+      "title": "Weeki Wachee spring 10079u.jpg",
+      "author": "Toni Frissell",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Weeki_Wachee_spring_10079u.jpg"
+    }
+  }
+}

@@ -127,5 +127,157 @@
     "sources": [
       "https://www.floridastateparks.org/parks-and-trails/wekiwa-springs-state-park/experiences-amenities-0"
     ]
+  },
+  "madison-blue-spring-state-park": {
+    "water_access": "unknown",
+    "entry_type": "unknown",
+    "ada_parking": null,
+    "parking_to_water_m": null,
+    "accessible_restroom": true,
+    "surface": "unknown",
+    "wheelchair_loaner": null,
+    "handrails": null,
+    "shade": null,
+    "depth_at_entry_note": "The park does not describe how a wheelchair user gets into the water. The swim area has wading sections less than 5 ft deep and sections reaching about 25 ft; climbing on or jumping from the limestone walls is prohibited. Only temporary restrooms are on site - no bathhouse or changing area.",
+    "service_animals_note": "Service animals are welcome in all areas of Florida State Parks, but not in any of the swimming areas: the spring and adjacent river are public bathing places under Department of Health rules, and alligators are drawn to animals (official).",
+    "verified": true,
+    "source": "Official experiences-amenities page, 'Accessible Amenities': restrooms and picnic facilities are accessible; service animals welcome. Water-entry method, ADA parking count, loaner chairs and path surfaces are not published.",
+    "sources": [
+      "https://www.floridastateparks.org/parks-and-trails/madison-blue-spring-state-park/experiences-amenities",
+      "https://www.floridastateparks.org/parks-and-trails/madison-blue-spring-state-park"
+    ]
+  },
+  "lafayette-blue-springs-state-park": {
+    "water_access": "unknown",
+    "entry_type": "ramp",
+    "ada_parking": null,
+    "parking_to_water_m": null,
+    "accessible_restroom": null,
+    "surface": "unknown",
+    "wheelchair_loaner": null,
+    "handrails": null,
+    "shade": null,
+    "depth_at_entry_note": "A walkway ramp leads to the spring and the river (official accessible-amenities list), but the park does not say whether a wheelchair user can get into the water. A cold-water, open-air rinse station is in the spring area. Swimming closes when the Suwannee River floods the spring.",
+    "service_animals_note": "Service animals are welcome in all areas of Florida State Parks; systemwide policy excludes animals from swimming areas.",
+    "verified": true,
+    "source": "Official experiences-amenities page, 'Accessible Amenities': walkway ramp to the spring and river, accessible picnic facilities, one accessible modern cabin with an elevator, interpretive exhibits; paved day-use parking. Restroom accessibility, ADA parking count and the water-entry method are not published.",
+    "sources": [
+      "https://www.floridastateparks.org/parks-and-trails/lafayette-blue-springs-state-park/experiences-amenities",
+      "https://www.floridastateparks.org/parks-and-trails/lafayette-blue-springs-state-park"
+    ]
+  },
+  "troy-spring-state-park": {
+    "water_access": "unknown",
+    "entry_type": "ramp",
+    "ada_parking": null,
+    "parking_to_water_m": null,
+    "accessible_restroom": true,
+    "surface": "paved",
+    "wheelchair_loaner": null,
+    "handrails": null,
+    "shade": null,
+    "depth_at_entry_note": "A long, paved, switchback ramp provides access to the spring dock (official, described in the diving section) and the park lists an accessible walkway to the spring. How a wheelchair user enters the water from the dock is not described; the spring is 70 ft deep with shallow areas in the spring run.",
+    "service_animals_note": "Service animals are allowed in all areas of the park (official); systemwide policy excludes animals from swimming areas.",
+    "verified": true,
+    "source": "Official experiences-amenities page: accessible walkway to the spring, accessible picnic facilities, accessible restroom facilities and accessible water fountains; a long paved switchback ramp runs to the spring dock. ADA parking count, loaner chairs and the water-entry method are not published.",
+    "sources": [
+      "https://www.floridastateparks.org/parks-and-trails/troy-spring-state-park/experiences-amenities",
+      "https://www.floridastateparks.org/parks-and-trails/troy-spring-state-park"
+    ]
+  },
+  "fanning-springs-state-park": {
+    "water_access": "limited",
+    "entry_type": "ramp",
+    "ada_parking": null,
+    "parking_to_water_m": null,
+    "accessible_restroom": true,
+    "surface": "boardwalk",
+    "wheelchair_loaner": null,
+    "handrails": null,
+    "shade": null,
+    "depth_at_entry_note": "Official accessible amenities include 'transition steps and accessibility ramp at the spring'. Swimmers can wade in from the shore or the dock and toddlers can stay in a shallow area; water is 72 degrees year-round. Effective Aug. 20, 2026 the floating dock is under an improvement project and visitors may be asked to exit the water at any time.",
+    "service_animals_note": "Service animals are welcome in all areas of Florida State Parks; systemwide policy excludes animals from swimming areas.",
+    "verified": true,
+    "source": "Official experiences-amenities page, 'Accessible Amenities': transition steps and accessibility ramp at the spring, accessible picnic facilities, ADA-accessible cabin; the restroom nearest the river campsite is described as accessible. ADA parking count and loaner chairs are not published.",
+    "sources": [
+      "https://www.floridastateparks.org/parks-and-trails/fanning-springs-state-park/experiences-amenities",
+      "https://www.floridastateparks.org/parks-and-trails/fanning-springs-state-park"
+    ]
+  },
+  "manatee-springs-state-park": {
+    "water_access": "unknown",
+    "entry_type": "unknown",
+    "ada_parking": null,
+    "parking_to_water_m": null,
+    "accessible_restroom": true,
+    "surface": "boardwalk",
+    "wheelchair_loaner": null,
+    "handrails": null,
+    "shade": null,
+    "depth_at_entry_note": "An 800-foot boardwalk runs through the cypress forest to the spring, but the park does not describe how a wheelchair user enters the water. The current in the spring run is swift and swimming is prohibited in the run, at the end of the boardwalk and in Catfish Hotel.",
+    "service_animals_note": "Service animals are welcome in all areas of Florida State Parks; dogs are not permitted in the swimming area or on the boardwalks.",
+    "verified": true,
+    "source": "Official experiences-amenities page: ADA-accessible restrooms and showers in the Magnolia 1 and Hickory camping loops and an ADA restroom at the waterfront (the waterfront restroom has been closed since Jan. 14, 2026); accessible amphitheater, concession, campsites and picnic facilities. Water-entry method and ADA parking count are not published.",
+    "sources": [
+      "https://www.floridastateparks.org/parks-and-trails/manatee-springs-state-park/experiences-amenities",
+      "https://www.floridastateparks.org/parks-and-trails/manatee-springs-state-park"
+    ]
+  },
+  "de-leon-springs-state-park": {
+    "water_access": "limited",
+    "entry_type": "other",
+    "ada_parking": true,
+    "parking_to_water_m": null,
+    "accessible_restroom": true,
+    "surface": "paved",
+    "wheelchair_loaner": true,
+    "handrails": true,
+    "shade": null,
+    "depth_at_entry_note": "Swimmer chair lift upon request plus stairs with handrails into the swimming area (official). The swim area is a constant 72 degrees and ranges from 18 inches deep to 30 feet at the spring boil; it closes when lightning is detected within 6 miles. Sidewalks and boardwalks reach all facilities and the half-mile paved nature trail is wheelchair accessible.",
+    "service_animals_note": "Service animals are allowed in all areas of the park (official); pets are not allowed in the sunbathing area.",
+    "verified": true,
+    "source": "Official experiences-amenities page, 'Accessible Amenities': swimmer chair lift upon request and stairs with handrails into the swimming area, wheelchair available upon request (an all-terrain wheelchair at the ranger station), accessible restrooms, sidewalks and boardwalks to all facilities, accessible parking near all facilities, paved nature trail, accessible boat tour and fishing pier. The number of ADA spaces is not published.",
+    "sources": [
+      "https://www.floridastateparks.org/parks-and-trails/de-leon-springs-state-park/experiences-amenities",
+      "https://www.floridastateparks.org/parks-and-trails/de-leon-springs-state-park"
+    ]
+  },
+  "weeki-wachee-springs-state-park": {
+    "water_access": "yes",
+    "entry_type": "sand",
+    "ada_parking": true,
+    "parking_to_water_m": null,
+    "accessible_restroom": true,
+    "surface": "paved",
+    "wheelchair_loaner": true,
+    "handrails": null,
+    "shade": null,
+    "depth_at_entry_note": "Buccaneer Bay is a white sand beach with a shallow entry area, and a wheeled assistive chair with side floats is available to help guests into the water (official accessibility page). Staff assistance is available for tubing; tubes are open-bottom with no enclosed seat. Docks are floating and have no railings. Water slides close at 4:30 p.m. and swimming at 5 p.m.",
+    "service_animals_note": "No published service-animal statement; pets are not permitted in the park. Florida State Parks welcomes service animals systemwide but excludes them from swimming areas.",
+    "verified": true,
+    "source": "Official park accessibility page published by concessionaire Guest Services: 10 accessible parking spaces about 20 yards from the entrance, level cement walkways, ADA restroom stalls with rails near the Mermaid Galley and the Gift Locker building, shallow-entry swim area with a wheeled assistive chair, ADA-compliant kayak launch, wheelchair-accessible Mermaid Theater. Buccaneer Bay is on portable toilets while a new restroom building is built, and the distance from parking to the water is not published.",
+    "sources": [
+      "https://weekiwachee.com/accessibility-information/",
+      "https://www.floridastateparks.org/parks-and-trails/weeki-wachee-springs-state-park/experiences-amenities",
+      "https://www.floridastateparks.org/WeekiWachee"
+    ]
+  },
+  "kelly-park-rock-springs": {
+    "water_access": "unknown",
+    "entry_type": "unknown",
+    "ada_parking": null,
+    "parking_to_water_m": null,
+    "accessible_restroom": null,
+    "surface": "unknown",
+    "wheelchair_loaner": null,
+    "handrails": null,
+    "shade": null,
+    "depth_at_entry_note": "Not published. Rock Springs is a free-flowing natural spring run at a constant 68 degrees; the county does not describe entry steps, ramps or depths. The swim area closes one hour before the park and whenever a storm produces lightning.",
+    "service_animals_note": "With the exception of ADA service animals, pets are not allowed in Kelly Park (official).",
+    "verified": false,
+    "source": "Orange County park page publishes hours, fees, capacity, camping and launch rules only - no accessibility details for the spring run, restrooms, paths or parking. Its only ADA statement is that service animals are exempt from the no-pets rule.",
+    "sources": [
+      "https://www.ocfl.net/cultureparks/parks.aspx?d=22&m=dtlvw"
+    ]
   }
 }

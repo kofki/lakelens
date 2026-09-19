@@ -56,6 +56,70 @@
       "license": "CC BY 2.0",
       "license_url": "https://creativecommons.org/licenses/by/2.0",
       "source_url": "https://commons.wikimedia.org/wiki/File:Wekiwa_Springs_State_Park.jpg"
+    },
+    "madison-blue-spring-state-park": {
+      "file": "/photos/madison-blue-spring-state-park.jpg",
+      "title": "Madison Blue Springs State Park.jpg",
+      "author": "Operator 16",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Madison_Blue_Springs_State_Park.jpg"
+    },
+    "lafayette-blue-springs-state-park": {
+      "file": "/photos/lafayette-blue-springs-state-park.jpg",
+      "title": "Lafayette Blue Springs State Park (Lafayette County,FL).jpg",
+      "author": "Paul Clark (systemslibrarian)",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Lafayette_Blue_Springs_State_Park_(Lafayette_County,FL).jpg"
+    },
+    "troy-spring-state-park": {
+      "file": "/photos/troy-spring-state-park.jpg",
+      "title": "FlTroySpring.jpg",
+      "author": "State of Florida, photo by T. Scott",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:FlTroySpring.jpg"
+    },
+    "fanning-springs-state-park": {
+      "file": "/photos/fanning-springs-state-park.jpg",
+      "title": "Fanning Springs Park springs01.jpg",
+      "author": "Ebyabe",
+      "license": "CC BY 2.5",
+      "license_url": "https://creativecommons.org/licenses/by/2.5",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Fanning_Springs_Park_springs01.jpg"
+    },
+    "manatee-springs-state-park": {
+      "file": "/photos/manatee-springs-state-park.jpg",
+      "title": "Manatee Springs State Park Florida springs01.jpg",
+      "author": "Ebyabe",
+      "license": "CC BY 2.5",
+      "license_url": "https://creativecommons.org/licenses/by/2.5",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Manatee_Springs_State_Park_Florida_springs01.jpg"
+    },
+    "de-leon-springs-state-park": {
+      "file": "/photos/de-leon-springs-state-park.jpg",
+      "title": "De Leon Springs State Park springs01.jpg",
+      "author": "Ebyabe",
+      "license": "CC BY 2.5",
+      "license_url": "https://creativecommons.org/licenses/by/2.5",
+      "source_url": "https://commons.wikimedia.org/wiki/File:De_Leon_Springs_State_Park_springs01.jpg"
+    },
+    "weeki-wachee-springs-state-park": {
+      "file": "/photos/weeki-wachee-springs-state-park.jpg",
+      "title": "FlWeekiWacheeSprings.jpg",
+      "author": "State of Florida, photo by R. Means",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:FlWeekiWacheeSprings.jpg"
+    },
+    "kelly-park-rock-springs": {
+      "file": "/photos/kelly-park-rock-springs.jpg",
+      "title": "FlRockSprings.jpg",
+      "author": "State of Florida, photo by T. Scott",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:FlRockSprings.jpg"
     }
   }
 }

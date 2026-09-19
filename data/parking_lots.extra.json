@@ -1,0 +1,65 @@
+{
+  "_note": "Curated parking for the deep-tier DATA-extra parks (Hart Springs and Lithia Springs). Coordinates marked 'approximate' are not mapped in OpenStreetMap and are placed from the park layout; the OSM-derived ones carry their way id. Capacity and ADA space counts are not published by either county.",
+  "lots": [
+    {
+      "park_slug": "hart-springs-park",
+      "name": "Day-use lot (springs entrance)",
+      "lat": 29.6762,
+      "lng": -82.9508,
+      "fee": "Included in the per-person day-use fee ($5 weekday / $8 weekend and holidays April-September, $3 October-March)",
+      "capacity": null,
+      "ada_spaces": null,
+      "is_overflow": false,
+      "source": "curated",
+      "notes": "Approximate location just east of the spring, off the entrance drive from 4240 SW 86th Avenue - this lot is not mapped in OpenStreetMap. Pay at the staffed booth on the way in. The park sets a daily capacity and stops admitting new visitors once it is reached, so a shelter or Pavilion A/B reservation is the only guaranteed way in on a hot weekend. Accessible parking is reported by third-party guides but the county publishes no ADA space count."
+    },
+    {
+      "park_slug": "hart-springs-park",
+      "name": "Boat ramp parking (Suwannee River)",
+      "lat": 29.67424,
+      "lng": -82.95443,
+      "fee": "Included in the day-use fee",
+      "capacity": null,
+      "ada_spaces": null,
+      "is_overflow": false,
+      "source": "curated",
+      "notes": "At the Hart Springs boat ramp on the Suwannee River (OSM slipway node 3666202908), a short walk downstream of the swimming area. Trailer parking, so it fills on good river days and is not a substitute for the day-use lot."
+    },
+    {
+      "park_slug": "lithia-springs-conservation-park",
+      "name": "Spring swim-area lot (north)",
+      "lat": 27.8665,
+      "lng": -82.23004,
+      "fee": "Included in the $2 per-vehicle entrance fee; the $2 per-person swim band is bought separately at the gate",
+      "capacity": null,
+      "ada_spaces": null,
+      "is_overflow": false,
+      "source": "curated",
+      "notes": "OSM parking way 312352096, the lot closest to the fenced swimming area. Parking spaces are first come, first served. Because each four-hour swim slot is capped at 200 swimmers, this lot turns over at the 1 p.m./2 p.m. changeover rather than filling for the whole day."
+    },
+    {
+      "park_slug": "lithia-springs-conservation-park",
+      "name": "Spring swim-area lot (south)",
+      "lat": 27.86637,
+      "lng": -82.23026,
+      "fee": "Included in the $2 per-vehicle entrance fee",
+      "capacity": null,
+      "ada_spaces": null,
+      "is_overflow": false,
+      "source": "curated",
+      "notes": "OSM parking way 312352097, the second lot at the swimming area. First come, first served; no ADA space count is published."
+    },
+    {
+      "park_slug": "lithia-springs-conservation-park",
+      "name": "Paved lot near the park entrance",
+      "lat": 27.86591,
+      "lng": -82.22912,
+      "fee": "Included in the $2 per-vehicle entrance fee",
+      "capacity": null,
+      "ada_spaces": null,
+      "is_overflow": true,
+      "source": "curated",
+      "notes": "OSM parking way 415385722, an asphalt lot about 150 m east of the swim area toward the entrance station and campground. Useful when the two swim-area lots are full; it is a longer walk to the spring over natural surface."
+    }
+  ]
+}

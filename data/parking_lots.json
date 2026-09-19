@@ -144,6 +144,102 @@
       "is_overflow": true,
       "source": "curated",
       "notes": "Approximate location. Grass/overflow parking opened by rangers on peak days; longer walk to the spring."
+    },
+    {
+      "park_slug": "madison-blue-spring-state-park",
+      "name": "Day-use lot at the spring",
+      "lat": 30.4807,
+      "lng": -83.2446,
+      "fee": "Included in park entry ($5 per vehicle for 2-8 people, $4 single-occupant); pay by QR code at the entrance",
+      "capacity": null,
+      "ada_spaces": null,
+      "is_overflow": false,
+      "source": "curated",
+      "notes": "Approximate location near 8300 N.E. State Road 6, Lee. Official notice: the park closes frequently between 10 a.m. and 3 p.m. on weekends and holidays when it reaches capacity, and may reopen later the same day. Visitors may not park and wait on the roadside or in the entrance area - local law enforcement issues citations. Large RVs, RVs pulling trailers and truck-camper combinations are not recommended (limited turnaround space). ADA space count not published."
+    },
+    {
+      "park_slug": "lafayette-blue-springs-state-park",
+      "name": "North entrance day-use lot (spring)",
+      "lat": 30.1255,
+      "lng": -83.227,
+      "fee": "Included in park entry ($5 per vehicle, honor box - correct change required)",
+      "capacity": null,
+      "ada_spaces": null,
+      "is_overflow": false,
+      "source": "curated",
+      "notes": "Approximate location near 799 N.W. Blue Spring Road, Mayo. Official: paved parking for day visitors in the day-use area, plus two bus/trailer spots; the boat ramp at the south entrance has over-sized parking for six vehicles. No reservations and no published capacity-closure pattern. ADA space count not published."
+    },
+    {
+      "park_slug": "troy-spring-state-park",
+      "name": "Day-use lot above the spring",
+      "lat": 30.0052,
+      "lng": -82.99824,
+      "fee": "Included in park entry ($5 per vehicle, honor box - correct change required)",
+      "capacity": null,
+      "ada_spaces": null,
+      "is_overflow": false,
+      "source": "curated",
+      "notes": "OSM parking way 203171979 (fee=yes) near 674 N.E. Troy Springs Road, Branford. A long, paved switchback ramp runs from the parking area down to the spring dock; divers often use a wagon to carry gear. Small park with no published capacity-closure pattern. ADA space count not published."
+    },
+    {
+      "park_slug": "fanning-springs-state-park",
+      "name": "Main day-use lot (spring and picnic area)",
+      "lat": 29.5889,
+      "lng": -82.934,
+      "fee": "Included in park entry ($6 per vehicle); $2 per person arriving by boat (honor box on the dock)",
+      "capacity": null,
+      "ada_spaces": null,
+      "is_overflow": false,
+      "source": "curated",
+      "notes": "Approximate location near 18020 N.W. Highway 19, off US 19/98 at the Suwannee River bridge. First-come, first-served with no reservations and no published capacity-closure pattern. Effective Aug. 20, 2026 the floating dock is under an improvement project. ADA space count not published."
+    },
+    {
+      "park_slug": "manatee-springs-state-park",
+      "name": "Main day-use lot (spring and boardwalk)",
+      "lat": 29.48746,
+      "lng": -82.97723,
+      "fee": "Included in park entry ($6 per vehicle)",
+      "capacity": 150,
+      "ada_spaces": null,
+      "is_overflow": false,
+      "source": "curated",
+      "notes": "OSM parking multipolygon 9848435 (paved, capacity=150 per OSM - unverified by the park) near 11650 N.W. 115 St., Chiefland. An 800-ft boardwalk leads from the day-use area to the spring. The waterfront restroom has been closed since Jan. 14, 2026 and no EV charging is allowed in the park. ADA space count not published."
+    },
+    {
+      "park_slug": "de-leon-springs-state-park",
+      "name": "Main lot (spring, pancake house and visitor center)",
+      "lat": 29.13243,
+      "lng": -81.36287,
+      "fee": "Included in park entry ($6 per vehicle)",
+      "capacity": null,
+      "ada_spaces": null,
+      "is_overflow": false,
+      "source": "curated",
+      "notes": "OSM parking node 3240587929 near 601 Ponce De Leon Blvd. Official: accessible parking is available near all facilities, with sidewalks and boardwalks to the spring (count of ADA spaces not published). No day-use reservations; visitor reviews report the park reaching capacity on hot weekends. Expect a wait for the Old Sugar Mill Pancake House."
+    },
+    {
+      "park_slug": "weeki-wachee-springs-state-park",
+      "name": "Main paid lot at the park entrance",
+      "lat": 28.51646,
+      "lng": -82.57486,
+      "fee": "Included in per-person admission ($13 adults, $8 children 6-12)",
+      "capacity": null,
+      "ada_spaces": 10,
+      "is_overflow": false,
+      "source": "curated",
+      "notes": "OSM parking way 1148344196 (paved) at 6131 Commercial Way, US 19 at SR 50. Large paved lot run by concessionaire Guest Services; the official accessibility page lists 10 accessible spaces about 20 yards from the entrance (OSM tags 14). Admission is per person at the gate - once the park reaches capacity no more tickets are sold for the rest of the day, and you may not re-enter while it is full."
+    },
+    {
+      "park_slug": "kelly-park-rock-springs",
+      "name": "Main lot inside the entrance gate",
+      "lat": 28.756,
+      "lng": -81.4955,
+      "fee": "$5 per vehicle, $10 per bus (effective Aug. 11, 2026); cash or Visa/MasterCard/Discover with photo ID",
+      "capacity": 280,
+      "ada_spaces": null,
+      "is_overflow": false,
+      "source": "curated",
+      "notes": "Approximate location near the gatehouse at 400 E. Kelly Park Rd, Apopka. Official: 280 vehicles are admitted each morning and the gate closes when the park is full - typically within an hour of opening on a summer day. Once full, the first 50 cars in line get an afternoon parking pass (one per car) for the 1 p.m. re-opening, for about 330 vehicles and 1,350 visitors a day. Check the county web page or the capacity information line (407-254-1906), which are updated when the park is full. Leaving temporarily requires a re-entry stamp from the gatehouse. ADA space count not published."
     }
   ]
 }

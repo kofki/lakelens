@@ -87,8 +87,9 @@ describe("enum mirrors match lib/types.ts", () => {
 
 describe("data/*.json validate against the schemas", () => {
   it("loads every file without validation errors", () => {
-    expect(data.deepParks.length).toBe(7);
-    expect(Object.keys(data.accessibility).length).toBe(7);
+    expect(data.deepParks.length).toBe(DEEP_SLUGS.length);
+    // Every deep park is described; basic/extra packages add more.
+    expect(Object.keys(data.accessibility).length).toBeGreaterThanOrEqual(DEEP_SLUGS.length);
     expect(data.lots.length).toBeGreaterThanOrEqual(7);
     expect(data.alerts.length).toBeGreaterThanOrEqual(5);
     expect(data.sampleReports.length).toBeGreaterThanOrEqual(8);
@@ -179,14 +180,22 @@ describe("data/*.json validate against the schemas", () => {
     expect(ich.every((l) => /roadside/i.test(l.notes ?? ""))).toBe(true);
   });
 
-  it("alerts: Gilchrist Blue and Poe are open-ended closures; notices are not closures", () => {
+  it("alerts: every closure is live, sourced and self-expiring; notices are not closures", () => {
     const closures = data.alerts.filter((a) => a.kind === "closure");
-    expect(closures.map((a) => a.park_slug).sort()).toEqual(["gilchrist-blue-springs-state-park", "poe-springs-park"]);
+    // Gilchrist Blue and Poe are the long-running closures the demo relies on;
+    // others (e.g. same-day capacity closures) may come and go.
+    expect(closures.map((a) => a.park_slug)).toEqual(
+      expect.arrayContaining(["gilchrist-blue-springs-state-park", "poe-springs-park"]),
+    );
     for (const c of closures) {
-      expect(c.ends_at).toBeNull();
+      // Open-ended, or ending in the future — a closure that already ended must not still be active.
+      if (c.ends_at !== null) expect(Date.parse(c.ends_at), c.park_slug).toBeGreaterThan(Date.now());
       expect(c.active).toBe(true);
       expect(c.official_url).toMatch(/^https:\/\//);
       expect(Date.parse(c.starts_at!)).toBeLessThan(Date.now());
+    }
+    for (const slug of ["gilchrist-blue-springs-state-park", "poe-springs-park"]) {
+      expect(closures.find((c) => c.park_slug === slug)!.ends_at, slug).toBeNull();
     }
     expect(closures.find((c) => c.park_slug === "gilchrist-blue-springs-state-park")!.starts_at!.startsWith("2025-10-29")).toBe(true);
     expect(closures.find((c) => c.park_slug === "poe-springs-park")!.starts_at!.startsWith("2026-07-16")).toBe(true);
@@ -287,7 +296,7 @@ describe("SQL generation", () => {
     expect((sql.match(/insert into public\.park_alerts/g) ?? []).length).toBe(data.alerts.length);
     expect((sql.match(/insert into public\.reports/g) ?? []).length).toBe(data.sampleReports.length);
     expect((sql.match(/, true, now\(\) - interval/g) ?? []).length).toBe(data.sampleReports.length);
-    expect((sql.match(/insert into public\.accessibility/g) ?? []).length).toBe(7);
+    expect((sql.match(/insert into public\.accessibility/g) ?? []).length).toBe(Object.keys(data.accessibility).length);
   });
 
   it("upserts holidays and long weekends when the DATA-basic file is present", () => {
@@ -300,11 +309,15 @@ describe("SQL generation", () => {
     }
   });
 
-  it("basic-tier parks (if present) never override a deep park", () => {
-    const deep = new Set(DEEP_SLUGS as readonly string[]);
-    const basicDupes = data.basicParks.filter((p) => deep.has(p.slug));
+  it("basic- and extra-tier parks never override a deep park", () => {
+    const deep = new Set(data.deepParks.map((p) => p.slug));
+    const extra = (data.extraParks ?? []).filter((p) => !deep.has(p.slug));
+    const seen = new Set([...deep, ...extra.map((p) => p.slug)]);
+    const basic = data.basicParks.filter((p) => !seen.has(p.slug));
     const upserts = (sql.match(/insert into public\.parks/g) ?? []).length;
-    expect(upserts).toBe(data.deepParks.length + data.basicParks.length - basicDupes.length);
+    expect(upserts).toBe(data.deepParks.length + extra.length + basic.length);
+    // Precedence: a slug promoted to deep keeps its deep record.
+    for (const p of [...extra, ...basic]) expect(deep.has(p.slug), p.slug).toBe(false);
   });
 
   it("alert hashes and sample device ids are deterministic and well-formed", () => {

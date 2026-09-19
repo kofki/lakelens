@@ -1,0 +1,101 @@
+{
+  "_note": "Hero photos for the DATA-extra (non-state-park) swim spots. All twelve are Florida Geological Survey Bulletin 66 photographs published by the State of Florida and uploaded to Wikimedia Commons as public domain (no share-alike, no attribution requirement, but we credit anyway). Files were verified against Commons by exact pixel dimensions. Attribution must be shown on the About page.",
+  "photos": {
+    "cypress-spring": {
+      "file": "/photos/extra/cypress-spring.jpg",
+      "title": "FlCypressSpring.jpg",
+      "author": "State of Florida, photo by T. Scott",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:FlCypressSpring.jpg"
+    },
+    "hart-springs-park": {
+      "file": "/photos/extra/hart-springs-park.jpg",
+      "title": "FlHartSprings.jpg",
+      "author": "State of Florida, photo by T. Scott",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:FlHartSprings.jpg"
+    },
+    "hunter-springs-park": {
+      "file": "/photos/extra/hunter-springs-park.jpg",
+      "title": "FlHunterSpring.jpg",
+      "author": "State of Florida, photo by R. Meegan",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:FlHunterSpring.jpg"
+    },
+    "lithia-springs-conservation-park": {
+      "file": "/photos/extra/lithia-springs-conservation-park.jpg",
+      "title": "FlLithiaSpringMajor.jpg",
+      "author": "State of Florida, photo by R. Means",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:FlLithiaSpringMajor.jpg"
+    },
+    "little-river-springs-park": {
+      "file": "/photos/extra/little-river-springs-park.jpg",
+      "title": "FlLittleRiverSpring.jpg",
+      "author": "State of Florida, photo by R. Means",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:FlLittleRiverSpring.jpg"
+    },
+    "morrison-springs-park": {
+      "file": "/photos/extra/morrison-springs-park.jpg",
+      "title": "FlMorrisonSpring.jpg",
+      "author": "State of Florida, photo by R. Means",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:FlMorrisonSpring.jpg"
+    },
+    "otter-springs-park": {
+      "file": "/photos/extra/otter-springs-park.jpg",
+      "title": "FlOtterSpring.jpg",
+      "author": "State of Florida, photo by H. Means",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:FlOtterSpring.jpg"
+    },
+    "pitt-spring-recreation-area": {
+      "file": "/photos/extra/pitt-spring-recreation-area.jpg",
+      "title": "FlPittSpring.jpg",
+      "author": "State of Florida, photo by R. Meegan",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:FlPittSpring.jpg"
+    },
+    "royal-springs-park": {
+      "file": "/photos/extra/royal-springs-park.jpg",
+      "title": "FlRoyalSpring.jpg",
+      "author": "State of Florida, photo by T. Roberts",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:FlRoyalSpring.jpg"
+    },
+    "suwannee-springs-park": {
+      "file": "/photos/extra/suwannee-springs-park.jpg",
+      "title": "FlSuwanneeSprings.jpg",
+      "author": "State of Florida, photo by R. Means",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:FlSuwanneeSprings.jpg"
+    },
+    "vortex-spring": {
+      "file": "/photos/extra/vortex-spring.jpg",
+      "title": "FlVortexSpring.jpg",
+      "author": "State of Florida, photo by R. Means",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:FlVortexSpring.jpg"
+    },
+    "williford-spring": {
+      "file": "/photos/extra/williford-spring.jpg",
+      "title": "FlWillifordSpring.jpg",
+      "author": "State of Florida, photo by R. Means",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:FlWillifordSpring.jpg"
+    }
+  }
+}
