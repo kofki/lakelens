@@ -28,7 +28,7 @@ export function Hero({ park, status }: HeroProps) {
             alt=""
             fill
             priority
-            sizes="(max-width: 768px) 100vw, 1100px"
+            sizes="(min-width: 1100px) 1052px, 100vw"
             unoptimized={!canOptimizeImage(photo)}
             className="object-cover"
           />
