@@ -1,0 +1,61 @@
+{
+  "count": 8,
+  "stations": [
+    {
+      "id": "8720218",
+      "name": "Mayport (Bar Pilots Dock)",
+      "lat": 30.398167,
+      "lng": -81.42789,
+      "state": "FL"
+    },
+    {
+      "id": "8720219",
+      "name": "Dames Point",
+      "lat": 30.3867,
+      "lng": -81.5583,
+      "state": "FL"
+    },
+    {
+      "id": "8720245",
+      "name": "Jacksonville University",
+      "lat": 30.354084,
+      "lng": -81.61175,
+      "state": "FL"
+    },
+    {
+      "id": "8721604",
+      "name": "Trident Pier, Port Canaveral",
+      "lat": 28.4158,
+      "lng": -80.5931,
+      "state": "FL"
+    },
+    {
+      "id": "8722670",
+      "name": "Lake Worth Pier, Atlantic Ocean",
+      "lat": 26.612778,
+      "lng": -80.034164,
+      "state": "FL"
+    },
+    {
+      "id": "8722956",
+      "name": "South Port Everglades",
+      "lat": 26.081667,
+      "lng": -80.11667,
+      "state": "FL"
+    },
+    {
+      "id": "8723214",
+      "name": "Virginia Key",
+      "lat": 25.7314,
+      "lng": -80.1618,
+      "state": "FL"
+    },
+    {
+      "id": "8723970",
+      "name": "Vaca Key, Florida Bay",
+      "lat": 24.711,
+      "lng": -81.1065,
+      "state": "FL"
+    }
+  ]
+}

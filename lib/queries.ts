@@ -21,6 +21,7 @@ import {
   type DayContext,
   type Holiday,
   type LongWeekend,
+  type NoaaPayload,
   type Park,
   type ParkAlert,
   type ParkBundle,
@@ -125,8 +126,11 @@ function newest(rows: LatestRow[]): LatestRow | null {
 function assemble(park: Park, world: World, dayContext: DayContext, now: Date): ParkWithStatus {
   const mine = world.latest.filter((r) => r.park_id === park.id);
   const usgsRow = newest(mine.filter((r) => r.source === "usgs"));
+  // Coastal parks have no USGS gauge; their water data is a NOAA CO-OPS snapshot instead.
+  const noaaRow = newest(mine.filter((r) => r.source === "noaa"));
   const weatherRow = newest(mine.filter((r) => r.source === "nws" || r.source === "open-meteo"));
   const usgs = (usgsRow?.payload as UsgsPayload | undefined) ?? null;
+  const noaa = (noaaRow?.payload as NoaaPayload | undefined) ?? null;
   const weather = (weatherRow?.payload as WeatherPayload | undefined) ?? null;
 
   const alerts = world.alerts.filter((a) => a.park_id === park.id);
@@ -145,6 +149,8 @@ function assemble(park: Park, world: World, dayContext: DayContext, now: Date): 
     accessibility: world.accessibility.get(park.id) ?? null,
     usgs,
     usgsFetchedAt: usgsRow?.fetched_at ?? usgs?.fetchedAt ?? null,
+    noaa,
+    noaaFetchedAt: noaaRow?.fetched_at ?? noaa?.fetchedAt ?? null,
     weather,
     weatherFetchedAt: weatherRow?.fetched_at ?? weather?.fetchedAt ?? null,
     alerts,

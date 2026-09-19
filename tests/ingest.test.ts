@@ -41,7 +41,23 @@ import {
   type OpenMeteoResponse,
 } from "@/lib/ingest/openMeteo";
 import { buildContinuousUrl, chunk, fetchFlowHistory, normalizeContinuous } from "@/lib/ingest/usgs";
-import { parseRdbSites, selectGauges, usgsSitesUrl, isLiveReading, type SiteLiveness } from "@/lib/ingest/gauges";
+import { haversineKm, parseRdbSites, selectGauges, usgsSitesUrl, isLiveReading, type SiteLiveness } from "@/lib/ingest/gauges";
+import {
+  NOAA_STALE_MS,
+  NoaaApiError,
+  buildDataUrl,
+  buildPredictionsUrl,
+  buildNoaaPayloadForPark,
+  extractError,
+  fetchNoaaLatest,
+  isNoDataMessage,
+  noaaBeginDate,
+  normalizeNextTide,
+  normalizeObservation,
+  parseNoaaTime,
+  type NoaaDataResponse,
+  type NoaaPredictionsResponse,
+} from "@/lib/ingest/noaa";
 import {
   algaeAlertHash,
   algaeAlertText,
@@ -71,6 +87,12 @@ import openMeteoMultiFixture from "./fixtures/open-meteo-multi.json";
 import continuousFixture from "./fixtures/usgs-continuous.json";
 import algaeFixture from "./fixtures/fdep-algae.json";
 import nagerFixture from "./fixtures/nager-2026.json";
+import noaaTempFixture from "./fixtures/noaa-water-temperature.json";
+import noaaLevelFixture from "./fixtures/noaa-water-level.json";
+import noaaPredictionsFixture from "./fixtures/noaa-predictions.json";
+import noaaNoDataFixture from "./fixtures/noaa-error-nodata.json";
+import noaaDatumErrorFixture from "./fixtures/noaa-error-datum.json";
+import noaaStationsFixture from "./fixtures/noaa-stations-watertemp.json";
 import longWeekendFixture from "./fixtures/nager-longweekend-2026.json";
 
 const ogc = ogcFixture as unknown as OgcFeatureCollection;
@@ -85,6 +107,12 @@ const continuous = continuousFixture as unknown as OgcFeatureCollection;
 const algae = algaeFixture as unknown as ArcgisQueryResponse;
 const sitesRdb = readFileSync(join(__dirname, "fixtures/usgs-sites-ichetucknee.rdb"), "utf8");
 const nager = nagerFixture as unknown as NagerHoliday[];
+const noaaTemp = noaaTempFixture as unknown as NoaaDataResponse;
+const noaaLevel = noaaLevelFixture as unknown as NoaaDataResponse;
+const noaaPredictions = noaaPredictionsFixture as unknown as NoaaPredictionsResponse;
+const noaaNoData = noaaNoDataFixture as unknown as NoaaDataResponse;
+const noaaDatumError = noaaDatumErrorFixture as unknown as NoaaDataResponse;
+const noaaStations = noaaStationsFixture as unknown as { stations: { id: string; name: string; lat: number; lng: number }[] };
 const longWeekends = longWeekendFixture as unknown as NagerLongWeekend[];
 
 /** Fixtures were captured ~2026-09-19T05:41Z; "now" is an hour later. */
@@ -721,5 +749,237 @@ describe("fdep algae", () => {
     await expect(fetchAlgaeSamples({ fetchImpl: async () => jsonResponse({ error: { code: 400, message: "Invalid query" } }) })).rejects.toThrow(/Invalid query/);
     const ok = await fetchAlgaeSamples({ fetchImpl: async () => jsonResponse(algae), now: ALGAE_NOW });
     expect(ok).toHaveLength(98);
+  });
+});
+
+
+// ---------------------------------------------------------------- NOAA CO-OPS
+
+/**
+ * The NOAA fixtures were captured live on 2026-09-19 at 23:24Z (Mayport 8720218, the station
+ * BeachLens credits). NOAA_NOW is a few minutes later so the readings are fresh.
+ */
+const NOAA_NOW = new Date("2026-09-19T23:30:00Z");
+
+describe("noaa url builders", () => {
+  it("asks for the latest english/gmt json observation and always sends a datum for water_level", () => {
+    const temp = new URL(buildDataUrl("8720218", "water_temperature"));
+    expect(temp.searchParams.get("product")).toBe("water_temperature");
+    expect(temp.searchParams.get("date")).toBe("latest");
+    expect(temp.searchParams.get("units")).toBe("english");
+    expect(temp.searchParams.get("time_zone")).toBe("gmt");
+    expect(temp.searchParams.get("application")).toBe("LakeLens");
+    // water_temperature must NOT carry a datum; water_level is rejected without one.
+    expect(temp.searchParams.get("datum")).toBeNull();
+    expect(new URL(buildDataUrl("8720218", "water_level")).searchParams.get("datum")).toBe("MLLW");
+  });
+
+  it("predictions use begin_date + range (date=latest is invalid there) and interval=hilo", () => {
+    const url = new URL(buildPredictionsUrl("8720218", NOAA_NOW));
+    expect(url.searchParams.get("product")).toBe("predictions");
+    expect(url.searchParams.get("interval")).toBe("hilo");
+    expect(url.searchParams.get("date")).toBeNull();
+    expect(url.searchParams.get("begin_date")).toBe("20260919 23:30");
+    expect(url.searchParams.get("range")).toBe("36");
+    expect(noaaBeginDate(new Date("2026-01-02T03:04:00Z"))).toBe("20260102 03:04");
+  });
+});
+
+describe("noaa parseNoaaTime", () => {
+  it("reads NOAA's zone-less GMT stamps as UTC", () => {
+    expect(parseNoaaTime("2026-09-19 23:24")).toBe("2026-09-19T23:24:00.000Z");
+    expect(parseNoaaTime("2026-09-19 23:24:30")).toBe("2026-09-19T23:24:30.000Z");
+    expect(parseNoaaTime("nonsense")).toBeNull();
+  });
+});
+
+describe("noaa normalizeObservation", () => {
+  it("reads the latest water temperature in degF", () => {
+    const readings = normalizeObservation(noaaTemp, "8720218", "water_temp", NOAA_NOW);
+    expect(readings).toHaveLength(1);
+    expect(readings[0]).toMatchObject({ station: "8720218", parameter: "water_temp", unit: "degF", value: 84, stale: false });
+    expect(readings[0].time).toBe("2026-09-19T23:24:00.000Z");
+  });
+
+  it("reads the latest water level in ft above MLLW", () => {
+    const readings = normalizeObservation(noaaLevel, "8720218", "water_level", NOAA_NOW);
+    expect(readings).toHaveLength(1);
+    expect(readings[0]).toMatchObject({ parameter: "water_level", unit: "ft", stale: false });
+    expect(readings[0].value).toBeCloseTo(3.028, 3);
+  });
+
+  it("flags a reading older than the 3 h stale window", () => {
+    const later = new Date(NOAA_NOW.getTime() + NOAA_STALE_MS + 60e3);
+    expect(normalizeObservation(noaaTemp, "8720218", "water_temp", later)[0].stale).toBe(true);
+    // exactly at the threshold is still fresh
+    const atEdge = new Date(Date.parse("2026-09-19T23:24:00.000Z") + NOAA_STALE_MS);
+    expect(normalizeObservation(noaaTemp, "8720218", "water_temp", atEdge)[0].stale).toBe(false);
+  });
+
+  it("treats the 'no data' envelope (served with HTTP 200) as an empty result, not a failure", () => {
+    expect(isNoDataMessage(extractError(noaaNoData)!)).toBe(true);
+    expect(normalizeObservation(noaaNoData, "8725114", "water_temp", NOAA_NOW)).toEqual([]);
+  });
+
+  it("throws for any other error envelope, e.g. a missing datum", () => {
+    expect(extractError(noaaDatumError)).toMatch(/Wrong Datum/);
+    expect(() => normalizeObservation(noaaDatumError, "8720218", "water_level", NOAA_NOW)).toThrow(NoaaApiError);
+    expect(() => normalizeObservation(noaaDatumError, "8720218", "water_level", NOAA_NOW)).toThrow(/Wrong Datum/);
+    expect(extractError({ data: [] })).toBeNull();
+  });
+});
+
+describe("noaa normalizeNextTide", () => {
+  it("returns the first high/low strictly after now", () => {
+    const tide = normalizeNextTide(noaaPredictions, "8720218", NOAA_NOW);
+    expect(tide).toMatchObject({ type: "L", time: "2026-09-20T02:05:00.000Z" });
+    expect(tide!.valueFt).toBeCloseTo(1.618, 3);
+    // a moment after that low, the next high is returned instead
+    const later = normalizeNextTide(noaaPredictions, "8720218", new Date("2026-09-20T02:06:00Z"));
+    expect(later).toMatchObject({ type: "H", time: "2026-09-20T07:57:00.000Z" });
+  });
+
+  it("returns null past the end of the series and for the 'no data' envelope", () => {
+    expect(normalizeNextTide(noaaPredictions, "8720218", new Date("2026-09-30T00:00:00Z"))).toBeNull();
+    expect(normalizeNextTide(noaaNoData as unknown as NoaaPredictionsResponse, "8725114", NOAA_NOW)).toBeNull();
+  });
+});
+
+describe("noaa fetchNoaaLatest", () => {
+  const router = (calls: string[]) => async (input: RequestInfo | URL) => {
+    const url = String(input);
+    calls.push(url);
+    if (url.includes("product=predictions")) return jsonResponse(noaaPredictions);
+    if (url.includes("product=water_temperature")) return jsonResponse(noaaTemp);
+    return jsonResponse(noaaLevel);
+  };
+
+  it("collects temp, level and the next tide for each station", async () => {
+    const calls: string[] = [];
+    const out = await fetchNoaaLatest(["8720218", "8720218"], { fetchImpl: router(calls) as typeof fetch, now: NOAA_NOW, gapMs: 0 });
+    expect(Object.keys(out)).toEqual(["8720218"]); // de-duplicated
+    expect(calls).toHaveLength(3);
+    const station = out["8720218"];
+    expect(station.stationName).toBe("Mayport (Bar Pilots Dock)");
+    expect(station.readings.map((r) => r.parameter)).toEqual(["water_level", "water_temp"]);
+    expect(station.nextTide?.type).toBe("L");
+    expect(station.errors).toEqual([]);
+  });
+
+  it("skips products a station does not publish when capabilities say so", async () => {
+    const calls: string[] = [];
+    const out = await fetchNoaaLatest(["8720030"], {
+      fetchImpl: router(calls) as typeof fetch,
+      now: NOAA_NOW,
+      gapMs: 0,
+      capabilities: { "8720030": { water_temp: false, water_level: true } },
+    });
+    expect(calls.some((c) => c.includes("product=water_temperature"))).toBe(false);
+    expect(out["8720030"].readings.map((r) => r.parameter)).toEqual(["water_level"]);
+  });
+
+  it("records a per-product failure instead of throwing, and retries a 5xx once", async () => {
+    let attempts = 0;
+    const fetchImpl = (async (input: RequestInfo | URL) => {
+      const url = String(input);
+      if (url.includes("product=water_temperature")) {
+        attempts++;
+        return attempts === 1 ? jsonResponse({ oops: true }, 503) : jsonResponse(noaaTemp);
+      }
+      if (url.includes("product=water_level")) return jsonResponse({ boom: true }, 502);
+      return jsonResponse(noaaPredictions);
+    }) as typeof fetch;
+    const out = await fetchNoaaLatest(["8720218"], { fetchImpl, now: NOAA_NOW, gapMs: 0 });
+    expect(attempts).toBe(2); // one retry, then success
+    expect(out["8720218"].readings.map((r) => r.parameter)).toEqual(["water_temp"]);
+    expect(out["8720218"].errors.join(" ")).toMatch(/water_level: HTTP 502/);
+    expect(out["8720218"].nextTide).not.toBeNull();
+  });
+});
+
+describe("noaa buildNoaaPayloadForPark", () => {
+  const results = {
+    "8720218": {
+      stationId: "8720218",
+      stationName: "Mayport (Bar Pilots Dock)",
+      readings: [
+        ...normalizeObservation(noaaTemp, "8720218", "water_temp", NOAA_NOW),
+        ...normalizeObservation(noaaLevel, "8720218", "water_level", NOAA_NOW),
+      ],
+      nextTide: normalizeNextTide(noaaPredictions, "8720218", NOAA_NOW),
+      errors: [],
+    },
+  };
+
+  it("builds the payload the UI attributes to 'NOAA station #8720218'", () => {
+    const payload = buildNoaaPayloadForPark({ noaa_station_id: "8720218", noaa_distance_km: 2.4 }, results, NOAA_NOW)!;
+    expect(payload.source).toBe("noaa");
+    expect(payload.stationId).toBe("8720218");
+    expect(payload.stationName).toBe("Mayport (Bar Pilots Dock)");
+    expect(payload.distanceKm).toBe(2.4);
+    expect(payload.readings).toHaveLength(2);
+    expect(payload.nextTide?.type).toBe("L");
+    expect(payload.note).toMatch(/84°F/);
+  });
+
+  it("never invents a value: a silent station yields an empty payload with a plain note", () => {
+    const payload = buildNoaaPayloadForPark({ noaa_station_id: "8726607" }, results, NOAA_NOW)!;
+    expect(payload.readings).toEqual([]);
+    expect(payload.nextTide).toBeNull();
+    expect(payload.note).toMatch(/No live reading/i);
+  });
+
+  it("returns null for a park with no station", () => {
+    expect(buildNoaaPayloadForPark({ noaa_station_id: null }, results, NOAA_NOW)).toBeNull();
+  });
+
+  it("does not report a stale reading as current", () => {
+    const old = new Date(NOAA_NOW.getTime() + NOAA_STALE_MS + 60e3);
+    const stale = {
+      "8720218": {
+        ...results["8720218"],
+        readings: [
+          ...normalizeObservation(noaaTemp, "8720218", "water_temp", old),
+          ...normalizeObservation(noaaLevel, "8720218", "water_level", old),
+        ],
+      },
+    };
+    const payload = buildNoaaPayloadForPark({ noaa_station_id: "8720218" }, stale, old)!;
+    expect(payload.readings.every((r) => r.stale)).toBe(true);
+    expect(payload.note).toMatch(/more than 3 hours old/);
+  });
+});
+
+describe("noaa station selection (scripts/fetch-noaa-stations.ts rules)", () => {
+  /** Same ranking the script applies: in-range, verified, water temperature preferred, then nearest. */
+  function pick(park: { lat: number; lng: number }, verified: Record<string, { temp: boolean; level: boolean }>, maxKm: number) {
+    const ranked = noaaStations.stations
+      .map((s) => ({ s, km: haversineKm(park.lat, park.lng, s.lat, s.lng), v: verified[s.id] }))
+      .filter((c) => c.km <= maxKm && c.v && (c.v.temp || c.v.level))
+      .sort((a, b) => a.km - b.km);
+    return ranked.find((c) => c.v!.temp) ?? ranked[0] ?? null;
+  }
+
+  // Little Talbot Island beach, just north of the St Johns river mouth.
+  const beach = { lat: 30.44, lng: -81.42 };
+
+  it("picks the nearest station that actually returns data", () => {
+    const verified = { "8720218": { temp: true, level: true }, "8720219": { temp: true, level: true } };
+    expect(pick(beach, verified, 40)!.s.id).toBe("8720218"); // Mayport, ~4.7 km
+  });
+
+  it("skips a nearer station that returned nothing", () => {
+    const verified = { "8720218": { temp: false, level: false }, "8720219": { temp: true, level: true } };
+    expect(pick(beach, verified, 40)!.s.id).toBe("8720219"); // Dames Point instead
+  });
+
+  it("prefers water temperature over a nearer level-only station", () => {
+    const verified = { "8720218": { temp: false, level: true }, "8720219": { temp: true, level: true } };
+    expect(pick(beach, verified, 40)!.s.id).toBe("8720219");
+  });
+
+  it("returns nothing when every station is out of range", () => {
+    const verified = { "8720218": { temp: true, level: true } };
+    expect(pick(beach, verified, 1)).toBeNull();
   });
 });

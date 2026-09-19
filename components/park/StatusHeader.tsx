@@ -33,6 +33,8 @@ function sourcesLine(bundle: ParkBundle): string {
  */
 export function StatusHeader({ bundle, now }: StatusHeaderProps) {
   const { status, park } = bundle;
+  // Basic-tier parks often still have live water data (a nearby USGS gauge or NOAA station).
+  const hasWaterData = Boolean(bundle.usgs || bundle.noaa);
   const conditionsAt = newestIso(bundle.usgsFetchedAt, bundle.weatherFetchedAt);
   const meta = STATUS_META[status.level];
 
@@ -89,7 +91,8 @@ export function StatusHeader({ bundle, now }: StatusHeaderProps) {
         </p>
         {park.coverage_tier === "basic" && (
           <p className="text-xs text-mocha">
-            Basic coverage: closure estimates and live water data are not yet available for this park.
+            Basic coverage: we have not curated a closure estimate for this park yet
+            {hasWaterData ? ", but live conditions below are real." : ", and it has no live water gauge nearby."}
           </p>
         )}
       </div>

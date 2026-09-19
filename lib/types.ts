@@ -103,9 +103,13 @@ export interface Park {
   usgs_site_id: string | null;
   river_gauge_site_id: string | null;
   gauge_distance_km: number | null;
-  /** NOAA CO-OPS (Tides & Currents) station for coastal parks with no USGS gauge */
-  noaa_station_id: string | null;
-  noaa_distance_km: number | null;
+  /**
+   * NOAA CO-OPS (Tides & Currents) station for coastal parks with no USGS gauge.
+   * Optional so park fixtures and seed builders written before migration
+   * 20260919020000 still typecheck; queries.ts always reads it from the DB row.
+   */
+  noaa_station_id?: string | null;
+  noaa_distance_km?: number | null;
   nws_grid: NwsGrid | null;
   nws_zone: string | null;
   nws_county: string | null;
@@ -384,8 +388,9 @@ export interface ParkWithStatus {
   accessibility: Accessibility | null;
   usgs: UsgsPayload | null;
   usgsFetchedAt: string | null;
-  noaa: NoaaPayload | null;
-  noaaFetchedAt: string | null;
+  /** Optional for the same reason as Park.noaa_station_id; queries.ts always sets both. */
+  noaa?: NoaaPayload | null;
+  noaaFetchedAt?: string | null;
   weather: WeatherPayload | null;
   weatherFetchedAt: string | null;
   alerts: ParkAlert[];

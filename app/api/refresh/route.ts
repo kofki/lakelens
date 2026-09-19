@@ -1,10 +1,11 @@
 /**
- * POST /api/refresh  { park_id: uuid, sources?: ("usgs" | "weather")[] }
+ * POST /api/refresh  { park_id: uuid, sources?: ("usgs" | "noaa" | "weather")[] }
  *
  * On-demand refresh used by the park page when its data looks stale. Public (no secret) but
  * throttled: one run per park per 5 minutes (module-level map, per server instance) plus a
- * small global rate cap. Runs the usgs + weather jobs for that park only, with force=true.
- * Response: { ok, throttled, park_id, ranAt, counts: { usgs?, weather? }, errors }.
+ * small global rate cap. Runs the usgs + noaa + weather jobs for that park only, with force=true.
+ * A park only ever has one of usgs / noaa, so the unused one simply inserts nothing.
+ * Response: { ok, throttled, park_id, ranAt, counts: { usgs?, noaa?, weather? }, errors }.
  */
 import type { NextRequest } from "next/server";
 import { runJob, type RunJobResult } from "@/lib/ingest/run";
@@ -17,7 +18,7 @@ export const runtime = "nodejs";
 const THROTTLE_MS = 5 * 60e3;
 const GLOBAL_CAP_PER_MIN = 30;
 const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
-const REFRESH_SOURCES = ["usgs", "weather"] as const;
+const REFRESH_SOURCES = ["usgs", "noaa", "weather"] as const;
 type RefreshSource = (typeof REFRESH_SOURCES)[number];
 
 /** park_id -> last run (ms). Lives for the lifetime of the server instance; that is fine for a throttle. */

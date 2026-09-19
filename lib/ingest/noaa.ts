@@ -83,13 +83,15 @@ export interface NoaaPredictionsResponse {
 
 /** Thrown for a real upstream failure. A "no data at this station" envelope is NOT an error. */
 export class NoaaApiError extends Error {
-  constructor(
-    message: string,
-    readonly station: string,
-    readonly product: NoaaProduct,
-  ) {
+  // Plain fields (not parameter properties): scripts/ run this file under
+  // `node --experimental-strip-types`, which rejects parameter properties.
+  station: string;
+  product: NoaaProduct;
+  constructor(message: string, station: string, product: NoaaProduct) {
     super(message);
     this.name = "NoaaApiError";
+    this.station = station;
+    this.product = product;
   }
 }
 

@@ -1,8 +1,8 @@
 /**
- * GET/POST /api/cron/{usgs|weather|alerts|holidays|prune|algae}
+ * GET/POST /api/cron/{usgs|noaa|weather|alerts|holidays|prune|algae}
  *
  * Called by Supabase pg_cron (pg_net) and by hand with `Authorization: Bearer $CRON_SECRET`.
- * Optional query: ?force=1 (ignore freshness throttles), ?park_id=<uuid> (usgs/weather only).
+ * Optional query: ?force=1 (ignore freshness throttles), ?park_id=<uuid> (usgs/noaa/weather only).
  * Response: { job, ranAt, ok, counts, errors, notes? } — 200 when the job ran (even with per-park
  * errors listed), 500 when it could not run at all, 401 without the secret, 400 for an unknown job.
  */

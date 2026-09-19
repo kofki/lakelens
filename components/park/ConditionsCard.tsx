@@ -1,7 +1,7 @@
 import { CloudRain, Droplets, Gauge, Thermometer, Waves, Wind } from "lucide-react";
-import type { ParkBundle, UsgsReading } from "@/lib/types";
+import type { NoaaPayload, NoaaReading, ParkBundle, UsgsReading } from "@/lib/types";
 import { describeFlow, describeWaterTemp, describeWeather } from "@/lib/plainLanguage";
-import { STALE, formatLocalDate, isStale, relativeTime } from "@/lib/freshness";
+import { STALE, formatLocalDate, formatLocalTime, isStale, relativeTime } from "@/lib/freshness";
 import { Badge } from "@/components/ui/Badge";
 import { LastUpdated } from "@/components/ui/LastUpdated";
 import { Section } from "@/components/ui/Section";
@@ -26,8 +26,18 @@ function providerLabel(p: "nws" | "open-meteo" | undefined): string {
   return p === "open-meteo" ? "Open-Meteo" : "National Weather Service";
 }
 
+function pickNoaa(noaa: NoaaPayload | null | undefined, parameter: NoaaReading["parameter"]): NoaaReading | null {
+  return noaa?.readings.find((r) => r.parameter === parameter) ?? null;
+}
+
+/** "in 2 hours (3:41 PM)" — relativeTime already renders future times as "in …". */
+function tideWhen(tide: NoaaPayload["nextTide"] | undefined, now: Date): string | null {
+  if (!tide) return null;
+  return `${relativeTime(tide.time, now)} (${formatLocalTime(tide.time)})`;
+}
+
 export function ConditionsCard({ bundle, now }: ConditionsCardProps) {
-  const { park, weather, weatherFetchedAt, usgs, usgsFetchedAt } = bundle;
+  const { park, weather, weatherFetchedAt, usgs, usgsFetchedAt, noaa, noaaFetchedAt } = bundle;
   const readings = usgs?.readings ?? [];
   const sites = [park.usgs_site_id, park.river_gauge_site_id];
   const flowSiteId = park.usgs_site_id ?? park.river_gauge_site_id;
@@ -39,20 +49,39 @@ export function ConditionsCard({ bundle, now }: ConditionsCardProps) {
   const tempReading = pickReading(readings, "00010", sites);
   const usesRiverGauge = !!park.river_gauge_site_id && [discharge, level, tempReading].some((r) => r?.site === park.river_gauge_site_id);
 
+  // Coastal parks (beaches, coastal lakes) have no USGS gauge: their water data is a NOAA CO-OPS
+  // station instead — water temperature and tide height above MLLW, BeachLens-style.
+  const noaaTemp = pickNoaa(noaa, "water_temp");
+  const noaaLevel = pickNoaa(noaa, "water_level");
+  const usesNoaa = Boolean(park.noaa_station_id) && !discharge && !level && !tempReading;
+
   const weatherStale = isStale(weatherFetchedAt, STALE.weather, now);
   const usgsStale = isStale(usgsFetchedAt, STALE.usgs, now);
+  // NOAA posts every 6 minutes; the shared 6 h "water data" threshold is plenty generous.
+  const noaaStale = isStale(noaaFetchedAt ?? null, STALE.usgs, now);
   const flowTone: StatTone = flow.level === "high" ? "warn" : flow.level === "normal" ? "good" : "neutral";
   const rain = weather?.today.rainProbMax ?? null;
   const rainTone: StatTone = rain === null ? "neutral" : rain >= 50 ? "warn" : "good";
 
-  const attribution = [
-    weather ? `Weather: ${providerLabel(weather.provider)}` : "Weather: not available",
-    discharge || level || tempReading
+  const noaaStationLabel = noaa?.stationId
+    ? `NOAA station #${noaa.stationId}${noaa.stationName ? ` (${noaa.stationName})` : ""}`
+    : park.noaa_station_id
+      ? `NOAA station #${park.noaa_station_id}`
+      : null;
+
+  const waterAttribution = usesNoaa
+    ? noaaTemp || noaaLevel
+      ? `Water: ${noaaStationLabel}`
+      : `Water: ${noaaStationLabel} (no recent reading)`
+    : discharge || level || tempReading
       ? `Water: USGS gauge ${(discharge ?? level ?? tempReading)!.site}`
       : park.usgs_site_id || park.river_gauge_site_id
         ? "Water: USGS (no recent reading)"
-        : "Water: no gauge for this park",
-  ].join(" · ");
+        : noaaStationLabel
+          ? `Water: ${noaaStationLabel} (no recent reading)`
+          : "Water: no gauge for this park";
+
+  const attribution = [weather ? `Weather: ${providerLabel(weather.provider)}` : "Weather: not available", waterAttribution].join(" · ");
 
   return (
     <Section id="conditions" title="Conditions today" icon={<Thermometer aria-hidden="true" focusable="false" />}>
@@ -62,6 +91,12 @@ export function ConditionsCard({ bundle, now }: ConditionsCardProps) {
           <>
             {" "}
             · River gauge {park.gauge_distance_km.toFixed(1)} km away
+          </>
+        )}
+        {usesNoaa && park.noaa_distance_km != null && (
+          <>
+            {" "}
+            · Station {park.noaa_distance_km.toFixed(1)} km away
           </>
         )}
       </p>
@@ -93,20 +128,44 @@ export function ConditionsCard({ bundle, now }: ConditionsCardProps) {
       )}
 
       <div className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-3">
-        <StatTile
-          icon={<Thermometer aria-hidden="true" focusable="false" />}
-          label="Water temp"
-          value={temp.valueF !== null ? `${Math.round(temp.valueF)}°F` : "—"}
-          descriptor={temp.typical ? "Typical for a spring" : temp.sentence}
-          tone={temp.typical ? "neutral" : "good"}
-          footnote={
-            temp.typical
-              ? "Typical value — no live reading"
-              : tempReading
-                ? `Updated ${relativeTime(tempReading.time, now)}${tempReading.stale ? " · may be out of date" : ""}`
-                : undefined
-          }
-        />
+        {usesNoaa ? (
+          <StatTile
+            icon={<Thermometer aria-hidden="true" focusable="false" />}
+            label="Water temp"
+            value={noaaTemp ? `${Math.round(noaaTemp.value)}°F` : "—"}
+            descriptor={noaaTemp ? "Measured at the NOAA station" : "No live reading"}
+            tone={noaaTemp ? "good" : "neutral"}
+            footnote={
+              noaaTemp
+                ? `Updated ${relativeTime(noaaTemp.time, now)}${noaaTemp.stale ? " · may be out of date" : ""}`
+                : "This NOAA station isn't reporting water temperature right now"
+            }
+          />
+        ) : (
+          <StatTile
+            icon={<Thermometer aria-hidden="true" focusable="false" />}
+            label="Water temp"
+            value={temp.valueF !== null ? `${Math.round(temp.valueF)}°F` : "—"}
+            descriptor={temp.typical ? "Typical for a spring" : temp.sentence}
+            tone={temp.typical ? "neutral" : "good"}
+            footnote={
+              temp.typical
+                ? "Typical value — no live reading"
+                : tempReading
+                  ? `Updated ${relativeTime(tempReading.time, now)}${tempReading.stale ? " · may be out of date" : ""}`
+                  : undefined
+            }
+          />
+        )}
+        {usesNoaa ? (
+          <StatTile
+            icon={<Waves aria-hidden="true" focusable="false" />}
+            label="Next tide"
+            value={noaa?.nextTide ? `${noaa.nextTide.type === "H" ? "High" : "Low"} ${noaa.nextTide.valueFt.toFixed(1)} ft` : "—"}
+            descriptor={noaa?.nextTide ? tideWhen(noaa.nextTide, now) ?? undefined : "No live reading"}
+            footnote={noaa?.nextTide ? "NOAA tide prediction (MLLW)" : "No tide prediction for this station"}
+          />
+        ) : (
         <div className="flex flex-col gap-2">
           <StatTile
             icon={<Waves aria-hidden="true" focusable="false" />}
@@ -119,13 +178,28 @@ export function ConditionsCard({ bundle, now }: ConditionsCardProps) {
           />
           {flowSiteId && <FlowSparkline parkId={park.id} siteId={flowSiteId} />}
         </div>
-        <StatTile
-          icon={<Gauge aria-hidden="true" focusable="false" />}
-          label="Water level"
-          value={level ? `${level.value.toFixed(2)} ft` : "—"}
-          descriptor={level ? (level.parameter === "63160" ? "Stream level (NAVD88)" : "Gauge height") : "No live level gauge"}
-          footnote={level ? `Updated ${relativeTime(level.time, now)}${level.stale ? " · may be out of date" : ""}` : undefined}
-        />
+        )}
+        {usesNoaa ? (
+          <StatTile
+            icon={<Gauge aria-hidden="true" focusable="false" />}
+            label="Tide level"
+            value={noaaLevel ? `${noaaLevel.value.toFixed(1)} ft` : "—"}
+            descriptor={noaaLevel ? "Above mean low water (MLLW)" : "No live reading"}
+            footnote={
+              noaaLevel
+                ? `Updated ${relativeTime(noaaLevel.time, now)}${noaaLevel.stale ? " · may be out of date" : ""}`
+                : "This NOAA station isn't reporting a tide level right now"
+            }
+          />
+        ) : (
+          <StatTile
+            icon={<Gauge aria-hidden="true" focusable="false" />}
+            label="Water level"
+            value={level ? `${level.value.toFixed(2)} ft` : "—"}
+            descriptor={level ? (level.parameter === "63160" ? "Stream level (NAVD88)" : "Gauge height") : "No live level gauge"}
+            footnote={level ? `Updated ${relativeTime(level.time, now)}${level.stale ? " · may be out of date" : ""}` : undefined}
+          />
+        )}
         <StatTile
           icon={<CloudRain aria-hidden="true" focusable="false" />}
           label="Rain today"
@@ -150,9 +224,13 @@ export function ConditionsCard({ bundle, now }: ConditionsCardProps) {
 
       <div className="mt-3 flex flex-wrap items-center gap-2">
         {temp.typical && <Badge variant="typical">Typical ~72°F — spring-fed</Badge>}
-        {(park.usgs_site_id || park.river_gauge_site_id) && (
-          <LastUpdated at={usgsFetchedAt} source="USGS" stale={usgsStale} prefix="Water data updated" />
-        )}
+        {usesNoaa
+          ? park.noaa_station_id && (
+              <LastUpdated at={noaaFetchedAt ?? null} source={`NOAA #${park.noaa_station_id}`} stale={noaaStale} prefix="Water data updated" />
+            )
+          : (park.usgs_site_id || park.river_gauge_site_id) && (
+              <LastUpdated at={usgsFetchedAt} source="USGS" stale={usgsStale} prefix="Water data updated" />
+            )}
       </div>
     </Section>
   );

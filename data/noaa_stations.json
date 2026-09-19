@@ -1,0 +1,289 @@
+{
+  "anastasia-state-park": {
+    "station_id": "8720218",
+    "name": "Mayport (Bar Pilots Dock)",
+    "distance_km": 58.8,
+    "has_water_temp": true,
+    "has_water_level": true
+  },
+  "anclote-key-preserve-state-park": {
+    "station_id": "8726724",
+    "name": "Clearwater Beach",
+    "distance_km": 22.1,
+    "has_water_temp": true,
+    "has_water_level": true
+  },
+  "bahia-honda-state-park": {
+    "station_id": "8723970",
+    "name": "Vaca Key, Florida Bay",
+    "distance_km": 16.5,
+    "has_water_temp": true,
+    "has_water_level": true
+  },
+  "bald-point-state-park": {
+    "station_id": "8728690",
+    "name": "Apalachicola",
+    "distance_km": 60.9,
+    "has_water_temp": true,
+    "has_water_level": true
+  },
+  "big-lagoon-state-park": {
+    "station_id": "8729840",
+    "name": "Pensacola",
+    "distance_km": 21.6,
+    "has_water_temp": true,
+    "has_water_level": true
+  },
+  "bill-baggs-cape-florida-state-park": {
+    "station_id": "8723214",
+    "name": "Virginia Key",
+    "distance_km": 6.2,
+    "has_water_temp": true,
+    "has_water_level": true
+  },
+  "caladesi-island-state-park": {
+    "station_id": "8726724",
+    "name": "Clearwater Beach",
+    "distance_km": 5.1,
+    "has_water_temp": true,
+    "has_water_level": true
+  },
+  "camp-helen-state-park": {
+    "station_id": "8729210",
+    "name": "Panama City Beach",
+    "distance_km": 12.7,
+    "has_water_temp": true,
+    "has_water_level": true
+  },
+  "cayo-costa-state-park": {
+    "station_id": "8725520",
+    "name": "Fort Myers",
+    "distance_km": 36.7,
+    "has_water_temp": true,
+    "has_water_level": true
+  },
+  "curry-hammock-state-park": {
+    "station_id": "8723970",
+    "name": "Vaca Key, Florida Bay",
+    "distance_km": 12.4,
+    "has_water_temp": true,
+    "has_water_level": true
+  },
+  "deer-lake-state-park": {
+    "station_id": "8729210",
+    "name": "Panama City Beach",
+    "distance_km": 20.9,
+    "has_water_temp": true,
+    "has_water_level": true
+  },
+  "delnor-wiggins-pass-state-park": {
+    "station_id": "8725520",
+    "name": "Fort Myers",
+    "distance_km": 41,
+    "has_water_temp": true,
+    "has_water_level": true
+  },
+  "don-pedro-island-state-park": {
+    "station_id": "8725520",
+    "name": "Fort Myers",
+    "distance_km": 48.5,
+    "has_water_temp": true,
+    "has_water_level": true
+  },
+  "dr-julian-g-bruce-st-george-island-state-park": {
+    "station_id": "8728690",
+    "name": "Apalachicola",
+    "distance_km": 22.5,
+    "has_water_temp": true,
+    "has_water_level": true
+  },
+  "dr-von-d-mizell-eula-johnson-state-park": {
+    "station_id": "8722956",
+    "name": "South Port Everglades",
+    "distance_km": 0.9,
+    "has_water_temp": true,
+    "has_water_level": true
+  },
+  "egmont-key-state-park": {
+    "station_id": "8726384",
+    "name": "Port Manatee",
+    "distance_km": 20.4,
+    "has_water_temp": true,
+    "has_water_level": true
+  },
+  "fort-clinch-state-park": {
+    "station_id": "8720218",
+    "name": "Mayport (Bar Pilots Dock)",
+    "distance_km": 33.2,
+    "has_water_temp": true,
+    "has_water_level": true
+  },
+  "fort-zachary-taylor-historic-state-park": {
+    "station_id": "8724580",
+    "name": "Key West",
+    "distance_km": 1.1,
+    "has_water_temp": true,
+    "has_water_level": true
+  },
+  "gasparilla-island-state-park": {
+    "station_id": "8725520",
+    "name": "Fort Myers",
+    "distance_km": 39.8,
+    "has_water_temp": true,
+    "has_water_level": true
+  },
+  "grayton-beach-state-park": {
+    "station_id": "8729210",
+    "name": "Panama City Beach",
+    "distance_km": 30.1,
+    "has_water_temp": true,
+    "has_water_level": true
+  },
+  "henderson-beach-state-park": {
+    "station_id": "8729210",
+    "name": "Panama City Beach",
+    "distance_km": 57.4,
+    "has_water_temp": true,
+    "has_water_level": true
+  },
+  "honeymoon-island-state-park": {
+    "station_id": "8726724",
+    "name": "Clearwater Beach",
+    "distance_km": 10.8,
+    "has_water_temp": true,
+    "has_water_level": true
+  },
+  "hugh-taylor-birch-state-park": {
+    "station_id": "8722956",
+    "name": "South Port Everglades",
+    "distance_km": 7.2,
+    "has_water_temp": true,
+    "has_water_level": true
+  },
+  "indian-key-historic-state-park": {
+    "station_id": "8723970",
+    "name": "Vaca Key, Florida Bay",
+    "distance_km": 47.4,
+    "has_water_temp": true,
+    "has_water_level": true
+  },
+  "john-d-macarthur-beach-state-park": {
+    "station_id": "8722670",
+    "name": "Lake Worth Pier, Atlantic Ocean",
+    "distance_km": 23.7,
+    "has_water_temp": true,
+    "has_water_level": true
+  },
+  "john-pennekamp-coral-reef-state-park": {
+    "station_id": "8723214",
+    "name": "Virginia Key",
+    "distance_km": 63.5,
+    "has_water_temp": true,
+    "has_water_level": true
+  },
+  "lake-manatee-state-park": {
+    "station_id": "8726384",
+    "name": "Port Manatee",
+    "distance_km": 28.4,
+    "has_water_temp": true,
+    "has_water_level": true
+  },
+  "lignumvitae-key-botanical-state-park": {
+    "station_id": "8723970",
+    "name": "Vaca Key, Florida Bay",
+    "distance_km": 47.7,
+    "has_water_temp": true,
+    "has_water_level": true
+  },
+  "little-talbot-island-state-park": {
+    "station_id": "8720218",
+    "name": "Mayport (Bar Pilots Dock)",
+    "distance_km": 6.5,
+    "has_water_temp": true,
+    "has_water_level": true
+  },
+  "long-key-state-park": {
+    "station_id": "8723970",
+    "name": "Vaca Key, Florida Bay",
+    "distance_km": 32.3,
+    "has_water_temp": true,
+    "has_water_level": true
+  },
+  "lovers-key-state-park": {
+    "station_id": "8725520",
+    "name": "Fort Myers",
+    "distance_km": 28.5,
+    "has_water_temp": true,
+    "has_water_level": true
+  },
+  "oleta-river-state-park": {
+    "station_id": "8722956",
+    "name": "South Port Everglades",
+    "distance_km": 18.5,
+    "has_water_temp": true,
+    "has_water_level": true
+  },
+  "perdido-key-state-park": {
+    "station_id": "8729840",
+    "name": "Pensacola",
+    "distance_km": 27.7,
+    "has_water_temp": true,
+    "has_water_level": true
+  },
+  "san-pedro-underwater-archaeological-preserve-state-park": {
+    "station_id": "8723970",
+    "name": "Vaca Key, Florida Bay",
+    "distance_km": 46.3,
+    "has_water_temp": true,
+    "has_water_level": true
+  },
+  "sebastian-inlet-state-park": {
+    "station_id": "8721604",
+    "name": "Trident Pier, Port Canaveral",
+    "distance_km": 63.3,
+    "has_water_temp": false,
+    "has_water_level": true
+  },
+  "st-andrews-state-park": {
+    "station_id": "8729108",
+    "name": "Panama City",
+    "distance_km": 6.4,
+    "has_water_temp": true,
+    "has_water_level": true
+  },
+  "st-lucie-inlet-preserve-state-park": {
+    "station_id": "8722670",
+    "name": "Lake Worth Pier, Atlantic Ocean",
+    "distance_km": 58.9,
+    "has_water_temp": true,
+    "has_water_level": true
+  },
+  "stump-pass-beach-state-park": {
+    "station_id": "8725520",
+    "name": "Fort Myers",
+    "distance_km": 55.1,
+    "has_water_temp": true,
+    "has_water_level": true
+  },
+  "th-stone-memorial-st-joseph-peninsula-state-park": {
+    "station_id": "8728690",
+    "name": "Apalachicola",
+    "distance_km": 42.5,
+    "has_water_temp": true,
+    "has_water_level": true
+  },
+  "topsail-hill-preserve-state-park": {
+    "station_id": "8729210",
+    "name": "Panama City Beach",
+    "distance_km": 43.1,
+    "has_water_temp": true,
+    "has_water_level": true
+  },
+  "william-j-billy-joe-rish-recreation-area": {
+    "station_id": "8728690",
+    "name": "Apalachicola",
+    "distance_km": 39.5,
+    "has_water_temp": true,
+    "has_water_level": true
+  }
+}

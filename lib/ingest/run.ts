@@ -3,6 +3,8 @@
  *
  *   usgs     batched USGS calls (40 sites/request) for every distinct gauge of EVERY park with a gauge
  *            -> one conditions_snapshots(source=usgs) row per gauged park
+ *   noaa     NOAA CO-OPS (Tides & Currents) water temperature + tide for every coastal park with a
+ *            noaa_station_id -> one conditions_snapshots(source=noaa) row per such park
  *   weather  EVERY park every run. Deep parks: NWS (Open-Meteo fallback), 4 in parallel. Basic parks:
  *            Open-Meteo multi-location batches of 20, sequential (429-safe), one insert per batch.
  *            A park is skipped when its latest weather snapshot is < 50 min old (unless force).
@@ -19,6 +21,7 @@ import type { Database, Json } from "@/lib/database.types";
 import { createAdminClient } from "@/lib/supabase/admin";
 import type { CronJob, NwsGrid, Park } from "@/lib/types";
 import { buildUsgsPayloadForPark, fetchUsgsLatestDetailed } from "./usgs";
+import { buildNoaaPayloadForPark, fetchNoaaLatest } from "./noaa";
 import { fetchAlertsFL, fetchNwsWeather, matchAlertsToPark, type NwsAlertFeature } from "./nws";
 import { OPEN_METEO_BATCH_SIZE, fetchOpenMeteo, fetchOpenMeteoBatch } from "./openMeteo";
 import { fetchLongWeekends, fetchNagerHolidays } from "./holidays";
@@ -34,7 +37,7 @@ import {
   matchAlgaeToParks,
 } from "./algae";
 
-export const CRON_JOBS: readonly CronJob[] = ["usgs", "weather", "alerts", "holidays", "prune", "algae"];
+export const CRON_JOBS: readonly CronJob[] = ["usgs", "noaa", "weather", "alerts", "holidays", "prune", "algae"];
 
 export function isCronJob(value: string): value is CronJob {
   return (CRON_JOBS as readonly string[]).includes(value);
@@ -93,6 +96,9 @@ export async function runJob(job: CronJob, opts: RunJobOptions = {}): Promise<Ru
       case "usgs":
         await runUsgs(ctx);
         break;
+      case "noaa":
+        await runNoaa(ctx);
+        break;
       case "weather":
         await runWeather(ctx);
         break;
@@ -145,6 +151,65 @@ async function runUsgs(ctx: Ctx): Promise<void> {
     fetched_at: fetchedAt,
     payload: buildUsgsPayloadForPark(p, result.readingsBySite, fetchedAt, result.source) as unknown as Json,
   }));
+  const { error: insErr, count } = await ctx.db.from("conditions_snapshots").insert(rows, { count: "exact" });
+  if (insErr) throw new Error(`insert conditions_snapshots: ${insErr.message}`);
+  ctx.counts.inserted = count ?? rows.length;
+}
+
+// ---------- noaa (CO-OPS tides & currents) ----------
+
+/** Stop starting new stations after this; the pg_net timeout on the cron call is 30 s. */
+export const NOAA_TIME_BUDGET_MS = 20_000;
+
+type NoaaParkRow = { id: string; slug: string; name: string; noaa_station_id: string | null; noaa_distance_km: number | null };
+
+/**
+ * Coastal parks have no USGS river gauge, so their water temperature and tide come from the
+ * NOAA CO-OPS station picked by scripts/fetch-noaa-stations.ts. Distinct stations are visited
+ * once each (a station is shared by several parks) and every targeted park gets a snapshot row —
+ * including one with `readings: []` when the station answered nothing, so the UI can say
+ * "No live reading" instead of silently showing stale data.
+ */
+async function runNoaa(ctx: Ctx): Promise<void> {
+  // select("*") because lib/database.types.ts (DB-owned) has not been regenerated with the
+  // noaa_* columns yet; the cast below is the only place that assumes they exist.
+  let q = ctx.db.from("parks").select("*");
+  if (ctx.opts.parkId) q = q.eq("id", ctx.opts.parkId);
+  const { data, error } = await q;
+  if (error) throw new Error(`load parks: ${error.message}`);
+  const parks = (data ?? []) as unknown as NoaaParkRow[];
+
+  const coastal = parks.filter((p) => !!p.noaa_station_id);
+  const stations = [...new Set(coastal.map((p) => p.noaa_station_id!))];
+  ctx.counts.parks = coastal.length;
+  ctx.counts.stations = stations.length;
+  if (stations.length === 0) return;
+
+  // Which products a station publishes is recorded in data/noaa_stations.json at selection time but
+  // not in the DB, so every station is asked for all three; the "No data was found" envelope is a
+  // soft miss, not an error.
+  const results = await fetchNoaaLatest(stations, {
+    now: ctx.now,
+    budgetMs: Math.min(NOAA_TIME_BUDGET_MS, (ctx.opts.timeBudgetMs ?? 50_000) - (Date.now() - ctx.startedAt)),
+  });
+
+  let readings = 0;
+  for (const r of Object.values(results)) {
+    readings += r.readings.length;
+    for (const e of r.errors) ctx.errors.push(`noaa ${r.stationId} ${e}`);
+  }
+  ctx.counts.readings = readings;
+  ctx.counts.stations_answered = Object.values(results).filter((r) => r.readings.length > 0).length;
+
+  const fetchedAt = ctx.now.toISOString();
+  const rows = coastal
+    .map((p) => {
+      const payload = buildNoaaPayloadForPark(p, results, fetchedAt);
+      return payload ? { park_id: p.id, source: "noaa", fetched_at: fetchedAt, payload: payload as unknown as Json } : null;
+    })
+    .filter((r): r is NonNullable<typeof r> => r !== null);
+  if (rows.length === 0) return;
+
   const { error: insErr, count } = await ctx.db.from("conditions_snapshots").insert(rows, { count: "exact" });
   if (insErr) throw new Error(`insert conditions_snapshots: ${insErr.message}`);
   ctx.counts.inserted = count ?? rows.length;
