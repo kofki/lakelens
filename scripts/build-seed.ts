@@ -550,9 +550,25 @@ export function applyOsmDetails(park: ParkSeed, detail: OsmDetail | undefined): 
  * it can name fresh water nearby; `null` here means it cannot, and the caller leaves it out
  * of the seed entirely.
  */
+/**
+ * States with an ocean in them.
+ *
+ * In these, `natural=beach` means nothing on its own, so an unchecked row is an ocean beach
+ * until proven otherwise. Everywhere else a beach is fresh water by geography and a missing
+ * verdict costs nothing.
+ */
+export const SALT_COAST_STATES = new Set([
+  "AK", "AL", "CA", "CT", "DC", "DE", "FL", "GA", "HI", "LA", "MA", "MD", "ME", "MS", "NC",
+  "NH", "NJ", "NY", "OR", "RI", "SC", "TX", "VA", "WA",
+]);
+
 export function applyWaterVerdict(park: ParkSeed, verdict: WaterVerdict | undefined): ParkSeed | null {
-  // No verdict at all means the probe has not reached this park yet, not that it failed.
-  if (!verdict) return park;
+  if (!verdict) {
+    // A missing verdict is "not checked yet", not "checked and passed". In a landlocked
+    // state that is harmless. On the coast it is the whole question, and publishing on the
+    // assumption would have put 406 Massachusetts sea beaches on a freshwater map.
+    return park.state && SALT_COAST_STATES.has(park.state) ? null : park;
+  }
   if (!verdict.water_body || !verdict.type) return null;
   return { ...park, type: verdict.type, water_body: verdict.water_body };
 }

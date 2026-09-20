@@ -497,3 +497,29 @@ describe("sqlLiteral never produces an escape-string literal", () => {
     expect(sqlJsonb({ a: "quote's" })).toBe(`'{"a":"quote''s"}'::jsonb`);
   });
 });
+
+describe("applyWaterVerdict refuses an unchecked coastal park", () => {
+  const park = (state: string) => ({ ...OSM_PARK, state, type: "lake" }) as ParkSeed;
+
+  it("publishes an unchecked park where there is no ocean", () => {
+    for (const state of ["KS", "MI", "WI", "CO"]) {
+      expect(applyWaterVerdict(park(state), undefined)).not.toBeNull();
+    }
+  });
+
+  it("drops an unchecked park in a state with a coast", () => {
+    for (const state of ["MA", "FL", "CA", "NY", "HI", "AK"]) {
+      expect(applyWaterVerdict(park(state), undefined), state).toBeNull();
+    }
+  });
+
+  it("drops an unchecked park with no state at all, which cannot be vouched for", () => {
+    expect(applyWaterVerdict({ ...park("MA"), state: null } as ParkSeed, undefined)).not.toBeNull();
+  });
+
+  it("still trusts a real verdict over the state", () => {
+    const passed = applyWaterVerdict(park("CA"), { water_body: "Lake Tahoe", type: "lake", great_lake: false, reason: "ok" });
+    expect(passed).toMatchObject({ water_body: "Lake Tahoe" });
+    expect(applyWaterVerdict(park("KS"), { water_body: null, type: null, great_lake: false, reason: "x" })).toBeNull();
+  });
+});

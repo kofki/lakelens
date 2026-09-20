@@ -1,6 +1,6 @@
 {
   "_note": "Water body each OSM swim area sits on, from scripts/fetch-osm-water-bodies.ts. Matched by bounding box against every named lake and river in the state, smallest box first. water_body null means the point named no fresh water and is not published.",
-  "generated_at": "2026-09-20T10:25:10.918Z",
+  "generated_at": "2026-09-20T11:32:48.371Z",
   "pad_m": 600,
   "verdicts": {
     "alexai-beach-ak": {
@@ -12116,6 +12116,3714 @@
       "type": "lake",
       "great_lake": false,
       "reason": "ok"
+    },
+    "2222-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "38th-avenue-coastal-access-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "4-island-lake-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "aardvark-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "aeneas-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "agate-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "alamitos-bay-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "alan-sieroty-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "albany-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "aliso-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "alligator-hole-ca": {
+      "water_body": "Big Chico Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "amarillo-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "aquatic-cove-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "arch-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "arched-rock-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "arrowhead-resort-beach-ca": {
+      "water_body": "Lake Arrowhead",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "arroyo-burro-beach-ca": {
+      "water_body": "Arroyo Burro",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "arroyo-de-los-frijoles-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "asilomar-state-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "avalis-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "avila-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "baby-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "baker-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "baker-beach-clothing-optional-area-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "balboa-beach-ca": {
+      "water_body": "San Diego Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "baldwin-beach-ca": {
+      "water_body": "Lake Tahoe",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "bannings-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "bay-shore-buoy-line-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "bay-street-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "beach-1-ca": {
+      "water_body": "Pinecrest Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "beach-2-ca": {
+      "water_body": "Pinecrest Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "bean-hollow-state-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "bear-hole-ca": {
+      "water_body": "Big Chico Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "beer-can-beach-ca": {
+      "water_body": "Bush Gulch",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "ben-weston-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "benson-lake-beach-ca": {
+      "water_body": "Benson Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "bessemer-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "betz-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no fresh water within range: Salton Sea"
+    },
+    "big-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "big-river-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "big-rock-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "bight-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "bird-rock-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "black-point-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "black-s-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "black-s-beach-lincoln-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "black-sands-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "blacks-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "blind-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "bluffs-beaches-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "boater-s-beach-ca": {
+      "water_body": "Lake Mendocino",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "bolinas-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "bolsa-chica-state-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "bombay-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no fresh water within range: Salton Sea"
+    },
+    "bonny-doon-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "boomer-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "bowling-ball-beach-ca": {
+      "water_body": "Galloway Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "bramble-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "brandy-creek-beach-ca": {
+      "water_body": "Whiskeytown Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "brazil-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "breakers-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "brown-s-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "buccaneer-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "burnt-mill-beach-ca": {
+      "water_body": "Lake Arrowhead",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "butterfly-beach-ca": {
+      "water_body": "Montecito Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "button-shell-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "cable-car-beach-ca": {
+      "water_body": "Eagle Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "cabrillo-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "calawee-cove-beach-ca": {
+      "water_body": "Lake Tahoe",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "campus-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "cannonball-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "capitola-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "carbon-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "carbon-la-costa-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "cardiff-state-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "carmel-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "carmel-river-state-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "carpinteria-state-beach-ca": {
+      "water_body": "Carpinteria Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "caspar-headlands-state-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "castle-rock-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "catfish-beach-ca": {
+      "water_body": "Lake Almanor",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "cayucos-state-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "centerville-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "central-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "chambers-landing-ca": {
+      "water_body": "Lake Tahoe",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "chicken-ranch-beach-ca": {
+      "water_body": "Third Valley Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "children-s-beach-ca": {
+      "water_body": "Russian River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "children-s-pool-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "china-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "china-cove-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "china-ladder-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "christi-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "church-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "clam-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "club-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no fresh water within range: Cotino® Bay"
+    },
+    "coast-royale-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "cocklebur-beach-ca": {
+      "water_body": "Woodward Reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "coleman-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "college-cove-north-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "college-cove-south-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "collins-lake-beach-ca": {
+      "water_body": "Collins Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "cooks-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "corona-del-mar-state-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "coronado-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "coronado-shores-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "cottonwood-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "county-line-beach-ca": {
+      "water_body": "Little Sycamore Canyon",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "cove-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "cowell-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "cowell-ranch-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "coyote-point-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "crane-cove-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "crescent-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "cresent-bay-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "crown-point-shores-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "cull-canyon-swim-complex-ca": {
+      "water_body": "Cull Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "dan-blocker-county-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "danburg-beach-ca": {
+      "water_body": "Mono Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "davenport-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "davenport-landing-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "de-anza-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "del-mar-dog-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "del-monte-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "del-valle-east-beach-ca": {
+      "water_body": "Lake Del Valle",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "del-valle-east-beach-swimming-area-ca": {
+      "water_body": "Lake Del Valle",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "del-valle-west-beach-ca": {
+      "water_body": "Lake Del Valle",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "del-valle-west-beach-swimming-area-ca": {
+      "water_body": "Lake Del Valle",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "depressions-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "descanso-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "devereux-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "devils-slide-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "dillon-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "dockweiler-state-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "dog-beach-ca": {
+      "water_body": "Lost Mine Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "doran-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "dorn-beach-ca": {
+      "water_body": "Clear Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "drakes-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "driftwood-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "duck-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "dune-drift-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "dunes-beach-ca": {
+      "water_body": "Frenchmans Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "dunn-court-beach-ca": {
+      "water_body": "Pine Mountain Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "dutch-bill-beach-ca": {
+      "water_body": "Schoolhouse Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "dyerville-river-bar-ca": {
+      "water_body": "Perrott Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "east-beach-ca": {
+      "water_body": "Sycamore Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "edgewater-ca": {
+      "water_body": "San Diego Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "el-capitan-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "el-dorado-beach-ca": {
+      "water_body": "Lake Tahoe",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "el-granada-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "el-matador-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "el-pescador-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "el-portal-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "el-segundo-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "elk-fence-north-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "elk-fence-south-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "ellwood-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "elmar-beach-ca": {
+      "water_body": "Pilarcitos Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "emma-wood-state-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "empire-landing-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "encinal-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "escondido-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "esplanade-park-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "fan-shell-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "faria-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "fern-grotto-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "fish-rock-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "fisherman-s-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "fisk-mill-cove-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "five-mile-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "fort-bragg-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "fort-bragg-landing-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "four-mile-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "francis-beach-ca": {
+      "water_body": "Pilarcitos Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "fruit-tree-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "gallatin-beach-ca": {
+      "water_body": "Papoose Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "gaviota-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "gaviota-nude-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "gazos-creek-state-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "gibralter-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "gibson-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "glass-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "gleason-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "goat-rock-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "gold-bluffs-beach-ca": {
+      "water_body": "Home Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "grandview-surf-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "gray-whale-cove-state-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "greyhound-rock-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "group-campsite-ca": {
+      "water_body": "San Juan Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "halfmoon-beach-ca": {
+      "water_body": "Pine Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "hamiltair-community-beach-ca": {
+      "water_body": "Lake Arrowhead",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "hamilton-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "happy-valley-swimming-hole-ca": {
+      "water_body": "Camp Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "harbor-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "harbor-cove-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "haskell-s-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "healdsburg-veterans-memorial-beach-ca": {
+      "water_body": "Foss Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "heart-s-desire-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "hendrys-beach-ca": {
+      "water_body": "Arroyo Burro",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "hermosa-city-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "hermosa-terrace-park-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "hidden-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "hlel-din-river-access-south-fork-and-trinity-confluence-ca": {
+      "water_body": "Trinity River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "hobie-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "hollywood-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "hooper-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "hope-ranch-private-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "horse-shoe-hill-shore-ca": {
+      "water_body": "Kratíras Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "hoyt-crossing-nude-beach-ca": {
+      "water_body": "South Yuba River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "huntington-city-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "huntington-state-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "indian-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "isla-vista-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "island-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "its-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "jacks-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "jenner-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "jetty-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "johnson-s-beach-ca": {
+      "water_body": "Fife Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "johnsons-landing-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "jones-bar-swimming-hole-ca": {
+      "water_body": "Rush Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "jones-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "jug-handle-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "jumping-rock-ca": {
+      "water_body": "Hume Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "june-lake-beach-ca": {
+      "water_body": "June Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "kehoe-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "kelham-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "keller-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "keller-beach-swimming-area-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "kellogg-road-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "kellogg-s-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "kiddie-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "kilkenny-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "kimtu-beach-on-trinity-river-ca": {
+      "water_body": "Bremer Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "kings-beach-ca": {
+      "water_body": "Lake Tahoe",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "kirby-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "kite-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "kiva-beach-ca": {
+      "water_body": "Lake Tahoe",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "la-conchita-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "la-costa-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "la-jolla-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "la-jolla-cove-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "la-jolla-shores-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "la-jolla-tide-pools-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "la-piedra-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "laguna-creek-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "laguna-point-beach-ca": {
+      "water_body": "Lake Cleone",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lairds-landing-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "lake-anza-beach-ca": {
+      "water_body": "Lake Anza",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lake-anza-swimming-area-ca": {
+      "water_body": "Lake Anza",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lake-arrowhead-village-beach-ca": {
+      "water_body": "Lake Arrowhead",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lake-don-pedro-swimming-lagoon-ca": {
+      "water_body": "Don Pedro Reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lake-lodge-beach-ca": {
+      "water_body": "Pine Mountain Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lake-siskiyou-beach-ca": {
+      "water_body": "Lake Siskiyou",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lake-temescal-beach-ca": {
+      "water_body": "Lake Temescal Sediment Detention Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lakeside-beach-ca": {
+      "water_body": "Lake Tahoe",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "las-trancas-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "las-tunas-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "latigo-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "laurel-beach-ca": {
+      "water_body": "Clear Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "law-street-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "leadbetter-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "lechuza-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "leo-carrillo-state-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "lester-beach-ca": {
+      "water_body": "Lake Tahoe",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "leucadia-state-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "lighthouse-field-state-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "limantour-beach-ca": {
+      "water_body": "Laguna Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "little-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "little-cojo-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "little-corona-del-mar-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "little-river-state-beach-ca": {
+      "water_body": "Little River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "long-beach-city-beach-ca": {
+      "water_body": "Los Angeles River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "long-cove-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "longpoint-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "lorenzo-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "lost-coast-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "main-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "malibu-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "mandalay-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "mandalay-state-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "manhattan-beach-ca": {
+      "water_body": "Canada Verde Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "marina-state-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "marine-street-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "marshall-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "marshall-s-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "martins-beach-ca": {
+      "water_body": "Lobitos Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "mateo-coast-state-beaches-ca": {
+      "water_body": "Frenchmans Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "mattole-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "mavericks-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "mayal-s-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "mcabee-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "mcclures-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "mcgrath-state-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "mickey-s-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "middle-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "mile-rock-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "minuteman-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "miramar-beach-ca": {
+      "water_body": "Arroyo De En Medio",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "mitchell-s-cove-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "miwok-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "mokelumne-beach-ca": {
+      "water_body": "Mokelumne River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "monastery-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "montara-state-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "monte-rio-community-beach-ca": {
+      "water_body": "Russian River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "monterey-state-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "moon-dunes-beach-ca": {
+      "water_body": "Lake Tahoe",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "moonstone-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "moot-rock-beach-ca": {
+      "water_body": "Kratíras Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "moran-lake-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "more-mesa-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "more-mesa-nude-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "moreno-beach-ca": {
+      "water_body": "Lake Perris",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "morongo-s-oasis-beach-ca": {
+      "water_body": "Middle Branch Millard Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "morro-dunes-natural-preserve-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "morro-rock-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "morro-strand-state-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "moss-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "moss-point-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "mother-s-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "muir-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "naples-beach-ca": {
+      "water_body": "Arroyo De En Medio",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "natural-bridges-state-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "navy-beach-ca": {
+      "water_body": "Mono Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "needle-rock-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "newport-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "newport-dunes-ca": {
+      "water_body": "San Diego Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "nicholas-canyon-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "niles-beach-ca": {
+      "water_body": "Rainbow Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "no-name-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "north-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "north-blue-gum-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "north-day-use-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "north-marina-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "north-moss-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "north-salmon-creek-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "north-star-beach-ca": {
+      "water_body": "San Diego Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "noyo-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "oak-bottom-beach-ca": {
+      "water_body": "Whiskeytown Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "ocean-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "oceano-dunes-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "oceanside-city-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "ohlson-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "oil-piers-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "old-ben-weston-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "olde-port-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "oregon-bar-ca": {
+      "water_body": "Folsom Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "ormond-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "oxnard-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "pacifica-state-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "palisades-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "palm-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "palomarin-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "panther-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "paradise-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "paradise-cove-ca": {
+      "water_body": "Castaic Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "parsons-landing-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "patton-beach-ca": {
+      "water_body": "Lake Tahoe",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "pebble-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "pelican-north-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "pelican-state-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "penninsula-park-beach-ca": {
+      "water_body": "Lake Arrowhead",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "perles-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "perris-beach-ca": {
+      "water_body": "Lake Perris",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "pescadero-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "pfeiffer-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "phillip-burton-memorial-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "picnic-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "pillar-point-harbor-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "pine-island-beach-ca": {
+      "water_body": "Lake Wildwood",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "pine-mountain-lake-marina-beach-ca": {
+      "water_body": "Pine Mountain Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "pinecrest-dog-beach-ca": {
+      "water_body": "Pinecrest Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "pirates-cove-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "pismo-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "pistachio-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "pit-stop-beach-ca": {
+      "water_body": "South Fork American River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "pita-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "playa-las-palmeras-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "playa-san-juan-leighton-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "playpen-ca": {
+      "water_body": "Sherman Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "poche-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "point-molate-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "point-reyes-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "point-sal-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "ponto-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "pope-beach-ca": {
+      "water_body": "Lake Tahoe",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "poplar-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "port-hueneme-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "portuguese-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "potbelly-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "private-s-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "private-s-nude-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "pudding-creek-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "puerco-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "quarry-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "radio-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "rainbow-pool-swimming-hole-ca": {
+      "water_body": "South Fork Tuolumne River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "ranger-steven-s-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "rat-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "red-rock-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "red-white-and-blue-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "redondo-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "redondo-beach-state-park-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "redwood-creek-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "reedley-beach-ca": {
+      "water_body": "Kings River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "rincon-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "rio-del-mar-beach-ca": {
+      "water_body": "Aptos Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "rippers-cove-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "river-bend-beach-ca": {
+      "water_body": "Russian River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "robert-w-crown-memorial-state-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "rockaway-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "rocky-beach-ca": {
+      "water_body": "Russian River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "rodeo-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "ross-cove-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "royal-palms-county-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "russian-gulch-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "sacramento-landing-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "saint-malo-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "salmon-hole-ca": {
+      "water_body": "Sycamore Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "salt-creek-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "salton-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no fresh water within range: Salton Sea"
+    },
+    "san-buenaventura-state-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "san-carlos-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "san-gregorio-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "san-gregorio-private-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "san-mateo-point-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "san-pedro-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "san-quentin-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "sand-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "sand-dollar-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "sand-plant-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "sand-pond-beach-ca": {
+      "water_body": "Lower Sardine Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sand-springs-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "sands-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "sandy-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "sandy-cove-beach-ca": {
+      "water_body": "Hume Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "santa-claus-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "santa-cruz-main-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "santa-maria-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "santa-maria-s-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "santa-monica-state-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "schoolhouse-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "schooner-gulch-state-beach-ca": {
+      "water_body": "Galloway Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "schoonmaker-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "scott-creek-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "scripps-coastal-reserve-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "sculptured-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "sdsu-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "sea-pine-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "sea-view-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no fresh water within range: Salton Sea"
+    },
+    "seabright-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "seal-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "seal-rookery-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "seaside-beach-ca": {
+      "water_body": "Frazer Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "secline-beach-ca": {
+      "water_body": "Lake Tahoe",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "secret-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "shadow-cliffs-beach-ca": {
+      "water_body": "Lake Boris",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "shadow-cliffs-swimming-area-ca": {
+      "water_body": "Lake Boris",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "shallow-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "shark-fin-cove-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "sharp-park-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "shell-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "shipwreck-shore-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "shoreline-beach-park-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "silver-canyon-landing-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "silver-strand-state-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "slide-ranch-north-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "smuggler-s-cove-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "sneaker-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no fresh water within range: Salton Sea"
+    },
+    "somoa-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "south-beach-ca": {
+      "water_body": "O'Neill Forebay",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "south-blue-gum-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "south-day-use-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "south-jetty-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "south-oceanside-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "south-ponto-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "south-rodeo-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "south-salmon-creek-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "spanish-landing-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "spooner-s-cove-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "staircase-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "starlight-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "steelhead-beach-ca": {
+      "water_body": "Russian River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "stengel-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "stinson-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "stoneboro-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "stoney-creek-swim-area-ca": {
+      "water_body": "Trinity Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "strands-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "strawberry-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "stump-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "sullivans-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "summerland-beach-ca": {
+      "water_body": "Greenwell Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "summerland-beach-cove-ca": {
+      "water_body": "Greenwell Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sunny-cove-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "sunset-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "sunset-state-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "sunshine-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "surf-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "surfer-s-knoll-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "surfrider-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "swede-s-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "swift-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "swim-beach-ca": {
+      "water_body": "Big Bear Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "t-street-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "table-rock-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "tabletops-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "tamarack-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "tamaroo-bar-ca": {
+      "water_body": "Salt Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "tavern-bay-beach-ca": {
+      "water_body": "Lake Arrowhead",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "teachers-beach-ca": {
+      "water_body": "Third Valley Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "ten-mile-beach-ca": {
+      "water_body": "Inglenook Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "tennessee-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "the-corrals-swimming-hole-ca": {
+      "water_body": "Mill Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "the-dark-side-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "the-pier-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "the-slabs-swimming-hole-ca": {
+      "water_body": "Mill Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "thousand-steps-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "three-mile-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "tide-pool-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "toll-plaza-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "tomales-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "topanga-county-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "torrance-county-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "torrey-pines-city-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "torrey-pines-state-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "tourmaline-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "trancas-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "trestle-beach-ca": {
+      "water_body": "Honda Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "trinidad-state-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "tunitas-beach-ca": {
+      "water_body": "Tunitas Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "turrtle-bend-ca": {
+      "water_body": "Auburn Ravine",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "twin-lakes-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "upper-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "usal-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "vacation-beach-ca": {
+      "water_body": "Russian River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "vallejo-beach-ca": {
+      "water_body": "Arroyo De En Medio",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "vaquero-beach-ca": {
+      "water_body": "Pyramid Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "venice-beach-ca": {
+      "water_body": "Frenchmans Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "ventura-city-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "victoria-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "waddell-beach-county-of-santa-cruz-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "waddell-beach-state-parks-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "wages-creek-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "walk-on-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "wall-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "wells-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "west-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "weston-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "westward-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "westwood-beach-ca": {
+      "water_body": "Lake Almanor",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "whale-bone-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "white-gulch-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "whitehouse-creek-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "wildcat-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "will-rogers-state-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "william-kent-beach-ca": {
+      "water_body": "Lake Tahoe",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "william-randolph-hearst-memorial-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "wilson-creek-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "windansea-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "wipeout-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "woods-cove-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "wreck-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "wright-s-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "yellowbank-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "yerba-buena-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "younger-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "zuma-beach-ca": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "aurora-19-public-beach-access-tx": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "babe-s-beach-tx": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no fresh water within range: Gulf Intracoastal Waterway"
+    },
+    "bermuda-beach-tx": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "boca-chica-beach-tx": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "bolivar-beach-tx": {
+      "water_body": "Johnson Bayou",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "bryan-beach-tx": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no fresh water within range: Gulf Intracoastal Waterway"
+    },
+    "canoe-docks-tx": {
+      "water_body": "Lake Leo",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "cinco-ranch-beach-club-tx": {
+      "water_body": "Park Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "cooper-lake-state-park-beach-tx": {
+      "water_body": "Jim Chapman Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "corpus-christi-north-beach-tx": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "crystal-beach-tx": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "east-beach-tx": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no fresh water within range: Gulf Intracoastal Waterway"
+    },
+    "galveston-beach-tx": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no fresh water within range: Gulf Intracoastal Waterway"
+    },
+    "hippie-beach-tx": {
+      "water_body": "Pat Mayse Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "hippie-hollow-beach-tx": {
+      "water_body": "Lake Travis",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "holiday-beach-tx": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no fresh water within range: Gulf Intracoastal Waterway"
+    },
+    "isla-blanca-beach-tx": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "j-p-luby-tx": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no fresh water within range: Packery Channel"
+    },
+    "jamaica-beach-tx": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "king-fisher-beach-tx": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "lake-bonham-beach-area-tx": {
+      "water_body": "Bois D'Arc Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lighthouse-beach-tx": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no fresh water within range: Gulf Intracoastal Waterway"
+    },
+    "little-elm-beach-tx": {
+      "water_body": "Lewisville Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lynn-creek-park-beach-tx": {
+      "water_body": "Joe Pool Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "macfadden-beach-tx": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "matagorda-beach-tx": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "mcc-beach-tx": {
+      "water_body": "Whispering Oaks Dog Pawnd",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "mcfadden-landing-tx": {
+      "water_body": "McFaddin Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "new-port-pass-tx": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no fresh water within range: Gulf Intracoastal Waterway"
+    },
+    "pirates-beach-tx": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no fresh water within range: Gulf Intracoastal Waterway"
+    },
+    "porretto-beach-tx": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no fresh water within range: Gulf Intracoastal Waterway"
+    },
+    "post-oak-beach-tx": {
+      "water_body": "Ray Roberts Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "pullin-family-marina-beach-tx": {
+      "water_body": "Baylor Science Building Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "quarantine-shore-tx": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no fresh water within range: Gulf Intracoastal Waterway"
+    },
+    "rockport-beach-park-tx": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "san-luis-beach-tx": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no fresh water within range: Gulf Intracoastal Waterway"
+    },
+    "sandy-beach-tx": {
+      "water_body": "Possum Kingdom Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "screech-owl-reach-tx": {
+      "water_body": "Lake Tawakoni",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "south-padre-island-nude-beach-tx": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "splash-station-tx": {
+      "water_body": "West Buffalo Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "state-park-swim-beach-tx": {
+      "water_body": "Lake Mineral Wells",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "stewart-beach-park-tx": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no fresh water within range: Gulf Intracoastal Waterway"
+    },
+    "stewart-beach-tx": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no fresh water within range: Gulf Intracoastal Waterway"
+    },
+    "sunny-beach-tx": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no fresh water within range: Gulf Intracoastal Waterway"
+    },
+    "surfside-beach-tx": {
+      "water_body": "Swan Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "swimming-area-tx": {
+      "water_body": "Granger Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "thrive-beach-tx": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "twin-points-beach-tx": {
+      "water_body": "Eagle Mountain Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "ufo-beach-clothing-optional-tx": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "university-beach-tx": {
+      "water_body": "Oso Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "waterfront-tx": {
+      "water_body": "Guadalupe River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "west-beach-tx": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no fresh water within range: Gulf Intracoastal Waterway"
     }
   }
 }
