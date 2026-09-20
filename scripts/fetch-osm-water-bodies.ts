@@ -39,9 +39,16 @@ const ENDPOINTS = [
   "https://lz4.overpass-api.de/api/interpreter",
   "https://overpass.kumi.systems/api/interpreter",
 ];
-/** Points per request. Each is three cheap radius lookups, and 30 keeps a batch under a minute. */
-const BATCH = 30;
-const GAP_MS = 4_000;
+/**
+ * Points per request.
+ *
+ * 30 timed out on all three mirrors: four radius lookups each is 120 statements, and an
+ * `around` filtered only by key is not cheap. 12 is what completes, and the cache means a
+ * throttled run keeps everything it paid for and a re-run resumes.
+ */
+const BATCH = 12;
+/** Overpass blocks an IP that asks continuously. This is deliberately slower than it needs to be. */
+const GAP_MS = 8_000;
 const TIMEOUT_MS = 180_000;
 /**
  * How far the water may be. A swim area is on its water: 400 m covers a wide beach and a
