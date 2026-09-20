@@ -299,26 +299,55 @@ async function main(): Promise<void> {
   // Keep what previous runs harvested so a throttled state does not lose the others.
   const previous = readJson<{ parks: OsmPark[] }>(OUT_PATH)?.parks ?? [];
   const bySlug = new Map(previous.map((p) => [p.slug, p]));
-  const failed: string[] = [];
+  /**
+   * Overpass fails a state for reasons that have nothing to do with the state: a mirror
+   * under load, a throttle, a timeout on a query that succeeded ten minutes earlier. Twelve
+   * states failed in one pass and eight of them worked on the next, so a single pass is
+   * simply not a harvest. Each round only retries what is still missing, and the run's own
+   * budget is what stops this rather than the count.
+   */
+  const MAX_ROUNDS = 4;
+  let failed: string[] = [];
 
-  for (const [i, state] of states.entries()) {
-    try {
-      const elements = await fetchState(state);
-      const parks = normalize(elements, state);
-      for (const park of parks) bySlug.set(park.slug, park);
-      log(`${state}: ${parks.length} named public swim areas`);
-    } catch (err) {
-      failed.push(state);
-      console.warn(`[osm] ${state} failed: ${(err as Error).message}`);
+  let pending = [...states];
+  for (let round = 1; round <= MAX_ROUNDS && pending.length > 0; round += 1) {
+    if (round > 1) {
+      if (deadline.expired()) {
+        log(`out of time after ${deadline.elapsedMin()} min; ${pending.length} state(s) not retried`);
+        break;
+      }
+      log(`retry ${round - 1}: ${pending.length} state(s) still missing: ${pending.join(", ")}`);
+      // Longer each time: a mirror that just refused is not ready again in six seconds.
+      await sleep(GAP_MS * round * 2);
     }
-    if (i < states.length - 1) await sleep(GAP_MS);
+
+    const stillFailing: string[] = [];
+    for (const [i, state] of pending.entries()) {
+      if (deadline.expired()) {
+        stillFailing.push(...pending.slice(i));
+        break;
+      }
+      try {
+        const elements = await fetchState(state);
+        const parks = normalize(elements, state);
+        for (const park of parks) bySlug.set(park.slug, park);
+        log(`${state}: ${parks.length} named public swim areas`);
+      } catch (err) {
+        stillFailing.push(state);
+        console.warn(`[osm] ${state} failed: ${(err as Error).message}`);
+      }
+      if (i < pending.length - 1) await sleep(GAP_MS);
+    }
+    pending = stillFailing;
+    failed = stillFailing;
   }
 
   const parks = [...bySlug.values()].sort((a, b) => a.slug.localeCompare(b.slug));
   writeJson(OUT_PATH, {
     _note:
       "Freshwater swim areas harvested from OpenStreetMap by scripts/fetch-osm-swim-areas.ts. " +
-      "Limited to landlocked and Great Lakes states, where a natural=beach is fresh water by definition. " +
+      "CANDIDATES: a coastal state's rows are ocean beaches until fetch-osm-water-bodies.ts " +
+      "confirms each one names fresh water. " +
       "Slugs are namespaced by state because park names are not unique across the country. " +
       "Unverified community data: swimming_verified is false and coverage_tier is basic.",
     generated_at: new Date().toISOString(),

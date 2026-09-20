@@ -104,13 +104,15 @@ export interface WaterVerdict {
 }
 
 /** The five, plus St. Clair, which is the same kind of place to stand on. */
-const GREAT_LAKES = /\blake\s+(michigan|superior|huron|erie|ontario|st\.?\s*clair)\b/i;
+const GREAT_LAKES =
+  /\blake\s+(michigan|superior|huron|erie|ontario|st\.?\s*clair)\b/i;
 
 /**
  * Water whose name says salt. Landlocked states have none of these, but the classifier
  * runs against coastal states next and a "lagoon" or "sound" there is not a lake.
  */
-const SALT_NAME = /\b(ocean|sea|gulf|sound|bay|inlet|lagoon|harbou?r|strait|channel|pass)\b/i;
+const SALT_NAME =
+  /\b(ocean|sea|gulf|sound|bay|inlet|lagoon|harbou?r|strait|channel|pass)\b/i;
 /** `water=` values that count as still fresh water, used to build the query. */
 export const LAKE_KINDS = ["lake", "reservoir", "pond", "oxbow"];
 /** `waterway=` values that count as moving fresh water. */
@@ -125,7 +127,12 @@ export const RIVER_WAYS = ["river", "stream", "canal"];
 const clean = (values: string[]) => values.map((v) => v.trim()).filter(Boolean);
 
 export function classify(probe: WaterProbe): WaterVerdict {
-  const reject = (reason: string): WaterVerdict => ({ water_body: null, type: null, great_lake: false, reason });
+  const reject = (reason: string): WaterVerdict => ({
+    water_body: null,
+    type: null,
+    great_lake: false,
+    reason,
+  });
 
   // The sea being in range outranks anything the water is called.
   if (probe.coastline) return reject("coastline within range");
@@ -138,15 +145,32 @@ export function classify(probe: WaterProbe): WaterVerdict {
 
   if (lakes.length > 0) {
     const name = lakes[0]!;
-    return { water_body: name, type: "lake", great_lake: GREAT_LAKES.test(name), reason: "ok" };
+    return {
+      water_body: name,
+      type: "lake",
+      great_lake: GREAT_LAKES.test(name),
+      reason: "ok",
+    };
   }
   if (probe.spring) {
     // A spring with no lake around it is the spring itself, which is what a name here means.
-    const name = clean(probe.names).find((n) => !SALT_NAME.test(n)) ?? rivers[0];
-    if (name) return { water_body: name, type: "spring", great_lake: false, reason: "ok" };
+    const name =
+      clean(probe.names).find((n) => !SALT_NAME.test(n)) ?? rivers[0];
+    if (name)
+      return {
+        water_body: name,
+        type: "spring",
+        great_lake: false,
+        reason: "ok",
+      };
   }
   if (rivers.length > 0) {
-    return { water_body: rivers[0]!, type: "river", great_lake: false, reason: "ok" };
+    return {
+      water_body: rivers[0]!,
+      type: "river",
+      great_lake: false,
+      reason: "ok",
+    };
   }
 
   const all = clean(probe.names);
@@ -184,7 +208,10 @@ export interface WaterFeature {
  * `withCoastline` adds the shoreline, which is only asked for where there is salt water:
  * it is pure cost in Kansas, and the single most important fact in California.
  */
-export function buildStateWaterQuery(state: string, withCoastline = false): string {
+export function buildStateWaterQuery(
+  state: string,
+  withCoastline = false,
+): string {
   const lakes = `["water"~"^(${LAKE_KINDS.join("|")})$"]`;
   const rivers = `["waterway"~"^(${RIVER_WAYS.join("|")})$"]`;
   return [
@@ -200,7 +227,9 @@ export function buildStateWaterQuery(state: string, withCoastline = false): stri
   ].join("\n");
 }
 
-export function parseWaterFeatures(elements: OverpassElement[]): WaterFeature[] {
+export function parseWaterFeatures(
+  elements: OverpassElement[],
+): WaterFeature[] {
   const out: WaterFeature[] = [];
   for (const el of elements ?? []) {
     const tags = el.tags ?? {};
@@ -208,7 +237,16 @@ export function parseWaterFeatures(elements: OverpassElement[]): WaterFeature[] 
     // that the sea is here.
     if (tags.natural === "coastline") {
       if (el.bounds) {
-        out.push({ name: "", kind: "coastline", bbox: [el.bounds.minlat, el.bounds.minlon, el.bounds.maxlat, el.bounds.maxlon] });
+        out.push({
+          name: "",
+          kind: "coastline",
+          bbox: [
+            el.bounds.minlat,
+            el.bounds.minlon,
+            el.bounds.maxlat,
+            el.bounds.maxlon,
+          ],
+        });
       }
       continue;
     }
@@ -216,7 +254,16 @@ export function parseWaterFeatures(elements: OverpassElement[]): WaterFeature[] 
     if (!name) continue;
     const kind: WaterFeature["kind"] = tags.waterway ? "river" : "lake";
     if (el.bounds) {
-      out.push({ name, kind, bbox: [el.bounds.minlat, el.bounds.minlon, el.bounds.maxlat, el.bounds.maxlon] });
+      out.push({
+        name,
+        kind,
+        bbox: [
+          el.bounds.minlat,
+          el.bounds.minlon,
+          el.bounds.maxlat,
+          el.bounds.maxlon,
+        ],
+      });
     } else if (typeof el.lat === "number" && typeof el.lon === "number") {
       out.push({ name, kind, bbox: [el.lat, el.lon, el.lat, el.lon] });
     }
@@ -233,11 +280,20 @@ export function parseWaterFeatures(elements: OverpassElement[]): WaterFeature[] 
 export const PAD_M = 600;
 const M_PER_DEG_LAT = 111_320;
 
-function contains(bbox: WaterFeature["bbox"], point: Point, padM: number): boolean {
+function contains(
+  bbox: WaterFeature["bbox"],
+  point: Point,
+  padM: number,
+): boolean {
   const [s, w, n, e] = bbox;
   const padLat = padM / M_PER_DEG_LAT;
   const padLon = padLat / Math.max(Math.cos((point.lat * Math.PI) / 180), 0.2);
-  return point.lat >= s - padLat && point.lat <= n + padLat && point.lng >= w - padLon && point.lng <= e + padLon;
+  return (
+    point.lat >= s - padLat &&
+    point.lat <= n + padLat &&
+    point.lng >= w - padLon &&
+    point.lng <= e + padLon
+  );
 }
 
 /** Box area in square degrees. Only ever compared against another box, so units do not matter. */
@@ -261,7 +317,11 @@ function boxSize(bbox: WaterFeature["bbox"]): number {
  */
 export const COASTLINE_MAX_BOX_DEG = 0.05;
 
-export function probeFrom(point: Point, features: WaterFeature[], padM = PAD_M): WaterProbe {
+export function probeFrom(
+  point: Point,
+  features: WaterFeature[],
+  padM = PAD_M,
+): WaterProbe {
   const hits = features
     .filter((f) => contains(f.bbox, point, padM))
     .sort((a, b) => boxSize(a.bbox) - boxSize(b.bbox));
@@ -288,17 +348,30 @@ async function post(query: string): Promise<OverpassElement[]> {
   const body = new URLSearchParams({ data: query }).toString();
   let lastError = "network error";
   for (const endpoint of ENDPOINTS) {
-    if (deadline.expired()) throw new Error(`out of time after ${deadline.elapsedMin()} min (${lastError})`);
+    if (deadline.expired())
+      throw new Error(
+        `out of time after ${deadline.elapsedMin()} min (${lastError})`,
+      );
     const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), requestTimeout(deadline));
+    const timer = setTimeout(
+      () => controller.abort(),
+      requestTimeout(deadline),
+    );
     try {
       const res = await fetch(endpoint, {
         method: "POST",
         body,
-        headers: { "Content-Type": "application/x-www-form-urlencoded", "User-Agent": USER_AGENT },
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+          "User-Agent": USER_AGENT,
+        },
         signal: controller.signal,
       });
-      if (res.ok) return ((await res.json()) as { elements?: OverpassElement[] }).elements ?? [];
+      if (res.ok)
+        return (
+          ((await res.json()) as { elements?: OverpassElement[] }).elements ??
+          []
+        );
       lastError = `HTTP ${res.status}`;
       // 406 and 429 are both "you are asking too fast", not "your query is wrong".
       if (res.status === 406 || res.status === 429) await sleep(GAP_MS * 3);
@@ -318,13 +391,38 @@ async function post(query: string): Promise<OverpassElement[]> {
  * import the harvester just to learn one fact.
  */
 const SALT_COAST_STATES = new Set([
-  "AK", "AL", "CA", "CT", "DC", "DE", "FL", "GA", "HI", "LA", "MA", "MD", "ME", "MS", "NC",
-  "NH", "NJ", "NY", "OR", "RI", "SC", "TX", "VA", "WA",
+  "AK",
+  "AL",
+  "CA",
+  "CT",
+  "DC",
+  "DE",
+  "FL",
+  "GA",
+  "HI",
+  "LA",
+  "MA",
+  "MD",
+  "ME",
+  "MS",
+  "NC",
+  "NH",
+  "NJ",
+  "NY",
+  "OR",
+  "RI",
+  "SC",
+  "TX",
+  "VA",
+  "WA",
 ]);
 
 async function fetchState(state: string): Promise<WaterFeature[]> {
   const withCoastline = SALT_COAST_STATES.has(state);
-  const cachePath = join(CACHE_DIR, `osm-water-${state}${withCoastline ? "-coast" : ""}.json`);
+  const cachePath = join(
+    CACHE_DIR,
+    `osm-water-${state}${withCoastline ? "-coast" : ""}.json`,
+  );
   if (!REFRESH) {
     const cached = readJson<{ features: WaterFeature[] }>(cachePath);
     if (cached?.features) {
@@ -332,7 +430,9 @@ async function fetchState(state: string): Promise<WaterFeature[]> {
       return cached.features;
     }
   }
-  const features = parseWaterFeatures(await post(buildStateWaterQuery(state, withCoastline)));
+  const features = parseWaterFeatures(
+    await post(buildStateWaterQuery(state, withCoastline)),
+  );
   writeJson(cachePath, { features });
   log(`${state}: ${features.length} water features (network)`);
   return features;
@@ -342,7 +442,10 @@ async function main(): Promise<void> {
   const states = process.argv.slice(2).filter((a) => /^[A-Z]{2}$/.test(a));
 
   const source = readJson<{ parks: Point[] }>(IN_PATH);
-  if (!source?.parks?.length) throw new Error(`no parks in ${IN_PATH}; run fetch-osm-swim-areas.ts first`);
+  if (!source?.parks?.length)
+    throw new Error(
+      `no parks in ${IN_PATH}; run fetch-osm-swim-areas.ts first`,
+    );
 
   const byState = new Map<string, Point[]>();
   for (const park of source.parks) {
@@ -353,7 +456,9 @@ async function main(): Promise<void> {
     list.push({ slug: park.slug, lat: park.lat, lng: park.lng, state });
     byState.set(state, list);
   }
-  log(`${[...byState.values()].reduce((n, l) => n + l.length, 0)} parks across ${byState.size} states`);
+  log(
+    `${[...byState.values()].reduce((n, l) => n + l.length, 0)} parks across ${byState.size} states`,
+  );
 
   /**
    * Start from what is already on disk.
@@ -361,44 +466,73 @@ async function main(): Promise<void> {
    * Running for one state used to replace the whole file with that state's verdicts, which
    * silently unpublished every park everywhere else on the next seed build.
    */
-  const existing = states.length > 0 ? (readJson<{ verdicts?: Record<string, WaterVerdict> }>(OUT_PATH)?.verdicts ?? {}) : {};
+  const existing =
+    states.length > 0
+      ? (readJson<{ verdicts?: Record<string, WaterVerdict> }>(OUT_PATH)
+          ?.verdicts ?? {})
+      : {};
   const verdicts: Record<string, WaterVerdict> = { ...existing };
-  const counts = { kept: 0, dropped: 0, greatLake: 0, lake: 0, river: 0, spring: 0 };
+  const counts = {
+    kept: 0,
+    dropped: 0,
+    greatLake: 0,
+    lake: 0,
+    river: 0,
+    spring: 0,
+  };
   const failed: string[] = [];
 
+  /** Same reasoning as the harvester: a state that failed once usually works next round. */
+  const MAX_ROUNDS = 3;
   const skipped: string[] = [];
-  for (const [state, points] of [...byState].sort()) {
-    if (deadline.expired()) {
-      // Everything already matched is written below. A re-run starts from the cache.
-      skipped.push(state);
-      continue;
-    }
-    let features: WaterFeature[];
-    try {
-      features = await fetchState(state);
-    } catch (err) {
-      // One state's parks keep no verdict, which leaves them published unchanged rather
-      // than dropped: a failed lookup is not evidence against a park.
-      failed.push(state);
-      log(`${state} failed: ${(err as Error).message}`);
-      await sleep(GAP_MS);
-      continue;
-    }
+  let pending = [...byState].sort(([a], [b]) => a.localeCompare(b));
 
-    let kept = 0;
-    for (const point of points) {
-      const verdict = classify(probeFrom(point, features));
-      verdicts[point.slug] = verdict;
-      if (!verdict.water_body) counts.dropped += 1;
-      else {
-        kept += 1;
-        counts.kept += 1;
-        if (verdict.great_lake) counts.greatLake += 1;
-        counts[verdict.type!] += 1;
-      }
+  for (let round = 1; round <= MAX_ROUNDS && pending.length > 0; round += 1) {
+    if (round > 1) {
+      if (deadline.expired()) break;
+      log(
+        `retry ${round - 1}: ${pending.length} state(s) still missing: ${pending.map(([s]) => s).join(", ")}`,
+      );
+      await sleep(GAP_MS * round * 2);
     }
-    log(`${state}: ${kept}/${points.length} named their water`);
-    await sleep(GAP_MS);
+    const stillFailing: [string, Point[]][] = [];
+
+    for (const [state, points] of pending) {
+      if (deadline.expired()) {
+        // Everything already matched is written below. A re-run starts from the cache.
+        skipped.push(state);
+        continue;
+      }
+      let features: WaterFeature[];
+      try {
+        features = await fetchState(state);
+      } catch (err) {
+        // One state's parks keep no verdict, which leaves them published unchanged rather
+        // than dropped: a failed lookup is not evidence against a park.
+        stillFailing.push([state, points]);
+        log(`${state} failed: ${(err as Error).message}`);
+        await sleep(GAP_MS);
+        continue;
+      }
+
+      let kept = 0;
+      for (const point of points) {
+        const verdict = classify(probeFrom(point, features));
+        verdicts[point.slug] = verdict;
+        if (!verdict.water_body) counts.dropped += 1;
+        else {
+          kept += 1;
+          counts.kept += 1;
+          if (verdict.great_lake) counts.greatLake += 1;
+          counts[verdict.type!] += 1;
+        }
+      }
+      log(`${state}: ${kept}/${points.length} named their water`);
+      await sleep(GAP_MS);
+    }
+    pending = stillFailing;
+    failed.length = 0;
+    failed.push(...stillFailing.map(([state]) => state));
   }
 
   writeJson(OUT_PATH, {
@@ -411,12 +545,17 @@ async function main(): Promise<void> {
     verdicts,
   });
   log(`wrote ${OUT_PATH}`);
-  log(`  kept ${counts.kept} (lake ${counts.lake}, river ${counts.river}, spring ${counts.spring})`);
+  log(
+    `  kept ${counts.kept} (lake ${counts.lake}, river ${counts.river}, spring ${counts.spring})`,
+  );
   log(`  of those, Great Lakes shoreline: ${counts.greatLake}`);
   log(`  dropped ${counts.dropped}`);
-  if (failed.length) log(`  states with no answer, left untouched: ${failed.join(", ")}`);
+  if (failed.length)
+    log(`  states with no answer, left untouched: ${failed.join(", ")}`);
   if (skipped.length) {
-    log(`  out of time after ${deadline.elapsedMin()} min; not reached: ${skipped.join(", ")}`);
+    log(
+      `  out of time after ${deadline.elapsedMin()} min; not reached: ${skipped.join(", ")}`,
+    );
     log("  cached states are kept, so re-running picks up where this stopped");
   }
 }
