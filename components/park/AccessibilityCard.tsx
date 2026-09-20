@@ -15,7 +15,6 @@ import type {Accessibility} from "@/lib/types";
 import { isAccessibleEntry } from "@/lib/distance";
 import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
-import { LastUpdated } from "@/components/ui/LastUpdated";
 import { Section } from "@/components/ui/Section";
 import {ENTRY_TYPE_TEXT, SURFACE_TEXT, WATER_ACCESS_TEXT, metresLabel} from "./format";
 
@@ -92,9 +91,6 @@ export function AccessibilityCard({ accessibility }: AccessibilityCardProps) {
             );
           })}
         </dl>
-        <div className="border-t border-mist pt-3">
-          <LastUpdated at={a.updated_at} source={a.source ?? undefined} prefix="Checked" />
-        </div>
       </Card>
     </Section>
   );

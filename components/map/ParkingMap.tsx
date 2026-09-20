@@ -1,9 +1,9 @@
 "use client";
 
 import "maplibre-gl/dist/maplibre-gl.css";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { AttributionControl, Map as MapGL, Marker, NavigationControl, type MapEvent, type MapRef } from "@vis.gl/react-maplibre";
-import { Accessibility, Car, Expand, MapPin, Navigation, Shrink, X } from "lucide-react";
+import { Accessibility, Car, DollarSign, Expand, MapPin, Navigation, Shrink, X } from "lucide-react";
 import type { ParkingLot } from "@/lib/types";
 import type { LatLng } from "@/lib/distance";
 import { lotSummary, parkingBounds } from "@/lib/parking";
@@ -11,6 +11,9 @@ import { cn } from "@/components/ui/cn";
 import { MAP_STYLE_URL, applyBrandPaint } from "./mapStyle";
 import { useWebGL2 } from "./useWebGL2";
 import { detectMapsPlatform, directionsUrl } from "./directions";
+
+/** Longest fee string that still reads as a label rather than a sentence. */
+const SHORT_FEE = 24;
 
 export interface ParkingMapProps {
   center: LatLng;
@@ -42,6 +45,27 @@ export function ParkingMap({ center, parkName, lots, className }: ParkingMapProp
   const [selectedId, setSelectedId] = useState<string | null>(null);
 
   const selected = lots.find((l) => l.id === selectedId) ?? null;
+
+  // A chip is a glanceable label. Anything longer than this is a sentence and belongs in
+  // the body of the card instead.
+  const chips: { label: string; icon: ReactNode }[] = [];
+  if (selected) {
+    if (selected.fee && selected.fee.length <= SHORT_FEE) {
+      chips.push({ label: selected.fee, icon: <DollarSign aria-hidden="true" focusable="false" className="size-3.5 text-taupe" /> });
+    }
+    if (selected.capacity != null) {
+      chips.push({ label: `about ${selected.capacity} spaces`, icon: <Car aria-hidden="true" focusable="false" className="size-3.5 text-taupe" /> });
+    }
+    if (selected.ada_spaces != null && selected.ada_spaces > 0) {
+      chips.push({
+        label: `${selected.ada_spaces} accessible`,
+        icon: <Accessibility aria-hidden="true" focusable="false" className="size-3.5 text-taupe" />,
+      });
+    }
+    if (selected.is_overflow) {
+      chips.push({ label: "Overflow lot", icon: null });
+    }
+  }
 
   const fit = useCallback(
     (duration: number) => {
@@ -153,7 +177,7 @@ export function ParkingMap({ center, parkName, lots, className }: ParkingMapProp
         <div
           className={cn(
             "relative w-full",
-            expanded ? "min-h-0 flex-1" : "h-64 md:h-72",
+            expanded ? "min-h-0 flex-1" : "h-72 md:h-[22rem]",
             "[&_.maplibregl-ctrl-attrib-button]:size-11 [&_.maplibregl-ctrl-attrib.maplibregl-compact]:min-h-11 [&_.maplibregl-ctrl-attrib.maplibregl-compact]:min-w-11",
           )}
         >
@@ -229,41 +253,75 @@ export function ParkingMap({ center, parkName, lots, className }: ParkingMapProp
           )}
 
           {/* Tapping a pin opens its details here rather than in a MapLibre popup, which
-              cannot be styled to the design system or reached by keyboard. */}
+              cannot be styled to the design system or reached by keyboard. This card is the
+              only place a lot's facts appear now, so it carries everything the lot cards
+              used to: fee, size, accessible spaces, provenance and the ranger's notes.
+
+              Three bands, because a ranger note can run to a paragraph: a fixed header, a
+              scrolling body, and the directions button pinned to the bottom where it is
+              always reachable without scrolling the card. */}
           {selected && (
-            <div className="absolute inset-x-3 bottom-3 rounded-card border border-mist bg-white/97 p-3 shadow-card backdrop-blur">
-              <div className="flex items-start justify-between gap-2">
-                <div className="min-w-0">
-                  <p className="truncate font-extrabold text-ink">
-                    {lots.indexOf(selected) + 1}. {selected.name}
-                  </p>
-                  {lotSummary(selected) && <p className="mt-0.5 text-sm text-mocha">{lotSummary(selected)}</p>}
-                  {selected.ada_spaces != null && selected.ada_spaces > 0 && (
-                    <p className="mt-1 inline-flex items-center gap-1 text-sm font-bold text-cocoa">
-                      <Accessibility aria-hidden="true" focusable="false" className="size-4 text-taupe" />
-                      {selected.ada_spaces} accessible spaces
-                    </p>
-                  )}
-                </div>
+            <div className="absolute bottom-3 left-3 right-3 flex max-h-[calc(100%-4.5rem)] flex-col overflow-hidden rounded-card border border-mist bg-white shadow-card md:right-auto md:w-80">
+              <div className="flex shrink-0 items-start gap-2 border-b border-mist-light bg-cream px-3 py-2">
+                <span
+                  aria-hidden="true"
+                  className="mt-0.5 inline-flex size-6 shrink-0 items-center justify-center rounded-full bg-brown text-xs font-extrabold text-white"
+                >
+                  {lots.indexOf(selected) + 1}
+                </span>
+                <h3 className="min-w-0 flex-1 text-sm font-extrabold leading-snug text-ink">{selected.name}</h3>
                 <button
                   type="button"
                   onClick={() => setSelectedId(null)}
-                  className="-mr-1 -mt-1 flex size-11 shrink-0 items-center justify-center rounded-full text-brown hover:bg-mist-light"
+                  className="-mr-2 -mt-1 flex size-9 shrink-0 items-center justify-center rounded-full text-brown hover:bg-mist/70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-taupe"
                 >
-                  <X aria-hidden="true" focusable="false" className="size-5" />
+                  <X aria-hidden="true" focusable="false" className="size-4" />
                   <span className="sr-only">Close lot details</span>
                 </button>
               </div>
-              <a
-                href={directionsUrl(selected.lat, selected.lng, `${selected.name} parking`, platform)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-2 inline-flex min-h-11 w-full items-center justify-center gap-1.5 rounded-full bg-brown px-4 text-sm font-bold text-white hover:bg-forest-deep"
-              >
-                <Navigation aria-hidden="true" focusable="false" className="size-4" />
-                Directions to this lot
-                <span className="sr-only">in {mapsName}, opens in a new tab</span>
-              </a>
+
+              <div className="min-h-0 flex-1 space-y-2 overflow-y-auto px-3 py-2.5">
+                {chips.length > 0 && (
+                  <ul className="flex flex-wrap gap-1.5">
+                    {chips.map((c) => (
+                      <li
+                        key={c.label}
+                        className="inline-flex items-center gap-1 rounded-full border border-mist bg-cream px-2.5 py-1 text-xs font-bold text-cocoa"
+                      >
+                        {c.icon}
+                        {c.label}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+
+                {/* A fee described in a sentence is prose, not a chip. */}
+                {selected.fee && selected.fee.length > SHORT_FEE && (
+                  <p className="text-xs leading-relaxed text-cocoa">
+                    <span className="font-bold">Fee: </span>
+                    {selected.fee}
+                  </p>
+                )}
+
+                {selected.notes && <p className="text-xs leading-relaxed text-cocoa">{selected.notes}</p>}
+
+                <p className="text-[0.7rem] text-mocha">
+                  {selected.source === "curated" ? "Entered by hand from the park's website" : "From OpenStreetMap, unverified"}
+                </p>
+              </div>
+
+              <div className="shrink-0 border-t border-mist-light p-2.5">
+                <a
+                  href={directionsUrl(selected.lat, selected.lng, `${selected.name} parking`, platform)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-11 w-full items-center justify-center gap-1.5 rounded-full bg-brown px-4 text-sm font-bold text-white hover:bg-forest-deep focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-taupe"
+                >
+                  <Navigation aria-hidden="true" focusable="false" className="size-4" />
+                  Directions to this lot
+                  <span className="sr-only">in {mapsName}, opens in a new tab</span>
+                </a>
+              </div>
             </div>
           )}
         </div>

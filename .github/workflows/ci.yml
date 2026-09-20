@@ -1,8 +1,12 @@
 # Typecheck, lint, test and build on every push and pull request.
 #
-# This does NOT deploy: Vercel already builds and promotes every push to main through its
-# own Git integration. This is the check that was missing, so a broken build is caught in
-# the pull request rather than in production.
+# This is the feedback surface: it annotates pull requests and gives a red tick on a bad
+# push. It is NOT what stops a broken deploy, because Vercel builds a push at the same time
+# this runs and would not wait for it.
+#
+# The deploy gate is package.json's `vercel-build`, which Vercel runs in preference to
+# `build`: it runs `npm run check` (typecheck, lint, tests) first, so a failure fails the
+# Vercel build and the previous deployment stays live.
 name: CI
 
 on:
@@ -29,14 +33,9 @@ jobs:
 
       - run: npm ci
 
-      - name: Typecheck
-        run: npx tsc --noEmit
-
-      - name: Lint
-        run: npm run lint
-
-      - name: Tests
-        run: npx vitest run
+      # Same command the Vercel build runs, so a green tick here means that gate will pass.
+      - name: Typecheck, lint and test
+        run: npm run check
 
       # Supabase's public URL and publishable key let the build prerender real pages. Both
       # are public by definition (they ship in the client bundle) and the secret key is
