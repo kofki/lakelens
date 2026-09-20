@@ -13,7 +13,7 @@ export interface StatusMeta {
   colorToken: string;
   /** Text colour hex (AA on the pill background). */
   hex: string;
-  /** Pill/marker background hex (beachlens.net pastel). */
+  /** Pill and marker background hex (pastel). */
   bgHex: string;
   /** Border/marker edge hex (3:1 on white). */
   edgeHex: string;

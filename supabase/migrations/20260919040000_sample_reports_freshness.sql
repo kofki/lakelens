@@ -3,7 +3,7 @@
 -- Sample reports are written by seed.sql as `now() - interval 'N minutes'`, which is
 -- correct at seed time and wrong forever after: two hours later every sample row has
 -- aged out of summarizeReports()'s window, so the reports feature renders nothing at
--- all — no confirmed badge, no "Still full?" prompt, no Sample badge. The demo
+-- all: no confirmed badge, no "Still full?" prompt, no Sample badge. The demo
 -- silently deletes itself.
 --
 -- This shifts the whole set forward as a block, preserving the relative spacing the

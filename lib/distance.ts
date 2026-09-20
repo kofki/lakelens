@@ -1,5 +1,5 @@
 /**
- * lib/distance.ts — geodesic distance, unit conversion, drive-time estimate and the
+ * lib/distance.ts: geodesic distance, unit conversion, drive-time estimate and the
  * "wheelchair-accessible water entry" predicate shared by filters and backups.
  * Pure TS: no React / Next / DOM imports.
  */

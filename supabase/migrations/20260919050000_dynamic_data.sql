@@ -1,5 +1,5 @@
 -- =============================================================================
--- LakeLens migration 11 — the last of the file-backed data moves into Postgres
+-- LakeLens migration 11: the last of the file-backed data moves into Postgres
 --
 -- Three things were still living in the repo rather than the database:
 --
@@ -50,7 +50,7 @@ create policy "public read calendar_events"
 grant select on public.calendar_events to anon, authenticated;
 
 -- ---------------------------------------------------------------- parking_lots.osm_ref
--- "node/12345" — OSM's own identity for the feature. Without it a scheduled Overpass
+-- "node/12345": OSM's own identity for the feature. Without it a scheduled Overpass
 -- refresh has no way to tell "this lot again" from "a new lot" and would duplicate every
 -- row on every run. Null for curated lots, which OSM never touches.
 alter table public.parking_lots add column if not exists osm_ref text;

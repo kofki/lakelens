@@ -12,7 +12,7 @@ export interface ParkTileProps {
 }
 
 /**
- * BeachLens-style photo tile for the /list grid (tablet and up). The park name is the
+ * Photo tile for the /list grid (tablet and up). The park name is the
  * link and stretches over the whole tile; the status pill stays icon + text on a solid
  * white pill so it is legible over any photo (never colour alone).
  *

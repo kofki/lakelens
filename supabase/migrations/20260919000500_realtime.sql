@@ -1,5 +1,5 @@
 -- =============================================================================
--- LakeLens migration 5 — realtime (optional; the UI also polls every 60 s)
+-- LakeLens migration 5: realtime (optional; the UI also polls every 60 s)
 -- Adds public.reports to the supabase_realtime publication so the park detail
 -- page can subscribe to postgres_changes INSERTs. anon receives only rows it
 -- can SELECT (the "public read reports" policy).

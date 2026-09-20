@@ -1,5 +1,5 @@
 /**
- * UI primitives (BeachLens family). Import by path (`@/components/ui/Card`) or from here.
+ * UI primitives. Import by path (`@/components/ui/Card`) or from here.
  * Client-only components (Chip, SegmentedTabs) carry their own "use client" directive.
  */
 export { Badge, type BadgeProps, type BadgeVariant } from "./Badge";

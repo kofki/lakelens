@@ -1,7 +1,7 @@
 "use client";
 
 import { useId, type ReactNode } from "react";
-import { Accessibility, Layers, LocateFixed, ShieldCheck } from "lucide-react";
+import { Accessibility, LocateFixed, ShieldCheck } from "lucide-react";
 import { DEFAULT_FILTERS, type Filters } from "@/lib/types";
 import { Button } from "@/components/ui/Button";
 import { ModalSheet } from "@/components/sheet/ModalSheet";
@@ -92,14 +92,6 @@ export function FilterSheet({
           label="Lifeguard on duty"
           hint="Only parks that list a lifeguard (most Florida springs have none)"
         />
-        <ToggleRow
-          id={`${base}-deep`}
-          checked={filters.deepOnly}
-          onChange={set("deepOnly")}
-          icon={<Layers aria-hidden="true" focusable="false" />}
-          label="Detailed data"
-          hint="Parks with live water, weather and closure estimates"
-        />
       </fieldset>
 
       <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
@@ -117,7 +109,7 @@ export function FilterSheet({
         <Button
           variant="ghost"
           onClick={() => onFiltersChange({ ...DEFAULT_FILTERS })}
-          disabled={!filters.accessibleEntry && !filters.guardedOnly && !filters.deepOnly}
+          disabled={!filters.accessibleEntry && !filters.guardedOnly}
         >
           Clear filters
         </Button>

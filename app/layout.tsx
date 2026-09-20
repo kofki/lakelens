@@ -17,7 +17,7 @@ const nunito = Nunito({
 });
 
 const DESCRIPTION =
-  "Know before you go: closure estimates, one-tap crowd reports, parking and accessibility for Florida's springs and state-park swim areas.";
+  "Florida springs and state-park swim areas: which are open, which fill early, and where there is still room in the water.";
 
 function metadataBase(): URL | undefined {
   try {

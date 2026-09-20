@@ -19,7 +19,7 @@ blocks, and `cron.schedule` overwrites a job with the same name).
 
 ## Applying
 
-Pick **one** path and stick with it — both record history in
+Pick **one** path and stick with it: both record history in
 `supabase_migrations.schema_migrations`, with different version ids, so mixing
 them re-runs the SQL.
 
@@ -36,7 +36,7 @@ order, with `name` = the file name minus the timestamp (`extensions`, `schema`,
 ## One-time Vault secrets (never committed)
 
 The cron jobs resolve the app URL and the shared secret from Vault at run
-time. Insert them **once** from the SQL editor or MCP `execute_sql` — they must
+time. Insert them **once** from the SQL editor or MCP `execute_sql`. They must
 never appear in a migration file:
 
 ```sql
@@ -62,7 +62,7 @@ select name, created_at from vault.secrets order by name;
 ```
 
 Until both secrets exist, the jobs run but `net.http_get` receives a null URL
-and the run shows as failed in `cron.job_run_details` — harmless, and it
+and the run shows as failed in `cron.job_run_details`, which is harmless, and it
 self-heals once the secrets are inserted.
 
 ## Jobs
@@ -129,4 +129,4 @@ Function (or the `/api/reports` fallback) with the secret key, and the
 is a `security_invoker` view, so the caller's RLS applies. Every function sets
 `search_path`. Closures are data: an active `park_alerts` row with
 `kind = 'closure'` closes a park, and expiring/deactivating it reopens the park
-on the next request — no code change needed.
+on the next request, with no code change needed.

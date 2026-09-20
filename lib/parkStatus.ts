@@ -1,5 +1,5 @@
 /**
- * lib/parkStatus.ts — combines official alerts, seasonal rules, crowd reports and the
+ * lib/parkStatus.ts: combines official alerts, seasonal rules, crowd reports and the
  * closure prediction into one ParkStatus. Closures are data, not code: an active
  * closure alert (or being out of swim season) closes a park, and deactivating / expiring
  * that alert reopens it on the next request.
@@ -165,7 +165,7 @@ export function getParkStatus(input: ParkStatusInput): ParkStatus {
   }
 
   // 6. Nothing to go on
-  const reasons = ["Not enough data yet — no forecast or reports for this park"];
+  const reasons = ["No forecast or reports for this park yet"];
   if (summary && summary.signal !== "none") reasons.push(reportLine(summary, now));
   return {
     level: "unknown",

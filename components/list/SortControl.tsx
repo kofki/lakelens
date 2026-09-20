@@ -31,7 +31,7 @@ export function SortControl({ id, value, onChange, hasLocation, className }: Sor
           {hasLocation ? "Nearest first" : "Nearest first (needs location)"}
         </option>
         <option value="status">Open first</option>
-        <option value="name">Name A–Z</option>
+        <option value="name">Name A to Z</option>
       </select>
     </div>
   );

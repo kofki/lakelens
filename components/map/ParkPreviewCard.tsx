@@ -4,7 +4,7 @@ import { useCallback, useEffect, useId, useRef, type CSSProperties, type Keyboar
 import { MapPin, X } from "lucide-react";
 import type { ParkWithStatus } from "@/lib/types";
 import { STATUS_META } from "@/lib/status";
-import { describeWeather, reportLine } from "@/lib/plainLanguage";
+import {reportLine} from "@/lib/plainLanguage";
 import { Badge } from "@/components/ui/Badge";
 import { ButtonLink } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
@@ -13,7 +13,7 @@ import { StatRow } from "@/components/ui/StatRow";
 import { StatusPill } from "@/components/ui/StatusPill";
 import { cn } from "@/components/ui/cn";
 import { ParkPhoto } from "@/components/list/ParkPhoto";
-import { conditionStatItems, hasConditionData } from "@/components/list/conditionStats";
+import { conditionStatItems } from "@/components/list/conditionStats";
 import { describeParkKind, formatDistance, statusSourceLabel } from "@/components/list/parkListUtils";
 
 export interface ParkPreviewCardProps {
@@ -128,14 +128,7 @@ export function ParkPreviewCard({ item, onClose, onHeightChange, style, classNam
               {reportLine(reportSummary, now)}
             </p>
           )}
-          {hasConditionData(item) ? (
-            <>
-              <StatRow items={conditionStatItems(item)} />
-              <p className="text-xs text-mocha">{describeWeather(item.weather)}</p>
-            </>
-          ) : (
-            <p className="text-xs text-mocha">Live water and weather data not yet available for this park.</p>
-          )}
+          <StatRow items={conditionStatItems(item)} />
         </div>
 
         <div className="flex flex-wrap items-center justify-between gap-2 p-3">

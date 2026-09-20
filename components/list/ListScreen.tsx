@@ -34,7 +34,7 @@ const HERO_PHOTO = "/photos/ichetucknee-springs-state-park.jpg";
 
 /**
  * "Discover" page: the primary screen-reader-friendly surface (no map required).
- * Phones keep the row cards; tablets and desktops get the BeachLens hero + photo
+ * Phones keep the row cards; tablets and desktops get the hero plus photo
  * tile grid. Filtering, sorting and location are shared with the map screen.
  */
 export function ListScreen({ parks, initialFilters }: ListScreenProps) {

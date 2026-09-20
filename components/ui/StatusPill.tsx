@@ -11,7 +11,7 @@ export interface StatusPillProps {
   className?: string;
 }
 
-/* beachlens.net pastel pills: fill = STATUS_META.bgHex, text = STATUS_META.hex (all >= 6.6:1),
+/* Pastel status pills: fill = STATUS_META.bgHex, text = STATUS_META.hex (all >= 6.6:1),
  * 1.5px edge = STATUS_META.edgeHex (>= 3:1 on white). Tokens live in app/globals.css. */
 const TONE: Record<StatusLevel, string> = {
   open: "bg-status-open-bg text-status-open border-status-open-edge",

@@ -34,7 +34,7 @@ export function BackupSuggestions({ target, all, initial }: BackupSuggestionsPro
 
   if (!["full", "closed"].includes(target.status.level)) return null;
 
-  const heading = target.status.level === "closed" ? "Closed — try one of these instead" : "Full right now — try one of these instead";
+  const heading = target.status.level === "closed" ? "Closed. Try one of these instead" : "Full right now. Try one of these instead";
 
   return (
     <Section id="backups" title={heading} icon={<Compass aria-hidden="true" focusable="false" />}>

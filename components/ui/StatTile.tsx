@@ -27,7 +27,7 @@ const BAR: Record<StatTone, string> = {
 };
 
 /**
- * beachlens.net-style stat tile: icon + label, big value, descriptor, thin meter.
+ * Stat tile: icon and label, big value, a one-word level, thin meter.
  * Ivory tile on white cards. The bar is decorative: value + descriptor already carry
  * the meaning in text.
  */

@@ -125,9 +125,8 @@ describe("suggestBackups", () => {
     expect(out.map((b) => b.park.id)).toEqual(["ginnie", "rainbow"]); // ramp+yes, wheelchair loaner; stairs and unknown excluded
   });
 
-  it("respects guardedOnly and deepOnly", () => {
+  it("respects guardedOnly", () => {
     expect(suggestBackups(ichetucknee, ALL, { ...DEFAULT_FILTERS, guardedOnly: true }).map((b) => b.park.id)).toEqual(["deleon"]);
-    expect(suggestBackups(ichetucknee, ALL, { ...DEFAULT_FILTERS, deepOnly: true }).map((b) => b.park.id)).toEqual(["ginnie", "rainbow", "blue"]);
   });
 
   it("builds a parking summary from the main lot", () => {

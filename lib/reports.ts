@@ -5,7 +5,7 @@
  * (sends the publishable key in the `apikey` header). When NEXT_PUBLIC_REPORTS_VIA=api the
  * same JSON bodies are POSTed to the Next.js route `/api/reports` instead.
  *
- * Every function here resolves — never throws — so UI code can branch on `ok`.
+ * Every function here resolves: never throws: so UI code can branch on `ok`.
  * Error strings are plain language, ready to show to a person.
  */
 import { FunctionsFetchError, FunctionsHttpError, FunctionsRelayError } from "@supabase/supabase-js";
@@ -41,7 +41,7 @@ export function describeReportError(status: number, body: ErrorBody | null): str
   const code = body?.error;
   if (status === 429) {
     const mins = body?.retry_after_min ?? 10;
-    return `You've sent a few reports already — try again in about ${mins} minute${mins === 1 ? "" : "s"}.`;
+    return `You've sent a few reports already. Try again in about ${mins} minute${mins === 1 ? "" : "s"}.`;
   }
   if (status === 0) return "No connection. Check your signal and try again.";
   if (status === 401 || status === 403) return "This app isn't allowed to send reports right now. Try again later.";

@@ -1,5 +1,5 @@
 /**
- * lib/backups.ts — "try these instead" suggestions when a park is full, filling or closed.
+ * lib/backups.ts: "try these instead" suggestions when a park is full, filling or closed.
  * Candidates exclude the target and any park that is full/closed, honour the active
  * filters, and are sorted by straight-line distance (drive time is a 45 mph estimate).
  * Pure TS: no React / Next / DOM.
@@ -37,7 +37,6 @@ export function suggestBackups(
     if (BACKUP_EXCLUDED_LEVELS.has(c.status.level)) return false;
     if (filters?.accessibleEntry && !isAccessibleEntry(c.accessibility)) return false;
     if (filters?.guardedOnly && c.park.guarded !== "yes") return false;
-    if (filters?.deepOnly && c.park.coverage_tier !== "deep") return false;
     return Number.isFinite(c.park.lat) && Number.isFinite(c.park.lng);
   });
 

@@ -1,5 +1,5 @@
 /**
- * lib/holidays.ts — turns an instant into a DayContext (local date, weekend, holiday,
+ * lib/holidays.ts: turns an instant into a DayContext (local date, weekend, holiday,
  * long weekend, calendar events) using America/New_York wall-clock time.
  * Pure TS: no React / Next / DOM, no date libraries.
  */

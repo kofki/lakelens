@@ -11,7 +11,7 @@ export const FALLBACK_MAP_STYLE_URL = "https://tiles.versatiles.org/assets/style
 
 export const MAP_STYLE_URL: string = process.env.NEXT_PUBLIC_MAP_STYLE_URL || DEFAULT_MAP_STYLE_URL;
 
-/** [[west, south], [east, north]] — whole state incl. the panhandle and the Keys. */
+/** [[west, south], [east, north]]: whole state incl. the panhandle and the Keys. */
 export const FLORIDA_BOUNDS: [[number, number], [number, number]] = [
   [-87.63, 24.4],
   [-80.0, 31.0],

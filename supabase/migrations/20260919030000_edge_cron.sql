@@ -1,5 +1,5 @@
 -- =============================================================================
--- LakeLens migration 9 — scheduled ingestion moves into Supabase
+-- LakeLens migration 9: scheduled ingestion moves into Supabase
 --
 -- Every lakelens-* job now POSTs the `refresh-conditions` Edge Function instead of the
 -- Next.js /api/cron/* routes on Vercel, so data collection no longer depends on the web
@@ -7,7 +7,7 @@
 --
 -- Vault secrets read at run time (created by hand, never stored in a migration):
 --   project_url      https://<ref>.supabase.co
---   edge_secret_key  the project's sb_secret_ key — the function's withSupabase({auth:"secret"})
+--   edge_secret_key  the project's sb_secret_ key: the function's withSupabase({auth:"secret"})
 --                    validates it from the `apikey` header (secret keys are not JWTs, so
 --                    supabase/config.toml sets verify_jwt = false).
 --

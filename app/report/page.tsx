@@ -9,7 +9,7 @@ export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: "Report conditions",
-  description: "Tell others what you found at the gate — one tap, no account.",
+  description: "Tell others what you found at the gate. One tap, no account.",
   alternates: { canonical: "/report" },
 };
 

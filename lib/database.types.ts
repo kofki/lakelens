@@ -230,6 +230,71 @@ export type Database = {
           },
         ]
       }
+      park_forecast: {
+        Row: {
+          daily: Json
+          forecast_at: string
+          forecast_issued_at: string | null
+          hourly: Json | null
+          now_feels_like_f: number | null
+          now_humidity: number | null
+          now_short_forecast: string | null
+          now_temp_f: number | null
+          now_thunder_prob: number | null
+          now_uv: number | null
+          now_wind_mph: number | null
+          park_id: string
+          sources: Json
+          uv_peak: number | null
+          uv_peak_hour: number | null
+          water_quality: Json | null
+        }
+        Insert: {
+          daily?: Json
+          forecast_at?: string
+          forecast_issued_at?: string | null
+          hourly?: Json | null
+          now_feels_like_f?: number | null
+          now_humidity?: number | null
+          now_short_forecast?: string | null
+          now_temp_f?: number | null
+          now_thunder_prob?: number | null
+          now_uv?: number | null
+          now_wind_mph?: number | null
+          park_id: string
+          sources?: Json
+          uv_peak?: number | null
+          uv_peak_hour?: number | null
+          water_quality?: Json | null
+        }
+        Update: {
+          daily?: Json
+          forecast_at?: string
+          forecast_issued_at?: string | null
+          hourly?: Json | null
+          now_feels_like_f?: number | null
+          now_humidity?: number | null
+          now_short_forecast?: string | null
+          now_temp_f?: number | null
+          now_thunder_prob?: number | null
+          now_uv?: number | null
+          now_wind_mph?: number | null
+          park_id?: string
+          sources?: Json
+          uv_peak?: number | null
+          uv_peak_hour?: number | null
+          water_quality?: Json | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "park_forecast_park_id_fkey"
+            columns: ["park_id"]
+            isOneToOne: true
+            referencedRelation: "parks"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       parking_lots: {
         Row: {
           ada_spaces: number | null
@@ -304,6 +369,7 @@ export type Database = {
           nws_zone: string | null
           official_url: string | null
           operator: string
+          osm_checked_at: string | null
           photo_url: string | null
           reservation_required: boolean
           reservation_url: string | null
@@ -338,6 +404,7 @@ export type Database = {
           nws_zone?: string | null
           official_url?: string | null
           operator: string
+          osm_checked_at?: string | null
           photo_url?: string | null
           reservation_required?: boolean
           reservation_url?: string | null
@@ -372,6 +439,7 @@ export type Database = {
           nws_zone?: string | null
           official_url?: string | null
           operator?: string
+          osm_checked_at?: string | null
           photo_url?: string | null
           reservation_required?: boolean
           reservation_url?: string | null

@@ -15,6 +15,7 @@ import {
   type OverpassElement,
 } from "../supabase/functions/_shared/overpass";
 import { NOAA_BEACH_MAX_KM, NOAA_MAX_KM, nearestStation, parseStations } from "../supabase/functions/_shared/stations";
+import { WATER_QUALITY_MATCH_KM, nearestSample, waterQualityFor } from "../supabase/functions/_shared/algae";
 import { toCalendarEvents } from "@/lib/queries";
 
 const ICHETUCKNEE = { id: "p1", slug: "ichetucknee", name: "Ichetucknee", lat: 29.9841, lng: -82.7612 };
@@ -177,5 +178,54 @@ describe("calendar events from the database", () => {
         { name: "Missing end", start_date: "2026-06-01", end_date: null, weight: 1 },
       ]),
     ).toEqual([]);
+  });
+});
+
+describe("water quality reading", () => {
+  const sample = (over: Partial<import("../supabase/functions/_shared/algae").AlgaeSample> = {}) => ({
+    id: "s1",
+    sampledAt: "2026-09-17T12:00:00.000Z",
+    lat: 29.9841,
+    lng: -82.7612,
+    county: "Columbia",
+    location: "Ichetucknee Headspring",
+    bloomObserved: false,
+    toxinPresent: "no" as const,
+    microcystin: "not detected",
+    otherToxin: null,
+    cyanobacteriaDominant: "no" as const,
+    algalId: null,
+    ...over,
+  });
+
+  it("finds the closest sample inside the radius and reports the distance", () => {
+    const near = sample();
+    const far = sample({ id: "s2", lat: 27, lng: -80 });
+    const match = nearestSample([far, near], { lat: 29.9841, lng: -82.7612 }, WATER_QUALITY_MATCH_KM);
+    expect(match?.sample.id).toBe("s1");
+    expect(match?.distanceKm).toBe(0);
+  });
+
+  it("returns null when nothing is in range, so the tile hides itself", () => {
+    expect(nearestSample([sample({ lat: 27, lng: -80 })], { lat: 29.9841, lng: -82.7612 })).toBeNull();
+    expect(waterQualityFor(null)).toBeNull();
+  });
+
+  it("a clean sample reads Clear", () => {
+    expect(waterQualityFor({ sample: sample(), distanceKm: 4 })).toMatchObject({ level: "clear", label: "Clear", distanceKm: 4 });
+  });
+
+  it("a detected toxin or an observed bloom reads Avoid", () => {
+    expect(waterQualityFor({ sample: sample({ toxinPresent: "yes" }), distanceKm: 1 })?.level).toBe("avoid");
+    expect(waterQualityFor({ sample: sample({ bloomObserved: true }), distanceKm: 1 })?.level).toBe("avoid");
+  });
+
+  it("a pending result is never Clear, because the sample was taken for a reason", () => {
+    expect(waterQualityFor({ sample: sample({ toxinPresent: "pending" }), distanceKm: 1 })?.level).toBe("caution");
+    expect(waterQualityFor({ sample: sample({ cyanobacteriaDominant: "yes" }), distanceKm: 1 })?.level).toBe("caution");
+  });
+
+  it("uses a wider radius than the alert rule, which matched no parks at 3 km", () => {
+    expect(WATER_QUALITY_MATCH_KM).toBeGreaterThan(3);
   });
 });

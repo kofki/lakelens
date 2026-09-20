@@ -29,7 +29,7 @@ export function useStaleRefresh(parkId: string, usgsFetchedAt: string | null, we
         if (r.ok) router.refresh();
       })
       .catch(() => {
-        /* offline — the page already shows "may be out of date" */
+        /* offline: the page already shows "may be out of date" */
       });
   }, [parkId, usgsFetchedAt, weatherFetchedAt, hasGauge, router]);
 }

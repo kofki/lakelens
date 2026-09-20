@@ -12,7 +12,7 @@ interface VisualProps {
   full?: boolean;
 }
 
-/* Spring-forest buttons (beachlens.net pill shapes). Primary is forest green with white
+/* Spring-forest pill buttons. Primary is forest green with white
  * text (9.6:1); the global cyan focus ring reads on every variant. Sunlit amber is kept
  * for accents/active states because white-on-amber fails AA. */
 const VARIANT: Record<ButtonVariant, string> = {

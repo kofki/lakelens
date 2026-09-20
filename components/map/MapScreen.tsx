@@ -42,7 +42,7 @@ const DESKTOP_QUERY = "(min-width: 1024px)";
 /**
  * Home screen. Phones: full-bleed map with a floating header, a persistent bottom
  * sheet holding the list and a preview card above it. Desktop (lg+): AllTrails-style
- * split view — list panel on the left, map filling the right, preview card docked in
+ * split view: list panel on the left, map filling the right, preview card docked in
  * the map's corner. Visibility is CSS-only (no flash); the media query hook only
  * drives map insets and where the preview card mounts.
  */

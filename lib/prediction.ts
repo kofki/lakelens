@@ -1,5 +1,5 @@
 /**
- * lib/prediction.ts — additive closure-risk score → PredictionLevel + predicted fill time.
+ * lib/prediction.ts: additive closure-risk score → PredictionLevel + predicted fill time.
  *
  * Scoring (documented here and surfaced as plain-language reasons):
  *   weekend ........................ +2
@@ -7,13 +7,13 @@
  *   calendar event ................. +eventWeight (default 1 per event)
  *   forecast high >= 90 °F ......... +1, and >= 95 °F a further +2 (cumulative 3)
  *   rain probability >= 50 % ....... −2
- * Level: score <= 0 → none, 1–2 → possible, >= 3 → likely.
+ * Level: score <= 0 -> none, 1 to 2 -> possible, >= 3 -> likely.
  * Overrides: an active closure alert (kind=closure) or being out of swim season → closed.
  * Predicted time: park.typical_closure_time (HH:MM local) on the day, shifted EARLIER by
  *   25 min per point above 2, only when level != none and a typical time is known.
  * Confidence: high = weather present + typical time known + deep tier; medium = one of
  *   those missing; low = two or more missing.
- * Always an estimate (isEstimate: true) — the UI must label it as such.
+ * Always an estimate (isEstimate: true): the UI must label it as such.
  * Pure TS: no React / Next / DOM, no date libraries.
  */
 import type { DayContext, Park, ParkAlert, Prediction, PredictionLevel, WeatherPayload } from "./types";
@@ -41,7 +41,7 @@ export const VERY_HOT_F = 95;
 export const RAIN_PROB_THRESHOLD = 50;
 export const MINUTES_EARLIER_PER_POINT = 25;
 export const NO_TYPICAL_TIME_REASON = "No typical fill time known";
-export const QUIET_WEEKDAY_REASON = "Weekday — closures are rare";
+export const QUIET_WEEKDAY_REASON = "Weekday: closures are rare";
 
 /** Parse "HH:MM" or "HH:MM:SS" (Postgres `time`) → { hour, minute } or null. */
 export function parseClock(value: string | null | undefined): { hour: number; minute: number } | null {
@@ -95,12 +95,12 @@ export function predictClosure(input: PredictionInput, now: Date, tz: string = D
   }
   if (dayContext.isWeekend) {
     score += POINTS.weekend;
-    reasons.push("Weekend — parks fill faster");
+    reasons.push("Weekend: parks fill faster");
   }
   if (dayContext.events.length > 0) {
     const w = Number.isFinite(dayContext.eventWeight) ? dayContext.eventWeight : dayContext.events.length;
     score += w;
-    for (const name of dayContext.events) reasons.push(`${name} — extra crowds expected`);
+    for (const name of dayContext.events) reasons.push(`${name}: extra crowds expected`);
   }
   if (!dayContext.isWeekend && !dayContext.isHoliday && !dayContext.isHolidayWeekend && dayContext.events.length === 0) {
     reasons.push(QUIET_WEEKDAY_REASON);
@@ -111,7 +111,7 @@ export function predictClosure(input: PredictionInput, now: Date, tz: string = D
   if (highF !== null) {
     if (highF >= VERY_HOT_F) {
       score += POINTS.hot + POINTS.veryHot;
-      reasons.push(`Forecast high ${Math.round(highF)}°F — extreme heat draws crowds`);
+      reasons.push(`Forecast high ${Math.round(highF)}°F: extreme heat draws crowds`);
     } else if (highF >= HOT_F) {
       score += POINTS.hot;
       reasons.push(`Forecast high ${Math.round(highF)}°F`);
@@ -119,9 +119,9 @@ export function predictClosure(input: PredictionInput, now: Date, tz: string = D
   }
   if (rainProb !== null && rainProb >= RAIN_PROB_THRESHOLD) {
     score += POINTS.rain;
-    reasons.push(`Rain likely (${Math.round(rainProb)}%) — crowds thin out`);
+    reasons.push(`Rain likely (${Math.round(rainProb)}%): crowds thin out`);
   }
-  if (!weather) reasons.push("No forecast available — estimate uses the calendar only");
+  if (!weather) reasons.push("No forecast available: estimate uses the calendar only");
 
   // ---- overrides: official closure / out of season ----
   const closure = activeClosureAlerts(alerts ?? [], now)[0];

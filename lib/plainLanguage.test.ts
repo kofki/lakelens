@@ -58,16 +58,16 @@ function usgs(overrides: Partial<UsgsPayload> = {}): UsgsPayload {
 describe("plain language", () => {
   it("describeFlow", () => {
     expect(describeFlow(null, makePark())).toEqual({ sentence: "Flow data not available yet", level: "unknown" });
-    expect(describeFlow(usgs(), makePark())).toEqual({ sentence: "Flow is normal — about 352 cfs (river gauge 4.2 km away)", level: "normal" });
+    expect(describeFlow(usgs(), makePark())).toEqual({ sentence: "Flow is normal, about 352 cfs (river gauge 4.2 km away)", level: "normal" });
     const high = describeFlow(usgs({ flowFlag: "high" }), makePark({ gauge_distance_km: null }));
     expect(high.level).toBe("high");
-    expect(high.sentence).toBe("Flow is higher than usual — about 352 cfs — expect a stronger current");
+    expect(high.sentence).toBe("Flow is higher than usual, about 352 cfs. Expect a stronger current");
     const unknown = describeFlow(usgs({ flowFlag: "unknown", readings: [] }), makePark({ gauge_distance_km: null }));
     expect(unknown.level).toBe("unknown");
   });
 
   it("describeWaterTemp converts °C and falls back to a labelled typical value", () => {
-    expect(describeWaterTemp(usgs(), makePark())).toEqual({ valueF: 72, sentence: "Water is 72°F — cool year-round spring water", typical: false });
+    expect(describeWaterTemp(usgs(), makePark())).toEqual({ valueF: 72, sentence: "Water is 72°F, cool year-round spring water", typical: false });
     const fallback = describeWaterTemp(usgs({ readings: [] }), makePark());
     expect(fallback).toEqual({ valueF: 72, sentence: "Typically about 72°F year-round (no live reading)", typical: true });
     const lake = describeWaterTemp(null, makePark({ type: "lake" }));

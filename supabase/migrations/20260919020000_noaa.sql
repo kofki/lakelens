@@ -1,5 +1,5 @@
 -- =============================================================================
--- LakeLens migration — NOAA CO-OPS (Tides & Currents) stations for coastal parks
+-- LakeLens migration: NOAA CO-OPS (Tides & Currents) stations for coastal parks
 --
 -- 34 of 44 beach parks and 2 of 6 lake parks sit on no USGS river gauge: the coast is
 -- covered by NOAA CO-OPS stations instead, which publish water temperature, observed
@@ -16,7 +16,7 @@ alter table public.parks add column if not exists noaa_station_id text;
 alter table public.parks add column if not exists noaa_distance_km numeric;
 
 comment on column public.parks.noaa_station_id is
-  'NOAA CO-OPS (Tides & Currents) station id, e.g. 8720218 — water temperature / tide for coastal parks.';
+  'NOAA CO-OPS (Tides & Currents) station id, e.g. 8720218: water temperature / tide for coastal parks.';
 comment on column public.parks.noaa_distance_km is
   'Great-circle km from the swim area to that NOAA station (shown in the UI attribution line).';
 
@@ -29,7 +29,7 @@ alter table public.conditions_snapshots
   add constraint conditions_snapshots_source_check
   check (source = any (array['usgs'::text, 'noaa'::text, 'nws'::text, 'open-meteo'::text]));
 
--- NOAA water temperature + tide — every 30 minutes at :15, offset from the USGS job at :00/:30
+-- NOAA water temperature + tide, every 30 minutes at :15, offset from the USGS job at :00/:30
 -- so the two water jobs never share a pg_net window. Same Vault/pg_net pattern as
 -- supabase/migrations/20260919000600_cron.sql; timeout raised to 30 s as there too.
 select cron.schedule(

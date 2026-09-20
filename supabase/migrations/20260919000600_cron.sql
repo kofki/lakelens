@@ -1,10 +1,10 @@
 -- =============================================================================
--- LakeLens migration 6 — pg_cron jobs
+-- LakeLens migration 6: pg_cron jobs
 -- Each job asks pg_net to GET a Next.js route handler on the deployed app,
 -- authenticated with `Authorization: Bearer <CRON_SECRET>`. The app URL and the
 -- secret are read at RUN time from Vault, so this file contains no secrets.
 --
---   ONE-TIME SETUP (never in a migration — see supabase/migrations/README.md):
+--   ONE-TIME SETUP (never in a migration: see supabase/migrations/README.md):
 --     select vault.create_secret('https://<your-app>.vercel.app', 'app_url');
 --     select vault.create_secret('<CRON_SECRET>', 'cron_secret');
 --
@@ -15,7 +15,7 @@
 -- is 2 s, so every call raises it to 30 s.
 -- =============================================================================
 
--- USGS gauges (flow, stage, water temp) — every 30 minutes
+-- USGS gauges (flow, stage, water temp): every 30 minutes
 select cron.schedule(
   'lakelens-usgs',
   '*/30 * * * *',
@@ -30,7 +30,7 @@ select cron.schedule(
   $$
 );
 
--- Weather (NWS, Open-Meteo fallback) — hourly at :07
+-- Weather (NWS, Open-Meteo fallback): hourly at :07
 select cron.schedule(
   'lakelens-weather',
   '7 * * * *',
@@ -45,7 +45,7 @@ select cron.schedule(
   $$
 );
 
--- NWS alerts matched to park zones/counties — hourly at :13
+-- NWS alerts matched to park zones/counties: hourly at :13
 select cron.schedule(
   'lakelens-alerts',
   '13 * * * *',
@@ -60,7 +60,7 @@ select cron.schedule(
   $$
 );
 
--- US public holidays + long weekends (Nager.Date) — 03:00 UTC on the 1st of each month
+-- US public holidays + long weekends (Nager.Date): 03:00 UTC on the 1st of each month
 select cron.schedule(
   'lakelens-holidays',
   '0 3 1 * *',
@@ -75,7 +75,7 @@ select cron.schedule(
   $$
 );
 
--- Prune old conditions_snapshots / expired alerts — daily 04:00 UTC
+-- Prune old conditions_snapshots / expired alerts: daily 04:00 UTC
 select cron.schedule(
   'lakelens-prune',
   '0 4 * * *',

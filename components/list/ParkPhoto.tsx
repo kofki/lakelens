@@ -9,9 +9,9 @@ export interface ParkPhotoProps {
   alt?: string;
   className?: string;
   /**
-   * How large the photo is actually painted. "thumb" is the 80–96 px square on list rows
+   * How large the photo is actually painted. "thumb" is the 80 to 96 px square on list rows
    * and the map preview card; "tile" is the 4:3 photo tile in the /list grid.
-   * This only drives the intrinsic size and `sizes` hint — the className still controls layout.
+   * This only drives the intrinsic size and `sizes` hint: the className still controls layout.
    */
   variant?: "thumb" | "tile";
 }

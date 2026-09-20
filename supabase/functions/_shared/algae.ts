@@ -17,12 +17,26 @@
  * Runtime-neutral fetcher (injectable fetchImpl); hashing needs Node crypto (lib/ingest/hash).
  */
 import { sha256Hex } from "./hash.ts";
+import type { WaterQuality, WaterQualityLevel } from "./types.ts";
 
 export const FDEP_ALGAE_QUERY_URL =
   "https://services1.arcgis.com/nRHtyn3uE1kyzoYc/arcgis/rest/services/AlgalBloom_Final_View/FeatureServer/0/query";
 export const FDEP_ALGAE_DASHBOARD_URL = "https://floridadep.gov/AlgalBloom";
 export const ALGAE_WINDOW_DAYS = 21;
+/**
+ * Radius for turning a sample into an ALERT for a park. Deliberately tight: an alert is a
+ * claim about this swim area, not about the county.
+ */
 export const ALGAE_MATCH_KM = 3;
+
+/**
+ * Radius for the water-quality READING shown on the conditions grid.
+ *
+ * Wider than the alert radius because sampling sites sit at named water bodies and boat
+ * ramps rather than at swim areas, so a 3 km rule matched zero parks statewide. The tile
+ * always prints the distance, so a 12 km sample reads as what it is.
+ */
+export const WATER_QUALITY_MATCH_KM = 15;
 export const ALGAE_SOURCE = "fdep-algae";
 
 export type ToxinStatus = "yes" | "no" | "pending";
@@ -156,7 +170,7 @@ export function formatDistanceKm(km: number): string {
   return `within ${Math.ceil(km)} km`;
 }
 
-/** "FDEP algal bloom sample within 2 km on Sep 12 — microcystin detected (0.33 µg/L)" */
+/** "FDEP algal bloom sample within 2 km on Sep 12: microcystin detected (0.33 µg/L)" */
 export function algaeAlertText(s: AlgaeSample, distanceKm: number): string {
   let status: string;
   if (s.toxinPresent === "yes") {
@@ -169,7 +183,7 @@ export function algaeAlertText(s: AlgaeSample, distanceKm: number): string {
     status = "bloom observed, no toxin detected";
   }
   const where = s.location ? ` (${s.location})` : "";
-  return `FDEP algal bloom sample ${formatDistanceKm(distanceKm)} on ${shortDate(s.sampledAt)} — ${status}${where}. Avoid water that looks scummy or discolored.`;
+  return `FDEP algal bloom sample ${formatDistanceKm(distanceKm)} on ${shortDate(s.sampledAt)}: ${status}${where}. Avoid water that looks scummy or discolored.`;
 }
 
 /** One row per (park, sample); park_id prefixed because park_alerts.hash is UNIQUE table-wide. */
@@ -239,4 +253,55 @@ export async function fetchAlgaeSamples(opts: FetchAlgaeOptions = {}): Promise<A
   const json = (await res.json()) as ArcgisQueryResponse;
   if (json.error) throw new Error(`FDEP algae: ${json.error.message} (${json.error.code})`);
   return normalizeAlgae(json);
+}
+
+
+// ---------------------------------------------------------------------------
+// Water quality reading (park_forecast.water_quality), as opposed to an alert
+// ---------------------------------------------------------------------------
+
+/** Closest sample to a park within `maxKm`, or null. */
+export function nearestSample<P extends { lat: number; lng: number }>(
+  samples: AlgaeSample[],
+  park: P,
+  maxKm = WATER_QUALITY_MATCH_KM,
+): { sample: AlgaeSample; distanceKm: number } | null {
+  let best: { sample: AlgaeSample; distanceKm: number } | null = null;
+  for (const sample of samples) {
+    const km = haversineKm(park.lat, park.lng, sample.lat, sample.lng);
+    if (km <= maxKm && (!best || km < best.distanceKm)) best = { sample, distanceKm: Math.round(km * 10) / 10 };
+  }
+  return best;
+}
+
+/**
+ * One sample to a three-step reading.
+ *
+ * "avoid" only when a toxin was actually detected or a bloom was seen, because this tile
+ * sits next to a swim decision. A pending toxin result is "caution", never "clear": the
+ * sample was taken for a reason.
+ */
+export function waterQualityLevelFor(s: AlgaeSample): WaterQualityLevel {
+  if (s.toxinPresent === "yes" || s.bloomObserved) return "avoid";
+  if (s.toxinPresent === "pending" || s.cyanobacteriaDominant === "yes") return "caution";
+  return "clear";
+}
+
+const WATER_QUALITY_LABEL: Record<WaterQualityLevel, string> = {
+  clear: "Clear",
+  caution: "Caution",
+  avoid: "Avoid",
+};
+
+export function waterQualityFor(match: { sample: AlgaeSample; distanceKm: number } | null): WaterQuality | null {
+  if (!match) return null;
+  const level = waterQualityLevelFor(match.sample);
+  return {
+    level,
+    label: WATER_QUALITY_LABEL[level],
+    sampledAt: match.sample.sampledAt,
+    distanceKm: match.distanceKm,
+    location: match.sample.location,
+    microcystin: microcystinValue(match.sample.microcystin),
+  };
 }

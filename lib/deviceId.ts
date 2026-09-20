@@ -2,7 +2,7 @@
  * Anonymous per-browser device id used to attribute and rate-limit crowd reports.
  * Stored in localStorage under `lakelens.deviceId`; no account, no PII.
  * Safe to call during SSR (returns a throwaway id) and when storage is blocked
- * (private mode, quota, disabled cookies) — every failure path returns a valid uuid.
+ * (private mode, quota, disabled cookies): every failure path returns a valid uuid.
  */
 
 export const DEVICE_ID_STORAGE_KEY = "lakelens.deviceId";

@@ -4,7 +4,7 @@ import { useCallback, useSyncExternalStore } from "react";
 
 /**
  * Subscribes to a CSS media query. Server snapshot is `false`, so use it for logic
- * (e.g. map insets) only — visibility should be Tailwind breakpoints to avoid a
+ * (e.g. map insets) only: visibility should be Tailwind breakpoints to avoid a
  * layout flash between SSR and hydration.
  */
 export function useMediaQuery(query: string): boolean {

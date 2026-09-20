@@ -1,5 +1,5 @@
 /**
- * POST /api/reports — fallback write path (NEXT_PUBLIC_REPORTS_VIA=api) mirroring the
+ * POST /api/reports: fallback write path (NEXT_PUBLIC_REPORTS_VIA=api) mirroring the
  * Supabase Edge Function `submit-report`.
  *
  *   report:        { park_id, category, value, note?, photo_url?, device_id }

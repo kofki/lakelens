@@ -21,7 +21,7 @@ const LINK =
   "inline-flex min-h-11 items-center text-[0.9rem] leading-[1.8] text-sand underline-offset-4 transition-colors hover:text-peach hover:underline";
 
 /**
- * Marketing-style footer (BeachLens family) for content pages: About, Offline, Report, List,
+ * Marketing-style footer for content pages: About, Offline, Report, List,
  * Park. Not rendered by app/layout.tsx so the map page stays full-height. Deep-forest
  * background with sage text (10:1); moss-sand links (6.3:1); sunlight headings (10:1).
  */
@@ -35,10 +35,10 @@ export function SiteFooter({ className }: { className?: string }) {
             <span className="text-xl font-extrabold text-white">LakeLens</span>
           </div>
           <p className="max-w-prose text-[0.95rem] leading-relaxed">
-            Know before you go. Closure estimates, one-tap crowd reports, parking and accessibility for
-            Florida&rsquo;s springs and state-park swim areas.
+            Closure estimates, one-tap visitor reports, parking and accessibility for Florida&rsquo;s
+            springs and state-park swim areas.
           </p>
-          <p className="text-[0.9rem] text-sand">Built at SASEhack 2026 by the BeachLens team.</p>
+          <p className="text-[0.9rem] text-sand">Built at SASEhack 2026.</p>
         </div>
 
         <nav aria-labelledby="footer-explore-heading">

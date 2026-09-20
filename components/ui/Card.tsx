@@ -11,7 +11,7 @@ export interface CardProps {
   interactive?: boolean;
 }
 
-/** White card, 20px radius, sage hairline border, soft forest shadow (beachlens.net family). */
+/** White card, 20px radius, sage hairline border, soft forest shadow. */
 export function Card({ children, className, as: Tag = "div", padded = true, interactive = false }: CardProps) {
   return (
     <Tag

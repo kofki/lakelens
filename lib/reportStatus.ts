@@ -1,5 +1,5 @@
 /**
- * lib/reportStatus.ts — collapses raw crowd reports (last 2 h) into one ReportSummary.
+ * lib/reportStatus.ts: collapses raw crowd reports (last 2 h) into one ReportSummary.
  *
  * Rules (see AGENTS.md / shared contract):
  * - Window: reports older than 2 h before `now` are ignored.
@@ -10,7 +10,7 @@
  *   > entry.got_in > everything else (most recent first).
  * - contradicted: a got_in newer than the newest turned_away (or vice versa).
  * - impliesLevel: turned_away → full, got_in/line/lot_full → open, others → null.
- *   A queue or a full lot means "hurry", not "closed" — the park is still letting people
+ *   A queue or a full lot means "hurry", not "closed": the park is still letting people
  *   in, so the report text is surfaced as evidence under an Open status.
  * - confirmations = still_true − no_longer on the group's reports (min 0). If, within the
  *   last 30 min, no_longer answers outnumber still_true, impliesLevel is cleared to null.

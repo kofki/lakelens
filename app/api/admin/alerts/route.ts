@@ -1,5 +1,5 @@
 /**
- * /api/admin/alerts — manual official alerts (closures / notices). Bearer ADMIN_TOKEN required.
+ * /api/admin/alerts: manual official alerts (closures / notices). Bearer ADMIN_TOKEN required.
  *
  *   GET    ?park_id=&kind=&active=true|false           list (newest last_seen first, max 200)
  *   POST   { park_id | park_slug, kind, text, official_url?, severity?, starts_at?, ends_at?, active? }

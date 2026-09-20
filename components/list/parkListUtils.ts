@@ -31,7 +31,6 @@ export function filterParks(items: ParkWithStatus[], filters: Filters, query = "
   return items.filter((item) => {
     if (filters.accessibleEntry && !isAccessibleEntry(item.accessibility)) return false;
     if (filters.guardedOnly && item.park.guarded !== "yes") return false;
-    if (filters.deepOnly && item.park.coverage_tier !== "deep") return false;
     if (q && !item.park.name.toLowerCase().includes(q)) return false;
     return true;
   });
@@ -70,7 +69,7 @@ export function sortParks(items: ParkWithStatus[], sort: SortKey): ParkWithStatu
 }
 
 export function activeFilterCount(filters: Filters): number {
-  return Number(filters.accessibleEntry) + Number(filters.guardedOnly) + Number(filters.deepOnly);
+  return Number(filters.accessibleEntry) + Number(filters.guardedOnly);
 }
 
 export interface StatusCounts {
@@ -101,7 +100,7 @@ export function countStatuses(items: ParkWithStatus[]): StatusCounts {
   return c;
 }
 
-/** "12 parks shown, 3 full, 2 closed" — read by the live region and shown in the sheet header. */
+/** "12 parks shown, 3 full, 2 closed": read by the live region and shown in the sheet header. */
 export function countsMessage(c: StatusCounts): string {
   const parts = [`${c.shown} ${c.shown === 1 ? "park" : "parks"} shown`];
   if (c.open) parts.push(`${c.open} open`);

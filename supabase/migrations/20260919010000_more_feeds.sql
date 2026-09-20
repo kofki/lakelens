@@ -1,5 +1,5 @@
 -- =============================================================================
--- LakeLens migration 7 — more feeds (FEEDS package)
+-- LakeLens migration 7: more feeds (FEEDS package)
 -- No schema changes: park_alerts already allows kind='notice' with a free-text
 -- source ('fdep-algae'), and conditions_snapshots already accepts 'usgs' rows for
 -- every park. This file only adds one pg_cron job, using the same Vault + pg_net
@@ -11,7 +11,7 @@
 --   lakelens-algae    23 */6     FDEP algal bloom samples (21-day window) -> park_alerts notices
 -- =============================================================================
 
--- FDEP algal bloom sampling -> park_alerts(kind=notice, source=fdep-algae) — every 6 h at :23
+-- FDEP algal bloom sampling -> park_alerts(kind=notice, source=fdep-algae): every 6 h at :23
 select cron.schedule(
   'lakelens-algae',
   '23 */6 * * *',

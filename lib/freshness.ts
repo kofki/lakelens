@@ -1,7 +1,7 @@
 /**
- * lib/freshness.ts — staleness thresholds, relative-time labels and the
+ * lib/freshness.ts: staleness thresholds, relative-time labels and the
  * America/New_York time-zone helpers used by every other logic module.
- * Pure TS: no React / Next / DOM and no date libraries — Intl.DateTimeFormat only.
+ * Pure TS: no React / Next / DOM and no date libraries: Intl.DateTimeFormat only.
  */
 
 export const DEFAULT_TZ = "America/New_York";
@@ -21,11 +21,11 @@ const DAY = 86400e3;
 /** Wall-clock parts of an instant in a given IANA time zone. */
 export interface LocalParts {
   year: number;
-  /** 1–12 */
+  /** 1 to 12 */
   month: number;
-  /** 1–31 */
+  /** 1 to 31 */
   day: number;
-  /** 0–23 */
+  /** 0 to 23 */
   hour: number;
   minute: number;
   second: number;

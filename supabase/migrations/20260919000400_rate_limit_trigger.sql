@@ -1,5 +1,5 @@
 -- =============================================================================
--- LakeLens migration 4 — report rate limit (DB-level backstop)
+-- LakeLens migration 4: report rate limit (DB-level backstop)
 -- Triggers fire for every insert path, including the service_role client used
 -- by the submit-report Edge Function and the /api/reports fallback, so this is
 -- the guard that holds even if the application-level check is bypassed.

@@ -3,16 +3,16 @@ import { MapPin, ShieldCheck, ShieldOff, ShieldQuestionMark } from "lucide-react
 import type { Park, ParkStatus } from "@/lib/types";
 import { Badge } from "@/components/ui/Badge";
 import { StatusPill } from "@/components/ui/StatusPill";
-import { CONFIDENCE_TEXT, GUARDED_TEXT, OPERATOR_TEXT, PARK_TYPE_TEXT, canOptimizeImage } from "./format";
+import {GUARDED_TEXT, OPERATOR_TEXT, PARK_TYPE_TEXT, canOptimizeImage} from "./format";
 
 export interface HeroProps {
   park: Park;
-  /** When given, the status pill + confidence sit to the right of the title on md+ (beachlens.net rating position). */
+  /** When given, the status pill sits to the right of the title on md+. */
   status?: ParkStatus;
 }
 
 /**
- * Detail-page hero (beachlens.net / AllTrails style). The photo is full-bleed on phones and a
+ * Detail-page hero. The photo is full-bleed on phones and a
  * rounded card on md+; the title block always sits below the photo so long names never
  * overlap the image. Lifeguard status is icon + text, never colour alone.
  */
@@ -60,15 +60,13 @@ export function Hero({ park, status }: HeroProps) {
               <GuardIcon aria-hidden="true" focusable="false" className="size-4 shrink-0" strokeWidth={2.25} />
               {GUARDED_TEXT[park.guarded]}
             </span>
-            {park.coverage_tier === "basic" && <Badge variant="info">Basic coverage</Badge>}
             {!park.swimming_verified && <Badge variant="unverified">Swimming not yet verified</Badge>}
           </div>
         </div>
 
         {status && (
-          <div className="hidden shrink-0 flex-col items-end gap-1 md:flex">
+          <div className="hidden shrink-0 md:flex">
             <StatusPill level={status.level} size="lg" estimate={status.isEstimate} />
-            <span className="text-sm font-bold text-mocha">{CONFIDENCE_TEXT[status.confidence]}</span>
           </div>
         )}
       </div>

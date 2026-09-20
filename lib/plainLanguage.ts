@@ -1,5 +1,5 @@
 /**
- * lib/plainLanguage.ts — turns raw USGS / weather / report data into short, plain
+ * lib/plainLanguage.ts: turns raw USGS / weather / report data into short, plain
  * sentences. Every sentence says when a value is typical rather than measured.
  * Pure TS: no React / Next / DOM.
  */
@@ -42,17 +42,17 @@ function gaugeNote(park: Park): string {
   return "";
 }
 
-/** e.g. { sentence: "Flow is normal — about 350 cfs", level: "normal" } */
+/** e.g. { sentence: "Flow is normal, about 350 cfs", level: "normal" } */
 export function describeFlow(usgs: UsgsPayload | null, park: Park): { sentence: string; level: "normal" | "high" | "unknown" } {
   if (!usgs) return { sentence: "Flow data not available yet", level: "unknown" };
   const flag = usgs.flowFlag === "high" || usgs.flowFlag === "normal" ? usgs.flowFlag : "unknown";
   const discharge = findReading(usgs, "00060");
-  const amount = discharge ? ` — about ${Math.round(discharge.value).toLocaleString("en-US")} cfs` : "";
+  const amount = discharge ? `, about ${Math.round(discharge.value).toLocaleString("en-US")} cfs` : "";
   const stale = discharge?.stale ? " (reading is more than 6 hours old)" : "";
 
   if (flag === "high") {
     return {
-      sentence: `Flow is higher than usual${amount}${stale} — expect a stronger current${gaugeNote(park)}`,
+      sentence: `Flow is higher than usual${amount}${stale}. Expect a stronger current${gaugeNote(park)}`,
       level: "high",
     };
   }
@@ -79,7 +79,7 @@ export function describeWaterTemp(usgs: UsgsPayload | null, park: Park): { value
   const temp = findFreshReading(usgs, "00010");
   if (temp) {
     const valueF = Math.round(toF(temp));
-    const cool = valueF <= 74 ? " — cool year-round spring water" : "";
+    const cool = valueF <= 74 ? ", cool year-round spring water" : "";
     return { valueF, sentence: `Water is ${valueF}°F${cool}`, typical: false };
   }
   if (park.type === "spring") {

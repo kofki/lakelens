@@ -3,7 +3,7 @@ import type { Park, ParkStatus } from "@/lib/types";
 export interface ParkJsonLdProps {
   park: Park;
   status: ParkStatus;
-  /** Absolute site origin, e.g. https://lakelens.example — used to build absolute URLs. */
+  /** Absolute site origin, e.g. https://lakelens.example: used to build absolute URLs. */
   origin: string;
 }
 
@@ -17,7 +17,7 @@ function absolute(origin: string, path: string): string {
  * Two graphs: the park itself as a TouristAttraction (Google understands geo, image and
  * publicAccess on it) and a BreadcrumbList so the SERP shows Home › Parks › Name.
  *
- * Only facts the page itself states go in here — no closure estimate, because that is a
+ * Only facts the page itself states go in here: no closure estimate, because that is a
  * prediction that changes hourly and ISR would serve a stale one as if it were structured
  * fact. `publicAccess` reflects the current status, which is sourced, not guessed.
  */

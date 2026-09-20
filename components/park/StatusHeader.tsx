@@ -1,10 +1,10 @@
 import type { ParkBundle } from "@/lib/types";
 import { STATUS_META } from "@/lib/status";
-import { formatLocalDate, formatLocalTime, relativeTime } from "@/lib/freshness";
+import {formatLocalTime, relativeTime} from "@/lib/freshness";
 import { LastUpdated } from "@/components/ui/LastUpdated";
 import { StatusPill } from "@/components/ui/StatusPill";
 import { Badge } from "@/components/ui/Badge";
-import { CONFIDENCE_TEXT, STATUS_SOURCE_TEXT, newestIso } from "./format";
+import {STATUS_SOURCE_TEXT, newestIso} from "./format";
 
 export type { SectionLink } from "./SectionTabs";
 
@@ -27,14 +27,15 @@ function sourcesLine(bundle: ParkBundle): string {
 }
 
 /**
- * Status pill + plain-language evidence + attribution line.
- * Status is always icon + text; the "Estimate" badge appears whenever the level is inferred.
- * On md+ the pill also sits beside the title in <Hero>, so here it is phone-only.
+ * Status pill, plain-language evidence, one attribution line.
+ *
+ * Status is always icon plus text, and the "Estimate" badge appears whenever the level is
+ * inferred rather than reported. There is no coverage label: a park we know less about
+ * simply shows fewer reasons. On md+ the pill sits beside the title in <Hero>, so here it
+ * is phone-only.
  */
 export function StatusHeader({ bundle, now }: StatusHeaderProps) {
-  const { status, park } = bundle;
-  // Basic-tier parks often still have live water data (a nearby USGS gauge or NOAA station).
-  const hasWaterData = Boolean(bundle.usgs || bundle.noaa);
+  const { status } = bundle;
   const conditionsAt = newestIso(bundle.usgsFetchedAt, bundle.weatherFetchedAt);
   const meta = STATUS_META[status.level];
 
@@ -49,14 +50,13 @@ export function StatusHeader({ bundle, now }: StatusHeaderProps) {
       </h2>
       <div className="flex flex-wrap items-center gap-2 md:hidden">
         <StatusPill level={status.level} size="lg" estimate={status.isEstimate} />
-        <span className="text-sm font-bold text-mocha">{CONFIDENCE_TEXT[status.confidence]}</span>
       </div>
 
       <p className="text-base text-cocoa md:text-lg md:font-bold">{meta.description}</p>
 
       {status.predictedTime && status.level === "open" && (
         <p className="text-sm font-bold text-cocoa">
-          Usually fills around {formatLocalTime(status.predictedTime)} — arrive earlier to be safe{" "}
+          Usually fills around {formatLocalTime(status.predictedTime)}. Arrive earlier to be safe.{" "}
           <Badge variant="estimate" className="ml-1 align-middle" />
         </p>
       )}
@@ -76,25 +76,13 @@ export function StatusHeader({ bundle, now }: StatusHeaderProps) {
         <LastUpdated at={status.updatedAt} source={STATUS_SOURCE_TEXT[status.source]} prefix="Status updated" />
         <p className="text-xs text-mocha">
           Sourced from {sourcesLine(bundle)}
-          {conditionsAt ? (
+          {conditionsAt && (
             <>
-              {" "}
-              · Conditions as of{" "}
-              <time dateTime={conditionsAt}>
-                {formatLocalDate(conditionsAt)}, {formatLocalTime(conditionsAt)}
-              </time>{" "}
-              ({relativeTime(conditionsAt, now)})
+              {" \u00b7 "}
+              <time dateTime={conditionsAt}>{relativeTime(conditionsAt, now)}</time>
             </>
-          ) : (
-            <> · No live conditions yet</>
           )}
         </p>
-        {park.coverage_tier === "basic" && (
-          <p className="text-xs text-mocha">
-            Basic coverage: we have not curated a closure estimate for this park yet
-            {hasWaterData ? ", but live conditions below are real." : ", and it has no live water gauge nearby."}
-          </p>
-        )}
       </div>
     </section>
   );

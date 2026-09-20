@@ -23,7 +23,7 @@ export function StillTruePrompt({ report, now, onAnswered }: StillTruePromptProp
     const result = await confirmReport({ type: "confirmation", report_id: report.id, device_id: getDeviceId(), response });
     if (result.ok) {
       setState("done");
-      setMessage(response === "still_true" ? "Thanks — we'll keep this status up." : "Thanks — we'll ease off this status.");
+      setMessage(response === "still_true" ? "Thanks. We'll keep this status up." : "Thanks. We'll ease off this status.");
       onAnswered?.();
     } else {
       setState("error");

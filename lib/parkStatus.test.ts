@@ -68,7 +68,7 @@ function prediction(level: Prediction["level"], overrides: Partial<Prediction> =
     predictedTimeLabel: level === "none" || level === "closed" ? null : "around 10:10 AM",
     confidence: "high",
     score: level === "likely" ? 5 : level === "possible" ? 2 : 0,
-    reasons: ["Weekend — parks fill faster"],
+    reasons: ["Weekend: parks fill faster"],
     isEstimate: true,
     ...overrides,
   };
@@ -133,7 +133,7 @@ describe("getParkStatus", () => {
     expect(s.reasons[0]).toContain("Turned away");
     expect(s.reasons[0]).toContain("3 people confirmed");
 
-    // A confirmed "lot full" keeps the park open — it has not stopped admitting visitors.
+    // A confirmed "lot full" keeps the park open: it has not stopped admitting visitors.
     const lot = getParkStatus({ park: makePark(), alerts: [], reportSummary: summary({ signal: "confirmed", category: "parking", value: "lot_full", count: 4, impliesLevel: "open", confidence: "high" }), prediction: null, now: NOW });
     expect(lot.level).toBe("open");
     expect(lot.source).toBe("confirmed_reports");
@@ -178,7 +178,7 @@ describe("getParkStatus", () => {
 
   it("5. prediction only → open, with the predicted fill time as an estimate", () => {
     const likely = getParkStatus({ park: makePark(), alerts: [], reportSummary: EMPTY_SUMMARY, prediction: prediction("likely"), now: NOW });
-    // Expected to fill later today is still open — the timing rides along in predictedTime.
+    // Expected to fill later today is still open: the timing rides along in predictedTime.
     expect(likely.level).toBe("open");
     expect(likely.source).toBe("prediction");
     expect(likely.isEstimate).toBe(true);

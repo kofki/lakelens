@@ -1,6 +1,6 @@
 /**
- * lib/seasonal.ts — swim-season rules (e.g. Blue Spring: Apr 1 – Nov 14, manatee closure
- * Nov 15 – Mar 31). A park with no swim_season is swimmable year-round.
+ * lib/seasonal.ts, swim-season rules (e.g. Blue Spring: Apr 1, Nov 14, manatee closure
+ * Nov 15: Mar 31). A park with no swim_season is swimmable year-round.
  * Pure TS: no React / Next / DOM.
  */
 import type { SwimSeason } from "./types";
@@ -20,9 +20,9 @@ export function formatMmDd(mmdd: string): string {
   return name ? `${name} ${d}` : mmdd;
 }
 
-/** "Apr 1 – Nov 14" for display. */
+/** "Apr 1: Nov 14" for display. */
 export function formatSeasonRange(season: SwimSeason): string {
-  return `${formatMmDd(season.open)} – ${formatMmDd(season.close)}`;
+  return `${formatMmDd(season.open)} to ${formatMmDd(season.close)}`;
 }
 
 /**
@@ -41,11 +41,11 @@ export function isInSwimSeason(season: SwimSeason | null, date: Date, tz: string
 /**
  * Plain-language reason when the park is closed for the season, or null when swimming
  * is in season (or the park has no seasonal rule). Example:
- * "Closed for the season — swimming reopens Apr 1 (season Apr 1 – Nov 14). Manatee season."
+ * "Closed for the season: swimming reopens Apr 1 (season Apr 1: Nov 14). Manatee season."
  */
 export function swimSeasonReason(season: SwimSeason | null, date: Date, tz: string = DEFAULT_TZ): string | null {
   if (!season || isInSwimSeason(season, date, tz)) return null;
-  let text = `Closed for the season — swimming reopens ${formatMmDd(season.open)} (season ${formatSeasonRange(season)})`;
+  let text = `Closed for the season. Swimming reopens ${formatMmDd(season.open)} (season ${formatSeasonRange(season)})`;
   if (season.note) text += `. ${season.note}`;
   return text;
 }

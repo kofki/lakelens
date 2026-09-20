@@ -23,6 +23,7 @@ import {
   type LongWeekend,
   type NoaaPayload,
   type Park,
+  type ParkForecast,
   type ParkAlert,
   type ParkBundle,
   type ParkWithStatus,
@@ -58,6 +59,7 @@ interface World {
   holidays: Holiday[];
   longWeekends: LongWeekend[];
   events: CalendarEvent[];
+  forecasts: Map<string, ParkForecast>;
 }
 
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
@@ -100,9 +102,52 @@ function rowsOr<T>(scope: string, res: { data: unknown; error: { message: string
   return (res.data ?? []) as T[];
 }
 
+interface ParkForecastRow {
+  park_id: string;
+  forecast_at: string | null;
+  now_temp_f: number | null;
+  now_feels_like_f: number | null;
+  now_uv: number | null;
+  now_humidity: number | null;
+  now_wind_mph: number | null;
+  now_thunder_prob: number | null;
+  now_short_forecast: string | null;
+  uv_peak: number | null;
+  uv_peak_hour: number | null;
+  hourly: unknown;
+  daily: unknown;
+  water_quality: unknown;
+  sources: unknown;
+}
+
+/** park_forecast rows keyed by park id. */
+function toForecasts(rows: ParkForecastRow[]): Map<string, ParkForecast> {
+  const out = new Map<string, ParkForecast>();
+  for (const r of rows) {
+    if (!r?.park_id) continue;
+    out.set(r.park_id, {
+      forecastAt: r.forecast_at ?? "",
+      nowTempF: r.now_temp_f,
+      nowFeelsLikeF: r.now_feels_like_f,
+      nowUv: r.now_uv,
+      nowHumidity: r.now_humidity,
+      nowWindMph: r.now_wind_mph,
+      nowThunderProb: r.now_thunder_prob,
+      nowShortForecast: r.now_short_forecast,
+      uvPeak: r.uv_peak,
+      uvPeakHour: r.uv_peak_hour,
+      hourly: (r.hourly as ParkForecast["hourly"]) ?? null,
+      daily: Array.isArray(r.daily) ? (r.daily as ParkForecast["daily"]) : [],
+      waterQuality: (r.water_quality as ParkForecast["waterQuality"]) ?? null,
+      sources: (r.sources as ParkForecast["sources"]) ?? {},
+    });
+  }
+  return out;
+}
+
 async function loadWorld(db: Db, now: Date): Promise<World> {
   const since = new Date(now.getTime() - REPORT_WINDOW_MS).toISOString();
-  const [parksR, accR, latestR, alertsR, reportsR, confR, holR, lwR, evR] = await Promise.all([
+  const [parksR, accR, latestR, alertsR, reportsR, confR, holR, lwR, evR, fcR] = await Promise.all([
     db.from("parks").select("*").order("name"),
     db.from("accessibility").select("*"),
     db.from("latest_conditions").select("park_id,source,payload,fetched_at"),
@@ -112,6 +157,7 @@ async function loadWorld(db: Db, now: Date): Promise<World> {
     db.from("holidays").select("*"),
     db.from("long_weekends").select("*"),
     db.from("calendar_events").select("name,start_date,end_date,weight"),
+    db.from("park_forecast").select("*"),
   ]);
   if (parksR.error) throw new Error(`parks: ${parksR.error.message}`);
 
@@ -128,6 +174,7 @@ async function loadWorld(db: Db, now: Date): Promise<World> {
     holidays: rowsOr<Holiday>("holidays", holR),
     longWeekends: rowsOr<LongWeekend>("long_weekends", lwR),
     events: toCalendarEvents(rowsOr<CalendarEventRow>("calendar_events", evR)),
+    forecasts: toForecasts(rowsOr<ParkForecastRow>("park_forecast", fcR)),
   };
 }
 
@@ -169,6 +216,7 @@ function assemble(park: Park, world: World, dayContext: DayContext, now: Date): 
     noaaFetchedAt: noaaRow?.fetched_at ?? noaa?.fetchedAt ?? null,
     weather,
     weatherFetchedAt: weatherRow?.fetched_at ?? weather?.fetchedAt ?? null,
+    forecast: world.forecasts.get(park.id) ?? null,
     alerts,
     reportSummary,
     distanceKm: null,
@@ -176,24 +224,46 @@ function assemble(park: Park, world: World, dayContext: DayContext, now: Date): 
 }
 
 /**
- * Parameters any list/map surface actually renders (conditionStatItems + describeFlow).
- * Everything else in a USGS payload is dead weight in the RSC payload.
+ * Parameters a list or map card actually renders. Discharge (00060) left when flow stopped
+ * being a headline stat; it is still ingested for the high-flow safety warning.
  */
-const LIST_USGS_PARAMETERS = new Set(["00010", "00060", "00065", "63160"]);
+const LIST_USGS_PARAMETERS = new Set(["00010", "00065", "63160"]);
 
 /**
  * Shrink a ParkWithStatus to what the map and list screens draw.
  *
  * The map page serialises all 84 parks twice (HTML + RSC payload), and a deep park's
  * NWS snapshot carries a 156-entry hourly grid plus a 14-day outlook that no list or
- * map surface ever reads. Dropping those — and the gauge parameters we don't chart —
+ * map surface ever reads. Dropping those, and the gauge parameters we don't chart,
  * is invisible on screen and removes most of the document weight. Prediction has
  * already run against the full payload by the time this is applied.
  */
 function slimForList(item: ParkWithStatus): ParkWithStatus {
   const weather = item.weather ? { ...item.weather, hourly: [], daily: [] } : null;
   const usgs = item.usgs ? { ...item.usgs, readings: item.usgs.readings.filter((r) => LIST_USGS_PARAMETERS.has(r.parameter)) } : null;
-  return { ...item, weather, usgs };
+  // A card draws at most three stats, so everything else in the forecast row is dead
+  // weight in a document that serialises all 84 parks twice. Only the fields
+  // conditionStatItems actually reads survive the trip to the list and the map.
+  const f = item.forecast;
+  const forecast: ParkForecast | null = f
+    ? {
+        forecastAt: "",
+        nowTempF: f.nowTempF,
+        nowFeelsLikeF: f.nowFeelsLikeF,
+        nowUv: f.nowUv,
+        nowHumidity: null,
+        nowWindMph: null,
+        nowThunderProb: null,
+        nowShortForecast: null,
+        uvPeak: f.uvPeak,
+        uvPeakHour: null,
+        hourly: null,
+        daily: [],
+        waterQuality: f.waterQuality,
+        sources: {},
+      }
+    : null;
+  return { ...item, weather, usgs, forecast };
 }
 
 function assembleAll(world: World, now: Date): ParkWithStatus[] {
@@ -201,7 +271,7 @@ function assembleAll(world: World, now: Date): ParkWithStatus[] {
   return world.parks.map((park) => assemble(park, world, dayContext, now));
 }
 
-/** Every park with derived status — the map and list screens. */
+/** Every park with derived status: the map and list screens. */
 export async function getParksWithStatus(now: Date = new Date()): Promise<ParkWithStatus[]> {
   try {
     const db = createPublicClient();
@@ -213,7 +283,7 @@ export async function getParksWithStatus(now: Date = new Date()): Promise<ParkWi
   }
 }
 
-/** One park with parking lots, recent reports, confirmations and backup suggestions — the detail page. */
+/** One park with parking lots, recent reports, confirmations and backup suggestions: the detail page. */
 export async function getParkBundle(slug: string, now: Date = new Date()): Promise<ParkBundle | null> {
   try {
     const db = createPublicClient();

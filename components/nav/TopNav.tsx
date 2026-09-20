@@ -26,7 +26,7 @@ function isActive(href: NavItem["href"], pathname: string): boolean {
 /**
  * Desktop header (md+ only; BottomNav takes over below md). Fixed to the top, height
  * --top-nav-h (nav.css); app/layout.tsx pads <main> by the same amount on md+.
- * Mirrors the BeachLens navbar: wordmark left, centred links, outline + filled CTAs right.
+ * Wordmark left, centred links, outline and filled CTAs right.
  * The active link is marked with aria-current plus an amber underline, never colour alone.
  * Hover text is sunset-deep (5:1 on ivory); plain sunset fails AA as text.
  */

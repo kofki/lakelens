@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 /*
- * LakeLens design tokens — BeachLens family palette.
+ * LakeLens design tokens: the spring-forest palette.
  * Each --color-* becomes bg-/text-/border-* utilities (Tailwind v4 @theme).
  * Light orange (peach) and teal (lagoon) FAIL contrast as text on white:
  * use them only as fills behind cocoa text/icons.
  */
  
 @theme {
-  /* ---- LakeLens "spring forest" palette (beachlens.net structure, forest colours) ---- */
+  /* ---- LakeLens "spring forest" palette ---- */
   --color-cream: #f5f3ea;        /* ivory page background (forest floor light) */
   --color-sunset: #e08a2e;       /* sunlit amber: primary CTA, active states */
   --color-sunset-dark: #c97a25;  /* amber hover (fills only) */
@@ -85,7 +85,7 @@ body {
   outline-offset: 2px;
 }
 
-/* beachlens.net tactile press feedback */
+/* Tactile press feedback on buttons and cards. */
 button:active,
 a:active {
   transform: scale(0.97);

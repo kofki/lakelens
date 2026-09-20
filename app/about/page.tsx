@@ -156,7 +156,7 @@ export default function AboutPage() {
         <header className="space-y-4 md:space-y-5">
           <Wordmark size="lg" className="md:hidden" />
           <h1 className="max-w-[18ch] text-[2rem] font-extrabold leading-tight text-brown md:text-[3rem]">
-            Know before you go.
+            Never drive out to a closed gate.
           </h1>
           <p className="max-w-prose text-mocha md:text-lg">
             LakeLens tells you whether a Florida spring or state-park swim area is likely to be full, closed
@@ -273,23 +273,23 @@ export default function AboutPage() {
                     </dd>
                   </div>
                   <div className="rounded-xl bg-cream p-3">
-                    <dt className="text-xs font-bold text-mocha">Score 1–2 (possible)</dt>
+                    <dt className="text-xs font-bold text-mocha">Score 1 to 2 (possible)</dt>
                     <dd className="mt-1 space-y-1">
                       <StatusPill level="open" size="sm" estimate />
-                      <p className="text-xs text-mocha">Still open — we show the time it usually fills.</p>
+                      <p className="text-xs text-mocha">Still open. We show the time it usually fills.</p>
                     </dd>
                   </div>
                   <div className="rounded-xl bg-cream p-3">
                     <dt className="text-xs font-bold text-mocha">Score 3 or more (likely)</dt>
                     <dd className="mt-1 space-y-1">
                       <StatusPill level="open" size="sm" estimate />
-                      <p className="text-xs text-mocha">Open, but go early — it is likely to fill today.</p>
+                      <p className="text-xs text-mocha">Open, but go early. It is likely to fill today.</p>
                     </dd>
                   </div>
                 </dl>
                 <p className="rounded-xl bg-aqua p-3 text-sm text-cyan-deep">
                   A park is only marked <strong>Full</strong> or <strong>Closed</strong> once it has actually
-                  stopped letting people in — an official closure, the swim season, or visitors reporting they
+                  stopped letting people in: an official closure, the swim season, or visitors reporting they
                   were turned away. Everything else stays <strong>Open</strong>, with the estimate shown
                   alongside it.
                 </p>
@@ -484,11 +484,10 @@ export default function AboutPage() {
             <Section id="team" title="About the team" icon={<Heart />}>
               <Card className="space-y-3">
                 <p>
-                  LakeLens was built at <span className="font-bold">SASEhack 2026</span> (September 18–20,
-                  2026) by the team behind <ExtLink href="https://beachlens.net">BeachLens</ExtLink>, a
-                  beach-conditions app used by around 30,000 people. LakeLens is a brand-new codebase that
-                  brings the same idea, honest and accessible conditions at a glance, to Florida&rsquo;s
-                  freshwater swim areas.
+                  LakeLens was built at <span className="font-bold">SASEhack 2026</span> (September 18 to 20,
+                  2026). It brings honest, accessible conditions at a glance to Florida&rsquo;s freshwater
+                  swim areas: the springs, lakes and rivers inside the state parks that fill to capacity
+                  before mid-morning on a summer weekend.
                 </p>
                 <p className="text-sm text-mocha">
                   Tracks: Social Impact and Best Design. Built with Next.js, Supabase, MapLibre and a lot of

@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { formatSeasonRange, isInSwimSeason, swimSeasonReason } from "./seasonal";
 
-const BLUE = { open: "04-01", close: "11-14", note: "Manatee season Nov 15 – Mar 31." };
+const BLUE = { open: "04-01", close: "11-14", note: "Manatee season Nov 15 to Mar 31." };
 const WRAP = { open: "11-01", close: "03-31" };
 
 describe("swim season", () => {
@@ -24,8 +24,8 @@ describe("swim season", () => {
   it("reason text", () => {
     expect(swimSeasonReason(BLUE, new Date("2026-07-04T15:00:00Z"))).toBeNull();
     expect(swimSeasonReason(BLUE, new Date("2026-12-01T15:00:00Z"))).toBe(
-      "Closed for the season — swimming reopens Apr 1 (season Apr 1 – Nov 14). Manatee season Nov 15 – Mar 31.",
+      "Closed for the season. Swimming reopens Apr 1 (season Apr 1 to Nov 14). Manatee season Nov 15 to Mar 31.",
     );
-    expect(formatSeasonRange(BLUE)).toBe("Apr 1 – Nov 14");
+    expect(formatSeasonRange(BLUE)).toBe("Apr 1 to Nov 14");
   });
 });

@@ -16,7 +16,7 @@ export interface BottomSheetProps {
   /** Which snap point is active: 0 = peek, 1 = half, 2 = full. */
   index: number;
   onIndexChange: (index: number) => void;
-  /** Current visible height in px (changes while dragging) — the map uses it as bottom padding. */
+  /** Current visible height in px (changes while dragging): the map uses it as bottom padding. */
   onHeightChange?: (px: number) => void;
   ariaLabel: string;
   /** Drag handle area content: counts, filter chips, search. */

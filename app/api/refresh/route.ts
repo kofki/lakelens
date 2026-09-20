@@ -6,7 +6,7 @@
  * is just an authenticated proxy: it holds the secret key server-side and throttles callers.
  *
  * Public (no secret from the browser) but throttled: one run per park per 5 minutes plus a
- * global cap, both per server instance — enough to stop a page refresh loop from hammering
+ * global cap, both per server instance: enough to stop a page refresh loop from hammering
  * NWS/NOAA/USGS. A park only ever has one of usgs / noaa, so the unused one inserts nothing.
  *
  * Response: { ok, throttled, park_id, ranAt, counts, errors }.

@@ -110,7 +110,7 @@ describe("predictClosure", () => {
     expect(rainy.score).toBe(0);
     expect(rainy.level).toBe("none");
     expect(rainy.predictedTime).toBeNull();
-    expect(rainy.reasons).toContain("Rain likely (70%) — crowds thin out");
+    expect(rainy.reasons).toContain("Rain likely (70%): crowds thin out");
 
     const rainyHot = predictClosure({ park: makePark(), dayContext, weather: makeWeather(91, 60, "2026-09-12"), alerts: [] }, now);
     expect(rainyHot.score).toBe(1);
@@ -137,7 +137,7 @@ describe("predictClosure", () => {
     const p = predictClosure({ park: makePark(), dayContext, weather: makeWeather(80, 0, "2027-03-10"), alerts: [] }, now);
     expect(p.level).toBe("possible");
     expect(p.score).toBe(1);
-    expect(p.reasons).toContain("UF Spring Break — extra crowds expected");
+    expect(p.reasons).toContain("UF Spring Break: extra crowds expected");
     expect(p.reasons).not.toContain(QUIET_WEEKDAY_REASON);
     expect(p.predictedTime).toBe("2027-03-10T15:30:00.000Z"); // 10:30 AM EST
   });
@@ -201,7 +201,7 @@ describe("predictClosure", () => {
     const dayContext = getDayContext(now, LABOR_DAY, [], []);
     const p = predictClosure({ park: makePark({ coverage_tier: "basic" }), dayContext, weather: null, alerts: [] }, now);
     expect(p.confidence).toBe("low");
-    expect(p.reasons).toContain("No forecast available — estimate uses the calendar only");
+    expect(p.reasons).toContain("No forecast available: estimate uses the calendar only");
   });
 
   it("accepts Postgres time format HH:MM:SS", () => {

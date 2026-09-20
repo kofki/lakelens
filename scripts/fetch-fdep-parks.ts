@@ -10,7 +10,7 @@
  * persisted; the 110 KB derived file is the cache.
  * Centroid = signed-area (shoelace) centroid over all rings (ArcGIS outer rings are clockwise,
  * holes counter-clockwise, so signed sums handle multipart polygons with holes). Falls back to the
- * bbox centre for degenerate geometry. NOTE: a park centroid is NOT the swim area — basic-tier
+ * bbox centre for degenerate geometry. NOTE: a park centroid is NOT the swim area: basic-tier
  * parks label their coordinates accordingly.
  */
 import { join } from "node:path";
@@ -132,7 +132,7 @@ async function main(): Promise<void> {
   const { data } = await cachedFetchJson<ArcResponse>("fdep-parks-raw.json", QUERY_URL, {}, { refresh: true, persist: false });
   if (data.error) throw new Error(`ArcGIS error ${data.error.code}: ${data.error.message}`);
   log(`FDEP PARKS_BOUNDARIES: ${data.features.length} features (network; raw response not persisted)`);
-  if (data.exceededTransferLimit) console.warn("[fdep] exceededTransferLimit=true — layer returned a partial page");
+  if (data.exceededTransferLimit) console.warn("[fdep] exceededTransferLimit=true: layer returned a partial page");
 
   const parks: FdepPark[] = [];
   let bboxFallbacks = 0;

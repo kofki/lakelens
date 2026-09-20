@@ -1,5 +1,5 @@
 -- =============================================================================
--- LakeLens migration 3 — storage bucket for report photos
+-- LakeLens migration 3: storage bucket for report photos
 -- Public bucket (downloads need no policy) + anon INSERT limited to
 -- report-photos/reports/<device_id>/<uuid>.<ext>. No anon SELECT/UPDATE/DELETE
 -- policies on purpose: no listing, no overwrite (upsert needs SELECT+UPDATE),

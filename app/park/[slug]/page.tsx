@@ -68,20 +68,21 @@ export default async function ParkPage({ params }: Params) {
   if (!bundle) notFound();
 
   const { park } = bundle;
-  const deep = park.coverage_tier === "deep";
   const alerts = activeAlerts(bundle.alerts, now);
   const showBackups = ["full", "closed"].includes(bundle.status.level);
 
+  // Only sections that actually render get a jump link, so the tab bar never points at
+  // an empty anchor on a park we know less about.
   const sections: SectionLink[] = [
     { id: "status", label: "Status" },
-    ...(deep ? [{ id: "prediction", label: "Estimate" }] : []),
+    ...(bundle.prediction ? [{ id: "prediction", label: "Estimate" }] : []),
     ...(alerts.length ? [{ id: "alerts", label: "Alerts" }] : []),
     ...(showBackups ? [{ id: "backups", label: "Backups" }] : []),
     { id: "safety", label: "Safety" },
-    { id: "parking", label: "Parking" },
-    { id: "accessibility", label: "Accessibility" },
+    ...(bundle.parkingLots.length ? [{ id: "parking", label: "Parking" }] : []),
+    ...(bundle.accessibility ? [{ id: "accessibility", label: "Accessibility" }] : []),
     { id: "conditions", label: "Conditions" },
-    { id: "rules", label: "Rules" },
+    ...(park.hours || park.fees || park.official_url ? [{ id: "rules", label: "Rules" }] : []),
     { id: "reports", label: "Reports" },
   ];
 
@@ -99,7 +100,7 @@ export default async function ParkPage({ params }: Params) {
           <div className="min-w-0 space-y-6">
             <StatusHeader bundle={bundle} now={now} />
 
-            {deep && <PredictionCard park={park} prediction={bundle.prediction} />}
+            <PredictionCard prediction={bundle.prediction} />
 
             {alerts.length > 0 && <AlertsCard alerts={bundle.alerts} now={now} />}
 
@@ -113,7 +114,7 @@ export default async function ParkPage({ params }: Params) {
 
             <ParkingCard park={park} lots={bundle.parkingLots} />
 
-            <AccessibilityCard park={park} accessibility={bundle.accessibility} />
+            <AccessibilityCard accessibility={bundle.accessibility} />
 
             <ConditionsCard bundle={bundle} now={now} />
 

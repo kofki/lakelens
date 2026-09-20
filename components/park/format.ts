@@ -31,9 +31,9 @@ export function textOrNotStated(v: string | null | undefined): string {
 }
 
 export const WATER_ACCESS_TEXT: Record<WaterAccess, string> = {
-  yes: "Yes — wheelchair users can reach the water",
-  limited: "Limited — reachable with help or at some spots",
-  no: "No — no accessible route to the water",
+  yes: "Yes",
+  limited: "Limited",
+  no: "No",
   unknown: "Unknown",
 };
 

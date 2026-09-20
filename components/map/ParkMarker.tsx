@@ -24,7 +24,7 @@ export function markerLabel(item: ParkWithStatus): string {
 /**
  * A real <button> portalled into the MapLibre marker element, so every park is a
  * keyboard tab stop with icon + text + colour (never colour alone).
- * beachlens.net marker: white circle, 2.5px status-edge border, status-coloured icon,
+ * Map marker: white circle, 2.5px status-edge border, status-coloured icon,
  * small tail, ink label chip beside it once zoomed in; selected = amber ring.
  */
 export function ParkMarker({ item, selected, showLabel, onSelect }: ParkMarkerProps) {

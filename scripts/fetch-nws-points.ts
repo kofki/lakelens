@@ -141,7 +141,7 @@ async function resolvePark(t: { slug: string; lat: number; lng: number }, counte
 
 async function main(): Promise<void> {
   const basicFile = readJson<{ meta?: Record<string, unknown>; parks: ParkSeed[] }>(BASIC_PATH);
-  if (!basicFile) throw new Error(`Missing ${BASIC_PATH} — run scripts/fetch-fsp-swimming-parks.ts first.`);
+  if (!basicFile) throw new Error(`Missing ${BASIC_PATH}: run scripts/fetch-fsp-swimming-parks.ts first.`);
 
   const targets: Array<{ slug: string; lat: number; lng: number; tier: "basic" | "deep" }> = [
     ...basicFile.parks.map((p) => ({ slug: p.slug, lat: p.lat, lng: p.lng, tier: "basic" as const })),

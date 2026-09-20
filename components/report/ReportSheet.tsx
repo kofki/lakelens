@@ -90,7 +90,7 @@ export function ReportSheet({ park, open, onOpenChange, onSubmitted }: ReportShe
         <div role="status" className="rounded-xl bg-aqua p-4 text-cyan-deep">
           <p className="flex items-center gap-2 text-base font-extrabold">
             <Check aria-hidden="true" focusable="false" className="h-5 w-5 text-status-open" />
-            Thanks — your report helps others.
+            Thanks. Your report helps others.
           </p>
           <p className="mt-1 text-sm">It&apos;s live now and will fade after about two hours.</p>
           <Button type="button" variant="secondary" className="mt-3" onClick={() => onOpenChange(false)}>

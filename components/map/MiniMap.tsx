@@ -79,7 +79,7 @@ export function MiniMap({ center, parkName, lots, className }: MiniMapProps) {
           >
             <SquareParking aria-hidden="true" focusable="false" className="size-4 shrink-0" />
             {lotLabel(lot)}
-            <span className="sr-only"> — directions in {mapsName}, opens in a new tab</span>
+            <span className="sr-only">: directions in {mapsName}, opens in a new tab</span>
           </a>
         </li>
       ))}

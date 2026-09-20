@@ -1,5 +1,5 @@
 /**
- * Shared ingest types — the single source of truth for the payloads written to
+ * Shared ingest types: the single source of truth for the payloads written to
  * conditions_snapshots and for the park fields the fetchers touch.
  *
  * This file lives under supabase/functions/ so the `refresh-conditions` Edge Function
@@ -133,7 +133,7 @@ export interface WeatherPayload {
 }
 
 /** Jobs the refresh-conditions Edge Function can run (also the pg_cron job names). */
-export type CronJob = "usgs" | "noaa" | "weather" | "alerts" | "holidays" | "prune" | "algae" | "parking" | "stations";
+export type CronJob = "usgs" | "noaa" | "weather" | "alerts" | "holidays" | "prune" | "algae" | "parking" | "stations" | "forecast";
 
 /** Shape of a park_alerts row the ingest jobs insert. */
 export interface ParkAlertInsert {
@@ -150,4 +150,73 @@ export interface ParkAlertInsert {
   last_checked_at?: string | null;
   first_seen?: string | null;
   last_seen?: string | null;
+}
+
+// ---------------------------------------------------------------------------
+// park_forecast: one upserted row per park (see supabase/migrations/*_park_forecast.sql)
+// ---------------------------------------------------------------------------
+
+/**
+ * Hourly series stored as parallel arrays rather than an array of objects.
+ *
+ * A park page ships its forecast twice (HTML plus the RSC payload), so 72 hourly objects
+ * with ten keys each is most of a document. Columnar arrays with an implicit hourly step
+ * from `start_utc` carry the same numbers in a fraction of the bytes.
+ */
+export interface HourlyColumnar {
+  /** ISO UTC of index 0. Each subsequent index is one hour later. */
+  start_utc: string;
+  n: number;
+  temp_f: (number | null)[];
+  apparent_f: (number | null)[];
+  pop: (number | null)[];
+  uv: (number | null)[];
+  wind_mph: (number | null)[];
+  thunder: (number | null)[];
+}
+
+export interface ForecastDay {
+  date: string;
+  name: string;
+  hi_f: number | null;
+  lo_f: number | null;
+  pop: number | null;
+  uv_max: number | null;
+  short_forecast: string;
+}
+
+/** Which upstream supplied a field, and when. Null `at` means the source failed this run. */
+export interface SourceStamp {
+  src: string;
+  at: string | null;
+}
+
+export type WaterQualityLevel = "clear" | "caution" | "avoid";
+
+export interface WaterQuality {
+  level: WaterQualityLevel;
+  label: string;
+  sampledAt: string;
+  distanceKm: number;
+  location: string | null;
+  microcystin: string | null;
+}
+
+export interface ParkForecastRow {
+  park_id: string;
+  forecast_at: string;
+  forecast_issued_at: string | null;
+  now_temp_f: number | null;
+  now_feels_like_f: number | null;
+  now_uv: number | null;
+  now_humidity: number | null;
+  now_wind_mph: number | null;
+  now_thunder_prob: number | null;
+  now_short_forecast: string | null;
+  uv_peak: number | null;
+  uv_peak_hour: number | null;
+  hourly: HourlyColumnar | null;
+  daily: ForecastDay[];
+  water_quality: WaterQuality | null;
+  sources: Record<string, SourceStamp>;
 }

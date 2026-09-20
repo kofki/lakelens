@@ -607,7 +607,7 @@ describe("fdep algae", () => {
     const doctors = samples.find((s) => s.id === "0d087f81-3e80-4ea2-8170-ca23622c00cc")!;
     expect(algaeSeverity(doctors)).toBe("Severe");
     expect(microcystinValue(doctors.microcystin)).toBe("0.33");
-    expect(algaeAlertText(doctors, 1.8)).toMatch(/^FDEP algal bloom sample within 2 km on Aug 31 — microcystin detected \(0\.33 µg\/L\)/);
+    expect(algaeAlertText(doctors, 1.8)).toMatch(/^FDEP algal bloom sample within 2 km on Aug 31: microcystin detected \(0\.33 µg\/L\)/);
     const pending = { ...doctors, toxinPresent: "pending" as const, microcystin: "Pending" };
     expect(algaeSeverity(pending)).toBe("Moderate");
     expect(algaeAlertText(pending, 0.4)).toContain("within 1 km");
@@ -647,7 +647,7 @@ describe("fdep algae", () => {
 
 /**
  * The NOAA fixtures were captured live on 2026-09-19 at 23:24Z (Mayport 8720218, the station
- * BeachLens credits). NOAA_NOW is a few minutes later so the readings are fresh.
+ * station credits). NOAA_NOW is a few minutes later so the readings are fresh.
  */
 const NOAA_NOW = new Date("2026-09-19T23:30:00Z");
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { Accessibility, Layers, ShieldCheck } from "lucide-react";
+import { Accessibility, ShieldCheck } from "lucide-react";
 import type { Filters } from "@/lib/types";
 import { Chip } from "@/components/ui/Chip";
 import { cn } from "@/components/ui/cn";
@@ -43,14 +43,6 @@ export function FilterChips({ filters, onChange, counts, className }: FilterChip
           className="shrink-0"
         >
           Lifeguard on duty
-        </Chip>
-        <Chip
-          selected={filters.deepOnly}
-          onClick={() => toggle("deepOnly")}
-          icon={<Layers aria-hidden="true" focusable="false" />}
-          className="shrink-0"
-        >
-          Detailed data
         </Chip>
       </div>
       <LiveRegion message={countsMessage(counts)} />

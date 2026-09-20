@@ -45,17 +45,18 @@ export function ParkingCard({ park, lots }: ParkingCardProps) {
         <div role="note" className="flex gap-2 rounded-card border border-status-full-edge/40 bg-status-full-bg p-3 text-sm text-status-full">
           <TriangleAlert aria-hidden="true" focusable="false" className="mt-0.5 size-5 shrink-0" />
           <p>
-            <strong>No roadside waiting.</strong> When the lot is full, rangers turn cars away — do not queue on the road. Try a
+            <strong>No roadside waiting.</strong> When the lot is full, rangers turn cars away. Do not queue on the road. Try a
             backup park instead.
           </p>
         </div>
       )}
 
       {sorted.length === 0 ? (
-        <Card>
-          <p className="text-sm text-cocoa">No parking details for this park yet.</p>
-          {park.entrance_notes && <p className="mt-2 text-sm text-cocoa">{park.entrance_notes}</p>}
-        </Card>
+        park.entrance_notes ? (
+          <Card>
+            <p className="text-sm text-cocoa">{park.entrance_notes}</p>
+          </Card>
+        ) : null
       ) : (
         <ul className={sorted.length > 1 ? "space-y-3 md:grid md:grid-cols-2 md:gap-3 md:space-y-0" : "space-y-3"}>
           {sorted.map((lot) => (

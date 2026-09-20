@@ -11,7 +11,7 @@
  * gets one as soon as a station near it starts reporting.
  *
  * Only parks that are MISSING an assignment are touched. Curated overrides are never
- * overwritten — a park with a hand-picked gauge keeps it.
+ * overwritten: a park with a hand-picked gauge keeps it.
  */
 import {
   type SiteLiveness,
@@ -86,7 +86,7 @@ export interface StationFetchOptions {
   timeoutMs?: number;
 }
 
-/** Stations that report water temperature, then water level — temperature is what the UI leads with. */
+/** Stations that report water temperature, then water level: temperature is what the UI leads with. */
 export async function fetchNoaaStationCandidates(opts: StationFetchOptions = {}): Promise<StationCandidate[]> {
   const doFetch = opts.fetchImpl ?? fetch;
   const byId = new Map<string, StationCandidate>();
@@ -107,7 +107,7 @@ export async function fetchUsgsSiteCandidates(
     headers: { "User-Agent": opts.userAgent ?? `${NOAA_APPLICATION}/1.0` },
     signal: AbortSignal.timeout(opts.timeoutMs ?? 20_000),
   });
-  // 404 is the site service's "no sites in this box" — an empty result, not a failure.
+  // 404 is the site service's "no sites in this box": an empty result, not a failure.
   if (res.status === 404) return [];
   if (!res.ok) throw new Error(`usgs site service: HTTP ${res.status}`);
   return parseRdbSites(await res.text());

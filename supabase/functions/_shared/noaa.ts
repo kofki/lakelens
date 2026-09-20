@@ -1,15 +1,15 @@
 /**
- * NOAA CO-OPS (Tides & Currents) ingest — live water data for coastal parks.
+ * NOAA CO-OPS (Tides & Currents) ingest: live water data for coastal parks.
  *
  * Coastal beaches and coastal lakes sit on no USGS river gauge, so their water data comes from
- * NOAA CO-OPS stations, exactly as BeachLens does ("Sourced from NOAA Station #8720218").
+ * NOAA CO-OPS stations, attributed in the UI as "NOAA station #8720218".
  * No API key is required; `application=LakeLens` identifies us.
  *
  * Station metadata (used by scripts/fetch-noaa-stations.ts, not at runtime):
  *   GET https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations.json?type=watertemp
  *   GET https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations.json?type=waterlevels
  *   GET https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations.json?type=tidepredictions
- *   NOTE: `&state=FL` is IGNORED by this endpoint — it always returns every station, so callers
+ *   NOTE: `&state=FL` is IGNORED by this endpoint: it always returns every station, so callers
  *   must filter on the `state` field themselves.
  *
  * Observations / predictions (runtime):
@@ -19,7 +19,7 @@
  *   GET .../api/prod/datagetter?product=predictions&interval=hilo&datum=MLLW
  *       &begin_date=YYYYMMDD HH:mm&range=<hours>                          (`date=latest` is invalid here)
  *
- * Error envelope: NOAA answers `{"error":{"message":"..."}}` — usually with **HTTP 200** — for a
+ * Error envelope: NOAA answers `{"error":{"message":"..."}}`, usually with **HTTP 200**, for a
  * station that does not carry a product ("No data was found…"), and with HTTP 400 for a malformed
  * request ("Wrong Datum…"). Both are handled here; the first is a soft miss, not a failure.
  *
@@ -292,8 +292,8 @@ export async function noaaGetJson<T>(url: string, fetchImpl: typeof fetch, timeo
  *
  * Stations are visited SEQUENTIALLY, NOAA_REQUEST_GAP_MS apart (polite); the two or three product
  * calls for a single station go out together so the whole job stays well inside the 30 s pg_net
- * timeout. A station that returns nothing yields an empty `readings` array rather than an error —
- * the UI shows "—" and "No live reading" for it. Never throws.
+ * timeout. A station that returns nothing yields an empty `readings` array rather than an
+ * error, so the caller can say the station is not reporting. Never throws.
  */
 export async function fetchNoaaLatest(stationIds: string[], opts: FetchNoaaOptions = {}): Promise<NoaaResultsByStation> {
   const stations = [...new Set(stationIds.map((s) => String(s ?? "").trim()).filter(Boolean))];
@@ -375,7 +375,7 @@ function formatTempNote(value: number): string {
 
 /**
  * One park's `conditions_snapshots.payload` for source='noaa'. Always returns a payload, even when
- * the station answered nothing — `readings: []` is what makes the UI say "No live reading" rather
+ * the station answered nothing: `readings: []` is what makes the UI say "No live reading" rather
  * than invent a number.
  */
 export function buildNoaaPayloadForPark(

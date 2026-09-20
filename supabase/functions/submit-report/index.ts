@@ -7,7 +7,7 @@
  * `withSupabase({ auth: "publishable" })` validates the key itself, handles
  * CORS + OPTIONS, and hands us:
  *   - ctx.supabase      anon client (RLS applies; anon has no INSERT grant)
- *   - ctx.supabaseAdmin service-role client (bypasses RLS) — the ONLY write path
+ *   - ctx.supabaseAdmin service-role client (bypasses RLS): the ONLY write path
  *
  * Accepts two POST bodies:
  *   1) SubmitReportInput  { park_id, category, value, note?, photo_url?, device_id }

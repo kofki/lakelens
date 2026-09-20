@@ -1,5 +1,5 @@
 -- =============================================================================
--- LakeLens migration 1 — schema
+-- LakeLens migration 1: schema
 -- Tables mirror lib/types.ts (snake_case, same column names) so Supabase rows
 -- pass straight through to the app. Enum-like columns use CHECK constraints
 -- (not Postgres enums) so values can be extended with a plain ALTER.
@@ -64,7 +64,7 @@ create table if not exists public.parks (
 -- Belt and braces for a pre-existing parks table (the task calls this column out).
 alter table public.parks add column if not exists description text;
 
-comment on table  public.parks is 'Florida springs / state-park swim areas. Status is DERIVED at request time from park_alerts, swim_season, reports and the prediction — never stored here.';
+comment on table  public.parks is 'Florida springs / state-park swim areas. Status is DERIVED at request time from park_alerts, swim_season, reports and the prediction, never stored here.';
 comment on column public.parks.typical_closure_time is 'HH:MM local time (America/New_York) the park typically fills on weekends/holidays; null = unknown.';
 comment on column public.parks.swim_season is 'JSON {"open":"MM-DD","close":"MM-DD","note"?}; outside this window the park is Closed. Null = open year-round.';
 comment on column public.parks.rules is 'JSON ParkRules {alcohol?, tubing?, pets?, life_jackets?, other?: string[]}.';
@@ -224,7 +224,7 @@ create table if not exists public.reports (
 );
 
 comment on table  public.reports is 'Anonymous one-tap reports. Inserted only by the submit-report Edge Function (service role) or the /api/reports fallback; never directly by the browser.';
-comment on column public.reports.is_sample is 'Seeded demo data — UI must label it "Sample data". Only the seed script sets this.';
+comment on column public.reports.is_sample is 'Seeded demo data. UI must label it "Sample data". Only the seed script sets this.';
 
 create index if not exists reports_park_created_idx
   on public.reports (park_id, created_at desc);

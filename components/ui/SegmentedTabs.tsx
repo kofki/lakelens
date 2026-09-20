@@ -17,7 +17,7 @@ export interface SegmentedTabsProps {
 }
 
 /**
- * Pill-style tab list (beachlens.net "Weather & Conditions / Rules & Amenities / Reviews").
+ * Pill-style tab list for switching between a small number of panels.
  * Roving tabindex with arrow / Home / End keys; selection follows focus.
  * The panel the consumer renders should use role="tabpanel".
  */

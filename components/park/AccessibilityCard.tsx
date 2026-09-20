@@ -11,17 +11,15 @@ import {
   WavesLadder,
   type LucideIcon,
 } from "lucide-react";
-import type { Accessibility, Park } from "@/lib/types";
+import type {Accessibility} from "@/lib/types";
 import { isAccessibleEntry } from "@/lib/distance";
 import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
-import { EmptyState } from "@/components/ui/EmptyState";
 import { LastUpdated } from "@/components/ui/LastUpdated";
 import { Section } from "@/components/ui/Section";
-import { ENTRY_TYPE_TEXT, SURFACE_TEXT, WATER_ACCESS_TEXT, metresLabel, textOrNotStated, yesNoUnknown } from "./format";
+import {ENTRY_TYPE_TEXT, SURFACE_TEXT, WATER_ACCESS_TEXT, metresLabel} from "./format";
 
 export interface AccessibilityCardProps {
-  park: Park;
   accessibility: Accessibility | null;
 }
 
@@ -32,40 +30,39 @@ interface RowDef {
 }
 
 /**
- * Every accessibility field as a label/value row. Unknowns are shown as the word
- * "Unknown" / "Not stated" — we never hide a field or guess.
+ * Accessibility facts we can actually state, as rows.
+ *
+ * Fields we do not know are left out rather than printed as "Unknown". A park with three
+ * confirmed facts shows three rows; it no longer shows eleven, eight of which say nothing.
+ * The section disappears entirely when there is nothing to say.
  */
-export function AccessibilityCard({ park, accessibility }: AccessibilityCardProps) {
-  if (!accessibility) {
-    return (
-      <Section id="accessibility" title="Accessibility" icon={<AccessibilityIcon />}>
-        <EmptyState
-          icon={<AccessibilityIcon />}
-          title="Accessibility details not yet available"
-          body={`We have not verified water access, parking or restrooms at ${park.name} yet. If you have been, a quick accessibility report helps the next visitor.`}
-        />
-      </Section>
-    );
-  }
+export function AccessibilityCard({ accessibility }: AccessibilityCardProps) {
+  if (!accessibility) return null;
 
   const a = accessibility;
-  const rows: RowDef[] = [
-    { icon: WavesLadder, label: "Water access for wheelchair users", value: WATER_ACCESS_TEXT[a.water_access] },
-    { icon: Footprints, label: "How you get in", value: ENTRY_TYPE_TEXT[a.entry_type] },
-    { icon: Car, label: "ADA parking", value: yesNoUnknown(a.ada_parking) },
-    {
-      icon: Ruler,
-      label: "Parking to water",
-      value: a.parking_to_water_m != null ? metresLabel(a.parking_to_water_m) : "Unknown",
-    },
-    { icon: Toilet, label: "Accessible restroom", value: yesNoUnknown(a.accessible_restroom) },
-    { icon: Layers, label: "Path surface", value: SURFACE_TEXT[a.surface] },
-    { icon: AccessibilityIcon, label: "Beach / water wheelchair loaner", value: yesNoUnknown(a.wheelchair_loaner) },
-    { icon: Hand, label: "Handrails at the entry", value: yesNoUnknown(a.handrails) },
-    { icon: Sun, label: "Shade near the water", value: yesNoUnknown(a.shade) },
-    { icon: Ruler, label: "Depth at the entry", value: textOrNotStated(a.depth_at_entry_note) },
-    { icon: Dog, label: "Service animals", value: textOrNotStated(a.service_animals_note) },
-  ];
+  // A row only exists when the underlying field is known. `known()` returns null for
+  // unknown enums and null booleans, and nulls are filtered out below.
+  const known = (value: string | null | undefined): string | null => (value && value !== "Unknown" ? value : null);
+  const yesNo = (v: boolean | null | undefined): string | null => (v == null ? null : v ? "Yes" : "No");
+
+  const rows: RowDef[] = (
+    [
+      { icon: WavesLadder, label: "Water access for wheelchair users", value: known(WATER_ACCESS_TEXT[a.water_access]) },
+      { icon: Footprints, label: "How you get in", value: known(ENTRY_TYPE_TEXT[a.entry_type]) },
+      { icon: Car, label: "ADA parking", value: yesNo(a.ada_parking) },
+      { icon: Ruler, label: "Parking to water", value: a.parking_to_water_m != null ? metresLabel(a.parking_to_water_m) : null },
+      { icon: Toilet, label: "Accessible restroom", value: yesNo(a.accessible_restroom) },
+      { icon: Layers, label: "Path surface", value: known(SURFACE_TEXT[a.surface]) },
+      { icon: AccessibilityIcon, label: "Water wheelchair loaner", value: yesNo(a.wheelchair_loaner) },
+      { icon: Hand, label: "Handrails at the entry", value: yesNo(a.handrails) },
+      { icon: Sun, label: "Shade near the water", value: yesNo(a.shade) },
+      { icon: Ruler, label: "Depth at the entry", value: known(a.depth_at_entry_note) },
+      { icon: Dog, label: "Service animals", value: known(a.service_animals_note) },
+    ] as { icon: RowDef["icon"]; label: string; value: string | null }[]
+  )
+    .filter((r): r is RowDef => r.value !== null);
+
+  if (rows.length === 0) return null;
 
   const accessible = isAccessibleEntry(a);
 
@@ -79,7 +76,7 @@ export function AccessibilityCard({ park, accessibility }: AccessibilityCardProp
       <Card className="space-y-3">
         <p className={`flex items-center gap-2 text-sm font-extrabold ${accessible ? "text-status-open" : "text-cocoa"}`}>
           <AccessibilityIcon aria-hidden="true" focusable="false" className="size-5 shrink-0" />
-          {accessible ? "Wheelchair-accessible water entry" : "Wheelchair-accessible water entry not confirmed"}
+          {accessible ? "Wheelchair-accessible water entry" : "Accessibility details below"}
         </p>
         <dl className="divide-y divide-mist md:grid md:grid-cols-2 md:gap-x-6 md:divide-y-0">
           {rows.map((r) => {
@@ -95,13 +92,8 @@ export function AccessibilityCard({ park, accessibility }: AccessibilityCardProp
             );
           })}
         </dl>
-        <div className="space-y-1 border-t border-mist pt-3">
-          <LastUpdated at={a.updated_at} source={a.source ?? "Source not stated"} prefix="Checked" />
-          <p className="text-xs text-mocha">
-            {a.verified
-              ? "Verified against the park's official accessibility information."
-              : "Not yet verified on site or with the park. Treat as a starting point and call ahead."}
-          </p>
+        <div className="border-t border-mist pt-3">
+          <LastUpdated at={a.updated_at} source={a.source ?? undefined} prefix="Checked" />
         </div>
       </Card>
     </Section>

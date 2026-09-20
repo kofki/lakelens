@@ -12,7 +12,7 @@ import { StatRow } from "@/components/ui/StatRow";
 import { StatusPill } from "@/components/ui/StatusPill";
 import { cn } from "@/components/ui/cn";
 import { ParkPhoto } from "./ParkPhoto";
-import { conditionStatItems, hasConditionData } from "./conditionStats";
+import { conditionStatItems } from "./conditionStats";
 import { describeParkKind, formatDistance, statusSourceLabel } from "./parkListUtils";
 
 export interface ParkCardProps {
@@ -79,16 +79,11 @@ export function ParkCard({ item, selected = false, onSelect }: ParkCardProps) {
             <div className="mt-1.5 flex flex-wrap items-center gap-1.5">
               <StatusPill level={status.level} size="sm" estimate={status.isEstimate} />
               {reportSummary.sampleCount > 0 && <Badge variant="sample" />}
-              {park.coverage_tier === "basic" && <Badge variant="info">Basic info</Badge>}
             </div>
           </div>
         </div>
         <div className="space-y-1.5 border-t border-mist-light px-3 py-2">
-          {hasConditionData(item) ? (
-            <StatRow items={conditionStatItems(item)} />
-          ) : (
-            <p className="text-xs text-mocha">Live water and weather data not yet available for this park.</p>
-          )}
+          <StatRow items={conditionStatItems(item)} />
           {reportSummary.signal !== "none" && (
             <p className="text-xs text-cocoa" suppressHydrationWarning>
               {reportLine(reportSummary, new Date())}

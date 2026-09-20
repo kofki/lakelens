@@ -1,5 +1,5 @@
 /**
- * tests/seed.test.ts — validates every data/*.json file against zod schemas that
+ * tests/seed.test.ts: validates every data/*.json file against zod schemas that
  * mirror lib/types.ts, checks cross-file references (slugs, photos), and checks
  * the SQL generator (scripts/build-seed.ts) produces idempotent statements.
  */
@@ -188,7 +188,7 @@ describe("data/*.json validate against the schemas", () => {
       expect.arrayContaining(["gilchrist-blue-springs-state-park", "poe-springs-park"]),
     );
     for (const c of closures) {
-      // Open-ended, or ending in the future — a closure that already ended must not still be active.
+      // Open-ended, or ending in the future: a closure that already ended must not still be active.
       if (c.ends_at !== null) expect(Date.parse(c.ends_at), c.park_slug).toBeGreaterThan(Date.now());
       expect(c.active).toBe(true);
       expect(c.official_url).toMatch(/^https:\/\//);

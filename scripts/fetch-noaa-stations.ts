@@ -40,7 +40,7 @@ export const NOAA_MAX_KM = 40;
  * so long stretches of coast (the Keys, the Panhandle, Charlotte Harbour) have nothing inside
  * 40 km. Sea-surface temperature varies slowly along a coastline, and the UI always prints the
  * station name and its distance, so a clearly-labelled regional station beats showing nothing.
- * Inland lake/river/spring parks never use this tier — a tide gauge 60 km away says nothing
+ * Inland lake/river/spring parks never use this tier: a tide gauge 60 km away says nothing
  * about them.
  */
 export const NOAA_BEACH_MAX_KM = 75;

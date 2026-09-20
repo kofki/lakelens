@@ -236,6 +236,12 @@ import type {
   WeatherDay,
   WeatherPayload,
   ParkLike,
+  HourlyColumnar,
+  ForecastDay,
+  SourceStamp,
+  WaterQuality,
+  WaterQualityLevel,
+  ParkForecastRow,
 } from "../supabase/functions/_shared/types";
 
 // Re-exported so every import site keeps using "@/lib/types".
@@ -251,8 +257,37 @@ export type {
   WeatherDay,
   WeatherPayload,
   ParkLike,
+  HourlyColumnar,
+  ForecastDay,
+  SourceStamp,
+  WaterQuality,
+  WaterQualityLevel,
+  ParkForecastRow,
 };
 
+
+/**
+ * The park_forecast row as the app reads it.
+ *
+ * Deliberately not the raw DB row: `hourly` and `daily` are dropped for list and map
+ * surfaces, so both are optional here and only the park page can rely on them.
+ */
+export interface ParkForecast {
+  forecastAt: string;
+  nowTempF: number | null;
+  nowFeelsLikeF: number | null;
+  nowUv: number | null;
+  nowHumidity: number | null;
+  nowWindMph: number | null;
+  nowThunderProb: number | null;
+  nowShortForecast: string | null;
+  uvPeak: number | null;
+  uvPeakHour: number | null;
+  hourly?: HourlyColumnar | null;
+  daily?: ForecastDay[];
+  waterQuality: WaterQuality | null;
+  sources: Record<string, SourceStamp>;
+}
 
 // ---------- derived / computed ----------
 export interface DayContext {
@@ -321,10 +356,9 @@ export interface ParkStatus {
 export interface Filters {
   accessibleEntry: boolean;
   guardedOnly: boolean;
-  deepOnly: boolean;
 }
 
-export const DEFAULT_FILTERS: Filters = { accessibleEntry: false, guardedOnly: false, deepOnly: false };
+export const DEFAULT_FILTERS: Filters = { accessibleEntry: false, guardedOnly: false };
 
 export interface ParkWithStatus {
   park: Park;
@@ -338,6 +372,8 @@ export interface ParkWithStatus {
   noaaFetchedAt?: string | null;
   weather: WeatherPayload | null;
   weatherFetchedAt: string | null;
+  /** park_forecast row: UV, feels-like, thunder and water quality. Optional like noaa. */
+  forecast?: ParkForecast | null;
   alerts: ParkAlert[];
   reportSummary: ReportSummary;
   distanceKm: number | null;

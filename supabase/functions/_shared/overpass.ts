@@ -7,7 +7,7 @@
  * query runs on a schedule inside Supabase, so `parking_lots` tracks OSM on its own.
  *
  * Overpass fair use is roughly 100 queries a day for an application, so this must stay
- * a single batched query on a slow schedule (weekly) — never a per-park or per-request call.
+ * a single batched query on a slow schedule (weekly): never a per-park or per-request call.
  *
  * Pure parsing lives here so vitest can exercise it against fixtures; the Edge Function
  * owns the fetching and the writes.
@@ -16,8 +16,8 @@ import { haversineKm } from "./gauges.ts";
 
 /**
  * Mirrors of the Overpass API, in the order they are tried. Which mirror is healthy
- * changes week to week — lz4 was the only one answering in September 2026 and was
- * returning 504 by the time this job was written — so the list matters less than
+ * changes week to week: lz4 was the only one answering in September 2026 and was
+ * returning 504 by the time this job was written: so the list matters less than
  * moving on quickly when one is down.
  */
 export const OVERPASS_ENDPOINTS = [
@@ -31,7 +31,7 @@ export const OVERPASS_ENDPOINTS = [
  * How far from a park's centre a lot may sit and still plausibly be "this park's parking".
  *
  * The seed-time script used 2 km, which was fine for seven rural springs but catches
- * supermarkets and office lots around the urban parks in the full 84-park set — a 24-park
+ * supermarkets and office lots around the urban parks in the full 84-park set: a 24-park
  * sweep at 2 km returned 409 lots. A kilometre keeps the walk-to-the-water lots.
  */
 export const PARKING_RADIUS_M = 1000;
@@ -74,7 +74,7 @@ export interface ParkingLotInsert {
   is_overflow: boolean;
   source: "osm";
   notes: string | null;
-  /** "node/123" — stable OSM identity, so a re-run updates rather than duplicates. */
+  /** "node/123": stable OSM identity, so a re-run updates rather than duplicates. */
   osm_ref: string;
 }
 

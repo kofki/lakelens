@@ -1,5 +1,5 @@
 -- =============================================================================
--- LakeLens migration 2 — grants + row level security
+-- LakeLens migration 2: grants + row level security
 -- Design A (primary): the browser (anon, publishable key) can only SELECT.
 -- All writes go through the submit-report Edge Function / Next.js route
 -- handlers using the secret key (service_role bypasses RLS). Design B (direct

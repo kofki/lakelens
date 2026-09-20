@@ -1,7 +1,7 @@
 /**
  * One batched Overpass query for amenity=parking within 2000 m of each DEEP park,
  * cached raw at data/osm-cache/overpass-parking.json. Seed-time only (Overpass fair use
- * is ~100 queries/day for apps) — never call at request time.
+ * is ~100 queries/day for apps): never call at request time.
  *
  *   node --experimental-strip-types scripts/fetch-overpass-parking.ts [--refresh]
  *

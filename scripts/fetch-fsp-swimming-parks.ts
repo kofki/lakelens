@@ -1,5 +1,5 @@
 /**
- * Build data/parks.basic.json — the "basic" coverage tier: every Florida State Park that lists
+ * Build data/parks.basic.json: the "basic" coverage tier: every Florida State Park that lists
  * Swimming as an experience (69 on floridastateparks.org), minus the deep-tier parks that
  * DATA-deep curates in data/parks.deep.json.
  *
@@ -12,7 +12,7 @@
  *      2026-09-19 (Find a Park, filter parks[0]=experiences:262, pages 0-4). With --refresh the
  *      script attempts a live fetch first and falls back to the cached capture when blocked.
  *  - data/osm-cache/fdep-parks.json  (from scripts/fetch-fdep-parks.ts; boundary centroids)
- *  - data/osm-cache/nws-points-basic.json (from scripts/fetch-nws-points.ts, optional) — supplies
+ *  - data/osm-cache/nws-points-basic.json (from scripts/fetch-nws-points.ts, optional): supplies
  *      nws_grid / nws_zone / nws_county plus provenance; falls back to the previous parks.basic.json so
  *      the pipeline is idempotent in either run order.
  *
@@ -165,7 +165,7 @@ async function loadListing(): Promise<{ listing: Listing; fromLive: boolean }> {
       console.warn(`[fsp] live listing fetch failed: ${(err as Error).message}; using browser capture`);
     }
   }
-  if (!cached) throw new Error(`Missing ${LISTING_CACHE} — capture the Swimming listing with a browser session first.`);
+  if (!cached) throw new Error(`Missing ${LISTING_CACHE}: capture the Swimming listing with a browser session first.`);
   return { listing: cached, fromLive: false };
 }
 
@@ -188,7 +188,7 @@ export function joinToFdep(item: ListingPark, fdep: FdepPark[]): FdepPark | null
 async function main(): Promise<void> {
   const { listing } = await loadListing();
   const fdepFile = readJson<FdepFile>(FDEP_PATH);
-  if (!fdepFile) throw new Error(`Missing ${FDEP_PATH} — run scripts/fetch-fdep-parks.ts first.`);
+  if (!fdepFile) throw new Error(`Missing ${FDEP_PATH}: run scripts/fetch-fdep-parks.ts first.`);
   const previous = readJson<{ parks: ParkSeed[] }>(OUT_PATH);
   const prevBySlug = new Map((previous?.parks ?? []).map((p) => [p.slug, p]));
   const nws = readJson<NwsSidecar>(NWS_SIDECAR)?.parks ?? {};
@@ -221,7 +221,7 @@ async function main(): Promise<void> {
     const officialUrl = item.href.startsWith("http") ? item.href : `${SITE}${item.href}`;
     const notes: string[] = ["Coordinates are the park centroid, not the swim area."];
     if (item.address) notes.push(`Address: ${item.address.replace(/\s+FL\s+(\d{5})$/, ", FL $1")}.`);
-    if (isBoatOnly(item.summary, item.address)) notes.push("Reachable only by boat or ferry — check the official page for access.");
+    if (isBoatOnly(item.summary, item.address)) notes.push("Reachable only by boat or ferry. Check the official page for access.");
     if (slug === "william-j-billy-joe-rish-recreation-area") notes.push("This park serves visitors with disabilities and their families; check the official page before visiting.");
 
     const prev = prevBySlug.get(slug);

@@ -1,5 +1,5 @@
 /**
- * LakeLens `refresh-conditions` Edge Function — the single scheduled ingestion path.
+ * LakeLens `refresh-conditions` Edge Function: the single scheduled ingestion path.
  *
  * pg_cron (supabase/migrations/*_edge_cron.sql) POSTs here on a schedule; the app's
  * /api/refresh proxies here for on-demand refresh when a park page finds stale data.
@@ -12,8 +12,9 @@
  *   algae     FDEP algal-bloom samples -> park_alerts notices
  *   holidays  Nager.Date public holidays + long weekends
  *   prune     drop conditions_snapshots older than 7 days
- *   parking   OpenStreetMap (Overpass) parking lots for every park — weekly
- *   stations  backfill missing USGS gauge / NOAA station / NWS grid assignments — weekly
+ *   parking   OpenStreetMap (Overpass) parking lots for every park: weekly
+ *   stations  backfill missing USGS gauge / NOAA station / NWS grid assignments: weekly
+ *   forecast  park_forecast: NWS weather + gridpoint extras + EPA UV, one row per park: hourly
  *
  * The fetch/normalise logic lives in ../_shared/*, which the Next.js app and vitest
  * import too, so there is exactly one implementation of each parser.
@@ -25,6 +26,8 @@ import { buildNoaaPayloadForPark, fetchNoaaLatest } from "../_shared/noaa.ts";
 import { fetchAlertsFL, fetchNwsWeather, matchAlertsToPark, type NwsAlertFeature } from "../_shared/nws.ts";
 import { fetchLongWeekends, fetchNagerHolidays } from "../_shared/holidays.ts";
 import { fetchParkingElements, groupParkingByPark } from "../_shared/overpass.ts";
+import { assembleForecast, type ForecastPark } from "../_shared/forecast.ts";
+import { WATER_QUALITY_MATCH_KM, nearestSample, waterQualityFor } from "../_shared/algae.ts";
 import { assignGauges, assignNwsGrid, fetchNoaaStationCandidates, nearestStation } from "../_shared/stations.ts";
 import { nwsAlertHash } from "../_shared/hash.ts";
 import type { CronJob, NwsGrid, ParkAlertInsert, ParkLike } from "../_shared/types.ts";
@@ -39,7 +42,7 @@ import {
   matchAlgaeToParks,
 } from "../_shared/algae.ts";
 
-export const CRON_JOBS: readonly CronJob[] = ["usgs", "noaa", "weather", "alerts", "holidays", "prune", "algae", "parking", "stations"];
+export const CRON_JOBS: readonly CronJob[] = ["usgs", "noaa", "weather", "alerts", "holidays", "prune", "algae", "parking", "stations", "forecast"];
 
 /**
  * Per-job wall-clock budget. The cheap per-park jobs stay well inside the 60 s route
@@ -57,6 +60,7 @@ export const JOB_TIME_BUDGET_MS: Record<CronJob, number> = {
   algae: 20_000,
   parking: 110_000,
   stations: 110_000,
+  forecast: 110_000,
 };
 
 export function isCronJob(value: string): value is CronJob {
@@ -85,7 +89,7 @@ export interface RunJobResult {
   ok: boolean;
   counts: Record<string, number>;
   errors: string[];
-  /** informational messages (e.g. "USGS legacy fallback used") — not failures */
+  /** informational messages (e.g. "USGS legacy fallback used"): not failures */
   notes?: string[];
 }
 
@@ -142,6 +146,9 @@ export async function runJob(job: CronJob, opts: RunJobOptions = {}): Promise<Ru
       case "stations":
         await runStations(ctx);
         break;
+      case "forecast":
+        await runForecast(ctx);
+        break;
       default:
         return { ok: false, counts: {}, errors: [`unknown job: ${String(job)}`] };
     }
@@ -194,8 +201,8 @@ type NoaaParkRow = { id: string; slug: string; name: string; noaa_station_id: st
 /**
  * Coastal parks have no USGS river gauge, so their water temperature and tide come from the
  * NOAA CO-OPS station picked by scripts/fetch-noaa-stations.ts. Distinct stations are visited
- * once each (a station is shared by several parks) and every targeted park gets a snapshot row —
- * including one with `readings: []` when the station answered nothing, so the UI can say
+ * once each (a station is shared by several parks) and every targeted park gets a snapshot
+ * row, including one with `readings: []` when the station answered nothing, so the UI can say
  * "No live reading" instead of silently showing stale data.
  */
 async function runNoaa(ctx: Ctx): Promise<void> {
@@ -353,9 +360,9 @@ function alertEnd(p: NwsAlertFeature["properties"]): string | null {
 }
 
 function alertText(p: NwsAlertFeature["properties"]): string {
-  const headline = (p.headline ?? `${p.event}${p.areaDesc ? ` — ${p.areaDesc}` : ""}`).trim();
+  const headline = (p.headline ?? `${p.event}${p.areaDesc ? `: ${p.areaDesc}` : ""}`).trim();
   const desc = (p.description ?? "").replace(/\s+/g, " ").trim().slice(0, 300);
-  return desc ? `${headline} — ${desc}` : headline;
+  return desc ? `${headline}. ${desc}` : headline;
 }
 
 async function runAlerts(ctx: Ctx): Promise<void> {
@@ -451,6 +458,10 @@ async function runAlgae(ctx: Ctx): Promise<void> {
   if (error) throw new Error(`load parks: ${error.message}`);
   ctx.counts.parks = parks?.length ?? 0;
 
+  // The conditions grid wants a reading for every park, not just the ones close enough to
+  // warrant an alert, so the water-quality write uses its own wider radius.
+  await writeWaterQuality(ctx, samples, (parks ?? []) as { id: string; lat: number; lng: number }[]);
+
   const nowIso = ctx.now.toISOString();
   const rows = new Map<string, ParkAlertInsert>();
   for (const m of matchAlgaeToParks(samples, parks ?? [], ctx.now)) {
@@ -495,6 +506,94 @@ async function runAlgae(ctx: Ctx): Promise<void> {
 
 // ---------- prune ----------
 
+/**
+ * Water quality for every park, from the nearest recent FDEP/FWC sample.
+ *
+ * Parks with no sample in range are set back to null rather than left holding a stale
+ * reading: "we don't know" is the honest answer once the sample ages out, and the tile
+ * hides itself rather than printing a caveat.
+ */
+async function writeWaterQuality(
+  ctx: Ctx,
+  samples: Parameters<typeof nearestSample>[0],
+  parks: { id: string; lat: number; lng: number }[],
+): Promise<void> {
+  let matched = 0;
+  for (const park of parks) {
+    const quality = waterQualityFor(nearestSample(samples, park, WATER_QUALITY_MATCH_KM));
+    if (quality) matched += 1;
+    const { error } = await ctx.db
+      .from("park_forecast")
+      .update({ water_quality: quality as unknown as Json })
+      .eq("park_id", park.id);
+    if (error) {
+      ctx.errors.push(`water_quality ${park.id}: ${error.message}`);
+      return;
+    }
+  }
+  ctx.counts.water_quality = matched;
+}
+
+// ---------- forecast (NWS weather + gridpoint + EPA UV) ----------
+
+/** Parks per concurrent wave. Small waves keep the worker well inside its resource limit. */
+export const FORECAST_BATCH = 5;
+
+/**
+ * Build one park_forecast row per park and upsert them in a single statement.
+ *
+ * Three upstreams per park (NWS forecast, NWS gridpoint, EPA UV), so the work is done in
+ * waves of FORECAST_BATCH with Promise.allSettled rather than all at once: a statewide
+ * fan-out is what trips WORKER_RESOURCE_LIMIT. One park failing costs that park's row and
+ * nothing else.
+ */
+async function runForecast(ctx: Ctx): Promise<void> {
+  let q = ctx.db.from("parks").select("id,slug,name,lat,lng,coverage_tier,nws_grid,nws_zone,nws_county");
+  if (ctx.opts.parkId) q = q.eq("id", ctx.opts.parkId);
+  const { data, error } = await q;
+  if (error) throw new Error(`load parks: ${error.message}`);
+  const parks = (data ?? []) as unknown as ForecastPark[];
+  ctx.counts.parks = parks.length;
+  if (parks.length === 0) return;
+
+  const rows: Record<string, unknown>[] = [];
+  let withUv = 0;
+
+  for (let i = 0; i < parks.length; i += FORECAST_BATCH) {
+    if (overBudget(ctx)) {
+      ctx.notes.push(`time budget reached after ${i} of ${parks.length} parks`);
+      break;
+    }
+    const wave = parks.slice(i, i + FORECAST_BATCH);
+    // Every park gets the hourly series, regardless of coverage tier: the UV curve and the
+    // feels-like line are the same product on every page, and a park missing them would be
+    // visibly second class.
+    const settled = await Promise.allSettled(wave.map((park) => assembleForecast(park, { now: ctx.now })));
+    settled.forEach((r, j) => {
+      if (r.status === "fulfilled") {
+        if (r.value.now_uv != null) withUv += 1;
+        // water_quality is owned by the algae job, so it is left out of this upsert.
+        const row = { ...r.value } as Partial<typeof r.value>;
+        delete row.water_quality;
+        rows.push(row as unknown as Record<string, unknown>);
+      } else {
+        ctx.errors.push(`forecast ${wave[j]?.slug}: ${msg(r.reason)}`);
+      }
+    });
+  }
+
+  ctx.counts.built = rows.length;
+  ctx.counts.uv = withUv;
+  ctx.counts.failed = ctx.errors.length;
+  if (rows.length === 0) return;
+
+  const { error: upErr, count } = await ctx.db
+    .from("park_forecast")
+    .upsert(rows, { onConflict: "park_id", count: "exact" });
+  if (upErr) throw new Error(`upsert park_forecast: ${upErr.message}`);
+  ctx.counts.upserted = count ?? rows.length;
+}
+
 // ---------- parking (OpenStreetMap via Overpass) ----------
 
 /** Parks covered per parking run. A full sweep does not fit in one invocation. */
@@ -507,7 +606,7 @@ export const PARKING_PARKS_PER_RUN = 24;
  * a daily run covers PARKING_PARKS_PER_RUN parks and stamps parks.osm_checked_at, and
  * the whole state cycles every few days.
  *
- * Because the batch is known, the prune is exact — OSM lots belonging to these parks
+ * Because the batch is known, the prune is exact: OSM lots belonging to these parks
  * that Overpass no longer returns are gone, and no other park's lots are touched.
  */
 async function runParking(ctx: Ctx): Promise<void> {
@@ -539,7 +638,7 @@ async function runParking(ctx: Ctx): Promise<void> {
     ctx.counts.upserted = count ?? rows.length;
   }
 
-  // Drop OSM lots for these parks that Overpass no longer returns — but never on a
+  // Drop OSM lots for these parks that Overpass no longer returns: but never on a
   // partial sweep, where a missing lot only means a chunk failed.
   if (!response.partial) {
     const keep = rows.map((r) => r.osm_ref);
@@ -593,7 +692,7 @@ async function runStations(ctx: Ctx): Promise<void> {
   }[];
   ctx.counts.parks = list.length;
 
-  // 1. NWS grid — one /points call per park that has none.
+  // 1. NWS grid: one /points call per park that has none.
   for (const park of list.filter((p) => !p.nws_grid)) {
     if (overBudget(ctx)) {
       ctx.notes.push("time budget reached during nws grid backfill");
@@ -609,7 +708,7 @@ async function runStations(ctx: Ctx): Promise<void> {
     }
   }
 
-  // 2. NOAA tide/water-temp station — coastal parks with no USGS gauge and no station yet.
+  // 2. NOAA tide/water-temp station: coastal parks with no USGS gauge and no station yet.
   const needStation = list.filter((p) => !p.noaa_station_id && !p.usgs_site_id && !p.river_gauge_site_id);
   if (needStation.length > 0 && !overBudget(ctx)) {
     try {
@@ -633,7 +732,7 @@ async function runStations(ctx: Ctx): Promise<void> {
     }
   }
 
-  // 3. USGS gauges — inland parks with nothing assigned.
+  // 3. USGS gauges: inland parks with nothing assigned.
   for (const park of list.filter((p) => !p.usgs_site_id && !p.river_gauge_site_id && !p.noaa_station_id)) {
     if (overBudget(ctx)) {
       ctx.notes.push("time budget reached during usgs gauge backfill");

@@ -32,7 +32,7 @@ export const USGS_BATCH_SIZE = 40;
  * Typical discharge baselines (ft3/s) per gauge, used ONLY for the coarse `flowFlag`.
  * These are rough long-term "normal" values from USGS period-of-record statistics and the
  * live readings observed on 2026-09-19 (research digest), rounded generously. They are NOT
- * flood stages. A discharge above HIGH_FLOW_MULTIPLIER x baseline is labelled "high" — the
+ * flood stages. A discharge above HIGH_FLOW_MULTIPLIER x baseline is labelled "high": the
  * UI shows this as an estimate with the gauge name and distance.
  *
  *   02322700  Ichetucknee R @ Hwy 27 nr Hildreth   ~250 cfs  (218 cfs observed)
@@ -210,7 +210,7 @@ export function dedupeNewest(readings: UsgsReading[]): UsgsReading[] {
   return [...best.values()].sort((a, b) => a.site.localeCompare(b.site) || a.parameter.localeCompare(b.parameter));
 }
 
-/** Drop readings we never want to show (e.g. 00065 for 02322500 — arbitrary datum; 63160 is used instead). */
+/** Drop readings we never want to show (e.g. 00065 for 02322500: arbitrary datum; 63160 is used instead). */
 export function applySiteQuirks(readings: UsgsReading[]): UsgsReading[] {
   return readings.filter((r) => !(IGNORED_PARAMETERS_BY_SITE[r.site] ?? []).includes(r.parameter));
 }
