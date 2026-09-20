@@ -106,7 +106,7 @@ export default async function ParkPage({ params }: Params) {
 
             <PredictionCard prediction={bundle.prediction} />
 
-            {alerts.length > 0 && <AlertsCard alerts={bundle.alerts} now={now} />}
+            {alerts.length > 0 && <AlertsCard alerts={bundle.alerts} now={now} timeZone={bundle.park.time_zone} />}
 
             {showBackups && (
               <Suspense fallback={null}>
@@ -140,7 +140,7 @@ export default async function ParkPage({ params }: Params) {
 
             <p className="rounded-xl bg-mist/50 p-3 text-xs text-cocoa">
               <strong>Informational only.</strong> Conditions change quickly and estimates can be wrong. Follow posted rules and
-              park staff. LakeLens is not affiliated with Florida State Parks or any park operator.
+              park staff. LakeLens is not affiliated with any park operator.
             </p>
           </div>
 

@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import type { Park, ParkAlert, WeatherPayload } from "./types";
 import { getDayContext } from "./holidays";
 import { predictClosure, QUIET_WEEKDAY_REASON } from "./prediction";
+import { swimSeasonReason } from "./seasonal";
 
 function makePark(overrides: Partial<Park> = {}): Park {
   return {
@@ -210,5 +211,37 @@ describe("predictClosure", () => {
     const dayContext = getDayContext(now, LABOR_DAY, [], []);
     const p = predictClosure({ park: makePark({ typical_closure_time: "10:30:00" }), dayContext, weather: makeWeather(94, 10), alerts: [] }, now);
     expect(p.predictedTime).toBe("2026-09-05T12:50:00.000Z");
+  });
+});
+
+describe("park time zone", () => {
+  // 04:30 UTC on Sep 7 is already Labor Day Monday in Eastern, but still Sunday evening
+  // in Central, so the two zones disagree about both the date and the weekend flag.
+  const now = new Date("2026-09-07T04:30:00Z");
+
+  it("a Central park is evaluated in Central time, not Eastern", () => {
+    const eastern = getDayContext(now, LABOR_DAY, [], [], "America/New_York");
+    expect(eastern.date).toBe("2026-09-07");
+    expect(eastern.isHoliday).toBe(true);
+    expect(eastern.isWeekend).toBe(false);
+
+    const central = getDayContext(now, LABOR_DAY, [], [], "America/Chicago");
+    expect(central.date).toBe("2026-09-06");
+    expect(central.isHoliday).toBe(false);
+    expect(central.isWeekend).toBe(true);
+
+    const park = makePark({ time_zone: "America/Chicago", typical_closure_time: "10:30" });
+    const p = predictClosure({ park, dayContext: central, weather: null, alerts: [] }, now, "America/Chicago");
+    // Sunday plus the Labor Day weekend scores 5, so the 10:30 AM CDT busy time moves
+    // 75 min earlier to 9:15 AM CDT, which is 14:15 UTC and not 13:15 as Eastern would give.
+    expect(p.predictedTimeLabel).toBe("around 9:15 AM");
+    expect(p.predictedTime).toBe("2026-09-06T14:15:00.000Z");
+  });
+
+  it("swimSeasonReason follows the park's zone across a date boundary", () => {
+    const season = { open: "04-01", close: "11-14" };
+    const instant = new Date("2026-11-15T05:30:00Z"); // Nov 15, 12:30 AM EST but still Nov 14 in Central
+    expect(swimSeasonReason(season, instant, "America/New_York")).not.toBeNull();
+    expect(swimSeasonReason(season, instant, "America/Chicago")).toBeNull();
   });
 });

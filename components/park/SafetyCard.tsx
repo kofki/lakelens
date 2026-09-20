@@ -29,7 +29,7 @@ interface Warning {
 const GENERAL_RULES = [
   {
     title: "Assume there is no lifeguard",
-    body: "Most Florida springs and lakes are unguarded. Swim with a buddy and keep children within arm's reach.",
+    body: "Most freshwater swim areas are unguarded. Swim with a buddy and keep children within arm's reach.",
   },
   {
     title: "Spring water is about 72 °F all year",
@@ -41,11 +41,11 @@ const GENERAL_RULES = [
   },
   {
     title: "Leave the water at the first thunder",
-    body: "Florida afternoon storms build fast. Wait 30 minutes after the last thunder before going back in.",
+    body: "Storms build faster than they look. Wait 30 minutes after the last thunder before going back in.",
   },
   {
     title: "Wildlife lives here",
-    body: "Alligators and snakes are part of every Florida waterway. Keep pets and small children away from the bank at dusk.",
+    body: "Snakes, snapping turtles and, in the south, alligators share these banks. Keep pets and small children away from the water's edge at dusk.",
   },
   {
     title: "Alcohol and swimming do not mix",

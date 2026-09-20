@@ -14,7 +14,7 @@ import {
   groupParkingByPark,
   type OverpassElement,
 } from "../supabase/functions/_shared/overpass";
-import { NOAA_BEACH_MAX_KM, NOAA_MAX_KM, nearestStation, parseStations } from "../supabase/functions/_shared/stations";
+import { NOAA_MAX_KM, nearestStation, parseStations } from "../supabase/functions/_shared/stations";
 import { WATER_QUALITY_MATCH_KM, nearestSample, waterQualityFor } from "../supabase/functions/_shared/algae";
 import { toCalendarEvents } from "@/lib/queries";
 
@@ -130,30 +130,32 @@ describe("overpass parking", () => {
 describe("station assignment", () => {
   const stations = { stations: [
     { id: "8720218", name: "Mayport", lat: 30.3982, lng: -81.4279, state: "FL" },
-    { id: "9999999", name: "Far away", lat: 42.0, lng: -71.0, state: "MA" },
+    { id: "9099064", name: "Duluth", lat: 46.7758, lng: -92.0922, state: "MN" },
     { id: "bad", name: "No coords", state: "FL" },
   ] };
 
-  it("keeps regional stations with coordinates and drops the rest", () => {
+  it("keeps every station with coordinates, whatever state it sits in", () => {
     const parsed = parseStations(stations);
-    expect(parsed.map((s) => s.id)).toEqual(["8720218"]);
+    expect(parsed.map((s) => s.id)).toEqual(["8720218", "9099064"]);
   });
 
-  it("picks the nearest station inside the park type's limit", () => {
+  it("picks the nearest station inside the distance limit", () => {
     const parsed = parseStations(stations);
-    const near = nearestStation({ lat: 30.4, lng: -81.43, type: "beach" }, parsed);
+    const near = nearestStation({ lat: 30.4, lng: -81.43 }, parsed);
     expect(near?.station.id).toBe("8720218");
     expect(near?.km).toBeLessThan(2);
   });
 
-  it("refuses a station that is too far away rather than inventing coverage", () => {
+  it("matches a Great Lakes park to its Great Lakes station", () => {
     const parsed = parseStations(stations);
-    // Inland spring, hundreds of km from the only station.
-    expect(nearestStation({ lat: 29.98, lng: -82.76, type: "spring" }, parsed)).toBeNull();
+    expect(nearestStation({ lat: 46.78, lng: -92.08 }, parsed)?.station.id).toBe("9099064");
   });
 
-  it("beaches tolerate a more distant station than inland parks", () => {
-    expect(NOAA_BEACH_MAX_KM).toBeGreaterThan(NOAA_MAX_KM);
+  it("refuses a station that is too far away rather than inventing coverage", () => {
+    const parsed = parseStations(stations);
+    // Inland spring, hundreds of km from the nearest station.
+    expect(nearestStation({ lat: 29.98, lng: -82.76 }, parsed)).toBeNull();
+    expect(NOAA_MAX_KM).toBeGreaterThan(0);
   });
 });
 

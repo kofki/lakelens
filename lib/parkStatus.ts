@@ -82,7 +82,7 @@ export function getParkStatus(input: ParkStatusInput): ParkStatus {
   }
 
   // 2. Seasonal closure
-  const seasonal = swimSeasonReason(park.swim_season, now);
+  const seasonal = swimSeasonReason(park.swim_season, now, park.time_zone || undefined);
   if (seasonal) {
     return {
       level: "closed",

@@ -1,7 +1,7 @@
 "use client";
 
 import "maplibre-gl/dist/maplibre-gl.css";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   AttributionControl,
   Map as MapGL,
@@ -15,7 +15,16 @@ import {
 } from "@vis.gl/react-maplibre";
 import type { ParkWithStatus } from "@/lib/types";
 import type { LatLng } from "@/lib/distance";
-import { FALLBACK_MAP_STYLE_URL, FLORIDA_BOUNDS, LABEL_ZOOM, MAP_ARIA_LABEL, MAP_STYLE_URL, applyBrandPaint } from "./mapStyle";
+import {
+  CONTINENTAL_US_BOUNDS,
+  CONTINENTAL_US_CENTER,
+  FALLBACK_MAP_STYLE_URL,
+  LABEL_ZOOM,
+  MAP_ARIA_LABEL,
+  MAP_STYLE_URL,
+  applyBrandPaint,
+  boundsForPoints,
+} from "./mapStyle";
 import { useWebGL2 } from "./useWebGL2";
 import { MapSkeleton } from "./MapSkeleton";
 import { MapUnavailable } from "./MapUnavailable";
@@ -30,7 +39,7 @@ export interface ParkMapProps {
   bottomInsetPx: number;
   /** Height of the floating header, in px. Controls and padding move below it. */
   topInsetPx?: number;
-  /** [[west, south], [east, north]]; defaults to Florida. */
+  /** [[west, south], [east, north]]; defaults to a box around the parks being rendered. */
   initialBounds?: [[number, number], [number, number]];
 }
 
@@ -75,8 +84,19 @@ function ParkMapInner({
   /** Swapped to the keyless Versatiles style if OpenFreeMap fails to load its style/tiles. */
   const [styleUrl, setStyleUrl] = useState(MAP_STYLE_URL);
   const sourceErrors = useRef(0);
-  /** true once the user pans/zooms; until then inset changes re-fit the whole state */
+  /** true once the user pans/zooms; until then inset changes re-fit the parks */
   const interactedRef = useRef(false);
+
+  // Fit whatever is on the map, so a park outside any one region is still on screen.
+  const parkBounds = useMemo(
+    () => boundsForPoints(parks.map((item) => item.park)) ?? CONTINENTAL_US_BOUNDS,
+    [parks],
+  );
+  const fitBounds = initialBounds ?? parkBounds;
+  const fitBoundsRef = useRef(fitBounds);
+  useEffect(() => {
+    fitBoundsRef.current = fitBounds;
+  }, [fitBounds]);
 
   // Keep the visible (unpadded) area above the sheet so fitBounds / easeTo respect it.
   useEffect(() => {
@@ -84,12 +104,12 @@ function ParkMapInner({
       const map = mapRef.current;
       if (map) {
         map.setPadding(safePadding(map, topInsetPx, bottomInsetPx));
-        if (!interactedRef.current) map.fitBounds(initialBounds ?? FLORIDA_BOUNDS, { padding: 12, duration: 0, maxZoom: 9 });
+        if (!interactedRef.current) map.fitBounds(fitBounds, { padding: 12, duration: 0, maxZoom: 9 });
       }
     } catch {
       // map not ready yet; onLoad applies the padding too
     }
-  }, [bottomInsetPx, topInsetPx, initialBounds]);
+  }, [bottomInsetPx, topInsetPx, fitBounds]);
 
   // Centre the selected park in the visible area.
   useEffect(() => {
@@ -123,9 +143,9 @@ function ParkMapInner({
         interactedRef.current = true;
       });
       try {
-        map.fitBounds(initialBounds ?? FLORIDA_BOUNDS, { padding: 12, duration: 0, maxZoom: 9 });
+        map.fitBounds(fitBoundsRef.current, { padding: 12, duration: 0, maxZoom: 9 });
       } catch {
-        map.jumpTo({ center: [-83.3, 28.4], zoom: 5.4 });
+        map.jumpTo({ center: [CONTINENTAL_US_CENTER.longitude, CONTINENTAL_US_CENTER.latitude], zoom: CONTINENTAL_US_CENTER.zoom });
       }
       setShowLabels(map.getZoom() >= LABEL_ZOOM);
     },
@@ -177,13 +197,9 @@ function ParkMapInner({
       <MapGL
         ref={mapRef}
         mapStyle={styleUrl}
-        initialViewState={{
-          longitude: -83.3,
-          latitude: 28.4,
-          zoom: 5.4,
-        }}
+        initialViewState={CONTINENTAL_US_CENTER}
         style={{ width: "100%", height: "100%" }}
-        minZoom={5}
+        minZoom={3}
         maxZoom={17}
         dragRotate={false}
         touchPitch={false}

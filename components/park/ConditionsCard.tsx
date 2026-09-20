@@ -114,7 +114,7 @@ export function ConditionsCard({ bundle, now }: ConditionsCardProps) {
       {(sources.length > 0 || asOf) && (
         <p className="text-xs text-mocha">
           {sources.join(" · ")}
-          {asOf && ` · as of ${formatLocalTime(asOf)}`}
+          {asOf && ` · as of ${formatLocalTime(asOf, bundle.park.time_zone || undefined)}`}
         </p>
       )}
 

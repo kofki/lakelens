@@ -146,6 +146,8 @@ const parkSeedShape = {
   slug,
   name: nonEmpty,
   type: z.enum(PARK_TYPES),
+  /** Two-letter USPS code. Optional so the Florida-era files stay valid; defaulted below. */
+  state: z.string().regex(/^[A-Z]{2}$/).nullable().optional(),
   operator: z.enum(OPERATORS),
   lat: z.number().min(-90).max(90),
   lng: z.number().min(-180).max(180),
@@ -325,6 +327,7 @@ export const DATA_FILES = {
   deep: "data/parks.deep.json",
   extra: "data/parks.extra.json",
   basic: "data/parks.basic.json",
+  osm: "data/parks.osm.json",
   accessibility: "data/accessibility.json",
   accessibilityExtra: "data/accessibility.extra.json",
   accessibilityBasic: "data/accessibility.basic.json",
@@ -452,6 +455,8 @@ export function loadSeedData(root: string = REPO_ROOT, opts: LoadOptions = {}): 
   const skipBasic = Boolean(opts.skipBasic);
   const extraRaw = optional(ParksLenientFileSchema, DATA_FILES.extra, skipExtra, "--skip-extra")?.parks ?? [];
   const basicRaw = optional(ParksLenientFileSchema, DATA_FILES.basic, skipBasic, "--skip-basic")?.parks ?? [];
+  // Lowest precedence: community data from OpenStreetMap, which a curated row always wins over.
+  const osmRaw = optional(ParksLenientFileSchema, DATA_FILES.osm, skipBasic, "--skip-basic")?.parks ?? [];
   const accessibilityExtra = optional(AccessibilityLenientFileSchema, DATA_FILES.accessibilityExtra, skipExtra, "--skip-extra") ?? {};
   const accessibilityBasic = optional(AccessibilityLenientFileSchema, DATA_FILES.accessibilityBasic, skipBasic, "--skip-basic") ?? {};
   const lotsExtra = optional(ParkingLotsFileSchema, DATA_FILES.lotsExtra, skipExtra, "--skip-extra")?.lots ?? [];
@@ -462,7 +467,7 @@ export function loadSeedData(root: string = REPO_ROOT, opts: LoadOptions = {}): 
   const photosBasic = optional(PhotosFileSchema, DATA_FILES.photosBasic, skipBasic, "--skip-basic")?.photos ?? {};
   const gauges = optional(GaugesFileSchema, DATA_FILES.gauges, false, "") ?? {};
 
-  // Merge parks: deep > extra > basic, deduped by slug.
+  // Merge parks: deep > extra > basic > osm, deduped by slug.
   const tierBySlug: Record<string, ParkTier> = {};
   const parks: ParkSeed[] = [];
   const deepParks: ParkSeed[] = [];
@@ -485,6 +490,8 @@ export function loadSeedData(root: string = REPO_ROOT, opts: LoadOptions = {}): 
   take(deepRaw, "deep", deepParks);
   take(extraRaw, "extra", extraParks);
   take(basicRaw, "basic", basicParks);
+  // OSM rows join the basic tier: same coverage, different provenance.
+  take(osmRaw, "basic", basicParks);
 
   // Merge accessibility / photos: lower tiers never override a higher tier's record.
   const accessibility: Record<string, AccessibilitySeed> = { ...accessibilityBasic, ...accessibilityExtra, ...accessibilityDeep };
@@ -623,6 +630,7 @@ const PARK_COLUMNS = [
   "slug",
   "name",
   "type",
+  "state",
   "operator",
   "lat",
   "lng",
@@ -655,6 +663,7 @@ function parkValues(p: ParkSeed): string {
     slug: sqlLiteral(p.slug),
     name: sqlLiteral(p.name),
     type: sqlLiteral(p.type),
+    state: sqlLiteral(p.state ?? null),
     operator: sqlLiteral(p.operator),
     lat: sqlLiteral(p.lat),
     lng: sqlLiteral(p.lng),

@@ -28,8 +28,6 @@ import type { NwsGrid, ParkLike } from "./types.ts";
 
 /** Inland parks never borrow a tide gauge; coastal parks accept one this far away. */
 export const NOAA_MAX_KM = 40;
-/** Beaches tolerate a more distant station: sea-surface temperature varies slowly along a coast. */
-export const NOAA_BEACH_MAX_KM = 75;
 
 export interface StationCandidate {
   id: string;
@@ -43,39 +41,40 @@ interface MdapiStation {
   name?: string;
   lat?: number | string;
   lng?: number | string;
-  state?: string;
 }
-
-const FL_REGION = new Set(["FL", "GA", "AL"]);
 
 function num(v: unknown): number | null {
   const n = typeof v === "number" ? v : Number.parseFloat(String(v ?? ""));
   return Number.isFinite(n) ? n : null;
 }
 
-/** NOAA's station metadata API, flattened and limited to the region we cover. */
+/**
+ * NOAA's station metadata API, flattened.
+ *
+ * No regional filter: CO-OPS covers the Great Lakes as well as the coasts, and nearestStation's
+ * NOAA_MAX_KM check is the real, and universal, filter. A station without usable coordinates
+ * cannot be distance-checked at all, so that is the only thing dropped here.
+ */
 export function parseStations(json: { stations?: MdapiStation[] }): StationCandidate[] {
   const out: StationCandidate[] = [];
   for (const s of json.stations ?? []) {
     const lat = num(s.lat);
     const lng = num(s.lng);
     if (!s.id || lat === null || lng === null) continue;
-    if (s.state && !FL_REGION.has(s.state.trim().toUpperCase())) continue;
     out.push({ id: String(s.id), name: s.name ?? String(s.id), lat, lng });
   }
   return out;
 }
 
-/** Nearest station to the park, or null when the closest is further than this park type allows. */
+/** Nearest station to the park, or null when the closest is further away than NOAA_MAX_KM. */
 export function nearestStation(
-  park: Pick<ParkLike, "lat" | "lng"> & { type?: string | null },
+  park: Pick<ParkLike, "lat" | "lng">,
   stations: ReadonlyArray<StationCandidate>,
 ): { station: StationCandidate; km: number } | null {
-  const limit = park.type === "beach" ? NOAA_BEACH_MAX_KM : NOAA_MAX_KM;
   let best: { station: StationCandidate; km: number } | null = null;
   for (const station of stations) {
     const km = haversineKm(park.lat, park.lng, station.lat, station.lng);
-    if (km <= limit && (!best || km < best.km)) best = { station, km };
+    if (km <= NOAA_MAX_KM && (!best || km < best.km)) best = { station, km };
   }
   return best;
 }

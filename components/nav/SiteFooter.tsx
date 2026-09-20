@@ -9,6 +9,7 @@ const EXPLORE: { href: "/" | "/list" | "/report" | "/about"; label: string }[] =
   { href: "/about", label: "About" },
 ];
 
+/** Where today's park data comes from. Add a source here as coverage reaches its state. */
 const CREDITS: { href: string; label: string }[] = [
   { href: "https://waterdata.usgs.gov/", label: "USGS Water Services" },
   { href: "https://www.weather.gov/documentation/services-web-api", label: "National Weather Service" },
@@ -75,8 +76,8 @@ export function SiteFooter({ className }: { className?: string }) {
 
       <div className="mx-auto mt-8 flex max-w-[1100px] flex-col gap-2 border-t border-white/10 pt-6 text-xs md:flex-row md:items-start md:justify-between md:gap-8">
         <p className="max-w-prose">
-          Informational only. Conditions change quickly. Follow posted rules and park staff. Not affiliated
-          with Florida State Parks.
+          Informational only. Conditions change quickly. Follow posted rules and park staff. Not affiliated with any
+          park operator.
         </p>
         <p className="shrink-0">&copy; 2026 LakeLens</p>
       </div>

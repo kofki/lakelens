@@ -10,6 +10,8 @@ import { Section } from "@/components/ui/Section";
 export interface AlertsCardProps {
   alerts: ParkAlert[];
   now: Date;
+  /** The park's IANA zone, so alert dates read in the park's own local time. */
+  timeZone?: string | null;
 }
 
 /** Label colour + the left accent bar on the card. Kind is always spelled out in text as well. */
@@ -36,7 +38,8 @@ function sourceLine(alert: ParkAlert, now: Date): { text: string; source: string
 }
 
 /** Official closures, notices and NWS weather alerts. Renders nothing when none are in force. */
-export function AlertsCard({ alerts, now }: AlertsCardProps) {
+export function AlertsCard({ alerts, now, timeZone }: AlertsCardProps) {
+  const tz = timeZone || undefined;
   const list = activeAlerts(alerts, now);
   if (list.length === 0) return null;
 
@@ -62,9 +65,9 @@ export function AlertsCard({ alerts, now }: AlertsCardProps) {
                 </div>
                 <p className="whitespace-pre-line text-sm text-cocoa">{a.text}</p>
                 <p className="text-xs text-mocha">
-                  {a.starts_at ? <>Since {formatLocalDate(a.starts_at)}</> : <>Start date not stated</>}
+                  {a.starts_at ? <>Since {formatLocalDate(a.starts_at, tz)}</> : <>Start date not stated</>}
                   {" · "}
-                  {a.ends_at ? <>Until {formatLocalDate(a.ends_at)}</> : <>No end date announced</>}
+                  {a.ends_at ? <>Until {formatLocalDate(a.ends_at, tz)}</> : <>No end date announced</>}
                 </p>
                 <LastUpdated at={src.at} source={src.text} stale={stale} prefix="Seen" />
                 {a.official_url && (

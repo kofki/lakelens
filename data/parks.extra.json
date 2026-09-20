@@ -52,7 +52,8 @@
         "https://nominatim.openstreetmap.org/search?q=Hart+Springs%2C+Gilchrist+County%2C+Florida&format=json",
         "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=02323500",
         "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=02323500&period=P1D"
-      ]
+      ],
+      "state": "FL"
     },
     {
       "slug": "lithia-springs-conservation-park",
@@ -109,7 +110,8 @@
         "https://nominatim.openstreetmap.org/search?q=Lithia+Springs%2C+Hillsborough+County%2C+Florida&format=json",
         "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=02301500",
         "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=02301500&period=P1D"
-      ]
+      ],
+      "state": "FL"
     },
     {
       "slug": "hunter-springs-park",
@@ -163,7 +165,8 @@
         "https://nominatim.openstreetmap.org/search?q=Hunter+Springs+Park%2C+Crystal+River%2C+Florida&format=json",
         "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=02310742",
         "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=02310742&period=P1D"
-      ]
+      ],
+      "state": "FL"
     },
     {
       "slug": "little-river-springs-park",
@@ -211,7 +214,8 @@
         "https://nominatim.openstreetmap.org/search?q=Little+River+Spring%2C+Suwannee+County%2C+Florida&format=json",
         "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=02320500",
         "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=02320500&period=P1D"
-      ]
+      ],
+      "state": "FL"
     },
     {
       "slug": "royal-springs-park",
@@ -260,7 +264,8 @@
         "https://nominatim.openstreetmap.org/search?q=Royal+Spring%2C+Suwannee+County%2C+Florida&format=json",
         "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=02320000",
         "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=02320000&period=P1D"
-      ]
+      ],
+      "state": "FL"
     },
     {
       "slug": "suwannee-springs-park",
@@ -310,7 +315,8 @@
         "https://nominatim.openstreetmap.org/search?q=Suwannee+Springs%2C+Suwannee+County%2C+Florida&format=json",
         "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=02315550",
         "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=02315550&period=P1D"
-      ]
+      ],
+      "state": "FL"
     },
     {
       "slug": "otter-springs-park",
@@ -360,7 +366,8 @@
         "https://nominatim.openstreetmap.org/search?q=Otter+Springs%2C+Gilchrist+County%2C+Florida&format=json",
         "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=02323500",
         "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=02323500&period=P1D"
-      ]
+      ],
+      "state": "FL"
     },
     {
       "slug": "morrison-springs-park",
@@ -411,7 +418,8 @@
         "https://nominatim.openstreetmap.org/search?q=Morrison+Spring%2C+Walton+County%2C+Florida&format=json",
         "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=02365500",
         "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=02365500&period=P1D"
-      ]
+      ],
+      "state": "FL"
     },
     {
       "slug": "vortex-spring",
@@ -460,7 +468,8 @@
         "https://vortexspring.com/diving/",
         "https://en.wikipedia.org/wiki/Vortex_Spring",
         "https://nominatim.openstreetmap.org/search?q=Vortex+Spring%2C+Holmes+County%2C+Florida&format=json"
-      ]
+      ],
+      "state": "FL"
     },
     {
       "slug": "williford-spring",
@@ -508,7 +517,8 @@
         "https://visitfloridasprings.org/places/williford-spring/",
         "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=02359500",
         "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=02359500&period=P1D"
-      ]
+      ],
+      "state": "FL"
     },
     {
       "slug": "pitt-spring-recreation-area",
@@ -557,7 +567,8 @@
         "https://nominatim.openstreetmap.org/search?q=Pitt+Spring%2C+Bay+County%2C+Florida&format=json",
         "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=02359500",
         "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=02359500&period=P1D"
-      ]
+      ],
+      "state": "FL"
     },
     {
       "slug": "cypress-spring",
@@ -605,7 +616,8 @@
         "https://nominatim.openstreetmap.org/search?q=Cypress+Spring%2C+Washington+County%2C+Florida&format=json",
         "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=02366000",
         "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=02366000&period=P1D"
-      ]
+      ],
+      "state": "FL"
     }
   ]
 }

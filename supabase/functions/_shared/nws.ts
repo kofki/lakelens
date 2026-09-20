@@ -3,7 +3,7 @@
  *
  * - /points/{lat},{lng}  (4 decimals max; >4 dp => 301) -> grid + forecast URLs + zone/county UGC codes
  * - gridpoints .../forecast and .../forecast/hourly -> WeatherPayload (provider "nws")
- * - /alerts/active?area=FL  (ONE statewide call) -> matched to parks by UGC county/zone codes
+ * - /alerts/active?area=FL,MN  (ONE call for every state we cover) -> matched to parks by UGC county/zone codes
  *
  * Headers: User-Agent (required; 403 without) from NWS_USER_AGENT, Accept: application/geo+json.
  * 2 retries on 5xx / network errors. Runtime-neutral: injectable fetchImpl for tests.
@@ -189,14 +189,42 @@ export async function fetchHourly(grid: NwsGrid, opts: NwsFetchOptions = {}): Pr
   return nwsFetchJson<NwsForecastResponse>(url, opts);
 }
 
-/** One statewide call. Returns the raw features; match per park with matchAlertsToPark. */
-export async function fetchAlertsFL(opts: NwsFetchOptions = {}): Promise<NwsAlertFeature[]> {
-  const json = await nwsFetchJson<NwsAlertsResponse>(`${NWS_BASE}/alerts/active?area=FL`, opts);
+/**
+ * Distinct, upper-cased two-letter codes, in the order first seen.
+ *
+ * Anything else is dropped rather than passed through: NWS answers a malformed `area` with a
+ * 400 for the whole request, which would take out the alert sweep for every valid state too.
+ */
+export function normalizeAlertAreas(states: Iterable<string | null | undefined>): string[] {
+  const out: string[] = [];
+  for (const raw of states) {
+    const code = (raw ?? "").trim().toUpperCase();
+    if (!/^[A-Z]{2}$/.test(code) || out.includes(code)) continue;
+    out.push(code);
+  }
+  return out;
+}
+
+export function alertsUrl(states: Iterable<string | null | undefined>): string | null {
+  const areas = normalizeAlertAreas(states);
+  // No area at all would ask for every active alert in the country, so ask for nothing instead.
+  return areas.length === 0 ? null : `${NWS_BASE}/alerts/active?area=${areas.join(",")}`;
+}
+
+/**
+ * One call covering every state passed. Returns the raw features; match per park with
+ * matchAlertsToPark. An empty or entirely malformed state list yields no features and no
+ * request: the caller has told us it covers nowhere.
+ */
+export async function fetchAlerts(states: Iterable<string | null | undefined>, opts: NwsFetchOptions = {}): Promise<NwsAlertFeature[]> {
+  const url = alertsUrl(states);
+  if (!url) return [];
+  const json = await nwsFetchJson<NwsAlertsResponse>(url, opts);
   return json.features ?? [];
 }
 
 /**
- * Match statewide alert features to one park by UGC codes: the park's county (FLCxxx) and
+ * Match the sweep's alert features to one park by UGC codes: the park's county (FLCxxx) and
  * forecast zone (FLZxxx). Cancel messages and non-Actual statuses are excluded.
  */
 export function matchAlertsToPark(features: NwsAlertFeature[], park: Pick<ParkLike, "nws_zone" | "nws_county">): NwsAlertFeature[] {

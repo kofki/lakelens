@@ -32,7 +32,7 @@ export function ParkJsonLd({ park, status, origin }: ParkJsonLdProps) {
       description: park.description ?? `Status, parking, accessibility and safety information for ${park.name}.`,
       ...(park.photo_url ? { image: absolute(origin, park.photo_url) } : {}),
       geo: { "@type": "GeoCoordinates", latitude: park.lat, longitude: park.lng },
-      address: { "@type": "PostalAddress", addressRegion: "FL", addressCountry: "US" },
+      address: { "@type": "PostalAddress", ...(park.state ? { addressRegion: park.state } : {}), addressCountry: "US" },
       ...(park.official_url ? { sameAs: [park.official_url] } : {}),
       ...(park.hours ? { openingHours: park.hours } : {}),
       isAccessibleForFree: park.fees === null,

@@ -11,6 +11,7 @@ function makePark(overrides: Partial<Park> = {}): Park {
     slug: "ginnie-springs",
     name: "Ginnie Springs",
     type: "spring",
+    state: "FL",
     operator: "private",
     lat: 29.83608,
     lng: -82.70015,
@@ -70,6 +71,14 @@ describe("plain language", () => {
     expect(describeWaterTemp(usgs(), makePark())).toEqual({ valueF: 72, sentence: "Water is 72°F, cool year-round spring water", typical: false });
     const fallback = describeWaterTemp(usgs({ readings: [] }), makePark());
     expect(fallback).toEqual({ valueF: 72, sentence: "Typically about 72°F year-round (no live reading)", typical: true });
+
+    // 72°F is a fact about FLORIDA springs, not about springs. A spring elsewhere runs at
+    // its own local mean annual air temperature, so the tile shows nothing rather than a
+    // number someone could take a cold-shock risk from.
+    const northern = describeWaterTemp(usgs({ readings: [] }), makePark({ state: "MN" }));
+    expect(northern).toEqual({ valueF: null, sentence: "Water temperature not available", typical: false });
+    const unknownState = describeWaterTemp(usgs({ readings: [] }), makePark({ state: null }));
+    expect(unknownState.valueF).toBeNull();
     const lake = describeWaterTemp(null, makePark({ type: "lake" }));
     expect(lake.valueF).toBeNull();
     expect(lake.typical).toBe(false);

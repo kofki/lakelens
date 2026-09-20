@@ -2,7 +2,7 @@
  * Ingest normalizer tests against live fixtures captured 2026-09-19 (tests/fixtures/*).
  * No network: fetchers are exercised with an injected fetchImpl.
  */
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import {
   applySiteQuirks,
   buildUsgsPayloadForPark,
@@ -17,7 +17,9 @@ import {
   type OgcFeatureCollection,
 } from "@/lib/ingest/usgs";
 import {
+  fetchAlerts,
   matchAlertsToPark,
+  normalizeAlertAreas,
   normalizeNws,
   nwsFetchJson,
   nwsHeaders,
@@ -361,6 +363,29 @@ describe("nws helpers", () => {
     }) as typeof fetch;
     await expect(nwsFetchJson("https://api.weather.gov/x", { fetchImpl: forbidden, retryDelaysMs: [0, 0] })).rejects.toThrow(/403/);
     expect(m).toBe(1);
+  });
+});
+
+describe("nws alert sweep area", () => {
+  it("asks for every state the dataset covers, once each, in order", async () => {
+    const seen: string[] = [];
+    const spy = (async (url: string) => {
+      seen.push(url);
+      return jsonResponse({ features: [] });
+    }) as unknown as typeof fetch;
+    await fetchAlerts(["FL", "mn", "FL", "TX"], { fetchImpl: spy });
+    expect(seen).toEqual(["https://api.weather.gov/alerts/active?area=FL,MN,TX"]);
+  });
+
+  it("drops malformed codes rather than sending them", () => {
+    expect(normalizeAlertAreas(["FL", "Florida", "", null, undefined, "F", "M N", "mn"])).toEqual(["FL", "MN"]);
+  });
+
+  it("covering nowhere fetches nothing rather than every alert in the country", async () => {
+    const spy = vi.fn();
+    expect(await fetchAlerts([], { fetchImpl: spy as unknown as typeof fetch })).toEqual([]);
+    expect(await fetchAlerts(["Florida"], { fetchImpl: spy as unknown as typeof fetch })).toEqual([]);
+    expect(spy).not.toHaveBeenCalled();
   });
 });
 

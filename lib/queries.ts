@@ -9,6 +9,7 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
 import type { Database } from "@/lib/database.types";
 import { createPublicClient } from "@/lib/supabase/server";
+import { DEFAULT_TZ } from "@/lib/freshness";
 import { getDayContext } from "@/lib/holidays";
 import { predictClosure } from "@/lib/prediction";
 import { summarizeReports } from "@/lib/reportStatus";
@@ -242,7 +243,7 @@ function assemble(park: Park, world: World, dayContext: DayContext, now: Date): 
   const confirmations = world.confirmations.filter((c) => reportIds.has(c.report_id));
 
   const reportSummary = summarizeReports(reports, confirmations, now);
-  const prediction = predictClosure({ park, dayContext, weather, alerts }, now);
+  const prediction = predictClosure({ park, dayContext, weather, alerts }, now, park.time_zone || undefined);
   const status = getParkStatus({ park, alerts, reportSummary, prediction, now });
 
   return {
@@ -309,12 +310,36 @@ function slimForList(item: ParkWithStatus): ParkWithStatus {
   const reviewStats = item.reviewStats
     ? { ...item.reviewStats, distribution: [0, 0, 0, 0, 0] as ReviewStats["distribution"] }
     : item.reviewStats;
-  return { ...item, weather, usgs, forecast, reviewStats };
+  return {
+    ...item,
+    weather,
+    usgs,
+    forecast,
+    reviewStats,
+    // The prediction object is only ever drawn on the park page, and at 616 parks its
+    // reasons array alone is a meaningful share of the document. The status it produced
+    // survives; the working out does not need to.
+    prediction: null,
+    // Only the first reason reaches a card (the map preview), so the rest are dropped.
+    status: item.status.reasons.length > 1 ? { ...item.status, reasons: item.status.reasons.slice(0, 1) } : item.status,
+    // Alerts are rendered on the park page only.
+    alerts: [],
+  };
 }
 
 function assembleAll(world: World, now: Date): ParkWithStatus[] {
-  const dayContext = getDayContext(now, world.holidays, world.longWeekends, world.events);
-  return world.parks.map((park) => assemble(park, world, dayContext, now));
+  // Two parks in the same zone share a day context, so build one per zone rather than
+  // one per park: nationwide that is a handful of contexts instead of eighty.
+  const byZone = new Map<string, DayContext>();
+  const contextFor = (tz: string): DayContext => {
+    let ctx = byZone.get(tz);
+    if (!ctx) {
+      ctx = getDayContext(now, world.holidays, world.longWeekends, world.events, tz);
+      byZone.set(tz, ctx);
+    }
+    return ctx;
+  };
+  return world.parks.map((park) => assemble(park, world, contextFor(park.time_zone || DEFAULT_TZ), now));
 }
 
 /** Every park with derived status: the map and list screens. */

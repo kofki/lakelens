@@ -17,7 +17,8 @@ export interface StatusHeaderProps {
 /** Data sources that fed this page, for the "Sourced from …" line. */
 function sourcesLine(bundle: ParkBundle): string {
   const parts: string[] = [];
-  const operator = bundle.park.operator === "state" ? "Florida State Parks" : bundle.park.operator === "county" ? "the county park office" : "the park operator";
+  const stateParks = bundle.park.state ? `${bundle.park.state} State Parks` : "the state park system";
+  const operator = bundle.park.operator === "state" ? stateParks : bundle.park.operator === "county" ? "the county park office" : "the park operator";
   parts.push(operator);
   if (bundle.usgs) parts.push("USGS");
   if (bundle.weather) parts.push("National Weather Service");
@@ -54,7 +55,7 @@ export function StatusHeader({ bundle, now }: StatusHeaderProps) {
 
       {status.predictedTime && status.level === "open" && (
         <p className="text-sm font-bold text-cocoa">
-          Usually busiest from {formatLocalTime(status.predictedTime)}. Arrive earlier if you can.
+          Usually busiest from {formatLocalTime(status.predictedTime, bundle.park.time_zone || undefined)}. Arrive earlier if you can.
         </p>
       )}
 

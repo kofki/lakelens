@@ -118,6 +118,8 @@ export interface Park {
   nws_zone: string | null;
   /** IANA zone from the NWS points response, e.g. "America/New_York". Null falls back to Eastern. */
   time_zone?: string | null;
+  /** Two-letter USPS code, e.g. "FL". Optional so fixtures predating the column still typecheck. */
+  state?: string | null;
   /** OSM amenity counts. An absent kind means unmapped, NOT absent on the ground. */
   amenities?: ParkAmenities | null;
   nws_county: string | null;

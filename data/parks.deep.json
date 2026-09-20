@@ -55,7 +55,8 @@
         "https://waterservices.usgs.gov/nwis/site/?format=rdb&stateCd=fl&siteType=SP&siteOutput=expanded&siteStatus=all",
         "https://api.waterdata.usgs.gov/ogcapi/v1/collections/latest-continuous/items?f=json&monitoring_location_id=USGS-02322700",
         "https://api.weather.gov/points/29.9839,-82.7619"
-      ]
+      ],
+      "state": "FL"
     },
     {
       "slug": "ginnie-springs",
@@ -113,7 +114,8 @@
         "https://ginniespringsoutdoors.com/plan-your-visit/facilities/",
         "https://waterservices.usgs.gov/nwis/site/?format=rdb&stateCd=fl&siteType=SP&siteOutput=expanded&siteStatus=all",
         "https://api.weather.gov/points/29.8361,-82.7002"
-      ]
+      ],
+      "state": "FL"
     },
     {
       "slug": "poe-springs-park",
@@ -166,7 +168,8 @@
         "https://www.wcjb.com/2026/08/16/water-management-officials-say-poe-springs-has-stopped-flowing/",
         "https://waterservices.usgs.gov/nwis/site/?format=rdb&stateCd=fl&siteType=SP&siteOutput=expanded&siteStatus=all",
         "https://api.weather.gov/points/29.8258,-82.6493"
-      ]
+      ],
+      "state": "FL"
     },
     {
       "slug": "gilchrist-blue-springs-state-park",
@@ -221,7 +224,8 @@
         "https://flrules.elaws.us/fac/62d-2.014",
         "https://waterservices.usgs.gov/nwis/site/?format=rdb&stateCd=fl&siteType=SP&siteOutput=expanded&siteStatus=all",
         "https://api.weather.gov/points/29.8297,-82.6829"
-      ]
+      ],
+      "state": "FL"
     },
     {
       "slug": "rainbow-springs-state-park",
@@ -278,7 +282,8 @@
         "https://www.floridastateparks.org/learn/day-use-entry-reservation-information",
         "https://waterservices.usgs.gov/nwis/site/?format=rdb&stateCd=fl&siteType=SP&siteOutput=expanded&siteStatus=all",
         "https://api.weather.gov/points/29.1025,-82.4375"
-      ]
+      ],
+      "state": "FL"
     },
     {
       "slug": "blue-spring-state-park",
@@ -338,7 +343,8 @@
         "https://deeparrival.com/news/blue-spring-state-park-day-use-reservations-july-2026/",
         "https://waterservices.usgs.gov/nwis/site/?format=rdb&stateCd=fl&siteType=SP&siteOutput=expanded&siteStatus=all",
         "https://api.weather.gov/points/28.9472,-81.3397"
-      ]
+      ],
+      "state": "FL"
     },
     {
       "slug": "wekiwa-springs-state-park",
@@ -396,7 +402,8 @@
         "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=02234600,02235000&siteOutput=expanded&siteStatus=all",
         "https://api.waterdata.usgs.gov/ogcapi/v1/collections/latest-continuous/items?f=json&monitoring_location_id=USGS-02234600,USGS-02235000",
         "https://api.weather.gov/points/28.7122,-81.4598"
-      ]
+      ],
+      "state": "FL"
     },
     {
       "slug": "madison-blue-spring-state-park",
@@ -450,7 +457,8 @@
         "https://waterservices.usgs.gov/nwis/site/?format=rdb&siteType=SP,ST&siteStatus=active&hasDataTypeCd=iv&bBox=-83.3944,30.3303,-83.0944,30.6303",
         "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=02319302,02319394&parameterCd=00060,00065,00010",
         "https://api.weather.gov/points/30.4805,-83.2443"
-      ]
+      ],
+      "state": "FL"
     },
     {
       "slug": "lafayette-blue-springs-state-park",
@@ -505,7 +513,8 @@
         "https://waterservices.usgs.gov/nwis/site/?format=rdb&siteType=SP,ST&siteStatus=active&hasDataTypeCd=iv&bBox=-83.3761,29.9758,-83.0761,30.2758",
         "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=02319950,02320000&parameterCd=00060,00065,00010",
         "https://api.weather.gov/points/30.1257,-83.2272"
-      ]
+      ],
+      "state": "FL"
     },
     {
       "slug": "troy-spring-state-park",
@@ -559,7 +568,8 @@
         "https://waterservices.usgs.gov/nwis/site/?format=rdb&siteType=SP,ST&siteStatus=active&hasDataTypeCd=iv&bBox=-83.1475,29.8558,-82.8475,30.1558",
         "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=02320250,02320500&parameterCd=00060,00065,00010",
         "https://api.weather.gov/points/30.0061,-82.9974"
-      ]
+      ],
+      "state": "FL"
     },
     {
       "slug": "fanning-springs-state-park",
@@ -614,7 +624,8 @@
         "https://waterservices.usgs.gov/nwis/site/?format=rdb&siteType=SP,ST&siteStatus=active&hasDataTypeCd=iv&bBox=-83.085,29.4375,-82.785,29.7375",
         "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=02323502,02323500&parameterCd=00060,00065,00010",
         "https://api.weather.gov/points/29.5891,-82.9332"
-      ]
+      ],
+      "state": "FL"
     },
     {
       "slug": "manatee-springs-state-park",
@@ -669,7 +680,8 @@
         "https://waterservices.usgs.gov/nwis/site/?format=rdb&siteType=SP,ST&siteStatus=active&hasDataTypeCd=iv&bBox=-83.1269,29.3394,-82.8269,29.6394",
         "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=02323566,02323500&parameterCd=00060,00065,00010",
         "https://api.weather.gov/points/29.4897,-82.9768"
-      ]
+      ],
+      "state": "FL"
     },
     {
       "slug": "de-leon-springs-state-park",
@@ -727,7 +739,8 @@
         "https://waterservices.usgs.gov/nwis/site/?format=rdb&siteType=SP&siteStatus=all&bBox=-81.45,29.05,-81.28,29.22 (02236110 Ponce de Leon Springs is inactive - no IV series)",
         "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=02236000&parameterCd=00060,00065,00010",
         "https://api.weather.gov/points/29.1341,-81.3628"
-      ]
+      ],
+      "state": "FL"
     },
     {
       "slug": "weeki-wachee-springs-state-park",
@@ -785,7 +798,8 @@
         "https://waterservices.usgs.gov/nwis/site/?format=rdb&siteType=SP,ST&siteStatus=active&hasDataTypeCd=iv&bBox=-82.7231,28.3678,-82.4231,28.6678",
         "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=02310500,02310525&parameterCd=00060,00065,00010",
         "https://api.weather.gov/points/28.5169,-82.5734"
-      ]
+      ],
+      "state": "FL"
     },
     {
       "slug": "kelly-park-rock-springs",
@@ -839,7 +853,8 @@
         "https://waterservices.usgs.gov/nwis/site/?format=rdb&siteType=SP,ST&siteStatus=active&hasDataTypeCd=iv&bBox=-81.6511,28.6067,-81.3511,28.9067",
         "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=02234610,02235000&parameterCd=00060,00065,00010",
         "https://api.weather.gov/points/28.7576,-81.4968"
-      ]
+      ],
+      "state": "FL"
     }
   ]
 }

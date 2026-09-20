@@ -8,7 +8,7 @@
  *   weather   National Weather Service for EVERY park (no second provider by design)
  *   noaa      NOAA CO-OPS water temperature + tide for coastal parks
  *   usgs      USGS gauges (batched 40 sites per request) for springs and rivers
- *   alerts    one NWS FL alert sweep, matched to parks by UGC zone/county
+ *   alerts    one NWS alert sweep over every state the parks sit in, matched by UGC zone/county
  *   algae     FDEP algal-bloom samples -> park_alerts notices
  *   holidays  Nager.Date public holidays + long weekends
  *   prune     drop conditions_snapshots older than 7 days
@@ -24,7 +24,7 @@ import { withSupabase, type SupabaseContext } from "npm:@supabase/server@^1";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { buildUsgsPayloadForPark, fetchUsgsLatestDetailed } from "../_shared/usgs.ts";
 import { buildNoaaPayloadForPark, fetchNoaaLatest } from "../_shared/noaa.ts";
-import { fetchAlertsFL, fetchNwsWeather, matchAlertsToPark, type NwsAlertFeature } from "../_shared/nws.ts";
+import { fetchAlerts, fetchNwsWeather, matchAlertsToPark, normalizeAlertAreas, type NwsAlertFeature } from "../_shared/nws.ts";
 import { fetchLongWeekends, fetchNagerHolidays } from "../_shared/holidays.ts";
 import { fetchParkingElements, groupParkingByPark } from "../_shared/overpass.ts";
 import { assembleForecast, type ForecastPark } from "../_shared/forecast.ts";
@@ -373,12 +373,20 @@ function alertText(p: NwsAlertFeature["properties"]): string {
 }
 
 async function runAlerts(ctx: Ctx): Promise<void> {
-  const features = await fetchAlertsFL();
-  ctx.counts.alerts_fl = features.length;
-
-  const { data: parks, error } = await ctx.db.from("parks").select("id,slug,nws_zone,nws_county");
+  const { data: parks, error } = await ctx.db.from("parks").select("id,slug,state,nws_zone,nws_county");
   if (error) throw new Error(`load parks: ${error.message}`);
   ctx.counts.parks = parks?.length ?? 0;
+
+  // The sweep has to follow the dataset: a park in a state we never ask about would match
+  // nothing forever, and the page would say "no alerts" rather than "no data".
+  const areas = normalizeAlertAreas((parks ?? []).map((p) => p.state as string | null));
+  ctx.counts.states = areas.length;
+  if (areas.length === 0) {
+    ctx.notes.push("no park carries a two-letter state code; alert sweep skipped");
+    return;
+  }
+  const features = await fetchAlerts(areas);
+  ctx.counts.alerts_fetched = features.length;
 
   const nowIso = ctx.now.toISOString();
   const rows = new Map<string, ParkAlertInsert>();

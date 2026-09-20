@@ -8,8 +8,18 @@ import { REPORT_VALUE_LABELS } from "./types";
 import { IMPLIES_LEVEL } from "./reportStatus";
 import { STALE, isStale, relativeTime } from "./freshness";
 
-/** Florida spring water sits near 72 °F all year; used only when no live reading exists. */
+/**
+ * Florida spring water sits near 72 °F all year, because a spring runs at roughly the
+ * local mean annual air temperature and that is what Florida's is.
+ *
+ * It is NOT a fact about springs in general: the same reasoning puts a Missouri spring
+ * near 56 °F and an Idaho one colder still. The constant is therefore only ever applied
+ * where it was actually curated, and everywhere else the tile shows nothing rather than a
+ * number. A fabricated water temperature is worse than an absent one: cold shock is one of
+ * the hazards this app exists to warn about.
+ */
 export const TYPICAL_SPRING_TEMP_F = 72;
+const TYPICAL_SPRING_STATE = "FL";
 
 function findReading(usgs: UsgsPayload | null, parameter: UsgsReading["parameter"]): UsgsReading | null {
   if (!usgs || !Array.isArray(usgs.readings)) return null;
@@ -82,7 +92,7 @@ export function describeWaterTemp(usgs: UsgsPayload | null, park: Park): { value
     const cool = valueF <= 74 ? ", cool year-round spring water" : "";
     return { valueF, sentence: `Water is ${valueF}°F${cool}`, typical: false };
   }
-  if (park.type === "spring") {
+  if (park.type === "spring" && park.state === TYPICAL_SPRING_STATE) {
     return {
       valueF: TYPICAL_SPRING_TEMP_F,
       sentence: `Typically about ${TYPICAL_SPRING_TEMP_F}°F year-round (no live reading)`,

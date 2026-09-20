@@ -90,7 +90,7 @@ export function FilterSheet({
           onChange={set("guardedOnly")}
           icon={<ShieldCheck aria-hidden="true" focusable="false" />}
           label="Lifeguard on duty"
-          hint="Only parks that list a lifeguard (most Florida springs have none)"
+          hint="Only parks that list a lifeguard (most freshwater swim areas have none)"
         />
       </fieldset>
 

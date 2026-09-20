@@ -1,9 +1,10 @@
-import { CalendarCheck, DollarSign, Dog, ExternalLink, LifeBuoy, Scale, Ship, Wine } from "lucide-react";
+import { CalendarCheck, DollarSign, Fish, Dog, ExternalLink, LifeBuoy, Scale, Ship, Wine } from "lucide-react";
 import type { Park } from "@/lib/types";
 import { Badge } from "@/components/ui/Badge";
 import { ButtonLink } from "@/components/ui/Button";
 import { ChipGrid, type ChipItem } from "@/components/ui/ChipGrid";
 import { Section } from "@/components/ui/Section";
+import { fishingAgency, mentionsFishing } from "@/lib/fishing";
 import { OpeningHours } from "./OpeningHours";
 
 export interface RulesCardProps {
@@ -24,6 +25,7 @@ function ruleChip(label: string, icon: ChipItem["icon"], value: unknown): ChipIt
 export function RulesCard({ park, now }: RulesCardProps) {
   const rules = park.rules ?? {};
   const other = Array.isArray(rules.other) ? rules.other : [];
+  const fishing = fishingAgency(park.state);
 
   const chips: ChipItem[] = [
     { label: park.fees ?? "", icon: <DollarSign aria-hidden="true" focusable="false" />, state: park.fees ? true : null },
@@ -33,7 +35,7 @@ export function RulesCard({ park, now }: RulesCardProps) {
     ruleChip("Life jackets", <LifeBuoy aria-hidden="true" focusable="false" />, rules.life_jackets),
   ];
 
-  const hasAnything = chips.some((c) => c.state !== null) || other.length > 0 || park.reservation_required || park.official_url || !!park.hours;
+  const hasAnything = chips.some((c) => c.state !== null) || other.length > 0 || park.reservation_required || park.official_url || !!park.hours || mentionsFishing(park);
   if (!hasAnything) return null;
 
   return (
@@ -67,10 +69,50 @@ export function RulesCard({ park, now }: RulesCardProps) {
         </ul>
       )}
 
+      {/* Fishing rules are state law and change every year, so this points at the agency
+          that publishes them rather than restating limits that would go stale. */}
+      {mentionsFishing(park) && fishing && (
+        <div className="mt-3 rounded-xl border border-mist bg-cream p-3 text-sm text-cocoa">
+          <p className="flex items-center gap-1.5 font-extrabold text-ink">
+            <Fish aria-hidden="true" focusable="false" className="size-4 text-taupe" />
+            Fishing
+          </p>
+          <p className="mt-1">
+            A {park.state} fishing licence is required for anyone 16 or over. Seasons, size limits and bag limits are set
+            by the {fishing.agency} and change each year.
+          </p>
+          <p className="mt-2 flex flex-wrap gap-x-4 gap-y-1">
+            <a
+              href={fishing.regulationsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-11 items-center gap-1 font-bold text-brown underline underline-offset-2"
+            >
+              Current regulations
+              <ExternalLink aria-hidden="true" focusable="false" className="size-3.5" />
+              <span className="sr-only">(opens in a new tab)</span>
+            </a>
+            <a
+              href={fishing.licenceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-11 items-center gap-1 font-bold text-brown underline underline-offset-2"
+            >
+              Buy a licence
+              <ExternalLink aria-hidden="true" focusable="false" className="size-3.5" />
+              <span className="sr-only">(opens in a new tab)</span>
+            </a>
+          </p>
+        </div>
+      )}
+
       {park.entrance_notes && <p className="mt-3 text-sm text-mocha">{park.entrance_notes}</p>}
 
       <div className="mt-3 flex flex-wrap items-center gap-2">
-        {park.operator === "state" && <Badge variant="info">Florida State Park rules (F.A.C. 62D-2.014)</Badge>}
+        {/* The citation is Florida's own administrative code, so it only holds for Florida parks. */}
+        {park.operator === "state" && park.state === "FL" && (
+          <Badge variant="info">Florida State Park rules (F.A.C. 62D-2.014)</Badge>
+        )}
         {park.official_url && (
           <a
             href={park.official_url}

@@ -43,6 +43,12 @@ export function ListScreen({ parks, initialFilters }: ListScreenProps) {
   const [query, setQuery] = useState("");
   const [sortOverride, setSort] = useState<SortKey | null>(null);
   const [filtersOpen, setFiltersOpen] = useState(false);
+  /**
+   * Photo tiles are the heaviest thing on the page, so only the first screenful is
+   * rendered. At 616 parks the full grid put 229 kB gzipped on the wire for a page
+   * nobody scrolls to the end of.
+   */
+  const [showAllTiles, setShowAllTiles] = useState(false);
   const geo = useGeolocation();
 
   // Default to distance once we have a location; the user's explicit choice always wins.
@@ -51,6 +57,9 @@ export function ListScreen({ parks, initialFilters }: ListScreenProps) {
   const located = useMemo(() => withDistances(parks, geo.location), [parks, geo.location]);
   const filtered = useMemo(() => filterParks(located, filters, query), [located, filters, query]);
   const sorted = useMemo(() => sortParks(filtered, sort), [filtered, sort]);
+  const TILE_COUNT = 40;
+  const visibleTiles = showAllTiles ? sorted : sorted.slice(0, TILE_COUNT);
+  const remainingTiles = sorted.length - visibleTiles.length;
   const counts = useMemo(() => countStatuses(filtered), [filtered]);
   const filterCount = activeFilterCount(filters);
 
@@ -133,16 +142,27 @@ export function ListScreen({ parks, initialFilters }: ListScreenProps) {
                 className="hidden sm:flex"
               />
             ) : (
-              <ul
-                aria-label="Parks"
-                className="hidden grid-cols-1 gap-5 sm:grid sm:grid-cols-[repeat(auto-fill,minmax(280px,1fr))] md:gap-7"
-              >
-                {sorted.map((item) => (
-                  <li key={item.park.id}>
-                    <ParkTile item={item} />
-                  </li>
-                ))}
-              </ul>
+              <>
+                <ul
+                  aria-label="Parks"
+                  className="hidden grid-cols-1 gap-5 sm:grid sm:grid-cols-[repeat(auto-fill,minmax(280px,1fr))] md:gap-7"
+                >
+                  {visibleTiles.map((item) => (
+                    <li key={item.park.id}>
+                      <ParkTile item={item} />
+                    </li>
+                  ))}
+                </ul>
+                {remainingTiles > 0 && (
+                  <button
+                    type="button"
+                    onClick={() => setShowAllTiles(true)}
+                    className="mt-5 hidden min-h-11 w-full items-center justify-center rounded-full border border-mist bg-white px-4 text-sm font-bold text-brown shadow-card hover:border-moss focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-taupe sm:inline-flex"
+                  >
+                    Show {remainingTiles} more
+                  </button>
+                )}
+              </>
             )}
           </>
         )}

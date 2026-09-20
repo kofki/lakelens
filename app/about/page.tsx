@@ -33,13 +33,13 @@ import { SideNav } from "./SideNav";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "How LakeLens estimates closures, how crowd reports work, what is verified, where the data comes from, and who built it.",
+    "How LakeLens works out how busy a park will be, how crowd reports work, what is verified, where the data comes from, and who built it.",
   alternates: { canonical: "/about" },
 };
 
 const TOC: { id: string; label: string }[] = [
   { id: "what", label: "What LakeLens does" },
-  { id: "estimate", label: "How the closure estimate works" },
+  { id: "estimate", label: "How busy today?" },
   { id: "reports", label: "How reports work" },
   { id: "verified", label: "Verified vs unverified" },
   { id: "sources", label: "Data sources" },
@@ -99,19 +99,38 @@ const SOURCES: { name: string; href: string; what: string; licence: string }[] =
   {
     name: "National Weather Service (api.weather.gov)",
     href: "https://www.weather.gov/documentation/services-web-api",
-    what: "Hourly and 7-day forecasts plus active weather alerts by county and zone.",
+    what:
+      "Hourly and 7-day forecasts, active weather alerts, and the raw gridpoint values behind feels-like temperature and thunder chance.",
     licence: "U.S. public domain.",
+  },
+  {
+    name: "EPA Envirofacts UV Index",
+    href: "https://data.epa.gov/",
+    what: "Hourly UV index for each park's coordinates.",
+    licence: "U.S. public domain.",
+  },
+  {
+    name: "NOAA CO-OPS Tides & Currents",
+    href: "https://tidesandcurrents.noaa.gov/",
+    what: "Water temperature from fixed stations, including the Great Lakes.",
+    licence: "U.S. public domain. Readings are preliminary.",
+  },
+  {
+    name: "FDEP algal bloom sampling",
+    href: "https://floridadep.gov/AlgalBloom",
+    what: "Freshwater cyanobacteria (blue-green algae) sample results near parks.",
+    licence: "U.S. public domain. Samples are point-in-time, not a live reading.",
   },
   {
     name: "Nager.Date",
     href: "https://date.nager.at/",
-    what: "US public holidays and long weekends used by the closure estimate.",
+    what: "US public holidays and long weekends used by the busyness score.",
     licence: "Open API (MIT-licensed project).",
   },
   {
     name: "OpenStreetMap contributors / OpenFreeMap",
     href: "https://openfreemap.org/",
-    what: "Base map tiles and some parking-lot locations.",
+    what: "Base map tiles, parking-lot locations and park amenities.",
     licence: "© OpenStreetMap contributors (ODbL). Tiles: OpenFreeMap © OpenMapTiles.",
   },
   {
@@ -159,9 +178,10 @@ export default function AboutPage() {
             Never drive out to a closed gate.
           </h1>
           <p className="max-w-prose text-mocha md:text-lg">
-            LakeLens tells you whether a Florida spring or state-park swim area is likely to be full, closed
-            or open before you drive out, and shows the parking and accessibility details that decide whether
-            a trip works for you.
+            LakeLens tells you whether a spring, lake or river swim area is open, closed or running busy
+            before you drive out, and shows the parking, amenities and accessibility details that decide
+            whether a trip works for you. Coverage today is Florida, and the product is built for the whole
+            US.
           </p>
           {/* Mobile: chip list of section links. Desktop gets the sticky side nav below instead. */}
           <nav aria-label="On this page" className="md:hidden">
@@ -196,8 +216,12 @@ export default function AboutPage() {
               <Card className="space-y-3">
                 <ul className="list-disc space-y-2 pl-5 text-cocoa">
                   <li>
-                    <span className="font-bold">Closure estimate.</span> A transparent score that says how
-                    likely a park is to hit capacity today, and roughly when.
+                    <span className="font-bold">How busy today.</span> A transparent score that says whether
+                    a park is running busier than usual, and roughly when the crowds arrive.
+                  </li>
+                  <li>
+                    <span className="font-bold">Hours you can trust.</span> Opening hours and sunset are
+                    worked out per park in its own time zone, so a park shut for the night says so.
                   </li>
                   <li>
                     <span className="font-bold">One-tap crowd reports.</span> Got in, turned away, line at the
@@ -208,12 +232,21 @@ export default function AboutPage() {
                     nearest open alternatives with drive time and parking notes.
                   </li>
                   <li>
-                    <span className="font-bold">Live conditions.</span> Spring flow, water temperature and
-                    forecast in plain language, each with its source and last-updated time.
+                    <span className="font-bold">Live conditions.</span> Water temperature, UV index,
+                    feels-like temperature, thunder chance and the hourly forecast in plain language, each
+                    with its source and last-updated time.
                   </li>
                   <li>
                     <span className="font-bold">Accessibility and parking.</span> Water entry type, ADA
                     parking, accessible restrooms, loaner wheelchairs, and where the lots are.
+                  </li>
+                  <li>
+                    <span className="font-bold">Amenities.</span> Restrooms, showers, pavilions, docks, boat
+                    ramps, grills, picnic tables, drinking water, boat rental, food and playgrounds.
+                  </li>
+                  <li>
+                    <span className="font-bold">Visitor reviews.</span> A star rating, a few words and up to
+                    four photos from people who have actually been.
                   </li>
                   <li>
                     <span className="font-bold">Safety cards.</span> Lifeguard status, cave and cavern
@@ -234,14 +267,14 @@ export default function AboutPage() {
               </Card>
             </Section>
 
-            <Section id="estimate" title="How the closure estimate works" icon={<Gauge />}>
+            <Section id="estimate" title="How busy today?" icon={<Gauge />}>
               <Card className="space-y-4">
                 <p className="text-sm text-mocha">
-                  Parks never publish live capacity, so we score the day instead. Treat the time as a
-                  guide, not a guarantee.
+                  Parks never publish live capacity, so we score the day instead. We never claim a park will
+                  fill; at most we say it is busier than usual. Treat the time as a guide, not a guarantee.
                 </p>
                 <p>
-                  Each park starts at zero and we add or subtract points for the things that fill springs:
+                  Each park starts at zero and we add or subtract points for the things that draw crowds:
                 </p>
                 <ul className="divide-y divide-mist rounded-xl border border-mist">
                   {FACTORS.map((f) => (
@@ -267,50 +300,53 @@ export default function AboutPage() {
                     <dt className="text-xs font-bold text-mocha">Score 0 or less</dt>
                     <dd className="mt-1 space-y-1">
                       <StatusPill level="open" size="sm" />
-                      <p className="text-xs text-mocha">No crowd expected.</p>
+                      <p className="text-xs text-mocha">A normal day. No crowd expected.</p>
                     </dd>
                   </div>
                   <div className="rounded-xl bg-cream p-3">
-                    <dt className="text-xs font-bold text-mocha">Score 1 to 2 (possible)</dt>
+                    <dt className="text-xs font-bold text-mocha">Score 1 to 2</dt>
                     <dd className="mt-1 space-y-1">
                       <StatusPill level="open" size="sm" />
-                      <p className="text-xs text-mocha">Still open. We show the time it usually fills.</p>
+                      <p className="text-xs text-mocha">
+                        Somewhat busier. We show the time crowds usually arrive.
+                      </p>
                     </dd>
                   </div>
                   <div className="rounded-xl bg-cream p-3">
-                    <dt className="text-xs font-bold text-mocha">Score 3 or more (likely)</dt>
+                    <dt className="text-xs font-bold text-mocha">Score 3 or more</dt>
                     <dd className="mt-1 space-y-1">
                       <StatusPill level="open" size="sm" />
-                      <p className="text-xs text-mocha">Open, but go early. It is likely to fill today.</p>
+                      <p className="text-xs text-mocha">Busier than usual today. Go early.</p>
                     </dd>
                   </div>
                 </dl>
                 <p className="rounded-xl bg-aqua p-3 text-sm text-cyan-deep">
                   A park is only marked <strong>Full</strong> or <strong>Closed</strong> once it has actually
-                  stopped letting people in: an official closure, the swim season, or visitors reporting they
-                  were turned away. Everything else stays <strong>Open</strong>, with the estimate shown
-                  alongside it.
+                  stopped letting people in: an official closure, the park&rsquo;s own hours, the swim season,
+                  or visitors reporting they were turned away. Everything else stays{" "}
+                  <strong>Open</strong>, with the busyness outlook shown alongside it.
                 </p>
                 <ul className="list-disc space-y-2 pl-5 text-sm">
                   <li>
-                    <span className="font-bold">Predicted time.</span> Parks with a known typical fill time
-                    (for example &ldquo;usually fills around 10:30 AM on weekends&rdquo;) get an estimated
-                    time that moves 25 minutes earlier for every point above 2. Parks without one just show
-                    the level.
+                    <span className="font-bold">Expected time.</span> Parks with a known typical busy time
+                    (for example &ldquo;usually busy by 10:30 AM on weekends&rdquo;) get a time that moves 25
+                    minutes earlier for every point above 2. Parks without one just show the level.
                   </li>
                   <li>
-                    <span className="font-bold">Official closures win.</span> An active closure notice, or a
-                    swim area that is out of season, always shows <span className="font-bold">Closed</span> no
-                    matter the score. When the notice ends, the park reopens automatically.
+                    <span className="font-bold">Hours and closures win.</span> An active closure notice, a
+                    swim area that is out of season, or a park that is shut for the night always shows{" "}
+                    <span className="font-bold">Closed</span> no matter the score. Hours are parsed per park
+                    and sunset comes from the NOAA solar equations, in the park&rsquo;s own time zone. When
+                    the notice ends or the gate opens, the park reopens automatically.
                   </li>
                   <li>
                     <span className="font-bold">Confidence.</span> High when we have a fresh forecast, a
-                    typical fill time and deep coverage for that park; medium when one is missing; low
-                    otherwise. Weekdays with no events simply say &ldquo;closures are rare&rdquo;.
+                    typical busy time and deep coverage for that park; medium when one is missing; low
+                    otherwise. Weekdays with no events simply say crowds are rare.
                   </li>
                   <li>
                     <span className="font-bold">Reports can override it.</span> Confirmed visitor reports beat
-                    the estimate (see below).
+                    the outlook (see below).
                   </li>
                 </ul>
               </Card>
@@ -333,7 +369,7 @@ export default function AboutPage() {
                     <span className="font-bold">3 matching reports within 30 minutes = confirmed.</span> A
                     single &ldquo;turned away&rdquo; shows as <Badge variant="user">Reported</Badge>; three
                     people saying the same thing in half an hour makes it{" "}
-                    <Badge variant="verified">Confirmed</Badge>, and confirmed reports override the estimate.
+                    <Badge variant="verified">Confirmed</Badge>, and confirmed reports override the outlook.
                   </li>
                   <li>
                     <span className="font-bold">&ldquo;Still full?&rdquo; prompts.</span> When a full or
@@ -406,7 +442,7 @@ export default function AboutPage() {
                 <p className="flex items-start gap-2 rounded-xl bg-peach p-3 text-sm text-cocoa">
                   <TriangleAlert aria-hidden="true" className="mt-0.5 size-4 shrink-0 text-cocoa" />
                   <span>
-                    <span className="font-bold">Lifeguards:</span> most Florida springs have no lifeguard on
+                    <span className="font-bold">Lifeguards:</span> most springs have no lifeguard on
                     duty. We show &ldquo;yes&rdquo;, &ldquo;no&rdquo; or &ldquo;unknown&rdquo; per park; treat
                     &ldquo;unknown&rdquo; as no.
                   </span>
@@ -463,9 +499,9 @@ export default function AboutPage() {
             <Section id="disclaimer" title="Disclaimer" icon={<BookOpen />}>
               <Card className="space-y-2 text-sm">
                 <p>
-                  LakeLens is <span className="font-bold">informational only</span>. Closure estimates are
-                  estimates, visitor reports are unverified, and conditions at springs and rivers change
-                  quickly.
+                  LakeLens is <span className="font-bold">informational only</span>. The busyness outlook is
+                  an estimate, visitor reports are unverified, and conditions at springs, lakes and rivers
+                  change quickly.
                 </p>
                 <p>
                   Always follow posted rules, signs and park staff. Swim at your own risk; most springs have
@@ -483,9 +519,10 @@ export default function AboutPage() {
               <Card className="space-y-3">
                 <p>
                   LakeLens was built at <span className="font-bold">SASEhack 2026</span> (September 18 to 20,
-                  2026). It brings honest, accessible conditions at a glance to Florida&rsquo;s freshwater
-                  swim areas: the springs, lakes and rivers inside the state parks that fill to capacity
-                  before mid-morning on a summer weekend.
+                  2026). It brings honest, accessible conditions at a glance to freshwater swim areas: the
+                  springs, lakes and rivers inside parks that fill to capacity before mid-morning on a summer
+                  weekend. Salt water is out of scope on purpose: a beach has no gate, so it cannot turn you
+                  away.
                 </p>
                 <p className="text-sm text-mocha">
                   Tracks: Social Impact and Best Design. Built with Next.js, Supabase, MapLibre and a lot of
@@ -502,10 +539,9 @@ export default function AboutPage() {
                       aria-hidden="true"
                       className="absolute -left-[9px] mt-1 size-4 rounded-full bg-taupe"
                     />
-                    <p className="font-bold">Now: Florida springs and state-park swim areas</p>
+                    <p className="font-bold">Now: 40 freshwater parks in Florida</p>
                     <p className="text-sm text-mocha">
-                      Seven parks with deep coverage, dozens more with the basics, live USGS and weather
-                      feeds.
+                      31 springs, 6 lakes and 3 rivers, with live USGS, weather, UV and algae feeds.
                     </p>
                   </li>
                   <li>
@@ -513,9 +549,10 @@ export default function AboutPage() {
                       aria-hidden="true"
                       className="absolute -left-[9px] mt-1 size-4 rounded-full bg-moss"
                     />
-                    <p className="font-bold">Next: Florida lakes and rivers</p>
+                    <p className="font-bold">Next: more states</p>
                     <p className="text-sm text-mocha">
-                      Boat ramps, blue-green algae advisories and river stage warnings across the state.
+                      The same freshwater coverage state by state: boat ramps, blue-green algae advisories
+                      and river stage warnings.
                     </p>
                   </li>
                   <li>
@@ -525,7 +562,7 @@ export default function AboutPage() {
                     />
                     <p className="font-bold">Then: the Great Lakes</p>
                     <p className="text-sm text-mocha">
-                      Rip-current and water-quality data for the busiest beaches.
+                      Water quality and NOAA water temperature for the busiest lakefront parks.
                     </p>
                   </li>
                   <li>
