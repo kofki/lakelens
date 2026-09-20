@@ -248,6 +248,14 @@ export const SampleReportSeedSchema = z
   });
 export type SampleReportSeed = z.infer<typeof SampleReportSeedSchema>;
 
+export const SampleReviewSeedSchema = z.strictObject({
+  park_slug: slug,
+  rating: z.number().int().min(1).max(5),
+  body: z.string().max(1000).nullable().optional(),
+  days_ago: z.number().int().nonnegative(),
+});
+export type SampleReviewSeed = z.infer<typeof SampleReviewSeedSchema>;
+
 export const CalendarEventSchema = z
   .strictObject({
     start: dateYMD,
@@ -297,6 +305,7 @@ export const AccessibilityLenientFileSchema = z.record(slug, AccessibilitySeedLe
 export const ParkingLotsFileSchema = z.object({ lots: z.array(ParkingLotSeedSchema) });
 export const AlertsFileSchema = z.object({ alerts: z.array(AlertSeedSchema) });
 export const SampleReportsFileSchema = z.object({ reports: z.array(SampleReportSeedSchema) });
+export const SampleReviewsFileSchema = z.object({ reviews: z.array(SampleReviewSeedSchema) });
 export const EventsFileSchema = z.object({ events: z.array(CalendarEventSchema) });
 export const HolidaysFileSchema = z.object({
   holidays: z.array(HolidaySchema),
@@ -324,6 +333,7 @@ export const DATA_FILES = {
   alerts: "data/alerts.manual.json",
   alertsExtra: "data/alerts.extra.json",
   sampleReports: "data/sample_reports.json",
+  sampleReviews: "data/sample_reviews.json",
   events: "data/events.json",
   holidays: "data/holidays-2026-2027.json",
   photos: "data/photos.json",
@@ -385,6 +395,7 @@ export interface SeedData {
   lots: ParkingLotSeed[];
   alerts: AlertSeed[];
   sampleReports: SampleReportSeed[];
+  sampleReviews: SampleReviewSeed[];
   events: CalendarEventSeed[];
   holidays: z.infer<typeof HolidaysFileSchema> | null;
   /** Merged photo credits keyed by slug (photos.json > .extra > .basic). Attribution only. */
@@ -433,6 +444,7 @@ export function loadSeedData(root: string = REPO_ROOT, opts: LoadOptions = {}): 
   const lotsDeep = parseFile(ParkingLotsFileSchema, p(DATA_FILES.lots), DATA_FILES.lots).lots;
   const alertsDeep = parseFile(AlertsFileSchema, p(DATA_FILES.alerts), DATA_FILES.alerts).alerts;
   const sampleReports = parseFile(SampleReportsFileSchema, p(DATA_FILES.sampleReports), DATA_FILES.sampleReports).reports;
+  const sampleReviews = parseFile(SampleReviewsFileSchema, p(DATA_FILES.sampleReviews), DATA_FILES.sampleReviews).reviews;
   const events = parseFile(EventsFileSchema, p(DATA_FILES.events), DATA_FILES.events).events;
 
   // Optional files.
@@ -488,6 +500,7 @@ export function loadSeedData(root: string = REPO_ROOT, opts: LoadOptions = {}): 
     lots: [...lotsDeep, ...lotsExtra],
     alerts: [...alertsDeep, ...alertsExtra],
     sampleReports,
+    sampleReviews,
     events,
     holidays,
     photos,
@@ -558,6 +571,9 @@ export function validateReferences(data: SeedData, root: string = REPO_ROOT): st
   });
   data.sampleReports.forEach((r, i) => {
     if (!allSlugs.has(r.park_slug)) problems.push(`sample_reports.json[${i}]: unknown park slug ${r.park_slug}`);
+  });
+  data.sampleReviews.forEach((r, i) => {
+    if (!allSlugs.has(r.park_slug)) problems.push(`sample_reviews.json[${i}]: unknown park slug ${r.park_slug}`);
   });
   for (const s of Object.keys(data.photos)) {
     if (!allSlugs.has(s)) problems.push(`photos: unknown park slug ${s}`);
@@ -697,7 +713,7 @@ export function buildSeedSql(data: SeedData, opts: BuildOptions = {}): string {
     `-- Parks: ${data.deepParks.length} deep + ${data.extraParks.length} extra + ${data.basicParks.length} basic = ${data.parks.length}` +
       ` (deduped by slug, precedence deep > extra > basic);` +
       ` accessibility ${accessibilitySlugs.length}; parking lots ${data.lots.length};` +
-      ` manual alerts ${data.alerts.length}; sample reports ${data.sampleReports.length};` +
+      ` manual alerts ${data.alerts.length}; sample reports ${data.sampleReports.length}; sample reviews ${data.sampleReviews.length};` +
       ` holidays ${data.holidays?.holidays.length ?? 0}; long weekends ${data.holidays?.long_weekends.length ?? 0};` +
       ` gauge rows ${Object.keys(data.gauges).length}.`,
     "-- Idempotent: safe to re-run (parks upsert on slug; child rows for the seeded",
@@ -809,6 +825,19 @@ export function buildSeedSql(data: SeedData, opts: BuildOptions = {}): string {
     );
   }
   out.push("");
+  // 8. sample reviews --------------------------------------------------------
+  // Seeded demo rows. is_sample = true is what makes the UI badge them and note that the
+  // score includes sample data; the client can never set that flag.
+  out.push("-- ---------------------------------------------------------------- reviews (is_sample = true)");
+  out.push("delete from public.reviews where is_sample = true;");
+  data.sampleReviews.forEach((r, i) => {
+    out.push(
+      `insert into public.reviews ("park_id", "rating", "body", "device_id", "is_sample", "created_at")`,
+      `values (${parkIdBySlug(r.park_slug)}, ${r.rating}, ${sqlLiteral(r.body ?? null)}, ${sqlLiteral(sampleDeviceId(`review#${r.park_slug}#${i}`))}::uuid, true, now() - interval '${r.days_ago} days');`,
+    );
+  });
+  out.push("");
+
   out.push("-- end of seed", "");
   return out.join("\n");
 }

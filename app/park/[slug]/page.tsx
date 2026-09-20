@@ -15,6 +15,7 @@ import { AccessibilityCard } from "@/components/park/AccessibilityCard";
 import { ConditionsCard } from "@/components/park/ConditionsCard";
 import { RulesCard } from "@/components/park/RulesCard";
 import { ReportsSection } from "@/components/park/ReportsSection";
+import { ReviewsSection } from "@/components/review/ReviewsSection";
 import { BackupSuggestions } from "@/components/park/BackupSuggestions";
 import { ReportButton } from "@/components/report/ReportButton";
 import { SiteFooter } from "@/components/nav/SiteFooter";
@@ -84,6 +85,7 @@ export default async function ParkPage({ params }: Params) {
     { id: "conditions", label: "Conditions" },
     ...(park.hours || park.fees || park.official_url ? [{ id: "rules", label: "Rules" }] : []),
     { id: "reports", label: "Reports" },
+    { id: "reviews", label: "Reviews" },
   ];
 
   const origin = process.env.NEXT_PUBLIC_APP_URL ?? "https://lakelens-kenzo-fukudas-projects.vercel.app";
@@ -92,7 +94,7 @@ export default async function ParkPage({ params }: Params) {
     <>
       <ParkJsonLd park={park} status={bundle.status} origin={origin} />
       <article className="mx-auto w-full max-w-[1100px] px-4 pb-24 md:px-6 lg:pb-12">
-        <Hero park={park} status={bundle.status} />
+        <Hero park={park} status={bundle.status} reviewStats={bundle.reviewStats ?? null} />
 
         <SectionTabs sections={sections} className="mt-4 md:mt-6" />
 
@@ -129,6 +131,8 @@ export default async function ParkPage({ params }: Params) {
               weatherFetchedAt={bundle.weatherFetchedAt}
               nowIso={now.toISOString()}
             />
+
+            <ReviewsSection park={park} reviews={bundle.reviews} stats={bundle.reviewStats ?? null} />
 
             <p className="rounded-xl bg-mist/50 p-3 text-xs text-cocoa">
               <strong>Informational only.</strong> Conditions change quickly and estimates can be wrong. Follow posted rules and

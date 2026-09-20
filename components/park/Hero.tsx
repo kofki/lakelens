@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { MapPin, ShieldCheck, ShieldOff, ShieldQuestionMark } from "lucide-react";
-import type { Park, ParkStatus } from "@/lib/types";
+import type { Park, ParkStatus, ReviewStats } from "@/lib/types";
 import { Badge } from "@/components/ui/Badge";
+import { Score } from "@/components/ui/RatingStars";
 import { StatusPill } from "@/components/ui/StatusPill";
 import {GUARDED_TEXT, OPERATOR_TEXT, PARK_TYPE_TEXT, canOptimizeImage} from "./format";
 
@@ -9,6 +10,8 @@ export interface HeroProps {
   park: Park;
   /** When given, the status pill sits to the right of the title on md+. */
   status?: ParkStatus;
+  /** The score under the title, linking down to the reviews. */
+  reviewStats?: ReviewStats | null;
 }
 
 /**
@@ -16,7 +19,7 @@ export interface HeroProps {
  * rounded card on md+; the title block always sits below the photo so long names never
  * overlap the image. Lifeguard status is icon + text, never colour alone.
  */
-export function Hero({ park, status }: HeroProps) {
+export function Hero({ park, status, reviewStats }: HeroProps) {
   const photo = park.photo_url;
   const GuardIcon = park.guarded === "yes" ? ShieldCheck : park.guarded === "no" ? ShieldOff : ShieldQuestionMark;
   return (
@@ -49,6 +52,16 @@ export function Hero({ park, status }: HeroProps) {
             {PARK_TYPE_TEXT[park.type]} · {OPERATOR_TEXT[park.operator]}
           </p>
           <h1 className="text-[1.75rem] font-extrabold leading-tight text-ink md:text-[2.25rem]">{park.name}</h1>
+          {reviewStats && reviewStats.averageRating != null && reviewStats.reviewCount > 0 && (
+            <a href="#reviews" className="inline-flex rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-taupe">
+              <Score
+                average={reviewStats.averageRating}
+                count={reviewStats.reviewCount}
+                sampleCount={reviewStats.sampleCount}
+                size="lg"
+              />
+            </a>
+          )}
           <div className="flex flex-wrap items-center gap-2 pt-1">
             <span
               className={

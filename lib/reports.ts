@@ -249,6 +249,16 @@ function newUuid(): string {
  * accepts as `photo_url`). Returns null on any failure so the report can still be sent without a photo.
  */
 export async function uploadReportPhoto(file: File, deviceId: string): Promise<string | null> {
+  return uploadPhoto(file, deviceId, "reports");
+}
+
+/**
+ * Upload one image to the shared photo bucket under `folder`.
+ *
+ * Reports and reviews use the same bucket and the same 5 MiB / MIME limits; only the
+ * first path segment differs, and the storage policy allows exactly those two.
+ */
+export async function uploadPhoto(file: File, deviceId: string, folder: "reports" | "reviews"): Promise<string | null> {
   if (typeof window === "undefined") return null;
   if (!file || !file.type.startsWith("image/")) return null;
 
@@ -274,7 +284,7 @@ export async function uploadReportPhoto(file: File, deviceId: string): Promise<s
 
   try {
     const supabase = createClient();
-    const path = `reports/${deviceId}/${newUuid()}.${ext}`;
+    const path = `${folder}/${deviceId}/${newUuid()}.${ext}`;
     const { error } = await supabase.storage
       .from(REPORT_PHOTO_BUCKET)
       .upload(path, blob, { contentType, upsert: false, cacheControl: "31536000" });

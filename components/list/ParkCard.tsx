@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
 import { LastUpdated } from "@/components/ui/LastUpdated";
 import { StatRow } from "@/components/ui/StatRow";
+import { Score } from "@/components/ui/RatingStars";
 import { StatusPill } from "@/components/ui/StatusPill";
 import { cn } from "@/components/ui/cn";
 import { ParkPhoto } from "./ParkPhoto";
@@ -67,6 +68,15 @@ export function ParkCard({ item, selected = false, onSelect }: ParkCardProps) {
                 {park.name}
               </Link>
             </h3>
+            {item.reviewStats && item.reviewStats.averageRating != null && (
+              <Score
+                average={item.reviewStats.averageRating}
+                count={item.reviewStats.reviewCount}
+                sampleCount={item.reviewStats.sampleCount}
+                size="sm"
+                className="mt-0.5"
+              />
+            )}
             <p className="mt-0.5 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-mocha">
               <span>{describeParkKind(park)}</span>
               {distance && (

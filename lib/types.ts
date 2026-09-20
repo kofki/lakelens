@@ -318,6 +318,48 @@ export interface BeachWaterQuality {
   advisory: boolean;
 }
 
+// ---------- reviews ----------
+
+/**
+ * A visitor review. Unlike a report this does not expire: it answers "was it worth the
+ * drive", not "what is happening right now".
+ */
+export interface Review {
+  id: string;
+  park_id: string;
+  /** 1 to 5, whole stars. */
+  rating: number;
+  body: string | null;
+  photo_urls: string[];
+  visited_on: string | null;
+  device_id: string;
+  is_sample: boolean;
+  created_at: string;
+}
+
+/** Aggregate from public.park_review_stats. */
+export interface ReviewStats {
+  reviewCount: number;
+  /** Mean rating to one decimal place, or null when there are no reviews. */
+  averageRating: number | null;
+  /** How many of the reviews are seeded demo rows; the UI must say when this is above 0. */
+  sampleCount: number;
+  /** Ratings 1 to 5, index 0 = one star. */
+  distribution: [number, number, number, number, number];
+}
+
+export interface SubmitReviewInput {
+  park_id: string;
+  rating: number;
+  body?: string | null;
+  photo_urls?: string[];
+  visited_on?: string | null;
+  device_id: string;
+}
+
+export const REVIEW_MAX_PHOTOS = 4;
+export const REVIEW_BODY_MAX = 1000;
+
 // ---------- derived / computed ----------
 export interface DayContext {
   date: string; // YYYY-MM-DD local
@@ -403,6 +445,8 @@ export interface ParkWithStatus {
   weatherFetchedAt: string | null;
   /** park_forecast row: UV, feels-like, thunder and water quality. Optional like noaa. */
   forecast?: ParkForecast | null;
+  /** Aggregate review score. Present on every surface; the full reviews only on the park page. */
+  reviewStats?: ReviewStats | null;
   alerts: ParkAlert[];
   reportSummary: ReportSummary;
   distanceKm: number | null;
@@ -413,6 +457,7 @@ export interface ParkBundle extends ParkWithStatus {
   reports: Report[];
   confirmations: ReportConfirmation[];
   backups: BackupSuggestion[];
+  reviews: Review[];
 }
 
 export interface BackupSuggestion {

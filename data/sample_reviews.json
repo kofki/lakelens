@@ -1,0 +1,43 @@
+{
+  "_note": "Seeded demo reviews. Every row is inserted with is_sample = true and the UI shows a 'Sample data' badge on the review and on the aggregate score, exactly as it does for sample_reports.json. These are written by hand to exercise the ratings distribution, the photo layout and the score rounding; they are NOT real visitor reviews and must never be presented as such. days_ago drives created_at.",
+  "reviews": [
+    { "park_slug": "ichetucknee-springs-state-park", "rating": 5, "days_ago": 6, "body": "Tubed the full run on a Tuesday and it was close to empty. Water is genuinely cold, about 72, so give yourself a minute before pushing off. The tram back was running every 20 minutes." },
+    { "park_slug": "ichetucknee-springs-state-park", "rating": 4, "days_ago": 13, "body": "Beautiful, but the north entrance had already closed to new cars by 10 on a Saturday. Went to the south entrance instead and got in with no wait." },
+    { "park_slug": "ichetucknee-springs-state-park", "rating": 5, "days_ago": 21, "body": "Clearest water I have swum in. Bring water shoes for the limestone and do not underestimate how far the tube run is with small children." },
+    { "park_slug": "ichetucknee-springs-state-park", "rating": 3, "days_ago": 32, "body": "Lovely spring, but we queued 40 minutes at the gate and the lot filled before we reached the front. Go early or go midweek." },
+
+    { "park_slug": "rainbow-springs-state-park", "rating": 5, "days_ago": 4, "body": "The headspring basin is enormous and the gardens are worth the walk on their own. Reservation for the head springs entrance was quick to book the night before." },
+    { "park_slug": "rainbow-springs-state-park", "rating": 4, "days_ago": 11, "body": "Swim area is roped and shallow at the edge, good for children. Concession tube rental ran out by midday." },
+    { "park_slug": "rainbow-springs-state-park", "rating": 4, "days_ago": 25, "body": "Busy but well managed. Plenty of shade near the picnic area, which matters in August." },
+
+    { "park_slug": "blue-spring-state-park", "rating": 5, "days_ago": 8, "body": "Went in September so swimming was open. In winter the manatees take over and the water closes, so check before you drive." },
+    { "park_slug": "blue-spring-state-park", "rating": 4, "days_ago": 17, "body": "Boardwalk along the run is the best part. Parking filled by 10:30 and they were turning cars away at the gate." },
+    { "park_slug": "blue-spring-state-park", "rating": 5, "days_ago": 29, "body": "Swam the run from the boil down to the dock. Cold, clear and deep in the middle." },
+
+    { "park_slug": "wekiwa-springs-state-park", "rating": 4, "days_ago": 5, "body": "Easy drive from Orlando which is exactly why it fills early. Swim area is concrete edged and shallow, more of a pool than a wild spring." },
+    { "park_slug": "wekiwa-springs-state-park", "rating": 3, "days_ago": 15, "body": "Arrived at 11 on a Sunday and the park was already at capacity. Came back at 3 and got straight in." },
+    { "park_slug": "wekiwa-springs-state-park", "rating": 5, "days_ago": 27, "body": "Rented a canoe and paddled up the run. Saw two otters. Worth doing before you swim." },
+
+    { "park_slug": "ginnie-springs", "rating": 4, "days_ago": 9, "body": "Private park so the rules are different: alcohol is allowed and it gets loud on summer weekends. Water is spectacular and the diving is the real draw." },
+    { "park_slug": "ginnie-springs", "rating": 2, "days_ago": 19, "body": "Went on a holiday weekend and it was closer to a festival than a spring. Beautiful water, but not what we wanted with young children." },
+    { "park_slug": "ginnie-springs", "rating": 5, "days_ago": 34, "body": "Midweek in the shoulder season it is close to perfect. Camped overnight and had the Devil's Eye area almost to ourselves at dawn." },
+
+    { "park_slug": "de-leon-springs-state-park", "rating": 5, "days_ago": 7, "body": "The pancake house is the reason half the queue exists. Spring itself is a walled basin, very easy to get in and out of." },
+    { "park_slug": "de-leon-springs-state-park", "rating": 4, "days_ago": 22, "body": "Swim area was open and clear. Put your name down for a griddle table before you swim, the wait runs over an hour." },
+
+    { "park_slug": "manatee-springs-state-park", "rating": 4, "days_ago": 12, "body": "Boardwalk out to the Suwannee is lovely and the spring run is shallow enough to wade. Vultures everywhere, which is stranger than it sounds." },
+    { "park_slug": "manatee-springs-state-park", "rating": 3, "days_ago": 26, "body": "River was high after rain so the spring was tea coloured. Staff were upfront about it at the gate." },
+
+    { "park_slug": "kelly-park-rock-springs", "rating": 5, "days_ago": 10, "body": "Floating the run at Rock Springs is the best hour you can have for a few dollars. Get a reservation, they sell out days ahead in summer." },
+    { "park_slug": "kelly-park-rock-springs", "rating": 4, "days_ago": 20, "body": "Arrived without a reservation on a Thursday and still got in at 9:15. By 10 the lot was full." },
+
+    { "park_slug": "madison-blue-spring-state-park", "rating": 5, "days_ago": 14, "body": "Small, quiet and gorgeous. Capacity is genuinely limited so they close the gate early on weekends." },
+    { "park_slug": "gilchrist-blue-springs-state-park", "rating": 4, "days_ago": 18, "body": "One of the newer state parks and it shows, facilities are tidy. Short walk from the lot to the water." },
+    { "park_slug": "fanning-springs-state-park", "rating": 3, "days_ago": 16, "body": "Pleasant stop rather than a destination. The spring is small and the river was murky when we went." },
+    { "park_slug": "troy-spring-state-park", "rating": 4, "days_ago": 23, "body": "Steep steps down to the spring and no lifeguard. The sunken steamboat is visible from the bank when the water is clear." },
+    { "park_slug": "lafayette-blue-springs-state-park", "rating": 4, "days_ago": 28, "body": "Natural limestone bridge over the spring is unusual and worth seeing. Very quiet midweek." },
+    { "park_slug": "poe-springs-park", "rating": 3, "days_ago": 30, "body": "Was closed for swimming when we visited. The boardwalk and picnic area were still open and pleasant." },
+    { "park_slug": "weeki-wachee-springs-state-park", "rating": 4, "days_ago": 3, "body": "Buccaneer Bay is a water park attached to a spring, so expect slides and crowds rather than wilderness. Children loved it." },
+    { "park_slug": "weeki-wachee-springs-state-park", "rating": 3, "days_ago": 24, "body": "Reached capacity before 10 on a Saturday and they close the whole park, not just the water. The mermaid show is genuinely charming." }
+  ]
+}

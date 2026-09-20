@@ -538,6 +538,50 @@ export type Database = {
           },
         ]
       }
+      reviews: {
+        Row: {
+          body: string | null
+          created_at: string
+          device_id: string
+          id: string
+          is_sample: boolean
+          park_id: string
+          photo_urls: string[]
+          rating: number
+          visited_on: string | null
+        }
+        Insert: {
+          body?: string | null
+          created_at?: string
+          device_id: string
+          id?: string
+          is_sample?: boolean
+          park_id: string
+          photo_urls?: string[]
+          rating: number
+          visited_on?: string | null
+        }
+        Update: {
+          body?: string | null
+          created_at?: string
+          device_id?: string
+          id?: string
+          is_sample?: boolean
+          park_id?: string
+          photo_urls?: string[]
+          rating?: number
+          visited_on?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "reviews_park_id_fkey"
+            columns: ["park_id"]
+            isOneToOne: false
+            referencedRelation: "parks"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       latest_conditions: {
@@ -551,6 +595,28 @@ export type Database = {
         Relationships: [
           {
             foreignKeyName: "conditions_snapshots_park_id_fkey"
+            columns: ["park_id"]
+            isOneToOne: false
+            referencedRelation: "parks"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      park_review_stats: {
+        Row: {
+          average_rating: number | null
+          count_1: number | null
+          count_2: number | null
+          count_3: number | null
+          count_4: number | null
+          count_5: number | null
+          park_id: string | null
+          review_count: number | null
+          sample_count: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "reviews_park_id_fkey"
             columns: ["park_id"]
             isOneToOne: false
             referencedRelation: "parks"

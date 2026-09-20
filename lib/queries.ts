@@ -24,6 +24,8 @@ import {
   type NoaaPayload,
   type Park,
   type ParkForecast,
+  type Review,
+  type ReviewStats,
   type ParkAlert,
   type ParkBundle,
   type ParkWithStatus,
@@ -39,6 +41,8 @@ export const REPORT_WINDOW_MS = 2 * 3600e3;
 /** Reports shown on the detail page (older ones still render with their timestamp). */
 export const BUNDLE_REPORTS_WINDOW_MS = 24 * 3600e3;
 export const BUNDLE_REPORTS_LIMIT = 50;
+/** Reviews shown on the detail page, newest first. */
+export const REVIEWS_LIMIT = 30;
 
 type Db = SupabaseClient<Database>;
 
@@ -60,6 +64,7 @@ interface World {
   longWeekends: LongWeekend[];
   events: CalendarEvent[];
   forecasts: Map<string, ParkForecast>;
+  reviewStats: Map<string, ReviewStats>;
 }
 
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
@@ -149,9 +154,42 @@ function toForecasts(rows: ParkForecastRow[]): Map<string, ParkForecast> {
   return out;
 }
 
+interface ReviewStatsRow {
+  park_id: string;
+  review_count: number | null;
+  average_rating: number | string | null;
+  sample_count: number | null;
+  count_1: number | null;
+  count_2: number | null;
+  count_3: number | null;
+  count_4: number | null;
+  count_5: number | null;
+}
+
+/**
+ * park_review_stats rows keyed by park id.
+ *
+ * Postgres returns `numeric` as a string over PostgREST, so the average is parsed rather
+ * than trusted to arrive as a number.
+ */
+function toReviewStats(rows: ReviewStatsRow[]): Map<string, ReviewStats> {
+  const out = new Map<string, ReviewStats>();
+  for (const r of rows) {
+    if (!r?.park_id) continue;
+    const avg = r.average_rating == null ? null : Number(r.average_rating);
+    out.set(r.park_id, {
+      reviewCount: r.review_count ?? 0,
+      averageRating: avg != null && Number.isFinite(avg) ? avg : null,
+      sampleCount: r.sample_count ?? 0,
+      distribution: [r.count_1 ?? 0, r.count_2 ?? 0, r.count_3 ?? 0, r.count_4 ?? 0, r.count_5 ?? 0],
+    });
+  }
+  return out;
+}
+
 async function loadWorld(db: Db, now: Date): Promise<World> {
   const since = new Date(now.getTime() - REPORT_WINDOW_MS).toISOString();
-  const [parksR, accR, latestR, alertsR, reportsR, confR, holR, lwR, evR, fcR] = await Promise.all([
+  const [parksR, accR, latestR, alertsR, reportsR, confR, holR, lwR, evR, fcR, rsR] = await Promise.all([
     db.from("parks").select("*").order("name"),
     db.from("accessibility").select("*"),
     db.from("latest_conditions").select("park_id,source,payload,fetched_at"),
@@ -162,6 +200,7 @@ async function loadWorld(db: Db, now: Date): Promise<World> {
     db.from("long_weekends").select("*"),
     db.from("calendar_events").select("name,start_date,end_date,weight"),
     db.from("park_forecast").select("*"),
+    db.from("park_review_stats").select("*"),
   ]);
   if (parksR.error) throw new Error(`parks: ${parksR.error.message}`);
 
@@ -179,6 +218,7 @@ async function loadWorld(db: Db, now: Date): Promise<World> {
     longWeekends: rowsOr<LongWeekend>("long_weekends", lwR),
     events: toCalendarEvents(rowsOr<CalendarEventRow>("calendar_events", evR)),
     forecasts: toForecasts(rowsOr<ParkForecastRow>("park_forecast", fcR)),
+    reviewStats: toReviewStats(rowsOr<ReviewStatsRow>("park_review_stats", rsR)),
   };
 }
 
@@ -221,6 +261,7 @@ function assemble(park: Park, world: World, dayContext: DayContext, now: Date): 
     weather,
     weatherFetchedAt: weatherRow?.fetched_at ?? weather?.fetchedAt ?? null,
     forecast: world.forecasts.get(park.id) ?? null,
+    reviewStats: world.reviewStats.get(park.id) ?? null,
     alerts,
     reportSummary,
     distanceKm: null,
@@ -331,9 +372,17 @@ export async function getParkBundle(slug: string, now: Date = new Date()): Promi
     const lotsByPark: Record<string, ParkingLot[]> = {};
     for (const lot of lots) (lotsByPark[lot.park_id] ??= []).push(lot);
 
+    const reviewsR = await db
+      .from("reviews")
+      .select("*")
+      .eq("park_id", target.park.id)
+      .order("created_at", { ascending: false })
+      .limit(REVIEWS_LIMIT);
+
     const backups = suggestBackups(target, all, DEFAULT_FILTERS, lotsByPark);
     return {
       ...target,
+      reviews: rowsOr<Review>("reviews", reviewsR),
       parkingLots: lotsByPark[target.park.id] ?? [],
       reports,
       confirmations,

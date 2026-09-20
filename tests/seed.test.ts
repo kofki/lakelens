@@ -290,13 +290,23 @@ describe("SQL generation", () => {
     expect(sql).not.toMatch(/delete from public\.reports where park_id/); // never wipes real reports
   });
 
-  it("inserts every deep park, lot, alert and sample report with is_sample = true", () => {
+  it("inserts every deep park, lot, alert, sample report and sample review with is_sample = true", () => {
     for (const slug of DEEP_SLUGS) expect(sql).toContain(`'${slug}'`);
     expect((sql.match(/insert into public\.parking_lots/g) ?? []).length).toBe(data.lots.length);
     expect((sql.match(/insert into public\.park_alerts/g) ?? []).length).toBe(data.alerts.length);
     expect((sql.match(/insert into public\.reports/g) ?? []).length).toBe(data.sampleReports.length);
-    expect((sql.match(/, true, now\(\) - interval/g) ?? []).length).toBe(data.sampleReports.length);
+    expect((sql.match(/insert into public\.reviews/g) ?? []).length).toBe(data.sampleReviews.length);
+    // Every seeded row must carry is_sample = true, so the UI can badge it and the score
+    // can say that it includes sample data. Counted per table: one shared total would go
+    // on passing if reviews stopped being flagged but reports gained rows.
+    expect((sql.match(/, true, now\(\) - interval '\d+ minutes'/g) ?? []).length).toBe(data.sampleReports.length);
+    expect((sql.match(/, true, now\(\) - interval '\d+ days'/g) ?? []).length).toBe(data.sampleReviews.length);
     expect((sql.match(/insert into public\.accessibility/g) ?? []).length).toBe(Object.keys(data.accessibility).length);
+  });
+
+  it("wipes only seeded reviews, never a real one", () => {
+    expect(sql).toContain("delete from public.reviews where is_sample = true;");
+    expect(sql).not.toMatch(/delete from public\.reviews where park_id/);
   });
 
   it("upserts holidays and long weekends when the DATA-basic file is present", () => {

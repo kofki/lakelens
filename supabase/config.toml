@@ -14,6 +14,13 @@ project_id = "lakelens"
 verify_jwt = false
 enabled = true
 
+[functions.submit-review]
+# Same publishable-key contract as submit-report: the browser calls it directly, the key is
+# not a JWT, and the function validates it itself.
+# Deploy: `npx supabase functions deploy submit-review --use-api`
+verify_jwt = false
+enabled = true
+
 [functions.refresh-conditions]
 # pg_cron (via pg_net) and the app's /api/refresh call this with the project's sb_secret_ key
 # in the `apikey` header. Secret keys are not JWTs, so the platform JWT gate must be off;
