@@ -56,7 +56,31 @@ export interface ScoreProps {
  * doing all the work anyway.
  */
 export function Score({ average, count, sampleCount = 0, size = "md", className }: ScoreProps) {
-  if (average == null || count === 0) return null;
+  const unrated = average == null || count === 0;
+  /**
+   * An unrated park still shows a star and a dash.
+   *
+   * Hiding the score entirely made cards look inconsistent, and worse, it read as though
+   * the rating were merely missing from the layout rather than absent because nobody has
+   * been yet. A dash says "no reviews" in the same place the number would be.
+   */
+  if (unrated) {
+    return (
+      <span className={cn("inline-flex items-center gap-1.5", className)}>
+        <Star
+          aria-hidden="true"
+          focusable="false"
+          className={cn("shrink-0 text-mist-dark", size === "sm" ? "size-3.5" : "size-4")}
+          fill="none"
+          strokeWidth={2}
+        />
+        <span className={cn("font-extrabold text-taupe", size === "lg" ? "text-base" : "text-sm")} aria-hidden="true">
+          &ndash;
+        </span>
+        <span className="sr-only">No reviews yet</span>
+      </span>
+    );
+  }
   const text = `${formatScore(average)} out of 5 from ${count} review${count === 1 ? "" : "s"}`;
   return (
     <span className={cn("inline-flex items-center gap-1.5", className)}>

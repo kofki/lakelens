@@ -49,7 +49,7 @@ export function ParkTile({ item }: ParkTileProps) {
 
       <div className="rounded-[14px] bg-white/90 px-3 py-2 backdrop-blur-xl">
         <h3 className="truncate text-[0.95rem] font-extrabold leading-tight text-ink">
-          <Link href={`/park/${park.slug}`} className="after:absolute after:inset-0 after:rounded-[20px]">
+          <Link href={`/park/${park.slug}`} className="after:absolute after:content-[''] after:inset-0 after:rounded-[20px]">
             {park.name}
           </Link>
         </h3>
@@ -57,17 +57,15 @@ export function ParkTile({ item }: ParkTileProps) {
             question; a report is about the next two hours and belongs on the park page. */}
         <p className="mt-0.5 flex flex-wrap items-center gap-x-1.5 gap-y-1 text-xs text-mocha">
           <span>{describeParkKind(park)}</span>
-          {item.reviewStats && item.reviewStats.averageRating != null && (
-            <>
-              <span aria-hidden="true">·</span>
-              <Score
-                average={item.reviewStats.averageRating}
-                count={item.reviewStats.reviewCount}
-                sampleCount={item.reviewStats.sampleCount}
-                size="sm"
-              />
-            </>
-          )}
+          {/* Always rendered: a park nobody has reviewed shows a star and a dash, so the
+              row reads the same on every card. */}
+          <span aria-hidden="true">·</span>
+          <Score
+            average={item.reviewStats?.averageRating ?? null}
+            count={item.reviewStats?.reviewCount ?? 0}
+            sampleCount={item.reviewStats?.sampleCount ?? 0}
+            size="sm"
+          />
         </p>
       </div>
     </article>

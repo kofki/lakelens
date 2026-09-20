@@ -71,20 +71,20 @@ export function ParkCard({ item, selected = false, onSelect }: ParkCardProps) {
               <Link
                 href={`/park/${park.slug}`}
                 onClick={selectable ? (e) => e.stopPropagation() : undefined}
-                className={selectable ? "underline-offset-4 hover:underline" : "after:absolute after:inset-0 after:rounded-card"}
+                className={selectable ? "underline-offset-4 hover:underline" : "after:absolute after:content-[''] after:inset-0 after:rounded-card"}
               >
                 {park.name}
               </Link>
             </h3>
-            {item.reviewStats && item.reviewStats.averageRating != null && (
-              <Score
-                average={item.reviewStats.averageRating}
-                count={item.reviewStats.reviewCount}
-                sampleCount={item.reviewStats.sampleCount}
-                size="sm"
-                className="mt-0.5"
-              />
-            )}
+            {/* Always rendered: an unreviewed park shows a star and a dash rather than
+                nothing, so every card has the score in the same place. */}
+            <Score
+              average={item.reviewStats?.averageRating ?? null}
+              count={item.reviewStats?.reviewCount ?? 0}
+              sampleCount={item.reviewStats?.sampleCount ?? 0}
+              size="sm"
+              className="mt-0.5"
+            />
             <p className="mt-0.5 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-mocha">
               <span>{describeParkKind(park)}</span>
               {distance && (
