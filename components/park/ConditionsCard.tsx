@@ -46,11 +46,26 @@ interface Tile {
   label: string;
   value: string;
   level: Level | null;
+  descriptor?: string;
 }
 
-/** Only tiles with a real reading. A missing measurement renders nothing at all. */
-function tile(key: string, icon: ReactNode, label: string, value: string | null, level: Level | null): Tile | null {
-  return value == null ? null : { key, icon, label, value, level };
+/**
+ * Only tiles with a real reading. A missing measurement renders nothing at all.
+ *
+ * `descriptor` overrides the level word, which matters where the value already IS the
+ * level: a water-quality tile reading "Good" over "Good" says nothing twice.
+ */
+function tile(
+  key: string,
+  icon: ReactNode,
+  label: string,
+  value: string | null,
+  level: Level | null,
+  descriptor?: string | null,
+): Tile | null {
+  if (value == null) return null;
+  const text = descriptor ?? level?.label;
+  return { key, icon, label, value, level, descriptor: text && text !== value ? text : undefined };
 }
 
 const hourLabel = (h: number) => `${((h + 11) % 12) + 1} ${h < 12 ? "AM" : "PM"}`;
@@ -81,12 +96,17 @@ export function ConditionsCard({ bundle, now }: ConditionsCardProps) {
     // A beach reads its bacteria count and its red tide; inland water reads the FDEP
     // algal-bloom sample. A park never shows both kinds of water quality.
     tile("beachwater", <FlaskConical aria-hidden="true" focusable="false" />, "Water quality",
-      forecast?.beachWaterQuality ? forecast.beachWaterQuality.label : null, beachWaterLevel(forecast?.beachWaterQuality)),
+      forecast?.beachWaterQuality ? forecast.beachWaterQuality.label : null,
+      beachWaterLevel(forecast?.beachWaterQuality),
+      forecast?.beachWaterQuality ? `${forecast.beachWaterQuality.valueCfu} cfu/100mL` : null),
     tile("redtide", <Biohazard aria-hidden="true" focusable="false" />, "Red tide",
-      forecast?.redTide ? forecast.redTide.label : null, redTideLevel(forecast?.redTide)),
+      forecast?.redTide ? forecast.redTide.label : null,
+      redTideLevel(forecast?.redTide),
+      forecast?.redTide ? `sampled ${forecast.redTide.distanceKm} km away` : null),
     tile("quality", <FlaskConical aria-hidden="true" focusable="false" />, "Water quality",
       !forecast?.beachWaterQuality && forecast?.waterQuality ? forecast.waterQuality.label : null,
-      forecast?.beachWaterQuality ? null : waterQualityLevel(forecast?.waterQuality)),
+      forecast?.beachWaterQuality ? null : waterQualityLevel(forecast?.waterQuality),
+      !forecast?.beachWaterQuality && forecast?.waterQuality ? `sampled ${forecast.waterQuality.distanceKm} km away` : null),
     tile("thunder", <CloudLightning aria-hidden="true" focusable="false" />, "Thunder",
       forecast?.nowThunderProb != null ? `${Math.round(forecast.nowThunderProb)}%` : null,
       thunderLevel(forecast?.nowThunderProb)),
@@ -172,7 +192,7 @@ export function ConditionsCard({ bundle, now }: ConditionsCardProps) {
               icon={t.icon}
               label={t.label}
               value={t.value}
-              descriptor={t.level?.label}
+              descriptor={t.descriptor}
               tone={t.level?.tone}
               percent={t.level?.percent ?? null}
             />
