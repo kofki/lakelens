@@ -312,7 +312,12 @@ function slimForList(item: ParkWithStatus): ParkWithStatus {
         sources: {},
       }
     : null;
-  return { ...item, weather, usgs, forecast };
+  // A card draws one star, the mean and the count. The 1-5 histogram is only ever shown
+  // on the park page, so it does not need to cross to the list or the map.
+  const reviewStats = item.reviewStats
+    ? { ...item.reviewStats, distribution: [0, 0, 0, 0, 0] as ReviewStats["distribution"] }
+    : item.reviewStats;
+  return { ...item, weather, usgs, forecast, reviewStats };
 }
 
 function assembleAll(world: World, now: Date): ParkWithStatus[] {

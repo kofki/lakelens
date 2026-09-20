@@ -47,13 +47,24 @@ export interface ScoreProps {
   className?: string;
 }
 
-/** The score as it appears at the top of a card or a park page. */
+/**
+ * The score as it appears at the top of a card or a park page.
+ *
+ * At `sm` this draws ONE star rather than five. Five stars is ten SVG paths per instance
+ * (the row plus its clipped overlay), and the list renders 84 cards twice: the full row
+ * cost 12 kB gzipped on the home document for a widget 14 px tall where the number is
+ * doing all the work anyway.
+ */
 export function Score({ average, count, sampleCount = 0, size = "md", className }: ScoreProps) {
   if (average == null || count === 0) return null;
   const text = `${formatScore(average)} out of 5 from ${count} review${count === 1 ? "" : "s"}`;
   return (
     <span className={cn("inline-flex items-center gap-1.5", className)}>
-      <RatingStars value={average} size={size} />
+      {size === "sm" ? (
+        <Star aria-hidden="true" focusable="false" className="size-3.5 shrink-0 text-sunset" fill="currentColor" strokeWidth={0} />
+      ) : (
+        <RatingStars value={average} size={size} />
+      )}
       <span className={cn("font-extrabold text-ink", size === "lg" ? "text-base" : "text-sm")}>{formatScore(average)}</span>
       <span className={cn("text-mocha", size === "lg" ? "text-sm" : "text-xs")}>({count})</span>
       <span className="sr-only">
