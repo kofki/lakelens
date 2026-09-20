@@ -1,8 +1,398 @@
 {
   "_note": "Water body each OSM swim area sits on, from scripts/fetch-osm-water-bodies.ts. Matched by bounding box against every named lake and river in the state, smallest box first. water_body null means the point named no fresh water and is not published.",
-  "generated_at": "2026-09-20T09:23:30.388Z",
+  "generated_at": "2026-09-20T10:25:10.918Z",
   "pad_m": 600,
   "verdicts": {
+    "alexai-beach-ak": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "austin-beach-ak": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "beaver-beach-ak": {
+      "water_body": "Mirror Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "berm-beach-ak": {
+      "water_body": "Echoing Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "big-beach-ak": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "big-mike-beach-ak": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "birch-beach-ak": {
+      "water_body": "Kent Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "bishop-s-beach-ak": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "buskin-beach-ak": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "cannon-beach-ak": {
+      "water_body": "Tawah Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "casco-beach-ak": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "center-beach-ak": {
+      "water_body": "Kent Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "chief-shakes-hot-springs-site-ak": {
+      "water_body": "Ketili River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "cloud-beach-ak": {
+      "water_body": "Yammaltene Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "coast-guard-beach-ak": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "denali-education-center-beach-ak": {
+      "water_body": "Nenana River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "earle-beach-ak": {
+      "water_body": "Earle River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "elliot-beach-ak": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "fast-beach-ak": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "gainor-beach-ak": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "glass-beach-ak": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "hidalgo-beach-ak": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "humboldt-harbor-ak": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "inside-beach-ak": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "jewel-beach-ak": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "kaslokan-point-ak": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "kayak-beach-ak": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "kearney-beach-ak": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "ken-s-beach-ak": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "kenai-beach-ak": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "kornoelje-s-beach-ak": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "kuluk-beach-ak": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "lena-beach-ak": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "lomack-beach-ak": {
+      "water_body": "Mission Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lyn-ary-beach-ak": {
+      "water_body": "Hoods Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "massacre-beach-ak": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "maylynn-s-beach-ak": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "nevidiskov-beach-ak": {
+      "water_body": "Nevidiskov River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "north-beach-ak": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "nunavachak-beach-ak": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "outside-beach-ak": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "parking-lot-beach-ak": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "quarry-beach-ak": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "range-light-beach-ak": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "red-beach-ak": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "red-cove-beach-ak": {
+      "water_body": "Red Cove Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "refuge-beach-ak": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "refuge-cove-ak": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "sage-beach-ak": {
+      "water_body": "Indian River - Kaasdahéen",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "salmon-ranch-ak": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "sand-dollar-beach-ak": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "sand-lake-park-ak": {
+      "water_body": "Sundi Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sandy-beach-ak": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "sandy-beach-south-ak": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "sarana-beach-ak": {
+      "water_body": "Nicholas River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "smith-beach-ak": {
+      "water_body": "Steller River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sonom-beach-ak": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "south-beach-ak": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "south-point-higgins-beach-ak": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "swim-beach-ak": {
+      "water_body": "Tanana Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "temnac-beach-ak": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "waterfront-ak": {
+      "water_body": "Spring Creek Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "west-beach-ak": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "whiskey-gulch-beach-ak": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "wrangell-beach-ak": {
+      "water_body": "Wrangell Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
     "beaver-lake-dive-park-ar": {
       "water_body": "Beaver Lake",
       "type": "lake",
@@ -236,6 +626,2520 @@
       "type": "lake",
       "great_lake": false,
       "reason": "ok"
+    },
+    "alvord-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "amtrak-beach-ct": {
+      "water_body": "Niantic River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "anchor-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "attawan-beach-ct": {
+      "water_body": "Indian Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "austrailia-beach-ct": {
+      "water_body": "Mystic River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "avery-point-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "babbs-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "bayley-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "bayview-beach-ct": {
+      "water_body": "Calf Pen Meadow Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "bluff-point-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "boating-side-ct": {
+      "water_body": "Tomlinson Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "burwells-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "burying-hill-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "bushy-point-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "calf-pasture-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "center-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "chalker-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "chapman-beach-ct": {
+      "water_body": "Cold Spring Brook",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "circle-beach-ct": {
+      "water_body": "Neck River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "clinton-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "clinton-town-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "commodore-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "compo-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "crescent-beach-ct": {
+      "water_body": "Pattagansett River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "cummings-park-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "daniel-ave-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "dixson-st-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "dossin-park-beach-ct": {
+      "water_body": "Hanover Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "dubois-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "east-rive-beach-ct": {
+      "water_body": "Neck River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "eastern-point-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "fairfield-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "fairfield-public-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "farview-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "flat-rock-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "fords-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "fort-trumbull-beach-ct": {
+      "water_body": "Housatonic River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "front-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "giants-neck-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "great-hammock-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "green-harbor-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "groton-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "groton-long-point-main-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "grove-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "gulf-beach-ct": {
+      "water_body": "Wepawaug River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "halls-pond-beach-ct": {
+      "water_body": "Halls Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "hammonasset-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "harbor-point-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "harbor-view-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "harveys-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "hawley-ave-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "hawthorne-beach-ct": {
+      "water_body": "Byram River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "hole-in-the-wall-beach-ct": {
+      "water_body": "Dodge Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "holland-beach-ct": {
+      "water_body": "Highland Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "hotchkiss-cove-beach-ct": {
+      "water_body": "Talmages Ice Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "hotchkiss-grove-beach-ct": {
+      "water_body": "Talmages Ice Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "indian-cove-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "indiantown-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "jackson-cove-beach-ct": {
+      "water_body": "Lake Zoar",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "jacobs-public-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "jennings-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "kiddie-s-beach-ct": {
+      "water_body": "Fitch's Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lake-beseck-beach-ct": {
+      "water_body": "Beseck Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lake-mohegan-beach-ct": {
+      "water_body": "Samp Mortar Reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lighthouse-point-ct": {
+      "water_body": "Morris Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "limewood-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "long-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "lordship-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "mamanasco-beach-ct": {
+      "water_body": "Hidden Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "martin-park-beach-ct": {
+      "water_body": "Great Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "marvin-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "mattatuck-beach-ct": {
+      "water_body": "Theriaults Ice Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "mccook-park-beach-ct": {
+      "water_body": "Pattagansett River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "miami-beach-ct": {
+      "water_body": "Swan Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "middle-beach-ct": {
+      "water_body": "Patchogue River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "mitchell-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "momauguin-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "money-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "montowese-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "moosup-pond-beach-ct": {
+      "water_body": "Moosup Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "morningside-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "morris-town-beach-ct": {
+      "water_body": "Bantam Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "nauyaug-coast-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "noank-town-dock-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "north-beach-ct": {
+      "water_body": "Lake Candlewood",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "ocean-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "old-mill-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "osprey-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "oyster-river-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "pebbley-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "penfield-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "pine-ledge-ct": {
+      "water_body": "Squantz Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "pleasure-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "plum-bank-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "point-beach-ct": {
+      "water_body": "Calf Pen Meadow Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "pond-point-beach-ct": {
+      "water_body": "Calf Pen Meadow Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "poverty-island-beach-ct": {
+      "water_body": "Back River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "prospect-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "quotonset-beach-ct": {
+      "water_body": "Patchogue River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "rocky-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "rocky-neck-state-beach-ct": {
+      "water_body": "Bride Brook",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "rowayton-community-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "sandy-beach-ct": {
+      "water_body": "Crystal Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sasco-hill-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "sea-bluff-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "seaside-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "shell-beach-ct": {
+      "water_body": "Caroline Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "shennecossett-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "sherman-town-beach-ct": {
+      "water_body": "Lake Candlewood",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "short-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "silver-beach-ct": {
+      "water_body": "Housatonic River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "silver-sands-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "silver-sands-ct": {
+      "water_body": "Housatonic River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "soundview-beach-ct": {
+      "water_body": "Swan Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "south-beach-ct": {
+      "water_body": "Lake Candlewood",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "south-pine-creek-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "southport-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "staffordville-beach-ct": {
+      "water_body": "Staffordville Reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "stannard-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "sunset-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "swift-st-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "thompsonville-boat-launch-ct": {
+      "water_body": "Freshwater Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "town-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "twixt-hills-beach-ct": {
+      "water_body": "Lake Naraneka",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "uncas-point-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "victoria-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "villa-rosa-terrace-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "walnut-beach-ct": {
+      "water_body": "Housatonic River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "waterfront-ct": {
+      "water_body": "Tomlinson Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "weeburn-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "weed-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "west-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "west-silver-sands-beach-ct": {
+      "water_body": "Caroline Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "white-sand-beach-ct": {
+      "water_body": "Black Hall River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "williams-beach-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "woodstock-town-beach-ct": {
+      "water_body": "Muddy Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "woodway-beach-club-ct": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "zoar-beach-ct": {
+      "water_body": "Lake Zoar",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "11th-streeth-public-beach-access-ga": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "5th-street-public-beach-access-ga": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "6th-street-public-beach-access-ga": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "7th-street-public-beach-access-ga": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "9th-street-public-beach-access-ga": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "aarlington-beach-ga": {
+      "water_body": "Chattahoochee River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "back-river-beach-ga": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "bartow-beach-ga": {
+      "water_body": "Allatoona Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "berkeley-lake-beach-ga": {
+      "water_body": "Berkeley Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "blackbeard-island-public-beach-ga": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "bm-fort-ga": {
+      "water_body": "Allatoona Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "bridge-beach-ga": {
+      "water_body": "Little Glady Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "bridgemill-beach-ga": {
+      "water_body": "Allatoona Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "bridgemill-puttputt-ga": {
+      "water_body": "Allatoona Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "buck-shoals-beach-ga": {
+      "water_body": "Chattahoochee River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "butter-bean-beach-ga": {
+      "water_body": "Skidaway Narrows",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "callaway-gardens-robin-lake-beach-ga": {
+      "water_body": "Robin Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "cedar-street-public-beach-access-ga": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "costley-mill-park-beach-ga": {
+      "water_body": "Costley Millpond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "disharoon-beach-ga": {
+      "water_body": "Disharoon Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "driftwood-beach-ga": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "emc-beach-ga": {
+      "water_body": "Little Glady Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "garrison-shoals-ga": {
+      "water_body": "Reservoir 59",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "glory-ga": {
+      "water_body": "Jekyll Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "half-moon-landing-ga": {
+      "water_body": "Altamaha River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "jekyll-point-ga": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "marker-post-ga": {
+      "water_body": "Cumberland River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "mid-beach-ga": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "morris-landing-ga": {
+      "water_body": "Altamaha River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "myrtle-street-public-beach-access-ga": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "nanny-goat-beach-ga": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "neptune-road-public-beach-access-ga": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "north-beach-ga": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "poop-island-ga": {
+      "water_body": "Lake Blue Ridge",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "rocky-creek-beach-ga": {
+      "water_body": "Lake Sinclair",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sandy-beach-ga": {
+      "water_body": "Lake Tobesofkee",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "savannah-river-beach-ga": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "sea-camp-beach-ga": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "sea-island-beach-ga": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "senior-beach-ga": {
+      "water_body": "Little Glady Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "shark-tooth-beach-ga": {
+      "water_body": "Jekyll Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "south-beach-ga": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "swan-lake-estates-beach-ga": {
+      "water_body": "James Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "swimming-beach-ga": {
+      "water_body": "Walter F. George Reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "upper-tanyard-creek-swimming-beach-ga": {
+      "water_body": "Allatoona Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "yellow-jacket-beach-ga": {
+      "water_body": "West Point Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "49-black-sand-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "5-graves-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "ai-opio-beach-hi": {
+      "water_body": "ʻAimakapā Fishpond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "aki-s-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "ala-moana-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "alan-davis-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "alapa-i-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "anaehoomalu-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "anini-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "aweoweo-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "baby-beach-hi": {
+      "water_body": "Kahoma Stream",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "baldwin-beach-hi": {
+      "water_body": "Kailua Gulch",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "barking-sands-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "big-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "black-sand-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "blacksand-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "brennecke-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "chang-s-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "chuns-reef-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "clissolds-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "cromwell-s-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "d-t-fleming-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "derby-s-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "dixie-maru-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "donkey-beach-hi": {
+      "water_body": "Kumukumu Stream",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "duke-paoa-kahanamoku-beach-park-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "fort-kamehameha-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "gillin-s-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "ha-ena-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "ha-ula-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "haikioawa-landing-hi": {
+      "water_body": "Kealialuna Stream",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "halape-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "halawa-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "hale-iwa-beach-hi": {
+      "water_body": "Anahulu River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "haleiwa-alii-beach-hi": {
+      "water_body": "Loko Ea Fishpond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "hamoa-beach-hi": {
+      "water_body": "Kapiʻa Stream",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "hana-beach-park-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "hanaka-ilio-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "hanakapi-ai-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "hanalei-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "hanamaulu-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "hanauma-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "hapuna-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "hawaiian-electric-beach-park-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "hickam-harbor-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "hideaways-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "hoai-bay-lawai-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "honl-s-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "honokalaoa-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "honokohau-harbor-beach-hi": {
+      "water_body": "ʻAimakapā Fishpond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "honokowai-beach-park-hi": {
+      "water_body": "Mahinahina Stream",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "honoli-i-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "honopu-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "honouli-maloo-bay-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "hookipa-park-beach-hi": {
+      "water_body": "Hamakuapoko Stream",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "hulopo-e-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "hunakai-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "ka-a-awa-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "ka-aku-u-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "ka-anapali-beach-hi": {
+      "water_body": "Wahikuli Gulch",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "ka-opala-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "kaelehuluhulu-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "kahakuloa-beach-hi": {
+      "water_body": "Waihali Gulch",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "kahala-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "kahalepohaku-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "kahana-bay-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "kahe-point-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "kahekili-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "kahili-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "kahuku-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "kahuwai-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "kaiaka-bay-beach-hi": {
+      "water_body": "Paukauila Stream",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "kaihalulu-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "kailua-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "kaimana-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "kaiolohia-beach-hi": {
+      "water_body": "Halulu Gulch",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "kaipapa-u-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "kalae-o-io-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "kalalau-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "kalani-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "kalapaki-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "kalepolepo-beach-park-hi": {
+      "water_body": "Kūlanihākoʻi Gulch",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "kalihiwai-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "kaluhikaa-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "kamaka-ipo-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "kamalino-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "kamaole-i-beach-hi": {
+      "water_body": "Waipuʻilani Gulch",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "kamaole-ii-beach-hi": {
+      "water_body": "Liʻilioholo Stream",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "kamaole-iii-beach-hi": {
+      "water_body": "Liʻilioholo Stream",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "kanaha-beach-hi": {
+      "water_body": "Kailianui Canal",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "kanalukaha-beach-hi": {
+      "water_body": "Hakina Gulch",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "kapa-a-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "kapahukapu-manini-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "kapalua-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "kapukuwahine-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "kauapea-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "kauhala-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "kaulahao-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "kaupoa-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "kauwaha-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "kawa-aloa-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "kawailoa-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "ke-e-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "ke-ei-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "keaau-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "kealia-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "keamano-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "keawakapu-beach-north-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "keawakapu-beach-south-hi": {
+      "water_body": "Keawakapu Stream",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "keawanui-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "kehena-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "keka-a-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "kekaha-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "keonenui-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "kepuhi-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "ki-eki-e-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "kiahuna-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "kikaua-point-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "ko-olina-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "koki-beach-hi": {
+      "water_body": "Haneoʻo Gulch",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "ku-au-cove-hi": {
+      "water_body": "Kūʻau Stream",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "kua-bay-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "kuhio-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "kumimi-beach-20-mile-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "kumukea-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "lagoon-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "lanikai-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "laniloa-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "larsen-s-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "lawa-i-beach-hi": {
+      "water_body": "Lawai Stream",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lawai-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "le-ahi-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "leho-ula-beach-hi": {
+      "water_body": "Haneoʻo Gulch",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lighthouse-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "little-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "lopa-beach-hi": {
+      "water_body": "Lōpā Gulch",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lumaha-i-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "maeaea-beach-hi": {
+      "water_body": "Loko Ea Fishpond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "magic-island-lagoon-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "magic-sands-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "mahaiula-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "mai-poina-beach-park-hi": {
+      "water_body": "Kūlanihākoʻi Gulch",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "makaha-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "makalawena-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "makaleha-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "makalei-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "makapu-u-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "makapuu-beach-park-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "makena-landing-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "makolea-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "makua-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "maluaka-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "mauna-kea-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "mauna-lani-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "mauumae-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "mokapu-beach-hi": {
+      "water_body": "Lily Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "mokolii-view-point-hi": {
+      "water_body": "Mōliʻi Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "moku-auia-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "mokule-ia-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "mokule-ia-rock-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "moloa-a-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "nakeikiapua-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "nanakuli-beach-park-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "napili-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "nonopapa-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "north-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "north-paia-beach-hi": {
+      "water_body": "Kūʻau Stream",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "ohiki-lolo-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "olo-upena-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "one-uli-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "oneloa-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "ooma-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "pa-ia-bay-beach-hi": {
+      "water_body": "Kailua Gulch",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "pa-ia-secret-beach-hi": {
+      "water_body": "Kailua Gulch",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "pakala-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "palauea-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "papakolea-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "papohaku-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "pebbles-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "po-ipu-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "po-olau-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "po-olenalena-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "polihale-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "polihua-beach-hi": {
+      "water_body": "Palahinu Stream",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "polo-beach-east-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "polo-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "polo-beach-west-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "pololu-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "pounders-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "private-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "pu-u-poa-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "pu-uiki-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "puamana-beach-park-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "punalau-beach-hi": {
+      "water_body": "Pōhakupule Gulch",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "punalu-u-black-sand-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "queen-kapi-olani-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "queen-s-pond-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "red-sand-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "rocky-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "s-turns-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "salt-pond-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "sandy-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "sealodge-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "secret-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "shipwreck-beach-hi": {
+      "water_body": "Poaiwa Gulch",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "slaughter-house-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "spitting-caves-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "sugar-beach-hi": {
+      "water_body": "Keālia Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sunset-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "swanzy-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "temple-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "three-tables-hi": {
+      "water_body": "Waimea River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "thukkie-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "tunnels-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "turtle-bay-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "turtle-bay-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "turtle-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "ukumehame-beach-park-hi": {
+      "water_body": "Makiwa Gulch",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "ulua-beach-hi": {
+      "water_body": "Lily Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "vor-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "waiakalua-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "waialae-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "waialea-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "waialee-beach-hi": {
+      "water_body": "Kalou Fishpond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "waiapua-a-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "waikiki-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "waikoloa-beach-hi": {
+      "water_body": "Loko Waihonu",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "wailea-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "wailua-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "waimanalo-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "waimea-bay-hi": {
+      "water_body": "Waimea River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "waipio-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "waipu-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "wawaloli-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "wyllie-s-beach-hi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
     },
     "ainsworth-beach-ia": {
       "water_body": "Spirit Lake",
@@ -1758,6 +4662,1668 @@
     "smith-ridge-beach-ky": {
       "water_body": "Green River Lake",
       "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "bare-neck-shore-md": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "bay-ridge-beach-md": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "belcamp-beach-md": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "betterton-beach-md": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "breezy-point-beach-md": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "brownie-s-beach-md": {
+      "water_body": "Brownies Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "carr-s-beach-md": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "cedar-grove-beach-md": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "clifton-beach-md": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "conquest-beach-md": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "cove-point-beach-md": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "dog-beach-md": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "drum-point-beach-md": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "earle-landing-md": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "east-beach-area-md": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "garrett-island-beach-md": {
+      "water_body": "Susquehanna River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "gibson-island-beach-md": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "great-egging-beach-md": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "herald-harbor-beach-1-md": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "kane-sand-bank-md": {
+      "water_body": "Gunpowder Falls",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lake-claire-beach-md": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "lane-beach-md": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "langford-sand-md": {
+      "water_body": "Pocomoke River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lindamoor-community-beach-md": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "little-egging-beach-md": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "long-beach-md": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "main-beach-md": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "maryland-beach-md": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "matoaka-beach-md": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "mayo-beach-md": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "miami-beach-md": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "mitchell-bluff-md": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "mount-vernon-beach-md": {
+      "water_body": "Wicomico River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "north-beach-md": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "north-east-beach-area-md": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "north-severn-beach-md": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "pines-on-the-severn-community-beach-md": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "piney-point-beach-md": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "port-sunlight-beach-md": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "purplehorse-beach-md": {
+      "water_body": "Difficult Run",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "roachs-shore-md": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "saint-george-island-beach-md": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "saint-jerome-beach-md": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "sandy-hill-beach-md": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "sandyland-beach-md": {
+      "water_body": "Potomac River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "seahorse-beach-md": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "selby-beach-md": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "severn-beach-md": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "sound-shore-md": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "south-beach-area-md": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "south-beach-md": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "sparrows-beach-md": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "swimming-beach-md": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "sycamore-beach-md": {
+      "water_body": "Difficult Run",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "the-sands-md": {
+      "water_body": "Potomac River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "triton-beach-md": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "wickes-beach-md": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "wicomico-beach-md": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "wild-rose-shores-md": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "2-me": {
+      "water_body": "Portage Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "andrews-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "arundel-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "back-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "back-shore-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "bakeman-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "ballast-island-ledge-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "bayview-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "bear-island-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "biddeford-pool-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "big-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "big-omaha-beach-me": {
+      "water_body": "West Branch Penobscot River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "big-sand-beach-me": {
+      "water_body": "Sysladobsis Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "big-tree-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "big-white-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "billys-shore-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "birch-point-beach-me": {
+      "water_body": "Long Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "birchhead-shore-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "black-beach-me": {
+      "water_body": "Donnell Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "boom-beach-me": {
+      "water_body": "Long Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "boot-cove-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "boulder-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "brimstone-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "brook-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "burnt-meadow-pond-town-beach-me": {
+      "water_body": "Burnt Meadow Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "cals-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "camp-ellis-reach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "campbell-shore-me": {
+      "water_body": "Long Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "cape-neddick-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "carrying-place-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "causeway-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "centennial-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "chandler-cove-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "clam-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "clayfers-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "cliff-house-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "cobble-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "coffin-pond-me": {
+      "water_body": "Coffin Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "cole-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "cole-s-landing-beach-me": {
+      "water_body": "Mattakeunk Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "colony-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "cony-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "crescent-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "crescent-surf-me": {
+      "water_body": "Little River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "crockett-s-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "danforth-cove-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "davis-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "dawn-marie-beach-me": {
+      "water_body": "Wabassus Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "denmark-town-beach-me": {
+      "water_body": "Moose Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "devil-s-bathing-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "double-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "drakes-island-beach-me": {
+      "water_body": "Blacksmith Brook",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "drift-inn-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "driftwood-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "ducktrap-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "dunn-beach-me": {
+      "water_body": "Graham Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "east-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "east-cove-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "east-end-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "eastern-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "echo-lake-beach-me": {
+      "water_body": "Echo Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "eleanor-l-campbell-preserve-polly-cove-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "ellis-pond-beach-me": {
+      "water_body": "Ellis Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "ernie-s-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "ferry-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "fiddlehead-campground-me": {
+      "water_body": "Old Course Saco River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "fish-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "flanders-pond-beach-me": {
+      "water_body": "Flanders Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "footbridge-beach-me": {
+      "water_body": "Stevens Brook",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "fortunes-rocks-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "freddy-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "frenchman-s-hole-me": {
+      "water_body": "Bull Branch",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "gage-rice-beach-me": {
+      "water_body": "Kedar Brook",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "gilley-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "goochs-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "goodie-s-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "goose-rocks-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "goss-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "grand-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "grays-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "greenwood-town-beach-me": {
+      "water_body": "South Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "grimes-cove-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "hales-beach-me": {
+      "water_body": "Branch Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "half-mile-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "harbor-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "head-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "hendricks-head-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "hero-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "higgins-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "highland-lake-beach-me": {
+      "water_body": "Highland Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "hills-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "hold-shore-me": {
+      "water_body": "Long Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "hotel-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "huckins-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "hunnewell-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "hunters-beach-me": {
+      "water_body": "Hunters Brook",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "indian-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "indian-camp-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "indian-landing-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "izzy-s-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "jasper-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "jesse-beach-me": {
+      "water_body": "Graham Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "jordan-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "joyce-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "kennedy-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "keoka-lake-beach-me": {
+      "water_body": "Kedar Brook",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "kinney-shores-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "lac-private-beach-3-me": {
+      "water_body": "Lake Arrowhead",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lac-private-beach-5-me": {
+      "water_body": "Lake Arrowhead",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "laite-memorial-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "lamoine-beach-me": {
+      "water_body": "Jordan River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "landing-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "laudholm-beach-me": {
+      "water_body": "Little River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "ledge-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "letter-s-me": {
+      "water_body": "Merrill Brook",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lighthouse-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "lily-pond-beach-me": {
+      "water_body": "Lily Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "limerick-municipal-beach-me": {
+      "water_body": "Sokokis Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lincolnville-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "little-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "little-hunters-beach-me": {
+      "water_body": "Hunters Brook",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "little-mother-s-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "little-pond-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "lobster-pound-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "long-beach-lower-togue-pond-baxter-state-park-millinocket-ma-me": {
+      "water_body": "Lower Togue Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "long-lake-beach-me": {
+      "water_body": "Crystal Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "long-sands-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "lower-range-pond-beach-me": {
+      "water_body": "Lower Range Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lucia-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "maiden-cove-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "malaga-landing-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "markey-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "marlboro-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "medrick-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "middle-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "mile-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "mma-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "molasses-pond-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "moody-beach-me": {
+      "water_body": "Bragdon Brook",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "mothers-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "mowry-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "mud-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "narrow-place-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "newfield-public-beach-me": {
+      "water_body": "Rock Haven Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "north-point-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "ogunquit-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "old-ferry-landing-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "old-orchard-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "orchard-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "otis-beach-me": {
+      "water_body": "Graham Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "otisfield-town-beach-me": {
+      "water_body": "Pleasant Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "outhouse-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "parsons-beach-me": {
+      "water_body": "Mousam River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "pebble-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "pettegrow-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "pine-point-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "pleasant-point-town-beach-me": {
+      "water_body": "Kezar Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "pleasant-town-beach-me": {
+      "water_body": "Pleasant Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "pobblestone-cove-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "popham-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "raymond-beach-me": {
+      "water_body": "Panther Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "reach-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "rec-beach-me": {
+      "water_body": "Sebago Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "redman-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "rich-memorial-town-beach-me": {
+      "water_body": "Sebago Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "richardson-s-beach-me": {
+      "water_body": "Pocasset Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "riverside-beach-me": {
+      "water_body": "Poplar Stream",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "rogers-point-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "rogue-bluffs-beach-me": {
+      "water_body": "Simpson Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "rome-town-beach-me": {
+      "water_body": "Great Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "roque-island-ledge-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "sand-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "sand-cove-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "sand-dune-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "sandy-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "sandy-point-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "sandy-river-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "scarborough-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "schoodic-beach-me": {
+      "water_body": "Donnell Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "schooner-cove-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "sea-cove-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "sea-glass-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "seaglass-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "seapoint-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "seawall-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "sebago-town-beach-me": {
+      "water_body": "Sebago Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sharks-point-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "shell-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "shirt-tail-point-me": {
+      "water_body": "Seabright Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "short-sands-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "south-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "south-sandy-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "southwest-cove-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "spindle-cove-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "spragues-beach-me": {
+      "water_body": "Penobscot River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "spring-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "spring-cove-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "steep-bank-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "stinchfield-beach-me": {
+      "water_body": "Dead River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sunset-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "suprise-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "surfside-beach-me": {
+      "water_body": "Jones Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "swim-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "the-brook-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "thomas-point-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "three-island-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "town-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "tyler-s-pond-beach-me": {
+      "water_body": "Lily Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "wadsworth-cove-beach-me": {
+      "water_body": "British Canal",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "wales-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "walker-s-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "walton-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "wells-beach-me": {
+      "water_body": "Webhannet River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "west-shore-sandy-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "western-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "whale-beach-me": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "wilkies-beach-me": {
+      "water_body": "Mill Brook",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "willard-beach-me": {
+      "water_body": "Fore River",
+      "type": "river",
       "great_lake": false,
       "reason": "ok"
     },
@@ -3507,6 +8073,66 @@
       "great_lake": false,
       "reason": "ok"
     },
+    "belhaven-beach-ms": {
+      "water_body": "Belhaven Beach",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "breakover-sandbar-ms": {
+      "water_body": "Leaf River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "clermont-harbor-beach-ms": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "collinsville-beach-ms": {
+      "water_body": "Okatibbee Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "desoto-woods-footpath-ms": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "gatorland-beach-ms": {
+      "water_body": "Ross R Barnett Reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lakeshore-beach-ms": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "longfield-sandbar-ms": {
+      "water_body": "Leaf River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lower-lake-beach-ms": {
+      "water_body": "Sardis Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "perk-beach-ms": {
+      "water_body": "Spring Branch",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
     "black-sandy-beach-mt": {
       "water_body": "Hauser Lake",
       "type": "lake",
@@ -3720,6 +8346,624 @@
     "yanney-beach-ne": {
       "water_body": "Tailrace",
       "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "allen-albee-beach-nh": {
+      "water_body": "Lake Winnipesaukee",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "alton-town-beach-nh": {
+      "water_body": "Lake Winnipesaukee",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "avery-crouse-beach-nh": {
+      "water_body": "Newfound Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "baboosic-lake-town-beach-nh": {
+      "water_body": "Baboosic Brook",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "back-lake-beach-nh": {
+      "water_body": "Back Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "beach-area-1-nh": {
+      "water_body": "Saco River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "beach-area-2-nh": {
+      "water_body": "Saco River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "belleau-lake-public-beach-nh": {
+      "water_body": "Belleau Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "bennett-s-bridge-beach-nh": {
+      "water_body": "Sherburne Brook",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "birch-beach-nh": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "blodgett-landing-coast-nh": {
+      "water_body": "Lake Sunapee",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "blpoa-beach-nh": {
+      "water_body": "Woodman Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "boulder-beach-nh": {
+      "water_body": "Little Pea Porridge Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "brewster-beach-nh": {
+      "water_body": "Lake Winnipesaukee",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "bucklin-beach-nh": {
+      "water_body": "Little Sunapee Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "campers-beach-nh": {
+      "water_body": "Beaver Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "canaan-street-lake-beach-nh": {
+      "water_body": "Mascoma River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "catamount-pond-beach-nh": {
+      "water_body": "Catamount Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "center-harbor-town-beach-nh": {
+      "water_body": "Lake Winnipesaukee",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "clows-beach-nh": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "colony-beach-closed-nh": {
+      "water_body": "Locke Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "contoocook-lake-public-beach-nh": {
+      "water_body": "Contoocook Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "conway-lake-public-beach-nh": {
+      "water_body": "Conway Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "corona-beach-nh": {
+      "water_body": "Vilas Pool",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "croydon-town-beach-nh": {
+      "water_body": "Rockybound Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "dewey-beach-nh": {
+      "water_body": "Lake Sunapee",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "dog-beach-nh": {
+      "water_body": "Souhegan River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "dustin-beach-nh": {
+      "water_body": "Locke Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "east-cove-beach-nh": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "east-lake-beach-nh": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "echo-lake-beach-nh": {
+      "water_body": "Echo Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "edna-maude-beach-nh": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "eidelweiss-beach-nh": {
+      "water_body": "Little Pea Porridge Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "elkins-beach-nh": {
+      "water_body": "Pleasant Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "fitzwilliam-town-beach-on-laurel-lake-nh": {
+      "water_body": "Laurel Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "foss-beach-nh": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "gallien-s-town-beach-nh": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "geneva-beach-nh": {
+      "water_body": "Little Pea Porridge Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "georges-mills-beach-nh": {
+      "water_body": "Otter Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "gilford-beach-nh": {
+      "water_body": "Lake Winnipesaukee",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "goose-pond-dam-beach-nh": {
+      "water_body": "Goose Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "goose-pond-park-beach-nh": {
+      "water_body": "Goose Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "great-east-lake-beach-nh": {
+      "water_body": "Great East Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "griffin-beach-nh": {
+      "water_body": "Webster Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "hampstead-town-beach-nh": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "hampton-beach-nh": {
+      "water_body": "Tide Mill Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "hermit-lake-town-beach-nh": {
+      "water_body": "Hermit Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "hood-s-pond-beach-nh": {
+      "water_body": "Hoods Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "jenness-beach-nh": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "jowder-s-cove-beach-nh": {
+      "water_body": "Contoocook Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lagace-beach-nh": {
+      "water_body": "Chance Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lake-ivanhoe-beach-nh": {
+      "water_body": "Lake Ivanhoe",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "leavitt-beach-nh": {
+      "water_body": "Lake Winnipesaukee",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "long-bay-beach-nh": {
+      "water_body": "Lake Winnisquam",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lovell-lake-beach-nh": {
+      "water_body": "Lovell Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "mary-waldron-beach-nh": {
+      "water_body": "Sherburne Brook",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "massabesic-lake-beach-nh": {
+      "water_body": "Massabesic Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "mink-brook-swimming-area-nh": {
+      "water_body": "Bloody Brook",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "multonborough-town-beach-nh": {
+      "water_body": "Lake Winnipesaukee",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "newton-town-beach-nh": {
+      "water_body": "Colby Brook",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "nichols-beach-nh": {
+      "water_body": "Silver Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "north-beach-nh": {
+      "water_body": "Meadow Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "north-cove-beach-nh": {
+      "water_body": "Stroing Brook",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "north-hampton-beach-nh": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "northwood-lake-beach-nh": {
+      "water_body": "Narrows Brook",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "paugus-bay-beach-nh": {
+      "water_body": "Lake Winnipesaukee",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "pelham-town-beach-nh": {
+      "water_body": "Long Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "philbricks-beach-nh": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "picnickers-beach-nh": {
+      "water_body": "Beaver Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "pirates-cove-beach-nh": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "plaice-cove-beach-nh": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "plaice-cove-nh": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "porridge-shore-beach-nh": {
+      "water_body": "Middle Pea Porridge Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "province-lake-beach-nh": {
+      "water_body": "Province Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "ranger-beach-nh": {
+      "water_body": "Thorndike Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "richmond-town-beach-at-cass-pond-nh": {
+      "water_body": "Cass Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "riverland-beach-nh": {
+      "water_body": "Merrimack River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "rye-north-beach-nh": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "sandwich-town-beach-nh": {
+      "water_body": "Barville Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sandy-beach-nh": {
+      "water_body": "Gilmore Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sandy-point-nh": {
+      "water_body": "Suncook River",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sawyers-beach-nh": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "seabrook-beach-nh": {
+      "water_body": "Blackwater River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "shakoma-beach-nh": {
+      "water_body": "Mascoma Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "silver-lake-beach-nh": {
+      "water_body": "Silver Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "south-beach-nh": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "south-cove-beach-nh": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "springfield-town-beach-nh": {
+      "water_body": "Kolelemook Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "state-park-beach-nh": {
+      "water_body": "Lake Sunapee",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sunset-beach-nh": {
+      "water_body": "Nubanusit Brook Reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "thusis-beach-nh": {
+      "water_body": "Middle Pea Porridge Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "wadleigh-state-beach-nh": {
+      "water_body": "Kezar Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "wallis-sands-beach-nh": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "waukewan-beach-nh": {
+      "water_body": "Lake Waukewan",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "weirs-beach-nh": {
+      "water_body": "Lake Winnipesaukee",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "west-cove-a-beach-nh": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "west-cove-b-beach-nh": {
+      "water_body": "Mill Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "white-sands-beach-nh": {
+      "water_body": "Meetinghouse Brook",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "willow-st-beach-nh": {
+      "water_body": "Beaver Brook",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "windham-town-beach-nh": {
+      "water_body": "Cobbetts Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "winmir-beach-nh": {
+      "water_body": "Lake Winnipesaukee",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "winnisquam-beach-nh": {
+      "water_body": "Lake Winnisquam",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "wolfeboro-town-beach-nh": {
+      "water_body": "Lake Winnipesaukee",
+      "type": "lake",
       "great_lake": false,
       "reason": "ok"
     },
@@ -4892,6 +10136,1248 @@
       "type": "river",
       "great_lake": false,
       "reason": "ok"
+    },
+    "30th-avenue-west-street-end-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "32nd-avenue-west-street-end-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "45th-avenue-west-street-end-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "48th-avenue-west-street-end-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "6th-avenue-west-street-end-wa": {
+      "water_body": "Fremont Cut",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "8th-avenue-south-street-end-wa": {
+      "water_body": "Duwamish Waterway",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "alexander-beach-wa": {
+      "water_body": "Lake Sammamish",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "alki-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "anaco-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "anderson-point-park-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "bay-street-end-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "beach-3-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "beach-lane-west-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "benson-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "black-sand-beach-wa": {
+      "water_body": "Columbia River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "blue-heron-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "blue-hole-wa": {
+      "water_body": "Clear Fork Cowlitz River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "boulder-beach-wa": {
+      "water_body": "Upriver Dam Reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "brackett-s-landing-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "caledonia-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "calkins-point-wa": {
+      "water_body": "Lake Washington",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "carbody-beach-wa": {
+      "water_body": "Columbia River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "carson-beach-wa": {
+      "water_body": "Twin Lakes",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "cfanatic-beach-wa": {
+      "water_body": "Spokane River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "chance-a-la-mer-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "chin-chin-tse-tung-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "chinook-swim-beach-wa": {
+      "water_body": "Lake Challenge",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "chito-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "clayton-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "copalis-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "cornwall-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "cottonwood-beach-wa": {
+      "water_body": "Columbia River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "cottonwood-cove-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "countryside-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "cranberry-lake-swim-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "crandall-spit-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "crescent-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "crow-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "dabob-broad-spit-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "dash-point-state-park-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "deer-beach-wa": {
+      "water_body": "Blackbird Island Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "des-moines-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "dewey-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "dog-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "dogfish-beach-south-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "dogfish-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "double-bluff-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "double-bluff-county-park-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "driftwood-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "dungeness-spit-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "duvall-beach-wa": {
+      "water_body": "Coe-Clemons Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "east-green-lake-beach-wa": {
+      "water_body": "Green Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "east-harrison-street-end-wa": {
+      "water_body": "Minerva Fountain",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "enchantment-beach-wa": {
+      "water_body": "Blackbird Island Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "fairmount-avenue-southwest-street-end-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "first-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "flint-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "foulweather-bluff-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "fourth-of-july-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "fox-island-sand-spit-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "gibson-spit-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "glass-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "graveyard-spit-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "green-bank-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "haida-canoe-cove-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "hedley-spit-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "hermosa-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "hobuck-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "home-valley-beach-wa": {
+      "water_body": "Lake Bonneville",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "hot-sand-beach-wa": {
+      "water_body": "Blackbird Island Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "jackson-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "joe-hamel-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "joemma-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "johnsons-beach-wa": {
+      "water_body": "Johns Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "juanita-beach-park-swimming-beach-wa": {
+      "water_body": "Lake Washington",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "kalaloch-beach-1-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "kalaloch-beach-2-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "kayostla-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "kennydale-beach-wa": {
+      "water_body": "Lake Washington",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "keystone-spit-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "kimple-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "king-spit-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "kuhn-spit-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "kvi-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "lake-city-beach-park-wa": {
+      "water_body": "Lake Washington",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lake-union-park-kayak-launch-and-beach-wa": {
+      "water_body": "Model Boat Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lieser-point-wa": {
+      "water_body": "Columbia River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lilly-s-pad-wa": {
+      "water_body": "Bennettsen Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "linger-longer-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "little-ireland-beach-wa": {
+      "water_body": "Wynoochee Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "little-north-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "littleneck-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "long-spit-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "lowman-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "lytle-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "madison-park-beach-swim-area-wa": {
+      "water_body": "Lake Washington",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "madison-park-beach-wa": {
+      "water_body": "Lake Washington",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "madrona-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "magnuson-park-beach-wa": {
+      "water_body": "Lake Washington",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "manitou-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "maple-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "marble-rock-beach-wa": {
+      "water_body": "Blackbird Island Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "marina-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "martha-s-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "matthews-beach-wa": {
+      "water_body": "Lake Washington",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "meathole-wa": {
+      "water_body": "Twisp River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "mercer-island-beach-club-beach-wa": {
+      "water_body": "Lake Washington",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "mercerwood-shore-club-beach-wa": {
+      "water_body": "Lake Washington",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "miami-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "minneapolis-beach-wa": {
+      "water_body": "Lake Entiat",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "mocrocks-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "monroe-landing-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "mount-baker-beach-wa": {
+      "water_body": "Frog Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "murdock-beach-wa": {
+      "water_body": "Murdock Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "mystery-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "nawalagwis-magic-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "neontawanta-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "normandy-beach-wa": {
+      "water_body": "May Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "north-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "northilla-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "obstruction-pass-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "ocean-city-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "ocean-shores-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "olympic-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "owen-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "palmer-lake-shady-side-wa": {
+      "water_body": "Palmer Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "palmer-lake-sunny-side-wa": {
+      "water_body": "Palmer Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "pelican-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "pine-lake-swimming-beach-wa": {
+      "water_body": "Pine Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "pioneer-square-habitat-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "pocket-beach-wa": {
+      "water_body": "Wilson Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "point-shilshole-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "portage-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "pritchard-island-beach-wa": {
+      "water_body": "Lake Washington",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "public-access-beach-wa": {
+      "water_body": "Lake Whatcom",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "rafters-beach-wa": {
+      "water_body": "Blackbird Island Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "rialto-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "richwine-gravel-bar-wa": {
+      "water_body": "Quillayute River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "road-end-beach-wa": {
+      "water_body": "Lake Washington",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "robbinswold-beach-access-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "rosario-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "ruby-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "salmon-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "samish-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "sand-bar-wa": {
+      "water_body": "Blackbird Island Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sand-dune-beach-wa": {
+      "water_body": "Lake Umatilla",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sandy-swimming-hole-wa": {
+      "water_body": "Washougal River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "scenic-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "second-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "semiahmoo-spit-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "sex-cove-wa": {
+      "water_body": "Lake Tapps",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "shi-shi-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "shore-street-river-access-wa": {
+      "water_body": "Wenatchee River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "skokomish-park-lake-cushman-day-use-area-wa": {
+      "water_body": "Lake Cushman",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "snee-oosh-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "sooes-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "south-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "south-holgate-street-end-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "southwest-98th-street-end-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "southwest-brace-point-drive-street-end-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "southwest-bronson-way-street-end-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "speelyi-beach-wa": {
+      "water_body": "Cle Elum Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "spring-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "squalicum-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "sunny-beach-wa": {
+      "water_body": "Rock Island Pool",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sunrise-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "sunset-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "surprise-beach-wa": {
+      "water_body": "Columbia River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "swim-area-wa": {
+      "water_body": "Lake Washington",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "swim-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "swimming-area-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "swimming-beach-wa": {
+      "water_body": "Wallace’s Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "tanglewild-recreation-center-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "terrill-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "the-arbors-private-beach-wa": {
+      "water_body": "Long Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "the-esplanade-west-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "the-landing-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "third-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "thompson-split-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "tibbetts-beach-wa": {
+      "water_body": "Lake Sammamish",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "tina-bar-wa": {
+      "water_body": "Lake River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "titlow-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "tugboat-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "tulalip-shores-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "twin-river-surf-beach-wa": {
+      "water_body": "East Twin River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "wading-area-wa": {
+      "water_body": "Lake Entiat",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "waikiki-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "warmhouse-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "washaway-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "waterfront-wa": {
+      "water_body": "Kepka Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "weaverling-spit-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "west-armour-street-end-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "west-barrett-street-end-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "west-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "west-cramer-street-end-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "west-denny-way-street-end-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "west-dravus-street-end-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "west-green-lake-beach-wa": {
+      "water_body": "Green Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "west-mcgraw-street-end-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "west-raye-street-end-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "west-sheridan-street-end-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "west-thomas-street-end-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "west-twin-beach-wa": {
+      "water_body": "East Twin River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "westport-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "white-beach-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
+    },
+    "windboarding-beachhead-wa": {
+      "water_body": "Lake Bonneville",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "yellow-banks-wa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "coastline within range"
     },
     "6th-avenue-west-beach-wi": {
       "water_body": "Lake Superior",

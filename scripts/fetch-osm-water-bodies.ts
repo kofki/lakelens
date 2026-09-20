@@ -28,8 +28,9 @@
  * after a morning of harvesting.
  *
  * So each state is asked once for every named lake and river it contains, with bounding
- * boxes, and the matching happens here. That is 21 requests instead of 846, it caches, and
- * a re-run costs nothing.
+ * boxes, and the matching happens here. That is one request per state instead of one per
+ * park, which at 50 states and 4,105 candidates is fifty against four thousand. It caches,
+ * so a re-run costs nothing.
  *
  * WHAT A BOUNDING BOX CAN AND CANNOT TELL YOU
  * -------------------------------------------
@@ -71,6 +72,16 @@ const SERVER_TIMEOUT_S = 180;
 
 /** Stops the run when the service is not answering today. See createDeadline. */
 const deadline = createDeadline();
+
+/**
+ * Longer than the shared default of 60 seconds, for the same reason the harvester needs it.
+ *
+ * This asks a state for every named lake and river it contains, and the answer scales with
+ * the state: North Carolina returned 113,655 features. California and Texas aborted at 60
+ * while smaller states answered in 30. Sixty is right for a mirror that has stopped
+ * responding and wrong for a state with a lot of water in it.
+ */
+const STATE_QUERY_TIMEOUT_MS = 150_000;
 
 export interface WaterProbe {
   /**
@@ -355,7 +366,7 @@ async function post(query: string): Promise<OverpassElement[]> {
     const controller = new AbortController();
     const timer = setTimeout(
       () => controller.abort(),
-      requestTimeout(deadline),
+      requestTimeout(deadline, STATE_QUERY_TIMEOUT_MS),
     );
     try {
       const res = await fetch(endpoint, {

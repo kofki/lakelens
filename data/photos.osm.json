@@ -1,6 +1,6 @@
 {
   "_note": "Hero photos found on Wikimedia Commons by coordinates (scripts/fetch-commons-photos.ts). Public domain, CC0 and CC BY only: share-alike would oblige the whole page to carry the same licence. `file` is a Commons thumbnail URL rather than a local path, so these are not downloaded. Author and licence MUST be rendered wherever the photo appears.",
-  "generated_at": "2026-09-20T07:43:09.628Z",
+  "generated_at": "2026-09-20T11:11:24.858Z",
   "photos": {
     "12th-street-beach-il": {
       "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/12th_Street_Beach_%2835292914940%29.jpg/1280px-12th_Street_Beach_%2835292914940%29.jpg",
@@ -1017,6 +1017,1902 @@
       "license": "CC BY 2.0",
       "license_url": "https://creativecommons.org/licenses/by/2.0",
       "source_url": "https://commons.wikimedia.org/wiki/File:Boardman_River_-_Traverse_City,_Michigan_(22410904091).jpg"
+    },
+    "6th-avenue-west-street-end-wa": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Gulf_Titan_in_the_Lake_Washington_Ship_Canal.jpg/1280px-Gulf_Titan_in_the_Lake_Washington_Ship_Canal.jpg",
+      "title": "Gulf Titan in the Lake Washington Ship Canal.jpg",
+      "author": "PinchyCC",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Gulf_Titan_in_the_Lake_Washington_Ship_Canal.jpg"
+    },
+    "ai-opio-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Honokohau_bay_beach_Park_Big_island_Hawaii_%2846226617312%29.jpg/1280px-Honokohau_bay_beach_Park_Big_island_Hawaii_%2846226617312%29.jpg",
+      "title": "Honokohau bay beach Park Big island Hawaii (46226617312).jpg",
+      "author": "dronepicr",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Honokohau_bay_beach_Park_Big_island_Hawaii_(46226617312).jpg"
+    },
+    "aki-s-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Papaoneone_Beach_-_panoramio.jpg/1280px-Papaoneone_Beach_-_panoramio.jpg",
+      "title": "Papaoneone Beach - panoramio.jpg",
+      "author": "nick hoke",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Papaoneone_Beach_-_panoramio.jpg"
+    },
+    "ala-moana-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/4th_of_July_Fireworks_-_Ala_Moana_Beach_Park_%284779660096%29.jpg/1280px-4th_of_July_Fireworks_-_Ala_Moana_Beach_Park_%284779660096%29.jpg",
+      "title": "4th of July Fireworks - Ala Moana Beach Park (4779660096).jpg",
+      "author": "Daniel Ramirez from Honolulu, USA",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:4th_of_July_Fireworks_-_Ala_Moana_Beach_Park_(4779660096).jpg"
+    },
+    "alki-beach-wa": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Alki_Beach%2C_1911_%283662558337%29.gif/1280px-Alki_Beach%2C_1911_%283662558337%29.gif",
+      "title": "Alki Beach, 1911 (3662558337).gif",
+      "author": "Seattle Municipal Archives from Seattle, WA",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Alki_Beach,_1911_(3662558337).gif"
+    },
+    "anaehoomalu-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Anaehoomalu_Beach_Waikola_Big_island%2C_Hawaii_%2845553546354%29.jpg/1280px-Anaehoomalu_Beach_Waikola_Big_island%2C_Hawaii_%2845553546354%29.jpg",
+      "title": "Anaehoomalu Beach Waikola Big island, Hawaii (45553546354).jpg",
+      "author": "dronepicr",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Anaehoomalu_Beach_Waikola_Big_island,_Hawaii_(45553546354).jpg"
+    },
+    "avery-point-beach-ct": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Steve_Mentz_Speaking%2C_Oceanic_Melville%2C_University_of_Connecticut_Avery_Point_2025-06-16.jpg/1280px-Steve_Mentz_Speaking%2C_Oceanic_Melville%2C_University_of_Connecticut_Avery_Point_2025-06-16.jpg",
+      "title": "Steve Mentz Speaking, Oceanic Melville, University of Connecticut Avery Point 2025-06-16.jpg",
+      "author": "Naufragiosus",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Steve_Mentz_Speaking,_Oceanic_Melville,_University_of_Connecticut_Avery_Point_2025-06-16.jpg"
+    },
+    "bartow-beach-ga": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Allatoona_Dam%2C_Bartow_County_GA.jpg/1280px-Allatoona_Dam%2C_Bartow_County_GA.jpg",
+      "title": "Allatoona Dam, Bartow County GA.jpg",
+      "author": "John Phelan",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Allatoona_Dam,_Bartow_County_GA.jpg"
+    },
+    "bay-street-end-wa": {
+      "file": "https://upload.wikimedia.org/wikipedia/commons/2/29/Reflective_walkway_at_Olympic_Sculpture_Park_%281456788910%29.jpg",
+      "title": "Reflective walkway at Olympic Sculpture Park (1456788910).jpg",
+      "author": "Robert Ashworth from Bellingham, WA., USA",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Reflective_walkway_at_Olympic_Sculpture_Park_(1456788910).jpg"
+    },
+    "beach-3-wa": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Debbie_at_Kalaloch_Beach_%282622983924%29.jpg/1280px-Debbie_at_Kalaloch_Beach_%282622983924%29.jpg",
+      "title": "Debbie at Kalaloch Beach (2622983924).jpg",
+      "author": "JOHN LLOYD from Concrete, Washington, United States",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Debbie_at_Kalaloch_Beach_(2622983924).jpg"
+    },
+    "beach-area-1-nh": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Swift_River_Bridge_-_facade.jpg/1280px-Swift_River_Bridge_-_facade.jpg",
+      "title": "Swift River Bridge - facade.jpg",
+      "author": "Waz8",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Swift_River_Bridge_-_facade.jpg"
+    },
+    "beach-area-2-nh": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Swift_River_Bridge_-_facade.jpg/1280px-Swift_River_Bridge_-_facade.jpg",
+      "title": "Swift River Bridge - facade.jpg",
+      "author": "Waz8",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Swift_River_Bridge_-_facade.jpg"
+    },
+    "beach-lane-west-wa": {
+      "file": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Seattle_-_House_damaged_in_Perkins_Lane_landslide%2C_1954.gif",
+      "title": "Seattle - House damaged in Perkins Lane landslide, 1954.gif",
+      "author": "Seattle Municipal Archives from Seattle, WA",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Seattle_-_House_damaged_in_Perkins_Lane_landslide,_1954.gif"
+    },
+    "beaver-lake-dive-park-ar": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Open_Floodgates_-_Beaver_Lake_Dam_-_Northwest_Arkansas%2C_U.S._-_21_May_2011.jpg/1280px-Open_Floodgates_-_Beaver_Lake_Dam_-_Northwest_Arkansas%2C_U.S._-_21_May_2011.jpg",
+      "title": "Open Floodgates - Beaver Lake Dam - Northwest Arkansas, U.S. - 21 May 2011.jpg",
+      "author": "Doug Wertman from Rogers, AR, USA",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Open_Floodgates_-_Beaver_Lake_Dam_-_Northwest_Arkansas,_U.S._-_21_May_2011.jpg"
+    },
+    "berkeley-lake-beach-ga": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Berkeley_Lake_City_Hall%2C_March_2017.jpg/1280px-Berkeley_Lake_City_Hall%2C_March_2017.jpg",
+      "title": "Berkeley Lake City Hall, March 2017.jpg",
+      "author": "Thomson200",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Berkeley_Lake_City_Hall,_March_2017.jpg"
+    },
+    "biddeford-pool-beach-me": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Beach_At_Biddeford_Pool_%2839155996754%29.jpg/1280px-Beach_At_Biddeford_Pool_%2839155996754%29.jpg",
+      "title": "Beach At Biddeford Pool (39155996754).jpg",
+      "author": "Paul VanDerWerf from Brunswick, Maine, USA",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Beach_At_Biddeford_Pool_(39155996754).jpg"
+    },
+    "big-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Hawaii_Maui_Big_Beach_%2822636223722%29.jpg/1280px-Hawaii_Maui_Big_Beach_%2822636223722%29.jpg",
+      "title": "Hawaii Maui Big Beach (22636223722).jpg",
+      "author": "dronepicr",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Hawaii_Maui_Big_Beach_(22636223722).jpg"
+    },
+    "big-beach-nc": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Holden_Beach%2C_NC_-_panoramio.jpg/1280px-Holden_Beach%2C_NC_-_panoramio.jpg",
+      "title": "Holden Beach, NC - panoramio.jpg",
+      "author": "johnmac19",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Holden_Beach,_NC_-_panoramio.jpg"
+    },
+    "boat-beach-az": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Grand_Canyon_National_Park_Phantom_Ranch_Boat_Beach_0042_%286705382071%29.jpg/1280px-Grand_Canyon_National_Park_Phantom_Ranch_Boat_Beach_0042_%286705382071%29.jpg",
+      "title": "Grand Canyon National Park Phantom Ranch Boat Beach 0042 (6705382071).jpg",
+      "author": "Grand Canyon National Park",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Grand_Canyon_National_Park_Phantom_Ranch_Boat_Beach_0042_(6705382071).jpg"
+    },
+    "camp-ellis-reach-me": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Biddeford_Campus_aerial.jpg/1280px-Biddeford_Campus_aerial.jpg",
+      "title": "Biddeford Campus aerial.jpg",
+      "author": "University of New England",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Biddeford_Campus_aerial.jpg"
+    },
+    "cedar-island-beach-nc": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Ferry_harbor_at_Cedar_Island.jpg/1280px-Ferry_harbor_at_Cedar_Island.jpg",
+      "title": "Ferry harbor at Cedar Island.jpg",
+      "author": "lns1122 from saint simons island, ga, USA",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Ferry_harbor_at_Cedar_Island.jpg"
+    },
+    "chickamauga-dam-beach-tn": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/USACE_Chickamauga_Lock_and_Dam.jpg/1280px-USACE_Chickamauga_Lock_and_Dam.jpg",
+      "title": "USACE Chickamauga Lock and Dam.jpg",
+      "author": "George Green, U.S. Army Corps of Engineers",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:USACE_Chickamauga_Lock_and_Dam.jpg"
+    },
+    "chuns-reef-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Chuns_Reef_Beach.jpg/1280px-Chuns_Reef_Beach.jpg",
+      "title": "Chuns Reef Beach.jpg",
+      "author": "Syced",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Chuns_Reef_Beach.jpg"
+    },
+    "cisco-beach-ut": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Off_Cisco_Beach_-_panoramio.jpg/1280px-Off_Cisco_Beach_-_panoramio.jpg",
+      "title": "Off Cisco Beach - panoramio.jpg",
+      "author": "JF Hobbs",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Off_Cisco_Beach_-_panoramio.jpg"
+    },
+    "city-beach-ia": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Surf_Ballroom%2C_Clear_Lake%2C_Iowa_%282015%29.jpg/1280px-Surf_Ballroom%2C_Clear_Lake%2C_Iowa_%282015%29.jpg",
+      "title": "Surf Ballroom, Clear Lake, Iowa (2015).jpg",
+      "author": "David Wilson from Oak Park, Illinois, USA",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Surf_Ballroom,_Clear_Lake,_Iowa_(2015).jpg"
+    },
+    "clinton-beach-ct": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Clinton%2C_CT.jpg/1280px-Clinton%2C_CT.jpg",
+      "title": "Clinton, CT.jpg",
+      "author": "CTsignhunt",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Clinton,_CT.jpg"
+    },
+    "clinton-town-beach-ct": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Clinton%2C_CT.jpg/1280px-Clinton%2C_CT.jpg",
+      "title": "Clinton, CT.jpg",
+      "author": "CTsignhunt",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Clinton,_CT.jpg"
+    },
+    "coquina-beach-nc": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Coquina_Beach_Ocean_View_04-04-2020_%2850088015757%29.jpg/1280px-Coquina_Beach_Ocean_View_04-04-2020_%2850088015757%29.jpg",
+      "title": "Coquina Beach Ocean View 04-04-2020 (50088015757).jpg",
+      "author": "Cape Hatteras National Seashore",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Coquina_Beach_Ocean_View_04-04-2020_(50088015757).jpg"
+    },
+    "cornwall-beach-wa": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Power_plant_on_Bellingham_waterfront%2C_Cornwall_Avenue._%2835517187791%29.jpg/1280px-Power_plant_on_Bellingham_waterfront%2C_Cornwall_Avenue._%2835517187791%29.jpg",
+      "title": "Power plant on Bellingham waterfront, Cornwall Avenue. (35517187791).jpg",
+      "author": "Robert Ashworth from Bellingham, WA., USA",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Power_plant_on_Bellingham_waterfront,_Cornwall_Avenue._(35517187791).jpg"
+    },
+    "creek-beach-nv": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Mirror_Lake_%286812184802%29.jpg/1280px-Mirror_Lake_%286812184802%29.jpg",
+      "title": "Mirror Lake (6812184802).jpg",
+      "author": "Romain Guy from San Francisco, USA",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Mirror_Lake_(6812184802).jpg"
+    },
+    "crescent-beach-ct": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Crescent_Beach_station_postcard.jpg/1280px-Crescent_Beach_station_postcard.jpg",
+      "title": "Crescent Beach station postcard.jpg",
+      "author": "Unknown author Unknown author",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Crescent_Beach_station_postcard.jpg"
+    },
+    "currituck-beach-nc": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Currituck_Beach_Light_-_view_from_top.jpg/1280px-Currituck_Beach_Light_-_view_from_top.jpg",
+      "title": "Currituck Beach Light - view from top.jpg",
+      "author": "rpertiet",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Currituck_Beach_Light_-_view_from_top.jpg"
+    },
+    "cypremort-point-beach-la": {
+      "file": "https://upload.wikimedia.org/wikipedia/commons/2/22/Pavilion_at_Cypremort_Point_State_Park.jpg",
+      "title": "Pavilion at Cypremort Point State Park.jpg",
+      "author": "Richard Byrd",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Pavilion_at_Cypremort_Point_State_Park.jpg"
+    },
+    "des-moines-beach-wa": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/View_of_Olympics_from_Des_Moines_-_panoramio.jpg/1280px-View_of_Olympics_from_Des_Moines_-_panoramio.jpg",
+      "title": "View of Olympics from Des Moines - panoramio.jpg",
+      "author": "uhrichj",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:View_of_Olympics_from_Des_Moines_-_panoramio.jpg"
+    },
+    "dog-beach-md": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Rose_Colored_Beach_%28201647971%29.jpeg/1280px-Rose_Colored_Beach_%28201647971%29.jpeg",
+      "title": "Rose Colored Beach (201647971).jpeg",
+      "author": "Jason Knauer",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Rose_Colored_Beach_(201647971).jpeg"
+    },
+    "dog-beach-nh": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Stone_arch_bridge_carries_route_3_over_the_Souhegan_River_in_Merrimack%2C_NH._-_panoramio.jpg/1280px-Stone_arch_bridge_carries_route_3_over_the_Souhegan_River_in_Merrimack%2C_NH._-_panoramio.jpg",
+      "title": "Stone arch bridge carries route 3 over the Souhegan River in Merrimack, NH. - panoramio.jpg",
+      "author": "grumpytimm",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Stone_arch_bridge_carries_route_3_over_the_Souhegan_River_in_Merrimack,_NH._-_panoramio.jpg"
+    },
+    "dog-beach-wa": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Marina_Beach_Park_Regulations.jpg/1280px-Marina_Beach_Park_Regulations.jpg",
+      "title": "Marina Beach Park Regulations.jpg",
+      "author": "PinchyCC",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Marina_Beach_Park_Regulations.jpg"
+    },
+    "east-beach-me": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Sheepscot_River_at_Reid_State_Park_-_see_the_shorebird%3F.jpg/1280px-Sheepscot_River_at_Reid_State_Park_-_see_the_shorebird%3F.jpg",
+      "title": "Sheepscot River at Reid State Park - see the shorebird?.jpg",
+      "author": "sf-dvs",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Sheepscot_River_at_Reid_State_Park_-_see_the_shorebird%3F.jpg"
+    },
+    "east-green-lake-beach-wa": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Seattle_-_Lifeguard_and_swimmers_at_Green_Lake%2C_1930_%2842875136714%29.jpg/1280px-Seattle_-_Lifeguard_and_swimmers_at_Green_Lake%2C_1930_%2842875136714%29.jpg",
+      "title": "Seattle - Lifeguard and swimmers at Green Lake, 1930 (42875136714).jpg",
+      "author": "Seattle Municipal Archives from Seattle, WA",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Seattle_-_Lifeguard_and_swimmers_at_Green_Lake,_1930_(42875136714).jpg"
+    },
+    "east-rive-beach-ct": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/East_River_station_1915_postcard.jpg/1280px-East_River_station_1915_postcard.jpg",
+      "title": "East River station 1915 postcard.jpg",
+      "author": "Unknown author Unknown author",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:East_River_station_1915_postcard.jpg"
+    },
+    "echo-lake-beach-nh": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Echo_Lake%2C_Nr_Profile_Rd%2C_Franconia_-_panoramio_%281%29.jpg/1280px-Echo_Lake%2C_Nr_Profile_Rd%2C_Franconia_-_panoramio_%281%29.jpg",
+      "title": "Echo Lake, Nr Profile Rd, Franconia - panoramio (1).jpg",
+      "author": "Bob Linsdell",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Echo_Lake,_Nr_Profile_Rd,_Franconia_-_panoramio_(1).jpg"
+    },
+    "el-dorado-state-park-beach-ks": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Scenic_Overlook_at_El_Dorado_State_Park.jpg/1280px-Scenic_Overlook_at_El_Dorado_State_Park.jpg",
+      "title": "Scenic Overlook at El Dorado State Park.jpg",
+      "author": "RuralResurrection",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Scenic_Overlook_at_El_Dorado_State_Park.jpg"
+    },
+    "eureka-city-pool-ks": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Eureka_KS_Main_St.JPG/1280px-Eureka_KS_Main_St.JPG",
+      "title": "Eureka KS Main St.JPG",
+      "author": "Spacefem",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Eureka_KS_Main_St.JPG"
+    },
+    "fairfield-beach-ct": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Raised_Ranch_-_Fairfield_Beach%2C_Connecticut.jpg/1280px-Raised_Ranch_-_Fairfield_Beach%2C_Connecticut.jpg",
+      "title": "Raised Ranch - Fairfield Beach, Connecticut.jpg",
+      "author": "CityLimitsJunction",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Raised_Ranch_-_Fairfield_Beach,_Connecticut.jpg"
+    },
+    "fairlee-town-beach-vt": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Fairlee_VT_10-27-25a.jpg/1280px-Fairlee_VT_10-27-25a.jpg",
+      "title": "Fairlee VT 10-27-25a.jpg",
+      "author": "Ascended Dreamer",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Fairlee_VT_10-27-25a.jpg"
+    },
+    "finger-lakes-swimming-beach-mo": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Finger_Lakes_State_Park_Campground%2C_Columbia%2C_Missouri_%2833622790758%29.jpg/1280px-Finger_Lakes_State_Park_Campground%2C_Columbia%2C_Missouri_%2833622790758%29.jpg",
+      "title": "Finger Lakes State Park Campground, Columbia, Missouri (33622790758).jpg",
+      "author": "Tony Webster from Minneapolis, Minnesota, United States",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Finger_Lakes_State_Park_Campground,_Columbia,_Missouri_(33622790758).jpg"
+    },
+    "first-beach-wa": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/First_beach_sunset_golden_shadow_NPS_Photo_%2816691187634%29.jpg/1280px-First_beach_sunset_golden_shadow_NPS_Photo_%2816691187634%29.jpg",
+      "title": "First beach sunset golden shadow NPS Photo (16691187634).jpg",
+      "author": "Olympic National Park",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:First_beach_sunset_golden_shadow_NPS_Photo_(16691187634).jpg"
+    },
+    "frisco-bay-marina-beach-co": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Frisco%2C_United_States_%28Unsplash_DsIpNh9s5qc%29.jpg/1280px-Frisco%2C_United_States_%28Unsplash_DsIpNh9s5qc%29.jpg",
+      "title": "Frisco, United States (Unsplash DsIpNh9s5qc).jpg",
+      "author": "Jannelle Althoff jannelle_althoff",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Frisco,_United_States_(Unsplash_DsIpNh9s5qc).jpg"
+    },
+    "gibson-island-beach-md": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/MD-177_near_Gibson_Island.jpg/1280px-MD-177_near_Gibson_Island.jpg",
+      "title": "MD-177 near Gibson Island.jpg",
+      "author": "Charlotte Jackson",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:MD-177_near_Gibson_Island.jpg"
+    },
+    "gilford-beach-nh": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Willie_Nelson_%26_Family_BankNH_Pavilion_108_Kimball_Road_Gilford_NH_August_2025_02.jpg/1280px-Willie_Nelson_%26_Family_BankNH_Pavilion_108_Kimball_Road_Gilford_NH_August_2025_02.jpg",
+      "title": "Willie Nelson & Family BankNH Pavilion 108 Kimball Road Gilford NH August 2025 02.jpg",
+      "author": "Artaxerxes",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Willie_Nelson_%26_Family_BankNH_Pavilion_108_Kimball_Road_Gilford_NH_August_2025_02.jpg"
+    },
+    "goose-rocks-beach-me": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Goose_Rocks_Beach%2C_three_miles_east_of_Cape_Porpoise_in_Kennebunkport_Maine.jpg/1280px-Goose_Rocks_Beach%2C_three_miles_east_of_Cape_Porpoise_in_Kennebunkport_Maine.jpg",
+      "title": "Goose Rocks Beach, three miles east of Cape Porpoise in Kennebunkport Maine.jpg",
+      "author": "InAweofGod'sCreation",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Goose_Rocks_Beach,_three_miles_east_of_Cape_Porpoise_in_Kennebunkport_Maine.jpg"
+    },
+    "griffin-beach-nh": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Griffin_Beach%2C_Webster_Lake%2C_Franklin%2C_NH_%2849180433232%29.jpg/1280px-Griffin_Beach%2C_Webster_Lake%2C_Franklin%2C_NH_%2849180433232%29.jpg",
+      "title": "Griffin Beach, Webster Lake, Franklin, NH (49180433232).jpg",
+      "author": "Warren LeMay from Covington, KY, United States",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Griffin_Beach,_Webster_Lake,_Franklin,_NH_(49180433232).jpg"
+    },
+    "ha-ena-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Nut_on_the_Beach_%288717286156%29.jpg/1280px-Nut_on_the_Beach_%288717286156%29.jpg",
+      "title": "Nut on the Beach (8717286156).jpg",
+      "author": "cogdogblog",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Nut_on_the_Beach_(8717286156).jpg"
+    },
+    "ha-ula-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Maha%27ulepo_Beach_%288724631057%29.jpg/1280px-Maha%27ulepo_Beach_%288724631057%29.jpg",
+      "title": "Maha'ulepo Beach (8724631057).jpg",
+      "author": "cogdogblog",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Maha%27ulepo_Beach_(8724631057).jpg"
+    },
+    "halape-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Trekkers_heading_West_towards_Halap%C4%93_in_Hawai%CA%BBi_Volcanoes_National_Park_%28DSC08997%29.jpg/1280px-Trekkers_heading_West_towards_Halap%C4%93_in_Hawai%CA%BBi_Volcanoes_National_Park_%28DSC08997%29.jpg",
+      "title": "Trekkers heading West towards Halapē in Hawaiʻi Volcanoes National Park (DSC08997).jpg",
+      "author": "Trougnouf (Benoit Brummer)",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Trekkers_heading_West_towards_Halap%C4%93_in_Hawai%CA%BBi_Volcanoes_National_Park_(DSC08997).jpg"
+    },
+    "halawa-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Halawa_Valley%2C_Molokai_Hawaii_-_panoramio.jpg/1280px-Halawa_Valley%2C_Molokai_Hawaii_-_panoramio.jpg",
+      "title": "Halawa Valley, Molokai Hawaii - panoramio.jpg",
+      "author": "Rose_Braverman",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Halawa_Valley,_Molokai_Hawaii_-_panoramio.jpg"
+    },
+    "hale-iwa-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/North_Shore_Sunset%2C_Haleiwa_%285620757621%29.jpg/1280px-North_Shore_Sunset%2C_Haleiwa_%285620757621%29.jpg",
+      "title": "North Shore Sunset, Haleiwa (5620757621).jpg",
+      "author": "Simon_sees from Australia",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:North_Shore_Sunset,_Haleiwa_(5620757621).jpg"
+    },
+    "hampton-beach-nh": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Hampton_Beach%2C_Hampton%2C_United_States_%28Unsplash%29.jpg/1280px-Hampton_Beach%2C_Hampton%2C_United_States_%28Unsplash%29.jpg",
+      "title": "Hampton Beach, Hampton, United States (Unsplash).jpg",
+      "author": "Kristopher Roller krisroller",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Hampton_Beach,_Hampton,_United_States_(Unsplash).jpg"
+    },
+    "hana-beach-park-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Roadside_Edging_of_the_Hana_Belt_Road_-_Hana_Belt_Road%2C_Between_Haiku_and_Kaipahulu%2C_Hana%2C_Maui_County%2C_HI_HAER_HI-75_%28sheet_10_of_13%29.tif/lossy-page1-1280px-Roadside_Edging_of_the_Hana_Belt_Road_-_Hana_Belt_Road%2C_Between_Haiku_and_Kaipahulu%2C_Hana%2C_Maui_County%2C_HI_HAER_HI-75_%28sheet_10_of_13%29.tif.jpg",
+      "title": "Roadside Edging of the Hana Belt Road - Hana Belt Road, Between Haiku and Kaipahulu, Hana, Maui County, HI HAER HI-75 (sheet 10 of 13).tif",
+      "author": "Vosmek, Maureen, creator",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Roadside_Edging_of_the_Hana_Belt_Road_-_Hana_Belt_Road,_Between_Haiku_and_Kaipahulu,_Hana,_Maui_County,_HI_HAER_HI-75_(sheet_10_of_13).tif"
+    },
+    "hanakapi-ai-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Hanakapiai_Beach%2C_Kalalau_Trail%2C_Napali_Coast%2C_Kapaa_-_panoramio.jpg/1280px-Hanakapiai_Beach%2C_Kalalau_Trail%2C_Napali_Coast%2C_Kapaa_-_panoramio.jpg",
+      "title": "Hanakapiai Beach, Kalalau Trail, Napali Coast, Kapaa - panoramio.jpg",
+      "author": "Bob Linsdell",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Hanakapiai_Beach,_Kalalau_Trail,_Napali_Coast,_Kapaa_-_panoramio.jpg"
+    },
+    "hanalei-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Hanalei_Bay%2C_Princeville_-_panoramio_%281%29.jpg/1280px-Hanalei_Bay%2C_Princeville_-_panoramio_%281%29.jpg",
+      "title": "Hanalei Bay, Princeville - panoramio (1).jpg",
+      "author": "Bob Linsdell",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Hanalei_Bay,_Princeville_-_panoramio_(1).jpg"
+    },
+    "hanauma-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Hanauma_Bay_%2815551370811%29.jpg/1280px-Hanauma_Bay_%2815551370811%29.jpg",
+      "title": "Hanauma Bay (15551370811).jpg",
+      "author": "Prayitno / Thank you for (12 millions +) view from Los Angeles, USA",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Hanauma_Bay_(15551370811).jpg"
+    },
+    "hapuna-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Hapuna_beach_Big_island_Hawaii_%2844460188390%29.jpg/1280px-Hapuna_beach_Big_island_Hawaii_%2844460188390%29.jpg",
+      "title": "Hapuna beach Big island Hawaii (44460188390).jpg",
+      "author": "dronepicr",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Hapuna_beach_Big_island_Hawaii_(44460188390).jpg"
+    },
+    "harbor-point-beach-ct": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/8_Sound_Shore_Drive_-_panoramio.jpg/1280px-8_Sound_Shore_Drive_-_panoramio.jpg",
+      "title": "8 Sound Shore Drive - panoramio.jpg",
+      "author": "TenthArchitect",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:8_Sound_Shore_Drive_-_panoramio.jpg"
+    },
+    "hawaiian-electric-beach-park-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Oil-fired_generators_at_Hawaiian_Electric_Kahe_Power_Plant_in_Kapolei_on_the_Waianae_Coast.jpg/1280px-Oil-fired_generators_at_Hawaiian_Electric_Kahe_Power_Plant_in_Kapolei_on_the_Waianae_Coast.jpg",
+      "title": "Oil-fired generators at Hawaiian Electric Kahe Power Plant in Kapolei on the Waianae Coast.jpg",
+      "author": "Tony Webster",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Oil-fired_generators_at_Hawaiian_Electric_Kahe_Power_Plant_in_Kapolei_on_the_Waianae_Coast.jpg"
+    },
+    "hendricks-head-beach-me": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Hendricks_Head_Light_-_sunset.jpg/1280px-Hendricks_Head_Light_-_sunset.jpg",
+      "title": "Hendricks Head Light - sunset.jpg",
+      "author": "Alex Kerney from Boothbay Harbor, United States",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Hendricks_Head_Light_-_sunset.jpg"
+    },
+    "hideaways-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Way_to_Hideaways_Beach_Princeville_Kauai_Hawaii_%2845553889334%29.jpg/1280px-Way_to_Hideaways_Beach_Princeville_Kauai_Hawaii_%2845553889334%29.jpg",
+      "title": "Way to Hideaways Beach Princeville Kauai Hawaii (45553889334).jpg",
+      "author": "dronepicr",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Way_to_Hideaways_Beach_Princeville_Kauai_Hawaii_(45553889334).jpg"
+    },
+    "higgins-beach-me": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Higgins_Beach_Bayview_Avenue_Scarborough_ME_August_2025_01.jpg/1280px-Higgins_Beach_Bayview_Avenue_Scarborough_ME_August_2025_01.jpg",
+      "title": "Higgins Beach Bayview Avenue Scarborough ME August 2025 01.jpg",
+      "author": "Artaxerxes",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Higgins_Beach_Bayview_Avenue_Scarborough_ME_August_2025_01.jpg"
+    },
+    "hoai-bay-lawai-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Lawai_Beach_Resort_at_Poipu_Kauai_Hawaii.jpg/1280px-Lawai_Beach_Resort_at_Poipu_Kauai_Hawaii.jpg",
+      "title": "Lawai Beach Resort at Poipu Kauai Hawaii.jpg",
+      "author": "Tony Webster",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Lawai_Beach_Resort_at_Poipu_Kauai_Hawaii.jpg"
+    },
+    "holden-beach-nc": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Sunset_at_Holden_Beach_Pier_-_panoramio.jpg/1280px-Sunset_at_Holden_Beach_Pier_-_panoramio.jpg",
+      "title": "Sunset at Holden Beach Pier - panoramio.jpg",
+      "author": "Mike Bradford",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Sunset_at_Holden_Beach_Pier_-_panoramio.jpg"
+    },
+    "holly-beach-la": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Holly_Beach%2C_Louisiana_-_Feb_2019.jpg/1280px-Holly_Beach%2C_Louisiana_-_Feb_2019.jpg",
+      "title": "Holly Beach, Louisiana - Feb 2019.jpg",
+      "author": "David Wilson",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Holly_Beach,_Louisiana_-_Feb_2019.jpg"
+    },
+    "honokowai-beach-park-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Plumeria%2C_Honokowai%3B_November_2013.jpg/1280px-Plumeria%2C_Honokowai%3B_November_2013.jpg",
+      "title": "Plumeria, Honokowai; November 2013.jpg",
+      "author": "Bernard Spragg",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Plumeria,_Honokowai;_November_2013.jpg"
+    },
+    "honoli-i-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/BEAUTIFUL_HONOLI%27I_BEACH_PARK_%28EXPLORE%2C_05-24-2026%29._-_Flickr_-_Salty_Lens_%28Jonny%29.jpg/1280px-BEAUTIFUL_HONOLI%27I_BEACH_PARK_%28EXPLORE%2C_05-24-2026%29._-_Flickr_-_Salty_Lens_%28Jonny%29.jpg",
+      "title": "BEAUTIFUL HONOLI'I BEACH PARK (EXPLORE, 05-24-2026). - Flickr - Salty Lens (Jonny).jpg",
+      "author": "Salty Lens (Jonny)",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:BEAUTIFUL_HONOLI%27I_BEACH_PARK_(EXPLORE,_05-24-2026)._-_Flickr_-_Salty_Lens_(Jonny).jpg"
+    },
+    "honopu-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Honopu_Beach_Na_Pali_Coast_Kauai_Hawaii_%2846277849561%29.jpg/1280px-Honopu_Beach_Na_Pali_Coast_Kauai_Hawaii_%2846277849561%29.jpg",
+      "title": "Honopu Beach Na Pali Coast Kauai Hawaii (46277849561).jpg",
+      "author": "dronepicr",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Honopu_Beach_Na_Pali_Coast_Kauai_Hawaii_(46277849561).jpg"
+    },
+    "hookipa-park-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Hookipa_Maui_Wind_Surfer_James_Brennan_Molokai_Hawaii_-_panoramio.jpg/1280px-Hookipa_Maui_Wind_Surfer_James_Brennan_Molokai_Hawaii_-_panoramio.jpg",
+      "title": "Hookipa Maui Wind Surfer James Brennan Molokai Hawaii - panoramio.jpg",
+      "author": "James Brennan Moloka…",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Hookipa_Maui_Wind_Surfer_James_Brennan_Molokai_Hawaii_-_panoramio.jpg"
+    },
+    "hyrum-state-park-beach-area-ut": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Hyrum%2C_Utah_Civic_Center.jpeg/1280px-Hyrum%2C_Utah_Civic_Center.jpeg",
+      "title": "Hyrum, Utah Civic Center.jpeg",
+      "author": "Ntsimp",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Hyrum,_Utah_Civic_Center.jpeg"
+    },
+    "ka-anapali-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Starbucks_next_to_Kaanapali_Beach_Hawaii_%2844826275905%29.jpg/1280px-Starbucks_next_to_Kaanapali_Beach_Hawaii_%2844826275905%29.jpg",
+      "title": "Starbucks next to Kaanapali Beach Hawaii (44826275905).jpg",
+      "author": "dronepicr",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Starbucks_next_to_Kaanapali_Beach_Hawaii_(44826275905).jpg"
+    },
+    "kahakuloa-beach-hi": {
+      "file": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Kahakuloa_bay_-_panoramio.jpg",
+      "title": "Kahakuloa bay - panoramio.jpg",
+      "author": "Alistair Cunningham",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Kahakuloa_bay_-_panoramio.jpg"
+    },
+    "kahala-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Kahala_Beach_Park_Island_%28Unsplash%29.jpg/1280px-Kahala_Beach_Park_Island_%28Unsplash%29.jpg",
+      "title": "Kahala Beach Park Island (Unsplash).jpg",
+      "author": "Brandon Kawamura brandonkawamura",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Kahala_Beach_Park_Island_(Unsplash).jpg"
+    },
+    "kahana-bay-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Gecko_at_Ahupua%CA%BBa_O_Kahana_State_Park_02.jpg/1280px-Gecko_at_Ahupua%CA%BBa_O_Kahana_State_Park_02.jpg",
+      "title": "Gecko at Ahupuaʻa O Kahana State Park 02.jpg",
+      "author": "The Eloquent Peasant",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Gecko_at_Ahupua%CA%BBa_O_Kahana_State_Park_02.jpg"
+    },
+    "kailua-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Kailua_Beach_Sunset_%289193268473%29.jpg/1280px-Kailua_Beach_Sunset_%289193268473%29.jpg",
+      "title": "Kailua Beach Sunset (9193268473).jpg",
+      "author": "Floyd Manzano from Mililani, United States",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Kailua_Beach_Sunset_(9193268473).jpg"
+    },
+    "kaimana-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Kaimana_Hotel%2C_Waikiki%2C_Oahu%2C_Hawaii_-_panoramio_%281%29.jpg/1280px-Kaimana_Hotel%2C_Waikiki%2C_Oahu%2C_Hawaii_-_panoramio_%281%29.jpg",
+      "title": "Kaimana Hotel, Waikiki, Oahu, Hawaii - panoramio (1).jpg",
+      "author": "davidpinter",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Kaimana_Hotel,_Waikiki,_Oahu,_Hawaii_-_panoramio_(1).jpg"
+    },
+    "kalalau-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Sunset_on_Kalalau_Beach_-_panoramio.jpg/1280px-Sunset_on_Kalalau_Beach_-_panoramio.jpg",
+      "title": "Sunset on Kalalau Beach - panoramio.jpg",
+      "author": "Paxson Woelber",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Sunset_on_Kalalau_Beach_-_panoramio.jpg"
+    },
+    "kalaloch-beach-2-wa": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Sunset_Kalaloch_Destruction_Island_NPS_Photo_%2817114568700%29.jpg/1280px-Sunset_Kalaloch_Destruction_Island_NPS_Photo_%2817114568700%29.jpg",
+      "title": "Sunset Kalaloch Destruction Island NPS Photo (17114568700).jpg",
+      "author": "Olympic National Park",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Sunset_Kalaloch_Destruction_Island_NPS_Photo_(17114568700).jpg"
+    },
+    "kalapaki-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/2_16_Kalapaki_Beach_2018-02-16_048-LR_%2841532954891%29.jpg/1280px-2_16_Kalapaki_Beach_2018-02-16_048-LR_%2841532954891%29.jpg",
+      "title": "2 16 Kalapaki Beach 2018-02-16 048-LR (41532954891).jpg",
+      "author": "James Abbott from New Westminster, B.C., Canada",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:2_16_Kalapaki_Beach_2018-02-16_048-LR_(41532954891).jpg"
+    },
+    "kalihiwai-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Morning_Glory_on_a_rainy_afternoon%2C_Kalihiwai_Beach_%288728217758%29.jpg/1280px-Morning_Glory_on_a_rainy_afternoon%2C_Kalihiwai_Beach_%288728217758%29.jpg",
+      "title": "Morning Glory on a rainy afternoon, Kalihiwai Beach (8728217758).jpg",
+      "author": "cogdogblog",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Morning_Glory_on_a_rainy_afternoon,_Kalihiwai_Beach_(8728217758).jpg"
+    },
+    "kamaole-i-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Hawaii_Maui_Kamaole_Beach_Parc_%2822026879174%29.jpg/1280px-Hawaii_Maui_Kamaole_Beach_Parc_%2822026879174%29.jpg",
+      "title": "Hawaii Maui Kamaole Beach Parc (22026879174).jpg",
+      "author": "dronepicr",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Hawaii_Maui_Kamaole_Beach_Parc_(22026879174).jpg"
+    },
+    "kamaole-ii-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Kamaole_Beach_II_Kihei_Maui_Hawaii_%2830800124747%29.jpg/1280px-Kamaole_Beach_II_Kihei_Maui_Hawaii_%2830800124747%29.jpg",
+      "title": "Kamaole Beach II Kihei Maui Hawaii (30800124747).jpg",
+      "author": "dronepicr",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Kamaole_Beach_II_Kihei_Maui_Hawaii_(30800124747).jpg"
+    },
+    "kapahukapu-manini-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Manini_Beach%2C_Big_Island_of_Hawai%E2%80%99i_-_53287622575.jpg/1280px-Manini_Beach%2C_Big_Island_of_Hawai%E2%80%99i_-_53287622575.jpg",
+      "title": "Manini Beach, Big Island of Hawai’i - 53287622575.jpg",
+      "author": "lamblukas",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Manini_Beach,_Big_Island_of_Hawai%E2%80%99i_-_53287622575.jpg"
+    },
+    "kapalua-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Kapalua_Beach_park_Maui_Hawaii_%2845740255431%29.jpg/1280px-Kapalua_Beach_park_Maui_Hawaii_%2845740255431%29.jpg",
+      "title": "Kapalua Beach park Maui Hawaii (45740255431).jpg",
+      "author": "dronepicr",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Kapalua_Beach_park_Maui_Hawaii_(45740255431).jpg"
+    },
+    "kawa-aloa-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Papohaku_Beach_Park%2C_Maunaloa_-_panoramio.jpg/1280px-Papohaku_Beach_Park%2C_Maunaloa_-_panoramio.jpg",
+      "title": "Papohaku Beach Park, Maunaloa - panoramio.jpg",
+      "author": "Bob Linsdell",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Papohaku_Beach_Park,_Maunaloa_-_panoramio.jpg"
+    },
+    "ke-ei-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Polynesian_double-hulled_voyaging_canoes_sheltering_in_Kealakekua_Bay%2C_Hawaii_-_panoramio.jpg/1280px-Polynesian_double-hulled_voyaging_canoes_sheltering_in_Kealakekua_Bay%2C_Hawaii_-_panoramio.jpg",
+      "title": "Polynesian double-hulled voyaging canoes sheltering in Kealakekua Bay, Hawaii - panoramio.jpg",
+      "author": "Peter Gill / UK",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Polynesian_double-hulled_voyaging_canoes_sheltering_in_Kealakekua_Bay,_Hawaii_-_panoramio.jpg"
+    },
+    "kealia-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Mokuleia_Army_Beach_-_Oahu_North_Shore_-_Hawaii_%2852953924680%29.jpg/1280px-Mokuleia_Army_Beach_-_Oahu_North_Shore_-_Hawaii_%2852953924680%29.jpg",
+      "title": "Mokuleia Army Beach - Oahu North Shore - Hawaii (52953924680).jpg",
+      "author": "Tony Webster",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Mokuleia_Army_Beach_-_Oahu_North_Shore_-_Hawaii_(52953924680).jpg"
+    },
+    "kekaha-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Kekaha_Beach_Park_Kauai_Hawaii_%2845554285104%29.jpg/1280px-Kekaha_Beach_Park_Kauai_Hawaii_%2845554285104%29.jpg",
+      "title": "Kekaha Beach Park Kauai Hawaii (45554285104).jpg",
+      "author": "dronepicr",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Kekaha_Beach_Park_Kauai_Hawaii_(45554285104).jpg"
+    },
+    "kenai-beach-ak": {
+      "file": "https://upload.wikimedia.org/wikipedia/commons/1/16/Holy_Assumption_Russian_Orthodox_Church_in_Kenai%2C_Alaska.jpg",
+      "title": "Holy Assumption Russian Orthodox Church in Kenai, Alaska.jpg",
+      "author": "Jet Lowe",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Holy_Assumption_Russian_Orthodox_Church_in_Kenai,_Alaska.jpg"
+    },
+    "keystone-spit-wa": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Admiralty_Bay_on_a_cloudy_day_from_Keystone_Spit.jpg/1280px-Admiralty_Bay_on_a_cloudy_day_from_Keystone_Spit.jpg",
+      "title": "Admiralty Bay on a cloudy day from Keystone Spit.jpg",
+      "author": "PinchyCC",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Admiralty_Bay_on_a_cloudy_day_from_Keystone_Spit.jpg"
+    },
+    "koki-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Maui_black_sand_beach_-_panoramio.jpg/1280px-Maui_black_sand_beach_-_panoramio.jpg",
+      "title": "Maui black sand beach - panoramio.jpg",
+      "author": "nick hoke",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Maui_black_sand_beach_-_panoramio.jpg"
+    },
+    "ku-au-cove-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Hookipa_Beach_surfing_Maui_Hawaii_%2845690499842%29.jpg/1280px-Hookipa_Beach_surfing_Maui_Hawaii_%2845690499842%29.jpg",
+      "title": "Hookipa Beach surfing Maui Hawaii (45690499842).jpg",
+      "author": "dronepicr",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Hookipa_Beach_surfing_Maui_Hawaii_(45690499842).jpg"
+    },
+    "kua-bay-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Manini%27owali_Beach_Kua_Bay_Big_island_Hawaii_%2845553164924%29.jpg/1280px-Manini%27owali_Beach_Kua_Bay_Big_island_Hawaii_%2845553164924%29.jpg",
+      "title": "Manini'owali Beach Kua Bay Big island Hawaii (45553164924).jpg",
+      "author": "dronepicr",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Manini%27owali_Beach_Kua_Bay_Big_island_Hawaii_(45553164924).jpg"
+    },
+    "lagace-beach-nh": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Lagace_Beach%2C_Webster_Lake%2C_Franklin%2C_NH_%2849179685368%29.jpg/1280px-Lagace_Beach%2C_Webster_Lake%2C_Franklin%2C_NH_%2849179685368%29.jpg",
+      "title": "Lagace Beach, Webster Lake, Franklin, NH (49179685368).jpg",
+      "author": "Warren LeMay from Covington, KY, United States",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Lagace_Beach,_Webster_Lake,_Franklin,_NH_(49179685368).jpg"
+    },
+    "lagoon-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Lagoon_bridge%2C_Hilton_Waikoloa_Village_hotel_on_the_big_island_of_Hawai%E2%80%98i.jpg/1280px-Lagoon_bridge%2C_Hilton_Waikoloa_Village_hotel_on_the_big_island_of_Hawai%E2%80%98i.jpg",
+      "title": "Lagoon bridge, Hilton Waikoloa Village hotel on the big island of Hawai‘i.jpg",
+      "author": "Bill Ward",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Lagoon_bridge,_Hilton_Waikoloa_Village_hotel_on_the_big_island_of_Hawai%E2%80%98i.jpg"
+    },
+    "lake-beseck-beach-ct": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Beseck_Lake%2C_Beseck_Lake_CT.jpg/1280px-Beseck_Lake%2C_Beseck_Lake_CT.jpg",
+      "title": "Beseck Lake, Beseck Lake CT.jpg",
+      "author": "John Phelan",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Beseck_Lake,_Beseck_Lake_CT.jpg"
+    },
+    "lake-carlton-ok": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Canoe_Rental_on_Lake_Carlton.jpg/1280px-Canoe_Rental_on_Lake_Carlton.jpg",
+      "title": "Canoe Rental on Lake Carlton.jpg",
+      "author": "Thomas & Dianne Jones from Okmulgee, USA",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Canoe_Rental_on_Lake_Carlton.jpg"
+    },
+    "lake-union-park-kayak-launch-and-beach-wa": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Lake_Union_-_panoramio.jpg/1280px-Lake_Union_-_panoramio.jpg",
+      "title": "Lake Union - panoramio.jpg",
+      "author": "Kira Picabo",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Lake_Union_-_panoramio.jpg"
+    },
+    "lanikai-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Lanikai_Beach_%2853313259949%29.jpg/1280px-Lanikai_Beach_%2853313259949%29.jpg",
+      "title": "Lanikai Beach (53313259949).jpg",
+      "author": "Raita Futo from Tokyo, Japan",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Lanikai_Beach_(53313259949).jpg"
+    },
+    "lawai-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Lawai_Beach_Resort_at_Poipu_Kauai_Hawaii.jpg/1280px-Lawai_Beach_Resort_at_Poipu_Kauai_Hawaii.jpg",
+      "title": "Lawai Beach Resort at Poipu Kauai Hawaii.jpg",
+      "author": "Tony Webster",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Lawai_Beach_Resort_at_Poipu_Kauai_Hawaii.jpg"
+    },
+    "le-ahi-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/South_Shore_Oahu%2C_Hawaii_-_panoramio_%2828%29.jpg/1280px-South_Shore_Oahu%2C_Hawaii_-_panoramio_%2828%29.jpg",
+      "title": "South Shore Oahu, Hawaii - panoramio (28).jpg",
+      "author": "davidpinter",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:South_Shore_Oahu,_Hawaii_-_panoramio_(28).jpg"
+    },
+    "lincolnville-beach-me": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Lincolnville_Ferry_Terminal_pedestrian_access.jpg/1280px-Lincolnville_Ferry_Terminal_pedestrian_access.jpg",
+      "title": "Lincolnville Ferry Terminal pedestrian access.jpg",
+      "author": "QuincyMorgan",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Lincolnville_Ferry_Terminal_pedestrian_access.jpg"
+    },
+    "little-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Raw_Makena_beach_on_Maui_%2845689780572%29.jpg/1280px-Raw_Makena_beach_on_Maui_%2845689780572%29.jpg",
+      "title": "Raw Makena beach on Maui (45689780572).jpg",
+      "author": "dronepicr",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Raw_Makena_beach_on_Maui_(45689780572).jpg"
+    },
+    "little-platte-swim-beach-mo": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/LittlePlatteRiverSmithvilleMo.jpg/1280px-LittlePlatteRiverSmithvilleMo.jpg",
+      "title": "LittlePlatteRiverSmithvilleMo.jpg",
+      "author": "SamuelNelsonGISP",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:LittlePlatteRiverSmithvilleMo.jpg"
+    },
+    "lone-rock-beach-ut": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Lone_Rock_Beach_Primitive_Camping_in_Utah_%2852807912407%29.jpg/1280px-Lone_Rock_Beach_Primitive_Camping_in_Utah_%2852807912407%29.jpg",
+      "title": "Lone Rock Beach Primitive Camping in Utah (52807912407).jpg",
+      "author": "Tony Webster",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Lone_Rock_Beach_Primitive_Camping_in_Utah_(52807912407).jpg"
+    },
+    "long-sands-me": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Long_Sands_Historic_Marker_%283617456256%29.jpg/1280px-Long_Sands_Historic_Marker_%283617456256%29.jpg",
+      "title": "Long Sands Historic Marker (3617456256).jpg",
+      "author": "InAweofGod'sCreation",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Long_Sands_Historic_Marker_(3617456256).jpg"
+    },
+    "madison-park-beach-swim-area-wa": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Madison_park_night.jpg/1280px-Madison_park_night.jpg",
+      "title": "Madison park night.jpg",
+      "author": "Tom Harpel from Seattle, Washington, United States",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Madison_park_night.jpg"
+    },
+    "madison-park-beach-wa": {
+      "file": "https://upload.wikimedia.org/wikipedia/commons/3/30/Madison_Park_businesses%2C_1975_%2831712295564%29.jpg",
+      "title": "Madison Park businesses, 1975 (31712295564).jpg",
+      "author": "Seattle Municipal Archives from Seattle, WA",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Madison_Park_businesses,_1975_(31712295564).jpg"
+    },
+    "maeaea-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Haleiwa_Beach_and_Maeaea_Beach_-_Haleiwa_Oahu_Hawaii.jpg/1280px-Haleiwa_Beach_and_Maeaea_Beach_-_Haleiwa_Oahu_Hawaii.jpg",
+      "title": "Haleiwa Beach and Maeaea Beach - Haleiwa Oahu Hawaii.jpg",
+      "author": "Tony Webster",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Haleiwa_Beach_and_Maeaea_Beach_-_Haleiwa_Oahu_Hawaii.jpg"
+    },
+    "magic-island-lagoon-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Sunset_over_the_breakwaters_at_Magic_Island_%285275647516%29.jpg/1280px-Sunset_over_the_breakwaters_at_Magic_Island_%285275647516%29.jpg",
+      "title": "Sunset over the breakwaters at Magic Island (5275647516).jpg",
+      "author": "Daniel Ramirez from Honolulu, USA",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Sunset_over_the_breakwaters_at_Magic_Island_(5275647516).jpg"
+    },
+    "magnuson-park-beach-wa": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Magnuson_1_%287137908779%29.jpg/1280px-Magnuson_1_%287137908779%29.jpg",
+      "title": "Magnuson 1 (7137908779).jpg",
+      "author": "Leslie Seaton from Seattle, WA, USA",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Magnuson_1_(7137908779).jpg"
+    },
+    "mahaiula-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Mahaiula_beach_Big_island_Hawaii_%2845364014255%29.jpg/1280px-Mahaiula_beach_Big_island_Hawaii_%2845364014255%29.jpg",
+      "title": "Mahaiula beach Big island Hawaii (45364014255).jpg",
+      "author": "dronepicr",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Mahaiula_beach_Big_island_Hawaii_(45364014255).jpg"
+    },
+    "makaha-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Waianae-Makaha_%28Papaoneone_Beach%29_-_panoramio.jpg/1280px-Waianae-Makaha_%28Papaoneone_Beach%29_-_panoramio.jpg",
+      "title": "Waianae-Makaha (Papaoneone Beach) - panoramio.jpg",
+      "author": "nick hoke",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Waianae-Makaha_(Papaoneone_Beach)_-_panoramio.jpg"
+    },
+    "makalei-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/South_Shore_Oahu%2C_Hawaii_-_panoramio_%2824%29.jpg/1280px-South_Shore_Oahu%2C_Hawaii_-_panoramio_%2824%29.jpg",
+      "title": "South Shore Oahu, Hawaii - panoramio (24).jpg",
+      "author": "davidpinter",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:South_Shore_Oahu,_Hawaii_-_panoramio_(24).jpg"
+    },
+    "makapu-u-beach-hi": {
+      "file": "https://upload.wikimedia.org/wikipedia/commons/8/81/Makapu%27u_light_house_near_Rabbit_Island%2C_Ohau_-------3977_%284668980212%29.jpg",
+      "title": "Makapu'u light house near Rabbit Island, Ohau -------3977 (4668980212).jpg",
+      "author": "Bruce Tuten from Savannah, Georgia, United States",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Makapu%27u_light_house_near_Rabbit_Island,_Ohau_-------3977_(4668980212).jpg"
+    },
+    "makapuu-beach-park-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Makapuu_Beach%2C_Waimanalo_%28503358%29_%2818289024472%29.jpg/1280px-Makapuu_Beach%2C_Waimanalo_%28503358%29_%2818289024472%29.jpg",
+      "title": "Makapuu Beach, Waimanalo (503358) (18289024472).jpg",
+      "author": "Robert Linsdell from St. Andrews, Canada",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Makapuu_Beach,_Waimanalo_(503358)_(18289024472).jpg"
+    },
+    "maluaka-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Hawaii_Maui_Maluaka_Beach_%2822028601953%29.jpg/1280px-Hawaii_Maui_Maluaka_Beach_%2822028601953%29.jpg",
+      "title": "Hawaii Maui Maluaka Beach (22028601953).jpg",
+      "author": "dronepicr",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Hawaii_Maui_Maluaka_Beach_(22028601953).jpg"
+    },
+    "mamanasco-beach-ct": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Mamanasco_Lake%2C_frozen.jpg/1280px-Mamanasco_Lake%2C_frozen.jpg",
+      "title": "Mamanasco Lake, frozen.jpg",
+      "author": "Chris Burke",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Mamanasco_Lake,_frozen.jpg"
+    },
+    "marina-beach-wa": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Tree_stump_in_Marina_Beach_Park.jpg/1280px-Tree_stump_in_Marina_Beach_Park.jpg",
+      "title": "Tree stump in Marina Beach Park.jpg",
+      "author": "PinchyCC",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Tree_stump_in_Marina_Beach_Park.jpg"
+    },
+    "maryland-beach-md": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Ocean_City_Maryland_aerial_view_north.jpg/1280px-Ocean_City_Maryland_aerial_view_north.jpg",
+      "title": "Ocean City Maryland aerial view north.jpg",
+      "author": "Tex Jobe, U.S. Army Corps of Engineers",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Ocean_City_Maryland_aerial_view_north.jpg"
+    },
+    "matthews-beach-wa": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Matthews_Beach_panorama.jpg/1280px-Matthews_Beach_panorama.jpg",
+      "title": "Matthews Beach panorama.jpg",
+      "author": "Chas Redmond",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Matthews_Beach_panorama.jpg"
+    },
+    "mauna-kea-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Mauna_Kea_Beach%2C_Waimea_-_panoramio_%282%29.jpg/1280px-Mauna_Kea_Beach%2C_Waimea_-_panoramio_%282%29.jpg",
+      "title": "Mauna Kea Beach, Waimea - panoramio (2).jpg",
+      "author": "Bob Linsdell",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Mauna_Kea_Beach,_Waimea_-_panoramio_(2).jpg"
+    },
+    "mokule-ia-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Mokuleia_Army_Beach_-_Oahu_North_Shore_-_Hawaii_%2852953924680%29.jpg/1280px-Mokuleia_Army_Beach_-_Oahu_North_Shore_-_Hawaii_%2852953924680%29.jpg",
+      "title": "Mokuleia Army Beach - Oahu North Shore - Hawaii (52953924680).jpg",
+      "author": "Tony Webster",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Mokuleia_Army_Beach_-_Oahu_North_Shore_-_Hawaii_(52953924680).jpg"
+    },
+    "mokule-ia-rock-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Mokuleia_Army_Beach_-_Oahu_North_Shore_-_Hawaii_%2852953924680%29.jpg/1280px-Mokuleia_Army_Beach_-_Oahu_North_Shore_-_Hawaii_%2852953924680%29.jpg",
+      "title": "Mokuleia Army Beach - Oahu North Shore - Hawaii (52953924680).jpg",
+      "author": "Tony Webster",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Mokuleia_Army_Beach_-_Oahu_North_Shore_-_Hawaii_(52953924680).jpg"
+    },
+    "momauguin-beach-ct": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Momauguin_with_streetcar_1910_postcard.jpg/1280px-Momauguin_with_streetcar_1910_postcard.jpg",
+      "title": "Momauguin with streetcar 1910 postcard.jpg",
+      "author": "Unknown author Unknown author",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Momauguin_with_streetcar_1910_postcard.jpg"
+    },
+    "moody-beach-me": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Moody_Beach%2C_Wells%2C_United_States_%28Unsplash%29.jpg/1280px-Moody_Beach%2C_Wells%2C_United_States_%28Unsplash%29.jpg",
+      "title": "Moody Beach, Wells, United States (Unsplash).jpg",
+      "author": "David Straight davidstraight",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Moody_Beach,_Wells,_United_States_(Unsplash).jpg"
+    },
+    "moosup-pond-beach-ct": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Moosup%2C_CT.jpg/1280px-Moosup%2C_CT.jpg",
+      "title": "Moosup, CT.jpg",
+      "author": "CTsignhunt",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Moosup,_CT.jpg"
+    },
+    "mount-baker-beach-wa": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Mount_Baker_Park_and_boathouse%2C_Seattle_1920s_%286940266579%29.jpg/1280px-Mount_Baker_Park_and_boathouse%2C_Seattle_1920s_%286940266579%29.jpg",
+      "title": "Mount Baker Park and boathouse, Seattle 1920s (6940266579).jpg",
+      "author": "William Creswell from Bremerton, Washington, USA",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Mount_Baker_Park_and_boathouse,_Seattle_1920s_(6940266579).jpg"
+    },
+    "napili-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Napili_Bay_%2853402209945%29.jpg/1280px-Napili_Bay_%2853402209945%29.jpg",
+      "title": "Napili Bay (53402209945).jpg",
+      "author": "Carnaval.com Studios from The Inner Mission San Francisco, Earth",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Napili_Bay_(53402209945).jpg"
+    },
+    "nevada-beach-nv": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Nevada_Beach_pier_Lake_Tahoe_NV_2025-08-06_09-48-01_1.jpg/1280px-Nevada_Beach_pier_Lake_Tahoe_NV_2025-08-06_09-48-01_1.jpg",
+      "title": "Nevada Beach pier Lake Tahoe NV 2025-08-06 09-48-01 1.jpg",
+      "author": "G. Edward Johnson",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Nevada_Beach_pier_Lake_Tahoe_NV_2025-08-06_09-48-01_1.jpg"
+    },
+    "newton-town-beach-nh": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Postcard_of_streetcar_tracks_in_Newton%2C_New_Hampshire.jpg/1280px-Postcard_of_streetcar_tracks_in_Newton%2C_New_Hampshire.jpg",
+      "title": "Postcard of streetcar tracks in Newton, New Hampshire.jpg",
+      "author": "Unknown author Unknown author",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Postcard_of_streetcar_tracks_in_Newton,_New_Hampshire.jpg"
+    },
+    "noank-town-dock-beach-ct": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Noank_station_131.JPG/1280px-Noank_station_131.JPG",
+      "title": "Noank station 131.JPG",
+      "author": "Pedro Xing",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Noank_station_131.JPG"
+    },
+    "north-beach-ct": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Candlewood_Lake_Island_House.jpg/1280px-Candlewood_Lake_Island_House.jpg",
+      "title": "Candlewood Lake Island House.jpg",
+      "author": "CityLimitsJunction",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Candlewood_Lake_Island_House.jpg"
+    },
+    "north-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Looking_Across_Kaneohe_Bay_from_the_Marine_Corps_Air_Station_-_early_1980s_-_panoramio.jpg/1280px-Looking_Across_Kaneohe_Bay_from_the_Marine_Corps_Air_Station_-_early_1980s_-_panoramio.jpg",
+      "title": "Looking Across Kaneohe Bay from the Marine Corps Air Station - early 1980s - panoramio.jpg",
+      "author": "Dan Bolinger",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Looking_Across_Kaneohe_Bay_from_the_Marine_Corps_Air_Station_-_early_1980s_-_panoramio.jpg"
+    },
+    "north-beach-nh": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Hampton_Beach%2C_Hampton%2C_United_States_%28Unsplash%29.jpg/1280px-Hampton_Beach%2C_Hampton%2C_United_States_%28Unsplash%29.jpg",
+      "title": "Hampton Beach, Hampton, United States (Unsplash).jpg",
+      "author": "Kristopher Roller krisroller",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Hampton_Beach,_Hampton,_United_States_(Unsplash).jpg"
+    },
+    "ocean-beach-ct": {
+      "file": "https://upload.wikimedia.org/wikipedia/commons/5/53/Postcard_of_Ocean_Beach_with_streetcar_terminal_%281%29.jpg",
+      "title": "Postcard of Ocean Beach with streetcar terminal (1).jpg",
+      "author": "Unknown author Unknown author",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Postcard_of_Ocean_Beach_with_streetcar_terminal_(1).jpg"
+    },
+    "ocean-shores-beach-wa": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Ocean_Shores%2C_WA%2C_USA_-_panoramio_%287%29.jpg/1280px-Ocean_Shores%2C_WA%2C_USA_-_panoramio_%287%29.jpg",
+      "title": "Ocean Shores, WA, USA - panoramio (7).jpg",
+      "author": "Kira Picabo",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Ocean_Shores,_WA,_USA_-_panoramio_(7).jpg"
+    },
+    "old-orchard-beach-me": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Rental_rate_board_Old_Orchard_Beach_ME_August_2025.jpg/1280px-Rental_rate_board_Old_Orchard_Beach_ME_August_2025.jpg",
+      "title": "Rental rate board Old Orchard Beach ME August 2025.jpg",
+      "author": "Artaxerxes",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Rental_rate_board_Old_Orchard_Beach_ME_August_2025.jpg"
+    },
+    "one-uli-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Maluaka_Beach_Park_Maui_Hawaii_%2845740900181%29.jpg/1280px-Maluaka_Beach_Park_Maui_Hawaii_%2845740900181%29.jpg",
+      "title": "Maluaka Beach Park Maui Hawaii (45740900181).jpg",
+      "author": "dronepicr",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Maluaka_Beach_Park_Maui_Hawaii_(45740900181).jpg"
+    },
+    "oneloa-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Oneloa_Bay_Maui%2C_near_Kapalua_James_Brennan_Molokai_Hawaii_-_panoramio.jpg/1280px-Oneloa_Bay_Maui%2C_near_Kapalua_James_Brennan_Molokai_Hawaii_-_panoramio.jpg",
+      "title": "Oneloa Bay Maui, near Kapalua James Brennan Molokai Hawaii - panoramio.jpg",
+      "author": "James Brennan Moloka…",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Oneloa_Bay_Maui,_near_Kapalua_James_Brennan_Molokai_Hawaii_-_panoramio.jpg"
+    },
+    "owen-beach-wa": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Life_at_Owen%27s_beach_-_panoramio.jpg/1280px-Life_at_Owen%27s_beach_-_panoramio.jpg",
+      "title": "Life at Owen's beach - panoramio.jpg",
+      "author": "Kira Picabo",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Life_at_Owen%27s_beach_-_panoramio.jpg"
+    },
+    "pa-ia-bay-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Paia_Beach_Maui_-_panoramio_%282%29.jpg/1280px-Paia_Beach_Maui_-_panoramio_%282%29.jpg",
+      "title": "Paia Beach Maui - panoramio (2).jpg",
+      "author": "Michelle Maria",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Paia_Beach_Maui_-_panoramio_(2).jpg"
+    },
+    "palm-tree-island-nc": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Palm_Tree_Island.jpg/1280px-Palm_Tree_Island.jpg",
+      "title": "Palm Tree Island.jpg",
+      "author": "Kelwiggin28",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Palm_Tree_Island.jpg"
+    },
+    "papakolea-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Papakolea_panorama.jpg/1280px-Papakolea_panorama.jpg",
+      "title": "Papakolea panorama.jpg",
+      "author": "jonny - m t",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Papakolea_panorama.jpg"
+    },
+    "papohaku-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Papohaku_Beach_Molokai_Hawaii_%28Maui_County%29_Photo_by_Pat_McNally_-_panoramio.jpg/1280px-Papohaku_Beach_Molokai_Hawaii_%28Maui_County%29_Photo_by_Pat_McNally_-_panoramio.jpg",
+      "title": "Papohaku Beach Molokai Hawaii (Maui County) Photo by Pat McNally - panoramio.jpg",
+      "author": "Patrick_McNally",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Papohaku_Beach_Molokai_Hawaii_(Maui_County)_Photo_by_Pat_McNally_-_panoramio.jpg"
+    },
+    "parker-s-creek-beach-nc": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Parkers_Creek_Jordan_Lake_SP_NC_134704.jpg/1280px-Parkers_Creek_Jordan_Lake_SP_NC_134704.jpg",
+      "title": "Parkers Creek Jordan Lake SP NC 134704.jpg",
+      "author": "bobistraveling",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Parkers_Creek_Jordan_Lake_SP_NC_134704.jpg"
+    },
+    "phelps-beach-wy": {
+      "file": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Moose_at_Phelps_Lake%2C_Grand_Teton_National_Park_-_panoramio.jpg",
+      "title": "Moose at Phelps Lake, Grand Teton National Park - panoramio.jpg",
+      "author": "aoiaio",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Moose_at_Phelps_Lake,_Grand_Teton_National_Park_-_panoramio.jpg"
+    },
+    "piney-point-beach-md": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Piney_Point_Lighthouse%2C_Museum_and_Historic_Park_%2850513187577%29.jpg/1280px-Piney_Point_Lighthouse%2C_Museum_and_Historic_Park_%2850513187577%29.jpg",
+      "title": "Piney Point Lighthouse, Museum and Historic Park (50513187577).jpg",
+      "author": "F Delventhal from Outside Washington, D.C., US",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Piney_Point_Lighthouse,_Museum_and_Historic_Park_(50513187577).jpg"
+    },
+    "pleasure-beach-ct": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Panorama_of_Pleasure_Beach.jpg/1280px-Panorama_of_Pleasure_Beach.jpg",
+      "title": "Panorama of Pleasure Beach.jpg",
+      "author": "Bill",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Panorama_of_Pleasure_Beach.jpg"
+    },
+    "po-ipu-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Poipu_Beach%2C_Koloa_%28502727%29_%2816743687726%29.jpg/1280px-Poipu_Beach%2C_Koloa_%28502727%29_%2816743687726%29.jpg",
+      "title": "Poipu Beach, Koloa (502727) (16743687726).jpg",
+      "author": "Robert Linsdell from St. Andrews, Canada",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Poipu_Beach,_Koloa_(502727)_(16743687726).jpg"
+    },
+    "po-olenalena-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Poolenalena_beach_Maui_Hawaii_%2844826095655%29.jpg/1280px-Poolenalena_beach_Maui_Hawaii_%2844826095655%29.jpg",
+      "title": "Poolenalena beach Maui Hawaii (44826095655).jpg",
+      "author": "dronepicr",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Poolenalena_beach_Maui_Hawaii_(44826095655).jpg"
+    },
+    "point-beach-ct": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Pond_Point_Beach_streetcar_stop_postcard.jpg/1280px-Pond_Point_Beach_streetcar_stop_postcard.jpg",
+      "title": "Pond Point Beach streetcar stop postcard.jpg",
+      "author": "Unknown author Unknown author",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Pond_Point_Beach_streetcar_stop_postcard.jpg"
+    },
+    "polihale-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Polihale_Sunset_%28327947967%29.jpg/1280px-Polihale_Sunset_%28327947967%29.jpg",
+      "title": "Polihale Sunset (327947967).jpg",
+      "author": "Bryce Edwards from San Jose, CA, USA",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Polihale_Sunset_(327947967).jpg"
+    },
+    "polo-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Polo_Beach_Park_Maui_Hawaii_%2845689810122%29.jpg/1280px-Polo_Beach_Park_Maui_Hawaii_%2845689810122%29.jpg",
+      "title": "Polo Beach Park Maui Hawaii (45689810122).jpg",
+      "author": "dronepicr",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Polo_Beach_Park_Maui_Hawaii_(45689810122).jpg"
+    },
+    "pololu-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Kohala_Coast_%26_Pololu_Valley%2C_Big_Island%2C_Hawai%E2%80%99i.jpg/1280px-Kohala_Coast_%26_Pololu_Valley%2C_Big_Island%2C_Hawai%E2%80%99i.jpg",
+      "title": "Kohala Coast & Pololu Valley, Big Island, Hawai’i.jpg",
+      "author": "lamblukas",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Kohala_Coast_%26_Pololu_Valley,_Big_Island,_Hawai%E2%80%99i.jpg"
+    },
+    "pond-point-beach-ct": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Pond_Point_Beach_streetcar_stop_postcard.jpg/1280px-Pond_Point_Beach_streetcar_stop_postcard.jpg",
+      "title": "Pond Point Beach streetcar stop postcard.jpg",
+      "author": "Unknown author Unknown author",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Pond_Point_Beach_streetcar_stop_postcard.jpg"
+    },
+    "popham-beach-me": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Popham_Village_%2837159528274%29.jpg/1280px-Popham_Village_%2837159528274%29.jpg",
+      "title": "Popham Village (37159528274).jpg",
+      "author": "Paul VanDerWerf from Brunswick, Maine, USA",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Popham_Village_(37159528274).jpg"
+    },
+    "pu-u-poa-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/St_Regis_beach_Princeville_Kauai%2C_Hawaii_%2846227285892%29.jpg/1280px-St_Regis_beach_Princeville_Kauai%2C_Hawaii_%2846227285892%29.jpg",
+      "title": "St Regis beach Princeville Kauai, Hawaii (46227285892).jpg",
+      "author": "dronepicr",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:St_Regis_beach_Princeville_Kauai,_Hawaii_(46227285892).jpg"
+    },
+    "public-access-beach-wa": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Old_Stone_Bridge_Whatcom_Falls_Park_Bellingham_Washington.jpg/1280px-Old_Stone_Bridge_Whatcom_Falls_Park_Bellingham_Washington.jpg",
+      "title": "Old Stone Bridge Whatcom Falls Park Bellingham Washington.jpg",
+      "author": "mtsvancouver from West Coast of North America ( RGB2 )",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Old_Stone_Bridge_Whatcom_Falls_Park_Bellingham_Washington.jpg"
+    },
+    "punalu-u-black-sand-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Punalu%27u_Beach%2C_Pahala_%28504430%29_%2823821885485%29.jpg/1280px-Punalu%27u_Beach%2C_Pahala_%28504430%29_%2823821885485%29.jpg",
+      "title": "Punalu'u Beach, Pahala (504430) (23821885485).jpg",
+      "author": "Robert Linsdell from St. Andrews, Canada",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Punalu%27u_Beach,_Pahala_(504430)_(23821885485).jpg"
+    },
+    "queen-kapi-olani-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Sunset_from_Queen%27s_surf_beach._%284550547618%29.jpg/1280px-Sunset_from_Queen%27s_surf_beach._%284550547618%29.jpg",
+      "title": "Sunset from Queen's surf beach. (4550547618).jpg",
+      "author": "Daniel Ramirez from Honolulu, USA",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Sunset_from_Queen%27s_surf_beach._(4550547618).jpg"
+    },
+    "rainbow-beach-id": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Rainbow_Beach_-_panoramio_%281%29.jpg/1280px-Rainbow_Beach_-_panoramio_%281%29.jpg",
+      "title": "Rainbow Beach - panoramio (1).jpg",
+      "author": "JF Hobbs",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Rainbow_Beach_-_panoramio_(1).jpg"
+    },
+    "red-sand-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Red_sand_ocean_bay_%28Unsplash_zNxlvCZhHNA%29.jpg/1280px-Red_sand_ocean_bay_%28Unsplash_zNxlvCZhHNA%29.jpg",
+      "title": "Red sand ocean bay (Unsplash zNxlvCZhHNA).jpg",
+      "author": "Anton Repponen repponen",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Red_sand_ocean_bay_(Unsplash_zNxlvCZhHNA).jpg"
+    },
+    "rialto-beach-wa": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Rialto_Beach_-_54019416006.jpg/1280px-Rialto_Beach_-_54019416006.jpg",
+      "title": "Rialto Beach - 54019416006.jpg",
+      "author": "Roller Coaster Philosophy",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Rialto_Beach_-_54019416006.jpg"
+    },
+    "rogue-bluffs-beach-me": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Roque_Bluffs_State_Park.jpg/1280px-Roque_Bluffs_State_Park.jpg",
+      "title": "Roque Bluffs State Park.jpg",
+      "author": "due_mele from Nomads of Earth",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Roque_Bluffs_State_Park.jpg"
+    },
+    "rosario-beach-wa": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Glacial_till_along_Rosario_Beach.jpg/1280px-Glacial_till_along_Rosario_Beach.jpg",
+      "title": "Glacial till along Rosario Beach.jpg",
+      "author": "PinchyCC",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Glacial_till_along_Rosario_Beach.jpg"
+    },
+    "rowayton-community-beach-ct": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Rowayton_Market_167.JPG/1280px-Rowayton_Market_167.JPG",
+      "title": "Rowayton Market 167.JPG",
+      "author": "Pedro Xing",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Rowayton_Market_167.JPG"
+    },
+    "ruby-beach-wa": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Ruby_Beach_%2839242428644%29.jpg/1280px-Ruby_Beach_%2839242428644%29.jpg",
+      "title": "Ruby Beach (39242428644).jpg",
+      "author": "Bernd Thaller from Graz, Austria",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Ruby_Beach_(39242428644).jpg"
+    },
+    "rye-north-beach-nh": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Tables%2C_Wallis_Sands_State_Beach%2C_Rye_NH.jpg/1280px-Tables%2C_Wallis_Sands_State_Beach%2C_Rye_NH.jpg",
+      "title": "Tables, Wallis Sands State Beach, Rye NH.jpg",
+      "author": "User:Edrgeorge",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Tables,_Wallis_Sands_State_Beach,_Rye_NH.jpg"
+    },
+    "saint-george-island-beach-md": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Progne_subis%2C_St_George%27s_Island%2C_Maryland_1.jpg/1280px-Progne_subis%2C_St_George%27s_Island%2C_Maryland_1.jpg",
+      "title": "Progne subis, St George's Island, Maryland 1.jpg",
+      "author": "Matt Tillett from Cumberland, MD, USA",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Progne_subis,_St_George%27s_Island,_Maryland_1.jpg"
+    },
+    "salt-pond-beach-hi": {
+      "file": "https://upload.wikimedia.org/wikipedia/commons/8/82/2_6_Salt_Pond_2018-02-06_055-LR_%2840666532421%29.jpg",
+      "title": "2 6 Salt Pond 2018-02-06 055-LR (40666532421).jpg",
+      "author": "James Abbott from New Westminster, B.C., Canada",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:2_6_Salt_Pond_2018-02-06_055-LR_(40666532421).jpg"
+    },
+    "sand-dollar-beach-ak": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Monthly_Climate_Normals_%281991-2020%29_-_SAND_POINT_1_ENE%2CAK.svg/1280px-Monthly_Climate_Normals_%281991-2020%29_-_SAND_POINT_1_ENE%2CAK.svg.png",
+      "title": "Monthly Climate Normals (1991-2020) - SAND POINT 1 ENE,AK.svg",
+      "author": "NOAA",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Monthly_Climate_Normals_(1991-2020)_-_SAND_POINT_1_ENE,AK.svg"
+    },
+    "sandy-beach-ct": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Sandy_Beach%2C_Crystal_Lake%2C_Ellington_Connecticut_USA.JPG/1280px-Sandy_Beach%2C_Crystal_Lake%2C_Ellington_Connecticut_USA.JPG",
+      "title": "Sandy Beach, Crystal Lake, Ellington Connecticut USA.JPG",
+      "author": "Elipongo",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Sandy_Beach,_Crystal_Lake,_Ellington_Connecticut_USA.JPG"
+    },
+    "sandy-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Fire_Truck_%40_Sandy_Beach_%286225680188%29.jpg/1280px-Fire_Truck_%40_Sandy_Beach_%286225680188%29.jpg",
+      "title": "Fire Truck @ Sandy Beach (6225680188).jpg",
+      "author": "Daniel Ramirez from Honolulu, USA",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Fire_Truck_@_Sandy_Beach_(6225680188).jpg"
+    },
+    "savannah-river-beach-ga": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Savannah_%285802337949%29.jpg/1280px-Savannah_%285802337949%29.jpg",
+      "title": "Savannah (5802337949).jpg",
+      "author": "Jeff Gunn from Atlanta, USA",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Savannah_(5802337949).jpg"
+    },
+    "scenic-beach-wa": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Scenic_Beach_-_panoramio.jpg/1280px-Scenic_Beach_-_panoramio.jpg",
+      "title": "Scenic Beach - panoramio.jpg",
+      "author": "michaelwm25",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Scenic_Beach_-_panoramio.jpg"
+    },
+    "sea-cove-beach-me": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Water_Cove.jpg/1280px-Water_Cove.jpg",
+      "title": "Water Cove.jpg",
+      "author": "Paul VanDerWerf",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Water_Cove.jpg"
+    },
+    "seabrook-beach-nh": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Seabrook_Beach%2C_Seabrook%2C_United_States_%28Unsplash%29.jpg/1280px-Seabrook_Beach%2C_Seabrook%2C_United_States_%28Unsplash%29.jpg",
+      "title": "Seabrook Beach, Seabrook, United States (Unsplash).jpg",
+      "author": "Danielle MacInnes dsmacinnes",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Seabrook_Beach,_Seabrook,_United_States_(Unsplash).jpg"
+    },
+    "seaside-beach-ct": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Tree_At_Seaside_Park_-_panoramio.jpg/1280px-Tree_At_Seaside_Park_-_panoramio.jpg",
+      "title": "Tree At Seaside Park - panoramio.jpg",
+      "author": "LennyDotCom",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Tree_At_Seaside_Park_-_panoramio.jpg"
+    },
+    "secret-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Secret_Beach%2C_Kauai_%288728232304%29.jpg/1280px-Secret_Beach%2C_Kauai_%288728232304%29.jpg",
+      "title": "Secret Beach, Kauai (8728232304).jpg",
+      "author": "cogdogblog",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Secret_Beach,_Kauai_(8728232304).jpg"
+    },
+    "semiahmoo-spit-wa": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Base_of_old_Semiahmoo_water_tower._%2815304377256%29.jpg/1280px-Base_of_old_Semiahmoo_water_tower._%2815304377256%29.jpg",
+      "title": "Base of old Semiahmoo water tower. (15304377256).jpg",
+      "author": "Robert Ashworth from Bellingham, WA., USA",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Base_of_old_Semiahmoo_water_tower._(15304377256).jpg"
+    },
+    "shelburne-beach-vt": {
+      "file": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Central_Vermont_Railway_No._220_at_Shelburne_Museum_-_July_2011.jpg",
+      "title": "Central Vermont Railway No. 220 at Shelburne Museum - July 2011.jpg",
+      "author": "Discover Vermont Vacations",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Central_Vermont_Railway_No._220_at_Shelburne_Museum_-_July_2011.jpg"
+    },
+    "sherman-town-beach-ct": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Greek_Revival_-_Sherman%2C_CT_-_Center_Church_%283%29.jpg/1280px-Greek_Revival_-_Sherman%2C_CT_-_Center_Church_%283%29.jpg",
+      "title": "Greek Revival - Sherman, CT - Center Church (3).jpg",
+      "author": "Bmzuckerman",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Greek_Revival_-_Sherman,_CT_-_Center_Church_(3).jpg"
+    },
+    "shi-shi-beach-wa": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Seaweed_Staghorn_tidepool_Shi_Shi_beach_NPS_Photo_%2816705052183%29.jpg/1280px-Seaweed_Staghorn_tidepool_Shi_Shi_beach_NPS_Photo_%2816705052183%29.jpg",
+      "title": "Seaweed Staghorn tidepool Shi Shi beach NPS Photo (16705052183).jpg",
+      "author": "Olympic National Park",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Seaweed_Staghorn_tidepool_Shi_Shi_beach_NPS_Photo_(16705052183).jpg"
+    },
+    "shipwreck-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Molokai_from_Shipwreck_beach.jpg/1280px-Molokai_from_Shipwreck_beach.jpg",
+      "title": "Molokai from Shipwreck beach.jpg",
+      "author": "Halibut Thyme",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Molokai_from_Shipwreck_beach.jpg"
+    },
+    "short-beach-ct": {
+      "file": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Short_Beach_Connecticut.jpg",
+      "title": "Short Beach Connecticut.jpg",
+      "author": "Geoffrey Booth, DiegeticShadow",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Short_Beach_Connecticut.jpg"
+    },
+    "silver-beach-ct": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Gov._Malloy_Commemorates_Imminent_Completion_of_Silver_Sands_State_Park_Renovations_%2831322575847%29.jpg/1280px-Gov._Malloy_Commemorates_Imminent_Completion_of_Silver_Sands_State_Park_Renovations_%2831322575847%29.jpg",
+      "title": "Gov. Malloy Commemorates Imminent Completion of Silver Sands State Park Renovations (31322575847).jpg",
+      "author": "Dannel Malloy",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Gov._Malloy_Commemorates_Imminent_Completion_of_Silver_Sands_State_Park_Renovations_(31322575847).jpg"
+    },
+    "silver-sands-ct": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Gov._Malloy_Commemorates_Imminent_Completion_of_Silver_Sands_State_Park_Renovations_%2831322575847%29.jpg/1280px-Gov._Malloy_Commemorates_Imminent_Completion_of_Silver_Sands_State_Park_Renovations_%2831322575847%29.jpg",
+      "title": "Gov. Malloy Commemorates Imminent Completion of Silver Sands State Park Renovations (31322575847).jpg",
+      "author": "Dannel Malloy",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Gov._Malloy_Commemorates_Imminent_Completion_of_Silver_Sands_State_Park_Renovations_(31322575847).jpg"
+    },
+    "skokomish-park-lake-cushman-day-use-area-wa": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Lake_Cushman_%26_Boulders_in_Winter%2C_Olympic_National_Forest_%2831243122794%29.jpg/1280px-Lake_Cushman_%26_Boulders_in_Winter%2C_Olympic_National_Forest_%2831243122794%29.jpg",
+      "title": "Lake Cushman & Boulders in Winter, Olympic National Forest (31243122794).jpg",
+      "author": "U.S. Forest Service- Pacific Northwest Region",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Lake_Cushman_%26_Boulders_in_Winter,_Olympic_National_Forest_(31243122794).jpg"
+    },
+    "slaughter-house-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Hawaii_Maui_Slaughterhouse_beach_%2822660851791%29.jpg/1280px-Hawaii_Maui_Slaughterhouse_beach_%2822660851791%29.jpg",
+      "title": "Hawaii Maui Slaughterhouse beach (22660851791).jpg",
+      "author": "dronepicr",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Hawaii_Maui_Slaughterhouse_beach_(22660851791).jpg"
+    },
+    "south-beach-ct": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Candlewood_Lake_Island_House.jpg/1280px-Candlewood_Lake_Island_House.jpg",
+      "title": "Candlewood Lake Island House.jpg",
+      "author": "CityLimitsJunction",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Candlewood_Lake_Island_House.jpg"
+    },
+    "south-beach-ia": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/IC%26E_Mississippi_River_Bridge%2C_Sabula%2C_Iowa%2C_2005.jpg/1280px-IC%26E_Mississippi_River_Bridge%2C_Sabula%2C_Iowa%2C_2005.jpg",
+      "title": "IC&E Mississippi River Bridge, Sabula, Iowa, 2005.jpg",
+      "author": "David Wilson from Oak Park, Illinois, USA",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:IC%26E_Mississippi_River_Bridge,_Sabula,_Iowa,_2005.jpg"
+    },
+    "south-beach-me": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Hendricks_Head_Light_-_sunset.jpg/1280px-Hendricks_Head_Light_-_sunset.jpg",
+      "title": "Hendricks Head Light - sunset.jpg",
+      "author": "Alex Kerney from Boothbay Harbor, United States",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Hendricks_Head_Light_-_sunset.jpg"
+    },
+    "southport-beach-ct": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Southport_Beach.jpg/1280px-Southport_Beach.jpg",
+      "title": "Southport Beach.jpg",
+      "author": "WalkingGeek",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Southport_Beach.jpg"
+    },
+    "squalicum-beach-wa": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/Little_Squalicum_Park_estuary_rehabilitation.jpg/1280px-Little_Squalicum_Park_estuary_rehabilitation.jpg",
+      "title": "Little Squalicum Park estuary rehabilitation.jpg",
+      "author": "Robert Ashworth",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Little_Squalicum_Park_estuary_rehabilitation.jpg"
+    },
+    "staffordville-beach-ct": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/CT_Route_19%2C_Staffordville_CT.jpg/1280px-CT_Route_19%2C_Staffordville_CT.jpg",
+      "title": "CT Route 19, Staffordville CT.jpg",
+      "author": "John Phelan",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:CT_Route_19,_Staffordville_CT.jpg"
+    },
+    "stagecoach-swim-beach-co": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Stagecoach_State_Park.JPG/1280px-Stagecoach_State_Park.JPG",
+      "title": "Stagecoach State Park.JPG",
+      "author": "Jeffrey Beall",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Stagecoach_State_Park.JPG"
+    },
+    "sugar-bottom-campground-beach-ia": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Sugar_Bottom_Recreation_Area%2C_Coralville_Lake%2C_Iowa_-_US_Army_Corps_of_Engineers_%2840734457975%29.jpg/1280px-Sugar_Bottom_Recreation_Area%2C_Coralville_Lake%2C_Iowa_-_US_Army_Corps_of_Engineers_%2840734457975%29.jpg",
+      "title": "Sugar Bottom Recreation Area, Coralville Lake, Iowa - US Army Corps of Engineers (40734457975).jpg",
+      "author": "Tony Webster from Minneapolis, Minnesota, United States",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Sugar_Bottom_Recreation_Area,_Coralville_Lake,_Iowa_-_US_Army_Corps_of_Engineers_(40734457975).jpg"
+    },
+    "sugar-bottom-day-use-beach-ia": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Sugar_Bottom_Recreation_Area%2C_Coralville_Lake%2C_Iowa_-_US_Army_Corps_of_Engineers_%2840734457975%29.jpg/1280px-Sugar_Bottom_Recreation_Area%2C_Coralville_Lake%2C_Iowa_-_US_Army_Corps_of_Engineers_%2840734457975%29.jpg",
+      "title": "Sugar Bottom Recreation Area, Coralville Lake, Iowa - US Army Corps of Engineers (40734457975).jpg",
+      "author": "Tony Webster from Minneapolis, Minnesota, United States",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Sugar_Bottom_Recreation_Area,_Coralville_Lake,_Iowa_-_US_Army_Corps_of_Engineers_(40734457975).jpg"
+    },
+    "sunset-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Surfing_on_the_North_Shore_-_near_Sunset_Beach_%2813945798805%29.jpg/1280px-Surfing_on_the_North_Shore_-_near_Sunset_Beach_%2813945798805%29.jpg",
+      "title": "Surfing on the North Shore - near Sunset Beach (13945798805).jpg",
+      "author": "Daniel Ramirez from Honolulu, USA",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Surfing_on_the_North_Shore_-_near_Sunset_Beach_(13945798805).jpg"
+    },
+    "sunset-beach-nc": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/The_Kindred_Spirit_-_Sunset_Beach%2C_Shallotte_Township%2C_North_Carolina.jpg/1280px-The_Kindred_Spirit_-_Sunset_Beach%2C_Shallotte_Township%2C_North_Carolina.jpg",
+      "title": "The Kindred Spirit - Sunset Beach, Shallotte Township, North Carolina.jpg",
+      "author": "Jim Vajda",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:The_Kindred_Spirit_-_Sunset_Beach,_Shallotte_Township,_North_Carolina.jpg"
+    },
+    "swimming-area-az": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Hotel_Rooms_at_The_Nautical_in_Lake_Havasu_-_panoramio.jpg/1280px-Hotel_Rooms_at_The_Nautical_in_Lake_Havasu_-_panoramio.jpg",
+      "title": "Hotel Rooms at The Nautical in Lake Havasu - panoramio.jpg",
+      "author": "CWanamaker",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Hotel_Rooms_at_The_Nautical_in_Lake_Havasu_-_panoramio.jpg"
+    },
+    "swimming-area-tn": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/COUCHVILLE_LAKE_-_panoramio.jpg/1280px-COUCHVILLE_LAKE_-_panoramio.jpg",
+      "title": "COUCHVILLE LAKE - panoramio.jpg",
+      "author": "Paula Tejo",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:COUCHVILLE_LAKE_-_panoramio.jpg"
+    },
+    "swimming-beach-nc": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Visitor_Center%2C_Lake_James_SP_NC_9082.jpg/1280px-Visitor_Center%2C_Lake_James_SP_NC_9082.jpg",
+      "title": "Visitor Center, Lake James SP NC 9082.jpg",
+      "author": "bobistraveling",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Visitor_Center,_Lake_James_SP_NC_9082.jpg"
+    },
+    "sylvan-lake-beach-sd": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Across-lake-sylvan.jpg_-_panoramio.jpg/1280px-Across-lake-sylvan.jpg_-_panoramio.jpg",
+      "title": "Across-lake-sylvan.jpg - panoramio.jpg",
+      "author": "Good Free Photos",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Across-lake-sylvan.jpg_-_panoramio.jpg"
+    },
+    "tanglewild-recreation-center-wa": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Tanglewilde%2C_Washington%2C_August_16%2C_2023_%28cropped%29.jpg/1280px-Tanglewilde%2C_Washington%2C_August_16%2C_2023_%28cropped%29.jpg",
+      "title": "Tanglewilde, Washington, August 16, 2023 (cropped).jpg",
+      "author": "United States Geological Survey (USGS)",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Tanglewilde,_Washington,_August_16,_2023_(cropped).jpg"
+    },
+    "temple-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Laie_Hawaii_Temple_%2814060423494%29.jpg/1280px-Laie_Hawaii_Temple_%2814060423494%29.jpg",
+      "title": "Laie Hawaii Temple (14060423494).jpg",
+      "author": "Daniel Ramirez from Honolulu, USA",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Laie_Hawaii_Temple_(14060423494).jpg"
+    },
+    "thompsonville-boat-launch-ct": {
+      "file": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Thompsonville_Square_1907_postcard.JPG",
+      "title": "Thompsonville Square 1907 postcard.JPG",
+      "author": "Unknown author Unknown author",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Thompsonville_Square_1907_postcard.JPG"
+    },
+    "three-tables-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Three_Tables.jpg/1280px-Three_Tables.jpg",
+      "title": "Three Tables.jpg",
+      "author": "Syced",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Three_Tables.jpg"
+    },
+    "turtle-bay-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Surfer_at_Turtle_Bay_Resort_%28Unsplash%29.jpg/1280px-Surfer_at_Turtle_Bay_Resort_%28Unsplash%29.jpg",
+      "title": "Surfer at Turtle Bay Resort (Unsplash).jpg",
+      "author": "Sonnie Hiles sonniehiles",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Surfer_at_Turtle_Bay_Resort_(Unsplash).jpg"
+    },
+    "turtle-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Surfer_at_Turtle_Bay_Resort_%28Unsplash%29.jpg/1280px-Surfer_at_Turtle_Bay_Resort_%28Unsplash%29.jpg",
+      "title": "Surfer at Turtle Bay Resort (Unsplash).jpg",
+      "author": "Sonnie Hiles sonniehiles",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Surfer_at_Turtle_Bay_Resort_(Unsplash).jpg"
+    },
+    "twin-river-surf-beach-wa": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/West_Twin_River%2C_Clallam_County.jpg/1280px-West_Twin_River%2C_Clallam_County.jpg",
+      "title": "West Twin River, Clallam County.jpg",
+      "author": "Evvekk",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:West_Twin_River,_Clallam_County.jpg"
+    },
+    "ulua-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Hawaii_Maui_Ulua_Beach_Parc_%2822623723316%29.jpg/1280px-Hawaii_Maui_Ulua_Beach_Parc_%2822623723316%29.jpg",
+      "title": "Hawaii Maui Ulua Beach Parc (22623723316).jpg",
+      "author": "dronepicr",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Hawaii_Maui_Ulua_Beach_Parc_(22623723316).jpg"
+    },
+    "vineyard-beach-ut": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Vineyard_Beach%2C_Vineyard%2C_United_States_%28Unsplash%29.jpg/1280px-Vineyard_Beach%2C_Vineyard%2C_United_States_%28Unsplash%29.jpg",
+      "title": "Vineyard Beach, Vineyard, United States (Unsplash).jpg",
+      "author": "Andrew Branch denae_andrew",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Vineyard_Beach,_Vineyard,_United_States_(Unsplash).jpg"
+    },
+    "waikiki-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Waikiki_Beach_at_Honolulu%2C_Oahu%2C_Hawaii%2C_2006.jpg/1280px-Waikiki_Beach_at_Honolulu%2C_Oahu%2C_Hawaii%2C_2006.jpg",
+      "title": "Waikiki Beach at Honolulu, Oahu, Hawaii, 2006.jpg",
+      "author": "Antonio Salsedo",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Waikiki_Beach_at_Honolulu,_Oahu,_Hawaii,_2006.jpg"
+    },
+    "wailea-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Wailea_Beach_Maui_Hawaii_%2845016201794%29.jpg/1280px-Wailea_Beach_Maui_Hawaii_%2845016201794%29.jpg",
+      "title": "Wailea Beach Maui Hawaii (45016201794).jpg",
+      "author": "dronepicr",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Wailea_Beach_Maui_Hawaii_(45016201794).jpg"
+    },
+    "wailua-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Wailua_Beach%2C_Kapaa_-_panoramio.jpg/1280px-Wailua_Beach%2C_Kapaa_-_panoramio.jpg",
+      "title": "Wailua Beach, Kapaa - panoramio.jpg",
+      "author": "Bob Linsdell",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Wailua_Beach,_Kapaa_-_panoramio.jpg"
+    },
+    "waimanalo-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Waimanalo_Beach_%286445036375%29.jpg/1280px-Waimanalo_Beach_%286445036375%29.jpg",
+      "title": "Waimanalo Beach (6445036375).jpg",
+      "author": "Phil Whitehouse from London, United Kingdom",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Waimanalo_Beach_(6445036375).jpg"
+    },
+    "waimea-bay-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Waimea_Bay_Beach_%2812598985244%29.jpg/1280px-Waimea_Bay_Beach_%2812598985244%29.jpg",
+      "title": "Waimea Bay Beach (12598985244).jpg",
+      "author": "Daniel Ramirez from Honolulu, USA",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Waimea_Bay_Beach_(12598985244).jpg"
+    },
+    "waipio-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Waipio_Valley%2C_Honokaa_%28504265%29_%2823011961499%29.jpg/1280px-Waipio_Valley%2C_Honokaa_%28504265%29_%2823011961499%29.jpg",
+      "title": "Waipio Valley, Honokaa (504265) (23011961499).jpg",
+      "author": "Robert Linsdell from St. Andrews, Canada",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Waipio_Valley,_Honokaa_(504265)_(23011961499).jpg"
+    },
+    "wallis-sands-beach-nh": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Tables%2C_Wallis_Sands_State_Beach%2C_Rye_NH.jpg/1280px-Tables%2C_Wallis_Sands_State_Beach%2C_Rye_NH.jpg",
+      "title": "Tables, Wallis Sands State Beach, Rye NH.jpg",
+      "author": "User:Edrgeorge",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Tables,_Wallis_Sands_State_Beach,_Rye_NH.jpg"
+    },
+    "watkins-mill-beach-mo": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Watkins_Mill%2C_County_Highway_MM%2C_Lawson_vicinity_%28Clay_County%2C_Missouri%29.jpg/1280px-Watkins_Mill%2C_County_Highway_MM%2C_Lawson_vicinity_%28Clay_County%2C_Missouri%29.jpg",
+      "title": "Watkins Mill, County Highway MM, Lawson vicinity (Clay County, Missouri).jpg",
+      "author": "Jet Lowe",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Watkins_Mill,_County_Highway_MM,_Lawson_vicinity_(Clay_County,_Missouri).jpg"
+    },
+    "wells-beach-me": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/When_the_Wind_Blows_%28Explore_Jan_13%2C_2019%29_-_Flickr_-_Bud_in_Wells%2C_Maine.jpg/1280px-When_the_Wind_Blows_%28Explore_Jan_13%2C_2019%29_-_Flickr_-_Bud_in_Wells%2C_Maine.jpg",
+      "title": "When the Wind Blows (Explore Jan 13, 2019) - Flickr - Bud in Wells, Maine.jpg",
+      "author": "Bud",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:When_the_Wind_Blows_(Explore_Jan_13,_2019)_-_Flickr_-_Bud_in_Wells,_Maine.jpg"
+    },
+    "west-beach-ct": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Great_Meadows_pond_%2811801190756%29.jpg/1280px-Great_Meadows_pond_%2811801190756%29.jpg",
+      "title": "Great Meadows pond (11801190756).jpg",
+      "author": "U.S. Fish and Wildlife Service Northeast Region",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Great_Meadows_pond_(11801190756).jpg"
+    },
+    "west-green-lake-beach-wa": {
+      "file": "https://upload.wikimedia.org/wikipedia/commons/d/de/Aerial_of_Green_Lake%2C_Seattle%2C_1987.jpg",
+      "title": "Aerial of Green Lake, Seattle, 1987.jpg",
+      "author": "Seattle Municipal Archives from Seattle, WA",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Aerial_of_Green_Lake,_Seattle,_1987.jpg"
+    },
+    "west-twin-beach-wa": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/West_Twin_River%2C_Clallam_County.jpg/1280px-West_Twin_River%2C_Clallam_County.jpg",
+      "title": "West Twin River, Clallam County.jpg",
+      "author": "Evvekk",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:West_Twin_River,_Clallam_County.jpg"
+    },
+    "whiskey-gulch-beach-ak": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Sunset_on_Whiskey_Gulch%2C_Clam_Digging_Trip_5-09_-_panoramio.jpg/1280px-Sunset_on_Whiskey_Gulch%2C_Clam_Digging_Trip_5-09_-_panoramio.jpg",
+      "title": "Sunset on Whiskey Gulch, Clam Digging Trip 5-09 - panoramio.jpg",
+      "author": "tw_mack",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Sunset_on_Whiskey_Gulch,_Clam_Digging_Trip_5-09_-_panoramio.jpg"
+    },
+    "willard-beach-me": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Willard_Beach_%2826470353695%29.jpg/1280px-Willard_Beach_%2826470353695%29.jpg",
+      "title": "Willard Beach (26470353695).jpg",
+      "author": "Paul VanDerWerf from Brunswick, Maine, USA",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Willard_Beach_(26470353695).jpg"
+    },
+    "wolfeboro-town-beach-nh": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Wolfeboro_Docks.jpg/1280px-Wolfeboro_Docks.jpg",
+      "title": "Wolfeboro Docks.jpg",
+      "author": "Fletcher",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Wolfeboro_Docks.jpg"
+    },
+    "wyllie-s-beach-hi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Wyllie%27s_Beach_-_Princeville_-_Kauai_-_Hawaii_North_Shore_%2853741609350%29.jpg/1280px-Wyllie%27s_Beach_-_Princeville_-_Kauai_-_Hawaii_North_Shore_%2853741609350%29.jpg",
+      "title": "Wyllie's Beach - Princeville - Kauai - Hawaii North Shore (53741609350).jpg",
+      "author": "Tony Webster",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Wyllie%27s_Beach_-_Princeville_-_Kauai_-_Hawaii_North_Shore_(53741609350).jpg"
+    },
+    "yuma-beach-az": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Valley_by_Yuma_Prison_-_panoramio.jpg/1280px-Valley_by_Yuma_Prison_-_panoramio.jpg",
+      "title": "Valley by Yuma Prison - panoramio.jpg",
+      "author": "kallahar",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Valley_by_Yuma_Prison_-_panoramio.jpg"
     }
   }
 }

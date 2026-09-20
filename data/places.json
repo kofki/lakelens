@@ -1,6 +1,6 @@
 {
   "_note": "Nearest town to each park, reverse-geocoded from OpenStreetMap Nominatim by scripts/fetch-place-names.ts. city is null when the answer was a county or nothing.",
-  "generated_at": "2026-09-20T08:26:17.005Z",
+  "generated_at": "2026-09-20T11:03:56.222Z",
   "places": {
     "ichetucknee-springs-state-park": {
       "city": null,
@@ -3545,6 +3545,5006 @@
     "zorn-park-beach-mi": {
       "city": "Harbor Springs",
       "state": "MI"
+    },
+    "11th-streeth-public-beach-access-ga": {
+      "city": null,
+      "state": "GA"
+    },
+    "2-me": {
+      "city": "Portage Lake",
+      "state": "ME"
+    },
+    "30th-avenue-west-street-end-wa": {
+      "city": "Seattle",
+      "state": "WA"
+    },
+    "32nd-avenue-west-street-end-wa": {
+      "city": "Seattle",
+      "state": "WA"
+    },
+    "45th-avenue-west-street-end-wa": {
+      "city": "Seattle",
+      "state": "WA"
+    },
+    "48th-avenue-west-street-end-wa": {
+      "city": "Seattle",
+      "state": "WA"
+    },
+    "49-black-sand-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "5-graves-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "5th-street-public-beach-access-ga": {
+      "city": null,
+      "state": "GA"
+    },
+    "6th-avenue-west-street-end-wa": {
+      "city": "Seattle",
+      "state": "WA"
+    },
+    "6th-street-public-beach-access-ga": {
+      "city": null,
+      "state": "GA"
+    },
+    "7th-street-public-beach-access-ga": {
+      "city": null,
+      "state": "GA"
+    },
+    "8th-avenue-south-street-end-wa": {
+      "city": "Seattle",
+      "state": "WA"
+    },
+    "9th-street-public-beach-access-ga": {
+      "city": null,
+      "state": "GA"
+    },
+    "aarlington-beach-ga": {
+      "city": "Sandy Springs",
+      "state": "GA"
+    },
+    "ai-opio-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "aki-s-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "ala-moana-beach-hi": {
+      "city": "East Honolulu",
+      "state": "HI"
+    },
+    "alan-davis-beach-hi": {
+      "city": "Honolulu",
+      "state": "HI"
+    },
+    "alapa-i-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "alburg-dunes-vt": {
+      "city": "Alburgh",
+      "state": "VT"
+    },
+    "alexai-beach-ak": {
+      "city": null,
+      "state": "AK"
+    },
+    "alexander-beach-wa": {
+      "city": "Sammamish",
+      "state": "WA"
+    },
+    "alki-beach-wa": {
+      "city": "Seattle",
+      "state": "WA"
+    },
+    "allen-albee-beach-nh": {
+      "city": "Wolfeboro",
+      "state": "NH"
+    },
+    "alton-town-beach-nh": {
+      "city": "Alton",
+      "state": "NH"
+    },
+    "alvord-beach-ct": {
+      "city": "Westport",
+      "state": "CT"
+    },
+    "amtrak-beach-ct": {
+      "city": "East Lyme",
+      "state": "CT"
+    },
+    "anaco-beach-wa": {
+      "city": "Anacortes",
+      "state": "WA"
+    },
+    "anaehoomalu-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "anchor-beach-ct": {
+      "city": "Milford",
+      "state": "CT"
+    },
+    "anderson-cove-beach-ut": {
+      "city": "Huntsville",
+      "state": "UT"
+    },
+    "anderson-point-park-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "andrews-beach-me": {
+      "city": "Long Island",
+      "state": "ME"
+    },
+    "anini-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "arundel-beach-me": {
+      "city": "Kennebunkport",
+      "state": "ME"
+    },
+    "attawan-beach-ct": {
+      "city": "East Lyme",
+      "state": "CT"
+    },
+    "austin-beach-ak": {
+      "city": null,
+      "state": "AK"
+    },
+    "austrailia-beach-ct": {
+      "city": "Stonington",
+      "state": "CT"
+    },
+    "avery-crouse-beach-nh": {
+      "city": "Bristol",
+      "state": "NH"
+    },
+    "avery-point-beach-ct": {
+      "city": "Groton",
+      "state": "CT"
+    },
+    "aweoweo-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "babbs-beach-ct": {
+      "city": "Southwick",
+      "state": "MA"
+    },
+    "baboosic-lake-town-beach-nh": {
+      "city": "Amherst",
+      "state": "NH"
+    },
+    "baby-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "back-beach-me": {
+      "city": "Tremont",
+      "state": "ME"
+    },
+    "back-lake-beach-nh": {
+      "city": "Pittsburg",
+      "state": "NH"
+    },
+    "back-river-beach-ga": {
+      "city": null,
+      "state": "GA"
+    },
+    "back-shore-me": {
+      "city": "Scarborough",
+      "state": "ME"
+    },
+    "bailey-shore-nc": {
+      "city": null,
+      "state": "NC"
+    },
+    "bakeman-beach-me": {
+      "city": "Brooksville",
+      "state": "ME"
+    },
+    "bald-beach-nc": {
+      "city": "Sunset Beach",
+      "state": "NC"
+    },
+    "baldwin-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "ballast-island-ledge-me": {
+      "city": "Jonesport",
+      "state": "ME"
+    },
+    "balm-of-gilead-beach-vt": {
+      "city": "Derby",
+      "state": "VT"
+    },
+    "bare-neck-shore-md": {
+      "city": null,
+      "state": "MD"
+    },
+    "bare-sand-beach-nc": {
+      "city": null,
+      "state": "NC"
+    },
+    "barefoot-beach-nc": {
+      "city": "Jonesville",
+      "state": "NC"
+    },
+    "barking-sands-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "bartow-beach-ga": {
+      "city": null,
+      "state": "GA"
+    },
+    "bay-beach-nc": {
+      "city": null,
+      "state": "NC"
+    },
+    "bay-ridge-beach-md": {
+      "city": null,
+      "state": "MD"
+    },
+    "bay-street-end-wa": {
+      "city": "Seattle",
+      "state": "WA"
+    },
+    "bayley-beach-ct": {
+      "city": "Norwalk",
+      "state": "CT"
+    },
+    "bayview-beach-ct": {
+      "city": null,
+      "state": "CT"
+    },
+    "bayview-beach-me": {
+      "city": "Saco",
+      "state": "ME"
+    },
+    "beach-3-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "beach-area-1-nh": {
+      "city": "Conway",
+      "state": "NH"
+    },
+    "beach-area-2-nh": {
+      "city": "Conway",
+      "state": "NH"
+    },
+    "beach-lane-west-wa": {
+      "city": "Seattle",
+      "state": "WA"
+    },
+    "bear-island-beach-me": {
+      "city": "Deer Isle",
+      "state": "ME"
+    },
+    "beaver-beach-ak": {
+      "city": "Anchorage",
+      "state": "AK"
+    },
+    "belcamp-beach-md": {
+      "city": null,
+      "state": "MD"
+    },
+    "belhaven-beach-ms": {
+      "city": "Jackson",
+      "state": "MS"
+    },
+    "belleau-lake-public-beach-nh": {
+      "city": "Wakefield",
+      "state": "NH"
+    },
+    "bennett-s-bridge-beach-nh": {
+      "city": "Northwood",
+      "state": "NH"
+    },
+    "benson-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "berkeley-lake-beach-ga": {
+      "city": "Berkeley Lake",
+      "state": "GA"
+    },
+    "berm-beach-ak": {
+      "city": "Juneau",
+      "state": "AK"
+    },
+    "betterton-beach-md": {
+      "city": "Betterton",
+      "state": "MD"
+    },
+    "biddeford-pool-beach-me": {
+      "city": "Biddeford",
+      "state": "ME"
+    },
+    "big-beach-ak": {
+      "city": "Port Alexander",
+      "state": "AK"
+    },
+    "big-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "big-beach-me": {
+      "city": "Frenchboro",
+      "state": "ME"
+    },
+    "big-beach-nc": {
+      "city": "Holden Beach",
+      "state": "NC"
+    },
+    "big-mike-beach-ak": {
+      "city": null,
+      "state": "AK"
+    },
+    "big-omaha-beach-me": {
+      "city": "T2 R9 WELS",
+      "state": "ME"
+    },
+    "big-sand-beach-me": {
+      "city": "Sakom Township",
+      "state": "ME"
+    },
+    "big-tree-beach-me": {
+      "city": "Islesboro",
+      "state": "ME"
+    },
+    "big-white-beach-me": {
+      "city": "Vinalhaven",
+      "state": "ME"
+    },
+    "billys-shore-me": {
+      "city": "Islesboro",
+      "state": "ME"
+    },
+    "birch-beach-ak": {
+      "city": null,
+      "state": "AK"
+    },
+    "birch-beach-nh": {
+      "city": "Holderness",
+      "state": "NH"
+    },
+    "birch-point-beach-me": {
+      "city": "Madawaska",
+      "state": "ME"
+    },
+    "birchhead-shore-me": {
+      "city": "Brooklin",
+      "state": "ME"
+    },
+    "bishop-s-beach-ak": {
+      "city": "Homer",
+      "state": "AK"
+    },
+    "black-beach-me": {
+      "city": "T9 SD BPP Township",
+      "state": "ME"
+    },
+    "black-sand-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "black-sand-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "blackbeard-island-public-beach-ga": {
+      "city": null,
+      "state": "GA"
+    },
+    "blacksand-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "blanchard-beach-vt": {
+      "city": "Burlington",
+      "state": "VT"
+    },
+    "blodgett-beach-vt": {
+      "city": "Burlington",
+      "state": "VT"
+    },
+    "blodgett-landing-coast-nh": {
+      "city": "Newbury",
+      "state": "NH"
+    },
+    "blpoa-beach-nh": {
+      "city": "Wakefield",
+      "state": "NH"
+    },
+    "blue-heron-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "blue-hole-tn": {
+      "city": null,
+      "state": "TN"
+    },
+    "blue-hole-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "bluff-point-beach-ct": {
+      "city": "Groton",
+      "state": "CT"
+    },
+    "bm-fort-ga": {
+      "city": null,
+      "state": "GA"
+    },
+    "boat-beach-nc": {
+      "city": null,
+      "state": "NC"
+    },
+    "boating-side-ct": {
+      "city": "Plymouth",
+      "state": "CT"
+    },
+    "bobbit-s-hole-nc": {
+      "city": null,
+      "state": "NC"
+    },
+    "booker-t-washington-park-beach-tn": {
+      "city": null,
+      "state": "TN"
+    },
+    "boom-beach-me": {
+      "city": "Isle au Haut",
+      "state": "ME"
+    },
+    "boot-cove-beach-me": {
+      "city": "Lubec",
+      "state": "ME"
+    },
+    "boulder-beach-me": {
+      "city": "Bar Harbor",
+      "state": "ME"
+    },
+    "boulder-beach-nh": {
+      "city": "Madison",
+      "state": "NH"
+    },
+    "boulder-beach-vt": {
+      "city": "Groton",
+      "state": "VT"
+    },
+    "boulder-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "brackett-s-landing-wa": {
+      "city": "Edmonds",
+      "state": "WA"
+    },
+    "breakover-sandbar-ms": {
+      "city": null,
+      "state": "MS"
+    },
+    "breezy-point-beach-md": {
+      "city": null,
+      "state": "MD"
+    },
+    "brennecke-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "brewster-beach-nh": {
+      "city": "Wolfeboro",
+      "state": "NH"
+    },
+    "bridge-beach-ga": {
+      "city": null,
+      "state": "GA"
+    },
+    "bridgemill-beach-ga": {
+      "city": null,
+      "state": "GA"
+    },
+    "bridgemill-puttputt-ga": {
+      "city": null,
+      "state": "GA"
+    },
+    "bridger-bay-beach-ut": {
+      "city": null,
+      "state": "UT"
+    },
+    "brimstone-beach-me": {
+      "city": "Vinalhaven",
+      "state": "ME"
+    },
+    "brook-beach-me": {
+      "city": "Deer Isle",
+      "state": "ME"
+    },
+    "brownie-s-beach-md": {
+      "city": "Chesapeake Beach",
+      "state": "MD"
+    },
+    "buck-shoals-beach-ga": {
+      "city": null,
+      "state": "GA"
+    },
+    "bucklin-beach-nh": {
+      "city": "New London",
+      "state": "NH"
+    },
+    "burnt-meadow-pond-town-beach-me": {
+      "city": "Brownfield",
+      "state": "ME"
+    },
+    "burwells-beach-ct": {
+      "city": "Milford",
+      "state": "CT"
+    },
+    "burying-hill-beach-ct": {
+      "city": "Westport",
+      "state": "CT"
+    },
+    "bushy-point-beach-ct": {
+      "city": "Groton",
+      "state": "CT"
+    },
+    "buskin-beach-ak": {
+      "city": null,
+      "state": "AK"
+    },
+    "butter-bean-beach-ga": {
+      "city": null,
+      "state": "GA"
+    },
+    "cabin-lake-park-swim-beach-nc": {
+      "city": null,
+      "state": "NC"
+    },
+    "caddo-lake-swimming-beach-la": {
+      "city": null,
+      "state": "LA"
+    },
+    "caledonia-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "calf-pasture-beach-ct": {
+      "city": "Norwalk",
+      "state": "CT"
+    },
+    "calkins-point-wa": {
+      "city": "Mercer Island",
+      "state": "WA"
+    },
+    "callaway-gardens-robin-lake-beach-ga": {
+      "city": "Pine Mountain",
+      "state": "GA"
+    },
+    "cals-beach-me": {
+      "city": "Northport",
+      "state": "ME"
+    },
+    "camera-flats-ut": {
+      "city": null,
+      "state": "UT"
+    },
+    "camp-ellis-reach-me": {
+      "city": "Saco",
+      "state": "ME"
+    },
+    "campbell-shore-me": {
+      "city": "Big Lake Township",
+      "state": "ME"
+    },
+    "campers-beach-nh": {
+      "city": "Greenfield",
+      "state": "NH"
+    },
+    "campers-beach-vt": {
+      "city": "Brighton",
+      "state": "VT"
+    },
+    "canaan-street-lake-beach-nh": {
+      "city": "Canaan",
+      "state": "NH"
+    },
+    "cannon-beach-ak": {
+      "city": null,
+      "state": "AK"
+    },
+    "cape-lookout-beach-camping-nc": {
+      "city": null,
+      "state": "NC"
+    },
+    "cape-lookout-shoals-nc": {
+      "city": null,
+      "state": "NC"
+    },
+    "cape-neddick-beach-me": {
+      "city": "York",
+      "state": "ME"
+    },
+    "carbody-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "carr-s-beach-md": {
+      "city": "Annapolis",
+      "state": "MD"
+    },
+    "carrying-place-beach-me": {
+      "city": "Surry",
+      "state": "ME"
+    },
+    "carson-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "casco-beach-ak": {
+      "city": null,
+      "state": "AK"
+    },
+    "caswell-beach-nc": {
+      "city": null,
+      "state": "NC"
+    },
+    "catamount-pond-beach-nh": {
+      "city": "Allenstown",
+      "state": "NH"
+    },
+    "causeway-beach-me": {
+      "city": "Deer Isle",
+      "state": "ME"
+    },
+    "cedar-grove-beach-md": {
+      "city": null,
+      "state": "MD"
+    },
+    "cedar-island-beach-nc": {
+      "city": null,
+      "state": "NC"
+    },
+    "cedar-street-public-beach-access-ga": {
+      "city": null,
+      "state": "GA"
+    },
+    "cemetery-point-beach-ut": {
+      "city": "Huntsville",
+      "state": "UT"
+    },
+    "centennial-beach-me": {
+      "city": "Portland",
+      "state": "ME"
+    },
+    "center-beach-ak": {
+      "city": null,
+      "state": "AK"
+    },
+    "center-beach-ct": {
+      "city": "Milford",
+      "state": "CT"
+    },
+    "center-harbor-town-beach-nh": {
+      "city": "Center Harbor",
+      "state": "NH"
+    },
+    "cfanatic-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "chalker-beach-ct": {
+      "city": "Old Saybrook",
+      "state": "CT"
+    },
+    "chance-a-la-mer-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "chandler-cove-beach-me": {
+      "city": "Chebeague Island",
+      "state": "ME"
+    },
+    "chang-s-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "chapman-beach-ct": {
+      "city": "Westbrook",
+      "state": "CT"
+    },
+    "cherokee-landing-beach-tn": {
+      "city": null,
+      "state": "TN"
+    },
+    "chester-frost-park-beach-tn": {
+      "city": null,
+      "state": "TN"
+    },
+    "chickamauga-dam-beach-tn": {
+      "city": "Chattanooga",
+      "state": "TN"
+    },
+    "chief-shakes-hot-springs-site-ak": {
+      "city": "Wrangell",
+      "state": "AK"
+    },
+    "chin-chin-tse-tung-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "chinook-swim-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "chito-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "chuns-reef-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "circle-beach-ct": {
+      "city": "Madison",
+      "state": "CT"
+    },
+    "cisco-beach-ut": {
+      "city": null,
+      "state": "UT"
+    },
+    "clam-beach-me": {
+      "city": "Portland",
+      "state": "ME"
+    },
+    "clayfers-beach-me": {
+      "city": "Vinalhaven",
+      "state": "ME"
+    },
+    "clayton-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "clermont-harbor-beach-ms": {
+      "city": null,
+      "state": "MS"
+    },
+    "cliff-house-beach-me": {
+      "city": "Cape Elizabeth",
+      "state": "ME"
+    },
+    "clifton-beach-md": {
+      "city": null,
+      "state": "MD"
+    },
+    "clinton-beach-ct": {
+      "city": "Clinton",
+      "state": "CT"
+    },
+    "clinton-town-beach-ct": {
+      "city": "Clinton",
+      "state": "CT"
+    },
+    "clissolds-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "cloud-beach-ak": {
+      "city": null,
+      "state": "AK"
+    },
+    "clows-beach-nh": {
+      "city": "Wolfeboro",
+      "state": "NH"
+    },
+    "cmrpoa-beach-residents-only-tn": {
+      "city": null,
+      "state": "TN"
+    },
+    "coast-guard-beach-ak": {
+      "city": null,
+      "state": "AK"
+    },
+    "cobble-beach-me": {
+      "city": "Tremont",
+      "state": "ME"
+    },
+    "coffin-pond-me": {
+      "city": "Brunswick",
+      "state": "ME"
+    },
+    "cole-beach-me": {
+      "city": "Southport",
+      "state": "ME"
+    },
+    "cole-s-landing-beach-me": {
+      "city": "Lee",
+      "state": "ME"
+    },
+    "collinsville-beach-ms": {
+      "city": null,
+      "state": "MS"
+    },
+    "colony-beach-closed-nh": {
+      "city": "Barnstead",
+      "state": "NH"
+    },
+    "colony-beach-me": {
+      "city": "Kennebunkport",
+      "state": "ME"
+    },
+    "commodore-beach-ct": {
+      "city": "Darien",
+      "state": "CT"
+    },
+    "compo-beach-ct": {
+      "city": "Westport",
+      "state": "CT"
+    },
+    "conquest-beach-md": {
+      "city": null,
+      "state": "MD"
+    },
+    "contoocook-lake-public-beach-nh": {
+      "city": "Jaffrey",
+      "state": "NH"
+    },
+    "conway-lake-public-beach-nh": {
+      "city": "Conway",
+      "state": "NH"
+    },
+    "cony-beach-me": {
+      "city": "Eastport",
+      "state": "ME"
+    },
+    "copalis-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "coquina-beach-nc": {
+      "city": null,
+      "state": "NC"
+    },
+    "cornwall-beach-wa": {
+      "city": "Bellingham",
+      "state": "WA"
+    },
+    "corona-beach-nh": {
+      "city": "Alstead",
+      "state": "NH"
+    },
+    "costley-mill-park-beach-ga": {
+      "city": null,
+      "state": "GA"
+    },
+    "cottonwood-beach-wa": {
+      "city": "Washougal",
+      "state": "WA"
+    },
+    "cottonwood-cove-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "countryside-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "cove-point-beach-md": {
+      "city": null,
+      "state": "MD"
+    },
+    "cranberry-lake-swim-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "crandall-spit-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "crescent-beach-ct": {
+      "city": "East Lyme",
+      "state": "CT"
+    },
+    "crescent-beach-me": {
+      "city": "Wells",
+      "state": "ME"
+    },
+    "crescent-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "crescent-surf-me": {
+      "city": "Kennebunk",
+      "state": "ME"
+    },
+    "crockett-s-beach-me": {
+      "city": "Owls Head",
+      "state": "ME"
+    },
+    "cromwell-s-beach-hi": {
+      "city": "Honolulu",
+      "state": "HI"
+    },
+    "cross-lake-fishing-beach-la": {
+      "city": "Shreveport",
+      "state": "LA"
+    },
+    "crosswinds-beach-nc": {
+      "city": null,
+      "state": "NC"
+    },
+    "crow-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "croydon-town-beach-nh": {
+      "city": "Croydon",
+      "state": "NH"
+    },
+    "cummings-park-beach-ct": {
+      "city": "Stamford",
+      "state": "CT"
+    },
+    "currituck-beach-nc": {
+      "city": "Corolla",
+      "state": "NC"
+    },
+    "cypremort-point-beach-la": {
+      "city": null,
+      "state": "LA"
+    },
+    "d-t-fleming-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "dabob-broad-spit-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "danforth-cove-beach-me": {
+      "city": "South Portland",
+      "state": "ME"
+    },
+    "daniel-ave-beach-ct": {
+      "city": "Guilford",
+      "state": "CT"
+    },
+    "dash-point-state-park-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "davis-beach-me": {
+      "city": "Cutler",
+      "state": "ME"
+    },
+    "dawn-marie-beach-me": {
+      "city": "T43 MD BPP",
+      "state": "ME"
+    },
+    "deer-beach-wa": {
+      "city": "Leavenworth",
+      "state": "WA"
+    },
+    "deer-field-shores-nc": {
+      "city": null,
+      "state": "NC"
+    },
+    "denali-education-center-beach-ak": {
+      "city": null,
+      "state": "AK"
+    },
+    "denmark-town-beach-me": {
+      "city": "Denmark",
+      "state": "ME"
+    },
+    "derby-s-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "des-moines-beach-wa": {
+      "city": "Normandy Park",
+      "state": "WA"
+    },
+    "desoto-woods-footpath-ms": {
+      "city": "Southaven",
+      "state": "MS"
+    },
+    "devil-s-bathing-beach-me": {
+      "city": "Portland",
+      "state": "ME"
+    },
+    "dewey-beach-nh": {
+      "city": "Sunapee",
+      "state": "NH"
+    },
+    "dewey-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "disharoon-beach-ga": {
+      "city": null,
+      "state": "GA"
+    },
+    "dixie-maru-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "dixson-st-beach-ct": {
+      "city": "Milford",
+      "state": "CT"
+    },
+    "dog-beach-md": {
+      "city": null,
+      "state": "MD"
+    },
+    "dog-beach-nh": {
+      "city": "Merrimack",
+      "state": "NH"
+    },
+    "dog-beach-vt": {
+      "city": "Thetford",
+      "state": "VT"
+    },
+    "dog-beach-wa": {
+      "city": "Edmonds",
+      "state": "WA"
+    },
+    "dogfish-beach-south-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "dogfish-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "donkey-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "dossin-park-beach-ct": {
+      "city": "Meriden",
+      "state": "CT"
+    },
+    "double-beach-me": {
+      "city": "Deer Isle",
+      "state": "ME"
+    },
+    "double-bluff-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "double-bluff-county-park-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "drakes-island-beach-me": {
+      "city": "Wells",
+      "state": "ME"
+    },
+    "drift-inn-beach-me": {
+      "city": "Saint George",
+      "state": "ME"
+    },
+    "driftwood-beach-ga": {
+      "city": null,
+      "state": "GA"
+    },
+    "driftwood-beach-me": {
+      "city": "Deer Isle",
+      "state": "ME"
+    },
+    "driftwood-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "drum-point-beach-md": {
+      "city": null,
+      "state": "MD"
+    },
+    "dubois-beach-ct": {
+      "city": "Stonington",
+      "state": "CT"
+    },
+    "ducktrap-beach-me": {
+      "city": "Lincolnville",
+      "state": "ME"
+    },
+    "duke-paoa-kahanamoku-beach-park-hi": {
+      "city": "Honolulu",
+      "state": "HI"
+    },
+    "dungeness-spit-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "dunn-beach-me": {
+      "city": "Otis",
+      "state": "ME"
+    },
+    "dustin-beach-nh": {
+      "city": "Barnstead",
+      "state": "NH"
+    },
+    "duvall-beach-wa": {
+      "city": "Duvall",
+      "state": "WA"
+    },
+    "eagle-beach-ut": {
+      "city": "Willard",
+      "state": "UT"
+    },
+    "earle-beach-ak": {
+      "city": null,
+      "state": "AK"
+    },
+    "earle-landing-md": {
+      "city": null,
+      "state": "MD"
+    },
+    "east-beach-area-md": {
+      "city": null,
+      "state": "MD"
+    },
+    "east-beach-me": {
+      "city": "Georgetown",
+      "state": "ME"
+    },
+    "east-beach-nc": {
+      "city": null,
+      "state": "NC"
+    },
+    "east-bethany-beach-tn": {
+      "city": "Collierville",
+      "state": "TN"
+    },
+    "east-cove-beach-nh": {
+      "city": "Grantham",
+      "state": "NH"
+    },
+    "east-cove-me": {
+      "city": "Swan's Island",
+      "state": "ME"
+    },
+    "east-end-beach-me": {
+      "city": "Long Island",
+      "state": "ME"
+    },
+    "east-georges-curve-beach-tn": {
+      "city": "Collierville",
+      "state": "TN"
+    },
+    "east-green-lake-beach-wa": {
+      "city": "Seattle",
+      "state": "WA"
+    },
+    "east-harrison-street-end-wa": {
+      "city": "Seattle",
+      "state": "WA"
+    },
+    "east-houston-shore-beach-tn": {
+      "city": "Collierville",
+      "state": "TN"
+    },
+    "east-lake-beach-nh": {
+      "city": "Grantham",
+      "state": "NH"
+    },
+    "east-rive-beach-ct": {
+      "city": "Madison",
+      "state": "CT"
+    },
+    "east-robbins-halle-beach-tn": {
+      "city": "Collierville",
+      "state": "TN"
+    },
+    "east-talen-beach-tn": {
+      "city": "Collierville",
+      "state": "TN"
+    },
+    "eastern-beach-me": {
+      "city": "Frenchboro",
+      "state": "ME"
+    },
+    "eastern-point-beach-ct": {
+      "city": "Groton",
+      "state": "CT"
+    },
+    "ebenezer-church-beach-nc": {
+      "city": null,
+      "state": "NC"
+    },
+    "echo-lake-beach-me": {
+      "city": "Mount Desert",
+      "state": "ME"
+    },
+    "echo-lake-beach-nh": {
+      "city": "Franconia",
+      "state": "NH"
+    },
+    "edna-maude-beach-nh": {
+      "city": "Holderness",
+      "state": "NH"
+    },
+    "eidelweiss-beach-nh": {
+      "city": "Madison",
+      "state": "NH"
+    },
+    "eleanor-l-campbell-preserve-polly-cove-beach-me": {
+      "city": "Vinalhaven",
+      "state": "ME"
+    },
+    "elk-shoals-nc": {
+      "city": null,
+      "state": "NC"
+    },
+    "elkins-beach-nh": {
+      "city": "New London",
+      "state": "NH"
+    },
+    "elliot-beach-ak": {
+      "city": null,
+      "state": "AK"
+    },
+    "ellis-pond-beach-me": {
+      "city": "Roxbury",
+      "state": "ME"
+    },
+    "emc-beach-ga": {
+      "city": null,
+      "state": "GA"
+    },
+    "enchantment-beach-wa": {
+      "city": "Leavenworth",
+      "state": "WA"
+    },
+    "ernie-s-beach-me": {
+      "city": "Monhegan Plantation",
+      "state": "ME"
+    },
+    "fairfield-beach-ct": {
+      "city": "Fairfield",
+      "state": "CT"
+    },
+    "fairfield-public-beach-ct": {
+      "city": "Fairfield",
+      "state": "CT"
+    },
+    "fairlee-town-beach-vt": {
+      "city": "Fairlee",
+      "state": "VT"
+    },
+    "fairmount-avenue-southwest-street-end-wa": {
+      "city": "Seattle",
+      "state": "WA"
+    },
+    "farview-beach-ct": {
+      "city": "Milford",
+      "state": "CT"
+    },
+    "fast-beach-ak": {
+      "city": null,
+      "state": "AK"
+    },
+    "ferry-beach-me": {
+      "city": "Saco",
+      "state": "ME"
+    },
+    "fiddlehead-campground-me": {
+      "city": "Fryeburg",
+      "state": "ME"
+    },
+    "first-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "fish-beach-me": {
+      "city": "Monhegan Plantation",
+      "state": "ME"
+    },
+    "fishing-shore-dc": {
+      "city": "Washington",
+      "state": "DC"
+    },
+    "fitzwilliam-town-beach-on-laurel-lake-nh": {
+      "city": "Fitzwilliam",
+      "state": "NH"
+    },
+    "flanders-pond-beach-me": {
+      "city": "Sullivan",
+      "state": "ME"
+    },
+    "flanners-beach-nc": {
+      "city": null,
+      "state": "NC"
+    },
+    "flat-rock-ct": {
+      "city": "Branford",
+      "state": "CT"
+    },
+    "flint-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "footbridge-beach-me": {
+      "city": "Ogunquit",
+      "state": "ME"
+    },
+    "fords-beach-ct": {
+      "city": "Greenwich",
+      "state": "CT"
+    },
+    "fort-kamehameha-beach-hi": {
+      "city": "Waipahu",
+      "state": "HI"
+    },
+    "fort-trumbull-beach-ct": {
+      "city": "Milford",
+      "state": "CT"
+    },
+    "fortunes-rocks-beach-me": {
+      "city": "Biddeford",
+      "state": "ME"
+    },
+    "foss-beach-nh": {
+      "city": "Rye",
+      "state": "NH"
+    },
+    "foulweather-bluff-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "fourth-of-july-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "fox-island-sand-spit-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "freddy-beach-me": {
+      "city": "Biddeford",
+      "state": "ME"
+    },
+    "freeman-park-nc": {
+      "city": null,
+      "state": "NC"
+    },
+    "frenchman-s-hole-me": {
+      "city": "Riley Township",
+      "state": "ME"
+    },
+    "front-beach-ct": {
+      "city": "Branford",
+      "state": "CT"
+    },
+    "gage-rice-beach-me": {
+      "city": "Waterford",
+      "state": "ME"
+    },
+    "gainor-beach-ak": {
+      "city": null,
+      "state": "AK"
+    },
+    "gallien-s-town-beach-nh": {
+      "city": "Derry",
+      "state": "NH"
+    },
+    "garrett-island-beach-md": {
+      "city": null,
+      "state": "MD"
+    },
+    "garrison-shoals-ga": {
+      "city": null,
+      "state": "GA"
+    },
+    "gatlin-beach-nc": {
+      "city": null,
+      "state": "NC"
+    },
+    "gatorland-beach-ms": {
+      "city": "Jackson",
+      "state": "MS"
+    },
+    "geneva-beach-nh": {
+      "city": "Madison",
+      "state": "NH"
+    },
+    "georges-mills-beach-nh": {
+      "city": "Sunapee",
+      "state": "NH"
+    },
+    "giants-neck-beach-ct": {
+      "city": "East Lyme",
+      "state": "CT"
+    },
+    "gibson-island-beach-md": {
+      "city": null,
+      "state": "MD"
+    },
+    "gibson-spit-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "gilford-beach-nh": {
+      "city": "Gilford",
+      "state": "NH"
+    },
+    "gilley-beach-me": {
+      "city": "Cranberry Isles",
+      "state": "ME"
+    },
+    "gillin-s-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "glass-beach-ak": {
+      "city": "Unalaska",
+      "state": "AK"
+    },
+    "glass-beach-wa": {
+      "city": "Port Townsend",
+      "state": "WA"
+    },
+    "glory-ga": {
+      "city": null,
+      "state": "GA"
+    },
+    "goochs-beach-me": {
+      "city": "Kennebunk",
+      "state": "ME"
+    },
+    "goodie-s-beach-me": {
+      "city": "Rockport",
+      "state": "ME"
+    },
+    "goose-pond-dam-beach-nh": {
+      "city": "Canaan",
+      "state": "NH"
+    },
+    "goose-pond-park-beach-nh": {
+      "city": "Canaan",
+      "state": "NH"
+    },
+    "goose-rocks-beach-me": {
+      "city": "Kennebunkport",
+      "state": "ME"
+    },
+    "goss-beach-me": {
+      "city": "Isle au Haut",
+      "state": "ME"
+    },
+    "grand-beach-me": {
+      "city": "Scarborough",
+      "state": "ME"
+    },
+    "grand-isle-beach-la": {
+      "city": "Grand Isle",
+      "state": "LA"
+    },
+    "graveyard-spit-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "grays-beach-me": {
+      "city": "Machiasport",
+      "state": "ME"
+    },
+    "great-east-lake-beach-nh": {
+      "city": "Wakefield",
+      "state": "NH"
+    },
+    "great-egging-beach-md": {
+      "city": null,
+      "state": "MD"
+    },
+    "great-hammock-beach-ct": {
+      "city": "Old Saybrook",
+      "state": "CT"
+    },
+    "green-bank-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "green-harbor-beach-ct": {
+      "city": "New London",
+      "state": "CT"
+    },
+    "green-mountain-beach-vt": {
+      "city": "Wilmington",
+      "state": "VT"
+    },
+    "greenwood-town-beach-me": {
+      "city": "Greenwood",
+      "state": "ME"
+    },
+    "griffin-beach-nh": {
+      "city": "Franklin",
+      "state": "NH"
+    },
+    "grimes-cove-beach-me": {
+      "city": "Boothbay",
+      "state": "ME"
+    },
+    "groton-beach-ct": {
+      "city": "Groton",
+      "state": "CT"
+    },
+    "groton-long-point-main-beach-ct": {
+      "city": "Groton",
+      "state": "CT"
+    },
+    "grove-beach-ct": {
+      "city": "Westbrook",
+      "state": "CT"
+    },
+    "gulf-beach-ct": {
+      "city": null,
+      "state": "CT"
+    },
+    "ha-ena-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "ha-ula-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "hackberry-beach-la": {
+      "city": null,
+      "state": "LA"
+    },
+    "haida-canoe-cove-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "haikioawa-landing-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "halape-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "halawa-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "hale-iwa-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "haleiwa-alii-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "hales-beach-me": {
+      "city": "Ellsworth",
+      "state": "ME"
+    },
+    "half-mile-beach-me": {
+      "city": "Georgetown",
+      "state": "ME"
+    },
+    "half-moon-landing-ga": {
+      "city": null,
+      "state": "GA"
+    },
+    "halls-pond-beach-ct": {
+      "city": "Willington",
+      "state": "CT"
+    },
+    "hammonasset-beach-ct": {
+      "city": null,
+      "state": "CT"
+    },
+    "hamoa-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "hampstead-town-beach-nh": {
+      "city": "Hampstead",
+      "state": "NH"
+    },
+    "hampton-beach-nh": {
+      "city": "Hampton",
+      "state": "NH"
+    },
+    "hana-beach-park-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "hanaka-ilio-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "hanakapi-ai-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "hanalei-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "hanamaulu-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "hanauma-beach-hi": {
+      "city": "Honolulu",
+      "state": "HI"
+    },
+    "hapuna-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "harbor-beach-me": {
+      "city": "Deer Isle",
+      "state": "ME"
+    },
+    "harbor-point-beach-ct": {
+      "city": "Greenwich",
+      "state": "CT"
+    },
+    "harbor-view-beach-ct": {
+      "city": "Norwalk",
+      "state": "CT"
+    },
+    "harrison-bay-park-beach-tn": {
+      "city": null,
+      "state": "TN"
+    },
+    "harveys-beach-ct": {
+      "city": "Old Saybrook",
+      "state": "CT"
+    },
+    "haw-river-beach-nc": {
+      "city": null,
+      "state": "NC"
+    },
+    "hawaiian-electric-beach-park-hi": {
+      "city": "Kapolei",
+      "state": "HI"
+    },
+    "hawley-ave-beach-ct": {
+      "city": "Milford",
+      "state": "CT"
+    },
+    "hawthorne-beach-ct": {
+      "city": "Greenwich",
+      "state": "CT"
+    },
+    "head-beach-me": {
+      "city": "Phippsburg",
+      "state": "ME"
+    },
+    "headys-beach-nc": {
+      "city": null,
+      "state": "NC"
+    },
+    "hedley-spit-wa": {
+      "city": "Bainbridge Island",
+      "state": "WA"
+    },
+    "hell-pass-coast-la": {
+      "city": null,
+      "state": "LA"
+    },
+    "hendricks-head-beach-me": {
+      "city": "Southport",
+      "state": "ME"
+    },
+    "herald-harbor-beach-1-md": {
+      "city": "Glen Burnie",
+      "state": "MD"
+    },
+    "hermit-lake-town-beach-nh": {
+      "city": "Sanbornton",
+      "state": "NH"
+    },
+    "hermosa-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "hero-beach-me": {
+      "city": "Swan's Island",
+      "state": "ME"
+    },
+    "hickam-harbor-beach-hi": {
+      "city": "Waipahu",
+      "state": "HI"
+    },
+    "hidalgo-beach-ak": {
+      "city": null,
+      "state": "AK"
+    },
+    "hideaways-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "higgins-beach-me": {
+      "city": "Scarborough",
+      "state": "ME"
+    },
+    "highland-lake-beach-me": {
+      "city": "Bridgton",
+      "state": "ME"
+    },
+    "hills-beach-me": {
+      "city": "Biddeford",
+      "state": "ME"
+    },
+    "hoai-bay-lawai-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "hobie-cat-beach-sd": {
+      "city": "Utica South Township",
+      "state": "SD"
+    },
+    "hobuck-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "hold-shore-me": {
+      "city": "Big Lake Township",
+      "state": "ME"
+    },
+    "holden-beach-nc": {
+      "city": "Holden Beach",
+      "state": "NC"
+    },
+    "hole-in-the-wall-beach-ct": {
+      "city": "East Lyme",
+      "state": "CT"
+    },
+    "holland-beach-ct": {
+      "city": "Winchester",
+      "state": "CT"
+    },
+    "holly-beach-la": {
+      "city": null,
+      "state": "LA"
+    },
+    "home-valley-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "honl-s-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "honokalaoa-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "honokohau-harbor-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "honokowai-beach-park-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "honoli-i-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "honopu-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "honouli-maloo-bay-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "hood-s-pond-beach-nh": {
+      "city": "Derry",
+      "state": "NH"
+    },
+    "hookipa-park-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "hot-sand-beach-wa": {
+      "city": "Leavenworth",
+      "state": "WA"
+    },
+    "hotchkiss-cove-beach-ct": {
+      "city": "Branford",
+      "state": "CT"
+    },
+    "hotchkiss-grove-beach-ct": {
+      "city": "Branford",
+      "state": "CT"
+    },
+    "hotel-beach-me": {
+      "city": "Southport",
+      "state": "ME"
+    },
+    "houston-sliver-beach-tn": {
+      "city": null,
+      "state": "TN"
+    },
+    "huckins-beach-me": {
+      "city": "Lubec",
+      "state": "ME"
+    },
+    "hulopo-e-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "humboldt-harbor-ak": {
+      "city": "Sand Point",
+      "state": "AK"
+    },
+    "hunakai-beach-hi": {
+      "city": "Honolulu",
+      "state": "HI"
+    },
+    "hunnewell-beach-me": {
+      "city": "Phippsburg",
+      "state": "ME"
+    },
+    "hunters-beach-me": {
+      "city": "Mount Desert",
+      "state": "ME"
+    },
+    "hurst-beach-nc": {
+      "city": null,
+      "state": "NC"
+    },
+    "hyrum-state-park-beach-area-ut": {
+      "city": "Hyrum",
+      "state": "UT"
+    },
+    "ideal-beach-ut": {
+      "city": null,
+      "state": "UT"
+    },
+    "indian-beach-me": {
+      "city": "Southport",
+      "state": "ME"
+    },
+    "indian-beach-nc": {
+      "city": "Indian Beach",
+      "state": "NC"
+    },
+    "indian-camp-beach-me": {
+      "city": "Vinalhaven",
+      "state": "ME"
+    },
+    "indian-cove-beach-ct": {
+      "city": "Guilford",
+      "state": "CT"
+    },
+    "indian-landing-me": {
+      "city": "Jonesport",
+      "state": "ME"
+    },
+    "indiantown-beach-ct": {
+      "city": "Old Saybrook",
+      "state": "CT"
+    },
+    "inside-beach-ak": {
+      "city": null,
+      "state": "AK"
+    },
+    "island-view-shores-nc": {
+      "city": null,
+      "state": "NC"
+    },
+    "izzy-s-beach-me": {
+      "city": "North Haven",
+      "state": "ME"
+    },
+    "jackrabbit-mountain-swim-area-nc": {
+      "city": null,
+      "state": "NC"
+    },
+    "jackson-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "jackson-cove-beach-ct": {
+      "city": "Oxford",
+      "state": "CT"
+    },
+    "jacobs-public-beach-ct": {
+      "city": "Guilford",
+      "state": "CT"
+    },
+    "jasper-beach-me": {
+      "city": "Machiasport",
+      "state": "ME"
+    },
+    "jekyll-point-ga": {
+      "city": null,
+      "state": "GA"
+    },
+    "jenness-beach-nh": {
+      "city": "Rye",
+      "state": "NH"
+    },
+    "jennings-beach-ct": {
+      "city": "Fairfield",
+      "state": "CT"
+    },
+    "jesse-beach-me": {
+      "city": "Ellsworth",
+      "state": "ME"
+    },
+    "jewel-beach-ak": {
+      "city": null,
+      "state": "AK"
+    },
+    "joe-hamel-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "joemma-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "johnsons-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "jones-beach-ut": {
+      "city": "Hooper",
+      "state": "UT"
+    },
+    "jordan-beach-me": {
+      "city": "Milbridge",
+      "state": "ME"
+    },
+    "jowder-s-cove-beach-nh": {
+      "city": "Rindge",
+      "state": "NH"
+    },
+    "joyce-beach-me": {
+      "city": "Swan's Island",
+      "state": "ME"
+    },
+    "juanita-beach-park-swimming-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "ka-a-awa-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "ka-aku-u-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "ka-anapali-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "ka-opala-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "kaelehuluhulu-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "kahakuloa-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "kahala-beach-hi": {
+      "city": "Honolulu",
+      "state": "HI"
+    },
+    "kahalepohaku-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "kahana-bay-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "kahe-point-hi": {
+      "city": "Kapolei",
+      "state": "HI"
+    },
+    "kahekili-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "kahili-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "kahuku-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "kahuwai-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "kaiaka-bay-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "kaihalulu-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "kailua-beach-hi": {
+      "city": "East Honolulu",
+      "state": "HI"
+    },
+    "kaimana-beach-hi": {
+      "city": "Honolulu",
+      "state": "HI"
+    },
+    "kaiolohia-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "kaipapa-u-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "kalae-o-io-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "kalalau-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "kalaloch-beach-1-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "kalaloch-beach-2-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "kalani-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "kalapaki-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "kalepolepo-beach-park-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "kalihiwai-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "kaluhikaa-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "kamaka-ipo-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "kamalino-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "kamaole-i-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "kamaole-ii-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "kamaole-iii-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "kanaha-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "kanalukaha-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "kane-sand-bank-md": {
+      "city": "Towson",
+      "state": "MD"
+    },
+    "kapa-a-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "kapahukapu-manini-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "kapalua-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "kapukuwahine-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "kaslokan-point-ak": {
+      "city": null,
+      "state": "AK"
+    },
+    "kauapea-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "kauhala-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "kaulahao-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "kaupoa-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "kauwaha-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "kawa-aloa-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "kawailoa-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "kayak-beach-ak": {
+      "city": null,
+      "state": "AK"
+    },
+    "kayostla-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "ke-e-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "ke-ei-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "keaau-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "kealia-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "keamano-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "kearney-beach-ak": {
+      "city": null,
+      "state": "AK"
+    },
+    "keawakapu-beach-north-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "keawakapu-beach-south-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "keawanui-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "kehena-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "keka-a-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "kekaha-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "ken-s-beach-ak": {
+      "city": "Port Alexander",
+      "state": "AK"
+    },
+    "kenai-beach-ak": {
+      "city": "Kenai",
+      "state": "AK"
+    },
+    "kennedy-beach-me": {
+      "city": "Portland",
+      "state": "ME"
+    },
+    "kennel-beach-nc": {
+      "city": null,
+      "state": "NC"
+    },
+    "kennydale-beach-wa": {
+      "city": "Renton",
+      "state": "WA"
+    },
+    "keoka-lake-beach-me": {
+      "city": "Waterford",
+      "state": "ME"
+    },
+    "keonenui-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "kepuhi-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "keystone-spit-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "ki-eki-e-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "kiahuna-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "kiddie-s-beach-ct": {
+      "city": "Waterford",
+      "state": "CT"
+    },
+    "kikaua-point-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "kimple-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "king-spit-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "kinney-shores-beach-me": {
+      "city": "Saco",
+      "state": "ME"
+    },
+    "ko-olina-hi": {
+      "city": "Kapolei",
+      "state": "HI"
+    },
+    "koki-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "kornoelje-s-beach-ak": {
+      "city": "Port Alexander",
+      "state": "AK"
+    },
+    "ku-au-cove-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "kua-bay-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "kuhio-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "kuhn-spit-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "kuluk-beach-ak": {
+      "city": "Adak",
+      "state": "AK"
+    },
+    "kumimi-beach-20-mile-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "kumukea-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "kure-beach-nc": {
+      "city": "Kure Beach",
+      "state": "NC"
+    },
+    "kvi-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "lac-private-beach-3-me": {
+      "city": "Waterboro",
+      "state": "ME"
+    },
+    "lac-private-beach-5-me": {
+      "city": "Waterboro",
+      "state": "ME"
+    },
+    "lagace-beach-nh": {
+      "city": "Franklin",
+      "state": "NH"
+    },
+    "lagoon-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "laite-memorial-beach-me": {
+      "city": "Camden",
+      "state": "ME"
+    },
+    "lake-alvin-beach-sd": {
+      "city": "Springdale Township",
+      "state": "SD"
+    },
+    "lake-beseck-beach-ct": {
+      "city": "Middlefield",
+      "state": "CT"
+    },
+    "lake-city-beach-park-wa": {
+      "city": "Seattle",
+      "state": "WA"
+    },
+    "lake-claire-beach-md": {
+      "city": null,
+      "state": "MD"
+    },
+    "lake-elmore-beach-vt": {
+      "city": "Elmore",
+      "state": "VT"
+    },
+    "lake-ivanhoe-beach-nh": {
+      "city": "Wakefield",
+      "state": "NH"
+    },
+    "lake-louise-beach-sd": {
+      "city": "Greenleaf Township",
+      "state": "SD"
+    },
+    "lake-louise-campground-beach-sd": {
+      "city": "Greenleaf Township",
+      "state": "SD"
+    },
+    "lake-mohegan-beach-ct": {
+      "city": "Fairfield",
+      "state": "CT"
+    },
+    "lake-powhatan-beach-nc": {
+      "city": null,
+      "state": "NC"
+    },
+    "lake-union-park-kayak-launch-and-beach-wa": {
+      "city": "Seattle",
+      "state": "WA"
+    },
+    "lakeshore-beach-ms": {
+      "city": null,
+      "state": "MS"
+    },
+    "lakeside-beach-access-vt": {
+      "city": "Burlington",
+      "state": "VT"
+    },
+    "lamoine-beach-me": {
+      "city": "Lamoine",
+      "state": "ME"
+    },
+    "landing-beach-me": {
+      "city": "Portland",
+      "state": "ME"
+    },
+    "lane-beach-md": {
+      "city": null,
+      "state": "MD"
+    },
+    "langford-sand-md": {
+      "city": null,
+      "state": "MD"
+    },
+    "lanikai-beach-hi": {
+      "city": "East Honolulu",
+      "state": "HI"
+    },
+    "laniloa-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "larsen-s-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "laudholm-beach-me": {
+      "city": "Wells",
+      "state": "ME"
+    },
+    "lawa-i-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "lawai-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "lawson-point-32-nc": {
+      "city": null,
+      "state": "NC"
+    },
+    "lawson-shore-nc": {
+      "city": null,
+      "state": "NC"
+    },
+    "le-ahi-beach-hi": {
+      "city": "Honolulu",
+      "state": "HI"
+    },
+    "leavitt-beach-nh": {
+      "city": "Meredith",
+      "state": "NH"
+    },
+    "leddy-park-beach-vt": {
+      "city": "Burlington",
+      "state": "VT"
+    },
+    "ledge-beach-me": {
+      "city": "Stonington",
+      "state": "ME"
+    },
+    "leho-ula-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "lena-beach-ak": {
+      "city": "Juneau",
+      "state": "AK"
+    },
+    "letter-s-me": {
+      "city": "Newry",
+      "state": "ME"
+    },
+    "lieser-point-wa": {
+      "city": "Vancouver",
+      "state": "WA"
+    },
+    "lighthouse-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "lighthouse-beach-me": {
+      "city": "Deer Isle",
+      "state": "ME"
+    },
+    "lighthouse-point-ct": {
+      "city": "New Haven",
+      "state": "CT"
+    },
+    "lilly-s-pad-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "lily-pond-beach-me": {
+      "city": "Deer Isle",
+      "state": "ME"
+    },
+    "limerick-municipal-beach-me": {
+      "city": "Limerick",
+      "state": "ME"
+    },
+    "limewood-beach-ct": {
+      "city": "Branford",
+      "state": "CT"
+    },
+    "lincoln-beach-ut": {
+      "city": null,
+      "state": "UT"
+    },
+    "lincolnville-beach-me": {
+      "city": "Lincolnville",
+      "state": "ME"
+    },
+    "lindamoor-community-beach-md": {
+      "city": null,
+      "state": "MD"
+    },
+    "linger-longer-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "little-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "little-beach-me": {
+      "city": "Frenchboro",
+      "state": "ME"
+    },
+    "little-egging-beach-md": {
+      "city": null,
+      "state": "MD"
+    },
+    "little-hunters-beach-me": {
+      "city": "Mount Desert",
+      "state": "ME"
+    },
+    "little-ireland-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "little-mother-s-beach-me": {
+      "city": "Kennebunk",
+      "state": "ME"
+    },
+    "little-north-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "little-pond-beach-me": {
+      "city": "Jonesport",
+      "state": "ME"
+    },
+    "littleneck-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "lobster-pound-beach-me": {
+      "city": "Portland",
+      "state": "ME"
+    },
+    "lomack-beach-ak": {
+      "city": "Bethel",
+      "state": "AK"
+    },
+    "lone-rock-beach-ut": {
+      "city": null,
+      "state": "UT"
+    },
+    "long-bay-beach-nh": {
+      "city": "Laconia",
+      "state": "NH"
+    },
+    "long-beach-ct": {
+      "city": "Norwalk",
+      "state": "CT"
+    },
+    "long-beach-lower-togue-pond-baxter-state-park-millinocket-ma-me": {
+      "city": "T2 R9 WELS",
+      "state": "ME"
+    },
+    "long-beach-md": {
+      "city": null,
+      "state": "MD"
+    },
+    "long-beach-nc": {
+      "city": "Oak Island",
+      "state": "NC"
+    },
+    "long-lake-beach-me": {
+      "city": "Harrison",
+      "state": "ME"
+    },
+    "long-sands-me": {
+      "city": "York",
+      "state": "ME"
+    },
+    "long-spit-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "longfield-sandbar-ms": {
+      "city": null,
+      "state": "MS"
+    },
+    "lopa-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "lordship-beach-ct": {
+      "city": "Stratford",
+      "state": "CT"
+    },
+    "lovell-lake-beach-nh": {
+      "city": "Wakefield",
+      "state": "NH"
+    },
+    "lower-lake-beach-ms": {
+      "city": null,
+      "state": "MS"
+    },
+    "lower-range-pond-beach-me": {
+      "city": "Poland",
+      "state": "ME"
+    },
+    "lowman-beach-wa": {
+      "city": "Seattle",
+      "state": "WA"
+    },
+    "lucia-beach-me": {
+      "city": "Owls Head",
+      "state": "ME"
+    },
+    "lumaha-i-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "lupton-shore-nc": {
+      "city": null,
+      "state": "NC"
+    },
+    "lyn-ary-beach-ak": {
+      "city": "Anchorage",
+      "state": "AK"
+    },
+    "lytle-beach-wa": {
+      "city": "Bainbridge Island",
+      "state": "WA"
+    },
+    "madison-park-beach-swim-area-wa": {
+      "city": "Seattle",
+      "state": "WA"
+    },
+    "madison-park-beach-wa": {
+      "city": "Seattle",
+      "state": "WA"
+    },
+    "madrona-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "maeaea-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "magic-island-lagoon-hi": {
+      "city": "East Honolulu",
+      "state": "HI"
+    },
+    "magic-sands-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "magnuson-park-beach-wa": {
+      "city": "Seattle",
+      "state": "WA"
+    },
+    "mahaiula-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "mai-poina-beach-park-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "maiden-cove-beach-me": {
+      "city": "Cape Elizabeth",
+      "state": "ME"
+    },
+    "main-beach-md": {
+      "city": null,
+      "state": "MD"
+    },
+    "makaha-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "makalawena-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "makaleha-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "makalei-beach-hi": {
+      "city": "Honolulu",
+      "state": "HI"
+    },
+    "makapu-u-beach-hi": {
+      "city": "East Honolulu",
+      "state": "HI"
+    },
+    "makapuu-beach-park-hi": {
+      "city": "East Honolulu",
+      "state": "HI"
+    },
+    "makena-landing-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "makolea-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "makua-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "malaga-landing-beach-me": {
+      "city": "Phippsburg",
+      "state": "ME"
+    },
+    "maluaka-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "mamanasco-beach-ct": {
+      "city": "Ridgefield",
+      "state": "CT"
+    },
+    "manitou-beach-wa": {
+      "city": "Bainbridge Island",
+      "state": "WA"
+    },
+    "maple-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "marble-rock-beach-wa": {
+      "city": "Leavenworth",
+      "state": "WA"
+    },
+    "marina-beach-wa": {
+      "city": "Edmonds",
+      "state": "WA"
+    },
+    "marker-post-ga": {
+      "city": null,
+      "state": "GA"
+    },
+    "markey-beach-me": {
+      "city": "Matinicus Isle Plantation",
+      "state": "ME"
+    },
+    "marlboro-beach-me": {
+      "city": "Lamoine",
+      "state": "ME"
+    },
+    "martha-s-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "martin-park-beach-ct": {
+      "city": "Ridgefield",
+      "state": "CT"
+    },
+    "marvin-beach-ct": {
+      "city": "Norwalk",
+      "state": "CT"
+    },
+    "mary-waldron-beach-nh": {
+      "city": "Northwood",
+      "state": "NH"
+    },
+    "maryland-beach-md": {
+      "city": "Ocean City",
+      "state": "MD"
+    },
+    "masonboro-island-reserve-nc": {
+      "city": null,
+      "state": "NC"
+    },
+    "massabesic-lake-beach-nh": {
+      "city": "Auburn",
+      "state": "NH"
+    },
+    "massacre-beach-ak": {
+      "city": null,
+      "state": "AK"
+    },
+    "matoaka-beach-md": {
+      "city": null,
+      "state": "MD"
+    },
+    "mattatuck-beach-ct": {
+      "city": "Wolcott",
+      "state": "CT"
+    },
+    "matthews-beach-wa": {
+      "city": "Seattle",
+      "state": "WA"
+    },
+    "mauna-kea-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "mauna-lani-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "mauumae-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "maylynn-s-beach-ak": {
+      "city": "Port Alexander",
+      "state": "AK"
+    },
+    "mayo-beach-md": {
+      "city": null,
+      "state": "MD"
+    },
+    "mccook-park-beach-ct": {
+      "city": "East Lyme",
+      "state": "CT"
+    },
+    "meathole-wa": {
+      "city": "Twisp",
+      "state": "WA"
+    },
+    "medrick-beach-me": {
+      "city": "Matinicus Isle Plantation",
+      "state": "ME"
+    },
+    "mercer-island-beach-club-beach-wa": {
+      "city": "Mercer Island",
+      "state": "WA"
+    },
+    "mercerwood-shore-club-beach-wa": {
+      "city": "Mercer Island",
+      "state": "WA"
+    },
+    "miami-beach-ct": {
+      "city": "Old Lyme",
+      "state": "CT"
+    },
+    "miami-beach-md": {
+      "city": null,
+      "state": "MD"
+    },
+    "miami-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "mid-beach-ga": {
+      "city": "Tybee Island",
+      "state": "GA"
+    },
+    "middle-beach-ct": {
+      "city": "Westbrook",
+      "state": "CT"
+    },
+    "middle-beach-me": {
+      "city": "Frenchboro",
+      "state": "ME"
+    },
+    "middle-inlet-beach-ut": {
+      "city": "Ogden Valley",
+      "state": "UT"
+    },
+    "mile-beach-me": {
+      "city": "Georgetown",
+      "state": "ME"
+    },
+    "mink-brook-swimming-area-nh": {
+      "city": "Hanover",
+      "state": "NH"
+    },
+    "minneapolis-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "miramar-beach-la": {
+      "city": null,
+      "state": "LA"
+    },
+    "mitchell-beach-ct": {
+      "city": "New London",
+      "state": "CT"
+    },
+    "mitchell-bluff-md": {
+      "city": null,
+      "state": "MD"
+    },
+    "mma-beach-me": {
+      "city": "Castine",
+      "state": "ME"
+    },
+    "mocrocks-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "mokapu-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "mokolii-view-point-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "moku-auia-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "mokule-ia-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "mokule-ia-rock-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "molasses-pond-beach-me": {
+      "city": "Eastbrook",
+      "state": "ME"
+    },
+    "moloa-a-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "momauguin-beach-ct": {
+      "city": "East Haven",
+      "state": "CT"
+    },
+    "money-beach-ct": {
+      "city": "Bridgeport",
+      "state": "CT"
+    },
+    "monroe-landing-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "montowese-beach-ct": {
+      "city": "Branford",
+      "state": "CT"
+    },
+    "moody-beach-me": {
+      "city": "Wells",
+      "state": "ME"
+    },
+    "moosup-pond-beach-ct": {
+      "city": "Plainfield",
+      "state": "CT"
+    },
+    "morningside-beach-ct": {
+      "city": null,
+      "state": "CT"
+    },
+    "morris-landing-ga": {
+      "city": null,
+      "state": "GA"
+    },
+    "morris-town-beach-ct": {
+      "city": "Morris",
+      "state": "CT"
+    },
+    "mothers-beach-me": {
+      "city": "Kennebunk",
+      "state": "ME"
+    },
+    "mount-baker-beach-wa": {
+      "city": "Seattle",
+      "state": "WA"
+    },
+    "mount-vernon-beach-md": {
+      "city": null,
+      "state": "MD"
+    },
+    "mowry-beach-me": {
+      "city": "Lubec",
+      "state": "ME"
+    },
+    "mud-beach-me": {
+      "city": "Stonington",
+      "state": "ME"
+    },
+    "multonborough-town-beach-nh": {
+      "city": "Moultonborough",
+      "state": "NH"
+    },
+    "murdock-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "myrtle-street-public-beach-access-ga": {
+      "city": null,
+      "state": "GA"
+    },
+    "mystery-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "nakeikiapua-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "nanakuli-beach-park-hi": {
+      "city": "Kapolei",
+      "state": "HI"
+    },
+    "nanny-goat-beach-ga": {
+      "city": null,
+      "state": "GA"
+    },
+    "napili-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "narrow-place-beach-me": {
+      "city": "North Haven",
+      "state": "ME"
+    },
+    "nauyaug-coast-ct": {
+      "city": "Stonington",
+      "state": "CT"
+    },
+    "nawalagwis-magic-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "neontawanta-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "neptune-road-public-beach-access-ga": {
+      "city": null,
+      "state": "GA"
+    },
+    "nevidiskov-beach-ak": {
+      "city": null,
+      "state": "AK"
+    },
+    "newfield-public-beach-me": {
+      "city": "Newfield",
+      "state": "ME"
+    },
+    "newton-town-beach-nh": {
+      "city": "Newton",
+      "state": "NH"
+    },
+    "nichols-beach-nh": {
+      "city": "Madison",
+      "state": "NH"
+    },
+    "noank-town-dock-beach-ct": {
+      "city": "Groton",
+      "state": "CT"
+    },
+    "nonopapa-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "normandy-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "north-beach-ak": {
+      "city": null,
+      "state": "AK"
+    },
+    "north-beach-ct": {
+      "city": "New Fairfield",
+      "state": "CT"
+    },
+    "north-beach-ga": {
+      "city": "Tybee Island",
+      "state": "GA"
+    },
+    "north-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "north-beach-la": {
+      "city": null,
+      "state": "LA"
+    },
+    "north-beach-md": {
+      "city": null,
+      "state": "MD"
+    },
+    "north-beach-nh": {
+      "city": "Hampton",
+      "state": "NH"
+    },
+    "north-beach-sd": {
+      "city": "Lake Township",
+      "state": "SD"
+    },
+    "north-beach-vt": {
+      "city": "Burlington",
+      "state": "VT"
+    },
+    "north-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "north-cove-beach-nh": {
+      "city": "Grantham",
+      "state": "NH"
+    },
+    "north-east-beach-area-md": {
+      "city": null,
+      "state": "MD"
+    },
+    "north-forrest-bend-beach-tn": {
+      "city": "Collierville",
+      "state": "TN"
+    },
+    "north-hampton-beach-nh": {
+      "city": "North Hampton",
+      "state": "NH"
+    },
+    "north-mudbar-beach-tn": {
+      "city": null,
+      "state": "TN"
+    },
+    "north-paia-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "north-point-beach-me": {
+      "city": "Deer Isle",
+      "state": "ME"
+    },
+    "north-severn-beach-md": {
+      "city": null,
+      "state": "MD"
+    },
+    "north-topsail-shores-nc": {
+      "city": "North Topsail Beach",
+      "state": "NC"
+    },
+    "northilla-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "northwood-lake-beach-nh": {
+      "city": "Northwood",
+      "state": "NH"
+    },
+    "nunavachak-beach-ak": {
+      "city": null,
+      "state": "AK"
+    },
+    "oak-island-cabana-nc": {
+      "city": "Oak Island",
+      "state": "NC"
+    },
+    "oakledge-cove-vt": {
+      "city": "Burlington",
+      "state": "VT"
+    },
+    "obstruction-pass-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "ocean-beach-ct": {
+      "city": "New London",
+      "state": "CT"
+    },
+    "ocean-city-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "ocean-isle-beach-nc": {
+      "city": null,
+      "state": "NC"
+    },
+    "ocean-shores-beach-wa": {
+      "city": "Ocean Shores",
+      "state": "WA"
+    },
+    "ogunquit-beach-me": {
+      "city": "Ogunquit",
+      "state": "ME"
+    },
+    "ohiki-lolo-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "old-ferry-landing-beach-me": {
+      "city": "North Haven",
+      "state": "ME"
+    },
+    "old-lighthouse-beach-nc": {
+      "city": null,
+      "state": "NC"
+    },
+    "old-mill-beach-ct": {
+      "city": "Westport",
+      "state": "CT"
+    },
+    "old-orchard-beach-me": {
+      "city": null,
+      "state": "ME"
+    },
+    "olimpic-beach-la": {
+      "city": null,
+      "state": "LA"
+    },
+    "olo-upena-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "olympic-beach-wa": {
+      "city": "Edmonds",
+      "state": "WA"
+    },
+    "one-uli-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "oneloa-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "onslow-beach-nc": {
+      "city": null,
+      "state": "NC"
+    },
+    "ooma-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "orchard-beach-me": {
+      "city": "Deer Isle",
+      "state": "ME"
+    },
+    "osprey-beach-ct": {
+      "city": "New London",
+      "state": "CT"
+    },
+    "otis-beach-me": {
+      "city": "Otis",
+      "state": "ME"
+    },
+    "otisfield-town-beach-me": {
+      "city": "Otisfield",
+      "state": "ME"
+    },
+    "outhouse-beach-me": {
+      "city": "Cutler",
+      "state": "ME"
+    },
+    "outside-beach-ak": {
+      "city": null,
+      "state": "AK"
+    },
+    "owen-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "oyster-river-beach-ct": {
+      "city": "West Haven",
+      "state": "CT"
+    },
+    "pa-ia-bay-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "pa-ia-secret-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "pakala-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "palauea-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "palm-tree-island-nc": {
+      "city": null,
+      "state": "NC"
+    },
+    "palmer-lake-shady-side-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "palmer-lake-sunny-side-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "papakolea-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "papohaku-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "parker-s-creek-beach-nc": {
+      "city": null,
+      "state": "NC"
+    },
+    "parking-lot-beach-ak": {
+      "city": "Port Alexander",
+      "state": "AK"
+    },
+    "parksville-beach-tn": {
+      "city": null,
+      "state": "TN"
+    },
+    "parsons-beach-me": {
+      "city": "Kennebunk",
+      "state": "ME"
+    },
+    "paugus-bay-beach-nh": {
+      "city": "Laconia",
+      "state": "NH"
+    },
+    "pebble-beach-me": {
+      "city": "Northport",
+      "state": "ME"
+    },
+    "pebble-beach-sd": {
+      "city": "Ziskov South Township",
+      "state": "SD"
+    },
+    "pebbles-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "pebbley-beach-ct": {
+      "city": "Branford",
+      "state": "CT"
+    },
+    "pelham-town-beach-nh": {
+      "city": "Pelham",
+      "state": "NH"
+    },
+    "pelican-beach-ut": {
+      "city": "Ogden Valley",
+      "state": "UT"
+    },
+    "pelican-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "penfield-beach-ct": {
+      "city": "Fairfield",
+      "state": "CT"
+    },
+    "perk-beach-ms": {
+      "city": null,
+      "state": "MS"
+    },
+    "pettegrow-beach-me": {
+      "city": "Machiasport",
+      "state": "ME"
+    },
+    "phelps-beach-wy": {
+      "city": null,
+      "state": "WY"
+    },
+    "philbricks-beach-nh": {
+      "city": "Rye",
+      "state": "NH"
+    },
+    "picnickers-beach-nh": {
+      "city": "Greenfield",
+      "state": "NH"
+    },
+    "pig-pen-tn": {
+      "city": "Fairview",
+      "state": "TN"
+    },
+    "pine-bush-beach-nc": {
+      "city": null,
+      "state": "NC"
+    },
+    "pine-knoll-shores-nc": {
+      "city": "Pine Knoll Shores",
+      "state": "NC"
+    },
+    "pine-lake-swimming-beach-wa": {
+      "city": "Sammamish",
+      "state": "WA"
+    },
+    "pine-ledge-ct": {
+      "city": "Sherman",
+      "state": "CT"
+    },
+    "pine-point-beach-me": {
+      "city": "Scarborough",
+      "state": "ME"
+    },
+    "pines-on-the-severn-community-beach-md": {
+      "city": null,
+      "state": "MD"
+    },
+    "piney-point-beach-md": {
+      "city": null,
+      "state": "MD"
+    },
+    "pioneer-square-habitat-beach-wa": {
+      "city": "Seattle",
+      "state": "WA"
+    },
+    "pirates-cove-beach-nh": {
+      "city": "Rye",
+      "state": "NH"
+    },
+    "plaice-cove-beach-nh": {
+      "city": "Hampton",
+      "state": "NH"
+    },
+    "plaice-cove-nh": {
+      "city": "Hampton",
+      "state": "NH"
+    },
+    "pleasant-point-town-beach-me": {
+      "city": "Lovell",
+      "state": "ME"
+    },
+    "pleasant-town-beach-me": {
+      "city": "Casco",
+      "state": "ME"
+    },
+    "pleasure-beach-ct": {
+      "city": "Bridgeport",
+      "state": "CT"
+    },
+    "plum-bank-beach-ct": {
+      "city": "Old Saybrook",
+      "state": "CT"
+    },
+    "po-ipu-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "po-olau-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "po-olenalena-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "pobblestone-cove-me": {
+      "city": "Jonesport",
+      "state": "ME"
+    },
+    "pocket-beach-wa": {
+      "city": "Aberdeen",
+      "state": "WA"
+    },
+    "point-beach-ct": {
+      "city": null,
+      "state": "CT"
+    },
+    "point-shilshole-beach-wa": {
+      "city": "Seattle",
+      "state": "WA"
+    },
+    "polihale-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "polihua-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "polo-beach-east-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "polo-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "polo-beach-west-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "pololu-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "pond-point-beach-ct": {
+      "city": null,
+      "state": "CT"
+    },
+    "poop-island-ga": {
+      "city": null,
+      "state": "GA"
+    },
+    "popham-beach-me": {
+      "city": "Phippsburg",
+      "state": "ME"
+    },
+    "poplar-point-beach-nc": {
+      "city": null,
+      "state": "NC"
+    },
+    "porridge-shore-beach-nh": {
+      "city": "Madison",
+      "state": "NH"
+    },
+    "port-sunlight-beach-md": {
+      "city": null,
+      "state": "MD"
+    },
+    "portage-beach-wa": {
+      "city": "Indian Island",
+      "state": "WA"
+    },
+    "pounders-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "poverty-island-beach-ct": {
+      "city": "Old Lyme",
+      "state": "CT"
+    },
+    "pritchard-island-beach-wa": {
+      "city": "Seattle",
+      "state": "WA"
+    },
+    "private-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "prospect-beach-ct": {
+      "city": null,
+      "state": "CT"
+    },
+    "province-lake-beach-nh": {
+      "city": "Wakefield",
+      "state": "NH"
+    },
+    "pu-u-poa-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "pu-uiki-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "puamana-beach-park-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "public-access-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "punalau-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "punalu-u-black-sand-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "punch-bowl-swimming-hole-vt": {
+      "city": "Waitsfield",
+      "state": "VT"
+    },
+    "purplehorse-beach-md": {
+      "city": "Bethesda",
+      "state": "MD"
+    },
+    "quarry-beach-ak": {
+      "city": null,
+      "state": "AK"
+    },
+    "queen-kapi-olani-beach-hi": {
+      "city": "Honolulu",
+      "state": "HI"
+    },
+    "queen-s-pond-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "quotonset-beach-ct": {
+      "city": "Westbrook",
+      "state": "CT"
+    },
+    "rafters-beach-wa": {
+      "city": "Leavenworth",
+      "state": "WA"
+    },
+    "ramsay-creek-park-beach-nc": {
+      "city": "Cornelius",
+      "state": "NC"
+    },
+    "range-light-beach-ak": {
+      "city": "Port Alexander",
+      "state": "AK"
+    },
+    "ranger-beach-nh": {
+      "city": "Jaffrey",
+      "state": "NH"
+    },
+    "raymond-beach-me": {
+      "city": "Raymond",
+      "state": "ME"
+    },
+    "reach-beach-me": {
+      "city": "Deer Isle",
+      "state": "ME"
+    },
+    "rec-beach-me": {
+      "city": "Frye Island",
+      "state": "ME"
+    },
+    "red-beach-ak": {
+      "city": null,
+      "state": "AK"
+    },
+    "red-cove-beach-ak": {
+      "city": null,
+      "state": "AK"
+    },
+    "red-sand-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "redman-beach-me": {
+      "city": "Brooksville",
+      "state": "ME"
+    },
+    "refuge-beach-ak": {
+      "city": null,
+      "state": "AK"
+    },
+    "refuge-cove-ak": {
+      "city": null,
+      "state": "AK"
+    },
+    "rendezvous-beach-ut": {
+      "city": null,
+      "state": "UT"
+    },
+    "respess-shore-nc": {
+      "city": null,
+      "state": "NC"
+    },
+    "rialto-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "rich-memorial-town-beach-me": {
+      "city": "Standish",
+      "state": "ME"
+    },
+    "richardson-s-beach-me": {
+      "city": "Wayne",
+      "state": "ME"
+    },
+    "richmond-town-beach-at-cass-pond-nh": {
+      "city": "Richmond",
+      "state": "NH"
+    },
+    "richwine-gravel-bar-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "riverland-beach-nh": {
+      "city": "Canterbury",
+      "state": "NH"
+    },
+    "riverside-beach-me": {
+      "city": "Carrabassett Valley",
+      "state": "ME"
+    },
+    "riverside-park-beach-access-nc": {
+      "city": "Spruce Pine",
+      "state": "NC"
+    },
+    "roachs-shore-md": {
+      "city": null,
+      "state": "MD"
+    },
+    "road-end-beach-wa": {
+      "city": "Yarrow Point",
+      "state": "WA"
+    },
+    "robbins-halle-beach-tn": {
+      "city": null,
+      "state": "TN"
+    },
+    "robbinswold-beach-access-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "rocky-beach-ct": {
+      "city": "West Haven",
+      "state": "CT"
+    },
+    "rocky-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "rocky-creek-beach-ga": {
+      "city": null,
+      "state": "GA"
+    },
+    "rocky-neck-state-beach-ct": {
+      "city": "East Lyme",
+      "state": "CT"
+    },
+    "rodanthe-public-beach-access-nc": {
+      "city": null,
+      "state": "NC"
+    },
+    "rogers-point-beach-me": {
+      "city": "Steuben",
+      "state": "ME"
+    },
+    "rogue-bluffs-beach-me": {
+      "city": "Roque Bluffs",
+      "state": "ME"
+    },
+    "rol-camp-beach-vt": {
+      "city": "Irasburg",
+      "state": "VT"
+    },
+    "rome-town-beach-me": {
+      "city": "Rome",
+      "state": "ME"
+    },
+    "roque-island-ledge-me": {
+      "city": "Jonesport",
+      "state": "ME"
+    },
+    "rosario-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "rowayton-community-beach-ct": {
+      "city": "Norwalk",
+      "state": "CT"
+    },
+    "ruby-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "rutherford-beach-la": {
+      "city": null,
+      "state": "LA"
+    },
+    "rye-north-beach-nh": {
+      "city": "Rye",
+      "state": "NH"
+    },
+    "s-turns-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "sage-beach-ak": {
+      "city": null,
+      "state": "AK"
+    },
+    "saint-george-island-beach-md": {
+      "city": null,
+      "state": "MD"
+    },
+    "saint-jerome-beach-md": {
+      "city": null,
+      "state": "MD"
+    },
+    "salmon-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "salmon-ranch-ak": {
+      "city": null,
+      "state": "AK"
+    },
+    "salt-pond-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "samish-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "sand-bar-wa": {
+      "city": "Leavenworth",
+      "state": "WA"
+    },
+    "sand-beach-me": {
+      "city": "Swan's Island",
+      "state": "ME"
+    },
+    "sand-cove-beach-me": {
+      "city": null,
+      "state": "ME"
+    },
+    "sand-dollar-beach-ak": {
+      "city": null,
+      "state": "AK"
+    },
+    "sand-dune-beach-me": {
+      "city": "Phippsburg",
+      "state": "ME"
+    },
+    "sand-dune-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "sand-lake-park-ak": {
+      "city": "Anchorage",
+      "state": "AK"
+    },
+    "sandbar-pool-beach-nc": {
+      "city": null,
+      "state": "NC"
+    },
+    "sandwich-town-beach-nh": {
+      "city": "Sandwich",
+      "state": "NH"
+    },
+    "sandy-beach-ak": {
+      "city": "Juneau",
+      "state": "AK"
+    },
+    "sandy-beach-ct": {
+      "city": "Ellington",
+      "state": "CT"
+    },
+    "sandy-beach-ga": {
+      "city": "Macon",
+      "state": "GA"
+    },
+    "sandy-beach-hi": {
+      "city": "Honolulu",
+      "state": "HI"
+    },
+    "sandy-beach-me": {
+      "city": "Rockland",
+      "state": "ME"
+    },
+    "sandy-beach-nh": {
+      "city": "Jaffrey",
+      "state": "NH"
+    },
+    "sandy-beach-south-ak": {
+      "city": null,
+      "state": "AK"
+    },
+    "sandy-beach-vt": {
+      "city": "Thetford",
+      "state": "VT"
+    },
+    "sandy-hill-beach-md": {
+      "city": null,
+      "state": "MD"
+    },
+    "sandy-point-beach-me": {
+      "city": "Yarmouth",
+      "state": "ME"
+    },
+    "sandy-point-nh": {
+      "city": "Barnstead",
+      "state": "NH"
+    },
+    "sandy-river-beach-me": {
+      "city": "Jonesport",
+      "state": "ME"
+    },
+    "sandy-swimming-hole-wa": {
+      "city": "Washougal",
+      "state": "WA"
+    },
+    "sandyland-beach-md": {
+      "city": null,
+      "state": "MD"
+    },
+    "sarana-beach-ak": {
+      "city": null,
+      "state": "AK"
+    },
+    "sasco-hill-beach-ct": {
+      "city": "Fairfield",
+      "state": "CT"
+    },
+    "savannah-river-beach-ga": {
+      "city": null,
+      "state": "GA"
+    },
+    "sawyers-beach-nh": {
+      "city": "Rye",
+      "state": "NH"
+    },
+    "scarborough-beach-me": {
+      "city": "Scarborough",
+      "state": "ME"
+    },
+    "scenic-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "schoodic-beach-me": {
+      "city": "T9 SD BPP Township",
+      "state": "ME"
+    },
+    "schooner-cove-me": {
+      "city": "Swan's Island",
+      "state": "ME"
+    },
+    "sea-bluff-beach-ct": {
+      "city": null,
+      "state": "CT"
+    },
+    "sea-camp-beach-ga": {
+      "city": null,
+      "state": "GA"
+    },
+    "sea-cove-beach-me": {
+      "city": "Harpswell",
+      "state": "ME"
+    },
+    "sea-glass-beach-me": {
+      "city": "Southport",
+      "state": "ME"
+    },
+    "sea-haven-beach-nc": {
+      "city": null,
+      "state": "NC"
+    },
+    "sea-island-beach-ga": {
+      "city": null,
+      "state": "GA"
+    },
+    "seabrook-beach-nh": {
+      "city": "Seabrook",
+      "state": "NH"
+    },
+    "seaforth-beach-nc": {
+      "city": null,
+      "state": "NC"
+    },
+    "seaglass-beach-me": {
+      "city": "Portland",
+      "state": "ME"
+    },
+    "seahorse-beach-md": {
+      "city": null,
+      "state": "MD"
+    },
+    "sealodge-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "seapoint-beach-me": {
+      "city": "Kittery",
+      "state": "ME"
+    },
+    "seaside-beach-ct": {
+      "city": "Bridgeport",
+      "state": "CT"
+    },
+    "seawall-beach-me": {
+      "city": "Phippsburg",
+      "state": "ME"
+    },
+    "sebago-town-beach-me": {
+      "city": "Sebago",
+      "state": "ME"
+    },
+    "second-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "secret-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "selby-beach-md": {
+      "city": null,
+      "state": "MD"
+    },
+    "semiahmoo-spit-wa": {
+      "city": "Blaine",
+      "state": "WA"
+    },
+    "senior-beach-ga": {
+      "city": null,
+      "state": "GA"
+    },
+    "severn-beach-md": {
+      "city": null,
+      "state": "MD"
+    },
+    "sex-cove-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "shady-beach-tn": {
+      "city": null,
+      "state": "TN"
+    },
+    "shakoma-beach-nh": {
+      "city": "Enfield",
+      "state": "NH"
+    },
+    "shark-tooth-beach-ga": {
+      "city": null,
+      "state": "GA"
+    },
+    "sharks-point-beach-me": {
+      "city": "Isle au Haut",
+      "state": "ME"
+    },
+    "shelburne-beach-vt": {
+      "city": "Shelburne",
+      "state": "VT"
+    },
+    "shell-beach-ct": {
+      "city": "East Haven",
+      "state": "CT"
+    },
+    "shell-beach-la": {
+      "city": null,
+      "state": "LA"
+    },
+    "shell-beach-me": {
+      "city": "Portland",
+      "state": "ME"
+    },
+    "shennecossett-beach-ct": {
+      "city": "Groton",
+      "state": "CT"
+    },
+    "sheridan-lake-north-sd": {
+      "city": null,
+      "state": "SD"
+    },
+    "sheridan-lake-south-sd": {
+      "city": null,
+      "state": "SD"
+    },
+    "sherman-town-beach-ct": {
+      "city": "Sherman",
+      "state": "CT"
+    },
+    "shi-shi-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "shipwreck-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "shirt-tail-point-me": {
+      "city": "Camden",
+      "state": "ME"
+    },
+    "shoal-nc": {
+      "city": null,
+      "state": "NC"
+    },
+    "shook-branch-swimming-area-tn": {
+      "city": null,
+      "state": "TN"
+    },
+    "shore-street-river-access-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "short-beach-ct": {
+      "city": "Branford",
+      "state": "CT"
+    },
+    "short-sands-beach-me": {
+      "city": "York",
+      "state": "ME"
+    },
+    "silver-beach-ct": {
+      "city": "Milford",
+      "state": "CT"
+    },
+    "silver-lake-beach-nh": {
+      "city": "Hollis",
+      "state": "NH"
+    },
+    "silver-sands-beach-ct": {
+      "city": "East Haven",
+      "state": "CT"
+    },
+    "silver-sands-beach-ut": {
+      "city": "Magna",
+      "state": "UT"
+    },
+    "silver-sands-ct": {
+      "city": "Milford",
+      "state": "CT"
+    },
+    "skokomish-park-lake-cushman-day-use-area-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "slaughter-house-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "sliding-rock-nc": {
+      "city": null,
+      "state": "NC"
+    },
+    "smith-beach-ak": {
+      "city": null,
+      "state": "AK"
+    },
+    "snee-oosh-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "sonom-beach-ak": {
+      "city": null,
+      "state": "AK"
+    },
+    "sooes-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "sound-shore-md": {
+      "city": null,
+      "state": "MD"
+    },
+    "soundview-beach-ct": {
+      "city": "Old Lyme",
+      "state": "CT"
+    },
+    "south-beach-ak": {
+      "city": null,
+      "state": "AK"
+    },
+    "south-beach-area-md": {
+      "city": null,
+      "state": "MD"
+    },
+    "south-beach-ct": {
+      "city": "New Fairfield",
+      "state": "CT"
+    },
+    "south-beach-ga": {
+      "city": "Tybee Island",
+      "state": "GA"
+    },
+    "south-beach-md": {
+      "city": null,
+      "state": "MD"
+    },
+    "south-beach-me": {
+      "city": "Southport",
+      "state": "ME"
+    },
+    "south-beach-nh": {
+      "city": "Holderness",
+      "state": "NH"
+    },
+    "south-beach-sd": {
+      "city": "Lake Township",
+      "state": "SD"
+    },
+    "south-beach-vt": {
+      "city": "Westmore",
+      "state": "VT"
+    },
+    "south-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "south-cove-beach-nh": {
+      "city": "Grantham",
+      "state": "NH"
+    },
+    "south-forrest-bend-beach-tn": {
+      "city": null,
+      "state": "TN"
+    },
+    "south-holgate-street-end-wa": {
+      "city": "Seattle",
+      "state": "WA"
+    },
+    "south-mudbar-beach-tn": {
+      "city": "Collierville",
+      "state": "TN"
+    },
+    "south-pine-creek-beach-ct": {
+      "city": "Fairfield",
+      "state": "CT"
+    },
+    "south-point-beach-nc": {
+      "city": null,
+      "state": "NC"
+    },
+    "south-point-higgins-beach-ak": {
+      "city": null,
+      "state": "AK"
+    },
+    "south-sandy-beach-me": {
+      "city": "Matinicus Isle Plantation",
+      "state": "ME"
+    },
+    "southport-beach-ct": {
+      "city": "Fairfield",
+      "state": "CT"
+    },
+    "southwest-98th-street-end-wa": {
+      "city": "Seattle",
+      "state": "WA"
+    },
+    "southwest-brace-point-drive-street-end-wa": {
+      "city": "Seattle",
+      "state": "WA"
+    },
+    "southwest-bronson-way-street-end-wa": {
+      "city": "Seattle",
+      "state": "WA"
+    },
+    "southwest-cove-beach-vt": {
+      "city": "Westmore",
+      "state": "VT"
+    },
+    "southwest-cove-me": {
+      "city": "Swan's Island",
+      "state": "ME"
+    },
+    "sparrows-beach-md": {
+      "city": null,
+      "state": "MD"
+    },
+    "speelyi-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "spindle-cove-me": {
+      "city": "Swan's Island",
+      "state": "ME"
+    },
+    "spitting-caves-hi": {
+      "city": "Honolulu",
+      "state": "HI"
+    },
+    "spragues-beach-me": {
+      "city": "Islesboro",
+      "state": "ME"
+    },
+    "spring-beach-me": {
+      "city": "Phippsburg",
+      "state": "ME"
+    },
+    "spring-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "spring-cove-beach-me": {
+      "city": "Southport",
+      "state": "ME"
+    },
+    "springfield-town-beach-nh": {
+      "city": "Springfield",
+      "state": "NH"
+    },
+    "squalicum-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "staffordville-beach-ct": {
+      "city": "Stafford",
+      "state": "CT"
+    },
+    "stannard-beach-ct": {
+      "city": "Westbrook",
+      "state": "CT"
+    },
+    "state-park-beach-nh": {
+      "city": "Newbury",
+      "state": "NH"
+    },
+    "steep-bank-beach-me": {
+      "city": "Deer Isle",
+      "state": "ME"
+    },
+    "stevens-street-public-beach-access-nc": {
+      "city": "Surf City",
+      "state": "NC"
+    },
+    "stinchfield-beach-me": {
+      "city": "Leeds",
+      "state": "ME"
+    },
+    "stockdam-shore-sd": {
+      "city": "Ree Heights Township",
+      "state": "SD"
+    },
+    "stoughton-pond-recreation-area-vt": {
+      "city": "Weathersfield",
+      "state": "VT"
+    },
+    "sugar-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "sunny-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "sunny-cove-ut": {
+      "city": null,
+      "state": "UT"
+    },
+    "sunrise-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "sunset-beach-ct": {
+      "city": "Branford",
+      "state": "CT"
+    },
+    "sunset-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "sunset-beach-me": {
+      "city": "Portland",
+      "state": "ME"
+    },
+    "sunset-beach-nc": {
+      "city": null,
+      "state": "NC"
+    },
+    "sunset-beach-nh": {
+      "city": "Harrisville",
+      "state": "NH"
+    },
+    "sunset-beach-ut": {
+      "city": "Magna",
+      "state": "UT"
+    },
+    "sunset-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "suprise-beach-me": {
+      "city": "Chebeague Island",
+      "state": "ME"
+    },
+    "surfside-beach-me": {
+      "city": null,
+      "state": "ME"
+    },
+    "surprise-beach-wa": {
+      "city": "Vancouver",
+      "state": "WA"
+    },
+    "swan-lake-estates-beach-ga": {
+      "city": null,
+      "state": "GA"
+    },
+    "swanzy-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "swasey-s-beach-ut": {
+      "city": null,
+      "state": "UT"
+    },
+    "swift-st-beach-ct": {
+      "city": "Milford",
+      "state": "CT"
+    },
+    "swim-area-wa": {
+      "city": "Seattle",
+      "state": "WA"
+    },
+    "swim-beach-ak": {
+      "city": null,
+      "state": "AK"
+    },
+    "swim-beach-me": {
+      "city": "Monhegan Plantation",
+      "state": "ME"
+    },
+    "swim-beach-sd": {
+      "city": "Watertown",
+      "state": "SD"
+    },
+    "swim-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "swimming-area-tn": {
+      "city": "Nashville",
+      "state": "TN"
+    },
+    "swimming-area-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "swimming-beach-ga": {
+      "city": null,
+      "state": "GA"
+    },
+    "swimming-beach-md": {
+      "city": null,
+      "state": "MD"
+    },
+    "swimming-beach-nc": {
+      "city": null,
+      "state": "NC"
+    },
+    "swimming-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "swimming-hole-vt": {
+      "city": "Hardwick",
+      "state": "VT"
+    },
+    "sycamore-beach-md": {
+      "city": "Bethesda",
+      "state": "MD"
+    },
+    "sylvan-lake-beach-sd": {
+      "city": null,
+      "state": "SD"
+    },
+    "tanglewild-recreation-center-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "temnac-beach-ak": {
+      "city": null,
+      "state": "AK"
+    },
+    "temple-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "terrill-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "texaco-beach-vt": {
+      "city": "Burlington",
+      "state": "VT"
+    },
+    "thayer-beach-vt": {
+      "city": "Colchester",
+      "state": "VT"
+    },
+    "the-arbors-private-beach-wa": {
+      "city": "Lacey",
+      "state": "WA"
+    },
+    "the-brook-beach-me": {
+      "city": "Deer Isle",
+      "state": "ME"
+    },
+    "the-esplanade-west-wa": {
+      "city": "Seattle",
+      "state": "WA"
+    },
+    "the-landing-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "the-ledges-vt": {
+      "city": "Wilmington",
+      "state": "VT"
+    },
+    "the-sands-md": {
+      "city": null,
+      "state": "VA"
+    },
+    "third-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "thomas-point-beach-me": {
+      "city": "Brunswick",
+      "state": "ME"
+    },
+    "thompson-split-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "thompsonville-boat-launch-ct": {
+      "city": "Enfield",
+      "state": "CT"
+    },
+    "three-island-beach-me": {
+      "city": "Deer Isle",
+      "state": "ME"
+    },
+    "three-tables-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "thukkie-beach-hi": {
+      "city": "Honolulu",
+      "state": "HI"
+    },
+    "thusis-beach-nh": {
+      "city": "Madison",
+      "state": "NH"
+    },
+    "tibbetts-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "tina-bar-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "titlow-beach-wa": {
+      "city": "Tacoma",
+      "state": "WA"
+    },
+    "town-beach-ct": {
+      "city": "Waterford",
+      "state": "CT"
+    },
+    "town-beach-me": {
+      "city": "Readfield",
+      "state": "ME"
+    },
+    "treasure-island-beach-vt": {
+      "city": "West Fairlee",
+      "state": "VT"
+    },
+    "triton-beach-md": {
+      "city": null,
+      "state": "MD"
+    },
+    "tugboat-beach-wa": {
+      "city": "Anacortes",
+      "state": "WA"
+    },
+    "tulalip-shores-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "tunnels-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "turtle-bay-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "turtle-bay-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "turtle-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "twin-river-surf-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "twixt-hills-beach-ct": {
+      "city": "Ridgefield",
+      "state": "CT"
+    },
+    "tyler-s-pond-beach-me": {
+      "city": "Manchester",
+      "state": "ME"
+    },
+    "ukumehame-beach-park-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "ulua-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "uncas-point-beach-ct": {
+      "city": "Greenwich",
+      "state": "CT"
+    },
+    "upper-tanyard-creek-swimming-beach-ga": {
+      "city": null,
+      "state": "GA"
+    },
+    "victoria-beach-ct": {
+      "city": "East Haven",
+      "state": "CT"
+    },
+    "villa-rosa-terrace-beach-ct": {
+      "city": "Milford",
+      "state": "CT"
+    },
+    "vineyard-beach-ut": {
+      "city": "Vineyard",
+      "state": "UT"
+    },
+    "vista-point-beach-nc": {
+      "city": null,
+      "state": "NC"
+    },
+    "vor-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "wading-area-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "wadleigh-state-beach-nh": {
+      "city": "Sutton",
+      "state": "NH"
+    },
+    "wadsworth-cove-beach-me": {
+      "city": "Castine",
+      "state": "ME"
+    },
+    "waiakalua-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "waialae-beach-hi": {
+      "city": "Honolulu",
+      "state": "HI"
+    },
+    "waialea-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "waialee-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "waiapua-a-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "waikiki-beach-hi": {
+      "city": "East Honolulu",
+      "state": "HI"
+    },
+    "waikiki-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "waikoloa-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "wailea-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "wailua-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "waimanalo-beach-hi": {
+      "city": "East Honolulu",
+      "state": "HI"
+    },
+    "waimea-bay-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "waipio-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "waipu-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "wales-beach-me": {
+      "city": "Northport",
+      "state": "ME"
+    },
+    "walker-s-beach-me": {
+      "city": "Friendship",
+      "state": "ME"
+    },
+    "wallis-sands-beach-nh": {
+      "city": "Rye",
+      "state": "NH"
+    },
+    "walnut-beach-ct": {
+      "city": "Milford",
+      "state": "CT"
+    },
+    "walton-beach-me": {
+      "city": "Deer Isle",
+      "state": "ME"
+    },
+    "warmhouse-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "washaway-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "waterfront-ak": {
+      "city": null,
+      "state": "AK"
+    },
+    "waterfront-ct": {
+      "city": "Plymouth",
+      "state": "CT"
+    },
+    "waterfront-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "waukewan-beach-nh": {
+      "city": "Meredith",
+      "state": "NH"
+    },
+    "wawaloli-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "weaverling-spit-wa": {
+      "city": "Anacortes",
+      "state": "WA"
+    },
+    "weeburn-beach-ct": {
+      "city": "Norwalk",
+      "state": "CT"
+    },
+    "weed-beach-ct": {
+      "city": "Darien",
+      "state": "CT"
+    },
+    "weirs-beach-nh": {
+      "city": "Laconia",
+      "state": "NH"
+    },
+    "wells-beach-me": {
+      "city": "Wells",
+      "state": "ME"
+    },
+    "west-armour-street-end-wa": {
+      "city": "Seattle",
+      "state": "WA"
+    },
+    "west-barrett-street-end-wa": {
+      "city": "Seattle",
+      "state": "WA"
+    },
+    "west-beach-ak": {
+      "city": null,
+      "state": "AK"
+    },
+    "west-beach-ct": {
+      "city": "Westbrook",
+      "state": "CT"
+    },
+    "west-beach-wa": {
+      "city": "Anacortes",
+      "state": "WA"
+    },
+    "west-bethany-beach-tn": {
+      "city": null,
+      "state": "TN"
+    },
+    "west-claw-beach-tn": {
+      "city": null,
+      "state": "TN"
+    },
+    "west-cove-a-beach-nh": {
+      "city": "Grantham",
+      "state": "NH"
+    },
+    "west-cove-b-beach-nh": {
+      "city": "Grantham",
+      "state": "NH"
+    },
+    "west-cramer-street-end-wa": {
+      "city": "Seattle",
+      "state": "WA"
+    },
+    "west-denny-way-street-end-wa": {
+      "city": "Seattle",
+      "state": "WA"
+    },
+    "west-dravus-street-end-wa": {
+      "city": "Seattle",
+      "state": "WA"
+    },
+    "west-falcon-head-beach-tn": {
+      "city": "Collierville",
+      "state": "TN"
+    },
+    "west-georges-curve-beach-tn": {
+      "city": null,
+      "state": "TN"
+    },
+    "west-green-lake-beach-wa": {
+      "city": "Seattle",
+      "state": "WA"
+    },
+    "west-houston-shore-beach-tn": {
+      "city": "Collierville",
+      "state": "TN"
+    },
+    "west-junction-shore-tn": {
+      "city": null,
+      "state": "TN"
+    },
+    "west-mcgraw-street-end-wa": {
+      "city": "Seattle",
+      "state": "WA"
+    },
+    "west-potato-beach-tn": {
+      "city": null,
+      "state": "TN"
+    },
+    "west-raye-street-end-wa": {
+      "city": "Seattle",
+      "state": "WA"
+    },
+    "west-robbins-halle-beach-tn": {
+      "city": "Collierville",
+      "state": "TN"
+    },
+    "west-sheridan-street-end-wa": {
+      "city": "Seattle",
+      "state": "WA"
+    },
+    "west-shore-sandy-beach-me": {
+      "city": "Portland",
+      "state": "ME"
+    },
+    "west-silver-sands-beach-ct": {
+      "city": "East Haven",
+      "state": "CT"
+    },
+    "west-snake-beach-tn": {
+      "city": "Germantown",
+      "state": "TN"
+    },
+    "west-thomas-street-end-wa": {
+      "city": "Seattle",
+      "state": "WA"
+    },
+    "west-twin-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "western-beach-me": {
+      "city": "Scarborough",
+      "state": "ME"
+    },
+    "westport-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "whale-beach-me": {
+      "city": "Frenchboro",
+      "state": "ME"
+    },
+    "whiskey-gulch-beach-ak": {
+      "city": null,
+      "state": "AK"
+    },
+    "white-beach-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "white-oak-beach-nc": {
+      "city": null,
+      "state": "NC"
+    },
+    "white-river-swimming-spot-vt": {
+      "city": "Royalton",
+      "state": "VT"
+    },
+    "white-sand-beach-ct": {
+      "city": "Old Lyme",
+      "state": "CT"
+    },
+    "white-sands-beach-nh": {
+      "city": "Pembroke",
+      "state": "NH"
+    },
+    "white-sands-lake-beach-la": {
+      "city": null,
+      "state": "LA"
+    },
+    "wickes-beach-md": {
+      "city": null,
+      "state": "MD"
+    },
+    "wicomico-beach-md": {
+      "city": null,
+      "state": "MD"
+    },
+    "wild-rose-shores-md": {
+      "city": null,
+      "state": "MD"
+    },
+    "wilkies-beach-me": {
+      "city": "Gray",
+      "state": "ME"
+    },
+    "willard-beach-me": {
+      "city": "South Portland",
+      "state": "ME"
+    },
+    "williams-beach-ct": {
+      "city": "Stonington",
+      "state": "CT"
+    },
+    "willow-st-beach-nh": {
+      "city": "Pelham",
+      "state": "NH"
+    },
+    "windboarding-beachhead-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "windham-town-beach-nh": {
+      "city": "Windham",
+      "state": "NH"
+    },
+    "windsurfer-beach-ut": {
+      "city": "Ogden Valley",
+      "state": "UT"
+    },
+    "winmir-beach-nh": {
+      "city": "Tuftonboro",
+      "state": "NH"
+    },
+    "winnisquam-beach-nh": {
+      "city": "Sanbornton",
+      "state": "NH"
+    },
+    "wolfeboro-town-beach-nh": {
+      "city": "Wolfeboro",
+      "state": "NH"
+    },
+    "woodstock-town-beach-ct": {
+      "city": "Woodstock",
+      "state": "CT"
+    },
+    "woodway-beach-club-ct": {
+      "city": "Stamford",
+      "state": "CT"
+    },
+    "wrangell-beach-ak": {
+      "city": null,
+      "state": "AK"
+    },
+    "wyllie-s-beach-hi": {
+      "city": null,
+      "state": "HI"
+    },
+    "yellow-banks-wa": {
+      "city": null,
+      "state": "WA"
+    },
+    "yellow-jacket-beach-ga": {
+      "city": null,
+      "state": "GA"
+    },
+    "zoar-beach-ct": {
+      "city": "Monroe",
+      "state": "CT"
     }
   }
 }
