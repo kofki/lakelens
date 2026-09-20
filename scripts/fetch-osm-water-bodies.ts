@@ -20,12 +20,24 @@
  * It also unblocks the coastal states. Once a park has to name its lake, California and
  * Florida stop being dangerous to harvest: an ocean beach names no lake and falls out.
  *
- * ALIGNMENT
- * ---------
- * Overpass returns one flat array, so a batch of `around` queries cannot be matched back
- * to its points by position when some return nothing. Each point therefore ends with a
- * `make` statement, which emits exactly one element whether or not the query matched, and
- * carries the point's index in the batch.
+ * WHY ONE QUERY PER STATE AND NOT ONE PER PARK
+ * --------------------------------------------
+ * The obvious shape is an `around` query per park. It was tried, and it does not finish:
+ * a single point took 204 seconds on the one mirror that was still answering, twelve
+ * points in a batch timed out on all three, and the main endpoint refused this IP outright
+ * after a morning of harvesting.
+ *
+ * So each state is asked once for every named lake and river it contains, with bounding
+ * boxes, and the matching happens here. That is 21 requests instead of 846, it caches, and
+ * a re-run costs nothing.
+ *
+ * WHAT A BOUNDING BOX CAN AND CANNOT TELL YOU
+ * -------------------------------------------
+ * A box is not a shoreline. Around a crescent-shaped lake it covers water the lake is not
+ * in, so the smallest box containing the point wins: a small inland lake beats Lake
+ * Michigan wherever both contain the park, and Lake Michigan only wins where nothing
+ * smaller does. Rivers are taken from ways rather than relations, because a relation for
+ * the Mississippi has a box the size of the country and would match everything in it.
  */
 import { join } from "node:path";
 
@@ -143,71 +155,108 @@ interface Point {
   slug: string;
   lat: number;
   lng: number;
+  state?: string | null;
 }
 
-/**
- * One request covering `points`.
- *
- * Three sets per point: named water areas, named linear waterways, and the two features
- * that are disqualifying or defining on their own (coastline, spring). The `make` carries
- * the index so a point that matched nothing still occupies its slot in the response.
- */
-export function buildBatchQuery(points: Point[], radiusM = RADIUS_M): string {
-  const lakeFilter = `["water"~"^(${LAKE_KINDS.join("|")})$"]`;
-  const riverFilter = `["waterway"~"^(${RIVER_WAYS.join("|")})$"]`;
-  const parts = [`[out:json][timeout:${Math.round(TIMEOUT_MS / 1000)}];`];
-  points.forEach((p, i) => {
-    const at = `around:${radiusM},${p.lat},${p.lng}`;
-    parts.push(
-      `nwr(${at})["natural"="water"]["name"]${lakeFilter}->.l;`,
-      // Named only. Asking for every `waterway` in range, with no value or name filter,
-      // matched boatyards and fairways and took three minutes for a single point.
-      `way(${at})${riverFilter}["name"]->.r;`,
-      `way(${at})["natural"="coastline"]->.c;`,
-      `nwr(${at})["natural"="spring"]->.s;`,
-      `nwr(${at})["natural"="water"]["name"]->.w;`,
-      `make probe i=${i},` +
-        ` lakes=l.set(t["name"]), rivers=r.set(t["name"]), names=w.set(t["name"]),` +
-        ` coast=c.count(ways), spring=s.count(nwr);`,
-      "out;",
-    );
-  });
-  return parts.join("\n");
-}
-
-interface ProbeElement {
+interface OverpassElement {
+  type: "node" | "way" | "relation";
+  id: number;
+  lat?: number;
+  lon?: number;
+  bounds?: { minlat: number; minlon: number; maxlat: number; maxlon: number };
   tags?: Record<string, string>;
 }
 
-/** Overpass joins a `set()` with ";" and returns "" for an empty set. */
-function splitSet(value: string | undefined): string[] {
-  if (!value) return [];
-  return [...new Set(value.split(";").map((s) => s.trim()).filter(Boolean))];
+export interface WaterFeature {
+  name: string;
+  kind: "lake" | "river";
+  /** [south, west, north, east]. A node feature gets a degenerate box at its point. */
+  bbox: [number, number, number, number];
 }
 
-export function parseBatch(elements: ProbeElement[], points: Point[]): Map<string, WaterProbe> {
-  const out = new Map<string, WaterProbe>();
+/** Every named lake and river in one state, with boxes rather than geometry. */
+export function buildStateWaterQuery(state: string): string {
+  const lakes = `["water"~"^(${LAKE_KINDS.join("|")})$"]`;
+  const rivers = `["waterway"~"^(${RIVER_WAYS.join("|")})$"]`;
+  return [
+    `[out:json][timeout:${Math.round(TIMEOUT_MS / 1000)}];`,
+    `area["ISO3166-2"="US-${state}"][admin_level=4]->.a;`,
+    "(",
+    `  nwr["natural"="water"]["name"]${lakes}(area.a);`,
+    // Ways only. A relation for a long river has a box the size of the state.
+    `  way["name"]${rivers}(area.a);`,
+    ");",
+    "out ids tags bb;",
+  ].join("\n");
+}
+
+export function parseWaterFeatures(elements: OverpassElement[]): WaterFeature[] {
+  const out: WaterFeature[] = [];
   for (const el of elements ?? []) {
-    const t = el.tags ?? {};
-    const i = Number(t.i);
-    const point = points[i];
-    if (!point) continue;
-    out.set(point.slug, {
-      lakes: splitSet(t.lakes),
-      rivers: splitSet(t.rivers),
-      names: splitSet(t.names),
-      coastline: Number(t.coast ?? 0) > 0,
-      spring: Number(t.spring ?? 0) > 0,
-    });
+    const tags = el.tags ?? {};
+    const name = (tags.name ?? "").trim();
+    if (!name) continue;
+    const kind: WaterFeature["kind"] = tags.waterway ? "river" : "lake";
+    if (el.bounds) {
+      out.push({ name, kind, bbox: [el.bounds.minlat, el.bounds.minlon, el.bounds.maxlat, el.bounds.maxlon] });
+    } else if (typeof el.lat === "number" && typeof el.lon === "number") {
+      out.push({ name, kind, bbox: [el.lat, el.lon, el.lat, el.lon] });
+    }
   }
   return out;
 }
 
-async function post(query: string): Promise<ProbeElement[]> {
+/**
+ * How far outside a box still counts as being on that water.
+ *
+ * A beach is on the shore, and a car park or a mapping imprecision puts the point just
+ * outside. 600 m is about the width of a large beach and its parking.
+ */
+export const PAD_M = 600;
+const M_PER_DEG_LAT = 111_320;
+
+function contains(bbox: WaterFeature["bbox"], point: Point, padM: number): boolean {
+  const [s, w, n, e] = bbox;
+  const padLat = padM / M_PER_DEG_LAT;
+  const padLon = padLat / Math.max(Math.cos((point.lat * Math.PI) / 180), 0.2);
+  return point.lat >= s - padLat && point.lat <= n + padLat && point.lng >= w - padLon && point.lng <= e + padLon;
+}
+
+/** Box area in square degrees. Only ever compared against another box, so units do not matter. */
+function boxSize(bbox: WaterFeature["bbox"]): number {
+  return Math.max(bbox[2] - bbox[0], 1e-9) * Math.max(bbox[3] - bbox[1], 1e-9);
+}
+
+/**
+ * The water around one point, smallest box first.
+ *
+ * Sorting by size is what stops every Lake Michigan beach in Chicago from also matching
+ * the three ponds in Grant Park: the nearest thing that actually contains the point is the
+ * smallest one that does.
+ */
+export function probeFrom(point: Point, features: WaterFeature[], padM = PAD_M): WaterProbe {
+  const hits = features
+    .filter((f) => contains(f.bbox, point, padM))
+    .sort((a, b) => boxSize(a.bbox) - boxSize(b.bbox));
+  const lakes = hits.filter((f) => f.kind === "lake").map((f) => f.name);
+  const rivers = hits.filter((f) => f.kind === "river").map((f) => f.name);
+  return {
+    lakes: [...new Set(lakes)],
+    rivers: [...new Set(rivers)],
+    names: [...new Set([...lakes, ...rivers])],
+    // A statewide query cannot see the coastline cheaply, and every state harvested so far
+    // is landlocked or borders only a Great Lake. This has to be filled in before a coastal
+    // state is harvested; until then `lakes` being empty is what rejects an ocean beach.
+    coastline: false,
+    spring: false,
+  };
+}
+
+async function post(query: string): Promise<OverpassElement[]> {
   // Pre-encoded: passing the URLSearchParams object itself makes fetch send a charset the
   // API answers with 406.
   const body = new URLSearchParams({ data: query }).toString();
-  let lastStatus = 0;
+  let lastError = "network error";
   for (const endpoint of ENDPOINTS) {
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
@@ -218,79 +267,98 @@ async function post(query: string): Promise<ProbeElement[]> {
         headers: { "Content-Type": "application/x-www-form-urlencoded", "User-Agent": USER_AGENT },
         signal: controller.signal,
       });
-      lastStatus = res.status;
-      if (res.ok) return ((await res.json()) as { elements?: ProbeElement[] }).elements ?? [];
+      if (res.ok) return ((await res.json()) as { elements?: OverpassElement[] }).elements ?? [];
+      lastError = `HTTP ${res.status}`;
       // 406 and 429 are both "you are asking too fast", not "your query is wrong".
       if (res.status === 406 || res.status === 429) await sleep(GAP_MS * 3);
-    } catch {
-      // try the next mirror
+    } catch (err) {
+      lastError = (err as Error).message;
     } finally {
       clearTimeout(timer);
     }
   }
-  throw new Error(`Overpass refused the batch (last status ${lastStatus || "network error"})`);
+  throw new Error(`Overpass refused the query (${lastError})`);
+}
+
+async function fetchState(state: string): Promise<WaterFeature[]> {
+  const cachePath = join(CACHE_DIR, `osm-water-${state}.json`);
+  if (!REFRESH) {
+    const cached = readJson<{ features: WaterFeature[] }>(cachePath);
+    if (cached?.features) {
+      log(`${state}: ${cached.features.length} water features (cache)`);
+      return cached.features;
+    }
+  }
+  const features = parseWaterFeatures(await post(buildStateWaterQuery(state)));
+  writeJson(cachePath, { features });
+  log(`${state}: ${features.length} water features (network)`);
+  return features;
 }
 
 async function main(): Promise<void> {
-  const limitArg = process.argv.find((a) => a.startsWith("--limit="));
-  const limit = limitArg ? Number(limitArg.split("=")[1]) : Infinity;
+  const states = process.argv.slice(2).filter((a) => /^[A-Z]{2}$/.test(a));
 
   const source = readJson<{ parks: Point[] }>(IN_PATH);
   if (!source?.parks?.length) throw new Error(`no parks in ${IN_PATH}; run fetch-osm-swim-areas.ts first`);
-  const points = source.parks.slice(0, limit).map((p) => ({ slug: p.slug, lat: p.lat, lng: p.lng }));
 
-  const cachePath = join(CACHE_DIR, "osm-water-bodies.json");
-  const cached = REFRESH ? {} : (readJson<Record<string, WaterProbe>>(cachePath) ?? {});
-  const probes: Record<string, WaterProbe> = { ...cached };
-
-  const todo = points.filter((p) => !probes[p.slug]);
-  log(`${points.length} points, ${points.length - todo.length} cached, ${todo.length} to probe`);
-
-  for (let i = 0; i < todo.length; i += BATCH) {
-    const batch = todo.slice(i, i + BATCH);
-    try {
-      const elements = await post(buildBatchQuery(batch));
-      const parsed = parseBatch(elements, batch);
-      for (const [slug, probe] of parsed) probes[slug] = probe;
-      log(`${i + batch.length}/${todo.length} probed (${parsed.size} answered)`);
-      // Written every batch: a throttled run keeps everything it paid for.
-      writeJson(cachePath, probes);
-    } catch (err) {
-      log(`batch at ${i} failed: ${(err as Error).message}`);
-      log("cached batches are kept; wait a few minutes and re-run to continue");
-      break;
-    }
-    if (i + BATCH < todo.length) await sleep(GAP_MS);
+  const byState = new Map<string, Point[]>();
+  for (const park of source.parks) {
+    const state = park.state ?? null;
+    if (!state) continue;
+    if (states.length > 0 && !states.includes(state)) continue;
+    const list = byState.get(state) ?? [];
+    list.push({ slug: park.slug, lat: park.lat, lng: park.lng, state });
+    byState.set(state, list);
   }
+  log(`${[...byState.values()].reduce((n, l) => n + l.length, 0)} parks across ${byState.size} states`);
 
   const verdicts: Record<string, WaterVerdict> = {};
   const counts = { kept: 0, dropped: 0, greatLake: 0, lake: 0, river: 0, spring: 0 };
-  for (const p of points) {
-    const probe = probes[p.slug];
-    if (!probe) continue;
-    const verdict = classify(probe);
-    verdicts[p.slug] = verdict;
-    if (!verdict.water_body) counts.dropped += 1;
-    else {
-      counts.kept += 1;
-      if (verdict.great_lake) counts.greatLake += 1;
-      counts[verdict.type!] += 1;
+  const failed: string[] = [];
+
+  for (const [state, points] of [...byState].sort()) {
+    let features: WaterFeature[];
+    try {
+      features = await fetchState(state);
+    } catch (err) {
+      // One state's parks keep no verdict, which leaves them published unchanged rather
+      // than dropped: a failed lookup is not evidence against a park.
+      failed.push(state);
+      log(`${state} failed: ${(err as Error).message}`);
+      await sleep(GAP_MS);
+      continue;
     }
+
+    let kept = 0;
+    for (const point of points) {
+      const verdict = classify(probeFrom(point, features));
+      verdicts[point.slug] = verdict;
+      if (!verdict.water_body) counts.dropped += 1;
+      else {
+        kept += 1;
+        counts.kept += 1;
+        if (verdict.great_lake) counts.greatLake += 1;
+        counts[verdict.type!] += 1;
+      }
+    }
+    log(`${state}: ${kept}/${points.length} named their water`);
+    await sleep(GAP_MS);
   }
 
   writeJson(OUT_PATH, {
     _note:
       "Water body each OSM swim area sits on, from scripts/fetch-osm-water-bodies.ts. " +
-      "water_body null means the point could not name fresh water within " +
-      `${RADIUS_M} m and should not be published.`,
+      "Matched by bounding box against every named lake and river in the state, smallest " +
+      "box first. water_body null means the point named no fresh water and is not published.",
     generated_at: new Date().toISOString(),
-    radius_m: RADIUS_M,
+    pad_m: PAD_M,
     verdicts,
   });
   log(`wrote ${OUT_PATH}`);
   log(`  kept ${counts.kept} (lake ${counts.lake}, river ${counts.river}, spring ${counts.spring})`);
   log(`  of those, Great Lakes shoreline: ${counts.greatLake}`);
   log(`  dropped ${counts.dropped}`);
+  if (failed.length) log(`  states with no answer, left untouched: ${failed.join(", ")}`);
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) await main();

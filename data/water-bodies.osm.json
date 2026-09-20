@@ -1,0 +1,25 @@
+{
+  "_note": "Water body each OSM swim area sits on, from scripts/fetch-osm-water-bodies.ts. Matched by bounding box against every named lake and river in the state, smallest box first. water_body null means the point named no fresh water and is not published.",
+  "generated_at": "2026-09-20T08:40:51.854Z",
+  "pad_m": 600,
+  "verdicts": {
+    "rice-lake-park-public-swimming-area-nd": {
+      "water_body": "Rice Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "bee-run-swimming-area-wv": {
+      "water_body": "Sutton Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "bulltown-swimming-area-wv": {
+      "water_body": "Burnsville Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    }
+  }
+}

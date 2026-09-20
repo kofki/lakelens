@@ -1,5 +1,12 @@
 import { describe, expect, it } from "vitest";
-import { buildBatchQuery, classify, parseBatch, type WaterProbe } from "./fetch-osm-water-bodies.ts";
+import {
+  buildStateWaterQuery,
+  classify,
+  parseWaterFeatures,
+  probeFrom,
+  type WaterFeature,
+  type WaterProbe,
+} from "./fetch-osm-water-bodies.ts";
 
 function probe(over: Partial<WaterProbe> = {}): WaterProbe {
   return { lakes: [], rivers: [], names: [], coastline: false, spring: false, ...over };
@@ -58,39 +65,59 @@ describe("classify", () => {
   });
 });
 
-describe("batch alignment", () => {
-  const points = [
-    { slug: "a", lat: 1, lng: 2 },
-    { slug: "b", lat: 3, lng: 4 },
-  ];
+describe("buildStateWaterQuery", () => {
+  it("asks for lakes as areas and rivers as ways only", () => {
+    const q = buildStateWaterQuery("MI");
+    expect(q).toContain('area["ISO3166-2"="US-MI"]');
+    expect(q).toContain('nwr["natural"="water"]["name"]["water"~"^(lake|reservoir|pond|oxbow)$"]');
+    // A relation for a long river has a box the size of the state, so ways only.
+    expect(q).toContain('way["name"]["waterway"~"^(river|stream|canal)$"]');
+    expect(q).toContain("out ids tags bb;");
+  });
+});
 
-  it("asks for every point", () => {
-    const q = buildBatchQuery(points);
-    expect(q).toContain("around:400,1,2");
-    expect(q).toContain("around:400,3,4");
-    expect(q.match(/make probe/g)).toHaveLength(2);
+describe("parseWaterFeatures", () => {
+  it("reads a box from a way and a point from a node", () => {
+    const features = parseWaterFeatures([
+      { type: "way", id: 1, tags: { name: "Devils Lake", water: "lake" }, bounds: { minlat: 1, minlon: 2, maxlat: 3, maxlon: 4 } },
+      { type: "node", id: 2, lat: 5, lon: 6, tags: { name: "Spring Pond", water: "pond" } },
+      { type: "way", id: 3, tags: { name: "Rock River", waterway: "river" }, bounds: { minlat: 0, minlon: 0, maxlat: 9, maxlon: 9 } },
+    ]);
+    expect(features).toEqual([
+      { name: "Devils Lake", kind: "lake", bbox: [1, 2, 3, 4] },
+      { name: "Spring Pond", kind: "lake", bbox: [5, 6, 5, 6] },
+      { name: "Rock River", kind: "river", bbox: [0, 0, 9, 9] },
+    ]);
   });
 
-  it("never asks for an unnamed waterway, which is what made a single point take minutes", () => {
-    const q = buildBatchQuery(points);
-    for (const line of q.split("\n").filter((l) => l.includes("waterway"))) {
-      expect(line).toContain('["name"]');
-    }
+  it("skips anything unnamed or with no position at all", () => {
+    expect(parseWaterFeatures([{ type: "way", id: 1, tags: { water: "lake" } }, { type: "way", id: 2, tags: { name: "X" } }])).toEqual([]);
+  });
+});
+
+describe("probeFrom", () => {
+  const big: WaterFeature = { name: "Lake Michigan", kind: "lake", bbox: [41, -88, 46, -85] };
+  const small: WaterFeature = { name: "Grant Park Pond", kind: "lake", bbox: [41.87, -87.62, 41.88, -87.61] };
+  const river: WaterFeature = { name: "Chicago River", kind: "river", bbox: [41.8, -87.7, 41.9, -87.6] };
+
+  it("puts the smallest containing box first, so a pond beats a Great Lake", () => {
+    const probe = probeFrom({ slug: "x", lat: 41.875, lng: -87.615 }, [big, small, river]);
+    expect(probe.lakes[0]).toBe("Grant Park Pond");
+    expect(probe.lakes).toContain("Lake Michigan");
+    expect(probe.rivers).toEqual(["Chicago River"]);
   });
 
-  it("keeps a point that matched nothing in its own slot", () => {
-    const parsed = parseBatch(
-      [
-        { tags: { i: "0", lakes: "", rivers: "", names: "", coast: "0", spring: "0" } },
-        { tags: { i: "1", lakes: "Devils Lake", rivers: "Messenger Creek", names: "Devils Lake", coast: "0", spring: "0" } },
-      ],
-      points,
-    );
-    expect(parsed.get("a")?.lakes).toEqual([]);
-    expect(parsed.get("b")).toMatchObject({ lakes: ["Devils Lake"], rivers: ["Messenger Creek"] });
+  it("leaves the Great Lake when nothing smaller contains the point", () => {
+    expect(probeFrom({ slug: "x", lat: 43, lng: -86.5 }, [big, small, river]).lakes).toEqual(["Lake Michigan"]);
   });
 
-  it("ignores an index that is not in this batch", () => {
-    expect(parseBatch([{ tags: { i: "9", names: "Ghost Lake" } }], points).size).toBe(0);
+  it("reaches a little past the box, because a beach is on the shore", () => {
+    // ~300 m north of the pond's top edge, inside the 600 m pad.
+    expect(probeFrom({ slug: "x", lat: 41.8827, lng: -87.615 }, [small]).lakes).toEqual(["Grant Park Pond"]);
+    expect(probeFrom({ slug: "x", lat: 41.95, lng: -87.615 }, [small]).lakes).toEqual([]);
+  });
+
+  it("finds nothing at all where there is no water", () => {
+    expect(probeFrom({ slug: "x", lat: 0, lng: 0 }, [big, small, river])).toMatchObject({ lakes: [], rivers: [], names: [] });
   });
 });
