@@ -1,6 +1,6 @@
 {
   "_note": "Nearest town to each park, reverse-geocoded from OpenStreetMap Nominatim by scripts/fetch-place-names.ts. city is null when the answer was a county or nothing.",
-  "generated_at": "2026-09-20T11:03:56.222Z",
+  "generated_at": "2026-09-20T11:54:01.188Z",
   "places": {
     "ichetucknee-springs-state-park": {
       "city": null,
@@ -8545,6 +8545,8042 @@
     "zoar-beach-ct": {
       "city": "Monroe",
       "state": "CT"
+    },
+    "10th-avenue-south-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "10th-street-beach-access-al": {
+      "city": "Gulf Shores",
+      "state": "AL"
+    },
+    "11th-avenue-south-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "13th-avenue-south-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "13th-st-beach-access-al": {
+      "city": "Gulf Shores",
+      "state": "AL"
+    },
+    "14th-avenue-south-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "14th-street-beach-fl": {
+      "city": "Miami Beach",
+      "state": "FL"
+    },
+    "15th-avenue-south-beach-fl": {
+      "city": "Naples",
+      "state": "FL"
+    },
+    "16th-avenue-south-beach-fl": {
+      "city": "Naples",
+      "state": "FL"
+    },
+    "17th-avenue-south-beach-fl": {
+      "city": "Naples",
+      "state": "FL"
+    },
+    "18th-avenue-south-beach-fl": {
+      "city": "Naples",
+      "state": "FL"
+    },
+    "1st-avenue-north-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "1st-avenue-south-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "21st-avenue-south-beach-fl": {
+      "city": "Naples",
+      "state": "FL"
+    },
+    "2222-beach-ca": {
+      "city": "Santa Cruz",
+      "state": "CA"
+    },
+    "2nd-avenue-north-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "2nd-avenue-south-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "32nd-avenue-south-beach-fl": {
+      "city": "Naples",
+      "state": "FL"
+    },
+    "33rd-avenue-south-beach-fl": {
+      "city": "Naples",
+      "state": "FL"
+    },
+    "38th-avenue-coastal-access-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "3rd-avenue-north-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "3rd-avenue-south-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "4-island-lake-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "4th-avenue-north-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "4th-avenue-south-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "5th-avenue-park-nj": {
+      "city": "Seaside Park",
+      "state": "NJ"
+    },
+    "5th-avenue-south-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "6th-avenue-north-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "6th-avenue-south-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "6th-street-beach-access-al": {
+      "city": "Gulf Shores",
+      "state": "AL"
+    },
+    "7th-avenue-north-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "7th-avenue-south-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "8th-avenue-north-beach-fl": {
+      "city": "Naples",
+      "state": "FL"
+    },
+    "9th-avenue-south-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "aardvark-beach-ca": {
+      "city": "Burlingame",
+      "state": "CA"
+    },
+    "adams-point-beach-ny": {
+      "city": "Town of Canaan",
+      "state": "NY"
+    },
+    "aeneas-beach-ca": {
+      "city": "Monterey",
+      "state": "CA"
+    },
+    "agate-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "agate-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "alabama-point-beach-al": {
+      "city": "Orange Beach",
+      "state": "AL"
+    },
+    "alamitos-bay-beach-ca": {
+      "city": "Long Beach",
+      "state": "CA"
+    },
+    "alan-sieroty-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "albany-beach-ca": {
+      "city": "Albany",
+      "state": "CA"
+    },
+    "alhambra-beach-ny": {
+      "city": "Town of Oyster Bay",
+      "state": "NY"
+    },
+    "aliso-beach-ca": {
+      "city": "Laguna Beach",
+      "state": "CA"
+    },
+    "allenhurst-beach-club-nj": {
+      "city": "Allenhurst",
+      "state": "NJ"
+    },
+    "alligator-hole-ca": {
+      "city": "Chico",
+      "state": "CA"
+    },
+    "allison-hagerup-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "alys-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "amagansett-beach-ny": {
+      "city": "Town of East Hampton",
+      "state": "NY"
+    },
+    "amarillo-beach-ca": {
+      "city": "Malibu",
+      "state": "CA"
+    },
+    "american-legion-beach-ma": {
+      "city": null,
+      "state": "MA"
+    },
+    "amherst-beach-nj": {
+      "city": "Berkeley Township",
+      "state": "NJ"
+    },
+    "amityville-beach-ny": {
+      "city": "Village of Amityville",
+      "state": "NY"
+    },
+    "anastasia-state-park-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "andy-rosse-lane-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "annadale-beach-ny": {
+      "city": "New York",
+      "state": "NY"
+    },
+    "anne-s-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "apache-beach-sc": {
+      "city": null,
+      "state": "SC"
+    },
+    "apollo-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "aquatic-cove-ca": {
+      "city": "San Francisco",
+      "state": "CA"
+    },
+    "arcadia-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "arcadia-beach-sc": {
+      "city": null,
+      "state": "SC"
+    },
+    "arch-beach-ca": {
+      "city": "Laguna Beach",
+      "state": "CA"
+    },
+    "arched-rock-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "arizona-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "arrowhead-resort-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "arroyo-burro-beach-ca": {
+      "city": "Santa Barbara",
+      "state": "CA"
+    },
+    "arroyo-de-los-frijoles-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "asharoken-beach-ny": {
+      "city": "Town of Huntington",
+      "state": "NY"
+    },
+    "ashfield-town-beach-ma": {
+      "city": "Ashfield",
+      "state": "MA"
+    },
+    "asilomar-state-beach-ca": {
+      "city": "Pacific Grove",
+      "state": "CA"
+    },
+    "atlantic-beach-ny": {
+      "city": "Village of Atlantic Beach",
+      "state": "NY"
+    },
+    "atlantic-beach-ri": {
+      "city": "Middletown",
+      "state": "RI"
+    },
+    "atlantic-beach-sc": {
+      "city": "Atlantic Beach",
+      "state": "SC"
+    },
+    "atlantique-beach-ny": {
+      "city": "Town of Islip",
+      "state": "NY"
+    },
+    "aurora-19-public-beach-access-tx": {
+      "city": "South Padre Island",
+      "state": "TX"
+    },
+    "avalis-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "avila-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "babe-s-beach-tx": {
+      "city": "Galveston",
+      "state": "TX"
+    },
+    "baby-beach-ca": {
+      "city": "Dana Point",
+      "state": "CA"
+    },
+    "baby-beach-ma": {
+      "city": "Wilmington",
+      "state": "MA"
+    },
+    "baby-beach-ri": {
+      "city": "New Shoreham",
+      "state": "RI"
+    },
+    "back-beach-ma": {
+      "city": "Rockport",
+      "state": "MA"
+    },
+    "bahama-beach-fl": {
+      "city": "Saint Petersburg",
+      "state": "FL"
+    },
+    "bahia-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "bailey-beach-ri": {
+      "city": "Newport",
+      "state": "RI"
+    },
+    "baker-beach-ca": {
+      "city": "San Francisco",
+      "state": "CA"
+    },
+    "baker-beach-clothing-optional-area-ca": {
+      "city": "San Francisco",
+      "state": "CA"
+    },
+    "baker-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "balboa-beach-ca": {
+      "city": "Newport Beach",
+      "state": "CA"
+    },
+    "baldwin-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "ballston-beach-ma": {
+      "city": "Truro",
+      "state": "MA"
+    },
+    "bally-s-legend-s-vip-beach-nj": {
+      "city": "Atlantic City",
+      "state": "NJ"
+    },
+    "bandon-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "bank-street-beach-ma": {
+      "city": "Harwich",
+      "state": "MA"
+    },
+    "bannings-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "bar-beach-ny": {
+      "city": "Town of North Hempstead",
+      "state": "NY"
+    },
+    "barbara-road-beach-ma": {
+      "city": "North Attleborough",
+      "state": "MA"
+    },
+    "barcelona-beach-and-dan-reed-pier-ny": {
+      "city": null,
+      "state": "NY"
+    },
+    "barcelona-harbor-beach-ny": {
+      "city": "Town of Westfield",
+      "state": "NY"
+    },
+    "barges-beach-ma": {
+      "city": "Gosnold",
+      "state": "MA"
+    },
+    "barley-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "barlow-s-landing-beach-ma": {
+      "city": "Bourne",
+      "state": "MA"
+    },
+    "barnegat-light-bay-beach-nj": {
+      "city": "Barnegat Light",
+      "state": "NJ"
+    },
+    "barnhart-island-beach-ny": {
+      "city": "Town of Massena",
+      "state": "NY"
+    },
+    "barrier-beach-ma": {
+      "city": "Scituate",
+      "state": "MA"
+    },
+    "barrington-beach-ri": {
+      "city": null,
+      "state": "RI"
+    },
+    "bass-river-beach-ma": {
+      "city": "Yarmouth",
+      "state": "MA"
+    },
+    "bassing-beach-ma": {
+      "city": "Scituate",
+      "state": "MA"
+    },
+    "bastendorff-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "bathing-beach-number-1-nj": {
+      "city": "Berkeley Township",
+      "state": "NJ"
+    },
+    "bathing-beach-number-2-nj": {
+      "city": "Berkeley Township",
+      "state": "NJ"
+    },
+    "bay-beach-nj": {
+      "city": "Ocean Township",
+      "state": "NJ"
+    },
+    "bay-colony-dog-beach-va": {
+      "city": "Virginia Beach",
+      "state": "VA"
+    },
+    "bay-shore-buoy-line-ca": {
+      "city": "Long Beach",
+      "state": "CA"
+    },
+    "bay-street-beach-ca": {
+      "city": "Santa Monica",
+      "state": "CA"
+    },
+    "bay-view-street-beach-ma": {
+      "city": "Yarmouth",
+      "state": "MA"
+    },
+    "bayberry-beach-club-ny": {
+      "city": "Town of Islip",
+      "state": "NY"
+    },
+    "bayside-beach-de": {
+      "city": null,
+      "state": "DE"
+    },
+    "bayview-avenue-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "bayview-beach-ma": {
+      "city": "Dennis",
+      "state": "MA"
+    },
+    "beach-1-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "beach-1-nj": {
+      "city": "Sparta Township",
+      "state": "NJ"
+    },
+    "beach-1-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "beach-10-nj": {
+      "city": "Sparta Township",
+      "state": "NJ"
+    },
+    "beach-11a-nj": {
+      "city": "Sparta Township",
+      "state": "NJ"
+    },
+    "beach-11b-nj": {
+      "city": "Sparta Township",
+      "state": "NJ"
+    },
+    "beach-2-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "beach-2-nj": {
+      "city": "Sparta Township",
+      "state": "NJ"
+    },
+    "beach-2-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "beach-3-nj": {
+      "city": "Sparta Township",
+      "state": "NJ"
+    },
+    "beach-3-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "beach-4-nj": {
+      "city": "Sparta Township",
+      "state": "NJ"
+    },
+    "beach-6-nj": {
+      "city": "Sparta Township",
+      "state": "NJ"
+    },
+    "beach-9-nj": {
+      "city": "Sparta Township",
+      "state": "NJ"
+    },
+    "beach-area-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "beach-area-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "beach-at-the-dam-ma": {
+      "city": "Weymouth",
+      "state": "MA"
+    },
+    "beach-b-nj": {
+      "city": "Middletown Township",
+      "state": "NJ"
+    },
+    "beach-c-nj": {
+      "city": "Middletown Township",
+      "state": "NJ"
+    },
+    "beach-d-nj": {
+      "city": "Middletown Township",
+      "state": "NJ"
+    },
+    "beach-e-nj": {
+      "city": "Middletown Township",
+      "state": "NJ"
+    },
+    "beach-haven-west-bay-beach-nj": {
+      "city": "Stafford Township",
+      "state": "NJ"
+    },
+    "beach-kayak-launch-ramp-ny": {
+      "city": "New York",
+      "state": "NY"
+    },
+    "beach-nj": {
+      "city": "Vernon Township",
+      "state": "NJ"
+    },
+    "beachwood-beach-nj": {
+      "city": "Beachwood",
+      "state": "NJ"
+    },
+    "beacon-hill-residences-beach-ny": {
+      "city": "Town of North Hempstead",
+      "state": "NY"
+    },
+    "bean-hollow-state-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "bear-hole-ca": {
+      "city": "Chico",
+      "state": "CA"
+    },
+    "beaver-island-beach-ny": {
+      "city": "Town of Grand Island",
+      "state": "NY"
+    },
+    "beaver-landing-va": {
+      "city": "Woodbridge",
+      "state": "VA"
+    },
+    "bedford-beach-ny": {
+      "city": "Town of Hartland",
+      "state": "NY"
+    },
+    "beekman-beach-ny": {
+      "city": "Town of Oyster Bay",
+      "state": "NY"
+    },
+    "beer-can-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "beesley-s-point-beach-nj": {
+      "city": "Upper Township",
+      "state": "NJ"
+    },
+    "beginer-swimmer-area-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "belleair-beach-fl": {
+      "city": "Belleair Beach",
+      "state": "FL"
+    },
+    "belleayre-beach-ny": {
+      "city": "Town of Shandaken",
+      "state": "NY"
+    },
+    "bellview-beach-ny": {
+      "city": "Town of Brookhaven",
+      "state": "NY"
+    },
+    "belmont-beach-ri": {
+      "city": null,
+      "state": "RI"
+    },
+    "belvedero-beach-nj": {
+      "city": "Keansburg",
+      "state": "NJ"
+    },
+    "ben-weston-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "benjamin-s-memorial-beach-ny": {
+      "city": "Town of Islip",
+      "state": "NY"
+    },
+    "bennett-beach-ny": {
+      "city": "Town of Evans",
+      "state": "NY"
+    },
+    "benson-lake-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "berean-park-beach-ny": {
+      "city": "Town of Lloyd",
+      "state": "NY"
+    },
+    "bermuda-beach-tx": {
+      "city": "Galveston",
+      "state": "TX"
+    },
+    "bessemer-beach-ca": {
+      "city": "San Diego",
+      "state": "CA"
+    },
+    "bethany-beach-de": {
+      "city": "Bethany Beach",
+      "state": "DE"
+    },
+    "bethel-beach-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "betz-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "beverly-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "bienville-beach-al": {
+      "city": "Dauphin Island",
+      "state": "AL"
+    },
+    "big-beach-ca": {
+      "city": "Ventura",
+      "state": "CA"
+    },
+    "big-beach-ma": {
+      "city": "Falmouth",
+      "state": "MA"
+    },
+    "big-bear-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "big-river-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "big-rock-beach-ca": {
+      "city": "Malibu",
+      "state": "CA"
+    },
+    "big-stump-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "bight-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "bird-rock-beach-ca": {
+      "city": "Laguna Beach",
+      "state": "CA"
+    },
+    "black-beach-ma": {
+      "city": "Falmouth",
+      "state": "MA"
+    },
+    "black-point-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "black-point-public-beach-ny": {
+      "city": "Town of Putnam",
+      "state": "NY"
+    },
+    "black-rock-beach-ma": {
+      "city": "Nahant",
+      "state": "MA"
+    },
+    "black-s-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "black-s-beach-lincoln-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "black-sands-beach-ca": {
+      "city": "San Francisco",
+      "state": "CA"
+    },
+    "blacks-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "blind-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "blind-creek-beach-north-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "blind-creek-beach-south-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "blind-pass-beach-fl": {
+      "city": "Sanibel",
+      "state": "FL"
+    },
+    "bloomer-beach-nj": {
+      "city": "Englewood Cliffs",
+      "state": "NJ"
+    },
+    "blue-beach-ri": {
+      "city": "North Kingstown",
+      "state": "RI"
+    },
+    "blue-mountain-lake-beach-ny": {
+      "city": "Town of Indian Lake",
+      "state": "NY"
+    },
+    "bluebill-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "bluffs-beaches-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "boater-s-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "boca-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "boca-chica-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "boca-chica-beach-tx": {
+      "city": null,
+      "state": "TX"
+    },
+    "boca-chica-nude-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "bolar-mountain-beach-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "bolinas-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "bolivar-beach-tx": {
+      "city": null,
+      "state": "TX"
+    },
+    "bolsa-chica-state-beach-ca": {
+      "city": "Huntington Beach",
+      "state": "CA"
+    },
+    "bolton-town-beach-ma": {
+      "city": "Bolton",
+      "state": "MA"
+    },
+    "bombay-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "bonair-beach-fl": {
+      "city": "Jupiter Island",
+      "state": "FL"
+    },
+    "bone-yard-beach-fl": {
+      "city": "Jacksonville",
+      "state": "FL"
+    },
+    "bonita-beach-fl": {
+      "city": "Bonita Springs",
+      "state": "FL"
+    },
+    "bonnet-shores-beach-ri": {
+      "city": null,
+      "state": "RI"
+    },
+    "bonny-doon-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "boomer-beach-ca": {
+      "city": "San Diego",
+      "state": "CA"
+    },
+    "borggaard-beach-ma": {
+      "city": "Winchester",
+      "state": "MA"
+    },
+    "bow-beach-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "bowling-ball-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "bowman-s-beach-park-fl": {
+      "city": "Sanibel",
+      "state": "FL"
+    },
+    "boy-beach-ma": {
+      "city": "Provincetown",
+      "state": "MA"
+    },
+    "bozo-beach-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "bradenton-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "bradley-beach-sc": {
+      "city": "Hilton Head Island",
+      "state": "SC"
+    },
+    "bramble-beach-ca": {
+      "city": "Tiburon",
+      "state": "CA"
+    },
+    "brandy-creek-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "brant-beach-ma": {
+      "city": "Mattapoisett",
+      "state": "MA"
+    },
+    "brayton-point-beach-ma": {
+      "city": "Somerset",
+      "state": "MA"
+    },
+    "brazil-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "breakers-beach-ca": {
+      "city": "San Diego",
+      "state": "CA"
+    },
+    "briarcliffe-beach-sc": {
+      "city": "Briarcliffe Acres",
+      "state": "SC"
+    },
+    "brick-beach-ny": {
+      "city": "Town of Cortlandt",
+      "state": "NY"
+    },
+    "bridgeport-beach-al": {
+      "city": null,
+      "state": "AL"
+    },
+    "brigantine-beach-nj": {
+      "city": "Brigantine",
+      "state": "NJ"
+    },
+    "bristol-beach-ma": {
+      "city": "Falmouth",
+      "state": "MA"
+    },
+    "bristol-harbour-beach-ny": {
+      "city": "Town of South Bristol",
+      "state": "NY"
+    },
+    "bristol-town-beach-ri": {
+      "city": null,
+      "state": "RI"
+    },
+    "broad-avenue-south-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "brown-s-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "brown-s-beach-ny": {
+      "city": "Town of Stillwater",
+      "state": "NY"
+    },
+    "brunswick-vanderheyden-reservoir-park-beach-ny": {
+      "city": "Town of Brunswick",
+      "state": "NY"
+    },
+    "brush-valley-ma": {
+      "city": "Truro",
+      "state": "MA"
+    },
+    "bryan-beach-tx": {
+      "city": null,
+      "state": "TX"
+    },
+    "buccaneer-bay-fl": {
+      "city": "Weeki Wachee",
+      "state": "FL"
+    },
+    "buccaneer-beach-ca": {
+      "city": "Oceanside",
+      "state": "CA"
+    },
+    "budd-lake-municipal-beach-nj": {
+      "city": "Mount Olive",
+      "state": "NJ"
+    },
+    "bulwagga-bay-beach-ny": {
+      "city": "Town of Moriah",
+      "state": "NY"
+    },
+    "bunche-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "burckmyers-beach-sc": {
+      "city": "Beaufort",
+      "state": "SC"
+    },
+    "burkes-beach-sc": {
+      "city": "Hilton Head Island",
+      "state": "SC"
+    },
+    "burkmeyer-beach-sc": {
+      "city": "Beaufort",
+      "state": "SC"
+    },
+    "burlingame-state-park-beach-ri": {
+      "city": "Charlestown",
+      "state": "RI"
+    },
+    "burnt-mill-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "butterfly-beach-ca": {
+      "city": "Montecito",
+      "state": "CA"
+    },
+    "button-shell-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "buttonwoods-beach-ri": {
+      "city": "Warwick",
+      "state": "RI"
+    },
+    "cable-car-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "cabrillo-beach-ca": {
+      "city": "Los Angeles",
+      "state": "CA"
+    },
+    "caesars-beach-nj": {
+      "city": "Atlantic City",
+      "state": "NJ"
+    },
+    "cahoon-hollow-beach-ma": {
+      "city": "Wellfleet",
+      "state": "MA"
+    },
+    "calawee-cove-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "calf-island-ny": {
+      "city": "Town of Hounsfield",
+      "state": "NY"
+    },
+    "calf-pasture-point-beach-ri": {
+      "city": "North Kingstown",
+      "state": "RI"
+    },
+    "callahans-beach-ny": {
+      "city": "Town of Smithtown",
+      "state": "NY"
+    },
+    "calusa-point-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "camp-burgess-waterfront-ma": {
+      "city": "Sandwich",
+      "state": "MA"
+    },
+    "camp-chateaugay-beach-ny": {
+      "city": "Town of Ellenburg",
+      "state": "NY"
+    },
+    "camp-fuller-waterfront-ri": {
+      "city": "South Kingstown",
+      "state": "RI"
+    },
+    "campers-beach-ma": {
+      "city": "North Adams",
+      "state": "MA"
+    },
+    "campground-beach-fl": {
+      "city": "Marathon",
+      "state": "FL"
+    },
+    "campground-beach-ma": {
+      "city": "Eastham",
+      "state": "MA"
+    },
+    "campus-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "canarsie-beach-ny": {
+      "city": "New York",
+      "state": "NY"
+    },
+    "cannon-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "cannon-beach-or": {
+      "city": "Cannon Beach",
+      "state": "OR"
+    },
+    "cannonball-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "canoe-beach-ma": {
+      "city": "Nahant",
+      "state": "MA"
+    },
+    "canoe-beach-nj": {
+      "city": "Englewood Cliffs",
+      "state": "NJ"
+    },
+    "canoe-docks-tx": {
+      "city": null,
+      "state": "TX"
+    },
+    "canopus-beach-ny": {
+      "city": "Town of Kent",
+      "state": "NY"
+    },
+    "cape-coral-yacht-club-beach-fl": {
+      "city": "Cape Coral",
+      "state": "FL"
+    },
+    "cape-hedge-beach-ma": {
+      "city": "Rockport",
+      "state": "MA"
+    },
+    "cape-lookout-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "cape-meares-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "cape-san-roman-beach-sc": {
+      "city": null,
+      "state": "SC"
+    },
+    "capers-island-boneyard-sc": {
+      "city": null,
+      "state": "SC"
+    },
+    "capitola-beach-ca": {
+      "city": "Capitola",
+      "state": "CA"
+    },
+    "capt-hiram-s-resort-bimini-beach-fl": {
+      "city": "Sebastian",
+      "state": "FL"
+    },
+    "captain-roger-w-wheeler-state-beach-ri": {
+      "city": null,
+      "state": "RI"
+    },
+    "captain-s-flats-ma": {
+      "city": "Duxbury",
+      "state": "MA"
+    },
+    "carabelle-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "carbon-beach-ca": {
+      "city": "Malibu",
+      "state": "CA"
+    },
+    "carbon-la-costa-beach-ca": {
+      "city": "Malibu",
+      "state": "CA"
+    },
+    "cardiff-state-beach-ca": {
+      "city": "Encinitas",
+      "state": "CA"
+    },
+    "carmel-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "carmel-river-state-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "carpinteria-state-beach-ca": {
+      "city": "Carpinteria",
+      "state": "CA"
+    },
+    "carson-beach-ma": {
+      "city": "Boston",
+      "state": "MA"
+    },
+    "caspar-headlands-state-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "caspersen-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "cassadaga-beach-ny": {
+      "city": "Town of Stockton",
+      "state": "NY"
+    },
+    "castle-hill-beach-ri": {
+      "city": "Newport",
+      "state": "RI"
+    },
+    "castle-rock-beach-ca": {
+      "city": "Los Angeles",
+      "state": "CA"
+    },
+    "catfish-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "caumsett-state-historic-park-preserve-beach-ny": {
+      "city": "Town of Oyster Bay",
+      "state": "NY"
+    },
+    "caven-point-beach-nj": {
+      "city": "Jersey City",
+      "state": "NJ"
+    },
+    "cayucos-state-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "cayuga-lake-state-park-swim-area-ny": {
+      "city": "Town of Seneca Falls",
+      "state": "NY"
+    },
+    "cedar-beach-ny": {
+      "city": "Town of Brookhaven",
+      "state": "NY"
+    },
+    "cedar-grove-beach-ny": {
+      "city": "New York",
+      "state": "NY"
+    },
+    "cedar-island-beach-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "cedar-island-ma": {
+      "city": "Wareham",
+      "state": "MA"
+    },
+    "cedar-overlook-beach-ny": {
+      "city": "Town of Babylon",
+      "state": "NY"
+    },
+    "centennial-beach-ma": {
+      "city": "Hudson",
+      "state": "MA"
+    },
+    "centerport-beach-ny": {
+      "city": "Town of Huntington",
+      "state": "NY"
+    },
+    "centerville-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "central-avenue-beach-fl": {
+      "city": "Naples",
+      "state": "FL"
+    },
+    "central-beach-ca": {
+      "city": "Coronado",
+      "state": "CA"
+    },
+    "centre-island-beach-ny": {
+      "city": "Town of Oyster Bay",
+      "state": "NY"
+    },
+    "chadwick-beach-nj": {
+      "city": "Toms River",
+      "state": "NJ"
+    },
+    "chambers-landing-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "channel-beach-ma": {
+      "city": "Gosnold",
+      "state": "MA"
+    },
+    "channel-drive-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "chapin-memorial-beach-ma": {
+      "city": "Dennis",
+      "state": "MA"
+    },
+    "chapman-beach-or": {
+      "city": "Cannon Beach",
+      "state": "OR"
+    },
+    "chappaquiddick-beach-ma": {
+      "city": "Edgartown",
+      "state": "MA"
+    },
+    "chappaquoit-beach-ma": {
+      "city": "Falmouth",
+      "state": "MA"
+    },
+    "charles-e-ransom-beach-ny": {
+      "city": "Village of Bayville",
+      "state": "NY"
+    },
+    "charlestown-beach-ri": {
+      "city": null,
+      "state": "RI"
+    },
+    "cherry-grove-beach-sc": {
+      "city": "North Myrtle Beach",
+      "state": "SC"
+    },
+    "chicken-ranch-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "children-s-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "children-s-pool-beach-ca": {
+      "city": "San Diego",
+      "state": "CA"
+    },
+    "children-s-swim-area-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "childrens-beach-ma": {
+      "city": "Nantucket",
+      "state": "MA"
+    },
+    "chilson-beach-ma": {
+      "city": "Franklin",
+      "state": "MA"
+    },
+    "china-beach-ca": {
+      "city": "San Francisco",
+      "state": "CA"
+    },
+    "china-cove-beach-ca": {
+      "city": "Newport Beach",
+      "state": "CA"
+    },
+    "china-ladder-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "chix-beach-va": {
+      "city": "Virginia Beach",
+      "state": "VA"
+    },
+    "chocomount-beach-ny": {
+      "city": "Town of Southold",
+      "state": "NY"
+    },
+    "chris-greene-lake-beach-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "chris-lantos-waterfront-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "christi-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "christian-camp-meeting-beach-ma": {
+      "city": "Barnstable",
+      "state": "MA"
+    },
+    "church-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "church-s-beach-ma": {
+      "city": "Gosnold",
+      "state": "MA"
+    },
+    "cinco-ranch-beach-club-tx": {
+      "city": null,
+      "state": "TX"
+    },
+    "cisco-beach-ma": {
+      "city": "Nantucket",
+      "state": "MA"
+    },
+    "city-beach-fl": {
+      "city": "Cedar Key",
+      "state": "FL"
+    },
+    "clam-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "clam-pass-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "clark-beach-ma": {
+      "city": "Ipswich",
+      "state": "MA"
+    },
+    "clean-shore-ma": {
+      "city": "Nantucket",
+      "state": "MA"
+    },
+    "clearwater-beach-fl": {
+      "city": "Clearwater",
+      "state": "FL"
+    },
+    "cliff-beach-ma": {
+      "city": "Nantucket",
+      "state": "MA"
+    },
+    "cliff-metcalf-memorial-beach-ma": {
+      "city": "Dennis",
+      "state": "MA"
+    },
+    "cliffwood-beach-nj": {
+      "city": "Aberdeen Township",
+      "state": "NJ"
+    },
+    "cliffwood-lake-beach-nj": {
+      "city": "Vernon Township",
+      "state": "NJ"
+    },
+    "club-beach-ca": {
+      "city": "Rancho Mirage",
+      "state": "CA"
+    },
+    "clubhouse-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "coast-guard-beach-ma": {
+      "city": "Eastham",
+      "state": "MA"
+    },
+    "coast-royale-beach-ca": {
+      "city": "Laguna Beach",
+      "state": "CA"
+    },
+    "coatue-beach-ma": {
+      "city": "Nantucket",
+      "state": "MA"
+    },
+    "coca-plum-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "cocklebur-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "coffins-beach-ma": {
+      "city": "Gloucester",
+      "state": "MA"
+    },
+    "cold-spring-beach-ny": {
+      "city": "Town of Oyster Bay",
+      "state": "NY"
+    },
+    "coleman-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "coligny-beach-sc": {
+      "city": "Hilton Head Island",
+      "state": "SC"
+    },
+    "college-cove-north-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "college-cove-south-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "collins-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "collins-cove-beach-ma": {
+      "city": "Salem",
+      "state": "MA"
+    },
+    "collins-lake-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "colony-beach-ma": {
+      "city": "Plymouth",
+      "state": "MA"
+    },
+    "columbia-beach-or": {
+      "city": "Warrenton",
+      "state": "OR"
+    },
+    "compass-rose-beach-ri": {
+      "city": "North Kingstown",
+      "state": "RI"
+    },
+    "coney-island-beach-ny": {
+      "city": "New York",
+      "state": "NY"
+    },
+    "conochet-club-beach-ri": {
+      "city": "Narragansett",
+      "state": "RI"
+    },
+    "conrad-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "cooks-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "cooks-beach-nj": {
+      "city": "Middle Township",
+      "state": "NJ"
+    },
+    "cooks-brook-beach-ma": {
+      "city": "Eastham",
+      "state": "MA"
+    },
+    "cooper-lake-state-park-beach-tx": {
+      "city": null,
+      "state": "TX"
+    },
+    "copiague-beach-ny": {
+      "city": "Town of Babylon",
+      "state": "NY"
+    },
+    "cordreys-beach-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "corey-beach-ny": {
+      "city": "Town of Brookhaven",
+      "state": "NY"
+    },
+    "corinha-beach-ma": {
+      "city": "Winthrop",
+      "state": "MA"
+    },
+    "corona-del-mar-state-beach-ca": {
+      "city": "Newport Beach",
+      "state": "CA"
+    },
+    "coronado-beach-ca": {
+      "city": "Coronado",
+      "state": "CA"
+    },
+    "coronado-shores-beach-ca": {
+      "city": "Coronado",
+      "state": "CA"
+    },
+    "corpus-christi-north-beach-tx": {
+      "city": "Corpus Christi",
+      "state": "TX"
+    },
+    "coskata-beach-ma": {
+      "city": "Nantucket",
+      "state": "MA"
+    },
+    "costa-oriental-da-florida-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "cottage-beach-sc": {
+      "city": null,
+      "state": "SC"
+    },
+    "cottonwood-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "cottonwood-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "county-beach-ma": {
+      "city": "Otis",
+      "state": "MA"
+    },
+    "county-line-beach-ca": {
+      "city": "Old Malibu",
+      "state": "CA"
+    },
+    "cove-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "cove-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "cowell-beach-ca": {
+      "city": "Santa Cruz",
+      "state": "CA"
+    },
+    "cowell-ranch-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "coyote-point-beach-ca": {
+      "city": "San Mateo",
+      "state": "CA"
+    },
+    "crab-meadow-beach-ny": {
+      "city": "Town of Huntington",
+      "state": "NY"
+    },
+    "craigville-beach-ma": {
+      "city": "Barnstable",
+      "state": "MA"
+    },
+    "cranberry-lake-day-use-area-on-eastern-fred-island-ny": {
+      "city": "Town of Clifton",
+      "state": "NY"
+    },
+    "crandon-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "crandon-park-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "crane-beach-ma": {
+      "city": "Ipswich",
+      "state": "MA"
+    },
+    "crane-cove-beach-ca": {
+      "city": "San Francisco",
+      "state": "CA"
+    },
+    "creek-club-beach-ny": {
+      "city": "Village of Lattingtown",
+      "state": "NY"
+    },
+    "crescent-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "crescent-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "crescent-beach-ma": {
+      "city": "Gosnold",
+      "state": "MA"
+    },
+    "crescent-beach-ny": {
+      "city": "Town of Huntington",
+      "state": "NY"
+    },
+    "crescent-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "crescent-beach-ri": {
+      "city": "New Shoreham",
+      "state": "RI"
+    },
+    "crescent-beach-sc": {
+      "city": "North Myrtle Beach",
+      "state": "SC"
+    },
+    "cresent-bay-beach-ca": {
+      "city": "Laguna Beach",
+      "state": "CA"
+    },
+    "cresent-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "cressy-beach-ma": {
+      "city": "Gloucester",
+      "state": "MA"
+    },
+    "crocker-pond-beach-ma": {
+      "city": "Westminster",
+      "state": "MA"
+    },
+    "crosby-landing-beach-ma": {
+      "city": "Brewster",
+      "state": "MA"
+    },
+    "crowe-s-pasture-ma": {
+      "city": "Dennis",
+      "state": "MA"
+    },
+    "crown-point-shores-ca": {
+      "city": "San Diego",
+      "state": "CA"
+    },
+    "crystal-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "crystal-beach-ma": {
+      "city": "Nahant",
+      "state": "MA"
+    },
+    "crystal-beach-tx": {
+      "city": null,
+      "state": "TX"
+    },
+    "crystal-lake-beach-club-nj": {
+      "city": "Oakland",
+      "state": "NJ"
+    },
+    "crystal-lake-beach-ma": {
+      "city": "Newton",
+      "state": "MA"
+    },
+    "cull-canyon-swim-complex-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "cummings-point-sc": {
+      "city": null,
+      "state": "SC"
+    },
+    "cupsoque-beach-ny": {
+      "city": "Town of Brookhaven",
+      "state": "NY"
+    },
+    "curlew-brech-ma": {
+      "city": "Nahant",
+      "state": "MA"
+    },
+    "dan-blocker-county-beach-ca": {
+      "city": "Malibu",
+      "state": "CA"
+    },
+    "danburg-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "dane-street-beach-ma": {
+      "city": "Beverly",
+      "state": "MA"
+    },
+    "dauphin-beach-al": {
+      "city": "Dauphin Island",
+      "state": "AL"
+    },
+    "davenport-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "davenport-landing-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "david-musante-beach-ma": {
+      "city": "Northampton",
+      "state": "MA"
+    },
+    "davis-beach-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "de-anza-beach-ca": {
+      "city": "Santa Cruz",
+      "state": "CA"
+    },
+    "dead-horse-bay-beach-ny": {
+      "city": "New York",
+      "state": "NY"
+    },
+    "dead-horse-beach-ma": {
+      "city": "Salem",
+      "state": "MA"
+    },
+    "debordieu-beach-sc": {
+      "city": null,
+      "state": "SC"
+    },
+    "deemer-s-beach-de": {
+      "city": null,
+      "state": "DE"
+    },
+    "deep-water-swim-lanes-ma": {
+      "city": "Bedford",
+      "state": "MA"
+    },
+    "deephead-swash-sc": {
+      "city": "Myrtle Beach",
+      "state": "SC"
+    },
+    "del-mar-dog-beach-ca": {
+      "city": "Del Mar",
+      "state": "CA"
+    },
+    "del-monte-beach-ca": {
+      "city": "Monterey",
+      "state": "CA"
+    },
+    "del-rey-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "del-valle-east-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "del-valle-east-beach-swimming-area-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "del-valle-west-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "del-valle-west-beach-swimming-area-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "delray-public-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "delwood-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "depot-street-beach-ma": {
+      "city": "Dennis",
+      "state": "MA"
+    },
+    "depressions-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "der-deutsche-strand-ny": {
+      "city": "Town of Ithaca",
+      "state": "NY"
+    },
+    "descanso-beach-ca": {
+      "city": "Avalon",
+      "state": "CA"
+    },
+    "devereaux-beach-ma": {
+      "city": "Marblehead",
+      "state": "MA"
+    },
+    "devereux-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "devils-slide-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "dibblees-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "dillon-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "dinghy-beach-ma": {
+      "city": "Falmouth",
+      "state": "MA"
+    },
+    "dionis-beach-ma": {
+      "city": "Nantucket",
+      "state": "MA"
+    },
+    "disappearing-island-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "ditto-landing-al": {
+      "city": "Huntsville",
+      "state": "AL"
+    },
+    "dixie-beach-fl": {
+      "city": "Sanibel",
+      "state": "FL"
+    },
+    "dockweiler-state-beach-ca": {
+      "city": "Los Angeles",
+      "state": "CA"
+    },
+    "dog-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "dog-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "doggie-beach-ma": {
+      "city": "Nahant",
+      "state": "MA"
+    },
+    "dolphin-beach-sc": {
+      "city": null,
+      "state": "SC"
+    },
+    "dolphin-beach-va": {
+      "city": "Woodbridge",
+      "state": "VA"
+    },
+    "doran-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "dorn-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "doug-s-cove-ma": {
+      "city": "Oak Bluffs",
+      "state": "MA"
+    },
+    "dowses-beach-ma": {
+      "city": "Barnstable",
+      "state": "MA"
+    },
+    "drakes-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "drift-creek-camp-swimming-hole-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "driftwood-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "duck-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "duck-harbor-beach-ma": {
+      "city": "Wellfleet",
+      "state": "MA"
+    },
+    "dune-drift-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "dunedin-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "dunes-beach-ca": {
+      "city": "Half Moon Bay",
+      "state": "CA"
+    },
+    "dunes-club-beach-ri": {
+      "city": "Narragansett",
+      "state": "RI"
+    },
+    "dunes-landing-beach-ma": {
+      "city": "Dennis",
+      "state": "MA"
+    },
+    "dunes-park-beach-ri": {
+      "city": null,
+      "state": "RI"
+    },
+    "dunlap-beach-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "dunn-court-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "dutch-bill-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "dyckman-street-beach-ny": {
+      "city": "New York",
+      "state": "NY"
+    },
+    "dyerville-river-bar-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "earle-road-beach-ma": {
+      "city": "Harwich",
+      "state": "MA"
+    },
+    "east-atlantic-beach-ny": {
+      "city": "Town of Hempstead",
+      "state": "NY"
+    },
+    "east-beach-ca": {
+      "city": "Santa Barbara",
+      "state": "CA"
+    },
+    "east-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "east-beach-ma": {
+      "city": "Edgartown",
+      "state": "MA"
+    },
+    "east-beach-nj": {
+      "city": "Wayne",
+      "state": "NJ"
+    },
+    "east-beach-ny": {
+      "city": "Town of Islip",
+      "state": "NY"
+    },
+    "east-beach-ri": {
+      "city": "Charlestown",
+      "state": "RI"
+    },
+    "east-beach-sc": {
+      "city": null,
+      "state": "SC"
+    },
+    "east-beach-tx": {
+      "city": "Galveston",
+      "state": "TX"
+    },
+    "east-clubhouse-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "east-cove-beach-ny": {
+      "city": "Town of Hyde Park",
+      "state": "NY"
+    },
+    "east-end-beach-al": {
+      "city": "Dauphin Island",
+      "state": "AL"
+    },
+    "east-gulf-place-al": {
+      "city": "Gulf Shores",
+      "state": "AL"
+    },
+    "east-hampton-beach-ny": {
+      "city": "Village of East Hampton",
+      "state": "NY"
+    },
+    "east-horseneck-beach-ma": {
+      "city": "Westport",
+      "state": "MA"
+    },
+    "east-jetty-al": {
+      "city": null,
+      "state": "AL"
+    },
+    "east-matunuck-state-beach-ri": {
+      "city": null,
+      "state": "RI"
+    },
+    "east-sandwich-beach-ma": {
+      "city": "Sandwich",
+      "state": "MA"
+    },
+    "eastern-green-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "easton-s-beach-ri": {
+      "city": null,
+      "state": "RI"
+    },
+    "eastville-beach-ma": {
+      "city": "Oak Bluffs",
+      "state": "MA"
+    },
+    "eatons-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "eau-gallie-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "edgartown-beach-ma": {
+      "city": "Edgartown",
+      "state": "MA"
+    },
+    "edgewater-ca": {
+      "city": "Newport Beach",
+      "state": "CA"
+    },
+    "edgewater-drive-beach-ma": {
+      "city": "Quincy",
+      "state": "MA"
+    },
+    "edgewood-beach-ri": {
+      "city": null,
+      "state": "RI"
+    },
+    "edingsville-beach-sc": {
+      "city": null,
+      "state": "SC"
+    },
+    "edisto-beach-sc": {
+      "city": "Edisto Beach",
+      "state": "SC"
+    },
+    "egypt-beach-ma": {
+      "city": "Scituate",
+      "state": "MA"
+    },
+    "eisman-s-beach-ma": {
+      "city": "Swampscott",
+      "state": "MA"
+    },
+    "el-capitan-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "el-dorado-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "el-granada-beach-ca": {
+      "city": "Half Moon Bay",
+      "state": "CA"
+    },
+    "el-matador-beach-ca": {
+      "city": "Malibu",
+      "state": "CA"
+    },
+    "el-pescador-beach-ca": {
+      "city": "Malibu",
+      "state": "CA"
+    },
+    "el-portal-ca": {
+      "city": "San Clemente",
+      "state": "CA"
+    },
+    "el-segundo-beach-ca": {
+      "city": "El Segundo",
+      "state": "CA"
+    },
+    "electric-avenue-beach-ma": {
+      "city": "Bourne",
+      "state": "MA"
+    },
+    "elk-fence-north-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "elk-fence-south-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "ellis-landing-beach-ma": {
+      "city": "Brewster",
+      "state": "MA"
+    },
+    "ellwood-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "elmar-beach-ca": {
+      "city": "Half Moon Bay",
+      "state": "CA"
+    },
+    "emerald-beach-ny": {
+      "city": "Buffalo",
+      "state": "NY"
+    },
+    "emma-wood-state-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "empire-landing-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "encinal-beach-ca": {
+      "city": "Malibu",
+      "state": "CA"
+    },
+    "englewood-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "englewood-beach-ma": {
+      "city": "Yarmouth",
+      "state": "MA"
+    },
+    "escondido-beach-ca": {
+      "city": "Malibu",
+      "state": "CA"
+    },
+    "esopus-meadows-beach-ny": {
+      "city": "Town of Esopus",
+      "state": "NY"
+    },
+    "esplanade-park-beach-ca": {
+      "city": "Capitola",
+      "state": "CA"
+    },
+    "eustis-beach-ma": {
+      "city": "Bourne",
+      "state": "MA"
+    },
+    "evans-beach-ny": {
+      "city": null,
+      "state": "NY"
+    },
+    "falmouth-beach-ma": {
+      "city": "Falmouth",
+      "state": "MA"
+    },
+    "fan-shell-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "far-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "faria-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "fenway-beach-ri": {
+      "city": null,
+      "state": "RI"
+    },
+    "fenwick-beach-de": {
+      "city": null,
+      "state": "DE"
+    },
+    "fern-grotto-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "fernandina-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "ferry-beach-ny": {
+      "city": "Town of Oyster Bay",
+      "state": "NY"
+    },
+    "fillingim-landing-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "fire-station-beach-ma": {
+      "city": "Quincy",
+      "state": "MA"
+    },
+    "first-beach-nj": {
+      "city": "Shamong Township",
+      "state": "NJ"
+    },
+    "first-encounter-beach-ma": {
+      "city": "Eastham",
+      "state": "MA"
+    },
+    "fish-rock-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "fisher-beach-ma": {
+      "city": "Truro",
+      "state": "MA"
+    },
+    "fisherman-beach-ny": {
+      "city": "Town of Southold",
+      "state": "NY"
+    },
+    "fisherman-s-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "fisherman-s-beach-ma": {
+      "city": "Nantucket",
+      "state": "MA"
+    },
+    "fisherman-s-landing-ma": {
+      "city": "Chatham",
+      "state": "MA"
+    },
+    "fishermans-beach-ma": {
+      "city": "Canton",
+      "state": "MA"
+    },
+    "fishing-and-dog-beach-va": {
+      "city": "Virginia Beach",
+      "state": "VA"
+    },
+    "fishing-beach-nj": {
+      "city": "Middletown Township",
+      "state": "NJ"
+    },
+    "fisk-mill-cove-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "five-mile-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "five-mile-beach-nj": {
+      "city": "Wildwood Crest",
+      "state": "NJ"
+    },
+    "flamingo-nj": {
+      "city": "West Orange",
+      "state": "NJ"
+    },
+    "flat-rocks-ny": {
+      "city": null,
+      "state": "NY"
+    },
+    "flax-pond-ma": {
+      "city": "Yarmouth",
+      "state": "MA"
+    },
+    "fleeton-beach-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "flint-beach-ny": {
+      "city": "Town of Esopus",
+      "state": "NY"
+    },
+    "flynns-beach-ri": {
+      "city": "Burrillville",
+      "state": "RI"
+    },
+    "folly-cove-shore-dive-site-ma": {
+      "city": "Gloucester",
+      "state": "MA"
+    },
+    "folly-field-beach-sc": {
+      "city": "Hilton Head Island",
+      "state": "SC"
+    },
+    "forest-beach-ma": {
+      "city": "Chatham",
+      "state": "MA"
+    },
+    "fort-beach-ma": {
+      "city": "Marblehead",
+      "state": "MA"
+    },
+    "fort-bragg-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "fort-bragg-landing-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "fort-cooper-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "fort-hill-beach-ny": {
+      "city": "Town of Huntington",
+      "state": "NY"
+    },
+    "fort-island-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "fort-lauderdale-beach-fl": {
+      "city": "Fort Lauderdale",
+      "state": "FL"
+    },
+    "fort-pickering-beach-ma": {
+      "city": "Salem",
+      "state": "MA"
+    },
+    "fort-tilden-beach-ny": {
+      "city": "New York",
+      "state": "NY"
+    },
+    "fortescue-beach-nj": {
+      "city": "Downe Township",
+      "state": "NJ"
+    },
+    "forty-steps-beach-ma": {
+      "city": "Nahant",
+      "state": "MA"
+    },
+    "fossil-beach-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "foster-ave-beach-ny": {
+      "city": "Town of Islip",
+      "state": "NY"
+    },
+    "foster-memorial-bathing-beach-ny": {
+      "city": "Town of Southampton",
+      "state": "NY"
+    },
+    "four-mile-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "francis-beach-ca": {
+      "city": "Half Moon Bay",
+      "state": "CA"
+    },
+    "frank-moody-state-beach-ri": {
+      "city": "Lincoln",
+      "state": "RI"
+    },
+    "fred-benson-town-beach-ri": {
+      "city": null,
+      "state": "RI"
+    },
+    "freeman-lake-beach-ma": {
+      "city": "Chelmsford",
+      "state": "MA"
+    },
+    "fripp-island-beach-sc": {
+      "city": null,
+      "state": "SC"
+    },
+    "front-beach-ma": {
+      "city": "Rockport",
+      "state": "MA"
+    },
+    "fruit-tree-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "fuller-street-beach-ma": {
+      "city": "Edgartown",
+      "state": "MA"
+    },
+    "futch-beach-sc": {
+      "city": "North Myrtle Beach",
+      "state": "SC"
+    },
+    "gallagher-beach-ny": {
+      "city": "Buffalo",
+      "state": "NY"
+    },
+    "gallatin-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "galveston-beach-tx": {
+      "city": "Galveston",
+      "state": "TX"
+    },
+    "gansevoort-peninsula-sand-bluff-ny": {
+      "city": "New York",
+      "state": "NY"
+    },
+    "garbage-beach-ma": {
+      "city": "Falmouth",
+      "state": "MA"
+    },
+    "garden-city-beach-sc": {
+      "city": null,
+      "state": "SC"
+    },
+    "gardenville-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "gargathy-beach-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "garmet-beach-ma": {
+      "city": "Marblehead",
+      "state": "MA"
+    },
+    "gas-house-basin-ma": {
+      "city": "Marblehead",
+      "state": "MA"
+    },
+    "gas-house-beach-ma": {
+      "city": "Marblehead",
+      "state": "MA"
+    },
+    "gator-feeding-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "gaviota-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "gaviota-nude-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "gay-head-town-beach-ma": {
+      "city": "Aquinnah",
+      "state": "MA"
+    },
+    "gazos-creek-state-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "george-lane-beach-ma": {
+      "city": "Weymouth",
+      "state": "MA"
+    },
+    "georgiaville-beach-ri": {
+      "city": "Smithfield",
+      "state": "RI"
+    },
+    "georgiaville-pond-beach-ri": {
+      "city": "Smithfield",
+      "state": "RI"
+    },
+    "gerritsen-beach-ny": {
+      "city": "New York",
+      "state": "NY"
+    },
+    "getaway-glen-fl": {
+      "city": "Lake Buena Vista",
+      "state": "FL"
+    },
+    "gibralter-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "gibson-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "gibsons-beach-ny": {
+      "city": "Town of Shelter Island",
+      "state": "NY"
+    },
+    "gilgo-beach-ny": {
+      "city": "Town of Babylon",
+      "state": "NY"
+    },
+    "gilmore-shore-ny": {
+      "city": "Town of Hounsfield",
+      "state": "NY"
+    },
+    "ginny-beach-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "girl-scout-camp-beach-ri": {
+      "city": "North Kingstown",
+      "state": "RI"
+    },
+    "glass-beach-ca": {
+      "city": "Fort Bragg",
+      "state": "CA"
+    },
+    "gleason-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "glen-island-ny": {
+      "city": "City of New Rochelle",
+      "state": "NY"
+    },
+    "glendale-cove-beach-ma": {
+      "city": "Salem",
+      "state": "MA"
+    },
+    "glendon-road-beach-ma": {
+      "city": "Dennis",
+      "state": "MA"
+    },
+    "glenwood-beach-ny": {
+      "city": "Town of Scipio",
+      "state": "NY"
+    },
+    "goat-rock-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "goble-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "goddard-memorial-state-park-beach-ri": {
+      "city": null,
+      "state": "RI"
+    },
+    "gold-bluffs-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "gold-star-battalion-beach-ny": {
+      "city": "Town of Huntington",
+      "state": "NY"
+    },
+    "golden-beach-entrance-fl": {
+      "city": "Venice",
+      "state": "FL"
+    },
+    "good-harbor-beach-ma": {
+      "city": "Gloucester",
+      "state": "MA"
+    },
+    "goodwin-lake-swim-beach-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "gooseberry-beach-ri": {
+      "city": "Newport",
+      "state": "RI"
+    },
+    "grace-oliver-beach-ma": {
+      "city": "Marblehead",
+      "state": "MA"
+    },
+    "grand-vue-beach-ma": {
+      "city": "Mattapoisett",
+      "state": "MA"
+    },
+    "grandview-beach-va": {
+      "city": "Hampton",
+      "state": "VA"
+    },
+    "grandview-surf-beach-ca": {
+      "city": "Encinitas",
+      "state": "CA"
+    },
+    "graves-beach-ma": {
+      "city": "Manchester-by-the-Sea",
+      "state": "MA"
+    },
+    "gray-beach-ma": {
+      "city": "Manchester-by-the-Sea",
+      "state": "MA"
+    },
+    "gray-whale-cove-state-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "grays-beach-ma": {
+      "city": "Yarmouth",
+      "state": "MA"
+    },
+    "great-hollow-beach-ma": {
+      "city": "Truro",
+      "state": "MA"
+    },
+    "great-kills-beach-ny": {
+      "city": "New York",
+      "state": "NY"
+    },
+    "great-pond-beach-ma": {
+      "city": "Wellfleet",
+      "state": "MA"
+    },
+    "green-lakes-beach-ny": {
+      "city": "Town of Manlius",
+      "state": "NY"
+    },
+    "green-s-creek-beach-ny": {
+      "city": "Town of Islip",
+      "state": "NY"
+    },
+    "greenfield-beach-ma": {
+      "city": "Greenfield",
+      "state": "MA"
+    },
+    "greenhaven-beach-ny": {
+      "city": "City of Rye",
+      "state": "NY"
+    },
+    "greenwich-town-bathing-beach-ny": {
+      "city": "Town of Greenwich",
+      "state": "NY"
+    },
+    "greyhound-rock-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "greystone-beach-ma": {
+      "city": "Marblehead",
+      "state": "MA"
+    },
+    "grice-beach-sc": {
+      "city": null,
+      "state": "SC"
+    },
+    "grimmells-beach-ri": {
+      "city": null,
+      "state": "RI"
+    },
+    "grinnell-s-beach-ri": {
+      "city": null,
+      "state": "RI"
+    },
+    "group-campsite-ca": {
+      "city": "Dana Point",
+      "state": "CA"
+    },
+    "grunblatt-memorial-beach-ny": {
+      "city": "Town of Johnsburg",
+      "state": "NY"
+    },
+    "guard-shore-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "gulf-place-al": {
+      "city": "Gulf Shores",
+      "state": "AL"
+    },
+    "gulf-shores-public-beach-al": {
+      "city": "Gulf Shores",
+      "state": "AL"
+    },
+    "gull-pond-beach-ma": {
+      "city": "Wellfleet",
+      "state": "MA"
+    },
+    "gun-rock-beach-ma": {
+      "city": "Hull",
+      "state": "MA"
+    },
+    "gunnison-beach-nj": {
+      "city": "Middletown Township",
+      "state": "NJ"
+    },
+    "hague-town-beach-ny": {
+      "city": "Town of Hague",
+      "state": "NY"
+    },
+    "haigis-beach-ma": {
+      "city": "Dennis",
+      "state": "MA"
+    },
+    "halfmoon-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "halfmoon-beach-ma": {
+      "city": "Gloucester",
+      "state": "MA"
+    },
+    "hall-lake-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "hallet-s-cove-ny": {
+      "city": "New York",
+      "state": "NY"
+    },
+    "hamblini-pond-beach-ma": {
+      "city": "Barnstable",
+      "state": "MA"
+    },
+    "hamiltair-community-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "hamilton-beach-ca": {
+      "city": "Avalon",
+      "state": "CA"
+    },
+    "hamlin-beach-ny": {
+      "city": "Town of Hamlin",
+      "state": "NY"
+    },
+    "hampton-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "hampton-beach-ma": {
+      "city": "Hull",
+      "state": "MA"
+    },
+    "hanover-town-beach-ny": {
+      "city": "Town of Hanover",
+      "state": "NY"
+    },
+    "happy-valley-swimming-hole-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "harbor-beach-ca": {
+      "city": "Santa Cruz",
+      "state": "CA"
+    },
+    "harbor-cove-beach-ca": {
+      "city": "Ventura",
+      "state": "CA"
+    },
+    "harbor-isle-beach-ny": {
+      "city": "Town of Hempstead",
+      "state": "NY"
+    },
+    "hardings-beach-ma": {
+      "city": "Chatham",
+      "state": "MA"
+    },
+    "harris-beach-or": {
+      "city": "Brookings",
+      "state": "OR"
+    },
+    "harry-tappen-beach-ny": {
+      "city": "Village of Sea Cliff",
+      "state": "NY"
+    },
+    "harvard-town-beach-ma": {
+      "city": "Harvard",
+      "state": "MA"
+    },
+    "harvey-cedars-bay-beach-nj": {
+      "city": "Harvey Cedars",
+      "state": "NJ"
+    },
+    "hashamomuck-beach-ny": {
+      "city": "Town of Southold",
+      "state": "NY"
+    },
+    "haskell-s-beach-ca": {
+      "city": "Goleta",
+      "state": "CA"
+    },
+    "haulover-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "haulover-nude-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "havens-beach-ny": {
+      "city": "Town of East Hampton",
+      "state": "NY"
+    },
+    "haviland-cove-beach-ny": {
+      "city": "City of Glens Falls",
+      "state": "NY"
+    },
+    "haviland-pond-beach-ma": {
+      "city": "Ludlow",
+      "state": "MA"
+    },
+    "haviland-s-cove-beach-ny": {
+      "city": "City of Glens Falls",
+      "state": "NY"
+    },
+    "hazard-beach-nj": {
+      "city": "Fort Lee",
+      "state": "NJ"
+    },
+    "hazard-beach-ri": {
+      "city": "Newport",
+      "state": "RI"
+    },
+    "healdsburg-veterans-memorial-beach-ca": {
+      "city": "Healdsburg",
+      "state": "CA"
+    },
+    "heart-s-desire-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "heater-s-pond-beach-nj": {
+      "city": "Ogdensburg",
+      "state": "NJ"
+    },
+    "heceta-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "hemlock-beach-ma": {
+      "city": "Lunenburg",
+      "state": "MA"
+    },
+    "hendrys-beach-ca": {
+      "city": "Santa Barbara",
+      "state": "CA"
+    },
+    "hermosa-city-beach-ca": {
+      "city": "Hermosa Beach",
+      "state": "CA"
+    },
+    "hermosa-terrace-park-ca": {
+      "city": "San Diego",
+      "state": "CA"
+    },
+    "hernando-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "heron-beach-ma": {
+      "city": "Quincy",
+      "state": "MA"
+    },
+    "herring-brook-beach-ma": {
+      "city": "Eastham",
+      "state": "MA"
+    },
+    "herring-cove-beach-ma": {
+      "city": "Provincetown",
+      "state": "MA"
+    },
+    "herring-pond-beach-ma": {
+      "city": "Eastham",
+      "state": "MA"
+    },
+    "hicks-beach-ny": {
+      "city": "Village of Lawrence",
+      "state": "NY"
+    },
+    "hidden-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "hideaway-bay-fl": {
+      "city": "Lake Buena Vista",
+      "state": "FL"
+    },
+    "higbee-beach-nj": {
+      "city": "Lower Township",
+      "state": "NJ"
+    },
+    "higgs-beach-fl": {
+      "city": "Key West",
+      "state": "FL"
+    },
+    "high-point-beach-nj": {
+      "city": "Montague Township",
+      "state": "NJ"
+    },
+    "highland-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "highland-beach-ma": {
+      "city": "Truro",
+      "state": "MA"
+    },
+    "highland-lakes-beach-2-nj": {
+      "city": "Vernon Township",
+      "state": "NJ"
+    },
+    "highland-lakes-beach-3-nj": {
+      "city": "Vernon Township",
+      "state": "NJ"
+    },
+    "highland-lakes-beach-4-nj": {
+      "city": "Vernon Township",
+      "state": "NJ"
+    },
+    "highland-lakes-beach-5-nj": {
+      "city": "Vernon Township",
+      "state": "NJ"
+    },
+    "highland-lakes-beach-6-nj": {
+      "city": "Vernon Township",
+      "state": "NJ"
+    },
+    "highland-lakes-beach-7-nj": {
+      "city": "Vernon Township",
+      "state": "NJ"
+    },
+    "highlands-beach-nj": {
+      "city": "Sea Bright",
+      "state": "NJ"
+    },
+    "hippie-beach-tx": {
+      "city": null,
+      "state": "TX"
+    },
+    "hippie-hollow-beach-tx": {
+      "city": null,
+      "state": "TX"
+    },
+    "hlel-din-river-access-south-fork-and-trinity-confluence-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "ho-hum-beach-ny": {
+      "city": "Town of Brookhaven",
+      "state": "NY"
+    },
+    "hobbit-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "hobie-beach-ca": {
+      "city": "Oxnard",
+      "state": "CA"
+    },
+    "hobie-island-beach-fl": {
+      "city": "Miami",
+      "state": "FL"
+    },
+    "hobie-island-beach-park-fl": {
+      "city": "Miami",
+      "state": "FL"
+    },
+    "holiday-beach-tx": {
+      "city": "Port Aransas",
+      "state": "TX"
+    },
+    "holiday-cove-ma": {
+      "city": "Ashburnham",
+      "state": "MA"
+    },
+    "holly-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "hollywood-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "hollywood-beach-fl": {
+      "city": "Hollywood",
+      "state": "FL"
+    },
+    "hollywoods-beach-ma": {
+      "city": "Mattapoisett",
+      "state": "MA"
+    },
+    "hood-pond-community-beach-ma": {
+      "city": "Topsfield",
+      "state": "MA"
+    },
+    "hooks-creek-lake-beach-nj": {
+      "city": "Old Bridge Township",
+      "state": "NJ"
+    },
+    "hooper-beach-ca": {
+      "city": "Capitola",
+      "state": "CA"
+    },
+    "hope-pond-beach-ri": {
+      "city": "Scituate",
+      "state": "RI"
+    },
+    "hope-ranch-private-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "hopkinton-main-beach-ma": {
+      "city": "Ashland",
+      "state": "MA"
+    },
+    "hopkinton-reservoir-beach-ma": {
+      "city": "Ashland",
+      "state": "MA"
+    },
+    "horizon-way-beach-fl": {
+      "city": "Naples",
+      "state": "FL"
+    },
+    "horse-shoe-hill-shore-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "horsefoot-path-beach-ma": {
+      "city": "Dennis",
+      "state": "MA"
+    },
+    "horseneck-beach-ma": {
+      "city": "Westport",
+      "state": "MA"
+    },
+    "horton-lane-beach-ny": {
+      "city": "Town of Southold",
+      "state": "NY"
+    },
+    "howard-park-beach-fl": {
+      "city": "Tarpon Springs",
+      "state": "FL"
+    },
+    "howling-dog-beach-fl": {
+      "city": "Bay Lake",
+      "state": "FL"
+    },
+    "hoyt-crossing-nude-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "hubbard-s-beach-fl": {
+      "city": "Madeira Beach",
+      "state": "FL"
+    },
+    "hudson-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "hudson-park-beach-ny": {
+      "city": "City of New Rochelle",
+      "state": "NY"
+    },
+    "huguenot-beach-ny": {
+      "city": "New York",
+      "state": "NY"
+    },
+    "hull-village-beach-ma": {
+      "city": "Hull",
+      "state": "MA"
+    },
+    "hungars-beach-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "hunter-creek-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "huntington-beach-ny": {
+      "city": "Town of Huntington",
+      "state": "NY"
+    },
+    "huntington-beach-sc": {
+      "city": null,
+      "state": "SC"
+    },
+    "huntington-beach-va": {
+      "city": "Newport News",
+      "state": "VA"
+    },
+    "huntington-city-beach-ca": {
+      "city": "Huntington Beach",
+      "state": "CA"
+    },
+    "huntington-state-beach-ca": {
+      "city": "Huntington Beach",
+      "state": "CA"
+    },
+    "huylers-beach-nj": {
+      "city": "Alpine",
+      "state": "NJ"
+    },
+    "hyannis-port-beach-ma": {
+      "city": "Barnstable",
+      "state": "MA"
+    },
+    "ideal-beach-nj": {
+      "city": "Middletown Township",
+      "state": "NJ"
+    },
+    "indian-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "indian-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "indian-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "indian-lake-clubhouse-beach-nj": {
+      "city": "Denville",
+      "state": "NJ"
+    },
+    "indian-lake-day-use-area-ny": {
+      "city": "Town of Indian Lake",
+      "state": "NY"
+    },
+    "indian-lake-main-beach-nj": {
+      "city": "Denville",
+      "state": "NJ"
+    },
+    "indian-mound-beach-ma": {
+      "city": "Wareham",
+      "state": "MA"
+    },
+    "ingram-beach-sc": {
+      "city": "North Myrtle Beach",
+      "state": "SC"
+    },
+    "inlet-shore-beach-area-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "inman-road-beach-ma": {
+      "city": "Dennis",
+      "state": "MA"
+    },
+    "iodine-beach-ny": {
+      "city": "Town of East Hampton",
+      "state": "NY"
+    },
+    "ipswich-bar-ma": {
+      "city": "Ipswich",
+      "state": "MA"
+    },
+    "iron-pier-beach-ny": {
+      "city": "Town of Riverhead",
+      "state": "NY"
+    },
+    "iroquis-waterfront-ma": {
+      "city": "Becket",
+      "state": "MA"
+    },
+    "isabella-beach-ny": {
+      "city": "Town of Southold",
+      "state": "NY"
+    },
+    "isla-blanca-beach-tx": {
+      "city": null,
+      "state": "TX"
+    },
+    "isla-vista-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "island-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "island-beach-nj": {
+      "city": "Berkeley Township",
+      "state": "NJ"
+    },
+    "island-park-beach-ri": {
+      "city": null,
+      "state": "RI"
+    },
+    "islip-town-beach-ny": {
+      "city": "Town of Islip",
+      "state": "NY"
+    },
+    "its-beach-ca": {
+      "city": "Santa Cruz",
+      "state": "CA"
+    },
+    "j-p-luby-tx": {
+      "city": "Corpus Christi",
+      "state": "TX"
+    },
+    "jacks-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "jacob-riis-park-beach-1-ny": {
+      "city": "New York",
+      "state": "NY"
+    },
+    "jacob-riis-park-beach-10-ny": {
+      "city": "New York",
+      "state": "NY"
+    },
+    "jacob-riis-park-beach-11-ny": {
+      "city": "New York",
+      "state": "NY"
+    },
+    "jacob-riis-park-beach-12-ny": {
+      "city": "New York",
+      "state": "NY"
+    },
+    "jacob-riis-park-beach-13-ny": {
+      "city": "New York",
+      "state": "NY"
+    },
+    "jacob-riis-park-beach-14-ny": {
+      "city": "New York",
+      "state": "NY"
+    },
+    "jacob-riis-park-beach-2-ny": {
+      "city": "New York",
+      "state": "NY"
+    },
+    "jacob-riis-park-beach-3-ny": {
+      "city": "New York",
+      "state": "NY"
+    },
+    "jacob-riis-park-beach-4-ny": {
+      "city": "New York",
+      "state": "NY"
+    },
+    "jacob-riis-park-beach-5-ny": {
+      "city": "New York",
+      "state": "NY"
+    },
+    "jacob-riis-park-beach-6-ny": {
+      "city": "New York",
+      "state": "NY"
+    },
+    "jacob-riis-park-beach-7-ny": {
+      "city": "New York",
+      "state": "NY"
+    },
+    "jacob-riis-park-beach-8-ny": {
+      "city": "New York",
+      "state": "NY"
+    },
+    "jacob-riis-park-beach-9-ny": {
+      "city": "New York",
+      "state": "NY"
+    },
+    "jamaica-beach-tx": {
+      "city": "Jamaica Beach",
+      "state": "TX"
+    },
+    "jamestown-beach-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "jamesville-beach-ny": {
+      "city": "Town of LaFayette",
+      "state": "NY"
+    },
+    "jenner-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "jensen-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "jetties-beach-ma": {
+      "city": "Nantucket",
+      "state": "MA"
+    },
+    "jetty-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "john-j-binienda-memorial-beach-ma": {
+      "city": "Worcester",
+      "state": "MA"
+    },
+    "johnson-s-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "johnsons-landing-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "jones-bar-swimming-hole-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "jones-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "jones-beach-ny": {
+      "city": "Town of Hempstead",
+      "state": "NY"
+    },
+    "jones-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "josephs-beach-ma": {
+      "city": "Nahant",
+      "state": "MA"
+    },
+    "jug-handle-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "jumping-rock-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "june-lake-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "juniper-beach-ma": {
+      "city": "Salem",
+      "state": "MA"
+    },
+    "juniper-trail-beach-ri": {
+      "city": null,
+      "state": "RI"
+    },
+    "juno-beach-fl": {
+      "city": "Juno Beach",
+      "state": "FL"
+    },
+    "kayaker-s-beach-sc": {
+      "city": "West Columbia",
+      "state": "SC"
+    },
+    "keaton-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "kehoe-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "kelham-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "keller-beach-ca": {
+      "city": "Richmond",
+      "state": "CA"
+    },
+    "keller-beach-swimming-area-ca": {
+      "city": "Richmond",
+      "state": "CA"
+    },
+    "kellogg-road-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "kellogg-s-beach-ca": {
+      "city": "San Diego",
+      "state": "CA"
+    },
+    "kenneys-road-beach-ny": {
+      "city": "Town of Southold",
+      "state": "NY"
+    },
+    "kershaw-beach-ny": {
+      "city": "City of Canandaigua",
+      "state": "NY"
+    },
+    "kershaw-park-small-marine-craft-launch-area-ny": {
+      "city": "City of Canandaigua",
+      "state": "NY"
+    },
+    "keyes-beach-ma": {
+      "city": "Barnstable",
+      "state": "MA"
+    },
+    "keyes-memorial-beach-ma": {
+      "city": "Barnstable",
+      "state": "MA"
+    },
+    "kiawah-beachwalker-park-sc": {
+      "city": null,
+      "state": "SC"
+    },
+    "kiddie-beach-ca": {
+      "city": "Oxnard",
+      "state": "CA"
+    },
+    "kilkenny-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "kimbles-beach-nj": {
+      "city": "Middle Township",
+      "state": "NJ"
+    },
+    "kimtu-beach-on-trinity-river-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "king-fisher-beach-tx": {
+      "city": null,
+      "state": "TX"
+    },
+    "king-park-beach-ri": {
+      "city": null,
+      "state": "RI"
+    },
+    "kings-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "kings-beach-ma": {
+      "city": "Lynn",
+      "state": "MA"
+    },
+    "kingsborough-beach-park-ny": {
+      "city": "New York",
+      "state": "NY"
+    },
+    "kingsmill-beach-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "kingston-beach-sc": {
+      "city": null,
+      "state": "SC"
+    },
+    "kingston-point-beach-ny": {
+      "city": "City of Kingston",
+      "state": "NY"
+    },
+    "kirby-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "kite-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "kittatinny-lake-beach-nj": {
+      "city": "Sandyston Township",
+      "state": "NJ"
+    },
+    "kittattiny-beach-nj": {
+      "city": "Sandyston Township",
+      "state": "NJ"
+    },
+    "kiva-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "kiwanda-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "knollwood-beach-ny": {
+      "city": "Town of Huntington",
+      "state": "NY"
+    },
+    "koberg-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "krogh-beach-ny": {
+      "city": "New York",
+      "state": "NY"
+    },
+    "kurzius-beach-fl": {
+      "city": "Jacksonville",
+      "state": "FL"
+    },
+    "l-street-bathing-beach-nj": {
+      "city": "Belmar",
+      "state": "NJ"
+    },
+    "l-street-beach-ma": {
+      "city": "Boston",
+      "state": "MA"
+    },
+    "la-conchita-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "la-costa-beach-ca": {
+      "city": "Malibu",
+      "state": "CA"
+    },
+    "la-jolla-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "la-jolla-cove-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "la-jolla-shores-beach-ca": {
+      "city": "San Diego",
+      "state": "CA"
+    },
+    "la-jolla-tide-pools-ca": {
+      "city": "San Diego",
+      "state": "CA"
+    },
+    "la-piedra-beach-ca": {
+      "city": "Malibu",
+      "state": "CA"
+    },
+    "laguna-creek-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "laguna-point-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "laika-lane-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "lairds-landing-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "lake-anza-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "lake-anza-swimming-area-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "lake-arrowhead-village-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "lake-awosting-beach-ny": {
+      "city": "Town of Wawarsing",
+      "state": "NY"
+    },
+    "lake-baldwin-park-beach-fl": {
+      "city": "Winter Park",
+      "state": "FL"
+    },
+    "lake-barcroft-beach-va": {
+      "city": "Springfield",
+      "state": "VA"
+    },
+    "lake-bonham-beach-area-tx": {
+      "city": null,
+      "state": "TX"
+    },
+    "lake-chauncy-public-beach-ma": {
+      "city": "Westborough",
+      "state": "MA"
+    },
+    "lake-conway-beach-nj": {
+      "city": "Vernon Township",
+      "state": "NJ"
+    },
+    "lake-dennison-picnic-and-swim-area-ma": {
+      "city": "Winchendon",
+      "state": "MA"
+    },
+    "lake-don-pedro-swimming-lagoon-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "lake-hadlock-beach-ny": {
+      "city": "Town of Fort Ann",
+      "state": "NY"
+    },
+    "lake-hall-swimming-area-fl": {
+      "city": "Tallahassee",
+      "state": "FL"
+    },
+    "lake-lodge-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "lake-minnewaska-beach-ny": {
+      "city": "Town of Rochester",
+      "state": "NY"
+    },
+    "lake-monticello-beach-2-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "lake-monticello-beach-3-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "lake-monticello-beach-4-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "lake-monticello-beach-5-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "lake-mowhawk-beach-5-nj": {
+      "city": "Sparta Township",
+      "state": "NJ"
+    },
+    "lake-placid-public-beach-ny": {
+      "city": "Village of Lake Placid",
+      "state": "NY"
+    },
+    "lake-siskiyou-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "lake-street-beach-ma": {
+      "city": "Weymouth",
+      "state": "MA"
+    },
+    "lake-tamarack-beach-nj": {
+      "city": "Hardyston Township",
+      "state": "NJ"
+    },
+    "lake-tashmoo-town-beach-ma": {
+      "city": "Tisbury",
+      "state": "MA"
+    },
+    "lake-temescal-beach-ca": {
+      "city": "Oakland",
+      "state": "CA"
+    },
+    "lake-wallkill-beach-nj": {
+      "city": "Vernon Township",
+      "state": "NJ"
+    },
+    "lakempanoranma-beach-nj": {
+      "city": "Vernon Township",
+      "state": "NJ"
+    },
+    "lakeside-beach-ca": {
+      "city": "South Lake Tahoe",
+      "state": "CA"
+    },
+    "lakewood-beach-sc": {
+      "city": null,
+      "state": "SC"
+    },
+    "lamberts-cove-beach-ma": {
+      "city": "West Tisbury",
+      "state": "MA"
+    },
+    "las-trancas-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "las-tunas-beach-ca": {
+      "city": "Malibu",
+      "state": "CA"
+    },
+    "lashaway-park-town-beach-ma": {
+      "city": "North Brookfield",
+      "state": "MA"
+    },
+    "latigo-beach-ca": {
+      "city": "Malibu",
+      "state": "CA"
+    },
+    "laurel-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "law-street-beach-ca": {
+      "city": "San Diego",
+      "state": "CA"
+    },
+    "leadbetter-beach-ca": {
+      "city": "Santa Barbara",
+      "state": "CA"
+    },
+    "learned-pond-beach-ma": {
+      "city": "Framingham",
+      "state": "MA"
+    },
+    "lechuza-beach-ca": {
+      "city": "Malibu",
+      "state": "CA"
+    },
+    "lecount-hollow-beach-ma": {
+      "city": "Wellfleet",
+      "state": "MA"
+    },
+    "lee-county-dog-beach-fl": {
+      "city": "Bonita Springs",
+      "state": "FL"
+    },
+    "leeds-pond-beach-ny": {
+      "city": "Village of Plandome Manor",
+      "state": "NY"
+    },
+    "leo-carrillo-state-beach-ca": {
+      "city": "Unincorporated Santa Monica Mountains",
+      "state": "CA"
+    },
+    "lester-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "leucadia-state-beach-ca": {
+      "city": "Encinitas",
+      "state": "CA"
+    },
+    "lewes-public-beach-de": {
+      "city": "Lewes",
+      "state": "DE"
+    },
+    "lido-beach-fl": {
+      "city": "Saint Pete Beach",
+      "state": "FL"
+    },
+    "lido-beach-ny": {
+      "city": "Town of Hempstead",
+      "state": "NY"
+    },
+    "lighthouse-beach-ma": {
+      "city": "Edgartown",
+      "state": "MA"
+    },
+    "lighthouse-beach-ny": {
+      "city": "Town of Islip",
+      "state": "NY"
+    },
+    "lighthouse-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "lighthouse-beach-tx": {
+      "city": "Port Lavaca",
+      "state": "TX"
+    },
+    "lighthouse-field-state-beach-ca": {
+      "city": "Santa Cruz",
+      "state": "CA"
+    },
+    "limantour-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "lincoln-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "lindbergh-s-beach-or": {
+      "city": "Portland",
+      "state": "OR"
+    },
+    "lingan-street-beach-ma": {
+      "city": "Halifax",
+      "state": "MA"
+    },
+    "linnell-landing-beach-ma": {
+      "city": "Brewster",
+      "state": "MA"
+    },
+    "lionshead-lake-beach-nj": {
+      "city": "Wayne",
+      "state": "NJ"
+    },
+    "lisbon-beach-ny": {
+      "city": "Town of Lisbon",
+      "state": "NY"
+    },
+    "litchfield-beach-sc": {
+      "city": null,
+      "state": "SC"
+    },
+    "lithia-springs-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "little-beach-ca": {
+      "city": "Ventura",
+      "state": "CA"
+    },
+    "little-beach-ma": {
+      "city": "Dartmouth",
+      "state": "MA"
+    },
+    "little-beach-nj": {
+      "city": "Galloway Township",
+      "state": "NJ"
+    },
+    "little-cojo-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "little-corona-del-mar-beach-ca": {
+      "city": "Newport Beach",
+      "state": "CA"
+    },
+    "little-elm-beach-tx": {
+      "city": "Little Elm",
+      "state": "TX"
+    },
+    "little-harbor-beach-ma": {
+      "city": "Wareham",
+      "state": "MA"
+    },
+    "little-mud-creek-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "little-nini-beach-ri": {
+      "city": "Charlestown",
+      "state": "RI"
+    },
+    "little-oyster-bar-point-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "little-river-state-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "lloyd-beach-ny": {
+      "city": "Town of Oyster Bay",
+      "state": "NY"
+    },
+    "lloyd-s-beach-ri": {
+      "city": "Little Compton",
+      "state": "RI"
+    },
+    "lobsterville-beach-ma": {
+      "city": "Aquinnah",
+      "state": "MA"
+    },
+    "loch-arbour-village-beach-club-nj": {
+      "city": "Loch Arbour",
+      "state": "NJ"
+    },
+    "loggerhead-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "lolly-s-beach-fl": {
+      "city": "Bonita Springs",
+      "state": "FL"
+    },
+    "lone-ranch-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "long-bay-beach-sc": {
+      "city": null,
+      "state": "SC"
+    },
+    "long-beach-city-beach-ca": {
+      "city": "Long Beach",
+      "state": "CA"
+    },
+    "long-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "long-beach-ma": {
+      "city": "Aquinnah",
+      "state": "MA"
+    },
+    "long-beach-ny": {
+      "city": "City of Long Beach",
+      "state": "NY"
+    },
+    "long-cove-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "long-point-ri": {
+      "city": null,
+      "state": "RI"
+    },
+    "long-pond-beach-ma": {
+      "city": "Wellfleet",
+      "state": "MA"
+    },
+    "long-pond-swimming-area-ny": {
+      "city": "Town of Grafton",
+      "state": "NY"
+    },
+    "longmeadow-beach-ri": {
+      "city": "Warwick",
+      "state": "RI"
+    },
+    "longnook-beach-ma": {
+      "city": "Truro",
+      "state": "MA"
+    },
+    "longpoint-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "loop-beach-ma": {
+      "city": "Barnstable",
+      "state": "MA"
+    },
+    "lorenzo-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "lost-boy-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "lost-coast-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "louse-point-ny": {
+      "city": "Town of East Hampton",
+      "state": "NY"
+    },
+    "low-beach-ma": {
+      "city": "Nantucket",
+      "state": "MA"
+    },
+    "lowdermilk-beach-fl": {
+      "city": "Naples",
+      "state": "FL"
+    },
+    "lower-beach-ny": {
+      "city": "Town of Shelter Island",
+      "state": "NY"
+    },
+    "lower-falls-swimming-area-ny": {
+      "city": "Town of Ithaca",
+      "state": "NY"
+    },
+    "lucy-vincent-beach-ma": {
+      "city": "Chilmark",
+      "state": "MA"
+    },
+    "lunenburg-town-beach-ma": {
+      "city": "Lunenburg",
+      "state": "MA"
+    },
+    "luzerne-beach-ny": {
+      "city": "Town of Lake Luzerne",
+      "state": "NY"
+    },
+    "lynch-park-beach-ma": {
+      "city": "Beverly",
+      "state": "MA"
+    },
+    "lynn-beach-ma": {
+      "city": "Lynn",
+      "state": "MA"
+    },
+    "lynn-creek-park-beach-tx": {
+      "city": "Grand Prairie",
+      "state": "TX"
+    },
+    "lyons-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "m-street-beach-ma": {
+      "city": "Boston",
+      "state": "MA"
+    },
+    "macfadden-beach-tx": {
+      "city": null,
+      "state": "TX"
+    },
+    "mackerel-cove-beach-ri": {
+      "city": null,
+      "state": "RI"
+    },
+    "madequecham-beach-ma": {
+      "city": "Nantucket",
+      "state": "MA"
+    },
+    "madison-quarry-al": {
+      "city": "Madison",
+      "state": "AL"
+    },
+    "magnolia-beach-al": {
+      "city": null,
+      "state": "AL"
+    },
+    "mahopac-hills-beach-ny": {
+      "city": "Town of Carmel",
+      "state": "NY"
+    },
+    "maidstone-park-beach-ny": {
+      "city": "Town of East Hampton",
+      "state": "NY"
+    },
+    "main-beach-beach-1-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "main-beach-ca": {
+      "city": "Laguna Beach",
+      "state": "CA"
+    },
+    "main-beach-ma": {
+      "city": "Plymouth",
+      "state": "MA"
+    },
+    "maison-beach-sc": {
+      "city": null,
+      "state": "SC"
+    },
+    "makamah-beach-ny": {
+      "city": "Town of Huntington",
+      "state": "NY"
+    },
+    "malibu-beach-ca": {
+      "city": "Malibu",
+      "state": "CA"
+    },
+    "malibu-beach-nj": {
+      "city": "Egg Harbor Township",
+      "state": "NJ"
+    },
+    "mallard-creek-beach-al": {
+      "city": null,
+      "state": "AL"
+    },
+    "manatee-county-beach-fl": {
+      "city": "Holmes Beach",
+      "state": "FL"
+    },
+    "mandalay-beach-ca": {
+      "city": "Oxnard",
+      "state": "CA"
+    },
+    "mandalay-state-beach-ca": {
+      "city": "Oxnard",
+      "state": "CA"
+    },
+    "manhasset-bay-estates-association-beach-ny": {
+      "city": "Town of North Hempstead",
+      "state": "NY"
+    },
+    "manhattan-beach-ca": {
+      "city": "Half Moon Bay",
+      "state": "CA"
+    },
+    "manhattan-beach-ny": {
+      "city": "New York",
+      "state": "NY"
+    },
+    "manor-beach-ny": {
+      "city": "Village of Larchmont",
+      "state": "NY"
+    },
+    "mansion-beach-ri": {
+      "city": "New Shoreham",
+      "state": "RI"
+    },
+    "marco-island-resident-s-beach-fl": {
+      "city": "Marco Island",
+      "state": "FL"
+    },
+    "marconi-beach-ma": {
+      "city": "Wellfleet",
+      "state": "MA"
+    },
+    "margaret-lindley-park-pond-ma": {
+      "city": "Williamstown",
+      "state": "MA"
+    },
+    "marina-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "marina-state-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "marine-street-beach-ca": {
+      "city": "San Diego",
+      "state": "CA"
+    },
+    "marriott-beach-fl": {
+      "city": "Marco Island",
+      "state": "FL"
+    },
+    "marshall-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "marshall-s-beach-ca": {
+      "city": "San Francisco",
+      "state": "CA"
+    },
+    "marshalls-beach-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "martinelli-beach-ma": {
+      "city": "Oak Bluffs",
+      "state": "MA"
+    },
+    "martins-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "mashes-sands-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "matagorda-beach-tx": {
+      "city": null,
+      "state": "TX"
+    },
+    "mateo-coast-state-beaches-ca": {
+      "city": "Half Moon Bay",
+      "state": "CA"
+    },
+    "mattapoisett-town-beach-ma": {
+      "city": "Mattapoisett",
+      "state": "MA"
+    },
+    "matthew-j-buono-beach-ny": {
+      "city": "New York",
+      "state": "NY"
+    },
+    "mattole-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "matunuck-beach-ri": {
+      "city": "South Kingstown",
+      "state": "RI"
+    },
+    "mavericks-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "maxwell-place-beach-nj": {
+      "city": "Hoboken",
+      "state": "NJ"
+    },
+    "mayal-s-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "mayflower-beach-ma": {
+      "city": "Dennis",
+      "state": "MA"
+    },
+    "mayo-beach-ma": {
+      "city": "Wellfleet",
+      "state": "MA"
+    },
+    "mcabee-beach-ca": {
+      "city": "Monterey",
+      "state": "CA"
+    },
+    "mcc-beach-tx": {
+      "city": "Waco",
+      "state": "TX"
+    },
+    "mcclures-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "mcfadden-landing-tx": {
+      "city": null,
+      "state": "TX"
+    },
+    "mcgrath-state-beach-ca": {
+      "city": "Oxnard",
+      "state": "CA"
+    },
+    "mcnary-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "mcphillips-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "meadow-avenue-beach-ma": {
+      "city": "Wellfleet",
+      "state": "MA"
+    },
+    "medeiros-beach-ma": {
+      "city": "New Bedford",
+      "state": "MA"
+    },
+    "meher-beach-sc": {
+      "city": null,
+      "state": "SC"
+    },
+    "memorial-beach-ma": {
+      "city": "Natick",
+      "state": "MA"
+    },
+    "menahaunt-beach-ma": {
+      "city": "Falmouth",
+      "state": "MA"
+    },
+    "menauhant-beach-ma": {
+      "city": "Falmouth",
+      "state": "MA"
+    },
+    "menemsha-beach-ma": {
+      "city": "Chilmark",
+      "state": "MA"
+    },
+    "menemsha-hills-reservation-beach-ma": {
+      "city": "Chilmark",
+      "state": "MA"
+    },
+    "menhaden-lane-beach-ny": {
+      "city": "Town of Shelter Island",
+      "state": "NY"
+    },
+    "mercadante-beach-ny": {
+      "city": "City of Glen Cove",
+      "state": "NY"
+    },
+    "merchants-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "merriam-beach-ma": {
+      "city": "Bourne",
+      "state": "MA"
+    },
+    "meudon-beach-ny": {
+      "city": "Town of Oyster Bay",
+      "state": "NY"
+    },
+    "meyers-creek-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "miacomet-beach-ma": {
+      "city": "Nantucket",
+      "state": "MA"
+    },
+    "miami-beach-fl": {
+      "city": "Miami Beach",
+      "state": "FL"
+    },
+    "mickey-s-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "mickler-s-landing-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "middle-beach-ca": {
+      "city": "Avalon",
+      "state": "CA"
+    },
+    "middleton-town-beach-ma": {
+      "city": "Middleton",
+      "state": "MA"
+    },
+    "midland-beach-ny": {
+      "city": "New York",
+      "state": "NY"
+    },
+    "mile-rock-beach-ca": {
+      "city": "San Francisco",
+      "state": "CA"
+    },
+    "mill-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "miller-place-beach-ny": {
+      "city": "Town of Brookhaven",
+      "state": "NY"
+    },
+    "millers-beach-ny": {
+      "city": null,
+      "state": "NY"
+    },
+    "million-dollar-beach-ny": {
+      "city": "Town of Lake George",
+      "state": "NY"
+    },
+    "millway-beach-ma": {
+      "city": "Barnstable",
+      "state": "MA"
+    },
+    "mine-hill-beach-nj": {
+      "city": "Mine Hill",
+      "state": "NJ"
+    },
+    "mingo-beach-ma": {
+      "city": "Beverly",
+      "state": "MA"
+    },
+    "minot-beach-ma": {
+      "city": "Scituate",
+      "state": "MA"
+    },
+    "minot-forest-beach-ma": {
+      "city": "Wareham",
+      "state": "MA"
+    },
+    "minuteman-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "miramar-beach-ca": {
+      "city": "Half Moon Bay",
+      "state": "CA"
+    },
+    "misquamicut-fire-district-beach-ri": {
+      "city": "Westerly",
+      "state": "RI"
+    },
+    "misquamicut-state-beach-ri": {
+      "city": "Westerly",
+      "state": "RI"
+    },
+    "mitchell-s-cove-beach-ca": {
+      "city": "Santa Cruz",
+      "state": "CA"
+    },
+    "mitchelville-beach-sc": {
+      "city": "Hilton Head Island",
+      "state": "SC"
+    },
+    "miwok-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "moffit-beach-ny": {
+      "city": "Town of Lake Pleasant",
+      "state": "NY"
+    },
+    "mokelumne-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "monastery-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "money-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "money-island-beach-nj": {
+      "city": "Toms River",
+      "state": "NJ"
+    },
+    "monhegan-bluffs-beach-ri": {
+      "city": null,
+      "state": "RI"
+    },
+    "monomoy-beach-ma": {
+      "city": "Nantucket",
+      "state": "MA"
+    },
+    "montara-state-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "montauk-county-park-rv-campground-ny": {
+      "city": "Town of East Hampton",
+      "state": "NY"
+    },
+    "monte-rio-community-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "monterey-state-beach-ca": {
+      "city": "Monterey",
+      "state": "CA"
+    },
+    "monument-beach-ma": {
+      "city": "Bourne",
+      "state": "MA"
+    },
+    "moolack-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "moon-dunes-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "moonstone-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "moores-beach-nj": {
+      "city": "Maurice River Township",
+      "state": "NJ"
+    },
+    "moot-rock-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "moran-lake-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "more-mesa-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "more-mesa-nude-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "moreno-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "morey-stein-beach-ny": {
+      "city": "Town of Warrensburg",
+      "state": "NY"
+    },
+    "morongo-s-oasis-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "morro-dunes-natural-preserve-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "morro-rock-beach-ca": {
+      "city": "Morro Bay",
+      "state": "CA"
+    },
+    "morro-strand-state-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "morses-pond-beach-ma": {
+      "city": "Wellesley",
+      "state": "MA"
+    },
+    "moshup-beach-ma": {
+      "city": "Aquinnah",
+      "state": "MA"
+    },
+    "mosquito-beach-ri": {
+      "city": null,
+      "state": "RI"
+    },
+    "moss-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "moss-point-ca": {
+      "city": "Laguna Beach",
+      "state": "CA"
+    },
+    "mother-s-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "mothers-beach-ma": {
+      "city": "Ipswich",
+      "state": "MA"
+    },
+    "mountaindale-beach-ri": {
+      "city": "Smithfield",
+      "state": "RI"
+    },
+    "muir-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "murray-point-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "museum-beach-ma": {
+      "city": "Scituate",
+      "state": "MA"
+    },
+    "mustin-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "myrtle-beach-sc": {
+      "city": "Myrtle Beach",
+      "state": "SC"
+    },
+    "myrtle-island-beach-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "myrtle-point-public-beach-or": {
+      "city": "Myrtle Point",
+      "state": "OR"
+    },
+    "nahant-beach-ma": {
+      "city": "Nahant",
+      "state": "MA"
+    },
+    "nantasket-beach-ma": {
+      "city": "Hull",
+      "state": "MA"
+    },
+    "napeague-beach-ny": {
+      "city": "Town of East Hampton",
+      "state": "NY"
+    },
+    "naples-beach-ca": {
+      "city": "Half Moon Bay",
+      "state": "CA"
+    },
+    "narragansett-town-beach-ri": {
+      "city": null,
+      "state": "RI"
+    },
+    "natural-bridges-state-beach-ca": {
+      "city": "Santa Cruz",
+      "state": "CA"
+    },
+    "nauset-beach-ma": {
+      "city": "Orleans",
+      "state": "MA"
+    },
+    "nauset-light-beach-ma": {
+      "city": "Eastham",
+      "state": "MA"
+    },
+    "navarre-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "navarree-beach-snorkeling-reefs-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "navesink-beach-nj": {
+      "city": "Sea Bright",
+      "state": "NJ"
+    },
+    "navy-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "neals-beach-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "needle-beach-va": {
+      "city": "Portsmouth",
+      "state": "VA"
+    },
+    "needle-rock-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "nehalem-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "nejecho-beach-nj": {
+      "city": "Brick Township",
+      "state": "NJ"
+    },
+    "neptune-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "neskowin-beach-or": {
+      "city": "Neskowin",
+      "state": "OR"
+    },
+    "netarts-spit-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "new-beach-nj": {
+      "city": "Hardyston Township",
+      "state": "NJ"
+    },
+    "new-dorp-beach-ny": {
+      "city": "New York",
+      "state": "NY"
+    },
+    "new-port-pass-tx": {
+      "city": "Corpus Christi",
+      "state": "TX"
+    },
+    "new-sebago-beach-ny": {
+      "city": "Town of Haverstraw",
+      "state": "NY"
+    },
+    "new-smyrna-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "newcomb-hollow-beach-ma": {
+      "city": "Wellfleet",
+      "state": "MA"
+    },
+    "newport-beach-ca": {
+      "city": "Newport Beach",
+      "state": "CA"
+    },
+    "newport-dunes-ca": {
+      "city": "Newport Beach",
+      "state": "CA"
+    },
+    "newport-sand-beach-nj": {
+      "city": "Jersey City",
+      "state": "NJ"
+    },
+    "nicholas-canyon-beach-ca": {
+      "city": "Malibu",
+      "state": "CA"
+    },
+    "nickerson-beach-ma": {
+      "city": "Quincy",
+      "state": "MA"
+    },
+    "niles-beach-ca": {
+      "city": "Fremont",
+      "state": "CA"
+    },
+    "niles-beach-ma": {
+      "city": "Gloucester",
+      "state": "MA"
+    },
+    "ninigret-beach-ri": {
+      "city": null,
+      "state": "RI"
+    },
+    "no-bottom-point-ri": {
+      "city": "Hopkinton",
+      "state": "RI"
+    },
+    "no-name-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "nobadeer-beach-ma": {
+      "city": "Nantucket",
+      "state": "MA"
+    },
+    "nobska-beach-ma": {
+      "city": "Falmouth",
+      "state": "MA"
+    },
+    "nokomis-public-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "non-swimmer-area-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "noname-beach-ma": {
+      "city": null,
+      "state": "MA"
+    },
+    "north-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "north-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "north-beach-ma": {
+      "city": "Westwood",
+      "state": "MA"
+    },
+    "north-beach-nj": {
+      "city": "Middletown Township",
+      "state": "NJ"
+    },
+    "north-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "north-beach-sc": {
+      "city": null,
+      "state": "SC"
+    },
+    "north-blue-gum-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "north-camping-area-beach-ma": {
+      "city": "Winchendon",
+      "state": "MA"
+    },
+    "north-day-use-beach-ca": {
+      "city": "Dana Point",
+      "state": "CA"
+    },
+    "north-end-beach-nj": {
+      "city": "Brigantine",
+      "state": "NJ"
+    },
+    "north-island-beach-sc": {
+      "city": null,
+      "state": "SC"
+    },
+    "north-kingstown-town-beach-ri": {
+      "city": null,
+      "state": "RI"
+    },
+    "north-lake-drive-beach-fl": {
+      "city": "Naples",
+      "state": "FL"
+    },
+    "north-landing-beach-ny": {
+      "city": "Town of Hyde Park",
+      "state": "NY"
+    },
+    "north-light-beach-ri": {
+      "city": null,
+      "state": "RI"
+    },
+    "north-litchfield-beach-sc": {
+      "city": null,
+      "state": "SC"
+    },
+    "north-marina-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "north-moss-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "north-myrtle-beach-sc": {
+      "city": "North Myrtle Beach",
+      "state": "SC"
+    },
+    "north-rockland-high-school-ny": {
+      "city": "Town of Haverstraw",
+      "state": "NY"
+    },
+    "north-salmon-creek-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "north-scituate-beach-ma": {
+      "city": "Scituate",
+      "state": "MA"
+    },
+    "north-sea-bathing-beach-ny": {
+      "city": "Town of Southampton",
+      "state": "NY"
+    },
+    "north-shore-beach-ma": {
+      "city": "Bourne",
+      "state": "MA"
+    },
+    "north-shore-beach-ny": {
+      "city": "Town of Brookhaven",
+      "state": "NY"
+    },
+    "north-shore-ny": {
+      "city": "Town of Lyme",
+      "state": "NY"
+    },
+    "north-star-beach-ca": {
+      "city": "Newport Beach",
+      "state": "CA"
+    },
+    "north-swim-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "northport-beach-ny": {
+      "city": "Town of Huntington",
+      "state": "NY"
+    },
+    "norton-point-beach-ma": {
+      "city": "Edgartown",
+      "state": "MA"
+    },
+    "norton-road-beach-ma": {
+      "city": "Quincy",
+      "state": "MA"
+    },
+    "noyo-beach-ca": {
+      "city": "Fort Bragg",
+      "state": "CA"
+    },
+    "nye-beach-or": {
+      "city": "Newport",
+      "state": "OR"
+    },
+    "oak-beach-ny": {
+      "city": "Town of Babylon",
+      "state": "NY"
+    },
+    "oak-bottom-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "oak-neck-beach-ny": {
+      "city": "Town of Oyster Bay",
+      "state": "NY"
+    },
+    "oak-rd-beach-ny": {
+      "city": "Town of Islip",
+      "state": "NY"
+    },
+    "oakdale-beach-ny": {
+      "city": "City of Hudson",
+      "state": "NY"
+    },
+    "oakland-beach-ny": {
+      "city": "City of Rye",
+      "state": "NY"
+    },
+    "oakwood-beach-nj": {
+      "city": null,
+      "state": "DE"
+    },
+    "oakwood-beach-ny": {
+      "city": "New York",
+      "state": "NY"
+    },
+    "ocean-beach-ca": {
+      "city": "San Francisco",
+      "state": "CA"
+    },
+    "ocean-creek-beach-sc": {
+      "city": null,
+      "state": "SC"
+    },
+    "ocean-drive-beach-sc": {
+      "city": "North Myrtle Beach",
+      "state": "SC"
+    },
+    "ocean-house-beach-ri": {
+      "city": "Westerly",
+      "state": "RI"
+    },
+    "ocean-lakes-beach-sc": {
+      "city": null,
+      "state": "SC"
+    },
+    "ocean-terrace-public-beach-fl": {
+      "city": "Miami Beach",
+      "state": "FL"
+    },
+    "ocean-view-at-the-laura-quinn-wild-bird-sanctuary-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "oceano-dunes-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "oceanside-city-beach-ca": {
+      "city": "Oceanside",
+      "state": "CA"
+    },
+    "ohlson-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "oil-piers-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "old-beach-nj": {
+      "city": "Hardyston Township",
+      "state": "NJ"
+    },
+    "old-ben-weston-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "old-field-beach-ny": {
+      "city": "Town of Brookhaven",
+      "state": "NY"
+    },
+    "old-garden-beach-ma": {
+      "city": "Rockport",
+      "state": "MA"
+    },
+    "old-salt-work-beach-ri": {
+      "city": "Jamestown",
+      "state": "RI"
+    },
+    "old-sebago-beach-ny": {
+      "city": "Town of Haverstraw",
+      "state": "NY"
+    },
+    "olde-port-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "olustee-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "ona-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "oneida-shores-ny": {
+      "city": "Town of West Monroe",
+      "state": "NY"
+    },
+    "ontario-beach-ny": {
+      "city": null,
+      "state": "NY"
+    },
+    "opal-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "opeechee-heights-beach-ma": {
+      "city": "Barnstable",
+      "state": "MA"
+    },
+    "ophir-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "orchard-beach-ma": {
+      "city": "Quincy",
+      "state": "MA"
+    },
+    "orchard-beach-ny": {
+      "city": "New York",
+      "state": "NY"
+    },
+    "oregon-bar-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "oregon-beach-ma": {
+      "city": "Barnstable",
+      "state": "MA"
+    },
+    "orient-beach-ny": {
+      "city": "Town of Southold",
+      "state": "NY"
+    },
+    "orient-heights-beach-ma": {
+      "city": "Boston",
+      "state": "MA"
+    },
+    "ormond-beach-ca": {
+      "city": "Oxnard",
+      "state": "CA"
+    },
+    "outlook-beach-va": {
+      "city": "Hampton",
+      "state": "VA"
+    },
+    "overlook-beach-ny": {
+      "city": "Town of Islip",
+      "state": "NY"
+    },
+    "owen-park-beach-ma": {
+      "city": "Tisbury",
+      "state": "MA"
+    },
+    "oxnard-beach-ca": {
+      "city": "Oxnard",
+      "state": "CA"
+    },
+    "oyster-harbors-beach-ma": {
+      "city": "Barnstable",
+      "state": "MA"
+    },
+    "pacifica-state-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "paine-s-creek-beach-ma": {
+      "city": "Brewster",
+      "state": "MA"
+    },
+    "palisades-beach-ca": {
+      "city": "Santa Monica",
+      "state": "CA"
+    },
+    "palm-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "palomarin-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "panama-city-beaches-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "panther-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "paradise-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "paradise-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "paradise-cove-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "park-beach-ny": {
+      "city": "Town of Schroon",
+      "state": "NY"
+    },
+    "park-east-on-leash-dog-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "park-shore-beach-fl": {
+      "city": "Naples",
+      "state": "FL"
+    },
+    "park-west-on-leash-dog-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "parks-lake-beach-nj": {
+      "city": "Rockaway",
+      "state": "NJ"
+    },
+    "parkwood-beach-ma": {
+      "city": "Wareham",
+      "state": "MA"
+    },
+    "parramore-beach-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "parsons-beach-ny": {
+      "city": "New York",
+      "state": "NY"
+    },
+    "parsons-landing-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "pasa-a-grille-beach-fl": {
+      "city": "Saint Pete Beach",
+      "state": "FL"
+    },
+    "pass-a-grille-beach-fl": {
+      "city": "Saint Pete Beach",
+      "state": "FL"
+    },
+    "patch-beach-ma": {
+      "city": "Beverly",
+      "state": "MA"
+    },
+    "patrick-afb-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "patton-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "paul-s-beach-nj": {
+      "city": "Old Bridge Township",
+      "state": "NJ"
+    },
+    "pavilion-beach-ma": {
+      "city": "Gloucester",
+      "state": "MA"
+    },
+    "pawleys-island-beach-sc": {
+      "city": "Pawleys Island",
+      "state": "SC"
+    },
+    "pearce-lake-beach-ma": {
+      "city": "Saugus",
+      "state": "MA"
+    },
+    "pebble-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "pebble-beach-ma": {
+      "city": "Nantucket",
+      "state": "MA"
+    },
+    "pebble-beach-ny": {
+      "city": "New York",
+      "state": "NY"
+    },
+    "pebble-beach-sc": {
+      "city": null,
+      "state": "SC"
+    },
+    "pebbly-beach-ri": {
+      "city": null,
+      "state": "RI"
+    },
+    "peck-beach-nj": {
+      "city": "Ocean City",
+      "state": "NJ"
+    },
+    "peck-s-beach-nj": {
+      "city": "Ocean City",
+      "state": "NJ"
+    },
+    "peckham-beach-ri": {
+      "city": null,
+      "state": "RI"
+    },
+    "peggotty-beach-ma": {
+      "city": "Scituate",
+      "state": "MA"
+    },
+    "pelican-bay-commons-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "pelican-bay-north-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "pelican-bay-south-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "pelican-north-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "pelican-state-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "pemberton-beach-ma": {
+      "city": "Hull",
+      "state": "MA"
+    },
+    "penninsula-park-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "pensacola-beach-park-east-snorkeling-reefs-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "perles-beach-ca": {
+      "city": "Tiburon",
+      "state": "CA"
+    },
+    "perris-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "pescadero-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "pest-house-shore-ma": {
+      "city": "Nantucket",
+      "state": "MA"
+    },
+    "peters-pond-at-oakcrest-cove-beach-ma": {
+      "city": "Sandwich",
+      "state": "MA"
+    },
+    "peters-pond-at-oakcrest-cove-ma": {
+      "city": "Sandwich",
+      "state": "MA"
+    },
+    "pfeiffer-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "phillip-burton-memorial-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "phillips-beach-ma": {
+      "city": "Swampscott",
+      "state": "MA"
+    },
+    "picnic-beach-ca": {
+      "city": "Laguna Beach",
+      "state": "CA"
+    },
+    "picnic-island-beach-fl": {
+      "city": "Tampa",
+      "state": "FL"
+    },
+    "pico-beach-ma": {
+      "city": "Mattapoisett",
+      "state": "MA"
+    },
+    "pier-4-beach-ny": {
+      "city": "New York",
+      "state": "NY"
+    },
+    "pierce-beach-ma": {
+      "city": "Somerset",
+      "state": "MA"
+    },
+    "pilgrim-beach-ma": {
+      "city": "Plymouth",
+      "state": "MA"
+    },
+    "pilgrim-shorefront-ma": {
+      "city": "Plymouth",
+      "state": "MA"
+    },
+    "pillar-point-harbor-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "pine-island-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "pine-island-park-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "pine-mountain-lake-marina-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "pinecrest-dog-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "pines-lake-west-beach-nj": {
+      "city": "Wayne",
+      "state": "NJ"
+    },
+    "pirateland-beach-sc": {
+      "city": null,
+      "state": "SC"
+    },
+    "pirates-beach-tx": {
+      "city": "Galveston",
+      "state": "TX"
+    },
+    "pirates-cove-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "pismo-beach-ca": {
+      "city": "Grover Beach",
+      "state": "CA"
+    },
+    "pistachio-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "pit-stop-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "pita-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "plashes-pond-ma": {
+      "city": "Yarmouth",
+      "state": "MA"
+    },
+    "plattsburgh-city-beach-ny": {
+      "city": "City of Plattsburgh",
+      "state": "NY"
+    },
+    "playa-las-palmeras-ca": {
+      "city": "San Clemente",
+      "state": "CA"
+    },
+    "playa-san-juan-leighton-ca": {
+      "city": "Malibu",
+      "state": "CA"
+    },
+    "playalinda-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "playalinda-beach-nudist-area-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "playpen-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "pleasant-beach-ma": {
+      "city": "Cohasset",
+      "state": "MA"
+    },
+    "pleasant-road-beach-ma": {
+      "city": "Harwich",
+      "state": "MA"
+    },
+    "pleasant-valley-lake-beach-nj": {
+      "city": "Vernon Township",
+      "state": "NJ"
+    },
+    "pleasure-bay-beach-ma": {
+      "city": "Boston",
+      "state": "MA"
+    },
+    "pleasure-point-ma": {
+      "city": "Holliston",
+      "state": "MA"
+    },
+    "plum-beach-ri": {
+      "city": null,
+      "state": "RI"
+    },
+    "plum-cove-beach-ma": {
+      "city": "Gloucester",
+      "state": "MA"
+    },
+    "plum-island-beach-ma": {
+      "city": "Newburyport",
+      "state": "MA"
+    },
+    "plum-point-beach-ri": {
+      "city": "North Kingstown",
+      "state": "RI"
+    },
+    "plumb-beach-ny": {
+      "city": "New York",
+      "state": "NY"
+    },
+    "plymouth-beach-ma": {
+      "city": "Plymouth",
+      "state": "MA"
+    },
+    "poche-beach-ca": {
+      "city": "Dana Point",
+      "state": "CA"
+    },
+    "poet-s-beach-or": {
+      "city": "Portland",
+      "state": "OR"
+    },
+    "point-breeze-beach-ny": {
+      "city": "Town of Evans",
+      "state": "NY"
+    },
+    "point-gratiot-beach-ny": {
+      "city": "City of Dunkirk",
+      "state": "NY"
+    },
+    "point-molate-beach-ca": {
+      "city": "Richmond",
+      "state": "CA"
+    },
+    "point-of-rocks-landing-beach-ma": {
+      "city": "Brewster",
+      "state": "MA"
+    },
+    "point-reyes-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "point-rok-beach-ma": {
+      "city": "Grafton",
+      "state": "MA"
+    },
+    "point-sal-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "point-shirley-beach-ma": {
+      "city": "Winthrop",
+      "state": "MA"
+    },
+    "pond-beach-ma": {
+      "city": "Nahant",
+      "state": "MA"
+    },
+    "ponquogue-beach-ny": {
+      "city": "Town of Southampton",
+      "state": "NY"
+    },
+    "ponto-beach-ca": {
+      "city": "Carlsbad",
+      "state": "CA"
+    },
+    "pope-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "poplar-beach-ca": {
+      "city": "Half Moon Bay",
+      "state": "CA"
+    },
+    "porretto-beach-tx": {
+      "city": "Galveston",
+      "state": "TX"
+    },
+    "port-henry-village-beach-ny": {
+      "city": "Town of Moriah",
+      "state": "NY"
+    },
+    "port-hueneme-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "port-kent-public-beach-park-ny": {
+      "city": "Town of Chesterfield",
+      "state": "NY"
+    },
+    "portuguese-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "post-island-beach-ma": {
+      "city": "Quincy",
+      "state": "MA"
+    },
+    "post-oak-beach-tx": {
+      "city": null,
+      "state": "TX"
+    },
+    "postwood-park-ny": {
+      "city": "Town of Pierrepont",
+      "state": "NY"
+    },
+    "potbelly-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "powers-landing-ma": {
+      "city": "Wellfleet",
+      "state": "MA"
+    },
+    "powissett-beach-ma": {
+      "city": "Dover",
+      "state": "MA"
+    },
+    "pratts-beach-ny": {
+      "city": "City of Glen Cove",
+      "state": "NY"
+    },
+    "preston-beach-ma": {
+      "city": "Swampscott",
+      "state": "MA"
+    },
+    "prince-george-beach-sc": {
+      "city": null,
+      "state": "SC"
+    },
+    "princess-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "private-beach-ny": {
+      "city": "Town of Esopus",
+      "state": "NY"
+    },
+    "private-s-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "private-s-nude-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "pryibil-beach-ny": {
+      "city": "City of Glen Cove",
+      "state": "NY"
+    },
+    "public-access-fl": {
+      "city": "Naples",
+      "state": "FL"
+    },
+    "public-beach-access-2-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "public-beach-access-3-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "public-beach-buzzards-bay-ma": {
+      "city": "Falmouth",
+      "state": "MA"
+    },
+    "public-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "public-beach-ma": {
+      "city": "Barnstable",
+      "state": "MA"
+    },
+    "public-beach-quissett-harbor-ma": {
+      "city": "Falmouth",
+      "state": "MA"
+    },
+    "public-beach-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "public-swimmming-beach-seasonal-ny": {
+      "city": "Town of Ellery",
+      "state": "NY"
+    },
+    "pudding-creek-beach-ca": {
+      "city": "Fort Bragg",
+      "state": "CA"
+    },
+    "puerco-beach-ca": {
+      "city": "Malibu",
+      "state": "CA"
+    },
+    "puffers-pond-north-beach-ma": {
+      "city": "Amherst",
+      "state": "MA"
+    },
+    "puffers-pond-south-beach-ma": {
+      "city": "Amherst",
+      "state": "MA"
+    },
+    "pullin-family-marina-beach-tx": {
+      "city": "Waco",
+      "state": "TX"
+    },
+    "pwea-beach-ny": {
+      "city": "Town of North Hempstead",
+      "state": "NY"
+    },
+    "quarantine-shore-tx": {
+      "city": "Aransas Pass",
+      "state": "TX"
+    },
+    "quarry-beach-ca": {
+      "city": "Tiburon",
+      "state": "CA"
+    },
+    "quidnet-beach-ma": {
+      "city": "Nantucket",
+      "state": "MA"
+    },
+    "quissett-beach-ma": {
+      "city": "Falmouth",
+      "state": "MA"
+    },
+    "race-point-beach-ma": {
+      "city": "Provincetown",
+      "state": "MA"
+    },
+    "radio-beach-ca": {
+      "city": "Oakland",
+      "state": "CA"
+    },
+    "rainbow-beach-ma": {
+      "city": "Northampton",
+      "state": "MA"
+    },
+    "rainbow-pool-swimming-hole-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "ranger-steven-s-beach-ca": {
+      "city": "Malibu",
+      "state": "CA"
+    },
+    "rat-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "rebecca-s-cove-landing-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "red-cross-beach-ma": {
+      "city": "Concord",
+      "state": "MA"
+    },
+    "red-mill-beach-or": {
+      "city": "Rainier",
+      "state": "OR"
+    },
+    "red-river-beach-ma": {
+      "city": "Harwich",
+      "state": "MA"
+    },
+    "red-rock-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "red-white-and-blue-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "redbank-park-beach-sc": {
+      "city": null,
+      "state": "SC"
+    },
+    "redondo-beach-ca": {
+      "city": "Half Moon Bay",
+      "state": "CA"
+    },
+    "redondo-beach-state-park-ca": {
+      "city": "Redondo Beach",
+      "state": "CA"
+    },
+    "redwood-creek-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "reeder-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "reedley-beach-ca": {
+      "city": "Reedley",
+      "state": "CA"
+    },
+    "regatta-point-beach-ma": {
+      "city": "Worcester",
+      "state": "MA"
+    },
+    "rejects-beach-ri": {
+      "city": "Newport",
+      "state": "RI"
+    },
+    "rest-house-shore-ma": {
+      "city": "Nantucket",
+      "state": "MA"
+    },
+    "revere-beach-ma": {
+      "city": "Revere",
+      "state": "MA"
+    },
+    "rhoda-beach-ma": {
+      "city": "Quincy",
+      "state": "MA"
+    },
+    "rice-s-beach-ma": {
+      "city": "Beverly",
+      "state": "MA"
+    },
+    "ridgevale-beach-ma": {
+      "city": "Chatham",
+      "state": "MA"
+    },
+    "rincon-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "rio-del-mar-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "ripley-beach-ny": {
+      "city": "Town of Ripley",
+      "state": "NY"
+    },
+    "rippers-cove-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "ripple-beach-cove-ma": {
+      "city": "Ashburnham",
+      "state": "MA"
+    },
+    "river-access-ny": {
+      "city": "Town of Tusten",
+      "state": "NY"
+    },
+    "river-access-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "river-bend-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "riverhead-beach-ma": {
+      "city": "Marblehead",
+      "state": "MA"
+    },
+    "riviera-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "robbins-hill-beach-ma": {
+      "city": "Brewster",
+      "state": "MA"
+    },
+    "robert-w-crown-memorial-state-beach-ca": {
+      "city": "Alameda",
+      "state": "CA"
+    },
+    "robertson-island-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "robinsons-beach-ny": {
+      "city": "New York",
+      "state": "NY"
+    },
+    "rock-creek-beach-or": {
+      "city": "Mosier",
+      "state": "OR"
+    },
+    "rock-harbor-beach-ma": {
+      "city": "Orleans",
+      "state": "MA"
+    },
+    "rockaway-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "rockaway-beach-ny": {
+      "city": "New York",
+      "state": "NY"
+    },
+    "rockport-beach-park-tx": {
+      "city": "Rockport",
+      "state": "TX"
+    },
+    "rocky-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "rocky-neck-beach-ma": {
+      "city": "Gloucester",
+      "state": "MA"
+    },
+    "rocky-point-beach-ri": {
+      "city": "Warwick",
+      "state": "RI"
+    },
+    "rodeo-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "rogers-park-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "roosevelt-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "ropes-beach-ma": {
+      "city": "Barnstable",
+      "state": "MA"
+    },
+    "ross-cove-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "roy-carpenter-s-beach-ri": {
+      "city": "South Kingstown",
+      "state": "RI"
+    },
+    "royal-palms-county-beach-ca": {
+      "city": "Los Angeles",
+      "state": "CA"
+    },
+    "russian-gulch-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "rutherford-waterfront-park-nj": {
+      "city": "Rutherford",
+      "state": "NJ"
+    },
+    "ryder-beach-ma": {
+      "city": "Truro",
+      "state": "MA"
+    },
+    "ryder-street-beach-ma": {
+      "city": "Provincetown",
+      "state": "MA"
+    },
+    "rye-beach-ny": {
+      "city": "City of Rye",
+      "state": "NY"
+    },
+    "sacchi-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "sacramento-landing-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "sagamore-beach-ma": {
+      "city": "Bourne",
+      "state": "MA"
+    },
+    "sailing-beach-sc": {
+      "city": null,
+      "state": "SC"
+    },
+    "sailors-snug-harbor-beach-ma": {
+      "city": "Quincy",
+      "state": "MA"
+    },
+    "saint-malo-beach-ca": {
+      "city": "Oceanside",
+      "state": "CA"
+    },
+    "salem-willows-beach-ma": {
+      "city": "Salem",
+      "state": "MA"
+    },
+    "salisbury-beach-ma": {
+      "city": "Salisbury",
+      "state": "MA"
+    },
+    "salmon-hole-ca": {
+      "city": "Chico",
+      "state": "CA"
+    },
+    "salt-box-beach-ma": {
+      "city": "Yarmouth",
+      "state": "MA"
+    },
+    "salt-creek-beach-ca": {
+      "city": "Dana Point",
+      "state": "CA"
+    },
+    "salton-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "salty-brine-state-beach-ri": {
+      "city": "Narragansett",
+      "state": "RI"
+    },
+    "sam-ferrenti-east-beach-town-beach-ri": {
+      "city": "Charlestown",
+      "state": "RI"
+    },
+    "sam-ferretti-blue-shutters-town-beach-ri": {
+      "city": null,
+      "state": "RI"
+    },
+    "sammys-beach-ny": {
+      "city": "Town of East Hampton",
+      "state": "NY"
+    },
+    "san-buenaventura-state-beach-ca": {
+      "city": "Ventura",
+      "state": "CA"
+    },
+    "san-carlos-beach-ca": {
+      "city": "Monterey",
+      "state": "CA"
+    },
+    "san-carlos-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "san-gregorio-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "san-gregorio-private-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "san-luis-beach-tx": {
+      "city": "Galveston",
+      "state": "TX"
+    },
+    "san-mateo-point-ca": {
+      "city": "San Clemente",
+      "state": "CA"
+    },
+    "san-pedro-beach-ca": {
+      "city": "Pacifica",
+      "state": "CA"
+    },
+    "san-quentin-beach-ca": {
+      "city": "San Quentin",
+      "state": "CA"
+    },
+    "san-salvador-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "sand-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "sand-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "sand-dollar-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "sand-dollar-spit-beach-and-landing-fl": {
+      "city": "Marco Island",
+      "state": "FL"
+    },
+    "sand-hills-beach-ma": {
+      "city": "Scituate",
+      "state": "MA"
+    },
+    "sand-island-ny": {
+      "city": "Town of Clifton",
+      "state": "NY"
+    },
+    "sand-plant-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "sand-point-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "sand-pond-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "sand-springs-beach-ca": {
+      "city": "Tiburon",
+      "state": "CA"
+    },
+    "sand-street-beach-ny": {
+      "city": "Town of Brookhaven",
+      "state": "NY"
+    },
+    "sandbar-beach-ny": {
+      "city": "Village of South Glens Falls",
+      "state": "NY"
+    },
+    "sandbridge-beach-va": {
+      "city": "Virginia Beach",
+      "state": "VA"
+    },
+    "sands-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "sands-point-village-beach-ny": {
+      "city": "Village of Sands Point",
+      "state": "NY"
+    },
+    "sandspur-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "sandstone-beach-sc": {
+      "city": null,
+      "state": "SC"
+    },
+    "sandwich-beach-ma": {
+      "city": "Sandwich",
+      "state": "MA"
+    },
+    "sandy-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "sandy-beach-ma": {
+      "city": "Hadley",
+      "state": "MA"
+    },
+    "sandy-beach-ny": {
+      "city": "Village of Greenport",
+      "state": "NY"
+    },
+    "sandy-beach-ri": {
+      "city": "Warwick",
+      "state": "RI"
+    },
+    "sandy-beach-sc": {
+      "city": null,
+      "state": "SC"
+    },
+    "sandy-beach-tx": {
+      "city": null,
+      "state": "TX"
+    },
+    "sandy-cove-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "sandy-marsh-ma": {
+      "city": "Weymouth",
+      "state": "MA"
+    },
+    "sandy-naval-drainage-stream-ma": {
+      "city": "Weymouth",
+      "state": "MA"
+    },
+    "sandy-neck-beach-ma": {
+      "city": "Barnstable",
+      "state": "MA"
+    },
+    "sandy-point-beach-ri": {
+      "city": null,
+      "state": "RI"
+    },
+    "sandy-point-beach-sc": {
+      "city": null,
+      "state": "SC"
+    },
+    "sandy-point-beach-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "sandy-river-beach-or": {
+      "city": "Troutdale",
+      "state": "OR"
+    },
+    "sandy-s-beach-fl": {
+      "city": "Miami Beach",
+      "state": "FL"
+    },
+    "sandy-shorline-ma": {
+      "city": "Weymouth",
+      "state": "MA"
+    },
+    "sandy-stream-ma": {
+      "city": "Weymouth",
+      "state": "MA"
+    },
+    "santa-claus-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "santa-cruz-main-beach-ca": {
+      "city": "Santa Cruz",
+      "state": "CA"
+    },
+    "santa-maria-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "santa-maria-s-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "santa-monica-state-beach-ca": {
+      "city": "Santa Monica",
+      "state": "CA"
+    },
+    "saquish-beach-ma": {
+      "city": "Plymouth",
+      "state": "MA"
+    },
+    "sarasota-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "saugerties-beach-ny": {
+      "city": "Village of Saugerties",
+      "state": "NY"
+    },
+    "sayville-bathing-beach-ny": {
+      "city": "Town of Islip",
+      "state": "NY"
+    },
+    "scarborough-south-state-beach-ri": {
+      "city": null,
+      "state": "RI"
+    },
+    "scenic-lakes-beach-nj": {
+      "city": "Vernon Township",
+      "state": "NJ"
+    },
+    "school-bus-island-al": {
+      "city": null,
+      "state": "AL"
+    },
+    "schoolhouse-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "schooner-gulch-state-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "schoonmaker-beach-ca": {
+      "city": "Sausalito",
+      "state": "CA"
+    },
+    "schuberts-beach-ny": {
+      "city": "Town of Smithtown",
+      "state": "NY"
+    },
+    "scorton-neck-beach-ma": {
+      "city": "Sandwich",
+      "state": "MA"
+    },
+    "scotch-beach-ri": {
+      "city": "New Shoreham",
+      "state": "RI"
+    },
+    "scott-creek-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "scotts-beach-ny": {
+      "city": "Town of Brookhaven",
+      "state": "NY"
+    },
+    "screech-owl-reach-tx": {
+      "city": null,
+      "state": "TX"
+    },
+    "scripps-coastal-reserve-ca": {
+      "city": "San Diego",
+      "state": "CA"
+    },
+    "scuba-diving-access-area-ny": {
+      "city": "Town of Rochester",
+      "state": "NY"
+    },
+    "sculptured-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "scusset-beach-ma": {
+      "city": "Sandwich",
+      "state": "MA"
+    },
+    "sdsu-beach-ca": {
+      "city": "San Diego",
+      "state": "CA"
+    },
+    "sea-cliff-beach-ny": {
+      "city": "Town of Oyster Bay",
+      "state": "NY"
+    },
+    "sea-pine-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "sea-street-beach-ma": {
+      "city": "Dennis",
+      "state": "MA"
+    },
+    "sea-view-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "seabreeze-avenue-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "seabreeze-beach-va": {
+      "city": "Virginia Beach",
+      "state": "VA"
+    },
+    "seabright-beach-ca": {
+      "city": "Santa Cruz",
+      "state": "CA"
+    },
+    "seabrook-beach-ma": {
+      "city": "Seabrook",
+      "state": "NH"
+    },
+    "seabrook-beach-sc": {
+      "city": "Seabrook Island",
+      "state": "SC"
+    },
+    "seacrest-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "seagull-beach-ma": {
+      "city": "Yarmouth",
+      "state": "MA"
+    },
+    "seal-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "seal-rookery-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "searose-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "seaside-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "seaside-beach-club-beach-ri": {
+      "city": "Westerly",
+      "state": "RI"
+    },
+    "seaside-beach-or": {
+      "city": "Seaside",
+      "state": "OR"
+    },
+    "seaside-cove-beach-or": {
+      "city": "Seaside",
+      "state": "OR"
+    },
+    "seaview-beach-ma": {
+      "city": "Oak Bluffs",
+      "state": "MA"
+    },
+    "secline-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "second-beach-ri": {
+      "city": null,
+      "state": "RI"
+    },
+    "secret-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "secret-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "secret-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "seidler-beach-nj": {
+      "city": "Old Bridge Township",
+      "state": "NJ"
+    },
+    "seidler-s-beach-nj": {
+      "city": "Old Bridge Township",
+      "state": "NJ"
+    },
+    "seining-beach-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "seminole-beach-fl": {
+      "city": "Jacksonville",
+      "state": "FL"
+    },
+    "sesuit-beach-ma": {
+      "city": "Dennis",
+      "state": "MA"
+    },
+    "seven-mile-beach-nj": {
+      "city": "Avalon",
+      "state": "NJ"
+    },
+    "seven-pines-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "seymoor-pond-beach-ma": {
+      "city": "Harwich",
+      "state": "MA"
+    },
+    "shadow-cliffs-beach-ca": {
+      "city": "Pleasanton",
+      "state": "CA"
+    },
+    "shadow-cliffs-swimming-area-ca": {
+      "city": "Pleasanton",
+      "state": "CA"
+    },
+    "shallow-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "shannon-beach-ma": {
+      "city": "Winchester",
+      "state": "MA"
+    },
+    "shapiro-beach-ma": {
+      "city": "Dover",
+      "state": "MA"
+    },
+    "shark-fin-cove-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "sharp-park-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "shea-beach-ma": {
+      "city": "Quincy",
+      "state": "MA"
+    },
+    "shee-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "shell-beach-al": {
+      "city": "Orange Beach",
+      "state": "AL"
+    },
+    "shell-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "shell-beach-ny": {
+      "city": "Town of Shelter Island",
+      "state": "NY"
+    },
+    "shell-point-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "shifting-sands-beach-va": {
+      "city": "Virginia Beach",
+      "state": "VA"
+    },
+    "shipwreck-shore-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "shipyard-lane-beach-ma": {
+      "city": "Duxbury",
+      "state": "MA"
+    },
+    "shirley-beach-ny": {
+      "city": "Town of Brookhaven",
+      "state": "NY"
+    },
+    "shore-acres-pool-club-beach-ny": {
+      "city": "Town of Rye",
+      "state": "NY"
+    },
+    "shore-beach-nj": {
+      "city": "Barnegat Township",
+      "state": "NJ"
+    },
+    "shore-line-ma": {
+      "city": "Weymouth",
+      "state": "MA"
+    },
+    "shoreham-beach-ny": {
+      "city": "Town of Brookhaven",
+      "state": "NY"
+    },
+    "shoreline-beach-park-ca": {
+      "city": "San Diego",
+      "state": "CA"
+    },
+    "short-beach-ma": {
+      "city": "Revere",
+      "state": "MA"
+    },
+    "short-beach-ny": {
+      "city": "Town of Southampton",
+      "state": "NY"
+    },
+    "short-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "short-sand-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "siasconset-beach-ma": {
+      "city": "Nantucket",
+      "state": "MA"
+    },
+    "siesta-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "siesta-key-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "silver-beach-ma": {
+      "city": "Gosnold",
+      "state": "MA"
+    },
+    "silver-beach-ny": {
+      "city": "Town of Long Lake",
+      "state": "NY"
+    },
+    "silver-canyon-landing-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "silver-lake-beach-ma": {
+      "city": "Athol",
+      "state": "MA"
+    },
+    "silver-lake-town-beach-ma": {
+      "city": "Wilmington",
+      "state": "MA"
+    },
+    "silver-strand-state-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "simpson-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "singing-beach-ma": {
+      "city": "Manchester-by-the-Sea",
+      "state": "MA"
+    },
+    "singleton-beach-sc": {
+      "city": null,
+      "state": "SC"
+    },
+    "singleton-swash-sc": {
+      "city": null,
+      "state": "SC"
+    },
+    "sixes-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "skaket-beach-ma": {
+      "city": "Orleans",
+      "state": "MA"
+    },
+    "slacks-pond-beach-ri": {
+      "city": "Smithfield",
+      "state": "RI"
+    },
+    "slackwater-beach-or": {
+      "city": "Hood River",
+      "state": "OR"
+    },
+    "slaughter-beach-de": {
+      "city": null,
+      "state": "DE"
+    },
+    "slide-ranch-north-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "smathers-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "smith-beach-ma": {
+      "city": "Braintree",
+      "state": "MA"
+    },
+    "smith-beach-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "smith-island-beach-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "smuggler-s-cove-ca": {
+      "city": "San Diego",
+      "state": "CA"
+    },
+    "snake-pond-beach-ma": {
+      "city": "Sandwich",
+      "state": "MA"
+    },
+    "sneaker-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "social-security-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "sombrero-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "somoa-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "sound-beach-east-beach-ny": {
+      "city": "Town of Brookhaven",
+      "state": "NY"
+    },
+    "sound-beach-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "sound-beach-west-beach-ny": {
+      "city": "Town of Brookhaven",
+      "state": "NY"
+    },
+    "soundside-beach-ny": {
+      "city": "Village of Bayville",
+      "state": "NY"
+    },
+    "south-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "south-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "south-beach-ma": {
+      "city": "Nantucket",
+      "state": "MA"
+    },
+    "south-beach-ny": {
+      "city": "Town of Southold",
+      "state": "NY"
+    },
+    "south-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "south-beach-sc": {
+      "city": null,
+      "state": "SC"
+    },
+    "south-blue-gum-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "south-cape-beach-ma": {
+      "city": "Mashpee",
+      "state": "MA"
+    },
+    "south-day-use-beach-ca": {
+      "city": "Dana Point",
+      "state": "CA"
+    },
+    "south-jamesport-park-ny": {
+      "city": "Town of Riverhead",
+      "state": "NY"
+    },
+    "south-jetty-beach-ca": {
+      "city": "Ventura",
+      "state": "CA"
+    },
+    "south-landing-ny": {
+      "city": "Town of Red Hook",
+      "state": "NY"
+    },
+    "south-lt-island-beach-ma": {
+      "city": "Wellfleet",
+      "state": "MA"
+    },
+    "south-marco-beach-fl": {
+      "city": "Marco Island",
+      "state": "FL"
+    },
+    "south-oceanside-beach-ca": {
+      "city": "Oceanside",
+      "state": "CA"
+    },
+    "south-padre-island-nude-beach-tx": {
+      "city": null,
+      "state": "TX"
+    },
+    "south-pointe-beach-fl": {
+      "city": "Miami Beach",
+      "state": "FL"
+    },
+    "south-pond-beach-ma": {
+      "city": "Brookfield",
+      "state": "MA"
+    },
+    "south-ponto-ca": {
+      "city": "Carlsbad",
+      "state": "CA"
+    },
+    "south-rodeo-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "south-salmon-creek-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "south-shore-beach-ma": {
+      "city": null,
+      "state": "RI"
+    },
+    "south-shore-beach-ri": {
+      "city": null,
+      "state": "RI"
+    },
+    "south-shore-ma": {
+      "city": "Nantucket",
+      "state": "MA"
+    },
+    "south-swim-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "south-venice-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "southampton-beach-ny": {
+      "city": "Village of Southampton",
+      "state": "NY"
+    },
+    "southwest-beach-ma": {
+      "city": "Bourne",
+      "state": "MA"
+    },
+    "southwick-beach-ny": {
+      "city": "Town of Ellisburg",
+      "state": "NY"
+    },
+    "spa-beach-fl": {
+      "city": "Saint Petersburg",
+      "state": "FL"
+    },
+    "spanish-landing-beach-ca": {
+      "city": "San Diego",
+      "state": "CA"
+    },
+    "splash-station-tx": {
+      "city": "Cleburne",
+      "state": "TX"
+    },
+    "spooner-s-cove-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "spoonwood-lake-beach-al": {
+      "city": null,
+      "state": "AL"
+    },
+    "sporthaven-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "spring-lake-beach-ri": {
+      "city": "Burrillville",
+      "state": "RI"
+    },
+    "springhill-beach-ma": {
+      "city": "Sandwich",
+      "state": "MA"
+    },
+    "springhill-brook-ma": {
+      "city": "Sandwich",
+      "state": "MA"
+    },
+    "springmaid-beach-sc": {
+      "city": null,
+      "state": "SC"
+    },
+    "spuyten-duyvil-beach-ny": {
+      "city": "New York",
+      "state": "NY"
+    },
+    "squibnocket-beach-ma": {
+      "city": "Chilmark",
+      "state": "MA"
+    },
+    "staircase-beach-ca": {
+      "city": "Old Malibu",
+      "state": "CA"
+    },
+    "standish-shore-ma": {
+      "city": "Duxbury",
+      "state": "MA"
+    },
+    "starlight-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "state-park-beach-sc": {
+      "city": null,
+      "state": "SC"
+    },
+    "state-park-swim-beach-tx": {
+      "city": "Mineral Wells",
+      "state": "TX"
+    },
+    "steelhead-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "steep-hill-beach-ma": {
+      "city": "Ipswich",
+      "state": "MA"
+    },
+    "steers-beach-ri": {
+      "city": "Glocester",
+      "state": "RI"
+    },
+    "stehli-beach-ny": {
+      "city": "Town of Oyster Bay",
+      "state": "NY"
+    },
+    "stengel-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "stephens-field-beach-ma": {
+      "city": "Plymouth",
+      "state": "MA"
+    },
+    "steps-beach-ma": {
+      "city": "Nantucket",
+      "state": "MA"
+    },
+    "sterling-town-beach-ma": {
+      "city": "Sterling",
+      "state": "MA"
+    },
+    "stevenson-beach-ny": {
+      "city": "City of Fulton",
+      "state": "NY"
+    },
+    "stewart-beach-park-tx": {
+      "city": "Galveston",
+      "state": "TX"
+    },
+    "stewart-beach-tx": {
+      "city": "Galveston",
+      "state": "TX"
+    },
+    "stinson-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "stoddard-park-ma": {
+      "city": "Holliston",
+      "state": "MA"
+    },
+    "stokes-beach-nj": {
+      "city": "Sandyston Township",
+      "state": "NJ"
+    },
+    "stone-beach-ny": {
+      "city": "Town of Greenville",
+      "state": "NY"
+    },
+    "stoneboro-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "stonefield-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "stonewall-beach-ma": {
+      "city": "Chilmark",
+      "state": "MA"
+    },
+    "stoney-beach-ma": {
+      "city": "Falmouth",
+      "state": "MA"
+    },
+    "stoney-creek-swim-area-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "stoney-point-ma": {
+      "city": "Ipswich",
+      "state": "MA"
+    },
+    "stony-beach-ma": {
+      "city": "Nahant",
+      "state": "MA"
+    },
+    "stony-beach-ny": {
+      "city": "Town of Southold",
+      "state": "NY"
+    },
+    "stow-town-beach-ma": {
+      "city": "Stow",
+      "state": "MA"
+    },
+    "stramski-s-beach-ma": {
+      "city": "Marblehead",
+      "state": "MA"
+    },
+    "strands-beach-ca": {
+      "city": "Dana Point",
+      "state": "CA"
+    },
+    "strawberry-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "streeter-beach-ma": {
+      "city": "Sturbridge",
+      "state": "MA"
+    },
+    "strong-island-beach-ma": {
+      "city": "Chatham",
+      "state": "MA"
+    },
+    "stump-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "sturbridge-town-beach-ma": {
+      "city": "Sturbridge",
+      "state": "MA"
+    },
+    "sugarloaf-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "sullivans-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "summa-beach-fl": {
+      "city": "West Palm Beach",
+      "state": "FL"
+    },
+    "summerland-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "summerland-beach-cove-ca": {
+      "city": "Summerland",
+      "state": "CA"
+    },
+    "sun-and-surf-beach-club-ny": {
+      "city": "Town of Hempstead",
+      "state": "NY"
+    },
+    "sunken-meadow-beach-ma": {
+      "city": "Eastham",
+      "state": "MA"
+    },
+    "sunny-beach-tx": {
+      "city": "Galveston",
+      "state": "TX"
+    },
+    "sunny-cove-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "sunny-isles-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "sunny-ridge-beach-nj": {
+      "city": "Wayne",
+      "state": "NJ"
+    },
+    "sunray-beach-nj": {
+      "city": "Middle Township",
+      "state": "NJ"
+    },
+    "sunrise-beach-ma": {
+      "city": "Bourne",
+      "state": "MA"
+    },
+    "sunrise-park-beach-sc": {
+      "city": "Charleston",
+      "state": "SC"
+    },
+    "sunset-beach-ca": {
+      "city": "Huntington Beach",
+      "state": "CA"
+    },
+    "sunset-beach-fl": {
+      "city": "Tarpon Springs",
+      "state": "FL"
+    },
+    "sunset-beach-nj": {
+      "city": "Lower Township",
+      "state": "NJ"
+    },
+    "sunset-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "sunset-beach-ri": {
+      "city": null,
+      "state": "RI"
+    },
+    "sunset-beach-sc": {
+      "city": null,
+      "state": "NC"
+    },
+    "sunset-state-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "sunshine-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "surf-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "surf-beach-ri": {
+      "city": null,
+      "state": "RI"
+    },
+    "surf-drive-beach-ma": {
+      "city": "Falmouth",
+      "state": "MA"
+    },
+    "surfer-s-beach-ri": {
+      "city": "Little Compton",
+      "state": "RI"
+    },
+    "surfer-s-end-ri": {
+      "city": "Middletown",
+      "state": "RI"
+    },
+    "surfer-s-knoll-ca": {
+      "city": "Ventura",
+      "state": "CA"
+    },
+    "surfing-beach-va": {
+      "city": "Virginia Beach",
+      "state": "VA"
+    },
+    "surfrider-beach-ca": {
+      "city": "Malibu",
+      "state": "CA"
+    },
+    "surfside-beach-ma": {
+      "city": "Plymouth",
+      "state": "MA"
+    },
+    "surfside-beach-sc": {
+      "city": "Surfside Beach",
+      "state": "SC"
+    },
+    "surfside-beach-tx": {
+      "city": null,
+      "state": "TX"
+    },
+    "swan-lake-association-beach-ma": {
+      "city": "Yarmouth",
+      "state": "MA"
+    },
+    "swansea-town-beach-ma": {
+      "city": "Swansea",
+      "state": "MA"
+    },
+    "sweatt-beach-ma": {
+      "city": "Wrentham",
+      "state": "MA"
+    },
+    "swede-s-beach-ca": {
+      "city": "Sausalito",
+      "state": "CA"
+    },
+    "swift-beach-ca": {
+      "city": "Santa Cruz",
+      "state": "CA"
+    },
+    "swifts-beach-ma": {
+      "city": "Wareham",
+      "state": "MA"
+    },
+    "swifts-neck-association-ma": {
+      "city": "Wareham",
+      "state": "MA"
+    },
+    "swim-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "swim-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "swiming-area-ny": {
+      "city": "Town of Moravia",
+      "state": "NY"
+    },
+    "swimmer-area-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "swimming-area-sc": {
+      "city": null,
+      "state": "SC"
+    },
+    "swimming-area-tx": {
+      "city": null,
+      "state": "TX"
+    },
+    "swimming-beach-al": {
+      "city": null,
+      "state": "AL"
+    },
+    "swimming-beach-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "swimming-hole-ma": {
+      "city": "Groton",
+      "state": "MA"
+    },
+    "sylvan-beach-va": {
+      "city": "Virginia Beach",
+      "state": "VA"
+    },
+    "t-street-beach-ca": {
+      "city": "San Clemente",
+      "state": "CA"
+    },
+    "table-rock-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "tabletops-ca": {
+      "city": "Solana Beach",
+      "state": "CA"
+    },
+    "tahiti-beach-fl": {
+      "city": "Coral Gables",
+      "state": "FL"
+    },
+    "tall-timbers-beach-nj": {
+      "city": "Vernon Township",
+      "state": "NJ"
+    },
+    "talucah-beach-al": {
+      "city": null,
+      "state": "AL"
+    },
+    "tamarack-beach-ca": {
+      "city": "Carlsbad",
+      "state": "CA"
+    },
+    "tamaroo-bar-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "tankards-beach-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "tappens-beach-ri": {
+      "city": "Little Compton",
+      "state": "RI"
+    },
+    "taughannock-falls-state-park-beach-ny": {
+      "city": "Town of Ulysses",
+      "state": "NY"
+    },
+    "tavern-bay-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "taylor-park-beach-ny": {
+      "city": "Town of Canton",
+      "state": "NY"
+    },
+    "taylors-point-beach-ma": {
+      "city": "Bourne",
+      "state": "MA"
+    },
+    "teachers-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "teddy-beach-ri": {
+      "city": null,
+      "state": "RI"
+    },
+    "ten-eycks-beach-ny": {
+      "city": "Town of Stony Point",
+      "state": "NY"
+    },
+    "ten-mile-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "tenean-beach-ma": {
+      "city": "Boston",
+      "state": "MA"
+    },
+    "tennessee-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "thachers-beach-ma": {
+      "city": "Yarmouth",
+      "state": "MA"
+    },
+    "the-beach-at-arrive-ma": {
+      "city": "Lunenburg",
+      "state": "MA"
+    },
+    "the-corrals-swimming-hole-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "the-cove-at-lake-lenape-nj": {
+      "city": "Hamilton Township",
+      "state": "NJ"
+    },
+    "the-cove-nj": {
+      "city": "Lower Township",
+      "state": "NJ"
+    },
+    "the-creek-beach-ny": {
+      "city": "Village of Lattingtown",
+      "state": "NY"
+    },
+    "the-dark-side-ca": {
+      "city": "Carlsbad",
+      "state": "CA"
+    },
+    "the-dredge-nj": {
+      "city": "Somers Point",
+      "state": "NJ"
+    },
+    "the-green-hole-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "the-inkwell-beach-ma": {
+      "city": "Oak Bluffs",
+      "state": "MA"
+    },
+    "the-knobbs-ma": {
+      "city": "Ipswich",
+      "state": "MA"
+    },
+    "the-pier-beach-ca": {
+      "city": "San Clemente",
+      "state": "CA"
+    },
+    "the-point-2-beach-nj": {
+      "city": "Longport",
+      "state": "NJ"
+    },
+    "the-saint-lucie-north-sandbar-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "the-sandbox-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "the-sands-sc": {
+      "city": "Port Royal",
+      "state": "SC"
+    },
+    "the-sands-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "the-slabs-swimming-hole-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "the-strand-ma": {
+      "city": "Bourne",
+      "state": "MA"
+    },
+    "third-beach-ri": {
+      "city": null,
+      "state": "RI"
+    },
+    "thompsons-beach-nj": {
+      "city": "Maurice River Township",
+      "state": "NJ"
+    },
+    "thompsons-lake-state-park-beach-ny": {
+      "city": "Town of Knox",
+      "state": "NY"
+    },
+    "thompsons-lake-state-park-swimming-area-ny": {
+      "city": "Town of Knox",
+      "state": "NY"
+    },
+    "thousand-steps-beach-ca": {
+      "city": "Laguna Beach",
+      "state": "CA"
+    },
+    "three-mile-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "three-rocks-ma": {
+      "city": "Plymouth",
+      "state": "MA"
+    },
+    "thrive-beach-tx": {
+      "city": null,
+      "state": "TX"
+    },
+    "thumpertown-beach-ma": {
+      "city": "Eastham",
+      "state": "MA"
+    },
+    "thurston-s-beach-ma": {
+      "city": "Harvard",
+      "state": "MA"
+    },
+    "tiana-beach-ny": {
+      "city": "Town of Southampton",
+      "state": "NY"
+    },
+    "tidal-cove-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "tide-pool-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "tigertail-beach-fl": {
+      "city": "Marco Island",
+      "state": "FL"
+    },
+    "tisbury-town-beach-ma": {
+      "city": "Tisbury",
+      "state": "MA"
+    },
+    "titusville-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "tobay-beach-ny": {
+      "city": "Town of Oyster Bay",
+      "state": "NY"
+    },
+    "toll-plaza-beach-ca": {
+      "city": "Oakland",
+      "state": "CA"
+    },
+    "tomales-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "tonetta-lake-beach-ny": {
+      "city": "Town of Southeast",
+      "state": "NY"
+    },
+    "tongore-park-beach-ny": {
+      "city": "Town of Marbletown",
+      "state": "NY"
+    },
+    "topanga-county-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "torrance-county-beach-ca": {
+      "city": "Torrance",
+      "state": "CA"
+    },
+    "torrey-pines-city-beach-ca": {
+      "city": "San Diego",
+      "state": "CA"
+    },
+    "torrey-pines-state-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "tourmaline-beach-ca": {
+      "city": "San Diego",
+      "state": "CA"
+    },
+    "town-beach-ma": {
+      "city": "Scituate",
+      "state": "MA"
+    },
+    "town-beach-ny": {
+      "city": "Town of Islip",
+      "state": "NY"
+    },
+    "town-neck-beach-ma": {
+      "city": "Sandwich",
+      "state": "MA"
+    },
+    "trancas-beach-ca": {
+      "city": "Malibu",
+      "state": "CA"
+    },
+    "trestle-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "trestle-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "triangle-beach-ma": {
+      "city": "Sandwich",
+      "state": "MA"
+    },
+    "trinidad-state-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "triton-beach-ny": {
+      "city": "Town of Southampton",
+      "state": "NY"
+    },
+    "tropicana-beach-nj": {
+      "city": "Atlantic City",
+      "state": "NJ"
+    },
+    "truman-beach-fl": {
+      "city": "Key West",
+      "state": "FL"
+    },
+    "truman-s-beach-ny": {
+      "city": "Town of Southold",
+      "state": "NY"
+    },
+    "trunk-river-beach-ma": {
+      "city": "Falmouth",
+      "state": "MA"
+    },
+    "tudor-beach-ma": {
+      "city": "Nahant",
+      "state": "MA"
+    },
+    "tunitas-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "turkey-swamp-park-nj": {
+      "city": "Freehold Township",
+      "state": "NJ"
+    },
+    "turner-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "turner-lake-beach-area-or": {
+      "city": "Turner",
+      "state": "OR"
+    },
+    "turner-pond-beach-ma": {
+      "city": "Walpole",
+      "state": "MA"
+    },
+    "turner-s-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "turrtle-bend-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "turtle-beach-nj": {
+      "city": "Hardwick Township",
+      "state": "NJ"
+    },
+    "turtle-beach-sc": {
+      "city": null,
+      "state": "SC"
+    },
+    "twin-lakes-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "twin-points-beach-tx": {
+      "city": null,
+      "state": "TX"
+    },
+    "twin-rivers-beach-east-ri": {
+      "city": "North Providence",
+      "state": "RI"
+    },
+    "two-mile-beach-nj": {
+      "city": "Lower Township",
+      "state": "NJ"
+    },
+    "ufo-beach-clothing-optional-tx": {
+      "city": null,
+      "state": "TX"
+    },
+    "ulster-landing-beach-ny": {
+      "city": "Town of Ulster",
+      "state": "NY"
+    },
+    "undercliff-beach-nj": {
+      "city": "Englewood Cliffs",
+      "state": "NJ"
+    },
+    "university-beach-tx": {
+      "city": "Corpus Christi",
+      "state": "TX"
+    },
+    "upper-beach-ca": {
+      "city": "Rancho Palos Verdes",
+      "state": "CA"
+    },
+    "upper-beach-ny": {
+      "city": "Town of Shelter Island",
+      "state": "NY"
+    },
+    "upper-greenwood-lake-beach-nj": {
+      "city": "West Milford",
+      "state": "NJ"
+    },
+    "usal-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "vacation-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "vaill-beach-ri": {
+      "city": null,
+      "state": "RI"
+    },
+    "valentine-s-beach-ny": {
+      "city": "Town of Cicero",
+      "state": "NY"
+    },
+    "vallejo-beach-ca": {
+      "city": "Half Moon Bay",
+      "state": "CA"
+    },
+    "valley-beach-ma": {
+      "city": "Hull",
+      "state": "MA"
+    },
+    "valley-grove-beach-ny": {
+      "city": "Town of Huntington",
+      "state": "NY"
+    },
+    "vanderbilt-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "vaquero-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "vedado-way-beach-fl": {
+      "city": "Naples",
+      "state": "FL"
+    },
+    "venetian-shores-beach-ny": {
+      "city": "Town of Babylon",
+      "state": "NY"
+    },
+    "venice-beach-ca": {
+      "city": "Half Moon Bay",
+      "state": "CA"
+    },
+    "venice-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "ventura-city-beach-ca": {
+      "city": "Ventura",
+      "state": "CA"
+    },
+    "vernon-valley-lake-beach-nj": {
+      "city": "Vernon Township",
+      "state": "NJ"
+    },
+    "verona-beach-ny": {
+      "city": "Town of Verona",
+      "state": "NY"
+    },
+    "veteran-s-memorial-beach-ny": {
+      "city": "Town of Southold",
+      "state": "NY"
+    },
+    "via-miramar-beach-fl": {
+      "city": "Naples",
+      "state": "FL"
+    },
+    "victoria-beach-ca": {
+      "city": "Laguna Beach",
+      "state": "CA"
+    },
+    "vilano-point-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "wabasso-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "waddell-beach-county-of-santa-cruz-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "waddell-beach-state-parks-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "waddington-beach-ny": {
+      "city": "Town of Waddington",
+      "state": "NY"
+    },
+    "wade-s-beach-ny": {
+      "city": "Town of Shelter Island",
+      "state": "NY"
+    },
+    "wading-river-landing-ny": {
+      "city": "Town of Riverhead",
+      "state": "NY"
+    },
+    "wages-creek-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "waikiki-beach-ma": {
+      "city": "Salem",
+      "state": "MA"
+    },
+    "wainscott-beach-ny": {
+      "city": "Town of East Hampton",
+      "state": "NY"
+    },
+    "waites-island-beach-sc": {
+      "city": null,
+      "state": "SC"
+    },
+    "wake-beach-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "wakeby-lake-at-ryder-conservation-beach-ma": {
+      "city": "Sandwich",
+      "state": "MA"
+    },
+    "wakeby-lake-at-ryder-conservation-ma": {
+      "city": "Sandwich",
+      "state": "MA"
+    },
+    "wakeman-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "walk-on-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "wall-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "wallops-beach-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "walnut-beach-ny": {
+      "city": "Town of Esopus",
+      "state": "NY"
+    },
+    "walton-rocks-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "wanaksink-lake-beach-ny": {
+      "city": "Town of Thompson",
+      "state": "NY"
+    },
+    "warren-s-point-beach-ri": {
+      "city": null,
+      "state": "RI"
+    },
+    "warren-town-beach-ri": {
+      "city": "Warren",
+      "state": "RI"
+    },
+    "washing-pond-beach-ma": {
+      "city": "Nantucket",
+      "state": "MA"
+    },
+    "washington-lake-beach-nj": {
+      "city": "Washington Township",
+      "state": "NJ"
+    },
+    "watch-hill-beach-association-beach-ri": {
+      "city": null,
+      "state": "RI"
+    },
+    "water-front-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "waterfront-beach-ny": {
+      "city": "Town of Erin",
+      "state": "NY"
+    },
+    "waterfront-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "waterfront-tx": {
+      "city": null,
+      "state": "TX"
+    },
+    "waterfront-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "watermill-beach-ny": {
+      "city": "Town of Southampton",
+      "state": "NY"
+    },
+    "wawayanda-beach-nj": {
+      "city": "Vernon Township",
+      "state": "NJ"
+    },
+    "wayside-beach-ny": {
+      "city": "Town of Lake Luzerne",
+      "state": "NY"
+    },
+    "weekapaug-inn-beach-ri": {
+      "city": null,
+      "state": "RI"
+    },
+    "wells-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "wendt-beach-ny": {
+      "city": null,
+      "state": "NY"
+    },
+    "wequaquet-estates-beach-ma": {
+      "city": "Barnstable",
+      "state": "MA"
+    },
+    "wequaquet-lake-beach-ma": {
+      "city": "Barnstable",
+      "state": "MA"
+    },
+    "wescott-beach-ri": {
+      "city": "Glocester",
+      "state": "RI"
+    },
+    "wessagusset-beach-ma": {
+      "city": "Weymouth",
+      "state": "MA"
+    },
+    "west-beach-ca": {
+      "city": "Santa Barbara",
+      "state": "CA"
+    },
+    "west-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "west-beach-ma": {
+      "city": "Gosnold",
+      "state": "MA"
+    },
+    "west-beach-nj": {
+      "city": "Wayne",
+      "state": "NJ"
+    },
+    "west-beach-ny": {
+      "city": "Town of Islip",
+      "state": "NY"
+    },
+    "west-beach-ri": {
+      "city": null,
+      "state": "RI"
+    },
+    "west-beach-tx": {
+      "city": "Galveston",
+      "state": "TX"
+    },
+    "west-beach-va": {
+      "city": "Woodbridge",
+      "state": "VA"
+    },
+    "west-brookfield-town-beach-ma": {
+      "city": "West Brookfield",
+      "state": "MA"
+    },
+    "west-bunche-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "west-cove-beach-ny": {
+      "city": "Town of Hyde Park",
+      "state": "NY"
+    },
+    "west-end-beach-ny": {
+      "city": "City of Port Jervis",
+      "state": "NY"
+    },
+    "west-gulf-place-al": {
+      "city": "Gulf Shores",
+      "state": "AL"
+    },
+    "west-harbor-beach-ny": {
+      "city": "Town of Oyster Bay",
+      "state": "NY"
+    },
+    "west-islip-beach-ny": {
+      "city": "Town of Islip",
+      "state": "NY"
+    },
+    "west-jetty-al": {
+      "city": null,
+      "state": "AL"
+    },
+    "west-landing-ny": {
+      "city": "Town of Red Hook",
+      "state": "NY"
+    },
+    "west-meadow-beach-ny": {
+      "city": "Town of Brookhaven",
+      "state": "NY"
+    },
+    "west-neck-beach-ny": {
+      "city": "Town of Oyster Bay",
+      "state": "NY"
+    },
+    "westerly-town-beach-ri": {
+      "city": "Westerly",
+      "state": "RI"
+    },
+    "weston-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "westport-beach-ny": {
+      "city": "Town of Westport",
+      "state": "NY"
+    },
+    "westport-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "westward-beach-ca": {
+      "city": "Malibu",
+      "state": "CA"
+    },
+    "westwood-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "weymouth-great-pond-shoreline-ma": {
+      "city": "Weymouth",
+      "state": "MA"
+    },
+    "whale-beach-ludlam-beach-nj": {
+      "city": "Sea Isle City",
+      "state": "NJ"
+    },
+    "whale-beach-nj": {
+      "city": "Upper Township",
+      "state": "NJ"
+    },
+    "whale-bone-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "whales-beach-ma": {
+      "city": "Swampscott",
+      "state": "MA"
+    },
+    "whaleshead-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "whisky-run-beach-or": {
+      "city": null,
+      "state": "OR"
+    },
+    "white-beach-ma": {
+      "city": "Manchester-by-the-Sea",
+      "state": "MA"
+    },
+    "white-beach-ny": {
+      "city": "Town of Brookhaven",
+      "state": "NY"
+    },
+    "white-crest-beach-ma": {
+      "city": "Wellfleet",
+      "state": "MA"
+    },
+    "white-gulch-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "white-point-beach-sc": {
+      "city": null,
+      "state": "SC"
+    },
+    "white-stone-beach-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "whitehouse-creek-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "whiting-s-pond-beach-ma": {
+      "city": "North Attleborough",
+      "state": "MA"
+    },
+    "wianno-beach-ma": {
+      "city": "Barnstable",
+      "state": "MA"
+    },
+    "wide-beach-ny": {
+      "city": null,
+      "state": "NY"
+    },
+    "wightman-lane-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "wildcat-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "wilder-beach-ma": {
+      "city": "Lunenburg",
+      "state": "MA"
+    },
+    "wildwood-beach-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "wiley-park-beach-ma": {
+      "city": "Eastham",
+      "state": "MA"
+    },
+    "wilkins-beach-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "will-rogers-state-beach-ca": {
+      "city": "Los Angeles",
+      "state": "CA"
+    },
+    "william-kent-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "william-morrow-beach-nj": {
+      "city": "Somers Point",
+      "state": "NJ"
+    },
+    "william-randolph-hearst-memorial-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "willoughby-beach-va": {
+      "city": "Hampton",
+      "state": "VA"
+    },
+    "willow-ave-beach-ma": {
+      "city": "Salem",
+      "state": "MA"
+    },
+    "wilson-beach-fl": {
+      "city": null,
+      "state": "FL"
+    },
+    "wilson-creek-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "windansea-beach-ca": {
+      "city": "San Diego",
+      "state": "CA"
+    },
+    "windmill-beach-ny": {
+      "city": "Village of Sag Harbor",
+      "state": "NY"
+    },
+    "windsor-beach-ny": {
+      "city": null,
+      "state": "NY"
+    },
+    "windward-beach-nj": {
+      "city": "Brick Township",
+      "state": "NJ"
+    },
+    "windy-hill-beach-sc": {
+      "city": "North Myrtle Beach",
+      "state": "SC"
+    },
+    "wingaersheek-beach-ma": {
+      "city": "Gloucester",
+      "state": "MA"
+    },
+    "winterberry-beach-fl": {
+      "city": "Marco Island",
+      "state": "FL"
+    },
+    "winthrop-beach-ma": {
+      "city": "Winthrop",
+      "state": "MA"
+    },
+    "wipeout-beach-ca": {
+      "city": "San Diego",
+      "state": "CA"
+    },
+    "withers-swash-sc": {
+      "city": "Myrtle Beach",
+      "state": "SC"
+    },
+    "wollaston-beach-ma": {
+      "city": "Quincy",
+      "state": "MA"
+    },
+    "woods-cove-ca": {
+      "city": "Laguna Beach",
+      "state": "CA"
+    },
+    "wreck-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "wright-park-beach-ny": {
+      "city": null,
+      "state": "NY"
+    },
+    "wright-s-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "y-beach-sc": {
+      "city": null,
+      "state": "SC"
+    },
+    "yellowbank-beach-ca": {
+      "city": null,
+      "state": "CA"
+    },
+    "yerba-buena-beach-ca": {
+      "city": "Old Malibu",
+      "state": "CA"
+    },
+    "yirrel-beach-ma": {
+      "city": "Winthrop",
+      "state": "MA"
+    },
+    "yorktown-beach-va": {
+      "city": null,
+      "state": "VA"
+    },
+    "younger-beach-ca": {
+      "city": "Santa Cruz",
+      "state": "CA"
+    },
+    "ywca-beach-ri": {
+      "city": "Burrillville",
+      "state": "RI"
+    },
+    "zoar-valley-beach-ny": {
+      "city": "Town of East Otto",
+      "state": "NY"
+    },
+    "zoar-valley-naturist-area-ny": {
+      "city": "Town of Collins",
+      "state": "NY"
+    },
+    "zuma-beach-ca": {
+      "city": "Malibu",
+      "state": "CA"
     }
   }
 }
