@@ -1,6 +1,6 @@
 {
   "_note": "Water body each OSM swim area sits on, from scripts/fetch-osm-water-bodies.ts. Matched by bounding box against every named lake and river in the state, smallest box first. water_body null means the point named no fresh water and is not published.",
-  "generated_at": "2026-09-20T20:07:36.003Z",
+  "generated_at": "2026-09-20T20:45:29.556Z",
   "pad_m": 600,
   "verdicts": {
     "alexai-beach-ak": {
@@ -22,10 +22,10 @@
       "reason": "ok"
     },
     "berm-beach-ak": {
-      "water_body": "Echoing Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "big-beach-ak": {
       "water_body": null,
@@ -58,10 +58,10 @@
       "reason": "coastline within range"
     },
     "cannon-beach-ak": {
-      "water_body": "Tawah Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "casco-beach-ak": {
       "water_body": null,
@@ -82,10 +82,10 @@
       "reason": "ok"
     },
     "cloud-beach-ak": {
-      "water_body": "Yammaltene Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "coast-guard-beach-ak": {
       "water_body": null,
@@ -109,7 +109,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "fast-beach-ak": {
       "water_body": null,
@@ -121,13 +121,13 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "glass-beach-ak": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "hidalgo-beach-ak": {
       "water_body": null,
@@ -157,7 +157,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "kayak-beach-ak": {
       "water_body": null,
@@ -169,7 +169,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "ken-s-beach-ak": {
       "water_body": null,
@@ -193,7 +193,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "lena-beach-ak": {
       "water_body": null,
@@ -208,16 +208,16 @@
       "reason": "ok"
     },
     "lyn-ary-beach-ak": {
-      "water_body": "Hoods Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "massacre-beach-ak": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "maylynn-s-beach-ak": {
       "water_body": null,
@@ -226,22 +226,22 @@
       "reason": "coastline within range"
     },
     "nevidiskov-beach-ak": {
-      "water_body": "Nevidiskov River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "north-beach-ak": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "nunavachak-beach-ak": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "outside-beach-ak": {
       "water_body": null,
@@ -274,10 +274,10 @@
       "reason": "coastline within range"
     },
     "red-cove-beach-ak": {
-      "water_body": "Red Cove Lake",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "refuge-beach-ak": {
       "water_body": null,
@@ -292,16 +292,16 @@
       "reason": "coastline within range"
     },
     "sage-beach-ak": {
-      "water_body": "Indian River - Kaasdahéen",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "salmon-ranch-ak": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "sand-dollar-beach-ak": {
       "water_body": null,
@@ -325,13 +325,13 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "sarana-beach-ak": {
-      "water_body": "Nicholas River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "smith-beach-ak": {
       "water_body": "Steller River",
@@ -343,13 +343,13 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "south-beach-ak": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "south-point-higgins-beach-ak": {
       "water_body": null,
@@ -367,7 +367,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "waterfront-ak": {
       "water_body": "Spring Creek Pond",
@@ -385,31 +385,31 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "wrangell-beach-ak": {
-      "water_body": "Wrangell Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "10th-street-beach-access-al": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "13th-st-beach-access-al": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "6th-street-beach-access-al": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "abbott-spring-al": {
       "water_body": "Guntersville Lake",
@@ -547,7 +547,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "east-jetty-al": {
       "water_body": null,
@@ -577,13 +577,13 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "gulf-shores-public-beach-al": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "little-chalybeate-spring-al": {
       "water_body": "James O’Shaughnessy’s Lily Lake",
@@ -685,7 +685,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "west-jetty-al": {
       "water_body": null,
@@ -15859,7 +15859,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "albany-beach-ca": {
       "water_body": null,
@@ -16108,10 +16108,10 @@
       "reason": "ok"
     },
     "arroyo-burro-beach-ca": {
-      "water_body": "Arroyo Burro",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "arroyo-de-los-frijoles-beach-ca": {
       "water_body": null,
@@ -16240,10 +16240,10 @@
       "reason": "coastline within range"
     },
     "balboa-beach-ca": {
-      "water_body": "San Diego Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "bald-mountain-spring-ca": {
       "water_body": null,
@@ -16474,10 +16474,10 @@
       "reason": "ok"
     },
     "beer-can-beach-ca": {
-      "water_body": "Bush Gulch",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "bell-spring-ca": {
       "water_body": "Zimmershed Creek",
@@ -16990,10 +16990,10 @@
       "reason": "no named water within range"
     },
     "bowling-ball-beach-ca": {
-      "water_body": "Galloway Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "bowman-spring-ca": {
       "water_body": null,
@@ -17260,10 +17260,10 @@
       "reason": "no named water within range"
     },
     "butterfly-beach-ca": {
-      "water_body": "Montecito Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "buttermilk-spring-ca": {
       "water_body": "Buttermilk Creek",
@@ -17464,10 +17464,10 @@
       "reason": "coastline within range"
     },
     "carpinteria-state-beach-ca": {
-      "water_body": "Carpinteria Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "carrillo-spring-ca": {
       "water_body": "San Juan Creek",
@@ -17662,10 +17662,10 @@
       "reason": "ok"
     },
     "chicken-ranch-beach-ca": {
-      "water_body": "Third Valley Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "chicken-springs-ca": {
       "water_body": "Cuyama River",
@@ -17761,7 +17761,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "christmas-spring-ca": {
       "water_body": null,
@@ -18142,10 +18142,10 @@
       "reason": "no named water within range"
     },
     "county-line-beach-ca": {
-      "water_body": "Little Sycamore Canyon",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "cove-beach-ca": {
       "water_body": null,
@@ -18817,7 +18817,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "driftwood-beach-ca": {
       "water_body": null,
@@ -18874,10 +18874,10 @@
       "reason": "coastline within range"
     },
     "dunes-beach-ca": {
-      "water_body": "Frenchmans Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "dunkel-spring-ca": {
       "water_body": "Jenson Creek",
@@ -18982,10 +18982,10 @@
       "reason": "ok"
     },
     "east-beach-ca": {
-      "water_body": "Sycamore Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "east-fork-spring-ca": {
       "water_body": "Capinero Creek",
@@ -19012,10 +19012,10 @@
       "reason": "ok"
     },
     "edgewater-ca": {
-      "water_body": "San Diego Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "ehluyeh-canyon-springs-ca": {
       "water_body": null,
@@ -19069,7 +19069,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "el-segundo-beach-ca": {
       "water_body": null,
@@ -19120,10 +19120,10 @@
       "reason": "coastline within range"
     },
     "elmar-beach-ca": {
-      "water_body": "Pilarcitos Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "emigrant-spring-ca": {
       "water_body": null,
@@ -19135,7 +19135,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "empire-landing-ca": {
       "water_body": null,
@@ -19426,10 +19426,10 @@
       "reason": "ok"
     },
     "francis-beach-ca": {
-      "water_body": "Pilarcitos Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "francis-spring-ca": {
       "water_body": null,
@@ -19561,7 +19561,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "gazos-creek-state-beach-ca": {
       "water_body": null,
@@ -19624,10 +19624,10 @@
       "reason": "no named water within range"
     },
     "gold-bluffs-beach-ca": {
-      "water_body": "Home Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "gold-spring-ca": {
       "water_body": "Jolly's Pond",
@@ -19792,10 +19792,10 @@
       "reason": "no named water within range"
     },
     "group-campsite-ca": {
-      "water_body": "San Juan Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "grouse-spring-ca": {
       "water_body": "Stark Creek",
@@ -20080,10 +20080,10 @@
       "reason": "no named water within range"
     },
     "hendrys-beach-ca": {
-      "water_body": "Arroyo Burro",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "henry-spring-ca": {
       "water_body": null,
@@ -20251,7 +20251,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "hopi-spring-ca": {
       "water_body": "Coxey Creek",
@@ -20413,13 +20413,13 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "huntington-state-beach-ca": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "hyten-spring-ca": {
       "water_body": null,
@@ -20899,7 +20899,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "kelham-beach-ca": {
       "water_body": null,
@@ -20923,7 +20923,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "kellogg-s-beach-ca": {
       "water_body": null,
@@ -21124,10 +21124,10 @@
       "reason": "ok"
     },
     "lafler-creek-spring-ca": {
-      "water_body": "Torre Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "laguna-creek-beach-ca": {
       "water_body": null,
@@ -21136,10 +21136,10 @@
       "reason": "coastline within range"
     },
     "laguna-point-beach-ca": {
-      "water_body": "Lake Cleone",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "lairds-landing-ca": {
       "water_body": null,
@@ -21424,10 +21424,10 @@
       "reason": "ok"
     },
     "limantour-beach-ca": {
-      "water_body": "Laguna Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "limber-pine-spring-ca": {
       "water_body": "Forsee Creek",
@@ -21493,7 +21493,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "little-corona-del-mar-beach-ca": {
       "water_body": null,
@@ -21532,10 +21532,10 @@
       "reason": "no named water within range"
     },
     "little-river-state-beach-ca": {
-      "water_body": "Little River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "little-sand-spring-ca": {
       "water_body": null,
@@ -21652,10 +21652,10 @@
       "reason": "no named water within range"
     },
     "long-beach-city-beach-ca": {
-      "water_body": "Los Angeles River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "long-cove-beach-ca": {
       "water_body": null,
@@ -21958,10 +21958,10 @@
       "reason": "ok"
     },
     "manhattan-beach-ca": {
-      "water_body": "Canada Verde Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "mankins-spring-ca": {
       "water_body": "Moore Creek",
@@ -22060,10 +22060,10 @@
       "reason": "ok"
     },
     "martins-beach-ca": {
-      "water_body": "Lobitos Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "masonic-spring-ca": {
       "water_body": "East Fork Walker River",
@@ -22072,10 +22072,10 @@
       "reason": "ok"
     },
     "mateo-coast-state-beaches-ca": {
-      "water_body": "Frenchmans Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "mattole-beach-ca": {
       "water_body": null,
@@ -22369,13 +22369,13 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "miramar-beach-ca": {
-      "water_body": "Arroyo De En Medio",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "missed-spring-ca": {
       "water_body": null,
@@ -22549,13 +22549,13 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "more-mesa-nude-beach-ca": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "moreno-beach-ca": {
       "water_body": "Lake Perris",
@@ -22750,10 +22750,10 @@
       "reason": "no named water within range"
     },
     "naples-beach-ca": {
-      "water_body": "Arroyo De En Medio",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "natural-bridges-state-beach-ca": {
       "water_body": null,
@@ -22813,13 +22813,13 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "newport-dunes-ca": {
-      "water_body": "San Diego Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "nicholas-canyon-beach-ca": {
       "water_body": null,
@@ -22912,10 +22912,10 @@
       "reason": "coastline within range"
     },
     "north-star-beach-ca": {
-      "water_body": "San Diego Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "north-yolla-bolly-spring-ca": {
       "water_body": "South Fork Cottonwood Creek",
@@ -23632,10 +23632,10 @@
       "reason": "coastline within range"
     },
     "playpen-ca": {
-      "water_body": "Sherman Lake",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "plum-spring-ca": {
       "water_body": null,
@@ -23647,7 +23647,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "point-molate-beach-ca": {
       "water_body": null,
@@ -23719,7 +23719,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "port-hueneme-beach-ca": {
       "water_body": null,
@@ -24019,7 +24019,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "redondo-beach-state-park-ca": {
       "water_body": null,
@@ -24046,10 +24046,10 @@
       "reason": "coastline within range"
     },
     "redwood-spring-ca": {
-      "water_body": "Nacimiento River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "redwood-springs-ca": {
       "water_body": "Ferndell Creek",
@@ -24136,10 +24136,10 @@
       "reason": "coastline within range"
     },
     "rio-del-mar-beach-ca": {
-      "water_body": "Aptos Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "rippers-cove-ca": {
       "water_body": null,
@@ -24517,7 +24517,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "san-mateo-point-ca": {
       "water_body": null,
@@ -24613,7 +24613,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "santa-cruz-main-beach-ca": {
       "water_body": null,
@@ -24718,10 +24718,10 @@
       "reason": "no named water within range"
     },
     "schooner-gulch-state-beach-ca": {
-      "water_body": "Galloway Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "schoonmaker-beach-ca": {
       "water_body": null,
@@ -24811,7 +24811,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "seal-rookery-ca": {
       "water_body": null,
@@ -24820,10 +24820,10 @@
       "reason": "coastline within range"
     },
     "seaside-beach-ca": {
-      "water_body": "Frazer Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "secline-beach-ca": {
       "water_body": "Lake Tahoe",
@@ -25219,7 +25219,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "soto-springs-ca": {
       "water_body": "Arroyo Del Cerro",
@@ -25249,7 +25249,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "south-jetty-beach-ca": {
       "water_body": null,
@@ -25588,16 +25588,16 @@
       "reason": "no named water within range"
     },
     "summerland-beach-ca": {
-      "water_body": "Greenwell Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "summerland-beach-cove-ca": {
-      "water_body": "Greenwell Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "summit-spring-ca": {
       "water_body": "Squealer Gulch Creek",
@@ -25633,13 +25633,13 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "sunshine-beach-ca": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "supans-springs-ca": {
       "water_body": "West Sulphur Creek",
@@ -25723,7 +25723,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "table-rock-beach-ca": {
       "water_body": null,
@@ -25792,10 +25792,10 @@
       "reason": "ok"
     },
     "teachers-beach-ca": {
-      "water_body": "Third Valley Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "tecopa-hot-springs-ca": {
       "water_body": "Amargosa River",
@@ -25822,10 +25822,10 @@
       "reason": "no named water within range"
     },
     "ten-mile-beach-ca": {
-      "water_body": "Inglenook Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "tennessee-beach-ca": {
       "water_body": null,
@@ -25885,7 +25885,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "the-slabs-swimming-hole-ca": {
       "water_body": "Mill Creek",
@@ -26086,10 +26086,10 @@
       "reason": "ok"
     },
     "trestle-beach-ca": {
-      "water_body": "Honda Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "triangle-spring-ca": {
       "water_body": "Titanothere stream",
@@ -26158,10 +26158,10 @@
       "reason": "no named water within range"
     },
     "tunitas-beach-ca": {
-      "water_body": "Tunitas Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "tunnel-spring-ca": {
       "water_body": "Stark Creek",
@@ -26386,10 +26386,10 @@
       "reason": "no named water within range"
     },
     "vallejo-beach-ca": {
-      "water_body": "Arroyo De En Medio",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "valley-view-spring-ca": {
       "water_body": "Grindstone Creek",
@@ -26422,22 +26422,22 @@
       "reason": "no named water within range"
     },
     "venice-beach-ca": {
-      "water_body": "Frenchmans Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "ventura-city-beach-ca": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "veronica-springs-ca": {
-      "water_body": "Arroyo Burro",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "vichy-spring-ca": {
       "water_body": "Coarse Gold Creek",
@@ -26527,7 +26527,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "wall-spring-ca": {
       "water_body": null,
@@ -26809,7 +26809,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "wildcat-spring-ca": {
       "water_body": null,
@@ -26872,10 +26872,10 @@
       "reason": "ok"
     },
     "willow-spring-ca": {
-      "water_body": "Canada del Cojo",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "willow-springs-ca": {
       "water_body": "South Fork Battle Creek",
@@ -27826,10 +27826,10 @@
       "reason": "coastline within range"
     },
     "amtrak-beach-ct": {
-      "water_body": "Niantic River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "anchor-beach-ct": {
       "water_body": null,
@@ -27850,10 +27850,10 @@
       "reason": "coastline within range"
     },
     "attawan-beach-ct": {
-      "water_body": "Indian Pond",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "austrailia-beach-ct": {
       "water_body": "Mystic River",
@@ -27880,10 +27880,10 @@
       "reason": "no named water within range"
     },
     "baldwin-bridge-boat-launch-ct": {
-      "water_body": "Connecticut River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "ball-pond-boat-launch-ct": {
       "water_body": null,
@@ -27916,10 +27916,10 @@
       "reason": "coastline within range"
     },
     "bayview-beach-ct": {
-      "water_body": "Calf Pen Meadow Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "beach-pond-boat-launch-ct": {
       "water_body": "Beach Pond",
@@ -27934,10 +27934,10 @@
       "reason": "ok"
     },
     "between-the-bridges-marina-ct": {
-      "water_body": "Lieutenant River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "big-spring-ct": {
       "water_body": "West Branch Farmington River",
@@ -28009,7 +28009,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "burying-hill-beach-ct": {
       "water_body": null,
@@ -28060,10 +28060,10 @@
       "reason": "coastline within range"
     },
     "caswell-cove-marina-ct": {
-      "water_body": "Housatonic River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "center-beach-ct": {
       "water_body": null,
@@ -28075,13 +28075,13 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "chapman-beach-ct": {
-      "water_body": "Cold Spring Brook",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "chester-marina-ct": {
       "water_body": "Pattaconk Brook",
@@ -28096,10 +28096,10 @@
       "reason": "ok"
     },
     "circle-beach-ct": {
-      "water_body": "Neck River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "clinton-beach-ct": {
       "water_body": null,
@@ -28162,10 +28162,10 @@
       "reason": "ok"
     },
     "crescent-beach-ct": {
-      "water_body": "Pattagansett River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "crocker-s-boatyard-ct": {
       "water_body": null,
@@ -28201,7 +28201,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "dauntless-shipyard-and-marina-ct": {
       "water_body": "Falls River",
@@ -28222,10 +28222,10 @@
       "reason": "coastline within range"
     },
     "dodge-pond-boat-launch-ct": {
-      "water_body": "Little Dodge Pond",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "dooley-pond-boat-launch-ct": {
       "water_body": "Coleman Road Pond",
@@ -28246,16 +28246,16 @@
       "reason": "coastline within range"
     },
     "east-rive-beach-ct": {
-      "water_body": "Neck River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "east-river-boat-launch-ct": {
-      "water_body": "Neck River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "eastern-point-beach-ct": {
       "water_body": null,
@@ -28297,13 +28297,13 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "ferry-point-marina-ct": {
-      "water_body": "Connecticut River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "ferry-slip-ct": {
       "water_body": null,
@@ -28336,10 +28336,10 @@
       "reason": "coastline within range"
     },
     "fort-trumbull-beach-ct": {
-      "water_body": "Housatonic River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "fort-trumbull-marina-ct": {
       "water_body": null,
@@ -28348,10 +28348,10 @@
       "reason": "coastline within range"
     },
     "four-mile-river-boat-launch-ct": {
-      "water_body": "Fourmile River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "frank-hall-boat-yard-ct": {
       "water_body": null,
@@ -28408,10 +28408,10 @@
       "reason": "ok"
     },
     "gorton-pond-boat-launch-ct": {
-      "water_body": "Gorton Pond",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "great-falls-reservoir-access-ct": {
       "water_body": "Great Falls Reservoir",
@@ -28426,10 +28426,10 @@
       "reason": "coastline within range"
     },
     "great-island-boat-launch-ct": {
-      "water_body": "Back River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "green-falls-reservoir-boat-launch-ct": {
       "water_body": "Green Fall River",
@@ -28444,10 +28444,10 @@
       "reason": "coastline within range"
     },
     "greenwich-boat-and-yacht-club-ct": {
-      "water_body": "Horseneck Brook",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "groton-beach-ct": {
       "water_body": null,
@@ -28468,10 +28468,10 @@
       "reason": "coastline within range"
     },
     "gulf-beach-ct": {
-      "water_body": "Wepawaug River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "gwenmor-marina-ct": {
       "water_body": null,
@@ -28504,10 +28504,10 @@
       "reason": "ok"
     },
     "harbor-hill-marina-ct": {
-      "water_body": "Niantic River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "harbor-point-beach-ct": {
       "water_body": null,
@@ -28546,10 +28546,10 @@
       "reason": "coastline within range"
     },
     "hawthorne-beach-ct": {
-      "water_body": "Byram River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "hays-haven-marina-ct": {
       "water_body": "Waterhouse Brook",
@@ -28588,10 +28588,10 @@
       "reason": "no named water within range"
     },
     "hole-in-the-wall-beach-ct": {
-      "water_body": "Dodge Pond",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "holland-beach-ct": {
       "water_body": "Highland Lake",
@@ -28606,22 +28606,22 @@
       "reason": "ok"
     },
     "hotchkiss-cove-beach-ct": {
-      "water_body": "Talmages Ice Pond",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "hotchkiss-grove-beach-ct": {
-      "water_body": "Talmages Ice Pond",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "housatonic-river-boat-launch-ct": {
-      "water_body": "Housatonic River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "howells-pond-boat-launch-ct": {
       "water_body": "Howells Pond",
@@ -28648,10 +28648,10 @@
       "reason": "coastline within range"
     },
     "island-cove-marina-ct": {
-      "water_body": "Connecticut River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "jackson-cove-beach-ct": {
       "water_body": "Lake Zoar",
@@ -28684,10 +28684,10 @@
       "reason": "ok"
     },
     "kiddie-s-beach-ct": {
-      "water_body": "Fitch's Pond",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "king-s-island-boat-launch-ct": {
       "water_body": "Connecticut River",
@@ -28756,10 +28756,10 @@
       "reason": "ok"
     },
     "lighthouse-point-ct": {
-      "water_body": "Morris Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "limewood-beach-ct": {
       "water_body": null,
@@ -28789,7 +28789,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "lower-bolton-pond-boat-launch-ct": {
       "water_body": "Lower Bolton Lake",
@@ -28804,10 +28804,10 @@
       "reason": "ok"
     },
     "mago-point-marina-ct": {
-      "water_body": "Niantic River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "mamanasco-beach-ct": {
       "water_body": "Hidden Pond",
@@ -28828,10 +28828,10 @@
       "reason": "ok"
     },
     "marker-7-marina-ct": {
-      "water_body": "Niantic River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "martin-park-beach-ct": {
       "water_body": "Great Pond",
@@ -28864,10 +28864,10 @@
       "reason": "coastline within range"
     },
     "mccook-park-beach-ct": {
-      "water_body": "Pattagansett River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "meriden-motor-boat-club-ct": {
       "water_body": "Sumner Brook",
@@ -28876,16 +28876,16 @@
       "reason": "ok"
     },
     "miami-beach-ct": {
-      "water_body": "Swan Pond",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "middle-beach-ct": {
-      "water_body": "Patchogue River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "middlesex-marine-ct": {
       "water_body": "Carr Brook",
@@ -28900,16 +28900,16 @@
       "reason": "ok"
     },
     "milford-municipal-boat-launch-ct": {
-      "water_body": "Wepawaug River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "milford-yacht-club-ct": {
-      "water_body": "Wepawaug River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "mitchell-beach-ct": {
       "water_body": null,
@@ -28969,7 +28969,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "morris-town-beach-ct": {
       "water_body": "Bantam Lake",
@@ -29014,22 +29014,22 @@
       "reason": "coastline within range"
     },
     "niantic-bay-boathouse-ct": {
-      "water_body": "Niantic River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "niantic-bay-yacht-club-ct": {
-      "water_body": "Indian Pond",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "niantic-river-boat-launch-ct": {
-      "water_body": "Niantic River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "noank-marine-services-ct": {
       "water_body": null,
@@ -29068,10 +29068,10 @@
       "reason": "ok"
     },
     "norwalk-boat-club-ct": {
-      "water_body": "Betts Pond Brook",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "norwalk-cove-marina-ct": {
       "water_body": null,
@@ -29086,10 +29086,10 @@
       "reason": "ok"
     },
     "oak-leaf-marina-ct": {
-      "water_body": "Connecticut River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "ocean-beach-ct": {
       "water_body": null,
@@ -29140,10 +29140,10 @@
       "reason": "ok"
     },
     "pattagansett-lake-boat-launch-ct": {
-      "water_body": "Pattagansett Lake",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "pebbley-beach-ct": {
       "water_body": null,
@@ -29197,7 +29197,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "plum-bank-beach-ct": {
       "water_body": null,
@@ -29206,28 +29206,28 @@
       "reason": "coastline within range"
     },
     "point-beach-ct": {
-      "water_body": "Calf Pen Meadow Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "pond-point-beach-ct": {
-      "water_body": "Calf Pen Meadow Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "port-milford-ct": {
-      "water_body": "Wepawaug River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "port-niantic-marina-ct": {
-      "water_body": "Niantic River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "portland-boat-works-ct": {
       "water_body": "Pecausett Pond",
@@ -29242,10 +29242,10 @@
       "reason": "ok"
     },
     "poverty-island-beach-ct": {
-      "water_body": "Back River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "powers-lake-boat-launch-ct": {
       "water_body": "Powers Lake",
@@ -29278,16 +29278,16 @@
       "reason": "ok"
     },
     "quotonset-beach-ct": {
-      "water_body": "Patchogue River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "ragged-rock-marina-ct": {
-      "water_body": "Connecticut River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "rainbow-reservoir-boat-launch-ct": {
       "water_body": "Rainbow Reservoir",
@@ -29314,16 +29314,16 @@
       "reason": "coastline within range"
     },
     "rocky-neck-state-beach-ct": {
-      "water_body": "Bride Brook",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "rogers-lake-boat-launch-ct": {
-      "water_body": "Rogers Lake",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "rowayton-community-beach-ct": {
       "water_body": null,
@@ -29386,10 +29386,10 @@
       "reason": "coastline within range"
     },
     "saybrook-point-marina-ct": {
-      "water_body": "Connecticut River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "sea-bluff-beach-ct": {
       "water_body": null,
@@ -29422,16 +29422,16 @@
       "reason": "coastline within range"
     },
     "shell-beach-ct": {
-      "water_body": "Caroline Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "shell-marina-ct": {
-      "water_body": "Lieutenant River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "shennecossett-beach-ct": {
       "water_body": null,
@@ -29470,10 +29470,10 @@
       "reason": "coastline within range"
     },
     "silver-beach-ct": {
-      "water_body": "Housatonic River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "silver-lake-boat-launch-ct": {
       "water_body": "Silver Lake",
@@ -29488,10 +29488,10 @@
       "reason": "coastline within range"
     },
     "silver-sands-ct": {
-      "water_body": "Housatonic River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "small-boat-marina-ct": {
       "water_body": "Flat Brook",
@@ -29500,10 +29500,10 @@
       "reason": "ok"
     },
     "soundview-beach-ct": {
-      "water_body": "Swan Pond",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "south-beach-ct": {
       "water_body": "Lake Candlewood",
@@ -29524,10 +29524,10 @@
       "reason": "coastline within range"
     },
     "south-yard-marina-ct": {
-      "water_body": "Lieutenant River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "southport-beach-ct": {
       "water_body": null,
@@ -29632,10 +29632,10 @@
       "reason": "ok"
     },
     "three-belles-marina-ct": {
-      "water_body": "Niantic River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "town-beach-ct": {
       "water_body": null,
@@ -29662,10 +29662,10 @@
       "reason": "ok"
     },
     "uncas-lake-boat-launch-ct": {
-      "water_body": "Falls Brook",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "uncas-point-beach-ct": {
       "water_body": null,
@@ -29686,16 +29686,16 @@
       "reason": "coastline within range"
     },
     "village-marina-ct": {
-      "water_body": "Beaver Brook",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "walnut-beach-ct": {
-      "water_body": "Housatonic River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "waterfront-ct": {
       "water_body": "Tomlinson Pond",
@@ -29740,10 +29740,10 @@
       "reason": "ok"
     },
     "west-silver-sands-beach-ct": {
-      "water_body": "Caroline Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "wethersfield-cove-yacht-club-ct": {
       "water_body": null,
@@ -29752,10 +29752,10 @@
       "reason": "no named water within range"
     },
     "white-sand-beach-ct": {
-      "water_body": "Black Hall River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "williams-beach-ct": {
       "water_body": null,
@@ -29812,8 +29812,8 @@
       "reason": "ok"
     },
     "columbia-island-marina-dc": {
-      "water_body": "Tidal Basin",
-      "type": "lake",
+      "water_body": "Potomac River",
+      "type": "river",
       "great_lake": false,
       "reason": "ok"
     },
@@ -29842,14 +29842,14 @@
       "reason": "ok"
     },
     "tidal-basin-paddle-boats-dc": {
-      "water_body": "Tidal Basin",
-      "type": "lake",
+      "water_body": "Potomac River",
+      "type": "river",
       "great_lake": false,
       "reason": "ok"
     },
     "washington-marina-company-dc": {
-      "water_body": "Tidal Basin",
-      "type": "lake",
+      "water_body": "Potomac River",
+      "type": "river",
       "great_lake": false,
       "reason": "ok"
     },
@@ -29869,7 +29869,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "bayside-beach-de": {
       "water_body": null,
@@ -29884,10 +29884,10 @@
       "reason": "coastline within range"
     },
     "cedar-creek-public-boat-ramp-de": {
-      "water_body": "Ceder Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "coast-guard-basin-de": {
       "water_body": null,
@@ -29974,10 +29974,10 @@
       "reason": "ok"
     },
     "lewes-public-beach-de": {
-      "water_body": "Lewes and Rehoboth Canal",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "lewes-public-boat-ramp-de": {
       "water_body": null,
@@ -30064,10 +30064,10 @@
       "reason": "ok"
     },
     "slaughter-beach-de": {
-      "water_body": "Slaughter Neck Ditch",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "south-shore-marina-de": {
       "water_body": null,
@@ -30331,7 +30331,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "anastasia-state-park-fl": {
       "water_body": null,
@@ -30394,10 +30394,10 @@
       "reason": "ok"
     },
     "bahama-beach-fl": {
-      "water_body": "Bayou Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "bahia-beach-fl": {
       "water_body": null,
@@ -30610,10 +30610,10 @@
       "reason": "ok"
     },
     "big-spring-fl": {
-      "water_body": "Fenholloway River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "bird-sink-fl": {
       "water_body": "Still Creek",
@@ -30667,13 +30667,13 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "blind-creek-beach-south-fl": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "blind-pass-beach-fl": {
       "water_body": null,
@@ -30781,7 +30781,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no fresh water within range: Gulf Intracoastal Waterway"
+      "reason": "coastline within range"
     },
     "boca-chica-beach-fl": {
       "water_body": null,
@@ -30796,10 +30796,10 @@
       "reason": "coastline within range"
     },
     "bonair-beach-fl": {
-      "water_body": "South Jupiter Narrows",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "bone-yard-beach-fl": {
       "water_body": null,
@@ -30811,7 +30811,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no fresh water within range: Hogue Channel"
+      "reason": "coastline within range"
     },
     "bonnet-spring-fl": {
       "water_body": "Suwannee River",
@@ -30865,7 +30865,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "bradley-spring-fl": {
       "water_body": null,
@@ -31036,10 +31036,10 @@
       "reason": "no named water within range"
     },
     "carabelle-beach-fl": {
-      "water_body": "Carrabelle River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "carlton-spring-fl": {
       "water_body": "Fenholloway River",
@@ -31183,7 +31183,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "coca-plum-beach-fl": {
       "water_body": null,
@@ -31297,7 +31297,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "cow-spring-fl": {
       "water_body": "Suwannee River",
@@ -31327,7 +31327,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "crescent-beach-fl": {
       "water_body": null,
@@ -31645,13 +31645,13 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "eastern-green-beach-fl": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "eatons-beach-fl": {
       "water_body": null,
@@ -31663,7 +31663,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "econfina-blue-spring-2-fl": {
       "water_body": "Econfina Creek",
@@ -32092,10 +32092,10 @@
       "reason": "ok"
     },
     "golden-beach-entrance-fl": {
-      "water_body": "Deertown Gully",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "grassy-hole-spring-fl": {
       "water_body": "Ichetucknee River",
@@ -32308,16 +32308,16 @@
       "reason": "ok"
     },
     "haulover-beach-fl": {
-      "water_body": "Biscayne Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "haulover-nude-beach-fl": {
-      "water_body": "Biscayne Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "hays-spring-1-fl": {
       "water_body": "Chipola River",
@@ -32620,10 +32620,10 @@
       "reason": "ok"
     },
     "inlet-shore-beach-area-fl": {
-      "water_body": "Indian River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "iron-spring-fl": {
       "water_body": "Steinhatchee River",
@@ -32644,10 +32644,10 @@
       "reason": "ok"
     },
     "jabo-spring-fl": {
-      "water_body": "Clearwater Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "jack-paul-springs-fl": {
       "water_body": "Holmes Creek",
@@ -32716,10 +32716,10 @@
       "reason": "coastline within range"
     },
     "jensen-beach-fl": {
-      "water_body": "Indian River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "jitterbug-spring-col101974-fl": {
       "water_body": "Santa Fe River",
@@ -32758,10 +32758,10 @@
       "reason": "ok"
     },
     "juno-beach-fl": {
-      "water_body": "Lake Worth Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "jurassic-spring-fl": {
       "water_body": "Hunter Spring Run",
@@ -33091,7 +33091,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "little-otter-spring-fl": {
       "water_body": "Suwannee River",
@@ -33103,7 +33103,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no fresh water within range: Gulf Intracoastal Waterway"
+      "reason": "coastline within range"
     },
     "little-river-springs-fl": {
       "water_body": "Suwannee River",
@@ -33400,10 +33400,10 @@
       "reason": "no named water within range"
     },
     "miami-beach-fl": {
-      "water_body": "Atlantic Intracoastal Waterway",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "miami-springs-fl": {
       "water_body": "Sweetwater Creek",
@@ -33457,7 +33457,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "mooring-cove-springs-fl": {
       "water_body": null,
@@ -33505,13 +33505,13 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no fresh water within range: Gulf Intracoastal Waterway"
+      "reason": "coastline within range"
     },
     "mustin-beach-fl": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no fresh water within range: Gulf Intracoastal Waterway"
+      "reason": "coastline within range"
     },
     "mystic-spring-fl": {
       "water_body": "Pine Barren Creek",
@@ -33544,10 +33544,10 @@
       "reason": "coastline within range"
     },
     "new-smyrna-beach-fl": {
-      "water_body": "Indian River North",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "newport-spring-fl": {
       "water_body": "Saint Marks River",
@@ -33709,13 +33709,13 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "paradise-beach-fl": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "paradise-spring-fl": {
       "water_body": "Three Sisters Spring Run",
@@ -33751,13 +33751,13 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no fresh water within range: Gulf Intracoastal Waterway"
+      "reason": "coastline within range"
     },
     "patrick-afb-beach-fl": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "patty-sink-fl": {
       "water_body": null,
@@ -33841,7 +33841,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "playalinda-beach-nudist-area-fl": {
       "water_body": null,
@@ -33919,7 +33919,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no fresh water within range: Gulf Intracoastal Waterway"
+      "reason": "coastline within range"
     },
     "pump-spring-fl": {
       "water_body": "Suwannee River",
@@ -34219,13 +34219,13 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no fresh water within range: Gulf Intracoastal Waterway"
+      "reason": "coastline within range"
     },
     "sand-beach-fl": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no fresh water within range: Saint George Island Channel"
+      "reason": "coastline within range"
     },
     "sand-dollar-spit-beach-and-landing-fl": {
       "water_body": null,
@@ -34249,7 +34249,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "sandys-springs-fl": {
       "water_body": null,
@@ -34303,7 +34303,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "secret-beach-fl": {
       "water_body": "Big Coldwater Creek",
@@ -34663,7 +34663,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "springboard-spring-fl": {
       "water_body": null,
@@ -35023,19 +35023,19 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "tay616992-spring-fl": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "tay622991-spring-fl": {
-      "water_body": "Clearwater Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "tay625991-spring-fl": {
       "water_body": "Steinhatchee River",
@@ -35059,13 +35059,13 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "tay69992-spring-fl": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "tay730991-spring-fl": {
       "water_body": "Econfina River",
@@ -35089,7 +35089,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "tay924991-spring-fl": {
       "water_body": "Rocky Creek",
@@ -35158,10 +35158,10 @@
       "reason": "coastline within range"
     },
     "titusville-beach-fl": {
-      "water_body": "Stormwater Pond",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "tobacco-patch-springs-fl": {
       "water_body": "Ocklawaha River",
@@ -35626,10 +35626,10 @@
       "reason": "ok"
     },
     "walton-rocks-beach-fl": {
-      "water_body": "Indian River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "warm-mineral-spring-fl": {
       "water_body": "Deer Prairie Creek",
@@ -35791,7 +35791,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "wilson-head-spring-fl": {
       "water_body": "Withlacoochee River",
@@ -35857,31 +35857,31 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "5th-street-public-beach-access-ga": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "6th-street-public-beach-access-ga": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "7th-street-public-beach-access-ga": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "9th-street-public-beach-access-ga": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "aarlington-beach-ga": {
       "water_body": "Chattahoochee River",
@@ -35923,7 +35923,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "blue-hole-ga": {
       "water_body": "Blue Hole",
@@ -35980,7 +35980,7 @@
       "reason": "ok"
     },
     "butter-bean-beach-ga": {
-      "water_body": "Skidaway Narrows",
+      "water_body": "Moon River",
       "type": "river",
       "great_lake": false,
       "reason": "ok"
@@ -36007,7 +36007,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "chattahoochee-source-spring-ga": {
       "water_body": "Rough Branch",
@@ -36061,7 +36061,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "emc-beach-ga": {
       "water_body": "Little Glady Creek",
@@ -36076,10 +36076,10 @@
       "reason": "ok"
     },
     "glory-ga": {
-      "water_body": "Jekyll Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "half-moon-landing-ga": {
       "water_body": "Altamaha River",
@@ -36112,10 +36112,10 @@
       "reason": "ok"
     },
     "marker-post-ga": {
-      "water_body": "Cumberland River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "mid-beach-ga": {
       "water_body": null,
@@ -36139,7 +36139,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "nancy-spring-ga": {
       "water_body": null,
@@ -36157,7 +36157,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "north-beach-ga": {
       "water_body": null,
@@ -36211,7 +36211,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "senior-beach-ga": {
       "water_body": "Little Glady Creek",
@@ -36220,10 +36220,10 @@
       "reason": "ok"
     },
     "shark-tooth-beach-ga": {
-      "water_body": "Jekyll Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "south-beach-ga": {
       "water_body": null,
@@ -36319,19 +36319,19 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "ai-opio-beach-hi": {
-      "water_body": "ʻAimakapā Fishpond",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "aki-s-beach-hi": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "ala-moana-beach-hi": {
       "water_body": null,
@@ -36367,13 +36367,13 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "baby-beach-hi": {
-      "water_body": "Kahoma Stream",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "baldwin-beach-hi": {
       "water_body": "Kailua Gulch",
@@ -36391,7 +36391,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "black-sand-beach-hi": {
       "water_body": null,
@@ -36403,7 +36403,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "brennecke-beach-hi": {
       "water_body": null,
@@ -36415,13 +36415,13 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "chuns-reef-beach-hi": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "clissolds-beach-hi": {
       "water_body": null,
@@ -36451,13 +36451,13 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "donkey-beach-hi": {
-      "water_body": "Kumukumu Stream",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "duke-paoa-kahanamoku-beach-park-hi": {
       "water_body": null,
@@ -36490,10 +36490,10 @@
       "reason": "coastline within range"
     },
     "haikioawa-landing-hi": {
-      "water_body": "Kealialuna Stream",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "halape-beach-hi": {
       "water_body": null,
@@ -36508,22 +36508,22 @@
       "reason": "coastline within range"
     },
     "hale-iwa-beach-hi": {
-      "water_body": "Anahulu River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "haleiwa-alii-beach-hi": {
-      "water_body": "Loko Ea Fishpond",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "hamoa-beach-hi": {
-      "water_body": "Kapiʻa Stream",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "hana-beach-park-hi": {
       "water_body": null,
@@ -36535,7 +36535,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "hanakapi-ai-beach-hi": {
       "water_body": null,
@@ -36571,7 +36571,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "hickam-harbor-beach-hi": {
       "water_body": null,
@@ -36589,7 +36589,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "honl-s-beach-hi": {
       "water_body": null,
@@ -36604,16 +36604,16 @@
       "reason": "coastline within range"
     },
     "honokohau-harbor-beach-hi": {
-      "water_body": "ʻAimakapā Fishpond",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "honokowai-beach-park-hi": {
-      "water_body": "Mahinahina Stream",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "honoli-i-beach-hi": {
       "water_body": null,
@@ -36625,7 +36625,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "honouli-maloo-bay-beach-hi": {
       "water_body": null,
@@ -36655,19 +36655,19 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "ka-aku-u-beach-hi": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "ka-anapali-beach-hi": {
-      "water_body": "Wahikuli Gulch",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "ka-opala-beach-hi": {
       "water_body": null,
@@ -36682,10 +36682,10 @@
       "reason": "coastline within range"
     },
     "kahakuloa-beach-hi": {
-      "water_body": "Waihali Gulch",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "kahala-beach-hi": {
       "water_body": null,
@@ -36697,7 +36697,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "kahana-bay-beach-hi": {
       "water_body": null,
@@ -36709,13 +36709,13 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "kahekili-beach-hi": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "kahili-beach-hi": {
       "water_body": null,
@@ -36736,16 +36736,16 @@
       "reason": "coastline within range"
     },
     "kaiaka-bay-beach-hi": {
-      "water_body": "Paukauila Stream",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "kaihalulu-beach-hi": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "kailua-beach-hi": {
       "water_body": null,
@@ -36760,22 +36760,22 @@
       "reason": "coastline within range"
     },
     "kaiolohia-beach-hi": {
-      "water_body": "Halulu Gulch",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "kaipapa-u-beach-hi": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "kalae-o-io-beach-hi": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "kalalau-beach-hi": {
       "water_body": null,
@@ -36796,10 +36796,10 @@
       "reason": "coastline within range"
     },
     "kalepolepo-beach-park-hi": {
-      "water_body": "Kūlanihākoʻi Gulch",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "kalihiwai-beach-hi": {
       "water_body": null,
@@ -36823,25 +36823,25 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "kamaole-i-beach-hi": {
-      "water_body": "Waipuʻilani Gulch",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "kamaole-ii-beach-hi": {
-      "water_body": "Liʻilioholo Stream",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "kamaole-iii-beach-hi": {
-      "water_body": "Liʻilioholo Stream",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "kanaha-beach-hi": {
       "water_body": "Kailianui Canal",
@@ -36850,16 +36850,16 @@
       "reason": "ok"
     },
     "kanalukaha-beach-hi": {
-      "water_body": "Hakina Gulch",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "kapa-a-beach-hi": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "kapahukapu-manini-beach-hi": {
       "water_body": null,
@@ -36877,7 +36877,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "kauapea-beach-hi": {
       "water_body": null,
@@ -36889,7 +36889,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "kaulahao-beach-hi": {
       "water_body": null,
@@ -36907,7 +36907,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "kawa-aloa-beach-hi": {
       "water_body": null,
@@ -36919,7 +36919,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "ke-e-beach-hi": {
       "water_body": null,
@@ -36937,49 +36937,49 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "kealia-beach-hi": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "keamano-beach-hi": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "keawakapu-beach-north-hi": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "keawakapu-beach-south-hi": {
-      "water_body": "Keawakapu Stream",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "keawanui-beach-hi": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "kehena-beach-hi": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "keka-a-beach-hi": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "kekaha-beach-hi": {
       "water_body": null,
@@ -37003,7 +37003,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "kiahuna-beach-hi": {
       "water_body": null,
@@ -37021,13 +37021,13 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "koki-beach-hi": {
-      "water_body": "Haneoʻo Gulch",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "ku-au-cove-hi": {
       "water_body": "Kūʻau Stream",
@@ -37075,7 +37075,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "larsen-s-beach-hi": {
       "water_body": null,
@@ -37084,16 +37084,16 @@
       "reason": "coastline within range"
     },
     "lawa-i-beach-hi": {
-      "water_body": "Lawai Stream",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "lawai-beach-hi": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "le-ahi-beach-hi": {
       "water_body": null,
@@ -37102,10 +37102,10 @@
       "reason": "coastline within range"
     },
     "leho-ula-beach-hi": {
-      "water_body": "Haneoʻo Gulch",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "lighthouse-beach-hi": {
       "water_body": null,
@@ -37117,13 +37117,13 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "lopa-beach-hi": {
-      "water_body": "Lōpā Gulch",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "lumaha-i-beach-hi": {
       "water_body": null,
@@ -37132,10 +37132,10 @@
       "reason": "coastline within range"
     },
     "maeaea-beach-hi": {
-      "water_body": "Loko Ea Fishpond",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "magic-island-lagoon-hi": {
       "water_body": null,
@@ -37156,16 +37156,16 @@
       "reason": "coastline within range"
     },
     "mai-poina-beach-park-hi": {
-      "water_body": "Kūlanihākoʻi Gulch",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "makaha-beach-hi": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "makalawena-beach-hi": {
       "water_body": null,
@@ -37177,7 +37177,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "makalei-beach-hi": {
       "water_body": null,
@@ -37189,7 +37189,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "makapuu-beach-park-hi": {
       "water_body": null,
@@ -37201,7 +37201,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "makolea-beach-hi": {
       "water_body": null,
@@ -37219,7 +37219,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "mauna-kea-beach-hi": {
       "water_body": null,
@@ -37240,16 +37240,16 @@
       "reason": "coastline within range"
     },
     "mokapu-beach-hi": {
-      "water_body": "Lily Pond",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "mokolii-view-point-hi": {
-      "water_body": "Mōliʻi Pond",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "moku-auia-beach-hi": {
       "water_body": null,
@@ -37261,13 +37261,13 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "mokule-ia-rock-beach-hi": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "moloa-a-beach-hi": {
       "water_body": null,
@@ -37285,7 +37285,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "napili-beach-hi": {
       "water_body": null,
@@ -37297,13 +37297,13 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "north-beach-hi": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "north-paia-beach-hi": {
       "water_body": "Kūʻau Stream",
@@ -37327,7 +37327,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "oneloa-beach-hi": {
       "water_body": null,
@@ -37339,7 +37339,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "pa-ia-bay-beach-hi": {
       "water_body": "Kailua Gulch",
@@ -37363,25 +37363,25 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "papakolea-beach-hi": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "papohaku-beach-hi": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "pebbles-beach-hi": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "po-ipu-beach-hi": {
       "water_body": null,
@@ -37393,13 +37393,13 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "po-olenalena-beach-hi": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "polihale-beach-hi": {
       "water_body": null,
@@ -37408,28 +37408,28 @@
       "reason": "coastline within range"
     },
     "polihua-beach-hi": {
-      "water_body": "Palahinu Stream",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "polo-beach-east-hi": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "polo-beach-hi": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "polo-beach-west-hi": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "pololu-beach-hi": {
       "water_body": null,
@@ -37441,7 +37441,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "private-beach-hi": {
       "water_body": null,
@@ -37459,25 +37459,25 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "puamana-beach-park-hi": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "punalau-beach-hi": {
-      "water_body": "Pōhakupule Gulch",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "punalu-u-black-sand-beach-hi": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "queen-kapi-olani-beach-hi": {
       "water_body": null,
@@ -37501,19 +37501,19 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "s-turns-beach-hi": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "salt-pond-beach-hi": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "sandy-beach-hi": {
       "water_body": null,
@@ -37534,10 +37534,10 @@
       "reason": "coastline within range"
     },
     "shipwreck-beach-hi": {
-      "water_body": "Poaiwa Gulch",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "slaughter-house-beach-hi": {
       "water_body": null,
@@ -37552,22 +37552,22 @@
       "reason": "coastline within range"
     },
     "sugar-beach-hi": {
-      "water_body": "Keālia Pond",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "sunset-beach-hi": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "swanzy-beach-hi": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "temple-beach-hi": {
       "water_body": null,
@@ -37576,10 +37576,10 @@
       "reason": "coastline within range"
     },
     "three-tables-hi": {
-      "water_body": "Waimea River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "thukkie-beach-hi": {
       "water_body": null,
@@ -37597,31 +37597,31 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "turtle-bay-hi": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "turtle-beach-hi": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "ukumehame-beach-park-hi": {
-      "water_body": "Makiwa Gulch",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "ulua-beach-hi": {
-      "water_body": "Lily Pond",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "vor-beach-hi": {
       "water_body": null,
@@ -37648,16 +37648,16 @@
       "reason": "coastline within range"
     },
     "waialee-beach-hi": {
-      "water_body": "Kalou Fishpond",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "waiapua-a-hi": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "waikiki-beach-hi": {
       "water_body": null,
@@ -37666,16 +37666,16 @@
       "reason": "coastline within range"
     },
     "waikoloa-beach-hi": {
-      "water_body": "Loko Waihonu",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "wailea-beach-hi": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "wailua-beach-hi": {
       "water_body": null,
@@ -37687,13 +37687,13 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "waimea-bay-hi": {
-      "water_body": "Waimea River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "waipio-beach-hi": {
       "water_body": null,
@@ -37711,7 +37711,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "wyllie-s-beach-hi": {
       "water_body": null,
@@ -43717,7 +43717,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "hooker-hole-boat-ramp-la": {
       "water_body": "Harrell Lake",
@@ -44098,10 +44098,10 @@
       "reason": "coastline within range"
     },
     "ballston-beach-ma": {
-      "water_body": "Pamet River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "bank-street-beach-ma": {
       "water_body": null,
@@ -44149,13 +44149,13 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "bayview-beach-ma": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "beach-at-the-dam-ma": {
       "water_body": "Weymouth Great Pond",
@@ -44173,7 +44173,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "black-rock-beach-ma": {
       "water_body": null,
@@ -44212,22 +44212,22 @@
       "reason": "coastline within range"
     },
     "bristol-beach-ma": {
-      "water_body": "Little Pond",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "brush-valley-ma": {
-      "water_body": "Pamet River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "cahoon-hollow-beach-ma": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "camp-burgess-waterfront-ma": {
       "water_body": "Triangle Pond",
@@ -44290,10 +44290,10 @@
       "reason": "coastline within range"
     },
     "chapin-memorial-beach-ma": {
-      "water_body": "Chase Garden Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "chappaquiddick-beach-ma": {
       "water_body": null,
@@ -44320,10 +44320,10 @@
       "reason": "ok"
     },
     "christian-camp-meeting-beach-ma": {
-      "water_body": "Lake Elizabeth",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "church-s-beach-ma": {
       "water_body": null,
@@ -44386,10 +44386,10 @@
       "reason": "coastline within range"
     },
     "colony-beach-ma": {
-      "water_body": "Indian Brook Reservoir",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "cooks-brook-beach-ma": {
       "water_body": null,
@@ -44416,10 +44416,10 @@
       "reason": "ok"
     },
     "craigville-beach-ma": {
-      "water_body": "Centerville River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "crane-beach-ma": {
       "water_body": null,
@@ -44431,7 +44431,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "cressy-beach-ma": {
       "water_body": null,
@@ -44452,10 +44452,10 @@
       "reason": "coastline within range"
     },
     "crowe-s-pasture-ma": {
-      "water_body": "Coles Pond",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "crystal-beach-ma": {
       "water_body": null,
@@ -44545,13 +44545,13 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "dunes-landing-beach-ma": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "earle-road-beach-ma": {
       "water_body": null,
@@ -44575,7 +44575,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "eastville-beach-ma": {
       "water_body": null,
@@ -44617,7 +44617,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "englewood-beach-ma": {
       "water_body": null,
@@ -44632,10 +44632,10 @@
       "reason": "coastline within range"
     },
     "falmouth-beach-ma": {
-      "water_body": "Salt Pond",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "fire-station-beach-ma": {
       "water_body": null,
@@ -44653,7 +44653,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "fisherman-s-beach-ma": {
       "water_body": null,
@@ -44815,13 +44815,13 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "great-pond-beach-ma": {
-      "water_body": "Turtle Pond",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "greenfield-beach-ma": {
       "water_body": "Green River",
@@ -44836,10 +44836,10 @@
       "reason": "coastline within range"
     },
     "gull-pond-beach-ma": {
-      "water_body": "Higgins Pond",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "gun-rock-beach-ma": {
       "water_body": null,
@@ -44923,7 +44923,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "holiday-cove-ma": {
       "water_body": "Sunset Lake",
@@ -44959,7 +44959,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "horseneck-beach-ma": {
       "water_body": null,
@@ -44977,7 +44977,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "indian-mound-beach-ma": {
       "water_body": null,
@@ -45031,13 +45031,13 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "keyes-memorial-beach-ma": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "kings-beach-ma": {
       "water_body": null,
@@ -45076,10 +45076,10 @@
       "reason": "coastline within range"
     },
     "lamberts-cove-beach-ma": {
-      "water_body": "Blackwater Brook",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "lashaway-park-town-beach-ma": {
       "water_body": "Perry Pond",
@@ -45097,7 +45097,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "lighthouse-beach-ma": {
       "water_body": null,
@@ -45136,22 +45136,22 @@
       "reason": "coastline within range"
     },
     "long-beach-ma": {
-      "water_body": "Lily Pond",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "long-pond-beach-ma": {
-      "water_body": "Turtle Pond",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "longnook-beach-ma": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "loop-beach-ma": {
       "water_body": null,
@@ -45166,10 +45166,10 @@
       "reason": "no named water within range"
     },
     "lucy-vincent-beach-ma": {
-      "water_body": "Chilmark Pond",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "lunenburg-town-beach-ma": {
       "water_body": "North Nashua River",
@@ -45202,16 +45202,16 @@
       "reason": "no named water within range"
     },
     "main-beach-ma": {
-      "water_body": "Round Pond",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "marconi-beach-ma": {
-      "water_body": "Fresh Brook",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "margaret-lindley-park-pond-ma": {
       "water_body": "Margaret Lindley Park Pond",
@@ -45235,7 +45235,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "mayo-beach-ma": {
       "water_body": null,
@@ -45379,19 +45379,19 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "nauset-light-beach-ma": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "newcomb-hollow-beach-ma": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "nickerson-beach-ma": {
       "water_body": null,
@@ -45412,10 +45412,10 @@
       "reason": "no named water within range"
     },
     "nobska-beach-ma": {
-      "water_body": "Nobska Pond",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "noname-beach-ma": {
       "water_body": null,
@@ -45502,10 +45502,10 @@
       "reason": "coastline within range"
     },
     "paine-s-creek-beach-ma": {
-      "water_body": "Freemans Pond",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "parkwood-beach-ma": {
       "water_body": null,
@@ -45586,16 +45586,16 @@
       "reason": "ok"
     },
     "pilgrim-beach-ma": {
-      "water_body": "Indian Brook Reservoir",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "pilgrim-shorefront-ma": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "plashes-pond-ma": {
       "water_body": "Plashes Pond",
@@ -45643,13 +45643,13 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "point-of-rocks-landing-beach-ma": {
-      "water_body": "Myricks Pond",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "point-rok-beach-ma": {
       "water_body": "Flint Pond",
@@ -45730,10 +45730,10 @@
       "reason": "ok"
     },
     "quissett-beach-ma": {
-      "water_body": "Salt Pond",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "race-point-beach-ma": {
       "water_body": null,
@@ -45808,10 +45808,10 @@
       "reason": "coastline within range"
     },
     "robbins-hill-beach-ma": {
-      "water_body": "Freemans Pond",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "rock-harbor-beach-ma": {
       "water_body": null,
@@ -45835,13 +45835,13 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "ryder-street-beach-ma": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "sagamore-beach-ma": {
       "water_body": null,
@@ -45862,10 +45862,10 @@
       "reason": "coastline within range"
     },
     "salisbury-beach-ma": {
-      "water_body": "Blackwater River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "salt-box-beach-ma": {
       "water_body": "Lily Pond",
@@ -45907,7 +45907,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "sandy-shorline-ma": {
       "water_body": "The Navy's Old Drainage Stream",
@@ -45925,13 +45925,13 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "scorton-neck-beach-ma": {
-      "water_body": "Solomon Pond",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "scusset-beach-ma": {
       "water_body": null,
@@ -45967,13 +45967,13 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "seymoor-pond-beach-ma": {
-      "water_body": "Black Pond",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "shannon-beach-ma": {
       "water_body": "Upper Mystic Lake",
@@ -46021,7 +46021,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "silver-lake-beach-ma": {
       "water_body": "Millers River Reservoir",
@@ -46066,10 +46066,10 @@
       "reason": "no named water within range"
     },
     "south-cape-beach-ma": {
-      "water_body": "Sage Lot Pond",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "south-lt-island-beach-ma": {
       "water_body": null,
@@ -46105,19 +46105,19 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "springhill-brook-ma": {
-      "water_body": "Dock Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "squibnocket-beach-ma": {
-      "water_body": "Squibnocket Pond",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "standish-shore-ma": {
       "water_body": null,
@@ -46132,10 +46132,10 @@
       "reason": "coastline within range"
     },
     "stephens-field-beach-ma": {
-      "water_body": "Town Brook",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "steps-beach-ma": {
       "water_body": null,
@@ -46222,16 +46222,16 @@
       "reason": "coastline within range"
     },
     "surf-drive-beach-ma": {
-      "water_body": "Palmer Pond",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "surfside-beach-ma": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "swan-lake-association-beach-ma": {
       "water_body": "Seine Pond",
@@ -46342,10 +46342,10 @@
       "reason": "coastline within range"
     },
     "town-neck-beach-ma": {
-      "water_body": "Mill Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "triangle-beach-ma": {
       "water_body": "Triangle Pond",
@@ -46354,10 +46354,10 @@
       "reason": "ok"
     },
     "trunk-river-beach-ma": {
-      "water_body": "Oyster Pond",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "tudor-beach-ma": {
       "water_body": null,
@@ -46453,7 +46453,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "whiting-s-pond-beach-ma": {
       "water_body": "Whiting Pond",
@@ -46537,7 +46537,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "bootjack-spring-md": {
       "water_body": null,
@@ -46552,10 +46552,10 @@
       "reason": "coastline within range"
     },
     "brownie-s-beach-md": {
-      "water_body": "Brownies Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "carr-s-beach-md": {
       "water_body": null,
@@ -46678,10 +46678,10 @@
       "reason": "coastline within range"
     },
     "langford-sand-md": {
-      "water_body": "Pocomoke River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "lindamoor-community-beach-md": {
       "water_body": null,
@@ -46717,7 +46717,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "matoaka-beach-md": {
       "water_body": null,
@@ -46807,7 +46807,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "saint-george-island-beach-md": {
       "water_body": null,
@@ -46912,10 +46912,10 @@
       "reason": "ok"
     },
     "the-sands-md": {
-      "water_body": "Potomac River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "triton-beach-md": {
       "water_body": null,
@@ -47041,7 +47041,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "black-beach-me": {
       "water_body": "Donnell Pond",
@@ -47050,10 +47050,10 @@
       "reason": "ok"
     },
     "boom-beach-me": {
-      "water_body": "Long Pond",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "boot-cove-beach-me": {
       "water_body": null,
@@ -47065,7 +47065,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "brimstone-beach-me": {
       "water_body": null,
@@ -47089,7 +47089,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "camp-ellis-reach-me": {
       "water_body": null,
@@ -47113,7 +47113,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "causeway-beach-me": {
       "water_body": null,
@@ -47131,7 +47131,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "clam-beach-me": {
       "water_body": null,
@@ -47194,10 +47194,10 @@
       "reason": "coastline within range"
     },
     "crescent-surf-me": {
-      "water_body": "Little River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "crockett-s-beach-me": {
       "water_body": null,
@@ -47242,16 +47242,16 @@
       "reason": "coastline within range"
     },
     "drakes-island-beach-me": {
-      "water_body": "Blacksmith Brook",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "drift-inn-beach-me": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "driftwood-beach-me": {
       "water_body": null,
@@ -47296,10 +47296,10 @@
       "reason": "coastline within range"
     },
     "echo-lake-beach-me": {
-      "water_body": "Echo Lake",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "eleanor-l-campbell-preserve-polly-cove-beach-me": {
       "water_body": null,
@@ -47344,10 +47344,10 @@
       "reason": "ok"
     },
     "footbridge-beach-me": {
-      "water_body": "Stevens Brook",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "fortunes-rocks-beach-me": {
       "water_body": null,
@@ -47506,10 +47506,10 @@
       "reason": "coastline within range"
     },
     "hunters-beach-me": {
-      "water_body": "Hunters Brook",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "indian-beach-me": {
       "water_body": null,
@@ -47596,10 +47596,10 @@
       "reason": "coastline within range"
     },
     "lamoine-beach-me": {
-      "water_body": "Jordan River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "landing-beach-me": {
       "water_body": null,
@@ -47608,10 +47608,10 @@
       "reason": "coastline within range"
     },
     "laudholm-beach-me": {
-      "water_body": "Little River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "ledge-beach-me": {
       "water_body": null,
@@ -47632,10 +47632,10 @@
       "reason": "coastline within range"
     },
     "lily-pond-beach-me": {
-      "water_body": "Lily Pond",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "limerick-municipal-beach-me": {
       "water_body": "Sokokis Lake",
@@ -47656,22 +47656,22 @@
       "reason": "coastline within range"
     },
     "little-hunters-beach-me": {
-      "water_body": "Hunters Brook",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "little-mother-s-beach-me": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "little-pond-beach-me": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "lobster-pound-beach-me": {
       "water_body": null,
@@ -47764,10 +47764,10 @@
       "reason": "no named water within range"
     },
     "moody-beach-me": {
-      "water_body": "Bragdon Brook",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "mothers-beach-me": {
       "water_body": null,
@@ -47791,7 +47791,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "newfield-public-beach-me": {
       "water_body": "Rock Haven Lake",
@@ -47821,7 +47821,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "orchard-beach-me": {
       "water_body": null,
@@ -47848,16 +47848,16 @@
       "reason": "coastline within range"
     },
     "parsons-beach-me": {
-      "water_body": "Mousam River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "pebble-beach-me": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "pettegrow-beach-me": {
       "water_body": null,
@@ -47944,10 +47944,10 @@
       "reason": "coastline within range"
     },
     "rogue-bluffs-beach-me": {
-      "water_body": "Simpson Pond",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "rome-town-beach-me": {
       "water_body": "Great Pond",
@@ -47965,7 +47965,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "sand-cove-beach-me": {
       "water_body": null,
@@ -48100,10 +48100,10 @@
       "reason": "coastline within range"
     },
     "spragues-beach-me": {
-      "water_body": "Penobscot River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "spring-beach-me": {
       "water_body": null,
@@ -48142,10 +48142,10 @@
       "reason": "coastline within range"
     },
     "surfside-beach-me": {
-      "water_body": "Jones Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "swim-beach-me": {
       "water_body": null,
@@ -48184,16 +48184,16 @@
       "reason": "ok"
     },
     "wadsworth-cove-beach-me": {
-      "water_body": "British Canal",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "wales-beach-me": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "walker-s-beach-me": {
       "water_body": null,
@@ -48208,10 +48208,10 @@
       "reason": "coastline within range"
     },
     "wells-beach-me": {
-      "water_body": "Webhannet River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "west-shore-sandy-beach-me": {
       "water_body": null,
@@ -48238,10 +48238,10 @@
       "reason": "ok"
     },
     "willard-beach-me": {
-      "water_body": "Fore River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "1st-street-beach-mi": {
       "water_body": "Lake Michigan",
@@ -50146,10 +50146,10 @@
       "reason": "ok"
     },
     "bald-beach-nc": {
-      "water_body": "Atlantic Intracoastal Waterway",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "bare-sand-beach-nc": {
       "water_body": null,
@@ -50167,13 +50167,13 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "big-beach-nc": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "boat-beach-nc": {
       "water_body": "Lake James",
@@ -50197,7 +50197,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "cape-lookout-shoals-nc": {
       "water_body": null,
@@ -50206,10 +50206,10 @@
       "reason": "coastline within range"
     },
     "caswell-beach-nc": {
-      "water_body": "Coward Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "cedar-island-beach-nc": {
       "water_body": null,
@@ -50233,7 +50233,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "deer-field-shores-nc": {
       "water_body": null,
@@ -50242,10 +50242,10 @@
       "reason": "coastline within range"
     },
     "east-beach-nc": {
-      "water_body": "Cape Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "ebenezer-church-beach-nc": {
       "water_body": "Jordan Lake",
@@ -50266,10 +50266,10 @@
       "reason": "ok"
     },
     "freeman-park-nc": {
-      "water_body": "Atlantic Intracoastal Waterway",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "gatlin-beach-nc": {
       "water_body": "Neuse River",
@@ -50293,7 +50293,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "hurst-beach-nc": {
       "water_body": null,
@@ -50308,10 +50308,10 @@
       "reason": "coastline within range"
     },
     "island-view-shores-nc": {
-      "water_body": "Saint Clair Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "jackrabbit-mountain-swim-area-nc": {
       "water_body": "Chatuge Lake",
@@ -50329,7 +50329,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "lake-powhatan-beach-nc": {
       "water_body": "Ledford Branch",
@@ -50350,10 +50350,10 @@
       "reason": "no named water within range"
     },
     "long-beach-nc": {
-      "water_body": "Atlantic Intracoastal Waterway",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "lupton-shore-nc": {
       "water_body": "Fortescue Creek",
@@ -50362,10 +50362,10 @@
       "reason": "ok"
     },
     "masonboro-island-reserve-nc": {
-      "water_body": "Atlantic Intracoastal Waterway",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "north-topsail-shores-nc": {
       "water_body": null,
@@ -50377,13 +50377,13 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "ocean-isle-beach-nc": {
-      "water_body": "Atlantic Intracoastal Waterway",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "old-lighthouse-beach-nc": {
       "water_body": null,
@@ -50494,10 +50494,10 @@
       "reason": "coastline within range"
     },
     "sunset-beach-nc": {
-      "water_body": "Atlantic Intracoastal Waterway",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "swimming-beach-nc": {
       "water_body": "Lake James",
@@ -50914,10 +50914,10 @@
       "reason": "no named water within range"
     },
     "hampton-beach-nh": {
-      "water_body": "Tide Mill Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "hermit-lake-town-beach-nh": {
       "water_body": "Hermit Lake",
@@ -51010,10 +51010,10 @@
       "reason": "ok"
     },
     "north-beach-nh": {
-      "water_body": "Meadow Pond",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "north-cove-beach-nh": {
       "water_body": "Stroing Brook",
@@ -51028,10 +51028,10 @@
       "reason": "coastline within range"
     },
     "northwood-lake-beach-nh": {
-      "water_body": "Narrows Brook",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "no fresh water within range: Narrows Brook"
     },
     "paugus-bay-beach-nh": {
       "water_body": "Lake Winnipesaukee",
@@ -51073,7 +51073,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "porridge-shore-beach-nh": {
       "water_body": "Middle Pea Porridge Pond",
@@ -51136,10 +51136,10 @@
       "reason": "coastline within range"
     },
     "seabrook-beach-nh": {
-      "water_body": "Blackwater River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "shakoma-beach-nh": {
       "water_body": "Mascoma Lake",
@@ -51271,7 +51271,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "amherst-beach-nj": {
       "water_body": null,
@@ -51283,7 +51283,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "barnegat-light-bay-beach-nj": {
       "water_body": null,
@@ -51307,7 +51307,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "beach-1-nj": {
       "water_body": "Lake Mohawk",
@@ -51415,7 +51415,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "bloomer-beach-nj": {
       "water_body": null,
@@ -51439,7 +51439,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "canoe-beach-nj": {
       "water_body": "Hudson River",
@@ -51460,10 +51460,10 @@
       "reason": "coastline within range"
     },
     "cliffwood-beach-nj": {
-      "water_body": "Treasure Lake",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "cliffwood-lake-beach-nj": {
       "water_body": "Cliffwood Lake",
@@ -51472,10 +51472,10 @@
       "reason": "ok"
     },
     "cooks-beach-nj": {
-      "water_body": "Bidwell Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "crystal-lake-beach-club-nj": {
       "water_body": "Mirror Lake",
@@ -51496,10 +51496,10 @@
       "reason": "ok"
     },
     "fishing-beach-nj": {
-      "water_body": "Navy Pond",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "five-mile-beach-nj": {
       "water_body": null,
@@ -51523,7 +51523,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "harvey-cedars-bay-beach-nj": {
       "water_body": null,
@@ -51532,10 +51532,10 @@
       "reason": "coastline within range"
     },
     "hazard-beach-nj": {
-      "water_body": "Hudson River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "heater-s-pond-beach-nj": {
       "water_body": "Heaters Pond",
@@ -51598,10 +51598,10 @@
       "reason": "coastline within range"
     },
     "hooks-creek-lake-beach-nj": {
-      "water_body": "Hooks Creek Lake",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "huylers-beach-nj": {
       "water_body": "Boulevard Brook",
@@ -51637,7 +51637,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "kittatinny-lake-beach-nj": {
       "water_body": "Kittatinny Lake",
@@ -51703,7 +51703,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "malibu-beach-nj": {
       "water_body": null,
@@ -51763,7 +51763,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "north-end-beach-nj": {
       "water_body": null,
@@ -51772,10 +51772,10 @@
       "reason": "coastline within range"
     },
     "oakwood-beach-nj": {
-      "water_body": "Delaware River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "old-beach-nj": {
       "water_body": "Lake Stockholm",
@@ -51790,16 +51790,16 @@
       "reason": "ok"
     },
     "paul-s-beach-nj": {
-      "water_body": "Cheesequake Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "peck-beach-nj": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "peck-s-beach-nj": {
       "water_body": null,
@@ -51832,16 +51832,16 @@
       "reason": "ok"
     },
     "seidler-beach-nj": {
-      "water_body": "Whale Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "seidler-s-beach-nj": {
-      "water_body": "Whale Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "seven-mile-beach-nj": {
       "water_body": null,
@@ -51853,7 +51853,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "stokes-beach-nj": {
       "water_body": "Stony Lake",
@@ -51871,13 +51871,13 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "sunset-beach-nj": {
-      "water_body": "Daveys Lake",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "tall-timbers-beach-nj": {
       "water_body": "Wallkill River",
@@ -51892,10 +51892,10 @@
       "reason": "ok"
     },
     "the-cove-nj": {
-      "water_body": "Cape Island Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "the-dredge-nj": {
       "water_body": "Patcong Creek",
@@ -51919,7 +51919,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "turkey-swamp-park-nj": {
       "water_body": "North Branch Metedeconk River",
@@ -52198,10 +52198,10 @@
       "reason": "ok"
     },
     "alhambra-beach-ny": {
-      "water_body": "Beach Canal",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "amagansett-beach-ny": {
       "water_body": null,
@@ -52210,34 +52210,34 @@
       "reason": "coastline within range"
     },
     "amityville-beach-ny": {
-      "water_body": "Amityville Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "annadale-beach-ny": {
-      "water_body": "Seguine Pond",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "asharoken-beach-ny": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "atlantic-beach-ny": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "atlantique-beach-ny": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "bar-beach-ny": {
       "water_body": null,
@@ -52264,10 +52264,10 @@
       "reason": "ok"
     },
     "bayberry-beach-club-ny": {
-      "water_body": "East Canal",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "beach-kayak-launch-ramp-ny": {
       "water_body": null,
@@ -52279,7 +52279,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "beaver-island-beach-ny": {
       "water_body": null,
@@ -52306,10 +52306,10 @@
       "reason": "ok"
     },
     "bellview-beach-ny": {
-      "water_body": "Orchard Neck Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "benjamin-s-memorial-beach-ny": {
       "water_body": null,
@@ -52381,7 +52381,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "camp-chateaugay-beach-ny": {
       "water_body": "Upper Lake Chateaugay",
@@ -52423,7 +52423,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "cedar-grove-beach-ny": {
       "water_body": null,
@@ -52456,10 +52456,10 @@
       "reason": "coastline within range"
     },
     "chocomount-beach-ny": {
-      "water_body": "Treasure Pond",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "cold-spring-beach-ny": {
       "water_body": null,
@@ -52471,13 +52471,13 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "copiague-beach-ny": {
-      "water_body": "Howell Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "corey-beach-ny": {
       "water_body": null,
@@ -52486,10 +52486,10 @@
       "reason": "coastline within range"
     },
     "crab-meadow-beach-ny": {
-      "water_body": "Crab Meadow",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "cranberry-lake-day-use-area-on-eastern-fred-island-ny": {
       "water_body": "Cranberry Lake",
@@ -52537,13 +52537,13 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "east-beach-ny": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "east-cove-beach-ny": {
       "water_body": "Crum Elbow Creek",
@@ -52555,7 +52555,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "emerald-beach-ny": {
       "water_body": "Lake Erie",
@@ -52609,7 +52609,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "foster-ave-beach-ny": {
       "water_body": null,
@@ -52651,7 +52651,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "gilmore-shore-ny": {
       "water_body": "Lake Ontario",
@@ -52759,7 +52759,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "haviland-cove-beach-ny": {
       "water_body": "Hudson River",
@@ -52783,13 +52783,13 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "horton-lane-beach-ny": {
-      "water_body": "Lily Pond",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "hudson-park-beach-ny": {
       "water_body": null,
@@ -52798,10 +52798,10 @@
       "reason": "coastline within range"
     },
     "huguenot-beach-ny": {
-      "water_body": "Arbutus Lake",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "huntington-beach-ny": {
       "water_body": null,
@@ -52825,19 +52825,19 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "isabella-beach-ny": {
-      "water_body": "Brickyard Pond",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "islip-town-beach-ny": {
-      "water_body": "East Canal",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "jacob-riis-park-beach-1-ny": {
       "water_body": null,
@@ -52939,7 +52939,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "kershaw-beach-ny": {
       "water_body": "Canandaigua Lake",
@@ -53002,10 +53002,10 @@
       "reason": "ok"
     },
     "leeds-pond-beach-ny": {
-      "water_body": "Leeds Pond",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "lido-beach-ny": {
       "water_body": null,
@@ -53035,7 +53035,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "long-pond-swimming-area-ny": {
       "water_body": "Second Pond",
@@ -53080,16 +53080,16 @@
       "reason": "coastline within range"
     },
     "makamah-beach-ny": {
-      "water_body": "Crab Meadow",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "manhasset-bay-estates-association-beach-ny": {
-      "water_body": "Leeds Pond",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "manhattan-beach-ny": {
       "water_body": null,
@@ -53113,7 +53113,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "mercadante-beach-ny": {
       "water_body": null,
@@ -53137,7 +53137,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "millers-beach-ny": {
       "water_body": "Lake Erie",
@@ -53203,7 +53203,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "north-shore-beach-ny": {
       "water_body": null,
@@ -53299,7 +53299,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "park-beach-ny": {
       "water_body": "Schroon Lake",
@@ -53401,7 +53401,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "ripley-beach-ny": {
       "water_body": "Lake Erie",
@@ -53461,7 +53461,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "sandy-beach-ny": {
       "water_body": null,
@@ -53491,7 +53491,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "scuba-diving-access-area-ny": {
       "water_body": "Peters Kill",
@@ -53512,10 +53512,10 @@
       "reason": "coastline within range"
     },
     "shirley-beach-ny": {
-      "water_body": "Carmans River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "shore-acres-pool-club-beach-ny": {
       "water_body": null,
@@ -53551,7 +53551,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "soundside-beach-ny": {
       "water_body": null,
@@ -53563,13 +53563,13 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "south-jamesport-park-ny": {
-      "water_body": "East Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "south-landing-ny": {
       "water_body": "Hudson River",
@@ -53617,13 +53617,13 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "sun-and-surf-beach-club-ny": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "swiming-area-ny": {
       "water_body": "Finger Lakes",
@@ -53692,10 +53692,10 @@
       "reason": "ok"
     },
     "town-beach-ny": {
-      "water_body": "Quintuck Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "triton-beach-ny": {
       "water_body": null,
@@ -53731,7 +53731,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "venetian-shores-beach-ny": {
       "water_body": null,
@@ -53746,10 +53746,10 @@
       "reason": "ok"
     },
     "veteran-s-memorial-beach-ny": {
-      "water_body": "Horton Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "waddington-beach-ny": {
       "water_body": "Sucker Brook",
@@ -53764,10 +53764,10 @@
       "reason": "coastline within range"
     },
     "wading-river-landing-ny": {
-      "water_body": "Wading River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "wainscott-beach-ny": {
       "water_body": null,
@@ -53797,7 +53797,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "wayside-beach-ny": {
       "water_body": "Stones Pond",
@@ -53812,10 +53812,10 @@
       "reason": "ok"
     },
     "west-beach-ny": {
-      "water_body": "Heckscher Canal",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "west-cove-beach-ny": {
       "water_body": "Crum Elbow Creek",
@@ -54343,7 +54343,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "arcadia-beach-or": {
       "water_body": null,
@@ -54358,16 +54358,16 @@
       "reason": "coastline within range"
     },
     "baker-beach-or": {
-      "water_body": "Quarry Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "bandon-beach-or": {
-      "water_body": "China Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "barley-beach-or": {
       "water_body": null,
@@ -54379,19 +54379,19 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "beverly-beach-or": {
-      "water_body": "Spencer Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "big-stump-beach-or": {
-      "water_body": "Reynolds Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "cannon-beach-or": {
       "water_body": null,
@@ -54448,10 +54448,10 @@
       "reason": "coastline within range"
     },
     "del-rey-beach-or": {
-      "water_body": "Neacoxie Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "dibblees-beach-or": {
       "water_body": "Rinearson Slough",
@@ -54496,10 +54496,10 @@
       "reason": "coastline within range"
     },
     "holly-beach-or": {
-      "water_body": "Friday Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "hunter-creek-beach-or": {
       "water_body": null,
@@ -54514,10 +54514,10 @@
       "reason": "coastline within range"
     },
     "jones-beach-or": {
-      "water_body": "Wallace Slough",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "kiwanda-beach-or": {
       "water_body": null,
@@ -54535,7 +54535,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "lincoln-beach-or": {
       "water_body": null,
@@ -54550,10 +54550,10 @@
       "reason": "ok"
     },
     "lone-ranch-beach-or": {
-      "water_body": "Ram Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "lost-boy-beach-or": {
       "water_body": null,
@@ -54643,7 +54643,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "nye-beach-or": {
       "water_body": null,
@@ -54658,10 +54658,10 @@
       "reason": "coastline within range"
     },
     "ophir-beach-or": {
-      "water_body": "Greggs Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "poet-s-beach-or": {
       "water_body": "Willamette River",
@@ -54697,7 +54697,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "san-salvador-beach-or": {
       "water_body": "Yamhill River",
@@ -54718,10 +54718,10 @@
       "reason": "ok"
     },
     "searose-beach-or": {
-      "water_body": "Agate Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "seaside-beach-or": {
       "water_body": null,
@@ -54757,7 +54757,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "sixes-beach-or": {
       "water_body": null,
@@ -54778,22 +54778,22 @@
       "reason": "coastline within range"
     },
     "south-beach-or": {
-      "water_body": "Thiel Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "sporthaven-beach-or": {
-      "water_body": "Grant Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "stonefield-beach-or": {
-      "water_body": "Mill Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "sunset-beach-or": {
       "water_body": null,
@@ -54826,10 +54826,10 @@
       "reason": "ok"
     },
     "wakeman-beach-or": {
-      "water_body": "Cummins Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "westport-beach-or": {
       "water_body": null,
@@ -54847,7 +54847,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "aquatorium-beach-left-side-pa": {
       "water_body": "Pigeon Creek",
@@ -55627,7 +55627,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "scarborough-south-state-beach-ri": {
       "water_body": null,
@@ -55681,7 +55681,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "surf-beach-ri": {
       "water_body": null,
@@ -55690,10 +55690,10 @@
       "reason": "coastline within range"
     },
     "surfer-s-beach-ri": {
-      "water_body": "Watch House Pond",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "surfer-s-end-ri": {
       "water_body": null,
@@ -55705,7 +55705,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "teddy-beach-ri": {
       "water_body": null,
@@ -55735,7 +55735,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "warren-town-beach-ri": {
       "water_body": null,
@@ -55780,22 +55780,22 @@
       "reason": "ok"
     },
     "apache-beach-sc": {
-      "water_body": "Atlantic Intracoastal Waterway",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "arcadia-beach-sc": {
-      "water_body": "House Pond",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "atlantic-beach-sc": {
-      "water_body": "Atlantic Intracoastal Waterway",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "bradley-beach-sc": {
       "water_body": null,
@@ -55804,10 +55804,10 @@
       "reason": "coastline within range"
     },
     "briarcliffe-beach-sc": {
-      "water_body": "Atlantic Intracoastal Waterway",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "burckmyers-beach-sc": {
       "water_body": "Beaufort River",
@@ -55828,10 +55828,10 @@
       "reason": "ok"
     },
     "cape-san-roman-beach-sc": {
-      "water_body": "Great Pee Dee River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "capers-island-boneyard-sc": {
       "water_body": null,
@@ -55840,16 +55840,16 @@
       "reason": "coastline within range"
     },
     "cherry-grove-beach-sc": {
-      "water_body": "Nixon Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "coligny-beach-sc": {
-      "water_body": "Broad Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "cottage-beach-sc": {
       "water_body": null,
@@ -55858,10 +55858,10 @@
       "reason": "coastline within range"
     },
     "crescent-beach-sc": {
-      "water_body": "Atlantic Intracoastal Waterway",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "cummings-point-sc": {
       "water_body": null,
@@ -55870,16 +55870,16 @@
       "reason": "coastline within range"
     },
     "debordieu-beach-sc": {
-      "water_body": "Debidue Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "deephead-swash-sc": {
-      "water_body": "Atlantic Intracoastal Waterway",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "dolphin-beach-sc": {
       "water_body": null,
@@ -55894,16 +55894,16 @@
       "reason": "ok"
     },
     "edingsville-beach-sc": {
-      "water_body": "Townsend River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "edisto-beach-sc": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "folly-field-beach-sc": {
       "water_body": null,
@@ -55921,13 +55921,13 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "garden-city-beach-sc": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "grice-beach-sc": {
       "water_body": null,
@@ -55939,13 +55939,13 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "ingram-beach-sc": {
-      "water_body": "Atlantic Intracoastal Waterway",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "kayaker-s-beach-sc": {
       "water_body": "Saluda River",
@@ -55954,28 +55954,28 @@
       "reason": "ok"
     },
     "kiawah-beachwalker-park-sc": {
-      "water_body": "Bohicket Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "kingston-beach-sc": {
-      "water_body": "Atlantic Intracoastal Waterway",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "lakewood-beach-sc": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "litchfield-beach-sc": {
-      "water_body": "Waccamaw River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "long-bay-beach-sc": {
       "water_body": null,
@@ -55984,16 +55984,16 @@
       "reason": "coastline within range"
     },
     "maison-beach-sc": {
-      "water_body": "Atlantic Intracoastal Waterway",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "meher-beach-sc": {
-      "water_body": "Atlantic Intracoastal Waterway",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "mitchelville-beach-sc": {
       "water_body": null,
@@ -56002,10 +56002,10 @@
       "reason": "coastline within range"
     },
     "myrtle-beach-sc": {
-      "water_body": "Atlantic Intracoastal Waterway",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "north-beach-sc": {
       "water_body": "Lake Keowee",
@@ -56017,43 +56017,43 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "north-litchfield-beach-sc": {
-      "water_body": "Waccamaw River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "north-myrtle-beach-sc": {
-      "water_body": "Atlantic Intracoastal Waterway",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "ocean-creek-beach-sc": {
-      "water_body": "Atlantic Intracoastal Waterway",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "ocean-drive-beach-sc": {
-      "water_body": "Atlantic Intracoastal Waterway",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "ocean-lakes-beach-sc": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "pawleys-island-beach-sc": {
-      "water_body": "Pawleys Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "pebble-beach-sc": {
       "water_body": null,
@@ -56071,7 +56071,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "redbank-park-beach-sc": {
       "water_body": "Lake Marion",
@@ -56104,10 +56104,10 @@
       "reason": "coastline within range"
     },
     "seabrook-beach-sc": {
-      "water_body": "Captain Sams Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "singleton-beach-sc": {
       "water_body": null,
@@ -56146,16 +56146,16 @@
       "reason": "coastline within range"
     },
     "sunset-beach-sc": {
-      "water_body": "Atlantic Intracoastal Waterway",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "no fresh water within range: Atlantic Intracoastal Waterway"
     },
     "surfside-beach-sc": {
-      "water_body": "Floral Lake",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "swimming-area-sc": {
       "water_body": "Lake Keowee",
@@ -56188,16 +56188,16 @@
       "reason": "ok"
     },
     "windy-hill-beach-sc": {
-      "water_body": "Atlantic Intracoastal Waterway",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "withers-swash-sc": {
-      "water_body": "Atlantic Intracoastal Waterway",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "y-beach-sc": {
       "water_body": "Lake Hartwell",
@@ -56494,10 +56494,10 @@
       "reason": "coastline within range"
     },
     "bolivar-beach-tx": {
-      "water_body": "Johnson Bayou",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "bryan-beach-tx": {
       "water_body": null,
@@ -56539,7 +56539,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no fresh water within range: Gulf Intracoastal Waterway"
+      "reason": "coastline within range"
     },
     "galveston-beach-tx": {
       "water_body": null,
@@ -56599,7 +56599,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no fresh water within range: Gulf Intracoastal Waterway"
+      "reason": "coastline within range"
     },
     "little-elm-beach-tx": {
       "water_body": "Lewisville Lake",
@@ -56653,7 +56653,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no fresh water within range: Gulf Intracoastal Waterway"
+      "reason": "coastline within range"
     },
     "post-oak-beach-tx": {
       "water_body": "Ray Roberts Lake",
@@ -56671,7 +56671,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no fresh water within range: Gulf Intracoastal Waterway"
+      "reason": "coastline within range"
     },
     "rockport-beach-park-tx": {
       "water_body": null,
@@ -56683,7 +56683,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no fresh water within range: Gulf Intracoastal Waterway"
+      "reason": "coastline within range"
     },
     "sandy-beach-tx": {
       "water_body": "Possum Kingdom Lake",
@@ -56719,13 +56719,13 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no fresh water within range: Gulf Intracoastal Waterway"
+      "reason": "coastline within range"
     },
     "stewart-beach-tx": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no fresh water within range: Gulf Intracoastal Waterway"
+      "reason": "coastline within range"
     },
     "sunny-beach-tx": {
       "water_body": null,
@@ -56764,10 +56764,10 @@
       "reason": "no named water within range"
     },
     "university-beach-tx": {
-      "water_body": "Oso Creek",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "waterfront-tx": {
       "water_body": "Guadalupe River",
@@ -56971,7 +56971,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "children-s-swim-area-va": {
       "water_body": "Goodwin Lake",
@@ -56980,10 +56980,10 @@
       "reason": "ok"
     },
     "chix-beach-va": {
-      "water_body": "Chub Lake",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "chris-greene-lake-beach-va": {
       "water_body": "Chris Greene Lake",
@@ -57025,7 +57025,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "fleeton-beach-va": {
       "water_body": null,
@@ -57130,10 +57130,10 @@
       "reason": "ok"
     },
     "marshalls-beach-va": {
-      "water_body": "Rappahannock River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "myrtle-island-beach-va": {
       "water_body": null,
@@ -57169,7 +57169,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "public-beach-va": {
       "water_body": "Fishing Pond",
@@ -57184,22 +57184,22 @@
       "reason": "ok"
     },
     "sandbridge-beach-va": {
-      "water_body": "Black Gut",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "sandy-point-beach-va": {
-      "water_body": "Rappahannock River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "seabreeze-beach-va": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "seining-beach-va": {
       "water_body": "York River",
@@ -57211,7 +57211,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "smith-beach-va": {
       "water_body": null,
@@ -57235,7 +57235,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "swimmer-area-va": {
       "water_body": "Lake Merriweather",
@@ -57250,22 +57250,22 @@
       "reason": "ok"
     },
     "sylvan-beach-va": {
-      "water_body": "Lake Joyce",
-      "type": "lake",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "tankards-beach-va": {
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "the-sands-va": {
-      "water_body": "Potomac River",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "coastline within range"
     },
     "wake-beach-va": {
       "water_body": "Piankatank River",
@@ -57319,7 +57319,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "yorktown-beach-va": {
       "water_body": "York River",
@@ -57520,10 +57520,10 @@
       "reason": "ok"
     },
     "8th-avenue-south-street-end-wa": {
-      "water_body": "Duwamish Waterway",
-      "type": "river",
+      "water_body": null,
+      "type": null,
       "great_lake": false,
-      "reason": "ok"
+      "reason": "no fresh water within range: Duwamish Waterway"
     },
     "alexander-beach-wa": {
       "water_body": "Lake Sammamish",
@@ -57637,7 +57637,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "chin-chin-tse-tung-wa": {
       "water_body": null,
@@ -57859,7 +57859,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "graveyard-spit-wa": {
       "water_body": null,
@@ -57973,7 +57973,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "king-spit-wa": {
       "water_body": null,
@@ -58225,7 +58225,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "olympic-beach-wa": {
       "water_body": null,
@@ -58711,7 +58711,7 @@
       "water_body": null,
       "type": null,
       "great_lake": false,
-      "reason": "no named water within range"
+      "reason": "coastline within range"
     },
     "white-beach-wa": {
       "water_body": null,

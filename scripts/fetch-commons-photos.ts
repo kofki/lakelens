@@ -120,8 +120,41 @@ export function isAllowedLicence(licence: string | undefined): boolean {
 export interface CandidateScore {
   /** Does the title suggest this is a picture of THIS place, or of water at all. */
   relevance: number;
-  /** Is it big enough to crop as a hero. Never a substitute for relevance. */
+  /** Is it big enough, and recent enough, to work as a hero. Never a substitute for relevance. */
   quality: number;
+}
+
+/**
+ * The year a photograph was taken, from Commons metadata.
+ *
+ * Both fields are free text and sometimes carry HTML, so this looks for a plausible year
+ * anywhere in them rather than trying to parse a date.
+ */
+export function photoYear(meta: Record<string, { value?: string }> | undefined): number | null {
+  const raw = meta?.DateTimeOriginal?.value ?? meta?.DateTime?.value ?? "";
+  const match = stripHtml(raw).match(/\b(19|20)\d{2}\b/);
+  if (!match) return null;
+  const year = Number(match[0]);
+  // A year in the future is a typo or a upload timestamp misread, not evidence.
+  return year >= 1880 && year <= new Date().getFullYear() ? year : null;
+}
+
+/**
+ * How much a photograph's age counts for or against it.
+ *
+ * Commons holds pictures of these places going back to 1900. A 1908 photograph of a lake
+ * is a document, and putting it on a card answering "where can I swim today" is
+ * misleading in a way a placeholder is not. Recent work is preferred, old work is
+ * penalised, and an undated file sits in between rather than being thrown away: plenty of
+ * good photographs carry no EXIF at all.
+ */
+export function recencyScore(year: number | null, now = new Date().getFullYear()): number {
+  if (year === null) return 0;
+  const age = now - year;
+  if (age <= 5) return 3;
+  if (age <= 12) return 2;
+  if (age <= 25) return 0;
+  return -3;
 }
 
 /**
@@ -131,7 +164,12 @@ export interface CandidateScore {
  * the same as a small photograph of the lake, and the theatre won on pixels. Size can
  * break a tie between relevant photographs; it can never make an irrelevant one relevant.
  */
-export function scoreCandidate(title: string, parkName: string, width: number): CandidateScore {
+export function scoreCandidate(
+  title: string,
+  parkName: string,
+  width: number,
+  year: number | null = null,
+): CandidateScore {
   if (REJECT_TITLE.test(title)) return { relevance: -1, quality: 0 };
 
   const lower = title.toLowerCase();
@@ -160,8 +198,8 @@ export function scoreCandidate(title: string, parkName: string, width: number): 
     relevance += 2;
   }
 
-  const quality = width >= 1600 ? 2 : width >= 900 ? 1 : 0;
-  return { relevance, quality };
+  const size = width >= 1600 ? 2 : width >= 900 ? 1 : 0;
+  return { relevance, quality: size + recencyScore(year) };
 }
 
 /**
@@ -186,7 +224,7 @@ export function pickBest(pages: CommonsPage[], parkName: string): PhotoCredit | 
     const author = stripHtml(meta.Artist?.value);
     if (!author) continue;
 
-    const { relevance, quality } = scoreCandidate(title, parkName, info.width ?? 0);
+    const { relevance, quality } = scoreCandidate(title, parkName, info.width ?? 0, photoYear(meta));
     if (relevance < MIN_RELEVANCE) continue;
     const score = relevance * 10 + quality;
     if (!best || score > best.score) {

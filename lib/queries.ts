@@ -400,7 +400,30 @@ function slimPark(park: Park): Park {
 }
 
 function slimForList(item: ParkWithStatus): ParkWithStatus {
-  const weather = item.weather ? { ...item.weather, hourly: [], daily: [] } : null;
+  /**
+   * A card reads exactly one thing from the weather: the current temperature.
+   *
+   * Everything else on the row was crossing the wire for all 2,100 parks and being thrown
+   * away: a full NWS icon URL, the forecast sentence, wind, humidity, the day's high and
+   * low, the provider and two timestamps. Emptying `hourly` and `daily` was not enough,
+   * because the rest of the object is most of its weight.
+   */
+  const weather = item.weather
+    ? {
+        ...item.weather,
+        hourly: [],
+        daily: [],
+        // The shape is fixed by WeatherPayload, so the unread fields are emptied rather
+        // than removed. An empty string costs two bytes; a forecast sentence costs forty.
+        current: {
+          ...item.weather.current,
+          shortForecast: "",
+          windMph: null,
+          humidity: null,
+          icon: null,
+        },
+      }
+    : null;
   const usgs = item.usgs ? { ...item.usgs, readings: item.usgs.readings.filter((r) => LIST_USGS_PARAMETERS.has(r.parameter)) } : null;
   // A card draws at most three stats, so everything else in the forecast row is dead
   // weight in a document that serialises every park twice. Only the fields

@@ -123,7 +123,7 @@ const GREAT_LAKES =
  * runs against coastal states next and a "lagoon" or "sound" there is not a lake.
  */
 const SALT_NAME =
-  /\b(ocean|sea|gulf|sound|bay|inlet|lagoon|harbou?r|strait|channel|pass)\b/i;
+  /\b(ocean|sea|gulf|sound|bay|inlet|lagoon|harbou?r|strait|channel|pass|atlantic|pacific|intracoastal|waterway|estuary|tidal|narrows|thorofare)\b/i;
 /** `water=` values that count as still fresh water, used to build the query. */
 export const LAKE_KINDS = ["lake", "reservoir", "pond", "oxbow"];
 /** `waterway=` values that count as moving fresh water. */
@@ -322,11 +322,19 @@ function boxSize(bbox: WaterFeature["bbox"]): number {
 /**
  * Above this, a coastline way's box says nothing useful.
  *
- * OSM splits the shoreline into ways of wildly different lengths. A short one has a tight
- * box and means the sea really is at this point; a long one can span half a state and
- * would reject every inland lake inside it. Roughly 0.05 degrees is 5 km.
+ * OSM splits the shoreline into ways of wildly different lengths, so the box has to be
+ * small enough to mean "the sea is here" and large enough to exist at all. 0.05 degrees
+ * was too tight to be worth having: it rejected nothing anywhere in the country, and
+ * saltwater walked straight through. New Smyrna Beach sits on the Atlantic and its
+ * coastline box spans 0.085, so it was ignored and the park was published as being on the
+ * "Indian River", which is a salt lagoon that happens to be named like a river.
+ *
+ * 0.25 degrees is about 28 km of shoreline. It rejects 322 coastal parks that the tighter
+ * cap let through, including every one on the Atlantic Intracoastal Waterway. It will also
+ * reject some genuinely fresh coastal lakes, and that is the right direction to be wrong
+ * in: this promises freshwater, so a missing park costs less than a sea beach on the list.
  */
-export const COASTLINE_MAX_BOX_DEG = 0.05;
+export const COASTLINE_MAX_BOX_DEG = 0.25;
 
 export function probeFrom(
   point: Point,
