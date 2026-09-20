@@ -41,8 +41,18 @@
  */
 import { join } from "node:path";
 
-const { CACHE_DIR, DATA_DIR, REFRESH, USER_AGENT, log, readJson, sleep, writeJson }: typeof import("./fetch-lib") =
-  await import("./fetch-lib" + ".ts");
+const {
+  CACHE_DIR,
+  DATA_DIR,
+  REFRESH,
+  USER_AGENT,
+  createDeadline,
+  log,
+  readJson,
+  requestTimeout,
+  sleep,
+  writeJson,
+}: typeof import("./fetch-lib") = await import("./fetch-lib" + ".ts");
 
 const IN_PATH = join(DATA_DIR, "parks.osm.json");
 const OUT_PATH = join(DATA_DIR, "water-bodies.osm.json");
@@ -53,7 +63,14 @@ const ENDPOINTS = [
 ];
 /** Overpass blocks an IP that asks continuously. This is deliberately slower than it needs to be. */
 const GAP_MS = 8_000;
-const TIMEOUT_MS = 180_000;
+/**
+ * What Overpass is told it may spend on the query. The client gives up much sooner, via the
+ * run's deadline: 180 is the server's ceiling, not a sensible wait.
+ */
+const SERVER_TIMEOUT_S = 180;
+
+/** Stops the run when the service is not answering today. See createDeadline. */
+const deadline = createDeadline();
 
 export interface WaterProbe {
   /**
@@ -166,7 +183,7 @@ export function buildStateWaterQuery(state: string): string {
   const lakes = `["water"~"^(${LAKE_KINDS.join("|")})$"]`;
   const rivers = `["waterway"~"^(${RIVER_WAYS.join("|")})$"]`;
   return [
-    `[out:json][timeout:${Math.round(TIMEOUT_MS / 1000)}];`,
+    `[out:json][timeout:${SERVER_TIMEOUT_S}];`,
     `area["ISO3166-2"="US-${state}"][admin_level=4]->.a;`,
     "(",
     `  nwr["natural"="water"]["name"]${lakes}(area.a);`,
@@ -245,8 +262,9 @@ async function post(query: string): Promise<OverpassElement[]> {
   const body = new URLSearchParams({ data: query }).toString();
   let lastError = "network error";
   for (const endpoint of ENDPOINTS) {
+    if (deadline.expired()) throw new Error(`out of time after ${deadline.elapsedMin()} min (${lastError})`);
     const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
+    const timer = setTimeout(() => controller.abort(), requestTimeout(deadline));
     try {
       const res = await fetch(endpoint, {
         method: "POST",
@@ -299,11 +317,24 @@ async function main(): Promise<void> {
   }
   log(`${[...byState.values()].reduce((n, l) => n + l.length, 0)} parks across ${byState.size} states`);
 
-  const verdicts: Record<string, WaterVerdict> = {};
+  /**
+   * Start from what is already on disk.
+   *
+   * Running for one state used to replace the whole file with that state's verdicts, which
+   * silently unpublished every park everywhere else on the next seed build.
+   */
+  const existing = states.length > 0 ? (readJson<{ verdicts?: Record<string, WaterVerdict> }>(OUT_PATH)?.verdicts ?? {}) : {};
+  const verdicts: Record<string, WaterVerdict> = { ...existing };
   const counts = { kept: 0, dropped: 0, greatLake: 0, lake: 0, river: 0, spring: 0 };
   const failed: string[] = [];
 
+  const skipped: string[] = [];
   for (const [state, points] of [...byState].sort()) {
+    if (deadline.expired()) {
+      // Everything already matched is written below. A re-run starts from the cache.
+      skipped.push(state);
+      continue;
+    }
     let features: WaterFeature[];
     try {
       features = await fetchState(state);
@@ -346,6 +377,10 @@ async function main(): Promise<void> {
   log(`  of those, Great Lakes shoreline: ${counts.greatLake}`);
   log(`  dropped ${counts.dropped}`);
   if (failed.length) log(`  states with no answer, left untouched: ${failed.join(", ")}`);
+  if (skipped.length) {
+    log(`  out of time after ${deadline.elapsedMin()} min; not reached: ${skipped.join(", ")}`);
+    log("  cached states are kept, so re-running picks up where this stopped");
+  }
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) await main();

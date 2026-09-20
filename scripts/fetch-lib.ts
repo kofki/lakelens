@@ -134,3 +134,61 @@ export async function cachedFetchJson<T>(
 export function log(msg: string): void {
   console.log(`[${new Date().toISOString()}] ${msg}`);
 }
+
+/**
+ * How long a single request may take before it is abandoned.
+ *
+ * The OSM scripts used 180 seconds, which is what `[timeout:180]` tells Overpass it may
+ * spend. That is the wrong number for the client: a healthy statewide query answers in
+ * about 35 seconds, and anything past a minute is a mirror that is not going to answer.
+ * With three mirrors tried in turn, 180 meant nine minutes of silence per failure.
+ */
+export const REQUEST_TIMEOUT_MS = 60_000;
+
+/** Default ceiling on a whole run, overridable with --budget=<minutes>. */
+export const DEFAULT_BUDGET_MS = 20 * 60_000;
+
+export interface Deadline {
+  /** True once the run has spent its budget. */
+  expired(): boolean;
+  /** Milliseconds left, never negative. */
+  remaining(): number;
+  /** Whole minutes spent so far, for logging. */
+  elapsedMin(): string;
+}
+
+/**
+ * A wall-clock ceiling for a run.
+ *
+ * Every one of these scripts caches as it goes, so stopping early is cheap and resuming is
+ * free. What is not cheap is a run that grinds for seventeen minutes and produces nothing,
+ * which is exactly what happened: without a ceiling there is no point at which a script
+ * admits the service is not answering today.
+ */
+export function createDeadline(budgetMs: number = budgetFromArgv()): Deadline {
+  const startedAt = Date.now();
+  const endsAt = startedAt + budgetMs;
+  return {
+    expired: () => Date.now() >= endsAt,
+    remaining: () => Math.max(endsAt - Date.now(), 0),
+    elapsedMin: () => ((Date.now() - startedAt) / 60_000).toFixed(1),
+  };
+}
+
+/** `--budget=30` means thirty minutes. Anything unparseable falls back to the default. */
+export function budgetFromArgv(argv: string[] = process.argv): number {
+  const arg = argv.find((a) => a.startsWith("--budget="));
+  const minutes = arg ? Number(arg.split("=")[1]) : NaN;
+  return Number.isFinite(minutes) && minutes > 0 ? minutes * 60_000 : DEFAULT_BUDGET_MS;
+}
+
+/**
+ * A request timeout that never outlives the run's own budget.
+ *
+ * Without this the last request of a run can start with ten seconds left on the clock and
+ * still block for a full minute.
+ */
+export function requestTimeout(deadline: Deadline | null, perRequestMs = REQUEST_TIMEOUT_MS): number {
+  if (!deadline) return perRequestMs;
+  return Math.max(Math.min(perRequestMs, deadline.remaining()), 1_000);
+}

@@ -21,8 +21,18 @@
  */
 import { join } from "node:path";
 
-const { CACHE_DIR, DATA_DIR, REFRESH, USER_AGENT, log, readJson, sleep, writeJson }: typeof import("./fetch-lib") =
-  await import("./fetch-lib" + ".ts");
+const {
+  CACHE_DIR,
+  DATA_DIR,
+  REFRESH,
+  USER_AGENT,
+  createDeadline,
+  log,
+  readJson,
+  requestTimeout,
+  sleep,
+  writeJson,
+}: typeof import("./fetch-lib") = await import("./fetch-lib" + ".ts");
 
 const OUT_PATH = join(DATA_DIR, "parks.osm.json");
 const ENDPOINTS = [
@@ -32,7 +42,11 @@ const ENDPOINTS = [
 ];
 /** Overpass throttles a client that asks again immediately; one state at a time, politely. */
 const GAP_MS = 6_000;
-const TIMEOUT_MS = 180_000;
+/** What Overpass is told it may spend. The client gives up sooner, on the run's deadline. */
+const SERVER_TIMEOUT_S = 180;
+
+/** Stops the run when the service is not answering today. See createDeadline. */
+const deadline = createDeadline();
 
 /**
  * States where every `natural=beach` is fresh water.
@@ -64,7 +78,7 @@ interface OverpassElement {
  */
 export function buildStateQuery(state: string): string {
   return [
-    "[out:json][timeout:180];",
+    `[out:json][timeout:${SERVER_TIMEOUT_S}];`,
     `area["ISO3166-2"="US-${state}"][admin_level=4]->.a;`,
     "(",
     '  nwr["natural"="beach"]["name"](area.a);',
@@ -228,7 +242,7 @@ async function fetchState(state: string): Promise<OverpassElement[]> {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded", "User-Agent": USER_AGENT, Accept: "application/json" },
         body,
-        signal: AbortSignal.timeout(TIMEOUT_MS),
+        signal: AbortSignal.timeout(requestTimeout(deadline)),
       });
       if (!res.ok) {
         lastError = new Error(`${endpoint}: HTTP ${res.status}`);

@@ -27,8 +27,18 @@ import { pathToFileURL } from "node:url";
 
 // Node's type-stripping needs the explicit .ts extension at runtime, but the root tsconfig
 // has no allowImportingTsExtensions, so a computed specifier keeps both tsc and `node` happy.
-const { CACHE_DIR, DATA_DIR, REFRESH, USER_AGENT, log, readJson, sleep, writeJson }: typeof import("./fetch-lib") =
-  await import("./fetch-lib" + ".ts");
+const {
+  CACHE_DIR,
+  DATA_DIR,
+  REFRESH,
+  USER_AGENT,
+  createDeadline,
+  log,
+  readJson,
+  requestTimeout,
+  sleep,
+  writeJson,
+}: typeof import("./fetch-lib") = await import("./fetch-lib" + ".ts");
 
 const IN_PATH = join(DATA_DIR, "parks.osm.json");
 const OUT_PATH = join(DATA_DIR, "park-details.osm.json");
@@ -39,7 +49,15 @@ const ENDPOINTS = [
 ];
 /** Overpass answers HTTP 406 to a client that asks again immediately; one chunk at a time. */
 const GAP_MS = 6_000;
-const TIMEOUT_MS = 180_000;
+/**
+ * What Overpass is told it may spend. Lower than the other scripts because this is an id
+ * lookup over a known set, not a search: if it has not answered in 90 seconds it will not.
+ * The client gives up sooner still, on the run's deadline.
+ */
+const SERVER_TIMEOUT_S = 90;
+
+/** Stops the run when the service is not answering today. See createDeadline. */
+const deadline = createDeadline();
 /**
  * An id lookup is cheap per element, so the limit is the server-side deadline rather than
  * the data. 150 ids resolve in a couple of seconds, well inside the 90 s timeout asked for
@@ -180,7 +198,7 @@ export function buildRefQuery(refs: readonly string[]): string {
   const clauses = [...byType]
     .filter(([, ids]) => ids.length > 0)
     .map(([type, ids]) => `  ${type}(id:${ids.join(",")});`);
-  return ["[out:json][timeout:90];", "(", ...clauses, ");", "out tags;"].join("\n");
+  return [`[out:json][timeout:${SERVER_TIMEOUT_S}];`, "(", ...clauses, ");", "out tags;"].join("\n");
 }
 
 /** A chunk keyed by its own contents, so adding parks does not invalidate earlier caches. */
@@ -214,7 +232,7 @@ async function fetchChunk(refs: readonly string[]): Promise<OverpassElement[]> {
           Accept: "application/json",
         },
         body,
-        signal: AbortSignal.timeout(TIMEOUT_MS),
+        signal: AbortSignal.timeout(requestTimeout(deadline)),
       });
       if (!res.ok) {
         // 406 is Overpass saying "you asked too fast", not "your query is wrong", so the
