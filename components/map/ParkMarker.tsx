@@ -58,7 +58,10 @@ export function ParkMarker({ item, selected, showLabel, onSelect }: ParkMarkerPr
             "relative flex size-10 items-center justify-center rounded-full border-[2.5px] border-(--marker-edge) bg-white shadow-md",
             // small pointer tail under the circle, same colour as the border
             "after:content-[''] after:absolute after:left-1/2 after:top-full after:-mt-2 after:size-3 after:-translate-x-1/2 after:rotate-45 after:border-b-[2.5px] after:border-r-[2.5px] after:border-(--marker-edge) after:bg-white",
-            selected && "ring-3 ring-sunset ring-offset-2 ring-offset-cream",
+            // sunset-deep, not sunset: the lighter amber measures 2.4:1 on the page and
+            // 1.8:1 on a map tile, so the ring marking the selected park was the one thing
+            // on the map you could not see. This clears 3:1 on both.
+            selected && "ring-3 ring-sunset-deep ring-offset-2 ring-offset-cream",
           )}
         >
           <StatusIcon level={status.level} source={status.source} className="relative z-10 size-5 text-(--marker-fg)" />

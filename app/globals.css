@@ -36,19 +36,19 @@
   /* Status: pastel pill fills with darkened text so every pill passes AA (icon + text always). */
   --color-status-open: #14532d;
   --color-status-open-bg: #dcfce7;
-  --color-status-open-edge: #16a34a;
+  --color-status-open-edge: #15803d;
   --color-status-likely: #7c4a03;
   --color-status-likely-bg: #fef3c7;
-  --color-status-likely-edge: #d97706;
+  --color-status-likely-edge: #b45309;
   --color-status-full: #991b1b;
   --color-status-full-bg: #fee2e2;
-  --color-status-full-edge: #dc2626;
+  --color-status-full-edge: #b91c1c;
   --color-status-closed: #7f1d1d;
   --color-status-closed-bg: #fecaca;
   --color-status-closed-edge: #7f1d1d;
   --color-status-unknown: #374151;
   --color-status-unknown-bg: #eef0ea;
-  --color-status-unknown-edge: #6b7280;
+  --color-status-unknown-edge: #4b5563;
 
   /* Level ramp for stat tiles */
   --color-level-good: #16a34a;
@@ -81,8 +81,20 @@ body {
 }
 
 :focus-visible {
-  outline: 3px solid var(--color-cyan);
+  /*
+   * A two-tone ring, because one colour cannot work everywhere this lands.
+   *
+   * The ring was cyan, which measures 1.6:1 on the page background and 1.2:1 on a map
+   * tile: the marker a keyboard user just focused sat on open water and the ring was
+   * invisible against it. WCAG wants 3:1 for a focus indicator.
+   *
+   * Ink clears 15:1 on cream and 11:1 on water, and fails only on a dark photograph, so
+   * the white halo outside it covers that case. Between them there is no background in
+   * this app where the ring disappears.
+   */
+  outline: 3px solid var(--color-ink);
   outline-offset: 2px;
+  box-shadow: 0 0 0 6px rgb(255 255 255 / 0.92);
 }
 
 /* Tactile press feedback on buttons and cards. */
