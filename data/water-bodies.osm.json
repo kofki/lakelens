@@ -1,6 +1,0 @@
-{
-  "_note": "Water body each OSM swim area sits on, from scripts/fetch-osm-water-bodies.ts. water_body null means the point could not name fresh water within 400 m and should not be published.",
-  "generated_at": "2026-09-20T08:12:51.354Z",
-  "radius_m": 400,
-  "verdicts": {}
-}

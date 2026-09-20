@@ -57,12 +57,19 @@ const TIMEOUT_MS = 180_000;
 const RADIUS_M = 400;
 
 export interface WaterProbe {
-  /** Named water polygons found, most specific tag first. */
+  /**
+   * Names of still fresh water: things tagged `water=lake|reservoir|pond|oxbow`.
+   *
+   * Asked for separately rather than filtered out of `names` afterwards, because Overpass
+   * returns names and tags as two independent sets with no correspondence between them.
+   * A Chicago lakefront beach comes back as names "Burnham Harbor North Basin;Lake
+   * Michigan" and kinds "harbour;lake", and nothing in that pairing says which is which.
+   */
+  lakes: string[];
+  /** Names of nearby named rivers, streams and canals. */
+  rivers: string[];
+  /** Every named water area, whatever it is. Only consulted when the two above are empty. */
   names: string[];
-  /** `water=` values seen (lake, reservoir, pond, river, ...). */
-  kinds: string[];
-  /** `waterway=` values seen on nearby linear water. */
-  waterways: string[];
   /** true when a `natural=coastline` way is within the radius: the sea is right there. */
   coastline: boolean;
   /** true when a spring is mapped within the radius. */
@@ -88,11 +95,10 @@ const GREAT_LAKES = /\blake\s+(michigan|superior|huron|erie|ontario|st\.?\s*clai
  * runs against coastal states next and a "lagoon" or "sound" there is not a lake.
  */
 const SALT_NAME = /\b(ocean|sea|gulf|sound|bay|inlet|lagoon|harbou?r|strait|channel|pass)\b/i;
-/** `water=` values that are salt or are not a place anyone swims. */
-const SALT_KIND = new Set(["salt_pool", "salt_panne", "lagoon"]);
-const LAKE_KIND = new Set(["lake", "reservoir", "pond", "oxbow", "basin", "lock", "moat"]);
-const RIVER_KIND = new Set(["river", "stream", "canal", "ditch", "rapids"]);
-const RIVER_WAY = new Set(["river", "stream", "canal", "riverbank", "tidal_channel"]);
+/** `water=` values that count as still fresh water, used to build the query. */
+export const LAKE_KINDS = ["lake", "reservoir", "pond", "oxbow"];
+/** `waterway=` values that count as moving fresh water. */
+export const RIVER_WAYS = ["river", "stream", "canal"];
 
 /**
  * What the probe means.
@@ -100,29 +106,37 @@ const RIVER_WAY = new Set(["river", "stream", "canal", "riverbank", "tidal_chann
  * Rejection is the default. A point keeps its place only by naming fresh water, so the
  * failure mode of every gap in OSM is a missing park rather than a wrong one.
  */
+const clean = (values: string[]) => values.map((v) => v.trim()).filter(Boolean);
+
 export function classify(probe: WaterProbe): WaterVerdict {
-  const names = probe.names.filter((n) => n.trim().length > 0);
-  if (probe.coastline) {
-    return { water_body: null, type: null, great_lake: false, reason: "coastline within range" };
+  const reject = (reason: string): WaterVerdict => ({ water_body: null, type: null, great_lake: false, reason });
+
+  // The sea being in range outranks anything the water is called.
+  if (probe.coastline) return reject("coastline within range");
+
+  // A still-water name first: a lake beach with a feeder creek is a lake beach, and that is
+  // the water people are standing in. Salt-sounding names are skipped rather than fatal,
+  // because a marina basin next to Lake Michigan does not make Lake Michigan salty.
+  const lakes = clean(probe.lakes).filter((n) => !SALT_NAME.test(n));
+  const rivers = clean(probe.rivers).filter((n) => !SALT_NAME.test(n));
+
+  if (lakes.length > 0) {
+    const name = lakes[0]!;
+    return { water_body: name, type: "lake", great_lake: GREAT_LAKES.test(name), reason: "ok" };
   }
-  if (names.length === 0) {
-    return { water_body: null, type: null, great_lake: false, reason: "no named water within range" };
+  if (probe.spring) {
+    // A spring with no lake around it is the spring itself, which is what a name here means.
+    const name = clean(probe.names).find((n) => !SALT_NAME.test(n)) ?? rivers[0];
+    if (name) return { water_body: name, type: "spring", great_lake: false, reason: "ok" };
+  }
+  if (rivers.length > 0) {
+    return { water_body: rivers[0]!, type: "river", great_lake: false, reason: "ok" };
   }
 
-  // A tidal channel next to a named lake still means salt water reaches this beach.
-  const salty = names.find((n) => SALT_NAME.test(n));
-  if (salty) return { water_body: null, type: null, great_lake: false, reason: `salt water name: ${salty}` };
-  const saltKind = probe.kinds.find((k) => SALT_KIND.has(k));
-  if (saltKind) return { water_body: null, type: null, great_lake: false, reason: `salt water tag: ${saltKind}` };
-
-  // Prefer a still-water name when both are present: a lake beach with a feeder creek is a
-  // lake beach, and that is the water people are standing in.
-  const lakeish = probe.kinds.some((k) => LAKE_KIND.has(k));
-  const riverish = probe.kinds.some((k) => RIVER_KIND.has(k)) || probe.waterways.some((w) => RIVER_WAY.has(w));
-  const type: WaterType = probe.spring && !lakeish ? "spring" : lakeish ? "lake" : riverish ? "river" : "lake";
-
-  const name = names[0]!;
-  return { water_body: name, type, great_lake: GREAT_LAKES.test(name), reason: "ok" };
+  const all = clean(probe.names);
+  if (all.length === 0) return reject("no named water within range");
+  // Everything nearby was a harbour, a lagoon or a sound. That is not a lake.
+  return reject(`no fresh water within range: ${all.slice(0, 3).join(", ")}`);
 }
 
 interface Point {
@@ -139,17 +153,22 @@ interface Point {
  * the index so a point that matched nothing still occupies its slot in the response.
  */
 export function buildBatchQuery(points: Point[], radiusM = RADIUS_M): string {
+  const lakeFilter = `["water"~"^(${LAKE_KINDS.join("|")})$"]`;
+  const riverFilter = `["waterway"~"^(${RIVER_WAYS.join("|")})$"]`;
   const parts = [`[out:json][timeout:${Math.round(TIMEOUT_MS / 1000)}];`];
   points.forEach((p, i) => {
     const at = `around:${radiusM},${p.lat},${p.lng}`;
     parts.push(
-      `nwr(${at})["natural"="water"]["name"]->.w;`,
-      `way(${at})["waterway"]->.r;`,
+      `nwr(${at})["natural"="water"]["name"]${lakeFilter}->.l;`,
+      // Named only. Asking for every `waterway` in range, with no value or name filter,
+      // matched boatyards and fairways and took three minutes for a single point.
+      `way(${at})${riverFilter}["name"]->.r;`,
       `way(${at})["natural"="coastline"]->.c;`,
       `nwr(${at})["natural"="spring"]->.s;`,
+      `nwr(${at})["natural"="water"]["name"]->.w;`,
       `make probe i=${i},` +
-        ` names=w.set(t["name"]), kinds=w.set(t["water"]),` +
-        ` waterways=r.set(t["waterway"]), coast=c.count(ways), spring=s.count(nwr);`,
+        ` lakes=l.set(t["name"]), rivers=r.set(t["name"]), names=w.set(t["name"]),` +
+        ` coast=c.count(ways), spring=s.count(nwr);`,
       "out;",
     );
   });
@@ -174,9 +193,9 @@ export function parseBatch(elements: ProbeElement[], points: Point[]): Map<strin
     const point = points[i];
     if (!point) continue;
     out.set(point.slug, {
+      lakes: splitSet(t.lakes),
+      rivers: splitSet(t.rivers),
       names: splitSet(t.names),
-      kinds: splitSet(t.kinds),
-      waterways: splitSet(t.waterways),
       coastline: Number(t.coast ?? 0) > 0,
       spring: Number(t.spring ?? 0) > 0,
     });

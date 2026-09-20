@@ -1,0 +1,3550 @@
+{
+  "_note": "Nearest town to each park, reverse-geocoded from OpenStreetMap Nominatim by scripts/fetch-place-names.ts. city is null when the answer was a county or nothing.",
+  "generated_at": "2026-09-20T08:26:17.005Z",
+  "places": {
+    "ichetucknee-springs-state-park": {
+      "city": null,
+      "state": "FL"
+    },
+    "ginnie-springs": {
+      "city": null,
+      "state": "FL"
+    },
+    "poe-springs-park": {
+      "city": null,
+      "state": "FL"
+    },
+    "gilchrist-blue-springs-state-park": {
+      "city": null,
+      "state": "FL"
+    },
+    "rainbow-springs-state-park": {
+      "city": null,
+      "state": "FL"
+    },
+    "blue-spring-state-park": {
+      "city": null,
+      "state": "FL"
+    },
+    "wekiwa-springs-state-park": {
+      "city": null,
+      "state": "FL"
+    },
+    "madison-blue-spring-state-park": {
+      "city": null,
+      "state": "FL"
+    },
+    "lafayette-blue-springs-state-park": {
+      "city": null,
+      "state": "FL"
+    },
+    "troy-spring-state-park": {
+      "city": null,
+      "state": "FL"
+    },
+    "fanning-springs-state-park": {
+      "city": "Fanning Springs",
+      "state": "FL"
+    },
+    "manatee-springs-state-park": {
+      "city": null,
+      "state": "FL"
+    },
+    "de-leon-springs-state-park": {
+      "city": null,
+      "state": "FL"
+    },
+    "weeki-wachee-springs-state-park": {
+      "city": "Weeki Wachee",
+      "state": "FL"
+    },
+    "kelly-park-rock-springs": {
+      "city": null,
+      "state": "FL"
+    },
+    "hart-springs-park": {
+      "city": null,
+      "state": "FL"
+    },
+    "lithia-springs-conservation-park": {
+      "city": null,
+      "state": "FL"
+    },
+    "hunter-springs-park": {
+      "city": "Crystal River",
+      "state": "FL"
+    },
+    "little-river-springs-park": {
+      "city": null,
+      "state": "FL"
+    },
+    "royal-springs-park": {
+      "city": null,
+      "state": "FL"
+    },
+    "suwannee-springs-park": {
+      "city": null,
+      "state": "FL"
+    },
+    "otter-springs-park": {
+      "city": null,
+      "state": "FL"
+    },
+    "morrison-springs-park": {
+      "city": null,
+      "state": "FL"
+    },
+    "vortex-spring": {
+      "city": null,
+      "state": "FL"
+    },
+    "williford-spring": {
+      "city": null,
+      "state": "FL"
+    },
+    "pitt-spring-recreation-area": {
+      "city": null,
+      "state": "FL"
+    },
+    "cypress-spring": {
+      "city": null,
+      "state": "FL"
+    },
+    "alfred-b-maclay-gardens-state-park": {
+      "city": "Tallahassee",
+      "state": "FL"
+    },
+    "blackwater-river-state-park": {
+      "city": null,
+      "state": "FL"
+    },
+    "edward-ball-wakulla-springs-state-park": {
+      "city": null,
+      "state": "FL"
+    },
+    "falling-waters-state-park": {
+      "city": null,
+      "state": "FL"
+    },
+    "florida-caverns-state-park": {
+      "city": "Marianna",
+      "state": "FL"
+    },
+    "lake-louisa-state-park": {
+      "city": null,
+      "state": "FL"
+    },
+    "lake-manatee-state-park": {
+      "city": null,
+      "state": "FL"
+    },
+    "mike-roess-gold-head-branch-state-park": {
+      "city": null,
+      "state": "FL"
+    },
+    "oleno-state-park": {
+      "city": null,
+      "state": "FL"
+    },
+    "ochlockonee-river-state-park": {
+      "city": null,
+      "state": "FL"
+    },
+    "oscar-scherer-state-park": {
+      "city": null,
+      "state": "FL"
+    },
+    "ponce-de-leon-springs-state-park": {
+      "city": "Ponce de Leon",
+      "state": "FL"
+    },
+    "wes-skiles-peacock-springs-state-park": {
+      "city": null,
+      "state": "FL"
+    },
+    "12th-street-beach-il": {
+      "city": null,
+      "state": "IL"
+    },
+    "1st-street-beach-mi": {
+      "city": "Manistee",
+      "state": "MI"
+    },
+    "32nd-beach-mn": {
+      "city": "Minneapolis",
+      "state": "MN"
+    },
+    "41st-street-beach-il": {
+      "city": "Chicago",
+      "state": "IL"
+    },
+    "49th-street-beach-il": {
+      "city": "Chicago",
+      "state": "IL"
+    },
+    "57th-street-beach-il": {
+      "city": "Chicago",
+      "state": "IL"
+    },
+    "63rd-street-beach-il": {
+      "city": null,
+      "state": "IL"
+    },
+    "6th-avenue-west-beach-wi": {
+      "city": "Ashland",
+      "state": "WI"
+    },
+    "accretion-beach-mi": {
+      "city": "Grosse Pointe Farms",
+      "state": "MI"
+    },
+    "aero-view-beach-mi": {
+      "city": "West Bloomfield Township",
+      "state": "MI"
+    },
+    "agate-beach-mi": {
+      "city": "Stanton Township",
+      "state": "MI"
+    },
+    "agate-beach-mn": {
+      "city": "Silver Creek Township",
+      "state": "MN"
+    },
+    "ainsworth-beach-ia": {
+      "city": null,
+      "state": "IA"
+    },
+    "airport-beach-wi": {
+      "city": "La Crosse",
+      "state": "WI"
+    },
+    "albert-lea-beach-mn": {
+      "city": "Albert Lea",
+      "state": "MN"
+    },
+    "alden-s-beach-mn": {
+      "city": null,
+      "state": "MN"
+    },
+    "alford-park-beach-wi": {
+      "city": "Kenosha",
+      "state": "WI"
+    },
+    "alum-creek-beach-oh": {
+      "city": "Orange Township",
+      "state": "OH"
+    },
+    "amery-swimming-beach-wi": {
+      "city": "Amery",
+      "state": "WI"
+    },
+    "amos-bench-id": {
+      "city": null,
+      "state": "ID"
+    },
+    "anglers-bay-beach-ia": {
+      "city": null,
+      "state": "IA"
+    },
+    "ann-marguret-beach-nv": {
+      "city": null,
+      "state": "NV"
+    },
+    "aquatics-beach-il": {
+      "city": "Wilmette",
+      "state": "IL"
+    },
+    "aquatics-mi": {
+      "city": "Blue Lake Township",
+      "state": "MI"
+    },
+    "archie-valleau-landing-mi": {
+      "city": "Helena Township",
+      "state": "MI"
+    },
+    "ardmore-hollywood-osterman-beach-il": {
+      "city": "Chicago",
+      "state": "IL"
+    },
+    "arnolds-park-public-beach-ia": {
+      "city": "Arnolds Park",
+      "state": "IA"
+    },
+    "arrowhead-beach-ia": {
+      "city": null,
+      "state": "IA"
+    },
+    "arthur-ashe-beach-il": {
+      "city": "Chicago",
+      "state": "IL"
+    },
+    "assembly-park-beach-wi": {
+      "city": "Town of Delavan",
+      "state": "WI"
+    },
+    "attwood-beach-mi": {
+      "city": "Eagle Harbor Township",
+      "state": "MI"
+    },
+    "atwood-lake-beach-oh": {
+      "city": "Monroe Township",
+      "state": "OH"
+    },
+    "aunts-creek-beach-mo": {
+      "city": null,
+      "state": "MO"
+    },
+    "avon-beach-mn": {
+      "city": "Avon",
+      "state": "MN"
+    },
+    "b-b-clarke-beach-wi": {
+      "city": "Madison",
+      "state": "WI"
+    },
+    "back-beach-az": {
+      "city": null,
+      "state": "AZ"
+    },
+    "bailly-beach-in": {
+      "city": "Dune Acres",
+      "state": "IN"
+    },
+    "barrier-beach-oh": {
+      "city": null,
+      "state": "OH"
+    },
+    "barrier-beach-wi": {
+      "city": null,
+      "state": "WI"
+    },
+    "bass-lake-state-beach-in": {
+      "city": "Bass Lake",
+      "state": "IN"
+    },
+    "bathing-beach-park-mi": {
+      "city": "Harbor Beach",
+      "state": "MI"
+    },
+    "battle-lake-public-beach-mn": {
+      "city": "Battle Lake",
+      "state": "MN"
+    },
+    "bay-view-beach-ia": {
+      "city": "West Okoboji",
+      "state": "IA"
+    },
+    "baypoint-beach-mi": {
+      "city": "Washington Charter Township",
+      "state": "MI"
+    },
+    "bayview-beach-wi": {
+      "city": "Town of Bayview",
+      "state": "WI"
+    },
+    "bde-maka-ska-north-beach-mn": {
+      "city": "Minneapolis",
+      "state": "MN"
+    },
+    "bde-maka-ska-thomas-beach-mn": {
+      "city": "Minneapolis",
+      "state": "MN"
+    },
+    "beach-2-mo": {
+      "city": null,
+      "state": "MO"
+    },
+    "beach-3-mo": {
+      "city": null,
+      "state": "MO"
+    },
+    "beach-area-mi": {
+      "city": "Grayling Charter Township",
+      "state": "MI"
+    },
+    "beach-black-hawk-lake-recreation-area-wi": {
+      "city": "Town of Highland",
+      "state": "WI"
+    },
+    "beach-no-swim-co": {
+      "city": null,
+      "state": "CO"
+    },
+    "beach-potawatomi-state-park-wi": {
+      "city": "Town of Nasewaupee",
+      "state": "WI"
+    },
+    "beaver-island-public-beach-mi": {
+      "city": "Peaine Township",
+      "state": "MI"
+    },
+    "beaver-lake-dive-park-ar": {
+      "city": null,
+      "state": "AR"
+    },
+    "beaver-river-beach-mn": {
+      "city": "Beaver Bay",
+      "state": "MN"
+    },
+    "bebe-beach-mi": {
+      "city": "Sanborn Township",
+      "state": "MI"
+    },
+    "bee-run-swimming-area-wv": {
+      "city": null,
+      "state": "WV"
+    },
+    "beer-bottle-beach-ne": {
+      "city": "South Bend Precinct",
+      "state": "NE"
+    },
+    "bellaire-beach-mn": {
+      "city": "White Bear Township",
+      "state": "MN"
+    },
+    "belle-isle-beach-mi": {
+      "city": "Detroit",
+      "state": "MI"
+    },
+    "bellevue-beach-il": {
+      "city": "Rice Township",
+      "state": "IL"
+    },
+    "belsmeir-beach-nv": {
+      "city": null,
+      "state": "NV"
+    },
+    "ben-butterworth-parkway-il": {
+      "city": null,
+      "state": "IL"
+    },
+    "bendorf-mo": {
+      "city": "Innsbrook",
+      "state": "MO"
+    },
+    "bernie-s-beach-wi": {
+      "city": "Madison",
+      "state": "WI"
+    },
+    "bete-grise-north-public-beach-mi": {
+      "city": "Grant Township",
+      "state": "MI"
+    },
+    "beulah-beach-mi": {
+      "city": "Beulah",
+      "state": "MI"
+    },
+    "beulah-park-beach-oh": {
+      "city": "Cleveland",
+      "state": "OH"
+    },
+    "beverly-shores-beach-in": {
+      "city": "Beverly Shores",
+      "state": "IN"
+    },
+    "big-bass-beach-in": {
+      "city": null,
+      "state": "IN"
+    },
+    "big-beach-mn": {
+      "city": "Schroeder Township",
+      "state": "MN"
+    },
+    "big-bench-id": {
+      "city": null,
+      "state": "ID"
+    },
+    "big-bend-swimming-beach-oh": {
+      "city": "Elizabeth Township",
+      "state": "OH"
+    },
+    "big-cedar-beach-mo": {
+      "city": null,
+      "state": "MO"
+    },
+    "big-shoal-beach-mi": {
+      "city": "Drummond Township",
+      "state": "MI"
+    },
+    "bikini-bottom-beach-in": {
+      "city": null,
+      "state": "IN"
+    },
+    "bitcoin-beach-north-mi": {
+      "city": "Victor Township",
+      "state": "MI"
+    },
+    "black-beach-mn": {
+      "city": "Beaver Bay Township",
+      "state": "MN"
+    },
+    "black-river-beach-wi": {
+      "city": "La Crosse",
+      "state": "WI"
+    },
+    "black-sandy-beach-mt": {
+      "city": null,
+      "state": "MT"
+    },
+    "blackhawk-aquatics-mi": {
+      "city": "Blue Lake Township",
+      "state": "MI"
+    },
+    "blackhawk-waterfront-mi": {
+      "city": "Blue Lake Township",
+      "state": "MI"
+    },
+    "blandin-beach-mn": {
+      "city": "Grand Rapids",
+      "state": "MN"
+    },
+    "bloomington-beach-ks": {
+      "city": null,
+      "state": "KS"
+    },
+    "blue-lake-public-access-site-in": {
+      "city": null,
+      "state": "IN"
+    },
+    "bluestem-lake-public-beach-ok": {
+      "city": null,
+      "state": "OK"
+    },
+    "boat-beach-az": {
+      "city": null,
+      "state": "AZ"
+    },
+    "boat-beach-co": {
+      "city": "Aurora",
+      "state": "CO"
+    },
+    "boat-landing-beach-wi": {
+      "city": "Town of Brazeau",
+      "state": "WI"
+    },
+    "boater-swim-area-oh": {
+      "city": "Monroe Township",
+      "state": "OH"
+    },
+    "boaters-beach-leesville-lake-oh": {
+      "city": "Orange Township",
+      "state": "OH"
+    },
+    "boaters-beach-nv": {
+      "city": "Carson City",
+      "state": "NV"
+    },
+    "boaters-beach-swim-from-boat-oh": {
+      "city": "Monroe Township",
+      "state": "OH"
+    },
+    "boating-beach-wi": {
+      "city": "Town of Germantown",
+      "state": "WI"
+    },
+    "boettcher-park-swimming-access-mt": {
+      "city": null,
+      "state": "MT"
+    },
+    "boulder-beach-nv": {
+      "city": null,
+      "state": "NV"
+    },
+    "boulder-beach-south-nv": {
+      "city": null,
+      "state": "NV"
+    },
+    "bozeman-beach-mt": {
+      "city": null,
+      "state": "MT"
+    },
+    "bradford-beach-wi": {
+      "city": "Milwaukee",
+      "state": "WI"
+    },
+    "brandy-beach-wi": {
+      "city": "Town of Arbor Vitae",
+      "state": "WI"
+    },
+    "breakers-beach-mi": {
+      "city": "Stanton Township",
+      "state": "MI"
+    },
+    "brittingham-beach-wi": {
+      "city": "Madison",
+      "state": "WI"
+    },
+    "broad-street-beach-wi": {
+      "city": "Bayfield",
+      "state": "WI"
+    },
+    "bronco-beach-id": {
+      "city": null,
+      "state": "ID"
+    },
+    "brooks-beach-ia": {
+      "city": "Okoboji",
+      "state": "IA"
+    },
+    "brown-s-beach-wi": {
+      "city": "North Hudson",
+      "state": "WI"
+    },
+    "brownells-beach-ia": {
+      "city": null,
+      "state": "IA"
+    },
+    "browns-beach-wi": {
+      "city": "North Hudson",
+      "state": "WI"
+    },
+    "bryant-lake-park-swimming-beach-mn": {
+      "city": "Eden Prairie",
+      "state": "MN"
+    },
+    "buckhorn-beach-az": {
+      "city": null,
+      "state": "AZ"
+    },
+    "buffalo-bay-beach-wi": {
+      "city": "Town of Russell",
+      "state": "WI"
+    },
+    "buffalo-beach-ia": {
+      "city": "Buffalo",
+      "state": "IA"
+    },
+    "buffalo-shores-beach-ia": {
+      "city": "Buffalo",
+      "state": "IA"
+    },
+    "buffington-harbor-beach-in": {
+      "city": null,
+      "state": "IN"
+    },
+    "bulltown-swimming-area-wv": {
+      "city": null,
+      "state": "WV"
+    },
+    "bunker-mo": {
+      "city": null,
+      "state": "MO"
+    },
+    "burgundy-beach-oh": {
+      "city": "Put-in-Bay Township",
+      "state": "OH"
+    },
+    "burlington-bay-beach-mn": {
+      "city": null,
+      "state": "MN"
+    },
+    "bush-lake-beach-mn": {
+      "city": "Bloomington",
+      "state": "MN"
+    },
+    "buttercup-beach-mi": {
+      "city": "Richfield Center",
+      "state": "MI"
+    },
+    "button-beach-id": {
+      "city": null,
+      "state": "ID"
+    },
+    "caesar-creek-state-park-beach-oh": {
+      "city": "Massie Township",
+      "state": "OH"
+    },
+    "calumet-beach-il": {
+      "city": null,
+      "state": "IL"
+    },
+    "calumet-waterworks-beach-mi": {
+      "city": "Calumet Township",
+      "state": "MI"
+    },
+    "camp-st-croix-beach-wi": {
+      "city": "Town of Troy",
+      "state": "WI"
+    },
+    "campground-beach-il": {
+      "city": null,
+      "state": "IL"
+    },
+    "campground-beach-wi": {
+      "city": "Town of Bridge Creek",
+      "state": "WI"
+    },
+    "canyon-river-beach-mt": {
+      "city": null,
+      "state": "MT"
+    },
+    "carland-beach-oh": {
+      "city": "Toledo",
+      "state": "OH"
+    },
+    "carnelian-beach-mi": {
+      "city": "Eagle Harbor Township",
+      "state": "MI"
+    },
+    "carter-cove-beach-ar": {
+      "city": null,
+      "state": "AR"
+    },
+    "carter-lake-swim-beach-co": {
+      "city": null,
+      "state": "CO"
+    },
+    "carver-lake-beach-mn": {
+      "city": "Woodbury",
+      "state": "MN"
+    },
+    "cascade-lake-beach-mn": {
+      "city": "Rochester",
+      "state": "MN"
+    },
+    "casco-point-beach-mn": {
+      "city": "Orono",
+      "state": "MN"
+    },
+    "casino-beach-ia": {
+      "city": null,
+      "state": "IA"
+    },
+    "casper-road-beach-wi": {
+      "city": "Town of La Pointe",
+      "state": "WI"
+    },
+    "ceadar-lake-beach-in": {
+      "city": "Cedar Lake",
+      "state": "IN"
+    },
+    "cebia-beach-mi": {
+      "city": "West Bloomfield Township",
+      "state": "MI"
+    },
+    "cedar-creek-beach-mi": {
+      "city": "White Lake Charter Township",
+      "state": "MI"
+    },
+    "cedar-lake-east-beach-mn": {
+      "city": "Minneapolis",
+      "state": "MN"
+    },
+    "cedar-lake-north-shore-ok": {
+      "city": null,
+      "state": "OK"
+    },
+    "cedar-lake-point-beach-mn": {
+      "city": "Minneapolis",
+      "state": "MN"
+    },
+    "cedar-lake-sandy-beach-ok": {
+      "city": null,
+      "state": "OK"
+    },
+    "cedar-lake-south-beach-mn": {
+      "city": "Minneapolis",
+      "state": "MN"
+    },
+    "cedar-point-beach-oh": {
+      "city": "Sandusky",
+      "state": "OH"
+    },
+    "cedar-view-beach-ne": {
+      "city": null,
+      "state": "NE"
+    },
+    "cedarpass-beach-mo": {
+      "city": "Innsbrook",
+      "state": "MO"
+    },
+    "centennial-beach-az": {
+      "city": "Yuma",
+      "state": "AZ"
+    },
+    "centennial-beach-il": {
+      "city": "Naperville",
+      "state": "IL"
+    },
+    "central-beach-in": {
+      "city": "Beverly Shores",
+      "state": "IN"
+    },
+    "chain-lake-beach-mi": {
+      "city": "Moran Township",
+      "state": "MI"
+    },
+    "chapel-beach-mi": {
+      "city": "Munising Township",
+      "state": "MI"
+    },
+    "chapel-hill-beach-mo": {
+      "city": null,
+      "state": "MO"
+    },
+    "charles-mears-state-park-beach-mi": {
+      "city": "Pentwater",
+      "state": "MI"
+    },
+    "chaska-beach-oh": {
+      "city": "Huron",
+      "state": "OH"
+    },
+    "cherry-street-beach-il": {
+      "city": "Winnetka",
+      "state": "IL"
+    },
+    "chester-woods-beach-mn": {
+      "city": "Eyota Township",
+      "state": "MN"
+    },
+    "chimney-beach-nv": {
+      "city": "Carson City",
+      "state": "NV"
+    },
+    "chippewa-park-beach-devils-lake-mn": {
+      "city": null,
+      "state": "MN"
+    },
+    "chippy-s-sports-beach-wi": {
+      "city": "Town of Springwater",
+      "state": "WI"
+    },
+    "christmas-cove-beach-mi": {
+      "city": "Leelanau Township",
+      "state": "MI"
+    },
+    "churchill-beach-nv": {
+      "city": null,
+      "state": "NV"
+    },
+    "cinova-beach-mo": {
+      "city": "Innsbrook",
+      "state": "MO"
+    },
+    "circle-bench-wi": {
+      "city": "Madison",
+      "state": "WI"
+    },
+    "city-beach-ia": {
+      "city": "Clear Lake",
+      "state": "IA"
+    },
+    "city-beach-id": {
+      "city": "Sandpoint",
+      "state": "ID"
+    },
+    "city-beach-wi": {
+      "city": "Chetek",
+      "state": "WI"
+    },
+    "clayhole-beach-mn": {
+      "city": "Chaska",
+      "state": "MN"
+    },
+    "clayton-lake-beach-mn": {
+      "city": "Crosby Township",
+      "state": "MN"
+    },
+    "clear-lake-state-park-beach-ia": {
+      "city": "Clear Lake Township",
+      "state": "IA"
+    },
+    "clinton-lakes-dog-beach-mi": {
+      "city": "Greenbush Township",
+      "state": "MI"
+    },
+    "clover-beach-mi": {
+      "city": null,
+      "state": "MI"
+    },
+    "clubhouse-beach-in": {
+      "city": "Winfield Township",
+      "state": "IN"
+    },
+    "coles-creek-beach-il": {
+      "city": null,
+      "state": "IL"
+    },
+    "como-swimming-beach-mt": {
+      "city": null,
+      "state": "MT"
+    },
+    "compressor-station-bench-id": {
+      "city": null,
+      "state": "ID"
+    },
+    "congressional-summer-assembly-crystal-lake-beach-mi": {
+      "city": "Crystal Lake Township",
+      "state": "MI"
+    },
+    "congressional-summer-assembly-lake-michigan-beach-mi": {
+      "city": "Crystal Lake Township",
+      "state": "MI"
+    },
+    "conneaut-beach-oh": {
+      "city": null,
+      "state": "OH"
+    },
+    "coon-creek-beach-il": {
+      "city": null,
+      "state": "IL"
+    },
+    "corlina-beach-mo": {
+      "city": "Innsbrook",
+      "state": "MO"
+    },
+    "corny-beach-wi": {
+      "city": "Town of Bell",
+      "state": "WI"
+    },
+    "cottonmill-swimming-beach-ne": {
+      "city": null,
+      "state": "NE"
+    },
+    "cowan-lake-public-beach-oh": {
+      "city": "Vernon Township",
+      "state": "OH"
+    },
+    "cox-hollow-beach-wi": {
+      "city": "Town of Dodgeville",
+      "state": "WI"
+    },
+    "crandalls-beach-ia": {
+      "city": null,
+      "state": "IA"
+    },
+    "creek-beach-nv": {
+      "city": "Carson City",
+      "state": "NV"
+    },
+    "crescent-beach-ia": {
+      "city": "Wahpeton",
+      "state": "IA"
+    },
+    "crescent-beach-mn": {
+      "city": "Shorewood",
+      "state": "MN"
+    },
+    "crescent-beach-wi": {
+      "city": "Algoma",
+      "state": "WI"
+    },
+    "crescent-dune-beach-in": {
+      "city": null,
+      "state": "IN"
+    },
+    "crescent-sail-club-beach-private-mi": {
+      "city": "Grosse Pointe Farms",
+      "state": "MI"
+    },
+    "crystal-beach-wi": {
+      "city": "Town of Bradley",
+      "state": "WI"
+    },
+    "crystal-lake-beach-mn": {
+      "city": "Burnsville",
+      "state": "MN"
+    },
+    "crystal-lake-swimming-area-mi": {
+      "city": "Norman Township",
+      "state": "MI"
+    },
+    "dallas-lake-beach-in": {
+      "city": null,
+      "state": "IN"
+    },
+    "davis-beach-oh": {
+      "city": "Howard Township",
+      "state": "OH"
+    },
+    "davis-lake-beach-residents-only-mi": {
+      "city": null,
+      "state": "MI"
+    },
+    "day-camp-beach-mi": {
+      "city": null,
+      "state": "MI"
+    },
+    "dead-river-beach-mi": {
+      "city": null,
+      "state": "MI"
+    },
+    "deep-end-swimming-area-mi": {
+      "city": "Comins Township",
+      "state": "MI"
+    },
+    "deep-swimming-area-wi": {
+      "city": "Town of Mukwonago",
+      "state": "WI"
+    },
+    "deephaven-main-beach-mn": {
+      "city": "Shorewood",
+      "state": "MN"
+    },
+    "deer-lake-beach-mi": {
+      "city": "Clarkston",
+      "state": "MI"
+    },
+    "deleware-avenue-beach-oh": {
+      "city": "Put-in-Bay",
+      "state": "OH"
+    },
+    "dell-place-beach-il": {
+      "city": "Glencoe",
+      "state": "IL"
+    },
+    "des-moines-beach-ia": {
+      "city": "Okoboji",
+      "state": "IA"
+    },
+    "devoe-beach-mi": {
+      "city": "Tuscarora Township",
+      "state": "MI"
+    },
+    "diamond-lake-beach-il": {
+      "city": "Mundelein",
+      "state": "IL"
+    },
+    "diamond-point-beach-mn": {
+      "city": "Bemidji",
+      "state": "MN"
+    },
+    "divers-bay-beach-ne": {
+      "city": null,
+      "state": "NE"
+    },
+    "dixon-beach-ia": {
+      "city": null,
+      "state": "IA"
+    },
+    "dixon-reservoir-beach-co": {
+      "city": null,
+      "state": "CO"
+    },
+    "dodges-beach-ia": {
+      "city": "Clear Lake Township",
+      "state": "IA"
+    },
+    "dog-beach-id": {
+      "city": null,
+      "state": "ID"
+    },
+    "dog-beach-il": {
+      "city": "Evanston",
+      "state": "IL"
+    },
+    "dog-beach-oh": {
+      "city": "Bazetta Township",
+      "state": "OH"
+    },
+    "dog-cove-mn": {
+      "city": "Denmark Township",
+      "state": "MN"
+    },
+    "don-s-island-mo": {
+      "city": "Indian Point",
+      "state": "MO"
+    },
+    "douglas-beach-mi": {
+      "city": "Douglas",
+      "state": "MI"
+    },
+    "duck-lake-outlet-mi": {
+      "city": "Fruitland Township",
+      "state": "MI"
+    },
+    "duck-lake-state-park-beach-mi": {
+      "city": "Fruitland Township",
+      "state": "MI"
+    },
+    "dukes-lake-beach-mi": {
+      "city": "Kinross Township",
+      "state": "MI"
+    },
+    "dunbar-beach-in": {
+      "city": "Beverly Shores",
+      "state": "IN"
+    },
+    "dune-acres-beach-in": {
+      "city": "Dune Acres",
+      "state": "IN"
+    },
+    "dunlap-reef-wi": {
+      "city": "Sturgeon Bay",
+      "state": "WI"
+    },
+    "dutch-charlie-swim-beach-co": {
+      "city": null,
+      "state": "CO"
+    },
+    "dyckman-beach-mi": {
+      "city": null,
+      "state": "MI"
+    },
+    "eagle-river-beach-mi": {
+      "city": "Houghton Township",
+      "state": "MI"
+    },
+    "east-beach-in": {
+      "city": "Dune Acres",
+      "state": "IN"
+    },
+    "east-fork-campground-beach-oh": {
+      "city": "Williamsburg Township",
+      "state": "OH"
+    },
+    "east-fork-public-beach-oh": {
+      "city": "Batavia Township",
+      "state": "OH"
+    },
+    "east-okoboji-beach-ia": {
+      "city": null,
+      "state": "IA"
+    },
+    "east-shore-ne": {
+      "city": null,
+      "state": "NE"
+    },
+    "east-shoreline-in": {
+      "city": "Gary",
+      "state": "IN"
+    },
+    "easter-lake-beach-ia": {
+      "city": "Des Moines",
+      "state": "IA"
+    },
+    "eastwood-beach-mi": {
+      "city": "Washington Charter Township",
+      "state": "MI"
+    },
+    "edgewater-beach-oh": {
+      "city": "Cleveland",
+      "state": "OH"
+    },
+    "egg-harbor-beach-wi": {
+      "city": "Egg Harbor",
+      "state": "WI"
+    },
+    "egin-bench-id": {
+      "city": null,
+      "state": "ID"
+    },
+    "egralharve-beach-ia": {
+      "city": null,
+      "state": "IA"
+    },
+    "eichelman-beach-wi": {
+      "city": null,
+      "state": "WI"
+    },
+    "el-dorado-state-park-beach-ks": {
+      "city": null,
+      "state": "KS"
+    },
+    "el-dorado-swim-beach-ks": {
+      "city": null,
+      "state": "KS"
+    },
+    "elberta-beach-mi": {
+      "city": "Gilmore Township",
+      "state": "MI"
+    },
+    "elder-lane-beach-il": {
+      "city": "Winnetka",
+      "state": "IL"
+    },
+    "elk-city-state-park-beach-ks": {
+      "city": null,
+      "state": "KS"
+    },
+    "emerson-bay-public-beach-ia": {
+      "city": "West Okoboji",
+      "state": "IA"
+    },
+    "enchanted-beach-nv": {
+      "city": null,
+      "state": "NV"
+    },
+    "engine-beach-nv": {
+      "city": null,
+      "state": "NV"
+    },
+    "erie-beach-oh": {
+      "city": "Oregon",
+      "state": "OH"
+    },
+    "escanaba-public-beach-mi": {
+      "city": null,
+      "state": "MI"
+    },
+    "esther-beach-wi": {
+      "city": "Madison",
+      "state": "WI"
+    },
+    "estherville-beach-ia": {
+      "city": null,
+      "state": "IA"
+    },
+    "euclid-beach-oh": {
+      "city": "Cleveland",
+      "state": "OH"
+    },
+    "eureka-city-pool-ks": {
+      "city": "Eureka",
+      "state": "KS"
+    },
+    "f-r-glasener-beach-il": {
+      "city": null,
+      "state": "IL"
+    },
+    "fairoak-beach-ia": {
+      "city": "Okoboji",
+      "state": "IA"
+    },
+    "fairoaks-beach-ia": {
+      "city": "Okoboji",
+      "state": "IA"
+    },
+    "fairport-harbor-lakefront-park-oh": {
+      "city": "Fairport Harbor",
+      "state": "OH"
+    },
+    "fall-lake-campground-beach-mn": {
+      "city": "Fall Lake Township",
+      "state": "MN"
+    },
+    "family-camp-beach-wi": {
+      "city": "Town of Troy",
+      "state": "WI"
+    },
+    "farmers-beach-ia": {
+      "city": "Clear Lake Township",
+      "state": "IA"
+    },
+    "fifth-avenue-beach-mi": {
+      "city": "Manistee",
+      "state": "MI"
+    },
+    "fillenworth-beach-ia": {
+      "city": null,
+      "state": "IA"
+    },
+    "finger-lakes-swimming-beach-mo": {
+      "city": null,
+      "state": "MO"
+    },
+    "fireman-s-beach-wi": {
+      "city": "Verona",
+      "state": "WI"
+    },
+    "first-sand-beach-mi": {
+      "city": null,
+      "state": "MI"
+    },
+    "fish-beach-az": {
+      "city": null,
+      "state": "AZ"
+    },
+    "fish-creek-public-beach-wi": {
+      "city": "Town of Gibraltar",
+      "state": "WI"
+    },
+    "fisherman-s-point-nv": {
+      "city": null,
+      "state": "NV"
+    },
+    "fishing-beach-in": {
+      "city": "Bluffton",
+      "state": "IN"
+    },
+    "fishing-beach-mi": {
+      "city": "Thornapple Township",
+      "state": "MI"
+    },
+    "fitzgeald-beach-in": {
+      "city": "Fort Wayne",
+      "state": "IN"
+    },
+    "flbc-swimming-area-mt": {
+      "city": null,
+      "state": "MT"
+    },
+    "flood-bay-mn": {
+      "city": null,
+      "state": "MN"
+    },
+    "florence-township-beach-mn": {
+      "city": "Florence Township",
+      "state": "MN"
+    },
+    "forest-park-beach-il": {
+      "city": null,
+      "state": "IL"
+    },
+    "fort-scott-beach-mi": {
+      "city": "Hatton Township",
+      "state": "MI"
+    },
+    "foster-beach-il": {
+      "city": "Chicago",
+      "state": "IL"
+    },
+    "fox-beach-nv": {
+      "city": null,
+      "state": "NV"
+    },
+    "fox-island-beach-oh": {
+      "city": "Washington Township",
+      "state": "OH"
+    },
+    "france-park-beach-in": {
+      "city": null,
+      "state": "IN"
+    },
+    "frankfort-beach-mi": {
+      "city": "Frankfort",
+      "state": "MI"
+    },
+    "freda-sands-mi": {
+      "city": null,
+      "state": "MI"
+    },
+    "fremont-beach-ne": {
+      "city": null,
+      "state": "NE"
+    },
+    "french-park-beach-mn": {
+      "city": "Plymouth",
+      "state": "MN"
+    },
+    "frenchtown-beach-wi": {
+      "city": "Tomahawk",
+      "state": "WI"
+    },
+    "friendly-valley-beach-wi": {
+      "city": "Town of Bayview",
+      "state": "WI"
+    },
+    "friendship-beach-wi": {
+      "city": "Town of Brooklyn",
+      "state": "WI"
+    },
+    "frisco-bay-marina-beach-co": {
+      "city": "Frisco",
+      "state": "CO"
+    },
+    "frost-woods-beach-wi": {
+      "city": "Madison",
+      "state": "WI"
+    },
+    "garmisch-beach-wi": {
+      "city": "Town of Namakagon",
+      "state": "WI"
+    },
+    "geist-beach-in": {
+      "city": "Fishers",
+      "state": "IN"
+    },
+    "gem-beach-oh": {
+      "city": "Catawba Island Township",
+      "state": "OH"
+    },
+    "gem-lake-id": {
+      "city": null,
+      "state": "ID"
+    },
+    "general-public-beach-wi": {
+      "city": "Town of Bridge Creek",
+      "state": "WI"
+    },
+    "geneva-beach-mo": {
+      "city": "Innsbrook",
+      "state": "MO"
+    },
+    "genoa-swimming-quarry-oh": {
+      "city": "Genoa",
+      "state": "OH"
+    },
+    "george-s-beach-il": {
+      "city": "Grayslake",
+      "state": "IL"
+    },
+    "gervais-lake-beach-mn": {
+      "city": "Little Canada",
+      "state": "MN"
+    },
+    "giefer-swim-beach-ks": {
+      "city": null,
+      "state": "KS"
+    },
+    "gilleys-beach-ia": {
+      "city": "Arnolds Park",
+      "state": "IA"
+    },
+    "gillson-beach-il": {
+      "city": "Wilmette",
+      "state": "IL"
+    },
+    "gislason-beach-wi": {
+      "city": "Town of Washington",
+      "state": "WI"
+    },
+    "glen-cove-beach-mi": {
+      "city": "Drummond Township",
+      "state": "MI"
+    },
+    "glencoe-beach-il": {
+      "city": "Glencoe",
+      "state": "IL"
+    },
+    "golden-lake-mn": {
+      "city": "Circle Pines",
+      "state": "MN"
+    },
+    "grand-glaize-beach-mo": {
+      "city": null,
+      "state": "MO"
+    },
+    "grant-park-beach-wi": {
+      "city": "South Milwaukee",
+      "state": "WI"
+    },
+    "grasshopper-point-picnic-area-az": {
+      "city": null,
+      "state": "AZ"
+    },
+    "great-sand-bay-conservation-and-recreation-area-mi": {
+      "city": null,
+      "state": "MI"
+    },
+    "green-river-park-beach-ky": {
+      "city": null,
+      "state": "KY"
+    },
+    "greenwood-street-beach-il": {
+      "city": "Evanston",
+      "state": "IL"
+    },
+    "gull-point-ia": {
+      "city": null,
+      "state": "IA"
+    },
+    "gull-point-public-beach-ia": {
+      "city": "Wahpeton",
+      "state": "IA"
+    },
+    "hamlin-lake-beach-mi": {
+      "city": "Hamlin Township",
+      "state": "MI"
+    },
+    "hammond-marina-beach-in": {
+      "city": null,
+      "state": "IN"
+    },
+    "harbor-park-beach-wi": {
+      "city": "Town of Port Wing",
+      "state": "WI"
+    },
+    "harbour-towne-beach-mi": {
+      "city": "Muskegon",
+      "state": "MI"
+    },
+    "harlan-beach-ia": {
+      "city": null,
+      "state": "IA"
+    },
+    "harrisville-state-park-beach-mi": {
+      "city": "Harrisville Township",
+      "state": "MI"
+    },
+    "hartigan-beach-il": {
+      "city": "Chicago",
+      "state": "IL"
+    },
+    "haserot-beach-mi": {
+      "city": null,
+      "state": "MI"
+    },
+    "hawk-island-beach-mi": {
+      "city": "Lansing",
+      "state": "MI"
+    },
+    "healy-lake-beach-mi": {
+      "city": "Springdale Township",
+      "state": "MI"
+    },
+    "helen-doria-beach-il": {
+      "city": "Chicago",
+      "state": "IL"
+    },
+    "heron-cove-co": {
+      "city": null,
+      "state": "CO"
+    },
+    "hershey-beach-ne": {
+      "city": null,
+      "state": "NE"
+    },
+    "hidden-beach-mi": {
+      "city": "Marquette Township",
+      "state": "MI"
+    },
+    "hidden-beach-mn": {
+      "city": "Deer Lake",
+      "state": "MN"
+    },
+    "hidden-beach-nv": {
+      "city": null,
+      "state": "NV"
+    },
+    "hidden-valley-lake-beach-in": {
+      "city": "Lawrenceburg Township",
+      "state": "IN"
+    },
+    "higginson-beach-ar": {
+      "city": null,
+      "state": "AR"
+    },
+    "higginson-lake-beach-ar": {
+      "city": null,
+      "state": "AR"
+    },
+    "hill-lake-beach-mn": {
+      "city": "Hill City",
+      "state": "MN"
+    },
+    "hiniker-pond-public-beach-mn": {
+      "city": "Mankato",
+      "state": "MN"
+    },
+    "hipster-beach-mi": {
+      "city": "Detroit",
+      "state": "MI"
+    },
+    "hodag-beach-wi": {
+      "city": "Rhinelander",
+      "state": "WI"
+    },
+    "hole-in-the-wall-beach-ne": {
+      "city": null,
+      "state": "NE"
+    },
+    "horseshoe-harbor-beach-mi": {
+      "city": "Grant Township",
+      "state": "MI"
+    },
+    "hot-springs-bench-id": {
+      "city": null,
+      "state": "ID"
+    },
+    "howard-beach-il": {
+      "city": "Chicago",
+      "state": "IL"
+    },
+    "hulman-beach-in": {
+      "city": null,
+      "state": "IN"
+    },
+    "humboldt-beach-il": {
+      "city": "Chicago",
+      "state": "IL"
+    },
+    "huntington-beach-oh": {
+      "city": "Bay Village",
+      "state": "OH"
+    },
+    "hwy-107-beach-mo": {
+      "city": null,
+      "state": "MO"
+    },
+    "illinois-az": {
+      "city": "Chandler",
+      "state": "AZ"
+    },
+    "illinois-beach-state-park-il": {
+      "city": null,
+      "state": "IL"
+    },
+    "incline-beach-nv": {
+      "city": null,
+      "state": "NV"
+    },
+    "incline-village-beach-mo": {
+      "city": null,
+      "state": "MO"
+    },
+    "independence-grove-beach-il": {
+      "city": null,
+      "state": "IL"
+    },
+    "indian-trail-beach-il": {
+      "city": "Lake in the Hills",
+      "state": "IL"
+    },
+    "indiana-beach-in": {
+      "city": null,
+      "state": "IN"
+    },
+    "indianola-beach-wi": {
+      "city": "Town of Westport",
+      "state": "WI"
+    },
+    "inverness-beach-mo": {
+      "city": "Innsbrook",
+      "state": "MO"
+    },
+    "inwood-park-beach-ia": {
+      "city": null,
+      "state": "IA"
+    },
+    "james-madison-beach-wi": {
+      "city": "Madison",
+      "state": "WI"
+    },
+    "jeorse-park-beach-in": {
+      "city": "East Chicago",
+      "state": "IN"
+    },
+    "jersey-valley-county-park-beach-wi": {
+      "city": "Town of Christiana",
+      "state": "WI"
+    },
+    "jet-ski-beach-ne": {
+      "city": null,
+      "state": "NE"
+    },
+    "jewell-gillespie-park-beach-mi": {
+      "city": "Saint James Township",
+      "state": "MI"
+    },
+    "jhell-beach-mn": {
+      "city": "Rochester",
+      "state": "MN"
+    },
+    "jones-beach-ia": {
+      "city": null,
+      "state": "IA"
+    },
+    "jones-island-beach-il": {
+      "city": "Grayslake",
+      "state": "IL"
+    },
+    "joni-s-beach-wi": {
+      "city": "Town of La Pointe",
+      "state": "WI"
+    },
+    "juneway-beach-il": {
+      "city": "Chicago",
+      "state": "IL"
+    },
+    "k-9-coastline-oh": {
+      "city": "Cleveland",
+      "state": "OH"
+    },
+    "karen-s-swim-safe-lane-mi": {
+      "city": "West Bloomfield Township",
+      "state": "MI"
+    },
+    "kayak-launch-and-beach-area-in": {
+      "city": null,
+      "state": "IN"
+    },
+    "kelleys-island-state-park-public-beach-oh": {
+      "city": "Kelleys Island",
+      "state": "OH"
+    },
+    "kelly-beach-mi": {
+      "city": "White Lake Charter Township",
+      "state": "MI"
+    },
+    "kellys-beach-ia": {
+      "city": null,
+      "state": "IA"
+    },
+    "kemil-beach-in": {
+      "city": "Beverly Shores",
+      "state": "IN"
+    },
+    "kenilworth-beach-il": {
+      "city": "Kenilworth",
+      "state": "IL"
+    },
+    "king-beach-oh": {
+      "city": "Howard Township",
+      "state": "OH"
+    },
+    "kingswood-stream-beach-mi": {
+      "city": "Bloomfield Hills",
+      "state": "MI"
+    },
+    "kitzbuhl-beach-mo": {
+      "city": "Innsbrook",
+      "state": "MO"
+    },
+    "kiwanis-beach-mi": {
+      "city": "Saint Ignace",
+      "state": "MI"
+    },
+    "knife-river-beach-mn": {
+      "city": null,
+      "state": "MN"
+    },
+    "kreher-park-beach-wi": {
+      "city": "Ashland",
+      "state": "WI"
+    },
+    "kruses-beach-ia": {
+      "city": "Arnolds Park",
+      "state": "IA"
+    },
+    "la-follette-beach-wi": {
+      "city": "Town of Pleasant Springs",
+      "state": "WI"
+    },
+    "lake-ann-beach-mn": {
+      "city": "Chanhassen",
+      "state": "MN"
+    },
+    "lake-antoine-beach-mi": {
+      "city": "Breitung Township",
+      "state": "MI"
+    },
+    "lake-byllesby-beach-mn": {
+      "city": "Randolph Township",
+      "state": "MN"
+    },
+    "lake-byllesby-beach-swimming-area-mn": {
+      "city": "Randolph Township",
+      "state": "MN"
+    },
+    "lake-carlton-ok": {
+      "city": null,
+      "state": "OK"
+    },
+    "lake-claire-in": {
+      "city": null,
+      "state": "IN"
+    },
+    "lake-cody-oh": {
+      "city": "Monroe Township",
+      "state": "OH"
+    },
+    "lake-dardanelle-beach-and-swimming-area-ar": {
+      "city": "Russellville",
+      "state": "AR"
+    },
+    "lake-eufala-dam-orv-area-ok": {
+      "city": null,
+      "state": "OK"
+    },
+    "lake-gogebic-state-park-beach-mi": {
+      "city": "Marenisco Township",
+      "state": "MI"
+    },
+    "lake-harriet-north-beach-mn": {
+      "city": "Minneapolis",
+      "state": "MN"
+    },
+    "lake-harriet-southeast-beach-mn": {
+      "city": "Minneapolis",
+      "state": "MN"
+    },
+    "lake-hendricks-public-beach-mn": {
+      "city": "Hendricks",
+      "state": "MN"
+    },
+    "lake-hiawatha-beach-mn": {
+      "city": "Minneapolis",
+      "state": "MN"
+    },
+    "lake-kohlmeier-beach-mn": {
+      "city": "Owatonna",
+      "state": "MN"
+    },
+    "lake-le-homme-dieu-beach-mn": {
+      "city": "Alexandria",
+      "state": "MN"
+    },
+    "lake-loveland-swim-beach-co": {
+      "city": "Loveland",
+      "state": "CO"
+    },
+    "lake-lucerne-beach-oh": {
+      "city": "Bainbridge Township",
+      "state": "OH"
+    },
+    "lake-michigan-beach-mi": {
+      "city": null,
+      "state": "MI"
+    },
+    "lake-miltmore-beach-il": {
+      "city": null,
+      "state": "IL"
+    },
+    "lake-nokomis-50th-street-beach-mn": {
+      "city": "Minneapolis",
+      "state": "MN"
+    },
+    "lake-nokomis-main-beach-mn": {
+      "city": "Minneapolis",
+      "state": "MN"
+    },
+    "lake-o-the-dalles-beach-wi": {
+      "city": "Town of St. Croix Falls",
+      "state": "WI"
+    },
+    "lake-ogemaw-sand-bar-mi": {
+      "city": "Churchill Township",
+      "state": "MI"
+    },
+    "lake-olathe-swim-beach-ks": {
+      "city": "Olathe",
+      "state": "KS"
+    },
+    "lake-ponca-beach-ok": {
+      "city": "Ponca City",
+      "state": "OK"
+    },
+    "lake-rebecca-mn": {
+      "city": "Greenfield",
+      "state": "MN"
+    },
+    "lake-sherwood-mi": {
+      "city": "Commerce Charter Township",
+      "state": "MI"
+    },
+    "lake-street-beach-in": {
+      "city": "Gary",
+      "state": "IN"
+    },
+    "lake-view-beach-in": {
+      "city": "Beverly Shores",
+      "state": "IN"
+    },
+    "lake-walk-mn": {
+      "city": "East Cook",
+      "state": "MN"
+    },
+    "lake-wildwood-beach-1-il": {
+      "city": null,
+      "state": "IL"
+    },
+    "lake-wildwood-beach-2-il": {
+      "city": null,
+      "state": "IL"
+    },
+    "lakeland-beach-mn": {
+      "city": "Lakeland",
+      "state": "MN"
+    },
+    "lakeshore-public-access-beach-mi": {
+      "city": null,
+      "state": "MI"
+    },
+    "lakeside-beach-ia": {
+      "city": null,
+      "state": "IA"
+    },
+    "lakeside-beach-mi": {
+      "city": "Spring Lake",
+      "state": "MI"
+    },
+    "lakeside-beach-oh": {
+      "city": "Danbury Township",
+      "state": "OH"
+    },
+    "lakeview-beach-and-dock-il": {
+      "city": null,
+      "state": "IL"
+    },
+    "lamb-beach-oh": {
+      "city": "Jerusalem Township",
+      "state": "OH"
+    },
+    "landing-9-wi": {
+      "city": "Town of Stephenson",
+      "state": "WI"
+    },
+    "langdon-park-beach-il": {
+      "city": "Wilmette",
+      "state": "IL"
+    },
+    "lava-point-id": {
+      "city": null,
+      "state": "ID"
+    },
+    "lee-street-beach-il": {
+      "city": "Evanston",
+      "state": "IL"
+    },
+    "left-foot-lake-beach-wi": {
+      "city": "Town of Beaver",
+      "state": "WI"
+    },
+    "leone-beach-il": {
+      "city": "Chicago",
+      "state": "IL"
+    },
+    "lighthouse-beach-il": {
+      "city": "Evanston",
+      "state": "IL"
+    },
+    "lime-kiln-beach-oh": {
+      "city": "Put-in-Bay Township",
+      "state": "OH"
+    },
+    "linn-valley-lakes-swimming-beach-ks": {
+      "city": "Linn Valley",
+      "state": "KS"
+    },
+    "linwood-beach-mn": {
+      "city": "Deephaven",
+      "state": "MN"
+    },
+    "lions-beach-mi": {
+      "city": "Saint Joseph",
+      "state": "MI"
+    },
+    "lions-beach-wi": {
+      "city": "Janesville",
+      "state": "WI"
+    },
+    "lionshead-beach-mo": {
+      "city": "Innsbrook",
+      "state": "MO"
+    },
+    "lithia-springs-beach-il": {
+      "city": null,
+      "state": "IL"
+    },
+    "little-beach-mi": {
+      "city": "Grosse Pointe Farms",
+      "state": "MI"
+    },
+    "little-platte-swim-beach-mo": {
+      "city": null,
+      "state": "MO"
+    },
+    "little-river-beach-ia": {
+      "city": null,
+      "state": "IA"
+    },
+    "little-sand-bay-beach-wi": {
+      "city": "Town of Russell",
+      "state": "WI"
+    },
+    "lkw-waterfront-mo": {
+      "city": null,
+      "state": "MO"
+    },
+    "log-slide-beach-mi": {
+      "city": null,
+      "state": "MI"
+    },
+    "lone-pine-beach-mi": {
+      "city": "West Bloomfield Township",
+      "state": "MI"
+    },
+    "long-beach-mt": {
+      "city": null,
+      "state": "MT"
+    },
+    "longfellow-beach-mn": {
+      "city": "Minneapolis",
+      "state": "MN"
+    },
+    "lost-creek-beach-wi": {
+      "city": "Town of Bell",
+      "state": "WI"
+    },
+    "loyola-beach-il": {
+      "city": "Chicago",
+      "state": "IL"
+    },
+    "luna-pier-public-beach-mi": {
+      "city": null,
+      "state": "MI"
+    },
+    "lunch-beach-wi": {
+      "city": null,
+      "state": "WI"
+    },
+    "lydiard-beach-mn": {
+      "city": "Orono",
+      "state": "MN"
+    },
+    "macatawa-park-beach-mi": {
+      "city": null,
+      "state": "MI"
+    },
+    "main-beach-il": {
+      "city": "Crystal Lake",
+      "state": "IL"
+    },
+    "main-beach-mi": {
+      "city": "Otsego Lake Township",
+      "state": "MI"
+    },
+    "main-beach-oh": {
+      "city": "Brown Township",
+      "state": "OH"
+    },
+    "main-street-beach-oh": {
+      "city": "Huron",
+      "state": "OH"
+    },
+    "mallard-beach-ne": {
+      "city": null,
+      "state": "NE"
+    },
+    "manhattan-beach-ia": {
+      "city": "Wahpeton",
+      "state": "IA"
+    },
+    "manila-bay-beach-oh": {
+      "city": "Put-in-Bay Township",
+      "state": "OH"
+    },
+    "maple-beach-mi": {
+      "city": null,
+      "state": "MI"
+    },
+    "maple-oak-beach-ia": {
+      "city": "Orleans",
+      "state": "IA"
+    },
+    "maple-street-beach-il": {
+      "city": "Winnetka",
+      "state": "IL"
+    },
+    "margaret-burroughs-beach-il": {
+      "city": null,
+      "state": "IL"
+    },
+    "marina-beach-ok": {
+      "city": null,
+      "state": "OK"
+    },
+    "marion-mahoney-griffin-beach-il": {
+      "city": "Chicago",
+      "state": "IL"
+    },
+    "marquette-beach-in": {
+      "city": "Gary",
+      "state": "IN"
+    },
+    "martha-yarns-memorial-beach-ia": {
+      "city": null,
+      "state": "IA"
+    },
+    "martin-bay-beach-ne": {
+      "city": null,
+      "state": "NE"
+    },
+    "martindale-beach-mi": {
+      "city": null,
+      "state": "MI"
+    },
+    "maywood-beach-ia": {
+      "city": "West Okoboji",
+      "state": "IA"
+    },
+    "mcfarland-lake-swimming-beach-mn": {
+      "city": "East Cook",
+      "state": "MN"
+    },
+    "mckinley-beach-wi": {
+      "city": "Milwaukee",
+      "state": "WI"
+    },
+    "meyers-beach-wi": {
+      "city": null,
+      "state": "WI"
+    },
+    "michigan-beach-il": {
+      "city": "Joliet",
+      "state": "IL"
+    },
+    "middle-bay-beach-mi": {
+      "city": null,
+      "state": "MI"
+    },
+    "midland-beach-ne": {
+      "city": null,
+      "state": "NE"
+    },
+    "milford-beach-ia": {
+      "city": "Wahpeton",
+      "state": "IA"
+    },
+    "millard-beach-il": {
+      "city": "Highland Park",
+      "state": "IL"
+    },
+    "millennium-park-beach-mi": {
+      "city": "Walker",
+      "state": "MI"
+    },
+    "milnot-beach-il": {
+      "city": "Litchfield",
+      "state": "IL"
+    },
+    "minear-lake-beach-il": {
+      "city": "Libertyville",
+      "state": "IL"
+    },
+    "miners-beach-mi": {
+      "city": "Munising Township",
+      "state": "MI"
+    },
+    "miniwaukon-beach-ia": {
+      "city": "Orleans",
+      "state": "IA"
+    },
+    "minnow-beach-ky": {
+      "city": "Corbin",
+      "state": "KY"
+    },
+    "mino-kwe-jiigibiik-mi": {
+      "city": null,
+      "state": "MI"
+    },
+    "miola-beach-ks": {
+      "city": "Paola",
+      "state": "KS"
+    },
+    "mission-beach-wi": {
+      "city": "Town of Plymouth",
+      "state": "WI"
+    },
+    "monsanto-lake-beach-mo": {
+      "city": "Park Hills",
+      "state": "MO"
+    },
+    "montrose-beach-il": {
+      "city": "Chicago",
+      "state": "IL"
+    },
+    "montrose-dog-beach-il": {
+      "city": "Chicago",
+      "state": "IL"
+    },
+    "moonshine-beach-mo": {
+      "city": null,
+      "state": "MO"
+    },
+    "moores-beach-ia": {
+      "city": null,
+      "state": "IA"
+    },
+    "morrison-park-beach-il": {
+      "city": "Lakemoor",
+      "state": "IL"
+    },
+    "morse-beach-in": {
+      "city": "Noblesville",
+      "state": "IN"
+    },
+    "mount-baldy-beach-in": {
+      "city": "Beverly Shores",
+      "state": "IN"
+    },
+    "mozingo-beach-mo": {
+      "city": "Polk Township",
+      "state": "MO"
+    },
+    "munson-beach-il": {
+      "city": "Chicago",
+      "state": "IL"
+    },
+    "muscatatuck-swimming-hole-in": {
+      "city": "Vernon",
+      "state": "IN"
+    },
+    "music-bar-id": {
+      "city": null,
+      "state": "ID"
+    },
+    "mussel-beach-co": {
+      "city": null,
+      "state": "CO"
+    },
+    "nantucket-pennylake-hoa-beach-mi": {
+      "city": "Commerce Charter Township",
+      "state": "MI"
+    },
+    "navy-beach-nv": {
+      "city": null,
+      "state": "NV"
+    },
+    "neshotah-beach-wi": {
+      "city": "Town of Two Rivers",
+      "state": "WI"
+    },
+    "nevada-beach-nv": {
+      "city": null,
+      "state": "NV"
+    },
+    "new-buffalo-public-beach-mi": {
+      "city": "New Buffalo",
+      "state": "MI"
+    },
+    "nickel-plate-beach-oh": {
+      "city": "Huron",
+      "state": "OH"
+    },
+    "nicolet-bay-beach-wi": {
+      "city": "Town of Gibraltar",
+      "state": "WI"
+    },
+    "nocomo-beach-mn": {
+      "city": "Deephaven",
+      "state": "MN"
+    },
+    "north-avenue-beach-il": {
+      "city": null,
+      "state": "IL"
+    },
+    "north-beach-id": {
+      "city": null,
+      "state": "ID"
+    },
+    "north-beach-il": {
+      "city": "Evanston",
+      "state": "IL"
+    },
+    "north-beach-mi": {
+      "city": null,
+      "state": "MI"
+    },
+    "north-beach-wi": {
+      "city": "Town of Belgium",
+      "state": "WI"
+    },
+    "north-idaho-beach-id": {
+      "city": "Coeur d'Alene",
+      "state": "ID"
+    },
+    "north-marcum-beach-il": {
+      "city": null,
+      "state": "IL"
+    },
+    "north-point-marina-beach-il": {
+      "city": "Winthrop Harbor",
+      "state": "IL"
+    },
+    "north-point-marina-beach-wi": {
+      "city": "Winthrop Harbor",
+      "state": "IL"
+    },
+    "north-pond-barrier-beach-oh": {
+      "city": "Kelleys Island",
+      "state": "OH"
+    },
+    "north-shore-beach-il": {
+      "city": "Chicago",
+      "state": "IL"
+    },
+    "north-shore-beach-mi": {
+      "city": "Richfield Center",
+      "state": "MI"
+    },
+    "north-shore-beach-wi": {
+      "city": "Town of Baraboo",
+      "state": "WI"
+    },
+    "north-shore-ne": {
+      "city": null,
+      "state": "NE"
+    },
+    "north-side-municipal-beach-wi": {
+      "city": null,
+      "state": "WI"
+    },
+    "north-swimming-beach-oh": {
+      "city": "Danbury Township",
+      "state": "OH"
+    },
+    "norway-beach-swimming-area-mn": {
+      "city": null,
+      "state": "MN"
+    },
+    "nugent-beach-private-mi": {
+      "city": null,
+      "state": "MI"
+    },
+    "oak-street-beach-il": {
+      "city": "Chicago",
+      "state": "IL"
+    },
+    "oak-street-beach-mi": {
+      "city": null,
+      "state": "MI"
+    },
+    "ogallala-beach-ne": {
+      "city": null,
+      "state": "NE"
+    },
+    "ogden-dunes-beach-in": {
+      "city": "Ogden Dunes",
+      "state": "IN"
+    },
+    "ohio-street-beach-il": {
+      "city": "Chicago",
+      "state": "IL"
+    },
+    "ojiketa-beach-area-mn": {
+      "city": "Chisago Lake Township",
+      "state": "MN"
+    },
+    "okee-beach-wi": {
+      "city": "Town of Lodi",
+      "state": "WI"
+    },
+    "olander-lake-beach-oh": {
+      "city": "Sylvania",
+      "state": "OH"
+    },
+    "olbrich-beach-wi": {
+      "city": "Madison",
+      "state": "WI"
+    },
+    "old-shore-beach-mn": {
+      "city": null,
+      "state": "MN"
+    },
+    "old-swim-beach-nv": {
+      "city": null,
+      "state": "NV"
+    },
+    "olin-beach-wi": {
+      "city": "Madison",
+      "state": "WI"
+    },
+    "olson-beach-il": {
+      "city": "Loves Park",
+      "state": "IL"
+    },
+    "omaha-beach-ia": {
+      "city": "Okoboji",
+      "state": "IA"
+    },
+    "ontonagon-township-park-beach-mi": {
+      "city": null,
+      "state": "MI"
+    },
+    "orchard-view-colony-beach-mi": {
+      "city": "Green Oak Charter Township",
+      "state": "MI"
+    },
+    "orleans-beach-ia": {
+      "city": "Orleans",
+      "state": "IA"
+    },
+    "ottawa-beach-mi": {
+      "city": "Park Township",
+      "state": "MI"
+    },
+    "oval-beach-mi": {
+      "city": "Saugatuck",
+      "state": "MI"
+    },
+    "overnight-beach-mi": {
+      "city": null,
+      "state": "MI"
+    },
+    "palisades-bench-id": {
+      "city": null,
+      "state": "ID"
+    },
+    "palmyra-beach-wi": {
+      "city": "Palmyra",
+      "state": "WI"
+    },
+    "papoose-beach-ia": {
+      "city": "Wahpeton",
+      "state": "IA"
+    },
+    "paradise-beach-mn": {
+      "city": null,
+      "state": "MN"
+    },
+    "paradise-park-beach-ne": {
+      "city": "Bellevue",
+      "state": "NE"
+    },
+    "paria-beach-az": {
+      "city": null,
+      "state": "AZ"
+    },
+    "park-avenue-boating-fishing-beach-il": {
+      "city": "Highland Park",
+      "state": "IL"
+    },
+    "park-road-beach-wi": {
+      "city": "Town of Dewey",
+      "state": "WI"
+    },
+    "patoka-lake-swimming-beach-in": {
+      "city": null,
+      "state": "IN"
+    },
+    "paynetown-beach-in": {
+      "city": null,
+      "state": "IN"
+    },
+    "pearse-access-river-access-ia": {
+      "city": null,
+      "state": "IA"
+    },
+    "pebble-beach-mn": {
+      "city": null,
+      "state": "MN"
+    },
+    "pebble-beach-wi": {
+      "city": "Sister Bay",
+      "state": "WI"
+    },
+    "pebble-lake-swimming-beach-mn": {
+      "city": "Fergus Falls",
+      "state": "MN"
+    },
+    "pembles-beach-wi": {
+      "city": "Town of Troy",
+      "state": "WI"
+    },
+    "peninsula-beach-mi": {
+      "city": "Boyne City",
+      "state": "MI"
+    },
+    "peninsula-quarry-oh": {
+      "city": "Peninsula",
+      "state": "OH"
+    },
+    "pennoyer-beach-wi": {
+      "city": "Kenosha",
+      "state": "WI"
+    },
+    "perkins-beach-oh": {
+      "city": "Cleveland",
+      "state": "OH"
+    },
+    "pet-swim-area-wi": {
+      "city": "Town of Pleasant Springs",
+      "state": "WI"
+    },
+    "petersen-park-beach-il": {
+      "city": "McHenry",
+      "state": "IL"
+    },
+    "peterson-road-beach-mi": {
+      "city": null,
+      "state": "MI"
+    },
+    "pettibone-beach-wi": {
+      "city": "La Crosse",
+      "state": "WI"
+    },
+    "phalen-park-beach-mn": {
+      "city": "Saint Paul",
+      "state": "MN"
+    },
+    "picnic-rocks-beach-mi": {
+      "city": null,
+      "state": "MI"
+    },
+    "pike-lake-beach-in": {
+      "city": "Warsaw",
+      "state": "IN"
+    },
+    "pike-lake-beach-wi": {
+      "city": "Town of Hartford",
+      "state": "WI"
+    },
+    "pike-s-point-beach-ia": {
+      "city": null,
+      "state": "IA"
+    },
+    "pim-lake-beach-mo": {
+      "city": "Park Hills",
+      "state": "MO"
+    },
+    "pine-creek-ridge-lodge-beach-mi": {
+      "city": "Genoa Charter Township",
+      "state": "MI"
+    },
+    "pine-lake-beach-ia": {
+      "city": "Eldora Township",
+      "state": "IA"
+    },
+    "pink-house-beach-id": {
+      "city": null,
+      "state": "ID"
+    },
+    "pioneer-beach-ia": {
+      "city": "Orleans",
+      "state": "IA"
+    },
+    "pipe-creek-beach-az": {
+      "city": null,
+      "state": "AZ"
+    },
+    "pirates-cove-mi": {
+      "city": "Blue Lake Township",
+      "state": "MI"
+    },
+    "plamann-lake-wi": {
+      "city": "Town of Grand Chute",
+      "state": "WI"
+    },
+    "playa-linda-az": {
+      "city": null,
+      "state": "AZ"
+    },
+    "pleasant-lake-east-beach-mi": {
+      "city": "Ontwa Township",
+      "state": "MI"
+    },
+    "point-charming-beach-mn": {
+      "city": "Orono",
+      "state": "MN"
+    },
+    "port-clinton-public-swimming-beach-oh": {
+      "city": "Port Clinton",
+      "state": "OH"
+    },
+    "port-crescent-beach-mi": {
+      "city": null,
+      "state": "MI"
+    },
+    "portage-lakefront-in": {
+      "city": "Portage",
+      "state": "IN"
+    },
+    "porter-beach-in": {
+      "city": "Porter",
+      "state": "IN"
+    },
+    "prairie-oaks-dog-beach-oh": {
+      "city": "Brown Township",
+      "state": "OH"
+    },
+    "preston-beach-id": {
+      "city": null,
+      "state": "ID"
+    },
+    "princeton-beach-ia": {
+      "city": null,
+      "state": "IA"
+    },
+    "prinz-beach-il": {
+      "city": "Chicago",
+      "state": "IL"
+    },
+    "prospect-lake-co": {
+      "city": "Colorado Springs",
+      "state": "CO"
+    },
+    "public-access-mi": {
+      "city": "Helena Township",
+      "state": "MI"
+    },
+    "public-beach-wi": {
+      "city": "Town of Grafton",
+      "state": "WI"
+    },
+    "pulltite-mo": {
+      "city": null,
+      "state": "MO"
+    },
+    "punderson-lake-beach-oh": {
+      "city": "Newbury Township",
+      "state": "OH"
+    },
+    "raebels-beach-ia": {
+      "city": null,
+      "state": "IA"
+    },
+    "rainbow-beach-id": {
+      "city": null,
+      "state": "ID"
+    },
+    "rainbow-beach-il": {
+      "city": null,
+      "state": "IL"
+    },
+    "ramsey-county-beach-mn": {
+      "city": "White Bear Lake",
+      "state": "MN"
+    },
+    "red-ledge-id": {
+      "city": null,
+      "state": "ID"
+    },
+    "reservoir-beach-oh": {
+      "city": "Highland Township",
+      "state": "OH"
+    },
+    "rice-lake-park-public-swimming-area-nd": {
+      "city": null,
+      "state": "ND"
+    },
+    "rice-street-beach-mn": {
+      "city": "Anoka",
+      "state": "MN"
+    },
+    "richardi-park-beach-mi": {
+      "city": "Forest Home Township",
+      "state": "MI"
+    },
+    "richardi-park-swimming-area-mi": {
+      "city": "Bellaire",
+      "state": "MI"
+    },
+    "ridge-beach-in": {
+      "city": "Dune Acres",
+      "state": "IN"
+    },
+    "ridgewood-beach-mi": {
+      "city": null,
+      "state": "MI"
+    },
+    "riley-beach-mi": {
+      "city": "Park Township",
+      "state": "MI"
+    },
+    "river-access-point-ia": {
+      "city": null,
+      "state": "IA"
+    },
+    "riverside-beach-id": {
+      "city": "Garden City",
+      "state": "ID"
+    },
+    "riverside-beach-mn": {
+      "city": "Lake Saint Croix Beach",
+      "state": "MN"
+    },
+    "riverside-park-swimming-access-mt": {
+      "city": null,
+      "state": "MT"
+    },
+    "riviera-beach-wi": {
+      "city": "Lake Geneva",
+      "state": "WI"
+    },
+    "robinson-s-bay-beach-mn": {
+      "city": "Shorewood",
+      "state": "MN"
+    },
+    "rock-beach-point-mi": {
+      "city": "L'Anse Township",
+      "state": "MI"
+    },
+    "rock-creek-beach-ia": {
+      "city": "Rock Creek Township",
+      "state": "IA"
+    },
+    "rock-dam-beach-wi": {
+      "city": "Town of Foster",
+      "state": "WI"
+    },
+    "rocky-beach-mn": {
+      "city": "Deephaven",
+      "state": "MN"
+    },
+    "rocky-point-beach-il": {
+      "city": "Omega Township",
+      "state": "IL"
+    },
+    "rogers-beach-il": {
+      "city": "Chicago",
+      "state": "IL"
+    },
+    "rosewood-beach-il": {
+      "city": "Highland Park",
+      "state": "IL"
+    },
+    "round-hill-pines-beach-nv": {
+      "city": null,
+      "state": "NV"
+    },
+    "round-lake-beach-mn": {
+      "city": "Eden Prairie",
+      "state": "MN"
+    },
+    "round-lake-swimming-area-mn": {
+      "city": "Eden Prairie",
+      "state": "MN"
+    },
+    "rubicon-beach-mi": {
+      "city": null,
+      "state": "MI"
+    },
+    "russell-beach-mi": {
+      "city": "Commerce Charter Township",
+      "state": "MI"
+    },
+    "s-line-reservoir-beach-nv": {
+      "city": null,
+      "state": "NV"
+    },
+    "sacajawea-swimming-access-mt": {
+      "city": null,
+      "state": "MT"
+    },
+    "saint-john-s-beach-mn": {
+      "city": "Collegeville Township",
+      "state": "MN"
+    },
+    "salish-point-swimming-access-mt": {
+      "city": null,
+      "state": "MT"
+    },
+    "sand-beach-ia": {
+      "city": "Rock Valley",
+      "state": "IA"
+    },
+    "sand-creek-reservoir-swimming-area-mn": {
+      "city": "Jordan",
+      "state": "MN"
+    },
+    "sand-harbor-beach-nv": {
+      "city": null,
+      "state": "NV"
+    },
+    "sand-harbor-nv": {
+      "city": null,
+      "state": "NV"
+    },
+    "sand-point-beach-mi": {
+      "city": "Munising Township",
+      "state": "MI"
+    },
+    "sand-point-beach-mn": {
+      "city": "Prior Lake",
+      "state": "MN"
+    },
+    "sandbar-az": {
+      "city": null,
+      "state": "AZ"
+    },
+    "sandbar-beach-ia": {
+      "city": null,
+      "state": "IA"
+    },
+    "sanders-beach-id": {
+      "city": "Coeur d'Alene",
+      "state": "ID"
+    },
+    "sandy-beach-ar": {
+      "city": null,
+      "state": "AR"
+    },
+    "sandy-beach-az": {
+      "city": null,
+      "state": "AZ"
+    },
+    "sandy-beach-in": {
+      "city": "Winfield Township",
+      "state": "IN"
+    },
+    "sandy-beach-mn": {
+      "city": null,
+      "state": "MN"
+    },
+    "sandy-cove-mi": {
+      "city": "Clark Township",
+      "state": "MI"
+    },
+    "sandy-point-beach-id": {
+      "city": null,
+      "state": "ID"
+    },
+    "santa-fe-beach-il": {
+      "city": null,
+      "state": "IL"
+    },
+    "santa-monica-beach-mi": {
+      "city": "Bohemia Township",
+      "state": "MI"
+    },
+    "sara-park-beach-wi": {
+      "city": "Tomahawk",
+      "state": "WI"
+    },
+    "scharnberg-county-park-ia": {
+      "city": null,
+      "state": "IA"
+    },
+    "schluter-beach-wi": {
+      "city": "Monona",
+      "state": "WI"
+    },
+    "schoolhouse-beach-wi": {
+      "city": "Town of La Pointe",
+      "state": "WI"
+    },
+    "scuba-beach-co": {
+      "city": "Aurora",
+      "state": "CO"
+    },
+    "second-sand-beach-mi": {
+      "city": null,
+      "state": "MI"
+    },
+    "secret-beach-mi": {
+      "city": "Shelby Charter Township",
+      "state": "MI"
+    },
+    "secret-beach-nv": {
+      "city": null,
+      "state": "NV"
+    },
+    "secret-cove-beach-nv": {
+      "city": "Carson City",
+      "state": "NV"
+    },
+    "seebach-beach-mo": {
+      "city": "Innsbrook",
+      "state": "MO"
+    },
+    "seebrook-beach-mo": {
+      "city": "Innsbrook",
+      "state": "MO"
+    },
+    "selner-park-public-swimming-beach-wi": {
+      "city": "Kewaunee",
+      "state": "WI"
+    },
+    "seven-rams-landing-mt": {
+      "city": null,
+      "state": "MT"
+    },
+    "sha-ron-beach-mt": {
+      "city": null,
+      "state": "MT"
+    },
+    "shady-oak-beach-mn": {
+      "city": "Minnetonka",
+      "state": "MN"
+    },
+    "shallow-swimming-area-wi": {
+      "city": "Town of Mukwonago",
+      "state": "WI"
+    },
+    "sherwin-beach-il": {
+      "city": "Chicago",
+      "state": "IL"
+    },
+    "sherwood-capri-mi": {
+      "city": "Commerce Charter Township",
+      "state": "MI"
+    },
+    "shoreline-to-reservoir-ne": {
+      "city": null,
+      "state": "NE"
+    },
+    "shorts-bar-beach-id": {
+      "city": null,
+      "state": "ID"
+    },
+    "siebkens-beach-and-peir-wi": {
+      "city": "Elkhart Lake",
+      "state": "WI"
+    },
+    "silver-beach-id": {
+      "city": "Coeur d'Alene",
+      "state": "ID"
+    },
+    "silver-dollar-beach-mt": {
+      "city": null,
+      "state": "MT"
+    },
+    "silver-lake-beach-wi": {
+      "city": "Portage",
+      "state": "WI"
+    },
+    "silver-springs-beach-nv": {
+      "city": null,
+      "state": "NV"
+    },
+    "simmons-island-beach-wi": {
+      "city": null,
+      "state": "WI"
+    },
+    "sioux-beach-wi": {
+      "city": "Town of Long Lake",
+      "state": "WI"
+    },
+    "sister-bay-beach-wi": {
+      "city": "Sister Bay",
+      "state": "WI"
+    },
+    "sixmile-beach-nv": {
+      "city": null,
+      "state": "NV"
+    },
+    "skeeko-bay-beach-mt": {
+      "city": null,
+      "state": "MT"
+    },
+    "skookumchuck-beach-id": {
+      "city": null,
+      "state": "ID"
+    },
+    "slag-beach-mi": {
+      "city": "Fairbanks Township",
+      "state": "MI"
+    },
+    "sleepy-hollow-dog-beach-mi": {
+      "city": "Ovid Township",
+      "state": "MI"
+    },
+    "sleepy-hollow-state-park-beach-mi": {
+      "city": "Ovid Township",
+      "state": "MI"
+    },
+    "slide-rock-swim-area-az": {
+      "city": null,
+      "state": "AZ"
+    },
+    "smith-ridge-beach-ky": {
+      "city": null,
+      "state": "KY"
+    },
+    "snelling-beach-mn": {
+      "city": "Fort Snelling Unorganized Territory",
+      "state": "MN"
+    },
+    "soda-lake-beach-nv": {
+      "city": null,
+      "state": "NV"
+    },
+    "south-beach-ia": {
+      "city": "Sabula",
+      "state": "IA"
+    },
+    "south-beach-mi": {
+      "city": null,
+      "state": "MI"
+    },
+    "south-beach-nv": {
+      "city": null,
+      "state": "NV"
+    },
+    "south-beach-oh": {
+      "city": "Marshall Township",
+      "state": "OH"
+    },
+    "south-beach-wi": {
+      "city": "Town of Belgium",
+      "state": "WI"
+    },
+    "south-boulevard-beach-il": {
+      "city": null,
+      "state": "IL"
+    },
+    "south-shore-beach-il": {
+      "city": "Chicago",
+      "state": "IL"
+    },
+    "south-shore-beach-mi": {
+      "city": "Richfield Center",
+      "state": "MI"
+    },
+    "south-shore-beach-mn": {
+      "city": "Bemidji",
+      "state": "MN"
+    },
+    "south-shore-beach-wi": {
+      "city": "Town of Baraboo",
+      "state": "WI"
+    },
+    "spalding-beach-mo": {
+      "city": null,
+      "state": "MO"
+    },
+    "sparta-beach-mn": {
+      "city": "Gilbert",
+      "state": "MN"
+    },
+    "speed-beach-in": {
+      "city": "Terre Haute",
+      "state": "IN"
+    },
+    "spencer-beach-ia": {
+      "city": "Wahpeton",
+      "state": "IA"
+    },
+    "spirit-flowage-beach-wi": {
+      "city": "Town of Bradley",
+      "state": "WI"
+    },
+    "sportsmans-beach-nv": {
+      "city": null,
+      "state": "NV"
+    },
+    "spring-creek-swim-beach-ks": {
+      "city": null,
+      "state": "KS"
+    },
+    "spring-harbor-beach-wi": {
+      "city": "Madison",
+      "state": "WI"
+    },
+    "spring-lake-heights-annex-beach-mi": {
+      "city": "Commerce Charter Township",
+      "state": "MI"
+    },
+    "st-hazards-beach-oh": {
+      "city": "Put-in-Bay Township",
+      "state": "OH"
+    },
+    "st-joseph-s-beach-in": {
+      "city": null,
+      "state": "IN"
+    },
+    "stagecoach-swim-beach-co": {
+      "city": null,
+      "state": "CO"
+    },
+    "stamp-sand-mi": {
+      "city": null,
+      "state": "MI"
+    },
+    "standfield-beach-il": {
+      "city": "Rockford",
+      "state": "IL"
+    },
+    "starbuck-public-beach-mn": {
+      "city": "Starbuck",
+      "state": "MN"
+    },
+    "starlite-beach-mi": {
+      "city": "Alpena",
+      "state": "MI"
+    },
+    "starve-hollow-state-beach-in": {
+      "city": null,
+      "state": "IN"
+    },
+    "state-park-beach-wi": {
+      "city": "Cornell",
+      "state": "WI"
+    },
+    "steamboat-summit-id": {
+      "city": null,
+      "state": "ID"
+    },
+    "stephens-lake-park-beach-mo": {
+      "city": "Columbia",
+      "state": "MO"
+    },
+    "stone-beach-oh": {
+      "city": "Put-in-Bay Township",
+      "state": "OH"
+    },
+    "stone-lake-beach-in": {
+      "city": "La Porte",
+      "state": "IN"
+    },
+    "stony-lake-beach-mi": {
+      "city": null,
+      "state": "MI"
+    },
+    "stop-2-beach-in": {
+      "city": null,
+      "state": "IN"
+    },
+    "stop-7-beach-in": {
+      "city": "Michigan City",
+      "state": "IN"
+    },
+    "strawberry-park-hot-springs-co": {
+      "city": "Strawberry Park Hot Springs",
+      "state": "CO"
+    },
+    "sugar-bottom-campground-beach-ia": {
+      "city": "Newport Township",
+      "state": "IA"
+    },
+    "sugar-bottom-day-use-beach-ia": {
+      "city": "Newport Township",
+      "state": "IA"
+    },
+    "sunrise-beach-il": {
+      "city": "Lake Bluff",
+      "state": "IL"
+    },
+    "sunrise-beach-ne": {
+      "city": null,
+      "state": "NE"
+    },
+    "sunrise-lake-beach-mo": {
+      "city": "Valle Township",
+      "state": "MO"
+    },
+    "sunset-beach-day-use-area-ok": {
+      "city": null,
+      "state": "OK"
+    },
+    "sunset-beach-ia": {
+      "city": "Arnolds Park",
+      "state": "IA"
+    },
+    "sunset-beach-mi": {
+      "city": "Egelston Township",
+      "state": "MI"
+    },
+    "sunset-beach-mn": {
+      "city": "Saint Mary's Point",
+      "state": "MN"
+    },
+    "sunset-beach-ok": {
+      "city": null,
+      "state": "OK"
+    },
+    "sunset-beach-park-wi": {
+      "city": "Town of Gibraltar",
+      "state": "WI"
+    },
+    "sunset-beach-wi": {
+      "city": "Kimberly",
+      "state": "WI"
+    },
+    "sunset-bluff-beach-mi": {
+      "city": "Park Township",
+      "state": "MI"
+    },
+    "sunset-park-beach-wi": {
+      "city": "Sturgeon Bay",
+      "state": "WI"
+    },
+    "sunset-point-mi": {
+      "city": "Blue Lake Township",
+      "state": "MI"
+    },
+    "surprise-beach-co": {
+      "city": null,
+      "state": "CO"
+    },
+    "sutton-beach-oh": {
+      "city": "Howard Township",
+      "state": "OH"
+    },
+    "sweet-beach-cove-co": {
+      "city": null,
+      "state": "CO"
+    },
+    "swim-beach-co": {
+      "city": null,
+      "state": "CO"
+    },
+    "swim-beach-ks": {
+      "city": null,
+      "state": "KS"
+    },
+    "swim-beach-mn": {
+      "city": null,
+      "state": "MN"
+    },
+    "swim-beach-ne": {
+      "city": null,
+      "state": "NE"
+    },
+    "swim-beach-ok": {
+      "city": null,
+      "state": "OK"
+    },
+    "swimming-area-az": {
+      "city": null,
+      "state": "AZ"
+    },
+    "swimming-area-mn": {
+      "city": "Owatonna",
+      "state": "MN"
+    },
+    "swimming-beach-ks": {
+      "city": "Winfield",
+      "state": "KS"
+    },
+    "swimming-beach-mn": {
+      "city": "Sleepy Eye",
+      "state": "MN"
+    },
+    "swimming-beach-mo": {
+      "city": "Lee's Summit",
+      "state": "MO"
+    },
+    "swimming-beach-oh": {
+      "city": "Huntington Township",
+      "state": "OH"
+    },
+    "swimming-beach-wi": {
+      "city": "Town of Germantown",
+      "state": "WI"
+    },
+    "sylvan-beach-id": {
+      "city": null,
+      "state": "ID"
+    },
+    "sylvan-beach-kids-beach-mi": {
+      "city": "Fruitland Township",
+      "state": "MI"
+    },
+    "tall-chief-cove-beach-ok": {
+      "city": null,
+      "state": "OK"
+    },
+    "tawas-point-camper-s-beach-mi": {
+      "city": "Baldwin Township",
+      "state": "MI"
+    },
+    "tawas-point-pet-friendly-beach-mi": {
+      "city": null,
+      "state": "MI"
+    },
+    "taylor-bay-beach-ar": {
+      "city": null,
+      "state": "AR"
+    },
+    "teal-lake-beach-mi": {
+      "city": "Negaunee",
+      "state": "MI"
+    },
+    "terrace-beach-ia": {
+      "city": "West Okoboji",
+      "state": "IA"
+    },
+    "the-artesian-beach-ok": {
+      "city": null,
+      "state": "OK"
+    },
+    "the-beach-at-canada-creek-ranch-mi": {
+      "city": "Montmorency Township",
+      "state": "MI"
+    },
+    "the-beach-at-farmington-lake-nm": {
+      "city": "Farmington",
+      "state": "NM"
+    },
+    "the-first-curve-mi": {
+      "city": "Hamlin Township",
+      "state": "MI"
+    },
+    "the-sandbar-mt": {
+      "city": null,
+      "state": "MT"
+    },
+    "thorndale-avenue-beach-il": {
+      "city": "Chicago",
+      "state": "IL"
+    },
+    "thousand-hills-state-park-beach-mo": {
+      "city": null,
+      "state": "MO"
+    },
+    "timberlake-residents-beach-oh": {
+      "city": "Timberlake",
+      "state": "OH"
+    },
+    "tioga-beach-and-picnic-area-mn": {
+      "city": "Cohasset",
+      "state": "MN"
+    },
+    "tioga-pit-beach-mn": {
+      "city": "Cohasset",
+      "state": "MN"
+    },
+    "tl-waterfront-mo": {
+      "city": null,
+      "state": "MO"
+    },
+    "torch-lake-sand-bar-public-access-point-mi": {
+      "city": "Clearwater Township",
+      "state": "MI"
+    },
+    "torpy-park-beach-wi": {
+      "city": "Town of Minocqua",
+      "state": "WI"
+    },
+    "tourist-park-mi": {
+      "city": null,
+      "state": "MI"
+    },
+    "tower-road-beach-il": {
+      "city": "Winnetka",
+      "state": "IL"
+    },
+    "troll-beach-wi": {
+      "city": "Stoughton",
+      "state": "WI"
+    },
+    "turkeyfoot-beach-oh": {
+      "city": "New Franklin",
+      "state": "OH"
+    },
+    "turtle-beach-mi": {
+      "city": "Blue Lake Township",
+      "state": "MI"
+    },
+    "twelvemile-beach-mi": {
+      "city": null,
+      "state": "MI"
+    },
+    "twimsberg-beach-mo": {
+      "city": "Innsbrook",
+      "state": "MO"
+    },
+    "twin-bridges-beach-id": {
+      "city": null,
+      "state": "ID"
+    },
+    "twin-hills-beach-ia": {
+      "city": null,
+      "state": "IA"
+    },
+    "twin-lakes-park-beach-wi": {
+      "city": "Twin Lakes",
+      "state": "WI"
+    },
+    "twin-sun-lakes-common-area-to-marina-and-swim-area-mi": {
+      "city": "Commerce Charter Township",
+      "state": "MI"
+    },
+    "twin-valley-beach-wi": {
+      "city": "Town of Dodgeville",
+      "state": "WI"
+    },
+    "ubauche-swimming-beach-in": {
+      "city": null,
+      "state": "IN"
+    },
+    "van-s-beach-mi": {
+      "city": "Leland Township",
+      "state": "MI"
+    },
+    "veterans-park-ely-lake-beach-mn": {
+      "city": "Fayal Township",
+      "state": "MN"
+    },
+    "vilas-park-beach-wi": {
+      "city": "Madison",
+      "state": "WI"
+    },
+    "villa-angela-beach-oh": {
+      "city": "Cleveland",
+      "state": "OH"
+    },
+    "village-of-ephraim-public-beach-wi": {
+      "city": "Ephraim",
+      "state": "WI"
+    },
+    "virginia-beach-nv": {
+      "city": null,
+      "state": "NV"
+    },
+    "wakanda-beach-wi": {
+      "city": "Menomonie",
+      "state": "WI"
+    },
+    "waldenwoods-beach-mi": {
+      "city": "Hartland Township",
+      "state": "MI"
+    },
+    "wall-lake-beach-in": {
+      "city": null,
+      "state": "IN"
+    },
+    "wallace-beach-oh": {
+      "city": "Berea",
+      "state": "OH"
+    },
+    "warner-park-beach-wi": {
+      "city": "Madison",
+      "state": "WI"
+    },
+    "washington-park-beach-in": {
+      "city": "Michigan City",
+      "state": "IN"
+    },
+    "waterfront-beach-mi": {
+      "city": "Hatton Township",
+      "state": "MI"
+    },
+    "waterfront-mi": {
+      "city": "Leoni Township",
+      "state": "MI"
+    },
+    "waterfront-ne": {
+      "city": null,
+      "state": "NE"
+    },
+    "waterfront-oh": {
+      "city": "New Franklin",
+      "state": "OH"
+    },
+    "watkins-mill-beach-mo": {
+      "city": null,
+      "state": "MO"
+    },
+    "watzl-s-point-beach-mn": {
+      "city": "Prior Lake",
+      "state": "MN"
+    },
+    "waukegan-beach-il": {
+      "city": null,
+      "state": "IL"
+    },
+    "waukegan-municipal-beach-il": {
+      "city": "Waukegan",
+      "state": "IL"
+    },
+    "waverly-beach-in": {
+      "city": null,
+      "state": "IN"
+    },
+    "weko-beach-mi": {
+      "city": "Bridgman",
+      "state": "MI"
+    },
+    "wekota-beach-mn": {
+      "city": "Tonka Bay",
+      "state": "MN"
+    },
+    "west-beach-il": {
+      "city": "Lakewood",
+      "state": "IL"
+    },
+    "west-beach-in": {
+      "city": "Portage",
+      "state": "IN"
+    },
+    "west-end-beach-mi": {
+      "city": null,
+      "state": "MI"
+    },
+    "west-lake-park-beach-ia": {
+      "city": "Blue Grass Township",
+      "state": "IA"
+    },
+    "west-park-beach-mi": {
+      "city": "Churchill Township",
+      "state": "MI"
+    },
+    "westlakes-beach-in": {
+      "city": "Fort Wayne",
+      "state": "IN"
+    },
+    "whale-beach-nv": {
+      "city": "Carson City",
+      "state": "NV"
+    },
+    "wheatgrass-bench-id": {
+      "city": null,
+      "state": "ID"
+    },
+    "wheelers-beach-ia": {
+      "city": "West Okoboji",
+      "state": "IA"
+    },
+    "whihala-beach-in": {
+      "city": null,
+      "state": "IN"
+    },
+    "whihala-park-west-beach-in": {
+      "city": null,
+      "state": "IN"
+    },
+    "white-sand-beach-mn": {
+      "city": "Minneapolis",
+      "state": "MN"
+    },
+    "white-sands-beach-wi": {
+      "city": "Town of Grand Rapids",
+      "state": "WI"
+    },
+    "whitewater-beach-wi": {
+      "city": "Town of Whitewater",
+      "state": "WI"
+    },
+    "whitney-shores-private-beach-il": {
+      "city": "Lake Zurich",
+      "state": "IL"
+    },
+    "willard-beach-mi": {
+      "city": "Battle Creek",
+      "state": "MI"
+    },
+    "willow-beach-ok": {
+      "city": "Tulsa",
+      "state": "OK"
+    },
+    "willow-beach-wi": {
+      "city": "Madison",
+      "state": "WI"
+    },
+    "willows-landing-co": {
+      "city": null,
+      "state": "CO"
+    },
+    "windsurfer-beach-ks": {
+      "city": null,
+      "state": "KS"
+    },
+    "wirth-lake-beach-mn": {
+      "city": "Golden Valley",
+      "state": "MN"
+    },
+    "wizards-beach-nv": {
+      "city": null,
+      "state": "NV"
+    },
+    "wonder-center-beach-il": {
+      "city": "Wonder Lake",
+      "state": "IL"
+    },
+    "woodman-beach-mi": {
+      "city": null,
+      "state": "MI"
+    },
+    "woods-lake-beach-wi": {
+      "city": "Town of Stephenson",
+      "state": "WI"
+    },
+    "wunderblick-beach-mo": {
+      "city": "Innsbrook",
+      "state": "MO"
+    },
+    "wyalusing-beach-wi": {
+      "city": "Town of Wyalusing",
+      "state": "WI"
+    },
+    "yanney-beach-ne": {
+      "city": "Kearney",
+      "state": "NE"
+    },
+    "ymca-beach-wi": {
+      "city": "Manitowoc",
+      "state": "WI"
+    },
+    "yuma-beach-az": {
+      "city": "Yuma",
+      "state": "AZ"
+    },
+    "zoo-beach-wi": {
+      "city": "Racine",
+      "state": "WI"
+    },
+    "zorbaz-beach-mn": {
+      "city": "Harris Township",
+      "state": "MN"
+    },
+    "zorn-park-beach-mi": {
+      "city": "Harbor Springs",
+      "state": "MI"
+    }
+  }
+}
