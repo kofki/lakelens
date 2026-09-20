@@ -1,10 +1,5068 @@
 {
   "_note": "Water body each OSM swim area sits on, from scripts/fetch-osm-water-bodies.ts. Matched by bounding box against every named lake and river in the state, smallest box first. water_body null means the point named no fresh water and is not published.",
-  "generated_at": "2026-09-20T08:40:51.854Z",
+  "generated_at": "2026-09-20T08:53:56.548Z",
   "pad_m": 600,
   "verdicts": {
+    "beaver-lake-dive-park-ar": {
+      "water_body": "Beaver Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "carter-cove-beach-ar": {
+      "water_body": "Nimrod Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "higginson-beach-ar": {
+      "water_body": "Gum Springs Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "higginson-lake-beach-ar": {
+      "water_body": "Gum Springs Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lake-dardanelle-beach-and-swimming-area-ar": {
+      "water_body": "Lake Dardanelle",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sandy-beach-ar": {
+      "water_body": "Greers Ferry Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "taylor-bay-beach-ar": {
+      "water_body": "White River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "back-beach-az": {
+      "water_body": "Canyon Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "boat-beach-az": {
+      "water_body": "Bright Angel Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "buckhorn-beach-az": {
+      "water_body": "Apache Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "centennial-beach-az": {
+      "water_body": "West Wetlands Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "fish-beach-az": {
+      "water_body": "Canyon Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "grasshopper-point-picnic-area-az": {
+      "water_body": "Casner Canyon",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "illinois-az": {
+      "water_body": "Illinois",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "paria-beach-az": {
+      "water_body": "Colorado River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "pipe-creek-beach-az": {
+      "water_body": "Pipe Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "playa-linda-az": {
+      "water_body": "Main Outlet Drain Extension Canal",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sandbar-az": {
+      "water_body": "Colorado River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sandy-beach-az": {
+      "water_body": "Saguaro Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "slide-rock-swim-area-az": {
+      "water_body": "Oak Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "swimming-area-az": {
+      "water_body": "Lake Havasu",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "yuma-beach-az": {
+      "water_body": "Colorado River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "beach-no-swim-co": {
+      "water_body": "Cherry Creek Reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "boat-beach-co": {
+      "water_body": "Aurora Reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "carter-lake-swim-beach-co": {
+      "water_body": "Carter Lake Reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "dixon-reservoir-beach-co": {
+      "water_body": "Horsetooth Reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "dutch-charlie-swim-beach-co": {
+      "water_body": "Ridgway Reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "frisco-bay-marina-beach-co": {
+      "water_body": "Dillon Reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "heron-cove-co": {
+      "water_body": "Horseshoe Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lake-loveland-swim-beach-co": {
+      "water_body": "Lake Loveland",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "mussel-beach-co": {
+      "water_body": "Horseshoe Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "prospect-lake-co": {
+      "water_body": "Prospect Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "scuba-beach-co": {
+      "water_body": "Aurora Reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "stagecoach-swim-beach-co": {
+      "water_body": "Stagecoach Reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "strawberry-park-hot-springs-co": {
+      "water_body": "Hot Springs Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "surprise-beach-co": {
+      "water_body": "Lake Granby",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sweet-beach-cove-co": {
+      "water_body": "Dillon Reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "swim-beach-co": {
+      "water_body": "Cherry Creek Reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "willows-landing-co": {
+      "water_body": "Horseshoe Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "ainsworth-beach-ia": {
+      "water_body": "Spirit Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "anglers-bay-beach-ia": {
+      "water_body": "Spirit Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "arnolds-park-public-beach-ia": {
+      "water_body": "Minnewashta Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "arrowhead-beach-ia": {
+      "water_body": "West Okoboji Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "bay-view-beach-ia": {
+      "water_body": "West Okoboji Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "brooks-beach-ia": {
+      "water_body": "East Okoboji Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "brownells-beach-ia": {
+      "water_body": "West Okoboji Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "buffalo-beach-ia": {
+      "water_body": "Buffalo Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "buffalo-shores-beach-ia": {
+      "water_body": "Buffalo Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "casino-beach-ia": {
+      "water_body": "Storm Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "city-beach-ia": {
+      "water_body": "Clear Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "clear-lake-state-park-beach-ia": {
+      "water_body": "Clear Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "crandalls-beach-ia": {
+      "water_body": "Little Spirit Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "crescent-beach-ia": {
+      "water_body": "West Okoboji Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "des-moines-beach-ia": {
+      "water_body": "West Okoboji Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "dixon-beach-ia": {
+      "water_body": "West Okoboji Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "dodges-beach-ia": {
+      "water_body": "Clear Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "east-okoboji-beach-ia": {
+      "water_body": "East Okoboji Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "easter-lake-beach-ia": {
+      "water_body": "Easter Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "egralharve-beach-ia": {
+      "water_body": "West Okoboji Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "emerson-bay-public-beach-ia": {
+      "water_body": "West Okoboji Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "estherville-beach-ia": {
+      "water_body": "West Okoboji Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "fairoak-beach-ia": {
+      "water_body": "West Okoboji Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "fairoaks-beach-ia": {
+      "water_body": "West Okoboji Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "farmers-beach-ia": {
+      "water_body": "Clear Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "fillenworth-beach-ia": {
+      "water_body": "Upper Gar Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "gilleys-beach-ia": {
+      "water_body": "West Okoboji Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "gull-point-ia": {
+      "water_body": "West Okoboji Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "gull-point-public-beach-ia": {
+      "water_body": "West Okoboji Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "harlan-beach-ia": {
+      "water_body": "Spirit Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "inwood-park-beach-ia": {
+      "water_body": "Spirit Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "jones-beach-ia": {
+      "water_body": "West Okoboji Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "kellys-beach-ia": {
+      "water_body": "East Okoboji Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "kruses-beach-ia": {
+      "water_body": "Upper Gar Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lakeside-beach-ia": {
+      "water_body": "Storm Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "little-river-beach-ia": {
+      "water_body": "Little River Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "manhattan-beach-ia": {
+      "water_body": "West Okoboji Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "maple-oak-beach-ia": {
+      "water_body": "Spirit Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "martha-yarns-memorial-beach-ia": {
+      "water_body": "Spirit Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "maywood-beach-ia": {
+      "water_body": "West Okoboji Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "milford-beach-ia": {
+      "water_body": "West Okoboji Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "miniwaukon-beach-ia": {
+      "water_body": "Spirit Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "moores-beach-ia": {
+      "water_body": "East Okoboji Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "omaha-beach-ia": {
+      "water_body": "West Okoboji Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "orleans-beach-ia": {
+      "water_body": "Spirit Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "papoose-beach-ia": {
+      "water_body": "Canal",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "pearse-access-river-access-ia": {
+      "water_body": "Little Sioux River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "pike-s-point-beach-ia": {
+      "water_body": "West Okoboji Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "pine-lake-beach-ia": {
+      "water_body": "Pine Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "pioneer-beach-ia": {
+      "water_body": "Spirit Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "princeton-beach-ia": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "raebels-beach-ia": {
+      "water_body": "West Okoboji Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "river-access-point-ia": {
+      "water_body": "Little Sioux River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "rock-creek-beach-ia": {
+      "water_body": "Rock Creek Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sand-beach-ia": {
+      "water_body": "Big Sioux River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sandbar-beach-ia": {
+      "water_body": "Spirit Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "scharnberg-county-park-ia": {
+      "water_body": "Stony Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "south-beach-ia": {
+      "water_body": "Lower Sabula Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "spencer-beach-ia": {
+      "water_body": "West Okoboji Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sugar-bottom-campground-beach-ia": {
+      "water_body": "Coralville Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sugar-bottom-day-use-beach-ia": {
+      "water_body": "Coralville Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sunset-beach-ia": {
+      "water_body": "West Okoboji Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "terrace-beach-ia": {
+      "water_body": "West Okoboji Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "twin-hills-beach-ia": {
+      "water_body": "East Okoboji Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "west-lake-park-beach-ia": {
+      "water_body": "Lambach Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "wheelers-beach-ia": {
+      "water_body": "West Okoboji Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "amos-bench-id": {
+      "water_body": "Clearwater River / kuumkxtoyn",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "big-bench-id": {
+      "water_body": "Snake River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "bronco-beach-id": {
+      "water_body": "American Falls Reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "button-beach-id": {
+      "water_body": "Doty Draw",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "city-beach-id": {
+      "water_body": "Lake Pend Oreille",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "compressor-station-bench-id": {
+      "water_body": "American Falls Reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "dog-beach-id": {
+      "water_body": "Lake Pend Oreille",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "egin-bench-id": {
+      "water_body": "Independent Canal",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "gem-lake-id": {
+      "water_body": "Snake River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "hot-springs-bench-id": {
+      "water_body": "Bruneau River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lava-point-id": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "music-bar-id": {
+      "water_body": "Gus Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "north-beach-id": {
+      "water_body": "Payette Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "north-idaho-beach-id": {
+      "water_body": "Lake Coeur d'Alene",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "palisades-bench-id": {
+      "water_body": "Palisades Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "pink-house-beach-id": {
+      "water_body": "Clearwater River / kuumkxtoyn",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "preston-beach-id": {
+      "water_body": "Hayden Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "rainbow-beach-id": {
+      "water_body": "American Falls Reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "red-ledge-id": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "riverside-beach-id": {
+      "water_body": "Dry Creek Canal",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sanders-beach-id": {
+      "water_body": "Lake Coeur d'Alene",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sandy-point-beach-id": {
+      "water_body": "Lucky Peak Reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "shorts-bar-beach-id": {
+      "water_body": "Shorts Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "silver-beach-id": {
+      "water_body": "Lake Coeur d'Alene",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "skookumchuck-beach-id": {
+      "water_body": "Skookomchuck Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "steamboat-summit-id": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "sylvan-beach-id": {
+      "water_body": "Payette Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "twin-bridges-beach-id": {
+      "water_body": "Salmon River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "wheatgrass-bench-id": {
+      "water_body": "American Falls Reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "12th-street-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "41st-street-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "49th-street-beach-il": {
+      "water_body": "Model Yacht Basin",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "57th-street-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "63rd-street-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "aquatics-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "ardmore-hollywood-osterman-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "arthur-ashe-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "bellevue-beach-il": {
+      "water_body": "Mississippi River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "ben-butterworth-parkway-il": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "calumet-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "campground-beach-il": {
+      "water_body": "Little Grassy Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "centennial-beach-il": {
+      "water_body": "Netzley Quarry",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "cherry-street-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "coles-creek-beach-il": {
+      "water_body": "Carlyle Reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "coon-creek-beach-il": {
+      "water_body": "Lake Shelbyville",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "dell-place-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "diamond-lake-beach-il": {
+      "water_body": "Diamond Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "dog-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "elder-lane-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "f-r-glasener-beach-il": {
+      "water_body": "Evergreen Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "forest-park-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "foster-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "george-s-beach-il": {
+      "water_body": "Prairie Crossing Pond 3",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "gillson-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "glencoe-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "greenwood-street-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "hartigan-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "helen-doria-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "howard-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "humboldt-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "illinois-beach-state-park-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "independence-grove-beach-il": {
+      "water_body": "The Lake at Independence Grove",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "indian-trail-beach-il": {
+      "water_body": "Woods Creek Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "jones-island-beach-il": {
+      "water_body": "Grays Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "juneway-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "kenilworth-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "lake-miltmore-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "lake-wildwood-beach-1-il": {
+      "water_body": "Lake Wildwood",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lake-wildwood-beach-2-il": {
+      "water_body": "Lake Wildwood",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lakeview-beach-and-dock-il": {
+      "water_body": "Diamond Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "langdon-park-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "lee-street-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "leone-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "lighthouse-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "lithia-springs-beach-il": {
+      "water_body": "Lake Shelbyville",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "loyola-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "main-beach-il": {
+      "water_body": "Crystal Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "maple-street-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "margaret-burroughs-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "marion-mahoney-griffin-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "michigan-beach-il": {
+      "water_body": "Hickory Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "millard-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "milnot-beach-il": {
+      "water_body": "Lake Lou Yaeger",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "minear-lake-beach-il": {
+      "water_body": "Liberty Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "montrose-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "montrose-dog-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "morrison-park-beach-il": {
+      "water_body": "Lily Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "munson-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "north-avenue-beach-il": {
+      "water_body": "South Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "north-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "north-marcum-beach-il": {
+      "water_body": "Rend Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "north-point-marina-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "north-shore-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "oak-street-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "ohio-street-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "olson-beach-il": {
+      "water_body": "Olson Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "park-avenue-boating-fishing-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "petersen-park-beach-il": {
+      "water_body": "McCullom Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "prinz-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "rainbow-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "rocky-point-beach-il": {
+      "water_body": "Forbes Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "rogers-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "rosewood-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "santa-fe-beach-il": {
+      "water_body": "Rush Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sherwin-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "south-boulevard-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "south-shore-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "standfield-beach-il": {
+      "water_body": "Levings Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sunrise-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "thorndale-avenue-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "tower-road-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "waukegan-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "waukegan-municipal-beach-il": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "west-beach-il": {
+      "water_body": "Crystal Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "whitney-shores-private-beach-il": {
+      "water_body": "Lake Zurich",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "wonder-center-beach-il": {
+      "water_body": "Wonder Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "bailly-beach-in": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "bass-lake-state-beach-in": {
+      "water_body": "Bass Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "beverly-shores-beach-in": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "big-bass-beach-in": {
+      "water_body": "Lake on the Green",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "bikini-bottom-beach-in": {
+      "water_body": "Dave's Fishing Hole",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "blue-lake-public-access-site-in": {
+      "water_body": "Blue Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "buffington-harbor-beach-in": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "ceadar-lake-beach-in": {
+      "water_body": "Cedar Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "central-beach-in": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "clubhouse-beach-in": {
+      "water_body": "Trouthaven Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "crescent-dune-beach-in": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "dallas-lake-beach-in": {
+      "water_body": "Pond Lil",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "dunbar-beach-in": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "dune-acres-beach-in": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "east-beach-in": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "east-shoreline-in": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "fishing-beach-in": {
+      "water_body": "Wabash River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "fitzgeald-beach-in": {
+      "water_body": "Emerald Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "france-park-beach-in": {
+      "water_body": "Old Kenith Stone Quarry",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "geist-beach-in": {
+      "water_body": "Citizens Reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "hammond-marina-beach-in": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "hidden-valley-lake-beach-in": {
+      "water_body": "Hidden Valley Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "hulman-beach-in": {
+      "water_body": "Eel River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "indiana-beach-in": {
+      "water_body": "Lake Shafer",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "jeorse-park-beach-in": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "kayak-launch-and-beach-area-in": {
+      "water_body": "Wabash River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "kemil-beach-in": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "lake-claire-in": {
+      "water_body": "Little River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lake-street-beach-in": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "lake-view-beach-in": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "marquette-beach-in": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "morse-beach-in": {
+      "water_body": "Morse Reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "mount-baldy-beach-in": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "muscatatuck-swimming-hole-in": {
+      "water_body": "Muscatatuck River (Vernon Fork)",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "ogden-dunes-beach-in": {
+      "water_body": "Polliwog Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "patoka-lake-swimming-beach-in": {
+      "water_body": "Patoka Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "paynetown-beach-in": {
+      "water_body": "Lake Monroe",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "pike-lake-beach-in": {
+      "water_body": "Pike Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "portage-lakefront-in": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "porter-beach-in": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "ridge-beach-in": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "sandy-beach-in": {
+      "water_body": "Big Bass Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "speed-beach-in": {
+      "water_body": "Maple Avenue Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "st-joseph-s-beach-in": {
+      "water_body": "Hesburgh Library Reflecting Pool",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "starve-hollow-state-beach-in": {
+      "water_body": "Starve Hollow Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "stone-lake-beach-in": {
+      "water_body": "Oakwood Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "stop-2-beach-in": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "stop-7-beach-in": {
+      "water_body": "Fishing Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "ubauche-swimming-beach-in": {
+      "water_body": "Kunkel Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "wall-lake-beach-in": {
+      "water_body": "Brown Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "washington-park-beach-in": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "waverly-beach-in": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "west-beach-in": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "westlakes-beach-in": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "whihala-beach-in": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "whihala-park-west-beach-in": {
+      "water_body": "Wolf Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "bloomington-beach-ks": {
+      "water_body": "Clinton Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "el-dorado-state-park-beach-ks": {
+      "water_body": "El Dorado Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "el-dorado-swim-beach-ks": {
+      "water_body": "El Dorado Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "elk-city-state-park-beach-ks": {
+      "water_body": "Elk City Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "eureka-city-pool-ks": {
+      "water_body": "Spring Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "giefer-swim-beach-ks": {
+      "water_body": "Cheney Reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lake-olathe-swim-beach-ks": {
+      "water_body": "Lake Olathe",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "linn-valley-lakes-swimming-beach-ks": {
+      "water_body": "Linn Valley Lakes Park Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "miola-beach-ks": {
+      "water_body": "Miola Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "spring-creek-swim-beach-ks": {
+      "water_body": "Cheney Reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "swim-beach-ks": {
+      "water_body": "Kill Creek Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "swimming-beach-ks": {
+      "water_body": "Winfield City Lake (Timber Creek Reservoir)",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "windsurfer-beach-ks": {
+      "water_body": "Hillsdale Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "green-river-park-beach-ky": {
+      "water_body": "Green River Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "minnow-beach-ky": {
+      "water_body": "St. Camillus Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "smith-ridge-beach-ky": {
+      "water_body": "Green River Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "1st-street-beach-mi": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "accretion-beach-mi": {
+      "water_body": "Lake Saint Clair",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "aero-view-beach-mi": {
+      "water_body": "Green Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "agate-beach-mi": {
+      "water_body": "Lake Superior",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "aquatics-mi": {
+      "water_body": "Little Britton Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "archie-valleau-landing-mi": {
+      "water_body": "Torch Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "attwood-beach-mi": {
+      "water_body": "Lake Superior",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "bathing-beach-park-mi": {
+      "water_body": "Lake Huron",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "baypoint-beach-mi": {
+      "water_body": "Stony Creek Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "beach-area-mi": {
+      "water_body": "Lake Shellenbarger",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "beaver-island-public-beach-mi": {
+      "water_body": "Lake Geneserath",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "bebe-beach-mi": {
+      "water_body": "Lake Huron",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "belle-isle-beach-mi": {
+      "water_body": "Lake Muskoday",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "bete-grise-north-public-beach-mi": {
+      "water_body": "Lac La Belle",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "beulah-beach-mi": {
+      "water_body": "Crystal Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "big-shoal-beach-mi": {
+      "water_body": "Lake Huron",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "bitcoin-beach-north-mi": {
+      "water_body": "Lake Satoshi",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "blackhawk-aquatics-mi": {
+      "water_body": "Pickerel Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "blackhawk-waterfront-mi": {
+      "water_body": "Pickerel Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "breakers-beach-mi": {
+      "water_body": "Lake Superior",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "buttercup-beach-mi": {
+      "water_body": "Holloway Reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "calumet-waterworks-beach-mi": {
+      "water_body": "Lake Superior",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "carnelian-beach-mi": {
+      "water_body": "Lake Superior",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "cebia-beach-mi": {
+      "water_body": "Middle Straits Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "cedar-creek-beach-mi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "chain-lake-beach-mi": {
+      "water_body": "Chain Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "chapel-beach-mi": {
+      "water_body": "Little Chapel Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "charles-mears-state-park-beach-mi": {
+      "water_body": "Pentwater Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "christmas-cove-beach-mi": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "clinton-lakes-dog-beach-mi": {
+      "water_body": "Little Clinton Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "clover-beach-mi": {
+      "water_body": "Byram Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "congressional-summer-assembly-crystal-lake-beach-mi": {
+      "water_body": "Crystal Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "congressional-summer-assembly-lake-michigan-beach-mi": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "crescent-sail-club-beach-private-mi": {
+      "water_body": "Lake Saint Clair",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "crystal-lake-swimming-area-mi": {
+      "water_body": "Cranberry Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "davis-lake-beach-residents-only-mi": {
+      "water_body": "Davis Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "day-camp-beach-mi": {
+      "water_body": "Lake Copneconic",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "dead-river-beach-mi": {
+      "water_body": "Lake Superior",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "deep-end-swimming-area-mi": {
+      "water_body": "Shear Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "deer-lake-beach-mi": {
+      "water_body": "Dollar Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "devoe-beach-mi": {
+      "water_body": "Burt Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "douglas-beach-mi": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "duck-lake-outlet-mi": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "duck-lake-state-park-beach-mi": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "dukes-lake-beach-mi": {
+      "water_body": "Lake Huron",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "dyckman-beach-mi": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "eagle-river-beach-mi": {
+      "water_body": "Lake Superior",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "eastwood-beach-mi": {
+      "water_body": "Stony Creek Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "elberta-beach-mi": {
+      "water_body": "Betsie Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "escanaba-public-beach-mi": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "fifth-avenue-beach-mi": {
+      "water_body": "Man Made Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "first-sand-beach-mi": {
+      "water_body": "Lake Superior",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "fishing-beach-mi": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "fort-scott-beach-mi": {
+      "water_body": "Beebe Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "frankfort-beach-mi": {
+      "water_body": "Betsie Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "freda-sands-mi": {
+      "water_body": "Lake Superior",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "glen-cove-beach-mi": {
+      "water_body": "Lake Huron",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "great-sand-bay-conservation-and-recreation-area-mi": {
+      "water_body": "Lake Superior",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "hamlin-lake-beach-mi": {
+      "water_body": "Lost Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "harbour-towne-beach-mi": {
+      "water_body": "Muskegon Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "harrisville-state-park-beach-mi": {
+      "water_body": "Lake Huron",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "haserot-beach-mi": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "hawk-island-beach-mi": {
+      "water_body": "Sycamore Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "healy-lake-beach-mi": {
+      "water_body": "Healy Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "hidden-beach-mi": {
+      "water_body": "Lake Superior",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "hipster-beach-mi": {
+      "water_body": "Lake Okonoka",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "horseshoe-harbor-beach-mi": {
+      "water_body": "Lake Superior",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "jewell-gillespie-park-beach-mi": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "karen-s-swim-safe-lane-mi": {
+      "water_body": "Walnut Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "kelly-beach-mi": {
+      "water_body": "Oxbow Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "kingswood-stream-beach-mi": {
+      "water_body": "Crane Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "kiwanis-beach-mi": {
+      "water_body": "Lake Huron",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "lake-antoine-beach-mi": {
+      "water_body": "Lake Antoine",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lake-gogebic-state-park-beach-mi": {
+      "water_body": "Lake Gogebic",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lake-michigan-beach-mi": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "lake-ogemaw-sand-bar-mi": {
+      "water_body": "Lake Ogemaw",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lake-sherwood-mi": {
+      "water_body": "Lake Sherwood",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lakeshore-public-access-beach-mi": {
+      "water_body": "Bar Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lakeside-beach-mi": {
+      "water_body": "Spring Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lions-beach-mi": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "little-beach-mi": {
+      "water_body": "Lake Saint Clair",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "log-slide-beach-mi": {
+      "water_body": "Lake Superior",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "lone-pine-beach-mi": {
+      "water_body": "Walnut Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "luna-pier-public-beach-mi": {
+      "water_body": "Lake Erie",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "macatawa-park-beach-mi": {
+      "water_body": "Lake Macatawa",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "main-beach-mi": {
+      "water_body": "Otsego Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "maple-beach-mi": {
+      "water_body": "Kent Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "martindale-beach-mi": {
+      "water_body": "Kent Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "middle-bay-beach-mi": {
+      "water_body": "Lake Superior",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "millennium-park-beach-mi": {
+      "water_body": "Lake Leota",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "miners-beach-mi": {
+      "water_body": "Lake Superior",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "mino-kwe-jiigibiik-mi": {
+      "water_body": "Lake Superior",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "nantucket-pennylake-hoa-beach-mi": {
+      "water_body": "Lake Erie",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "new-buffalo-public-beach-mi": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "north-beach-mi": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "north-shore-beach-mi": {
+      "water_body": "Lake Linda",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "nugent-beach-private-mi": {
+      "water_body": "Lake Erie",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "oak-street-beach-mi": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "ontonagon-township-park-beach-mi": {
+      "water_body": "Lake Superior",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "orchard-view-colony-beach-mi": {
+      "water_body": "Briggs Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "ottawa-beach-mi": {
+      "water_body": "Lake Macatawa",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "oval-beach-mi": {
+      "water_body": "Kalamazoo Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "overnight-beach-mi": {
+      "water_body": "Lake Copneconic",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "peninsula-beach-mi": {
+      "water_body": "Lake Charlevoix",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "peterson-road-beach-mi": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "picnic-rocks-beach-mi": {
+      "water_body": "Lake Superior",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "pine-creek-ridge-lodge-beach-mi": {
+      "water_body": "Leith Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "pirates-cove-mi": {
+      "water_body": "Little Britton Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "pleasant-lake-east-beach-mi": {
+      "water_body": "Pleasant Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "port-crescent-beach-mi": {
+      "water_body": "Lake Huron",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "public-access-mi": {
+      "water_body": "Torch Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "richardi-park-beach-mi": {
+      "water_body": "Lake Bellaire",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "richardi-park-swimming-area-mi": {
+      "water_body": "Lake Bellaire",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "ridgewood-beach-mi": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "riley-beach-mi": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "rock-beach-point-mi": {
+      "water_body": "Lake Superior",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "rubicon-beach-mi": {
+      "water_body": "Lake Huron",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "russell-beach-mi": {
+      "water_body": "Cooley Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sand-point-beach-mi": {
+      "water_body": "Lake Superior",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "sandy-cove-mi": {
+      "water_body": "Loon Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "santa-monica-beach-mi": {
+      "water_body": "Lake Superior",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "second-sand-beach-mi": {
+      "water_body": "Lake Superior",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "secret-beach-mi": {
+      "water_body": "Lake Erie",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "sherwood-capri-mi": {
+      "water_body": "Lake Sherwood",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "slag-beach-mi": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "sleepy-hollow-dog-beach-mi": {
+      "water_body": "Lake Ovid",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sleepy-hollow-state-park-beach-mi": {
+      "water_body": "Lake Ovid",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "south-beach-mi": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "south-shore-beach-mi": {
+      "water_body": "Lake Linda",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "spring-lake-heights-annex-beach-mi": {
+      "water_body": "Twin Sun Lakes",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "stamp-sand-mi": {
+      "water_body": "Lake Superior",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "starlite-beach-mi": {
+      "water_body": "Lake Huron",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "stony-lake-beach-mi": {
+      "water_body": "Lake Erie",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "sunset-beach-mi": {
+      "water_body": "Wolf Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sunset-bluff-beach-mi": {
+      "water_body": "Lake Macatawa",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sunset-point-mi": {
+      "water_body": "Cleveland Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sylvan-beach-kids-beach-mi": {
+      "water_body": "White Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "tawas-point-camper-s-beach-mi": {
+      "water_body": "Lake Huron",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "tawas-point-pet-friendly-beach-mi": {
+      "water_body": "Lake Huron",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "teal-lake-beach-mi": {
+      "water_body": "Teal Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "the-beach-at-canada-creek-ranch-mi": {
+      "water_body": "Wildfowl Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "the-first-curve-mi": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "torch-lake-sand-bar-public-access-point-mi": {
+      "water_body": "Torch Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "tourist-park-mi": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "turtle-beach-mi": {
+      "water_body": "Cleveland Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "twelvemile-beach-mi": {
+      "water_body": "Lake Superior",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "twin-sun-lakes-common-area-to-marina-and-swim-area-mi": {
+      "water_body": "Twin Sun Lakes",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "van-s-beach-mi": {
+      "water_body": "Lake Leelanau",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "waldenwoods-beach-mi": {
+      "water_body": "North Ore Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "waterfront-beach-mi": {
+      "water_body": "Beebe Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "waterfront-mi": {
+      "water_body": "Wolf Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "weko-beach-mi": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "west-end-beach-mi": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "west-park-beach-mi": {
+      "water_body": "Lake Ogemaw",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "willard-beach-mi": {
+      "water_body": "Goguac Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "woodman-beach-mi": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "zorn-park-beach-mi": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "32nd-beach-mn": {
+      "water_body": "Bde Maka Ska",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "agate-beach-mn": {
+      "water_body": "Lake Superior",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "albert-lea-beach-mn": {
+      "water_body": "Fountain Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "alden-s-beach-mn": {
+      "water_body": "Lake Superior",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "avon-beach-mn": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "battle-lake-public-beach-mn": {
+      "water_body": "First Silver Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "bde-maka-ska-north-beach-mn": {
+      "water_body": "Lake of the Isles",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "bde-maka-ska-thomas-beach-mn": {
+      "water_body": "Bde Maka Ska",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "beaver-river-beach-mn": {
+      "water_body": "Lake Superior",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "bellaire-beach-mn": {
+      "water_body": "White Bear Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "big-beach-mn": {
+      "water_body": "Lake Superior",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "black-beach-mn": {
+      "water_body": "Lake Superior",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "blandin-beach-mn": {
+      "water_body": "Lost Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "bryant-lake-park-swimming-beach-mn": {
+      "water_body": "South Fork Ninemile Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "burlington-bay-beach-mn": {
+      "water_body": "Lake Superior",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "bush-lake-beach-mn": {
+      "water_body": "Goose Nest Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "carver-lake-beach-mn": {
+      "water_body": "Carver Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "cascade-lake-beach-mn": {
+      "water_body": "Manorwoods Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "casco-point-beach-mn": {
+      "water_body": "Lake Minnetonka",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "cedar-lake-east-beach-mn": {
+      "water_body": "Brownie Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "cedar-lake-point-beach-mn": {
+      "water_body": "Cedar Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "cedar-lake-south-beach-mn": {
+      "water_body": "Cedar Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "chester-woods-beach-mn": {
+      "water_body": "Chester Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "chippewa-park-beach-devils-lake-mn": {
+      "water_body": "Little Chippewa Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "clayhole-beach-mn": {
+      "water_body": "West Chaska Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "clayton-lake-beach-mn": {
+      "water_body": "Hay Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "crescent-beach-mn": {
+      "water_body": "Lake Minnetonka",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "crystal-lake-beach-mn": {
+      "water_body": "Keller Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "deephaven-main-beach-mn": {
+      "water_body": "Lake Minnetonka",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "diamond-point-beach-mn": {
+      "water_body": "Lake Bemidji",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "dog-cove-mn": {
+      "water_body": "Trout Brook",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "fall-lake-campground-beach-mn": {
+      "water_body": "Stub Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "flood-bay-mn": {
+      "water_body": "Lake Superior",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "florence-township-beach-mn": {
+      "water_body": "Lake Pepin",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "french-park-beach-mn": {
+      "water_body": "Medicine Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "gervais-lake-beach-mn": {
+      "water_body": "Gervais Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "golden-lake-mn": {
+      "water_body": "Golden Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "hidden-beach-mn": {
+      "water_body": "Smith Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "hill-lake-beach-mn": {
+      "water_body": "Hill Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "hiniker-pond-public-beach-mn": {
+      "water_body": "Hiniker Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "jhell-beach-mn": {
+      "water_body": "Foster Arend Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "knife-river-beach-mn": {
+      "water_body": "Lake Superior",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "lake-ann-beach-mn": {
+      "water_body": "Lake Ann",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lake-byllesby-beach-mn": {
+      "water_body": "Lake Byllesby Reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lake-byllesby-beach-swimming-area-mn": {
+      "water_body": "Lake Byllesby Reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lake-harriet-north-beach-mn": {
+      "water_body": "Jo Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lake-harriet-southeast-beach-mn": {
+      "water_body": "Lake Harriet",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lake-hendricks-public-beach-mn": {
+      "water_body": "Lake Hendricks",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lake-hiawatha-beach-mn": {
+      "water_body": "Minnehaha Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lake-kohlmeier-beach-mn": {
+      "water_body": "Straight River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lake-le-homme-dieu-beach-mn": {
+      "water_body": "Lake Geneva",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lake-nokomis-50th-street-beach-mn": {
+      "water_body": "Minnehaha Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lake-nokomis-main-beach-mn": {
+      "water_body": "Minnehaha Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lake-rebecca-mn": {
+      "water_body": "Lake Rebecca",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lake-walk-mn": {
+      "water_body": "Lake Superior",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "lakeland-beach-mn": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "linwood-beach-mn": {
+      "water_body": "Lake Minnetonka",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "longfellow-beach-mn": {
+      "water_body": "Shadow Falls Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lydiard-beach-mn": {
+      "water_body": "Lake Minnetonka",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "mcfarland-lake-swimming-beach-mn": {
+      "water_body": "McFarland Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "nocomo-beach-mn": {
+      "water_body": "Lake Minnetonka",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "norway-beach-swimming-area-mn": {
+      "water_body": "Cass Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "ojiketa-beach-area-mn": {
+      "water_body": "Green Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "old-shore-beach-mn": {
+      "water_body": "Lake Superior",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "paradise-beach-mn": {
+      "water_body": "Lake Superior",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "pebble-beach-mn": {
+      "water_body": "Lake Superior",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "pebble-lake-swimming-beach-mn": {
+      "water_body": "Pebble Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "phalen-park-beach-mn": {
+      "water_body": "Lake Phalen",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "point-charming-beach-mn": {
+      "water_body": "Lake Minnetonka",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "ramsey-county-beach-mn": {
+      "water_body": "Bald Eagle Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "rice-street-beach-mn": {
+      "water_body": "Rum River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "riverside-beach-mn": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "robinson-s-bay-beach-mn": {
+      "water_body": "Lake Minnetonka",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "rocky-beach-mn": {
+      "water_body": "Lake Minnetonka",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "round-lake-beach-mn": {
+      "water_body": "Hames Way Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "round-lake-swimming-area-mn": {
+      "water_body": "Hames Way Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "saint-john-s-beach-mn": {
+      "water_body": "North Fork Watab River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sand-creek-reservoir-swimming-area-mn": {
+      "water_body": "Sand Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sand-point-beach-mn": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "sandy-beach-mn": {
+      "water_body": "Lake Miltona",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "shady-oak-beach-mn": {
+      "water_body": "Shady Oak Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "snelling-beach-mn": {
+      "water_body": "Snelling Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "south-shore-beach-mn": {
+      "water_body": "Lake Bemidji",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sparta-beach-mn": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "starbuck-public-beach-mn": {
+      "water_body": "Lake Minnewaska",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sunset-beach-mn": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "swim-beach-mn": {
+      "water_body": "Split Rock Reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "swimming-area-mn": {
+      "water_body": "Straight River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "swimming-beach-mn": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "tioga-beach-and-picnic-area-mn": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "tioga-pit-beach-mn": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "veterans-park-ely-lake-beach-mn": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "watzl-s-point-beach-mn": {
+      "water_body": "Lakefront Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "wekota-beach-mn": {
+      "water_body": "Lake Minnetonka",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "white-sand-beach-mn": {
+      "water_body": "Mississippi River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "wirth-lake-beach-mn": {
+      "water_body": "Wirth Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "zorbaz-beach-mn": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "aunts-creek-beach-mo": {
+      "water_body": "Table Rock Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "beach-2-mo": {
+      "water_body": "Jacks Fork",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "beach-3-mo": {
+      "water_body": "Jacks Fork",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "bendorf-mo": {
+      "water_body": "Perch Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "big-cedar-beach-mo": {
+      "water_body": "Turtle Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "bunker-mo": {
+      "water_body": "water hazard",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "cedarpass-beach-mo": {
+      "water_body": "Bliss Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "chapel-hill-beach-mo": {
+      "water_body": "Council Bluff Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "cinova-beach-mo": {
+      "water_body": "Perch Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "corlina-beach-mo": {
+      "water_body": "Perch Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "don-s-island-mo": {
+      "water_body": "Table Rock Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "finger-lakes-swimming-beach-mo": {
+      "water_body": "Finger Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "geneva-beach-mo": {
+      "water_body": "Muetze Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "grand-glaize-beach-mo": {
+      "water_body": "Lake of the Ozarks",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "hwy-107-beach-mo": {
+      "water_body": "Mark Twain Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "incline-village-beach-mo": {
+      "water_body": "Indian Camp Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "inverness-beach-mo": {
+      "water_body": "White Oak Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "kitzbuhl-beach-mo": {
+      "water_body": "Apfel Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lionshead-beach-mo": {
+      "water_body": "Muetze Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "little-platte-swim-beach-mo": {
+      "water_body": "Smithville Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lkw-waterfront-mo": {
+      "water_body": "Trout Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "monsanto-lake-beach-mo": {
+      "water_body": "Monsanto Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "moonshine-beach-mo": {
+      "water_body": "Lake Taneycomo",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "mozingo-beach-mo": {
+      "water_body": "Mozingo Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "pim-lake-beach-mo": {
+      "water_body": "Pim Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "pulltite-mo": {
+      "water_body": "Current River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "seebach-beach-mo": {
+      "water_body": "Moon Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "seebrook-beach-mo": {
+      "water_body": "Fox Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "spalding-beach-mo": {
+      "water_body": "Mark Twain Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "stephens-lake-park-beach-mo": {
+      "water_body": "Stephens Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sunrise-lake-beach-mo": {
+      "water_body": "Small Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "swimming-beach-mo": {
+      "water_body": "Blue Springs Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "thousand-hills-state-park-beach-mo": {
+      "water_body": "Forest Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "tl-waterfront-mo": {
+      "water_body": "Trout Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "twimsberg-beach-mo": {
+      "water_body": "Hummmingbird Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "watkins-mill-beach-mo": {
+      "water_body": "Williams Creek Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "wunderblick-beach-mo": {
+      "water_body": "Aspen Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "black-sandy-beach-mt": {
+      "water_body": "Hauser Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "boettcher-park-swimming-access-mt": {
+      "water_body": "Flathead Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "bozeman-beach-mt": {
+      "water_body": "Glen Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "canyon-river-beach-mt": {
+      "water_body": "Marshall Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "como-swimming-beach-mt": {
+      "water_body": "Kramis Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "flbc-swimming-area-mt": {
+      "water_body": "Flathead Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "long-beach-mt": {
+      "water_body": "Flathead Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "riverside-park-swimming-access-mt": {
+      "water_body": "Flathead Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sacajawea-swimming-access-mt": {
+      "water_body": "Flathead Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "salish-point-swimming-access-mt": {
+      "water_body": "Flathead Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "seven-rams-landing-mt": {
+      "water_body": "Bighorn Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sha-ron-beach-mt": {
+      "water_body": "Clark Fork",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "silver-dollar-beach-mt": {
+      "water_body": "Saint Mary Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "skeeko-bay-beach-mt": {
+      "water_body": "Flathead Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "the-sandbar-mt": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
     "rice-lake-park-public-swimming-area-nd": {
       "water_body": "Rice Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "beer-bottle-beach-ne": {
+      "water_body": "South Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "cedar-view-beach-ne": {
+      "water_body": "Lake McConaughy",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "cottonmill-swimming-beach-ne": {
+      "water_body": "Cottonmill Swimming Hole",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "divers-bay-beach-ne": {
+      "water_body": "Lake McConaughy",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "east-shore-ne": {
+      "water_body": "Johnson Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "fremont-beach-ne": {
+      "water_body": "Platte River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "hershey-beach-ne": {
+      "water_body": "Sutherland Reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "hole-in-the-wall-beach-ne": {
+      "water_body": "Sutherland Reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "jet-ski-beach-ne": {
+      "water_body": "Platte River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "mallard-beach-ne": {
+      "water_body": "Johnson Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "martin-bay-beach-ne": {
+      "water_body": "Lake McConaughy",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "midland-beach-ne": {
+      "water_body": "Platte River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "north-shore-ne": {
+      "water_body": "Johnson Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "ogallala-beach-ne": {
+      "water_body": "Lake McConaughy",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "paradise-park-beach-ne": {
+      "water_body": "Missouri River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "shoreline-to-reservoir-ne": {
+      "water_body": "private pond and reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sunrise-beach-ne": {
+      "water_body": "Lake Minatare",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "swim-beach-ne": {
+      "water_body": "Harry Strunk Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "waterfront-ne": {
+      "water_body": "Abel Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "yanney-beach-ne": {
+      "water_body": "Tailrace",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "the-beach-at-farmington-lake-nm": {
+      "water_body": "Flora Vista Arroyo",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "ann-marguret-beach-nv": {
+      "water_body": "Lake Mead",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "belsmeir-beach-nv": {
+      "water_body": "Lake Mead",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "boaters-beach-nv": {
+      "water_body": "Lake Tahoe",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "boulder-beach-nv": {
+      "water_body": "Lake Mead",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "boulder-beach-south-nv": {
+      "water_body": "Lake Mead",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "chimney-beach-nv": {
+      "water_body": "Lake Tahoe",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "churchill-beach-nv": {
+      "water_body": "Lahontan Reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "creek-beach-nv": {
+      "water_body": "Lake Tahoe",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "enchanted-beach-nv": {
+      "water_body": "Pyramid Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "engine-beach-nv": {
+      "water_body": "Lake Mead",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "fisherman-s-point-nv": {
+      "water_body": "South Fork Reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "fox-beach-nv": {
+      "water_body": "Pyramid Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "hidden-beach-nv": {
+      "water_body": "Lake Tahoe",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "incline-beach-nv": {
+      "water_body": "Lake Tahoe",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "navy-beach-nv": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "nevada-beach-nv": {
+      "water_body": "Lake Tahoe",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "old-swim-beach-nv": {
+      "water_body": "Virgin River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "round-hill-pines-beach-nv": {
+      "water_body": "Lake Tahoe",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "s-line-reservoir-beach-nv": {
+      "water_body": "S Line Reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sand-harbor-beach-nv": {
+      "water_body": "Lake Tahoe",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sand-harbor-nv": {
+      "water_body": "Lake Tahoe",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "secret-beach-nv": {
+      "water_body": "Lake Tahoe",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "secret-cove-beach-nv": {
+      "water_body": "Lake Tahoe",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "silver-springs-beach-nv": {
+      "water_body": "Lahontan Reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sixmile-beach-nv": {
+      "water_body": "Lahontan Reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "soda-lake-beach-nv": {
+      "water_body": "Carson River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "south-beach-nv": {
+      "water_body": "Washoe Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sportsmans-beach-nv": {
+      "water_body": "Walker Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "virginia-beach-nv": {
+      "water_body": "Lahontan Reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "whale-beach-nv": {
+      "water_body": "Lake Tahoe",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "wizards-beach-nv": {
+      "water_body": "Pyramid Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "alum-creek-beach-oh": {
+      "water_body": "Alum Creek Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "atwood-lake-beach-oh": {
+      "water_body": "Atwood Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "barrier-beach-oh": {
+      "water_body": "Lake Erie",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "beulah-park-beach-oh": {
+      "water_body": "Lake Erie",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "big-bend-swimming-beach-oh": {
+      "water_body": "Lake Vesuvius",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "boater-swim-area-oh": {
+      "water_body": "Atwood Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "boaters-beach-leesville-lake-oh": {
+      "water_body": "Leesville Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "boaters-beach-swim-from-boat-oh": {
+      "water_body": "Atwood Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "burgundy-beach-oh": {
+      "water_body": "Lake Erie",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "caesar-creek-state-park-beach-oh": {
+      "water_body": "Caesar Creek Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "carland-beach-oh": {
+      "water_body": "Lake Erie",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "cedar-point-beach-oh": {
+      "water_body": "Lake Erie",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "chaska-beach-oh": {
+      "water_body": "Lake Erie",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "conneaut-beach-oh": {
+      "water_body": "Lake Erie",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "cowan-lake-public-beach-oh": {
+      "water_body": "Cowan Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "davis-beach-oh": {
+      "water_body": "Apple Valley Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "deleware-avenue-beach-oh": {
+      "water_body": "Lake Erie",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "dog-beach-oh": {
+      "water_body": "Mosquito Creek Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "east-fork-campground-beach-oh": {
+      "water_body": "William H. Harsha Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "east-fork-public-beach-oh": {
+      "water_body": "William H. Harsha Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "edgewater-beach-oh": {
+      "water_body": "Lake Erie",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "erie-beach-oh": {
+      "water_body": "Lake Erie",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "euclid-beach-oh": {
+      "water_body": "Lake Erie",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "fairport-harbor-lakefront-park-oh": {
+      "water_body": "Lake Erie",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "fox-island-beach-oh": {
+      "water_body": "Indian Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "gem-beach-oh": {
+      "water_body": "Lake Erie",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "genoa-swimming-quarry-oh": {
+      "water_body": "Lake Erie",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "huntington-beach-oh": {
+      "water_body": "Lake Erie",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "k-9-coastline-oh": {
+      "water_body": "Lake Erie",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "kelleys-island-state-park-public-beach-oh": {
+      "water_body": "Lake Erie",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "king-beach-oh": {
+      "water_body": "Apple Valley Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lake-cody-oh": {
+      "water_body": "Lake Cody",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lake-lucerne-beach-oh": {
+      "water_body": "Memorial Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lakeside-beach-oh": {
+      "water_body": "Lake Erie",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "lamb-beach-oh": {
+      "water_body": "Lake Erie",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "lime-kiln-beach-oh": {
+      "water_body": "Lake Erie",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "main-beach-oh": {
+      "water_body": "Lake Mohawk",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "main-street-beach-oh": {
+      "water_body": "Lake Erie",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "manila-bay-beach-oh": {
+      "water_body": "Foxs Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "nickel-plate-beach-oh": {
+      "water_body": "Lake Erie",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "north-pond-barrier-beach-oh": {
+      "water_body": "Lake Erie",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "north-swimming-beach-oh": {
+      "water_body": "Lake Erie",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "olander-lake-beach-oh": {
+      "water_body": "Lake Olander",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "peninsula-quarry-oh": {
+      "water_body": "Slipper Run",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "perkins-beach-oh": {
+      "water_body": "Lake Erie",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "port-clinton-public-swimming-beach-oh": {
+      "water_body": "Lake Erie",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "prairie-oaks-dog-beach-oh": {
+      "water_body": "Big Darby Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "punderson-lake-beach-oh": {
+      "water_body": "Stump Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "reservoir-beach-oh": {
+      "water_body": "New Concord Reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "south-beach-oh": {
+      "water_body": "Rocky Fork Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "st-hazards-beach-oh": {
+      "water_body": "Lake Erie",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "stone-beach-oh": {
+      "water_body": "Lake Erie",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "sutton-beach-oh": {
+      "water_body": "Apple Valley Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "swimming-beach-oh": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "timberlake-residents-beach-oh": {
+      "water_body": "Lake Erie",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "turkeyfoot-beach-oh": {
+      "water_body": "Rex Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "villa-angela-beach-oh": {
+      "water_body": "Lake Erie",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "wallace-beach-oh": {
+      "water_body": "Baldwin Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "waterfront-oh": {
+      "water_body": "Swimming Area",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "bluestem-lake-public-beach-ok": {
+      "water_body": "Bluestem Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "cedar-lake-north-shore-ok": {
+      "water_body": "Cedar Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "cedar-lake-sandy-beach-ok": {
+      "water_body": "Cedar Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lake-carlton-ok": {
+      "water_body": "Lake Carlton",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lake-eufala-dam-orv-area-ok": {
+      "water_body": "Eufaula Reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lake-ponca-beach-ok": {
+      "water_body": "West Lake Ponca;East Lake Ponca",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "marina-beach-ok": {
+      "water_body": "Lake Murray",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sunset-beach-day-use-area-ok": {
+      "water_body": "Lake Murray",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sunset-beach-ok": {
+      "water_body": "Lake Murray",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "swim-beach-ok": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "tall-chief-cove-beach-ok": {
+      "water_body": "Skiatook Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "the-artesian-beach-ok": {
+      "water_body": "Wolf Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "willow-beach-ok": {
+      "water_body": "Peggy's Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "6th-avenue-west-beach-wi": {
+      "water_body": "Lake Superior",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "airport-beach-wi": {
+      "water_body": "Lake Onalaska",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "alford-park-beach-wi": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "amery-swimming-beach-wi": {
+      "water_body": "South Twin Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "assembly-park-beach-wi": {
+      "water_body": "Delavan Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "b-b-clarke-beach-wi": {
+      "water_body": "Lake Monona",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "barrier-beach-wi": {
+      "water_body": "Lake Superior",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "bayview-beach-wi": {
+      "water_body": "Lake Superior",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "beach-black-hawk-lake-recreation-area-wi": {
+      "water_body": "Blackhawk Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "beach-potawatomi-state-park-wi": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "bernie-s-beach-wi": {
+      "water_body": "Lake Monona",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "black-river-beach-wi": {
+      "water_body": "Catgut Slough",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "boat-landing-beach-wi": {
+      "water_body": "Shay Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "boating-beach-wi": {
+      "water_body": "Castle Rock Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "bradford-beach-wi": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "brandy-beach-wi": {
+      "water_body": "Snake Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "brittingham-beach-wi": {
+      "water_body": "Lake Monona",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "broad-street-beach-wi": {
+      "water_body": "Lake Superior",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "brown-s-beach-wi": {
+      "water_body": "Lake Mallalieu",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "browns-beach-wi": {
+      "water_body": "Lake Mallalieu",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "buffalo-bay-beach-wi": {
+      "water_body": "Lake Superior",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "camp-st-croix-beach-wi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "campground-beach-wi": {
+      "water_body": "Coon Fork Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "casper-road-beach-wi": {
+      "water_body": "Lake Superior",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "chippy-s-sports-beach-wi": {
+      "water_body": "Round Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "circle-bench-wi": {
+      "water_body": "Edgewood Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "city-beach-wi": {
+      "water_body": "Lake Chetek",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "corny-beach-wi": {
+      "water_body": "Lake Superior",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "cox-hollow-beach-wi": {
+      "water_body": "Cox Hollow Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "crescent-beach-wi": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "crystal-beach-wi": {
+      "water_body": "Crystal Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "deep-swimming-area-wi": {
+      "water_body": "Phantom Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "dunlap-reef-wi": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "egg-harbor-beach-wi": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "eichelman-beach-wi": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "esther-beach-wi": {
+      "water_body": "Lake Monona",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "family-camp-beach-wi": {
+      "water_body": "Swift Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "fireman-s-beach-wi": {
+      "water_body": "Goose Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "fish-creek-public-beach-wi": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "frenchtown-beach-wi": {
+      "water_body": "Bullhead Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "friendly-valley-beach-wi": {
+      "water_body": "Lake Superior",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "friendship-beach-wi": {
+      "water_body": "Green Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "frost-woods-beach-wi": {
+      "water_body": "Upper Mud Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "garmisch-beach-wi": {
+      "water_body": "Namekagon Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "general-public-beach-wi": {
+      "water_body": "Coon Fork Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "gislason-beach-wi": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "grant-park-beach-wi": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "harbor-park-beach-wi": {
+      "water_body": "Lake Superior",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "hodag-beach-wi": {
+      "water_body": "Thunder Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "indianola-beach-wi": {
+      "water_body": "Lake Mendota",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "james-madison-beach-wi": {
+      "water_body": "Lake Monona",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "jersey-valley-county-park-beach-wi": {
+      "water_body": "Jersey Valley Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "joni-s-beach-wi": {
+      "water_body": "Lake Superior",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "kreher-park-beach-wi": {
+      "water_body": "Lake Superior",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "la-follette-beach-wi": {
+      "water_body": "Lake Kegonsa",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lake-o-the-dalles-beach-wi": {
+      "water_body": "Lake O' the Dalles",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "landing-9-wi": {
+      "water_body": "Caldron Falls Reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "left-foot-lake-beach-wi": {
+      "water_body": "Left Foot Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lions-beach-wi": {
+      "water_body": "Kiwanis Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "little-sand-bay-beach-wi": {
+      "water_body": "Lake Superior",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "lost-creek-beach-wi": {
+      "water_body": "Lake Superior",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "lunch-beach-wi": {
+      "water_body": "Lake Superior",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "mckinley-beach-wi": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "meyers-beach-wi": {
+      "water_body": "Lake Superior",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "mission-beach-wi": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "neshotah-beach-wi": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "nicolet-bay-beach-wi": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "north-beach-wi": {
+      "water_body": "Quarry Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "north-point-marina-beach-wi": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "north-shore-beach-wi": {
+      "water_body": "Spirit Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "north-side-municipal-beach-wi": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "okee-beach-wi": {
+      "water_body": "Lake Wisconsin",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "olbrich-beach-wi": {
+      "water_body": "Lake Monona",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "olin-beach-wi": {
+      "water_body": "West Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "palmyra-beach-wi": {
+      "water_body": "Spring Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "park-road-beach-wi": {
+      "water_body": "Lake Dubay",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "pebble-beach-wi": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "pembles-beach-wi": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "pennoyer-beach-wi": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "pet-swim-area-wi": {
+      "water_body": "Lake Kegonsa",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "pettibone-beach-wi": {
+      "water_body": "Mississippi River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "pike-lake-beach-wi": {
+      "water_body": "Pike Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "plamann-lake-wi": {
+      "water_body": "Plamann Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "public-beach-wi": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "riviera-beach-wi": {
+      "water_body": "Lake Geneva 36",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "rock-dam-beach-wi": {
+      "water_body": "Rock Dam Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sara-park-beach-wi": {
+      "water_body": "Lake Mohawksin",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "schluter-beach-wi": {
+      "water_body": "Lake Monona",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "schoolhouse-beach-wi": {
+      "water_body": "Lake Superior",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "selner-park-public-swimming-beach-wi": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "shallow-swimming-area-wi": {
+      "water_body": "Phantom Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "siebkens-beach-and-peir-wi": {
+      "water_body": "Elkhart Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "silver-lake-beach-wi": {
+      "water_body": "Silver Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "simmons-island-beach-wi": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "sioux-beach-wi": {
+      "water_body": "Long Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sister-bay-beach-wi": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "south-beach-wi": {
+      "water_body": "Quarry Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "south-shore-beach-wi": {
+      "water_body": "Spirit Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "spirit-flowage-beach-wi": {
+      "water_body": "Lake Mohawksin",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "spring-harbor-beach-wi": {
+      "water_body": "Lake Mendota",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "state-park-beach-wi": {
+      "water_body": "Chippewa River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sunset-beach-park-wi": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "sunset-beach-wi": {
+      "water_body": "Fox River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sunset-park-beach-wi": {
+      "water_body": "Bradley Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "swimming-beach-wi": {
+      "water_body": "Castle Rock Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "torpy-park-beach-wi": {
+      "water_body": "Minocqua Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "troll-beach-wi": {
+      "water_body": "Dunkirk Millpond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "twin-lakes-park-beach-wi": {
+      "water_body": "Lake Mary",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "twin-valley-beach-wi": {
+      "water_body": "Twin Valley Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "vilas-park-beach-wi": {
+      "water_body": "Wetland Koi",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "village-of-ephraim-public-beach-wi": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "wakanda-beach-wi": {
+      "water_body": "Lake Menomin",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "warner-park-beach-wi": {
+      "water_body": "Lake Mendota",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "white-sands-beach-wi": {
+      "water_body": "Lake Wazeecha",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "whitewater-beach-wi": {
+      "water_body": "Rice Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "willow-beach-wi": {
+      "water_body": "Lake Mendota",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "woods-lake-beach-wi": {
+      "water_body": "Woods Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "wyalusing-beach-wi": {
+      "water_body": "Mississippi River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "ymca-beach-wi": {
+      "water_body": "Lake Michigan",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "zoo-beach-wi": {
+      "water_body": "A.B. Modine Pond",
       "type": "lake",
       "great_lake": false,
       "reason": "ok"

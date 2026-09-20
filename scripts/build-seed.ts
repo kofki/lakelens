@@ -680,6 +680,18 @@ export function loadSeedData(root: string = REPO_ROOT, opts: LoadOptions = {}): 
     applyWaterVerdict(applyOsmDetails(row, osmDetails[row.slug]), waterBodies[row.slug]),
   );
 
+  /**
+   * A credit for a park that is not in the seed is an orphan, not a mistake in the photo
+   * file. The water check drops rows after the photo harvest has already found pictures for
+   * them, so a credit can outlive its park by one build.
+   */
+  const publishedSlugs = new Set(parks.map((row) => row.slug));
+  const photosForPublishedParks = Object.fromEntries(
+    Object.entries(photos).filter(([photoSlug]) => publishedSlugs.has(photoSlug)),
+  );
+  const orphanedPhotos = Object.keys(photos).length - Object.keys(photosForPublishedParks).length;
+  if (orphanedPhotos) warnings.push(`photos: ${orphanedPhotos} credit(s) ignored for parks not in the seed`);
+
   // Merge accessibility: lower tiers never override a higher tier's record.
   const accessibility: Record<string, AccessibilitySeed> = { ...accessibilityBasic, ...accessibilityExtra, ...accessibilityDeep };
 
@@ -696,7 +708,7 @@ export function loadSeedData(root: string = REPO_ROOT, opts: LoadOptions = {}): 
     sampleReviews,
     events,
     holidays,
-    photos,
+    photos: photosForPublishedParks,
     gauges,
     warnings,
   };
