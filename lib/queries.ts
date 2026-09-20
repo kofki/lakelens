@@ -159,6 +159,27 @@ function assemble(park: Park, world: World, dayContext: DayContext, now: Date): 
   };
 }
 
+/**
+ * Parameters any list/map surface actually renders (conditionStatItems + describeFlow).
+ * Everything else in a USGS payload is dead weight in the RSC payload.
+ */
+const LIST_USGS_PARAMETERS = new Set(["00010", "00060", "00065", "63160"]);
+
+/**
+ * Shrink a ParkWithStatus to what the map and list screens draw.
+ *
+ * The map page serialises all 84 parks twice (HTML + RSC payload), and a deep park's
+ * NWS snapshot carries a 156-entry hourly grid plus a 14-day outlook that no list or
+ * map surface ever reads. Dropping those — and the gauge parameters we don't chart —
+ * is invisible on screen and removes most of the document weight. Prediction has
+ * already run against the full payload by the time this is applied.
+ */
+function slimForList(item: ParkWithStatus): ParkWithStatus {
+  const weather = item.weather ? { ...item.weather, hourly: [], daily: [] } : null;
+  const usgs = item.usgs ? { ...item.usgs, readings: item.usgs.readings.filter((r) => LIST_USGS_PARAMETERS.has(r.parameter)) } : null;
+  return { ...item, weather, usgs };
+}
+
 function assembleAll(world: World, now: Date): ParkWithStatus[] {
   const dayContext = getDayContext(now, world.holidays, world.longWeekends, loadEvents());
   return world.parks.map((park) => assemble(park, world, dayContext, now));
@@ -169,7 +190,7 @@ export async function getParksWithStatus(now: Date = new Date()): Promise<ParkWi
   try {
     const db = createPublicClient();
     const world = await loadWorld(db, now);
-    return assembleAll(world, now);
+    return assembleAll(world, now).map(slimForList);
   } catch (err) {
     warn("getParksWithStatus", err);
     return [];
@@ -187,6 +208,8 @@ export async function getParkBundle(slug: string, now: Date = new Date()): Promi
 
     const since = new Date(now.getTime() - BUNDLE_REPORTS_WINDOW_MS).toISOString();
     const [lotsR, reportsR] = await Promise.all([
+      // Every park's lots, not just this one: suggestBackups summarises parking for the
+      // backup candidates too.
       db.from("parking_lots").select("*").order("is_overflow").order("name"),
       db
         .from("reports")

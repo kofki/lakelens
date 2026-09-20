@@ -21,7 +21,8 @@ const DESCRIPTION =
 
 function metadataBase(): URL | undefined {
   try {
-    return new URL(process.env.NEXT_PUBLIC_APP_URL ?? "https://lakelens.vercel.app");
+    // lakelens.vercel.app belongs to someone else; this project deploys to the long alias.
+    return new URL(process.env.NEXT_PUBLIC_APP_URL ?? "https://lakelens-kenzo-fukudas-projects.vercel.app");
   } catch {
     return undefined;
   }
@@ -39,6 +40,11 @@ export const metadata: Metadata = {
     siteName: "LakeLens",
     title: "LakeLens",
     description: DESCRIPTION,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "LakeLens",
+    description: "Which Florida springs are open right now, which are likely to fill, and where else you can get in the water.",
   },
 };
 

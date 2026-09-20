@@ -18,6 +18,7 @@ import { ReportsSection } from "@/components/park/ReportsSection";
 import { BackupSuggestions } from "@/components/park/BackupSuggestions";
 import { ReportButton } from "@/components/report/ReportButton";
 import { SiteFooter } from "@/components/nav/SiteFooter";
+import { ParkJsonLd } from "@/components/park/ParkJsonLd";
 
 export const revalidate = 60;
 
@@ -42,7 +43,12 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
       description:
         bundle.park.description ??
         `Status, closure estimate, parking, accessibility and safety information for ${bundle.park.name}.`,
-      openGraph: bundle.park.photo_url ? { images: [bundle.park.photo_url] } : undefined,
+      alternates: { canonical: `/park/${slug}` },
+      openGraph: {
+        type: "article",
+        url: `/park/${slug}`,
+        ...(bundle.park.photo_url ? { images: [bundle.park.photo_url] } : {}),
+      },
     };
   } catch {
     return { title: "Park" };
@@ -79,8 +85,11 @@ export default async function ParkPage({ params }: Params) {
     { id: "reports", label: "Reports" },
   ];
 
+  const origin = process.env.NEXT_PUBLIC_APP_URL ?? "https://lakelens-kenzo-fukudas-projects.vercel.app";
+
   return (
     <>
+      <ParkJsonLd park={park} status={bundle.status} origin={origin} />
       <article className="mx-auto w-full max-w-[1100px] px-4 pb-24 md:px-6 lg:pb-12">
         <Hero park={park} status={bundle.status} />
 

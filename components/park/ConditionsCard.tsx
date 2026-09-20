@@ -47,7 +47,11 @@ export function ConditionsCard({ bundle, now }: ConditionsCardProps) {
   const temp = describeWaterTemp(usgs, park);
   const discharge = pickReading(readings, "00060", sites);
   const level = pickReading(readings, "63160", sites) ?? pickReading(readings, "00065", sites);
-  const tempReading = pickReading(readings, "00010", sites);
+  // USGS "latest" can serve a months-old temperature from a retired sensor next to a
+  // current gauge height, so a stale thermistor counts as no reading at all here:
+  // the tile falls back to the typical spring value and NOAA may take over.
+  const tempReadingAny = pickReading(readings, "00010", sites);
+  const tempReading = tempReadingAny && !tempReadingAny.stale ? tempReadingAny : null;
   const usesRiverGauge = !!park.river_gauge_site_id && [discharge, level, tempReading].some((r) => r?.site === park.river_gauge_site_id);
 
   // Coastal parks (beaches, coastal lakes) have no USGS gauge: their water data is a NOAA CO-OPS
@@ -151,10 +155,14 @@ export function ConditionsCard({ bundle, now }: ConditionsCardProps) {
             tone={temp.typical ? "neutral" : "good"}
             footnote={
               temp.typical
-                ? "Typical value — no live reading"
+                ? tempReadingAny
+                  ? `Typical value — the gauge last reported ${relativeTime(tempReadingAny.time, now)}`
+                  : "Typical value — no live reading"
                 : tempReading
-                  ? `Updated ${relativeTime(tempReading.time, now)}${tempReading.stale ? " · may be out of date" : ""}`
-                  : undefined
+                  ? `Updated ${relativeTime(tempReading.time, now)}`
+                  : tempReadingAny
+                    ? `No live reading — the gauge last reported ${relativeTime(tempReadingAny.time, now)}`
+                    : undefined
             }
           />
         )}

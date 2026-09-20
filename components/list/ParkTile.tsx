@@ -34,6 +34,7 @@ export function ParkTile({ item }: ParkTileProps) {
     >
       <ParkPhoto
         src={park.photo_url}
+        variant="tile"
         className="absolute inset-0 -z-10 size-full transition-transform duration-500 group-hover:scale-105"
       />
 

@@ -34,6 +34,7 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "How LakeLens estimates closures, how crowd reports work, what is verified, where the data comes from, and who built it.",
+  alternates: { canonical: "/about" },
 };
 
 const TOC: { id: string; label: string }[] = [

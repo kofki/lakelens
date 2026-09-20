@@ -19,6 +19,20 @@ function findReading(usgs: UsgsPayload | null, parameter: UsgsReading["parameter
   return matches[0];
 }
 
+/**
+ * Same as findReading, but refuses a reading the ingester marked stale.
+ *
+ * USGS `latest-continuous` has no recency contract: it returns the last value a sensor
+ * ever produced, so a retired thermistor keeps serving a temperature from last November
+ * next to a gauge height from ten minutes ago. Showing that as today's water is the one
+ * failure mode that can actually hurt someone (58 °F on a 90 °F day), so anything stale
+ * is treated as "no live reading" and the honest typical value is used instead.
+ */
+function findFreshReading(usgs: UsgsPayload | null, parameter: UsgsReading["parameter"]): UsgsReading | null {
+  const r = findReading(usgs, parameter);
+  return r && !r.stale ? r : null;
+}
+
 function gaugeNote(park: Park): string {
   const km = park.gauge_distance_km;
   if (typeof km === "number" && Number.isFinite(km) && km > 0.5) {
@@ -62,12 +76,11 @@ function toF(reading: UsgsReading): number {
  * typical 72 °F and flag `typical: true` so the UI labels it "Typical", not measured.
  */
 export function describeWaterTemp(usgs: UsgsPayload | null, park: Park): { valueF: number | null; sentence: string; typical: boolean } {
-  const temp = findReading(usgs, "00010");
+  const temp = findFreshReading(usgs, "00010");
   if (temp) {
     const valueF = Math.round(toF(temp));
-    const stale = temp.stale ? " (reading is more than 6 hours old)" : "";
     const cool = valueF <= 74 ? " — cool year-round spring water" : "";
-    return { valueF, sentence: `Water is ${valueF}°F${cool}${stale}`, typical: false };
+    return { valueF, sentence: `Water is ${valueF}°F${cool}`, typical: false };
   }
   if (park.type === "spring") {
     return {

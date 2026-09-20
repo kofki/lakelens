@@ -73,9 +73,15 @@ describe("plain language", () => {
     const lake = describeWaterTemp(null, makePark({ type: "lake" }));
     expect(lake.valueF).toBeNull();
     expect(lake.typical).toBe(false);
-    const stale = describeWaterTemp(usgs({ readings: [{ site: "x", parameter: "00010", value: 80, unit: "degF", time: "2026-09-19T01:00:00Z", stale: true, provisional: false }] }), makePark());
-    expect(stale.valueF).toBe(80);
-    expect(stale.sentence).toContain("more than 6 hours old");
+    // A stale reading is not a reading. USGS "latest" keeps serving the last value a
+    // retired sensor ever produced, so a spring falls back to the typical value rather
+    // than presenting months-old water as today's.
+    const staleUsgs = usgs({ readings: [{ site: "x", parameter: "00010", value: 80, unit: "degF", time: "2026-09-19T01:00:00Z", stale: true, provisional: false }] });
+    const stale = describeWaterTemp(staleUsgs, makePark());
+    expect(stale).toEqual({ valueF: 72, sentence: "Typically about 72°F year-round (no live reading)", typical: true });
+    const staleLake = describeWaterTemp(staleUsgs, makePark({ type: "lake" }));
+    expect(staleLake.valueF).toBeNull();
+    expect(staleLake.sentence).toBe("Water temperature not available");
   });
 
   it("describeWeather / wmoToText", () => {
