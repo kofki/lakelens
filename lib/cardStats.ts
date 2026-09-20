@@ -34,6 +34,26 @@ export function cardStatsFor(item: ParkWithStatus): CardStat[] {
   const quality = item.forecast?.waterQuality ?? null;
 
   const out: CardStat[] = [];
+
+  /**
+   * Water first.
+   *
+   * Air temperature led the strip, which is the same hierarchy inversion weather apps get
+   * criticised for: nobody swims in the air. The water is the reason for the trip and the
+   * one reading that changes whether you get in.
+   */
+  if (waterF != null) {
+    const modelled = temp.typical && !noaaTemp;
+    out.push({
+      kind: "water",
+      label: "Water",
+      // A tilde is the cheapest honest marker there is: one character, no layout cost, and
+      // a near-universal convention for "about". It replaces the old "(typical)" suffix,
+      // which spent a whole label saying what "~" says in a glyph.
+      value: `${modelled ? "~" : ""}${waterF}°F`,
+    });
+  }
+
   if (typeof airF === "number" && Number.isFinite(airF)) {
     out.push({ kind: "air", label: feels != null ? "Feels like" : "Air", value: `${Math.round(airF)}°F` });
   }
@@ -45,13 +65,6 @@ export function cardStatsFor(item: ParkWithStatus): CardStat[] {
     out.push({ kind: "uv", label: "UV", value: String(Math.round(uv)) });
   } else if (quality) {
     out.push({ kind: "quality", label: "Water quality", value: quality.label });
-  }
-  if (waterF != null) {
-    out.push({
-      kind: "water",
-      label: temp.typical && !noaaTemp ? "Water (typical)" : "Water",
-      value: `${waterF}°F`,
-    });
   }
   return out.slice(0, 3);
 }

@@ -82,15 +82,44 @@ export const MAP_ATTRIBUTION = "OpenFreeMap © OpenMapTiles Data from OpenStreet
  * Brand recolour applied once the style has loaded. Layer ids come from the positron
  * style; each is guarded with getLayer() so other styles simply skip what they lack.
  */
+/**
+ * Recolouring the basemap so the water is the subject.
+ *
+ * The base style is Positron, a light-grey cartography where water is a pale wash behind
+ * roads and buildings. That is the right default for a street map and the wrong one here:
+ * this is a map of lakes, springs and rivers, and the water was the faintest thing on it.
+ *
+ * So water gets a real, saturated lagoon tint, rivers get a heavier line so they read at
+ * low zoom, and the land is pulled toward a quiet sage that sits back. Water labels are
+ * turned up too, because on this map the name of the lake is a destination, not scenery.
+ *
+ * The tint stays light enough for a white marker with a coloured edge to keep its contrast
+ * when it sits on open water, which is where most of these markers are.
+ */
 const BRAND_PAINT: ReadonlyArray<readonly [layerId: string, property: string, value: string | number]> = [
-  ["background", "background-color", "#f5f3ea"], // ivory (--color-cream)
-  ["water", "fill-color", "#cfeff2"], // spring water
-  ["waterway", "line-color", "#7fd0d8"],
-  ["park", "fill-color", "#dfe9d0"], // sage parks
-  ["park", "fill-opacity", 0.9],
-  ["landcover_wood", "fill-color", "#cfe0bf"], // sage wood
-  ["landcover_grass", "fill-color", "#e3ebd3"],
+  ["background", "background-color", "#f2f0e6"], // ivory, a shade quieter than the page
+  ["water", "fill-color", "#a7dde5"], // lagoon: the most confident colour on the map
+  ["waterway", "line-color", "#5cc3cd"],
+  ["waterway", "line-width", 1.6],
+  // Land recedes so the water reads first.
+  ["park", "fill-color", "#e2ebd6"],
+  ["park", "fill-opacity", 0.85],
+  ["landcover_wood", "fill-color", "#d8e4cb"],
+  ["landuse_residential", "fill-color", "#eceade"],
+  // The name of the water is a destination here, not scenery. Positron splits these into
+  // three layers; naming the wrong one fails silently, so all three are listed.
+  ["water_name_point_label", "text-color", "#0f6f76"],
+  ["water_name_point_label", "text-halo-color", "#f2f0e6"],
+  ["water_name_point_label", "text-halo-width", 1.4],
+  ["water_name_line_label", "text-color", "#0f6f76"],
+  ["water_name_line_label", "text-halo-color", "#f2f0e6"],
+  ["water_name_line_label", "text-halo-width", 1.4],
+  ["waterway_line_label", "text-color", "#0f6f76"],
+  ["waterway_line_label", "text-halo-color", "#f2f0e6"],
 ];
+
+/** Layer ids BRAND_PAINT touches, so a test can check them against the live style. */
+export const BRAND_PAINT_LAYERS: readonly string[] = [...new Set(BRAND_PAINT.map(([id]) => id))];
 
 export function applyBrandPaint(map: MaplibreMap): void {
   for (const [layerId, property, value] of BRAND_PAINT) {
