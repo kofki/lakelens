@@ -14,6 +14,8 @@ import { getDayContext } from "@/lib/holidays";
 import { predictClosure } from "@/lib/prediction";
 import { summarizeReports } from "@/lib/reportStatus";
 import { getParkStatus } from "@/lib/parkStatus";
+import { cardStatsFor } from "@/lib/cardStats";
+import { compactPhotoUrl } from "@/lib/photoUrl";
 import { suggestBackups } from "@/lib/backups";
 import {
   DEFAULT_FILTERS,
@@ -348,7 +350,6 @@ function assemble(park: Park, world: World, dayContext: DayContext, now: Date): 
  * Parameters a list or map card actually renders. Discharge (00060) left when flow stopped
  * being a headline stat; it is still ingested for the high-flow safety warning.
  */
-const LIST_USGS_PARAMETERS = new Set(["00010", "00065", "63160"]);
 
 /**
  * Shrink a ParkWithStatus to what the map and list screens draw.
@@ -396,57 +397,14 @@ function slimPark(park: Park): Park {
   for (const key of LIST_PARK_FIELDS) {
     (out as Record<string, unknown>)[key] = park[key];
   }
+  // A Commons thumbnail URL is 210 characters with the file name in it twice, and it was
+  // the largest single item in the document. ParkPhoto puts it back together.
+  out.photo_url = compactPhotoUrl(park.photo_url);
   return out as Park;
 }
 
 function slimForList(item: ParkWithStatus): ParkWithStatus {
-  /**
-   * A card reads exactly one thing from the weather: the current temperature.
-   *
-   * Everything else on the row was crossing the wire for all 2,100 parks and being thrown
-   * away: a full NWS icon URL, the forecast sentence, wind, humidity, the day's high and
-   * low, the provider and two timestamps. Emptying `hourly` and `daily` was not enough,
-   * because the rest of the object is most of its weight.
-   */
-  const weather = item.weather
-    ? {
-        ...item.weather,
-        hourly: [],
-        daily: [],
-        // The shape is fixed by WeatherPayload, so the unread fields are emptied rather
-        // than removed. An empty string costs two bytes; a forecast sentence costs forty.
-        current: {
-          ...item.weather.current,
-          shortForecast: "",
-          windMph: null,
-          humidity: null,
-          icon: null,
-        },
-      }
-    : null;
-  const usgs = item.usgs ? { ...item.usgs, readings: item.usgs.readings.filter((r) => LIST_USGS_PARAMETERS.has(r.parameter)) } : null;
-  // A card draws at most three stats, so everything else in the forecast row is dead
-  // weight in a document that serialises every park twice. Only the fields
-  // conditionStatItems actually reads survive the trip to the list and the map.
-  const f = item.forecast;
-  const forecast: ParkForecast | null = f
-    ? {
-        forecastAt: "",
-        nowTempF: f.nowTempF,
-        nowFeelsLikeF: f.nowFeelsLikeF,
-        nowUv: f.nowUv,
-        nowHumidity: null,
-        nowWindMph: null,
-        nowThunderProb: null,
-        nowShortForecast: null,
-        uvPeak: f.uvPeak,
-        uvPeakHour: null,
-        hourly: null,
-        daily: [],
-        waterQuality: f.waterQuality,
-        sources: {},
-      }
-    : null;
+
   // A card draws one star, the mean and the count. The 1-5 histogram is only ever shown
   // on the park page, so it does not need to cross to the list or the map.
   const reviewStats = item.reviewStats
@@ -455,9 +413,17 @@ function slimForList(item: ParkWithStatus): ParkWithStatus {
   return {
     ...item,
     park: slimPark(item.park),
-    weather,
-    usgs,
-    forecast,
+    // Worked out here so the readings behind it never cross the wire. Everything they were
+    // derived from is dropped: at 2,100 parks the USGS, NOAA, weather and forecast objects
+    // were most of the document and a card renders three short strings from them.
+    cardStats: cardStatsFor(item),
+    weather: null,
+    weatherFetchedAt: null,
+    usgs: null,
+    usgsFetchedAt: null,
+    noaa: null,
+    noaaFetchedAt: null,
+    forecast: null,
     reviewStats,
     // The prediction object is only ever drawn on the park page, and at 616 parks its
     // reasons array alone is a meaningful share of the document. The status it produced

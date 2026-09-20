@@ -434,6 +434,11 @@ export interface Filters {
 export const DEFAULT_FILTERS: Filters = { accessibleEntry: false, guardedOnly: false, state: null };
 
 export interface ParkWithStatus {
+  /**
+   * The card's stat strip, precomputed server-side. Present on list and map payloads,
+   * absent on the park page, which has the full readings and draws more than three.
+   */
+  cardStats?: import("./cardStats").CardStat[];
   park: Park;
   status: ParkStatus;
   prediction: Prediction | null;

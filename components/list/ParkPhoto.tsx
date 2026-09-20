@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Waves } from "lucide-react";
 import { cn } from "@/components/ui/cn";
 import { canOptimizeImage } from "@/components/park/format";
+import { expandPhotoUrl } from "@/lib/photoUrl";
 
 export interface ParkPhotoProps {
   src: string | null;
@@ -24,7 +25,9 @@ const VARIANTS = {
 } as const;
 
 /** Park photo or a brand-coloured placeholder. */
-export function ParkPhoto({ src, alt = "", className, variant = "thumb" }: ParkPhotoProps) {
+export function ParkPhoto({ src: rawSrc, alt = "", className, variant = "thumb" }: ParkPhotoProps) {
+  // List and map payloads carry Commons thumbnails in a compact form; see lib/photoUrl.ts.
+  const src = expandPhotoUrl(rawSrc);
   if (src) {
     const { width, height, sizes } = VARIANTS[variant];
     return (
