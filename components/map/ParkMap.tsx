@@ -169,12 +169,6 @@ function ParkMapInner({
     }
   }, []);
 
-  // A style swap (the OpenFreeMap fallback) rebuilds every source, so the pins we are
-  // holding belong to a source that no longer exists.
-  useEffect(() => {
-    setPins([]);
-  }, [styleUrl]);
-
   /**
    * Clicking a bubble zooms to the point where it breaks apart, rather than a fixed step.
    * A fixed step leaves dense clusters intact and needs three or four more taps.
@@ -271,6 +265,9 @@ function ParkMapInner({
       if (/fetch|style|source|tile|network/i.test(message)) sourceErrors.current += 1;
       if (sourceErrors.current >= 2 && styleUrl === MAP_STYLE_URL && FALLBACK_MAP_STYLE_URL !== MAP_STYLE_URL) {
         setStyleUrl(FALLBACK_MAP_STYLE_URL);
+        // The new style rebuilds every source, so the pins we are holding describe one that
+        // no longer exists. They come back on the next idle, once its tiles are built.
+        setPins([]);
         sourceErrors.current = 0;
         return;
       }
