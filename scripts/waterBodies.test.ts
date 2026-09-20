@@ -121,3 +121,38 @@ describe("probeFrom", () => {
     expect(probeFrom({ slug: "x", lat: 0, lng: 0 }, [big, small, river])).toMatchObject({ lakes: [], rivers: [], names: [] });
   });
 });
+
+describe("coastline", () => {
+  const pond: WaterFeature = { name: "Coastal Pond", kind: "lake", bbox: [36.9, -122.05, 36.91, -122.04] };
+  const shore = (span: number): WaterFeature => ({
+    name: "",
+    kind: "coastline",
+    bbox: [36.9, -122.05, 36.9 + span, -122.05 + span],
+  });
+  const point = { slug: "x", lat: 36.905, lng: -122.045 };
+
+  it("is only asked for where there is salt water", () => {
+    expect(buildStateWaterQuery("KS")).not.toContain("coastline");
+    expect(buildStateWaterQuery("CA", true)).toContain('way["natural"="coastline"]');
+  });
+
+  it("reads an unnamed coastline way, which a named-only parse would drop", () => {
+    const features = parseWaterFeatures([
+      { type: "way", id: 1, tags: { natural: "coastline" }, bounds: { minlat: 1, minlon: 2, maxlat: 3, maxlon: 4 } },
+    ]);
+    expect(features).toEqual([{ name: "", kind: "coastline", bbox: [1, 2, 3, 4] }]);
+  });
+
+  it("rejects a beach where a short coastline way puts the sea right there", () => {
+    const probe = probeFrom(point, [pond, shore(0.01)]);
+    expect(probe.coastline).toBe(true);
+    expect(classify(probe).water_body).toBeNull();
+  });
+
+  it("ignores a coastline way whose box spans half a state", () => {
+    // Otherwise one long way rejects every inland lake inside its box.
+    const probe = probeFrom(point, [pond, shore(2)]);
+    expect(probe.coastline).toBe(false);
+    expect(classify(probe).water_body).toBe("Coastal Pond");
+  });
+});

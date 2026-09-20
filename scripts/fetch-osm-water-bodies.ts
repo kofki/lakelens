@@ -173,13 +173,18 @@ interface OverpassElement {
 
 export interface WaterFeature {
   name: string;
-  kind: "lake" | "river";
+  kind: "lake" | "river" | "coastline";
   /** [south, west, north, east]. A node feature gets a degenerate box at its point. */
   bbox: [number, number, number, number];
 }
 
-/** Every named lake and river in one state, with boxes rather than geometry. */
-export function buildStateWaterQuery(state: string): string {
+/**
+ * Every named lake and river in one state, with boxes rather than geometry.
+ *
+ * `withCoastline` adds the shoreline, which is only asked for where there is salt water:
+ * it is pure cost in Kansas, and the single most important fact in California.
+ */
+export function buildStateWaterQuery(state: string, withCoastline = false): string {
   const lakes = `["water"~"^(${LAKE_KINDS.join("|")})$"]`;
   const rivers = `["waterway"~"^(${RIVER_WAYS.join("|")})$"]`;
   return [
@@ -189,6 +194,7 @@ export function buildStateWaterQuery(state: string): string {
     `  nwr["natural"="water"]["name"]${lakes}(area.a);`,
     // Ways only. A relation for a long river has a box the size of the state.
     `  way["name"]${rivers}(area.a);`,
+    ...(withCoastline ? [`  way["natural"="coastline"](area.a);`] : []),
     ");",
     "out ids tags bb;",
   ].join("\n");
@@ -198,6 +204,14 @@ export function parseWaterFeatures(elements: OverpassElement[]): WaterFeature[] 
   const out: WaterFeature[] = [];
   for (const el of elements ?? []) {
     const tags = el.tags ?? {};
+    // Coastline ways are almost all unnamed, and their name is irrelevant: what matters is
+    // that the sea is here.
+    if (tags.natural === "coastline") {
+      if (el.bounds) {
+        out.push({ name: "", kind: "coastline", bbox: [el.bounds.minlat, el.bounds.minlon, el.bounds.maxlat, el.bounds.maxlon] });
+      }
+      continue;
+    }
     const name = (tags.name ?? "").trim();
     if (!name) continue;
     const kind: WaterFeature["kind"] = tags.waterway ? "river" : "lake";
@@ -238,20 +252,32 @@ function boxSize(bbox: WaterFeature["bbox"]): number {
  * the three ponds in Grant Park: the nearest thing that actually contains the point is the
  * smallest one that does.
  */
+/**
+ * Above this, a coastline way's box says nothing useful.
+ *
+ * OSM splits the shoreline into ways of wildly different lengths. A short one has a tight
+ * box and means the sea really is at this point; a long one can span half a state and
+ * would reject every inland lake inside it. Roughly 0.05 degrees is 5 km.
+ */
+export const COASTLINE_MAX_BOX_DEG = 0.05;
+
 export function probeFrom(point: Point, features: WaterFeature[], padM = PAD_M): WaterProbe {
   const hits = features
     .filter((f) => contains(f.bbox, point, padM))
     .sort((a, b) => boxSize(a.bbox) - boxSize(b.bbox));
   const lakes = hits.filter((f) => f.kind === "lake").map((f) => f.name);
   const rivers = hits.filter((f) => f.kind === "river").map((f) => f.name);
+  const coastline = hits.some(
+    (f) =>
+      f.kind === "coastline" &&
+      f.bbox[2] - f.bbox[0] <= COASTLINE_MAX_BOX_DEG &&
+      f.bbox[3] - f.bbox[1] <= COASTLINE_MAX_BOX_DEG,
+  );
   return {
     lakes: [...new Set(lakes)],
     rivers: [...new Set(rivers)],
     names: [...new Set([...lakes, ...rivers])],
-    // A statewide query cannot see the coastline cheaply, and every state harvested so far
-    // is landlocked or borders only a Great Lake. This has to be filled in before a coastal
-    // state is harvested; until then `lakes` being empty is what rejects an ocean beach.
-    coastline: false,
+    coastline,
     spring: false,
   };
 }
@@ -285,8 +311,20 @@ async function post(query: string): Promise<OverpassElement[]> {
   throw new Error(`Overpass refused the query (${lastError})`);
 }
 
+/**
+ * States where the shoreline has to be asked for.
+ *
+ * Everything not in NO_SALT_COAST_STATES. Kept as its own list here so this script does not
+ * import the harvester just to learn one fact.
+ */
+const SALT_COAST_STATES = new Set([
+  "AK", "AL", "CA", "CT", "DC", "DE", "FL", "GA", "HI", "LA", "MA", "MD", "ME", "MS", "NC",
+  "NH", "NJ", "NY", "OR", "RI", "SC", "TX", "VA", "WA",
+]);
+
 async function fetchState(state: string): Promise<WaterFeature[]> {
-  const cachePath = join(CACHE_DIR, `osm-water-${state}.json`);
+  const withCoastline = SALT_COAST_STATES.has(state);
+  const cachePath = join(CACHE_DIR, `osm-water-${state}${withCoastline ? "-coast" : ""}.json`);
   if (!REFRESH) {
     const cached = readJson<{ features: WaterFeature[] }>(cachePath);
     if (cached?.features) {
@@ -294,7 +332,7 @@ async function fetchState(state: string): Promise<WaterFeature[]> {
       return cached.features;
     }
   }
-  const features = parseWaterFeatures(await post(buildStateWaterQuery(state)));
+  const features = parseWaterFeatures(await post(buildStateWaterQuery(state, withCoastline)));
   writeJson(cachePath, { features });
   log(`${state}: ${features.length} water features (network)`);
   return features;

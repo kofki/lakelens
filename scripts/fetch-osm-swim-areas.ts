@@ -5,19 +5,22 @@
  *
  * Writes data/parks.osm.json in ParkSeed shape, ready for scripts/build-seed.ts.
  *
- * WHY ONLY SOME STATES
- * ---------------------
- * OSM tags an ocean beach and a lake beach identically: `natural=beach`. Separating them
- * needs either a coastline dataset or an expensive Overpass query against every lake
- * polygon in the state, and that query times out on a state the size of Florida.
+ * WHY THIS NOW COVERS EVERY STATE
+ * -------------------------------
+ * OSM tags an ocean beach and a lake beach identically: `natural=beach`. This used to be
+ * limited to the landlocked and Great Lakes states, where a beach is fresh water by
+ * definition and no filter could be wrong, because separating the two anywhere else needed
+ * a query that timed out.
  *
- * So the harvest is limited to states where the distinction is free: the landlocked ones,
- * where every beach is freshwater by definition, plus the Great Lakes states, whose
- * coastline IS fresh water. That is 25 states and the large majority of American lake
- * swimming, and it needs no filter that could be wrong.
+ * scripts/fetch-osm-water-bodies.ts is that filter, and it works statewide: it asks each
+ * state once for every named lake and river it contains, and a swim area that cannot name
+ * fresh water within 600 m is never seeded. An ocean beach names no lake and falls out on
+ * its own, so California, Oregon, Washington and the rest are now in scope.
  *
- * Coastal states are deliberately out of scope here and stay hand-curated until there is a
- * filter worth trusting.
+ * This script therefore harvests candidates, not published parks. Nothing it writes reaches
+ * the site until the water check has confirmed it. Running it for a coastal state WITHOUT
+ * then running the water check would publish ocean beaches, which is the one way to get
+ * this wrong.
  */
 import { join } from "node:path";
 
@@ -49,14 +52,23 @@ const SERVER_TIMEOUT_S = 180;
 const deadline = createDeadline();
 
 /**
- * States where every `natural=beach` is fresh water.
+ * States with no salt coast, where a `natural=beach` is fresh water whatever else we know.
  *
- * The landlocked 21, plus Michigan, Wisconsin, Ohio and Pennsylvania, whose only coast is
- * a Great Lake. Minnesota is in the first group and is also a Great Lakes state.
+ * The landlocked ones plus Michigan, Wisconsin, Ohio and Pennsylvania, whose only coast is
+ * a Great Lake. Kept because it still means something: a harvest here is safe even if the
+ * water check has not run yet, and everywhere else it is not.
  */
-export const FRESHWATER_STATES = [
+export const NO_SALT_COAST_STATES = [
   "AR", "AZ", "CO", "IA", "ID", "IL", "IN", "KS", "KY", "MI", "MN", "MO", "MT", "ND", "NE",
   "NM", "NV", "OH", "OK", "PA", "SD", "TN", "UT", "VT", "WI", "WV", "WY",
+] as const;
+
+/** Every state plus DC, in the order the harvest works through them. */
+export const ALL_STATES = [
+  "AK", "AL", "AR", "AZ", "CA", "CO", "CT", "DC", "DE", "FL", "GA", "HI", "IA", "ID", "IL",
+  "IN", "KS", "KY", "LA", "MA", "MD", "ME", "MI", "MN", "MO", "MS", "MT", "NC", "ND", "NE",
+  "NH", "NJ", "NM", "NV", "NY", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT",
+  "VA", "VT", "WA", "WI", "WV", "WY",
 ] as const;
 
 interface OverpassElement {
@@ -261,11 +273,17 @@ async function fetchState(state: string): Promise<OverpassElement[]> {
 
 async function main(): Promise<void> {
   const args = process.argv.slice(2).filter((a) => !a.startsWith("--"));
-  const states = args.length > 0 ? args.map((s) => s.toUpperCase()) : [...FRESHWATER_STATES];
+  const states = args.length > 0 ? args.map((s) => s.toUpperCase()) : [...ALL_STATES];
   for (const s of states) {
-    if (!(FRESHWATER_STATES as readonly string[]).includes(s)) {
-      throw new Error(`${s} is not in FRESHWATER_STATES: its beaches cannot be assumed fresh water`);
-    }
+    if (!(ALL_STATES as readonly string[]).includes(s)) throw new Error(`${s} is not a state code`);
+  }
+
+  const coastal = states.filter((s) => !(NO_SALT_COAST_STATES as readonly string[]).includes(s));
+  if (coastal.length > 0) {
+    // Said out loud rather than assumed, because the one way to get this wrong is to seed
+    // straight from this file for a state that has an ocean in it.
+    log(`${coastal.length} state(s) with a salt coast in this run: ${coastal.join(", ")}`);
+    log("these are CANDIDATES ONLY; run fetch-osm-water-bodies.ts before building the seed");
   }
 
   // Keep what previous runs harvested so a throttled state does not lose the others.
