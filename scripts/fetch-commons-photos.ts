@@ -206,6 +206,46 @@ export function pickBest(pages: CommonsPage[], parkName: string): PhotoCredit | 
   return best?.credit ?? null;
 }
 
+/**
+ * Photographs of a named body of water, found by name rather than by coordinates.
+ *
+ * Geosearch answers "what has been photographed within 3 km of this point", and at a
+ * rural lake the answer is a grain elevator and a bridge. 1,722 parks named their water
+ * and had no picture, which is the gap this closes: there are good photographs of Lake
+ * Winnebago, they are just not standing on the one beach we have coordinates for.
+ *
+ * A photograph of the lake on a card for a beach on that lake is honest. It is not a
+ * photograph of that beach, and the credit links to the file page where anyone can see
+ * exactly what it is.
+ */
+/** One cache file per body of water, so a lake with forty beaches is searched once. */
+function slugifyWater(water: string): string {
+  return water.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 60) || "unnamed";
+}
+
+async function searchByWater(water: string): Promise<CommonsPage[]> {
+  const params = new URLSearchParams({
+    action: "query",
+    format: "json",
+    generator: "search",
+    // intitle: keeps this to files named for the water, rather than every file whose
+    // description mentions it, which is what makes the name a usable signal at all.
+    gsrsearch: `intitle:"${water}"`,
+    gsrnamespace: "6",
+    gsrlimit: String(CANDIDATES),
+    prop: "imageinfo",
+    iiprop: "url|extmetadata|size",
+    iiurlwidth: String(THUMB_WIDTH),
+  });
+  const res = await fetch(`${API}?${params}`, {
+    headers: { "User-Agent": USER_AGENT, Accept: "application/json" },
+    signal: AbortSignal.timeout(20_000),
+  });
+  if (!res.ok) throw new Error(`Commons HTTP ${res.status}`);
+  const json = (await res.json()) as { query?: { pages?: Record<string, CommonsPage> } };
+  return Object.values(json.query?.pages ?? {});
+}
+
 async function searchNear(lat: number, lng: number): Promise<CommonsPage[]> {
   const params = new URLSearchParams({
     action: "query",
@@ -234,6 +274,7 @@ interface ParkRow {
   lat: number;
   lng: number;
   photo_url?: string | null;
+  water_body?: string | null;
 }
 
 async function main(): Promise<void> {
@@ -253,9 +294,19 @@ async function main(): Promise<void> {
     }
   }
 
+  // The harvest files do not carry the water body; the check that named it writes its own.
+  const verdicts =
+    readJson<{ verdicts: Record<string, { water_body: string | null }> }>(
+      join(DATA_DIR, "water-bodies.osm.json"),
+    )?.verdicts ?? {};
+  for (const park of parks) park.water_body ??= verdicts[park.slug]?.water_body ?? null;
+  const named = parks.filter((p) => p.water_body).length;
+  log(`${parks.length} parks with no photo, ${named} of them naming their water`);
+
   const existing = readJson<{ photos: Record<string, PhotoCredit> }>(OUT_PATH)?.photos ?? {};
   const photos: Record<string, PhotoCredit> = { ...existing };
   let found = 0;
+  let fromWater = 0;
   let checked = 0;
 
   for (const park of parks) {
@@ -270,7 +321,24 @@ async function main(): Promise<void> {
         writeJson(cachePath, pages);
         await sleep(GAP_MS);
       }
-      const credit = pickBest(pages, park.name);
+      let credit = pickBest(pages, park.name);
+
+      // Nothing near the park, but we know what water it is on. There are good photographs
+      // of Lake Winnebago; they are just not standing on this particular beach.
+      if (!credit && park.water_body) {
+        const waterCache = join(CACHE_DIR, "commons-water", `${slugifyWater(park.water_body)}.json`);
+        let waterPages = REFRESH ? null : readJson<CommonsPage[]>(waterCache);
+        if (!waterPages) {
+          waterPages = await searchByWater(park.water_body);
+          writeJson(waterCache, waterPages);
+          await sleep(GAP_MS);
+        }
+        // Scored against the water's name, not the park's: that is what these files are
+        // named for, and it is the claim being made.
+        credit = pickBest(waterPages, park.water_body);
+        if (credit) fromWater++;
+      }
+
       if (credit) {
         photos[park.slug] = credit;
         found++;
@@ -290,7 +358,10 @@ async function main(): Promise<void> {
     generated_at: new Date().toISOString(),
     photos,
   });
-  log(`wrote ${OUT_PATH}: ${Object.keys(photos).length} photos (${checked} parks checked this run, ${found} new)`);
+  log(
+    `wrote ${OUT_PATH}: ${Object.keys(photos).length} photos ` +
+      `(${checked} parks checked this run, ${found} new, ${fromWater} of them found by water body)`,
+  );
 }
 
 // Guarded: without this, importing the module for its exported helpers runs the whole

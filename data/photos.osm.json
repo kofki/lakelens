@@ -1,6 +1,6 @@
 {
   "_note": "Hero photos found on Wikimedia Commons by coordinates (scripts/fetch-commons-photos.ts). Public domain, CC0 and CC BY only: share-alike would oblige the whole page to carry the same licence. `file` is a Commons thumbnail URL rather than a local path, so these are not downloaded. Author and licence MUST be rendered wherever the photo appears.",
-  "generated_at": "2026-09-20T12:29:59.997Z",
+  "generated_at": "2026-09-20T18:06:38.871Z",
   "photos": {
     "12th-street-beach-il": {
       "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/12th_Street_Beach_%2835292914940%29.jpg/1280px-12th_Street_Beach_%2835292914940%29.jpg",
@@ -6313,6 +6313,78 @@
       "license": "CC0",
       "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
       "source_url": "https://commons.wikimedia.org/wiki/File:Zuma_Beach,_Malibu,_United_States_(Unsplash).jpg"
+    },
+    "1st-street-beach-mi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Icy_shores_of_Lake_Michigan.jpg/1280px-Icy_shores_of_Lake_Michigan.jpg",
+      "title": "Icy shores of Lake Michigan.jpg",
+      "author": "NOAA Photo Library",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Icy_shores_of_Lake_Michigan.jpg"
+    },
+    "32nd-beach-mn": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Minneapolis_neighborhood_East_Bde_Maka_Ska_%2852118252380%29.jpg/1280px-Minneapolis_neighborhood_East_Bde_Maka_Ska_%2852118252380%29.jpg",
+      "title": "Minneapolis neighborhood East Bde Maka Ska (52118252380).jpg",
+      "author": "Fibonacci Blue from Minnesota, USA",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Minneapolis_neighborhood_East_Bde_Maka_Ska_(52118252380).jpg"
+    },
+    "57th-street-beach-il": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Icy_shores_of_Lake_Michigan.jpg/1280px-Icy_shores_of_Lake_Michigan.jpg",
+      "title": "Icy shores of Lake Michigan.jpg",
+      "author": "NOAA Photo Library",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Icy_shores_of_Lake_Michigan.jpg"
+    },
+    "63rd-street-beach-il": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Icy_shores_of_Lake_Michigan.jpg/1280px-Icy_shores_of_Lake_Michigan.jpg",
+      "title": "Icy shores of Lake Michigan.jpg",
+      "author": "NOAA Photo Library",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Icy_shores_of_Lake_Michigan.jpg"
+    },
+    "8th-avenue-south-street-end-wa": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Aerial_view_of_Highway_99_crossing_Duwamish_Waterway_in_Seattle.jpg/1280px-Aerial_view_of_Highway_99_crossing_Duwamish_Waterway_in_Seattle.jpg",
+      "title": "Aerial view of Highway 99 crossing Duwamish Waterway in Seattle.jpg",
+      "author": "Dcoetzee",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Aerial_view_of_Highway_99_crossing_Duwamish_Waterway_in_Seattle.jpg"
+    },
+    "aarlington-beach-ga": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Mist_over_the_Chattahoochee_River.jpg/1280px-Mist_over_the_Chattahoochee_River.jpg",
+      "title": "Mist over the Chattahoochee River.jpg",
+      "author": "TheSussman (Mike)",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Mist_over_the_Chattahoochee_River.jpg"
+    },
+    "accretion-beach-mi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Come_and_see_Lake_Saint_Clair.jpg/1280px-Come_and_see_Lake_Saint_Clair.jpg",
+      "title": "Come and see Lake Saint Clair.jpg",
+      "author": "Ernesto Perales Soto",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Come_and_see_Lake_Saint_Clair.jpg"
+    },
+    "adams-point-beach-ny": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Queechy_Lake_%28winter%29_Canaan%2C_New_York.jpg/1280px-Queechy_Lake_%28winter%29_Canaan%2C_New_York.jpg",
+      "title": "Queechy Lake (winter) Canaan, New York.jpg",
+      "author": "Tyler A. McNeil",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Queechy_Lake_(winter)_Canaan,_New_York.jpg"
+    },
+    "aero-view-beach-mi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/55524-Kunming-Green-Lake-Park.jpg/1280px-55524-Kunming-Green-Lake-Park.jpg",
+      "title": "55524-Kunming-Green-Lake-Park.jpg",
+      "author": "xiquinhosilva",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:55524-Kunming-Green-Lake-Park.jpg"
     }
   }
 }
