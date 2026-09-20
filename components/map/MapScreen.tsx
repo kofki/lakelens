@@ -144,7 +144,7 @@ export function MapScreen({ parks, initialFilters }: MapScreenProps) {
         className="hidden w-[420px] shrink-0 flex-col border-r border-mist bg-white lg:flex xl:w-[480px]"
       >
         <div className="shrink-0 border-b border-mist px-4 pb-3 pt-4">
-          <h1 className="text-xl font-extrabold text-brown">Florida springs &amp; swim areas</h1>
+          <h1 className="text-xl font-extrabold text-brown">Springs, lakes &amp; rivers</h1>
           <p className="mt-0.5 text-sm text-mocha">Closure estimates, live water and weather, and visitor reports.</p>
           <SearchField
             id="park-search-desktop"

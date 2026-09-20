@@ -17,7 +17,7 @@ const nunito = Nunito({
 });
 
 const DESCRIPTION =
-  "Florida springs and state-park swim areas: which are open, which fill early, and where there is still room in the water.";
+  "Springs, lakes and rivers you can swim in: which are open right now, which get busy early, and where there is still room in the water.";
 
 function metadataBase(): URL | undefined {
   try {
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "LakeLens",
-    description: "Which Florida springs are open right now, which are likely to fill, and where else you can get in the water.",
+    description: "Which freshwater swim spots are open right now, which get busy early, and where else you can get in the water.",
   },
 };
 

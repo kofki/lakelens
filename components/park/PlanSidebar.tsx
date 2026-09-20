@@ -1,7 +1,8 @@
-import { Accessibility as AccessibilityIcon, CalendarCheck, Clock, DollarSign, ExternalLink, Navigation } from "lucide-react";
+import {Accessibility as AccessibilityIcon, CalendarCheck, DollarSign, ExternalLink, Navigation} from "lucide-react";
 import type { ParkBundle, Prediction } from "@/lib/types";
-import { STATUS_META } from "@/lib/status";
+import { statusDescription } from "@/lib/status";
 import { isAccessibleEntry } from "@/lib/distance";
+import { OpeningHours } from "./OpeningHours";
 import { Badge } from "@/components/ui/Badge";
 import { ButtonLink } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
@@ -14,13 +15,15 @@ import { STATUS_SOURCE_TEXT } from "./format";
 
 export interface PlanSidebarProps {
   bundle: ParkBundle;
+  /** Injected rather than read here so the server and the client agree on "now". */
+  now: Date;
   className?: string;
 }
 
 const PREDICTION_LINE: Record<Prediction["level"], string> = {
-  none: "No closure expected today",
-  possible: "Might fill up today",
-  likely: "Likely to fill up today",
+  none: "About as busy as usual",
+  possible: "Busier than usual today",
+  likely: "Much busier than usual today",
   closed: "Closed today",
 };
 
@@ -28,15 +31,15 @@ const PREDICTION_LINE: Record<Prediction["level"], string> = {
 function summaryLine(bundle: ParkBundle): string {
   const { status, prediction, park } = bundle;
   if (status.source === "alert" || status.source === "seasonal" || status.source === "confirmed_reports") {
-    return STATUS_META[status.level].description;
+    return statusDescription(status);
   }
   if (park.coverage_tier === "deep" && prediction) {
     if (prediction.predictedTimeLabel && prediction.level !== "none") {
-      return `May reach capacity ${prediction.predictedTimeLabel}`;
+      return `Usually busiest ${prediction.predictedTimeLabel}`;
     }
     return PREDICTION_LINE[prediction.level];
   }
-  return STATUS_META[status.level].description;
+  return statusDescription(status);
 }
 
 /**
@@ -44,7 +47,7 @@ function summaryLine(bundle: ParkBundle): string {
  * directions / reservation / official links, hours and fees, a mini map and the
  * accessibility one-liner. Everything here also appears in the main column, so phones lose nothing.
  */
-export function PlanSidebar({ bundle, className }: PlanSidebarProps) {
+export function PlanSidebar({ bundle, now, className }: PlanSidebarProps) {
   const { park, status, accessibility } = bundle;
   const line = summaryLine(bundle);
   const accessible = isAccessibleEntry(accessibility);
@@ -88,16 +91,10 @@ export function PlanSidebar({ bundle, className }: PlanSidebarProps) {
           )}
         </div>
 
-        {(park.hours || park.fees) && (
+        <OpeningHours park={park} now={now} />
+
+        {park.fees && (
           <dl className="divide-y divide-mist border-t border-mist text-sm">
-            {park.hours && (
-              <div className="flex gap-3 py-2">
-                <dt className="flex w-16 shrink-0 items-center gap-1 font-bold text-mocha">
-                  <Clock aria-hidden="true" focusable="false" className="size-4" /> Hours
-                </dt>
-                <dd className="text-cocoa">{park.hours}</dd>
-              </div>
-            )}
             {park.fees && (
               <div className="flex gap-3 py-2">
                 <dt className="flex w-16 shrink-0 items-center gap-1 font-bold text-mocha">

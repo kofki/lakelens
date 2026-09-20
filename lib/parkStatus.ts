@@ -7,6 +7,9 @@
  * Priority:
  * 1. active closure alert (kind=closure, active, starts_at null|<=now, ends_at null|>now) → closed (alert)
  * 2. out of swim season → closed (seasonal)
+ * 2b. outside the park's posted hours → closed (hours). Almost every park here is day use
+ *     only, so reading "Open" at 2 a.m. was simply wrong; a park whose hours cannot be
+ *     parsed is left alone rather than guessed shut.
  * 3. confirmed reports with an implied level → that level (confirmed_reports)
  * 4. a single "turned away" report agreeing with a possible|likely prediction → full (report_prediction)
  * 4b. reported "got in" agreeing with a "none" prediction → open (report_prediction)
@@ -19,6 +22,7 @@
 import type { Park, ParkAlert, ParkStatus, Prediction, ReportSummary } from "./types";
 import { swimSeasonReason } from "./seasonal";
 import { parseIso, relativeTime } from "./freshness";
+import { formatMinutes, getOpenState } from "./openingHours";
 import { reportLine } from "./plainLanguage";
 
 export interface ParkStatusInput {
@@ -93,6 +97,23 @@ export function getParkStatus(input: ParkStatusInput): ParkStatus {
 
   const summary = reportSummary ?? null;
   const predReasons = prediction?.reasons ?? [];
+
+  // 2b. Outside posted hours. Below the seasonal check, because a seasonal closure is the
+  // more useful thing to say, and above reports, because a report from this afternoon does
+  // not mean the gate is open at midnight.
+  const openState = getOpenState(park, now);
+  if (openState.open === false) {
+    const opensAt = openState.opensMin != null ? ` Opens at ${formatMinutes(openState.opensMin)}.` : "";
+    return {
+      level: "closed",
+      source: "hours",
+      confidence: "high",
+      reasons: [`Closed right now.${opensAt}`],
+      updatedAt: nowIso,
+      isEstimate: false,
+      predictedTime: null,
+    };
+  }
 
   // 3. Confirmed reports
   if (summary && summary.signal === "confirmed" && summary.impliesLevel) {

@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useId, useRef, type CSSProperties, type KeyboardEvent } from "react";
 import { MapPin, X } from "lucide-react";
 import type { ParkWithStatus } from "@/lib/types";
-import { STATUS_META } from "@/lib/status";
+import {STATUS_META, statusDescription} from "@/lib/status";
 import {reportLine} from "@/lib/plainLanguage";
 import { Badge } from "@/components/ui/Badge";
 import { ButtonLink } from "@/components/ui/Button";
@@ -121,7 +121,7 @@ export function ParkPreviewCard({ item, onClose, onHeightChange, style, classNam
 
         <div className="space-y-2 px-3">
           <p id={descId} className="text-sm text-cocoa">
-            {status.reasons[0] ?? STATUS_META[status.level].description}
+            {status.reasons[0] ?? statusDescription(status)}
           </p>
           {reportSummary.signal !== "none" && (
             <p className="text-sm text-cocoa" suppressHydrationWarning>

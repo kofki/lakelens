@@ -1,8 +1,7 @@
 import Link from "next/link";
 import { MapPin } from "lucide-react";
 import type { ParkWithStatus } from "@/lib/types";
-import { reportLine } from "@/lib/plainLanguage";
-import { Badge } from "@/components/ui/Badge";
+import { Score } from "@/components/ui/RatingStars";
 import { StatusPill } from "@/components/ui/StatusPill";
 import { ParkPhoto } from "./ParkPhoto";
 import { describeParkKind, formatDistance } from "./parkListUtils";
@@ -21,7 +20,7 @@ export interface ParkTileProps {
  * the <article> as its containing block.
  */
 export function ParkTile({ item }: ParkTileProps) {
-  const { park, status, reportSummary } = item;
+  const { park, status } = item;
   const distance = formatDistance(item.distanceKm);
   return (
     <article
@@ -54,13 +53,21 @@ export function ParkTile({ item }: ParkTileProps) {
             {park.name}
           </Link>
         </h3>
+        {/* The rating, not the report state. Browsing is a "is this place any good"
+            question; a report is about the next two hours and belongs on the park page. */}
         <p className="mt-0.5 flex flex-wrap items-center gap-x-1.5 gap-y-1 text-xs text-mocha">
           <span>{describeParkKind(park)}</span>
-          <span aria-hidden="true">·</span>
-          <span suppressHydrationWarning>
-            {reportSummary.signal !== "none" ? reportLine(reportSummary, new Date()) : "No reports"}
-          </span>
-          {reportSummary.sampleCount > 0 && <Badge variant="sample" />}
+          {item.reviewStats && item.reviewStats.averageRating != null && (
+            <>
+              <span aria-hidden="true">·</span>
+              <Score
+                average={item.reviewStats.averageRating}
+                count={item.reviewStats.reviewCount}
+                sampleCount={item.reviewStats.sampleCount}
+                size="sm"
+              />
+            </>
+          )}
         </p>
       </div>
     </article>

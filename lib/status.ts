@@ -4,7 +4,7 @@
  * `icon` is a lucide-react icon name; UI components resolve it.
  * This file must stay free of React / Next / map imports (used by lib tests).
  */
-import type { StatusLevel } from "./types";
+import type { ParkStatus, StatusLevel } from "./types";
 
 export interface StatusMeta {
   label: string;
@@ -65,3 +65,21 @@ export const STATUS_META: Record<StatusLevel, StatusMeta> = {
 };
 
 export const STATUS_ORDER: StatusLevel[] = ["open", "full", "closed", "unknown"];
+
+
+/**
+ * The one-line description for a status, which depends on WHY it holds, not only on the
+ * level.
+ *
+ * "Closed" covers an official notice, the swim season and simply being 2 a.m., and
+ * STATUS_META can only speak for one of them: a park shut overnight was being described
+ * as having an official notice against it, which is a different and much more alarming
+ * claim.
+ */
+export function statusDescription(status: Pick<ParkStatus, "level" | "source">): string {
+  if (status.level === "closed") {
+    if (status.source === "hours") return "Outside the park's opening hours.";
+    if (status.source === "seasonal") return "Closed for the season.";
+  }
+  return STATUS_META[status.level].description;
+}

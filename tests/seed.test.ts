@@ -63,7 +63,7 @@ describe("enum mirrors match lib/types.ts", () => {
     const h: readonly AlertKind[] = ALERT_KINDS;
     const i: readonly ReportCategory[] = REPORT_CATEGORIES;
     const back: [ParkType, Operator, CoverageTier, Guarded, WaterAccess, EntryType, Surface, AlertKind, ReportCategory] = [
-      "beach",
+      "lake",
       "private",
       "deep",
       "unknown",

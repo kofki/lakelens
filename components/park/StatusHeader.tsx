@@ -1,5 +1,5 @@
 import type { ParkBundle } from "@/lib/types";
-import { STATUS_META } from "@/lib/status";
+import { STATUS_META, statusDescription } from "@/lib/status";
 import {formatLocalTime, relativeTime} from "@/lib/freshness";
 import { LastUpdated } from "@/components/ui/LastUpdated";
 import { StatusPill } from "@/components/ui/StatusPill";
@@ -51,11 +51,11 @@ export function StatusHeader({ bundle, now }: StatusHeaderProps) {
         <StatusPill level={status.level} size="lg" />
       </div>
 
-      <p className="text-base text-cocoa md:text-lg md:font-bold">{meta.description}</p>
+      <p className="text-base text-cocoa md:text-lg md:font-bold">{statusDescription(status)}</p>
 
       {status.predictedTime && status.level === "open" && (
         <p className="text-sm font-bold text-cocoa">
-          Usually fills around {formatLocalTime(status.predictedTime)}. Arrive earlier to be safe.
+          Usually busiest from {formatLocalTime(status.predictedTime)}. Arrive earlier if you can.
         </p>
       )}
 

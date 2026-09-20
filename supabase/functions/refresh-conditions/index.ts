@@ -15,8 +15,6 @@
  *   parking   OpenStreetMap (Overpass) parking lots for every park: weekly
  *   stations  backfill missing USGS gauge / NOAA station / NWS grid assignments: weekly
  *   forecast  park_forecast: NWS weather + gridpoint extras + EPA UV, one row per park: hourly
- *   redtide   FWC Karenia brevis sampling for the 44 beach parks: every 6 hours
- *   beachwater FDOH Healthy Beaches enterococcus, 34-county sweep: daily
  *
  * The fetch/normalise logic lives in ../_shared/*, which the Next.js app and vitest
  * import too, so there is exactly one implementation of each parser.
@@ -30,8 +28,6 @@ import { fetchLongWeekends, fetchNagerHolidays } from "../_shared/holidays.ts";
 import { fetchParkingElements, groupParkingByPark } from "../_shared/overpass.ts";
 import { assembleForecast, type ForecastPark } from "../_shared/forecast.ts";
 import { WATER_QUALITY_MATCH_KM, nearestSample, waterQualityFor } from "../_shared/algae.ts";
-import { fetchHabSamples, redTideForPark } from "../_shared/redtide.ts";
-import { beachWaterFor, fetchWqSamples } from "../_shared/fdoh.ts";
 import { assignGauges, assignNwsGrid, fetchNoaaStationCandidates, nearestStation } from "../_shared/stations.ts";
 import { nwsAlertHash } from "../_shared/hash.ts";
 import type { CronJob, NwsGrid, ParkAlertInsert, ParkLike } from "../_shared/types.ts";
@@ -46,7 +42,7 @@ import {
   matchAlgaeToParks,
 } from "../_shared/algae.ts";
 
-export const CRON_JOBS: readonly CronJob[] = ["usgs", "noaa", "weather", "alerts", "holidays", "prune", "algae", "parking", "stations", "forecast", "redtide", "beachwater"];
+export const CRON_JOBS: readonly CronJob[] = ["usgs", "noaa", "weather", "alerts", "holidays", "prune", "algae", "parking", "stations", "forecast"];
 
 /**
  * Per-job wall-clock budget. The cheap per-park jobs stay well inside the 60 s route
@@ -65,8 +61,6 @@ export const JOB_TIME_BUDGET_MS: Record<CronJob, number> = {
   parking: 110_000,
   stations: 110_000,
   forecast: 110_000,
-  redtide: 60_000,
-  beachwater: 120_000,
 };
 
 export function isCronJob(value: string): value is CronJob {
@@ -154,12 +148,6 @@ export async function runJob(job: CronJob, opts: RunJobOptions = {}): Promise<Ru
         break;
       case "forecast":
         await runForecast(ctx);
-        break;
-      case "redtide":
-        await runRedTide(ctx);
-        break;
-      case "beachwater":
-        await runBeachWater(ctx);
         break;
       default:
         return { ok: false, counts: {}, errors: [`unknown job: ${String(job)}`] };
@@ -546,116 +534,6 @@ async function writeWaterQuality(
   ctx.counts.water_quality = matched;
 }
 
-// ---------- coastal water (FWC red tide, FDOH enterococcus) ----------
-
-interface CoastalPark {
-  id: string;
-  slug: string;
-  type: string | null;
-  lat: number;
-  lng: number;
-}
-
-/** Beaches only; the coastal feeds describe salt water and say nothing about a spring. */
-async function loadBeaches(ctx: Ctx): Promise<CoastalPark[]> {
-  let q = ctx.db.from("parks").select("id,slug,type,lat,lng").eq("type", "beach");
-  if (ctx.opts.parkId) q = q.eq("id", ctx.opts.parkId);
-  const { data, error } = await q;
-  if (error) throw new Error(`load parks: ${error.message}`);
-  return (data ?? []) as CoastalPark[];
-}
-
-/**
- * Write one jsonb column for a set of parks.
- *
- * Parks with no reading are set back to null rather than left holding an old one: an
- * advisory that has cleared must stop showing, and a sample that has aged out is not a
- * reading any more.
- */
-async function writeCoastalColumn(
-  ctx: Ctx,
-  column: "red_tide" | "beach_water_quality",
-  values: Map<string, unknown>,
-  parks: CoastalPark[],
-): Promise<void> {
-  for (const park of parks) {
-    const { error } = await ctx.db
-      .from("park_forecast")
-      .update({ [column]: (values.get(park.id) ?? null) as Json })
-      .eq("park_id", park.id);
-    if (error) {
-      ctx.errors.push(`${column} ${park.slug}: ${error.message}`);
-      return;
-    }
-  }
-}
-
-async function runRedTide(ctx: Ctx): Promise<void> {
-  const samples = await fetchHabSamples();
-  ctx.counts.samples = samples.length;
-  // An empty feed is indistinguishable from an outage, so keep what is already stored.
-  if (samples.length === 0) {
-    ctx.notes.push("FWC returned no samples; existing readings left alone");
-    return;
-  }
-
-  const parks = await loadBeaches(ctx);
-  ctx.counts.parks = parks.length;
-
-  const values = new Map<string, unknown>();
-  let matched = 0;
-  let elevated = 0;
-  for (const park of parks) {
-    const reading = redTideForPark(samples, park, ctx.now);
-    if (reading) {
-      matched += 1;
-      if (reading.level !== "none") elevated += 1;
-    }
-    values.set(park.id, reading);
-  }
-  ctx.counts.matched = matched;
-  ctx.counts.elevated = elevated;
-  await writeCoastalColumn(ctx, "red_tide", values, parks);
-}
-
-async function runBeachWater(ctx: Ctx): Promise<void> {
-  const harvest = await fetchWqSamples({ deadlineMs: Math.max(20_000, (ctx.opts.timeBudgetMs ?? 120_000) - 25_000) });
-  ctx.counts.sites = harvest.samples.length;
-  ctx.counts.pages = harvest.pagesFetched;
-  ctx.counts.rows = harvest.rowsParsed;
-  ctx.counts.failed_counties = harvest.failedCounties.length;
-  if (harvest.failedCounties.length > 0) ctx.notes.push(`counties failed: ${harvest.failedCounties.join(", ")}`);
-
-  // A partial sweep looks exactly like "no site near this park", and writing null would
-  // clear a real advisory, so nothing is written unless the sweep was clean enough.
-  if (harvest.samples.length === 0) {
-    ctx.errors.push("FDOH sweep returned no sites; existing readings left alone");
-    return;
-  }
-  if (harvest.failedCounties.length > 0) {
-    ctx.notes.push("partial sweep; existing readings left alone");
-    return;
-  }
-
-  const parks = await loadBeaches(ctx);
-  ctx.counts.parks = parks.length;
-
-  const values = new Map<string, unknown>();
-  let matched = 0;
-  let advisories = 0;
-  for (const park of parks) {
-    const reading = beachWaterFor(harvest.samples, park, ctx.now);
-    if (reading) {
-      matched += 1;
-      if (reading.advisory) advisories += 1;
-    }
-    values.set(park.id, reading);
-  }
-  ctx.counts.matched = matched;
-  ctx.counts.advisories = advisories;
-  await writeCoastalColumn(ctx, "beach_water_quality", values, parks);
-}
-
 // ---------- forecast (NWS weather + gridpoint + EPA UV) ----------
 
 /** Parks per concurrent wave. Small waves keep the worker well inside its resource limit. */
@@ -798,7 +676,7 @@ async function runParking(ctx: Ctx): Promise<void> {
 async function runStations(ctx: Ctx): Promise<void> {
   const { data: parks, error } = await ctx.db
     .from("parks")
-    .select("id,slug,name,type,lat,lng,nws_grid,nws_zone,nws_county,usgs_site_id,river_gauge_site_id,noaa_station_id");
+    .select("id,slug,name,type,lat,lng,nws_grid,nws_zone,nws_county,time_zone,usgs_site_id,river_gauge_site_id,noaa_station_id");
   if (error) throw new Error(`load parks: ${error.message}`);
   const list = (parks ?? []) as {
     id: string;
@@ -808,14 +686,15 @@ async function runStations(ctx: Ctx): Promise<void> {
     lat: number;
     lng: number;
     nws_grid: unknown;
+    time_zone: string | null;
     usgs_site_id: string | null;
     river_gauge_site_id: string | null;
     noaa_station_id: string | null;
   }[];
   ctx.counts.parks = list.length;
 
-  // 1. NWS grid: one /points call per park that has none.
-  for (const park of list.filter((p) => !p.nws_grid)) {
+  // 1. NWS grid and time zone: one /points call per park missing either.
+  for (const park of list.filter((p) => !p.nws_grid || !p.time_zone)) {
     if (overBudget(ctx)) {
       ctx.notes.push("time budget reached during nws grid backfill");
       return;

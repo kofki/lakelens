@@ -180,7 +180,7 @@ export async function assignGauges(
 export async function assignNwsGrid(
   park: Pick<ParkLike, "lat" | "lng">,
   opts: StationFetchOptions = {},
-): Promise<{ nws_grid: NwsGrid; nws_zone: string | null; nws_county: string | null }> {
+): Promise<{ nws_grid: NwsGrid; nws_zone: string | null; nws_county: string | null; time_zone: string | null }> {
   const points = await fetchPoints(park.lat, park.lng, { fetchImpl: opts.fetchImpl, userAgent: opts.userAgent });
   return {
     nws_grid: {
@@ -192,5 +192,8 @@ export async function assignNwsGrid(
     },
     nws_zone: points.zone ?? null,
     nws_county: points.county ?? null,
+    // Opening hours are local wall clock, so the zone matters as soon as the map leaves
+    // one state. NWS has always returned it; it was being discarded.
+    time_zone: points.timeZone ?? null,
   };
 }

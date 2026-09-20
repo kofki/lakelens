@@ -6,8 +6,8 @@ import { ListScreen } from "@/components/list/ListScreen";
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: "All parks",
-  description: "Every Florida state park with swimming, plus the springs we cover in depth, sortable by distance and status.",
+  title: "Explore",
+  description: "Every freshwater swim spot we cover: springs, lakes and rivers, sortable by distance and status.",
   alternates: { canonical: "/list" },
 };
 

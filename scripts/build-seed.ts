@@ -62,7 +62,7 @@ import { z } from "zod";
 // ---------------------------------------------------------------------------
 // Enum mirrors of lib/types.ts (frozen contract). Keep in sync; the test checks.
 // ---------------------------------------------------------------------------
-export const PARK_TYPES = ["spring", "lake", "river", "beach"] as const;
+export const PARK_TYPES = ["spring", "lake", "river"] as const;
 export const OPERATORS = ["state", "county", "private"] as const;
 export const COVERAGE_TIERS = ["basic", "deep"] as const;
 export const GUARDED = ["yes", "no", "unknown"] as const;

@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import type { Park, ParkAlert, WeatherPayload } from "./types";
 import { getDayContext } from "./holidays";
-import { predictClosure, NO_TYPICAL_TIME_REASON, QUIET_WEEKDAY_REASON } from "./prediction";
+import { predictClosure, QUIET_WEEKDAY_REASON } from "./prediction";
 
 function makePark(overrides: Partial<Park> = {}): Park {
   return {
@@ -89,7 +89,7 @@ describe("predictClosure", () => {
     expect(p.isEstimate).toBe(true);
     expect(p.reasons).toContain("Holiday weekend (Labor Day)");
     expect(p.reasons).toContain("Forecast high 94°F");
-    expect(p.reasons.some((r) => r.startsWith("Usually fills around 10:30 AM"))).toBe(true);
+    expect(p.reasons.some((r) => r.startsWith("Usually busiest from 10:30 AM"))).toBe(true);
   });
 
   it("very hot day adds +3 total for heat", () => {
@@ -192,7 +192,8 @@ describe("predictClosure", () => {
     expect(p.level).toBe("likely");
     expect(p.predictedTime).toBeNull();
     expect(p.predictedTimeLabel).toBeNull();
-    expect(p.reasons).toContain(NO_TYPICAL_TIME_REASON);
+    // A park with no curated busy time says nothing about it rather than admitting a gap.
+    expect(p.reasons.some((r) => /don't know|not known|no typical/i.test(r))).toBe(false);
     expect(p.confidence).toBe("medium");
   });
 

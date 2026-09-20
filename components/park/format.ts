@@ -78,6 +78,7 @@ export const OPERATOR_TEXT = {
 export const STATUS_SOURCE_TEXT: Record<StatusSource, string> = {
   alert: "Official notice",
   seasonal: "Seasonal swim closure",
+  hours: "Posted park hours",
   confirmed_reports: "Confirmed by visitor reports",
   report_prediction: "Visitor report + our estimate",
   prediction: "Our estimate",

@@ -57,73 +57,78 @@ const RESERVATION_URL = "https://reserve.floridastateparks.org/";
 
 /**
  * Hand-tagged water-body type per park (keyed by kebab-case of the official name).
- * spring = spring-fed swim area; lake = freshwater lake beach; river = river swim area; beach = coastal/salt water.
+ * spring = spring-fed swim area; lake = freshwater lake beach; river = river swim area.
+ *
+ * "coastal" is not a ParkType: salt water is out of scope, so those parks are tagged here
+ * only so the fetcher can recognise and SKIP them rather than silently mistyping them.
  */
-const TYPE_BY_SLUG: Record<string, ParkType> = {
+type TaggedType = ParkType | "coastal";
+
+const TYPE_BY_SLUG: Record<string, TaggedType> = {
   "alfred-b-maclay-gardens-state-park": "lake", // Lake Hall
-  "anastasia-state-park": "beach",
-  "anclote-key-preserve-state-park": "beach",
-  "avalon-state-park": "beach",
-  "bahia-honda-state-park": "beach",
-  "bald-point-state-park": "beach",
-  "big-lagoon-state-park": "beach",
-  "bill-baggs-cape-florida-state-park": "beach",
+  "anastasia-state-park": "coastal",
+  "anclote-key-preserve-state-park": "coastal",
+  "avalon-state-park": "coastal",
+  "bahia-honda-state-park": "coastal",
+  "bald-point-state-park": "coastal",
+  "big-lagoon-state-park": "coastal",
+  "bill-baggs-cape-florida-state-park": "coastal",
   "blackwater-river-state-park": "river",
-  "caladesi-island-state-park": "beach",
-  "camp-helen-state-park": "beach", // Gulf beach + Lake Powell dune lake
-  "cayo-costa-state-park": "beach",
-  "curry-hammock-state-park": "beach",
+  "caladesi-island-state-park": "coastal",
+  "camp-helen-state-park": "coastal", // Gulf beach + Lake Powell dune lake
+  "cayo-costa-state-park": "coastal",
+  "curry-hammock-state-park": "coastal",
   "de-leon-springs-state-park": "spring",
-  "deer-lake-state-park": "beach",
-  "delnor-wiggins-pass-state-park": "beach",
-  "don-pedro-island-state-park": "beach",
-  "dr-julian-g-bruce-st-george-island-state-park": "beach",
-  "dr-von-d-mizell-eula-johnson-state-park": "beach",
+  "deer-lake-state-park": "coastal",
+  "delnor-wiggins-pass-state-park": "coastal",
+  "don-pedro-island-state-park": "coastal",
+  "dr-julian-g-bruce-st-george-island-state-park": "coastal",
+  "dr-von-d-mizell-eula-johnson-state-park": "coastal",
   "edward-ball-wakulla-springs-state-park": "spring",
-  "egmont-key-state-park": "beach",
+  "egmont-key-state-park": "coastal",
   "falling-waters-state-park": "lake",
   "fanning-springs-state-park": "spring",
   "florida-caverns-state-park": "spring", // Blue Hole Spring swim area
-  "fort-clinch-state-park": "beach",
-  "fort-pierce-inlet-state-park": "beach",
-  "fort-zachary-taylor-historic-state-park": "beach",
-  "gamble-rogers-memorial-state-recreation-area-at-flagler-beach": "beach",
-  "gasparilla-island-state-park": "beach",
-  "grayton-beach-state-park": "beach",
-  "henderson-beach-state-park": "beach",
-  "honeymoon-island-state-park": "beach",
-  "hugh-taylor-birch-state-park": "beach",
-  "indian-key-historic-state-park": "beach",
-  "john-d-macarthur-beach-state-park": "beach",
-  "john-pennekamp-coral-reef-state-park": "beach",
+  "fort-clinch-state-park": "coastal",
+  "fort-pierce-inlet-state-park": "coastal",
+  "fort-zachary-taylor-historic-state-park": "coastal",
+  "gamble-rogers-memorial-state-recreation-area-at-flagler-beach": "coastal",
+  "gasparilla-island-state-park": "coastal",
+  "grayton-beach-state-park": "coastal",
+  "henderson-beach-state-park": "coastal",
+  "honeymoon-island-state-park": "coastal",
+  "hugh-taylor-birch-state-park": "coastal",
+  "indian-key-historic-state-park": "coastal",
+  "john-d-macarthur-beach-state-park": "coastal",
+  "john-pennekamp-coral-reef-state-park": "coastal",
   "lafayette-blue-springs-state-park": "spring",
   "lake-louisa-state-park": "lake",
   "lake-manatee-state-park": "lake",
-  "lignumvitae-key-botanical-state-park": "beach",
-  "little-talbot-island-state-park": "beach",
-  "long-key-state-park": "beach",
-  "lovers-key-state-park": "beach",
+  "lignumvitae-key-botanical-state-park": "coastal",
+  "little-talbot-island-state-park": "coastal",
+  "long-key-state-park": "coastal",
+  "lovers-key-state-park": "coastal",
   "madison-blue-spring-state-park": "spring",
   "manatee-springs-state-park": "spring",
   "mike-roess-gold-head-branch-state-park": "lake", // Little Lake Johnson
-  "north-peninsula-state-park": "beach",
+  "north-peninsula-state-park": "coastal",
   "oleno-state-park": "river", // Santa Fe River
   "ochlockonee-river-state-park": "river",
-  "oleta-river-state-park": "beach", // Biscayne Bay swim beach
+  "oleta-river-state-park": "coastal", // Biscayne Bay swim beach
   "oscar-scherer-state-park": "lake", // Lake Osprey
-  "perdido-key-state-park": "beach",
+  "perdido-key-state-park": "coastal",
   "ponce-de-leon-springs-state-park": "spring",
-  "san-pedro-underwater-archaeological-preserve-state-park": "beach",
-  "sebastian-inlet-state-park": "beach",
-  "st-andrews-state-park": "beach",
-  "st-lucie-inlet-preserve-state-park": "beach",
-  "stump-pass-beach-state-park": "beach",
-  "th-stone-memorial-st-joseph-peninsula-state-park": "beach",
-  "topsail-hill-preserve-state-park": "beach",
+  "san-pedro-underwater-archaeological-preserve-state-park": "coastal",
+  "sebastian-inlet-state-park": "coastal",
+  "st-andrews-state-park": "coastal",
+  "st-lucie-inlet-preserve-state-park": "coastal",
+  "stump-pass-beach-state-park": "coastal",
+  "th-stone-memorial-st-joseph-peninsula-state-park": "coastal",
+  "topsail-hill-preserve-state-park": "coastal",
   "troy-spring-state-park": "spring",
   "weeki-wachee-springs-state-park": "spring", // Buccaneer Bay
   "wes-skiles-peacock-springs-state-park": "spring",
-  "william-j-billy-joe-rish-recreation-area": "beach",
+  "william-j-billy-joe-rish-recreation-area": "coastal",
 };
 
 /** Manual joins where the site name and FDEP SITE_NAME differ beyond normalisation. */
@@ -131,13 +136,19 @@ const FDEP_NAME_OVERRIDES: Record<string, string> = {
   // listing slug -> FDEP site_name (exact)
 };
 
-/** Fallback type when a slug is missing from TYPE_BY_SLUG: infer from the name, else "beach" with a warning. */
-function inferType(name: string): ParkType {
+/**
+ * Fallback when a slug is missing from TYPE_BY_SLUG: infer from the name.
+ *
+ * Anything that does not name fresh water is assumed coastal and skipped, which is the
+ * safe direction to be wrong in: a missed freshwater park can be added by hand, whereas a
+ * salt-water park typed as a lake would silently re-enter a dataset that excludes it.
+ */
+function inferType(name: string): TaggedType {
   const n = name.toLowerCase();
   if (/spring/.test(n)) return "spring";
   if (/\blake\b/.test(n)) return "lake";
   if (/\briver\b/.test(n)) return "river";
-  return "beach";
+  return "coastal";
 }
 
 function hrefSlug(href: string): string {
@@ -198,6 +209,7 @@ async function main(): Promise<void> {
   const parks: ParkSeed[] = [];
   const unmatched: string[] = [];
   const untyped: string[] = [];
+  const skippedCoastal: string[] = [];
   let excluded = 0;
 
   for (const item of listing.parks) {
@@ -238,6 +250,11 @@ async function main(): Promise<void> {
           ? `${nwsRec.points_url} (NWS forecast grid; zone/county taken from the nearest land point ${nwsRec.probe.lat},${nwsRec.probe.lng}, ~${nwsRec.probe.offset_km} km from the centroid, because the centroid is offshore)`
           : `${nwsRec.points_url} (NWS forecast grid, zone and county)`,
       );
+    }
+
+    if (type === "coastal") {
+      skippedCoastal.push(slug);
+      continue;
     }
 
     parks.push({

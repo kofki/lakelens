@@ -67,7 +67,7 @@ export function ListScreen({ parks, initialFilters }: ListScreenProps) {
             id="discover-heading"
             className="text-[2rem] font-extrabold leading-tight text-white drop-shadow-lg md:text-[3rem]"
           >
-            Discover <span className="text-peach">Florida&rsquo;s</span> Springs
+            Discover <span className="text-peach">freshwater</span> swim spots
           </h1>
           <p className="mx-auto mt-3 max-w-[600px] text-[1.05rem] text-white/90">
             Closure estimates, live conditions, parking and accessibility for every state park with swimming.

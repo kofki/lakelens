@@ -1,12 +1,14 @@
-import { CalendarCheck, Clock, DollarSign, Dog, ExternalLink, LifeBuoy, Scale, Ship, Wine } from "lucide-react";
+import { CalendarCheck, DollarSign, Dog, ExternalLink, LifeBuoy, Scale, Ship, Wine } from "lucide-react";
 import type { Park } from "@/lib/types";
 import { Badge } from "@/components/ui/Badge";
 import { ButtonLink } from "@/components/ui/Button";
 import { ChipGrid, type ChipItem } from "@/components/ui/ChipGrid";
 import { Section } from "@/components/ui/Section";
+import { OpeningHours } from "./OpeningHours";
 
 export interface RulesCardProps {
   park: Park;
+  now: Date;
 }
 
 /** A rule we have text for becomes a chip; one we do not becomes nothing. */
@@ -19,12 +21,11 @@ function ruleChip(label: string, icon: ChipItem["icon"], value: unknown): ChipIt
   return { label: `${label}: ${text}`, icon, state: !denied, title: text };
 }
 
-export function RulesCard({ park }: RulesCardProps) {
+export function RulesCard({ park, now }: RulesCardProps) {
   const rules = park.rules ?? {};
   const other = Array.isArray(rules.other) ? rules.other : [];
 
   const chips: ChipItem[] = [
-    { label: park.hours ?? "", icon: <Clock aria-hidden="true" focusable="false" />, state: park.hours ? true : null },
     { label: park.fees ?? "", icon: <DollarSign aria-hidden="true" focusable="false" />, state: park.fees ? true : null },
     ruleChip("Alcohol", <Wine aria-hidden="true" focusable="false" />, rules.alcohol),
     ruleChip("Tubing", <Ship aria-hidden="true" focusable="false" />, rules.tubing),
@@ -32,7 +33,7 @@ export function RulesCard({ park }: RulesCardProps) {
     ruleChip("Life jackets", <LifeBuoy aria-hidden="true" focusable="false" />, rules.life_jackets),
   ];
 
-  const hasAnything = chips.some((c) => c.state !== null) || other.length > 0 || park.reservation_required || park.official_url;
+  const hasAnything = chips.some((c) => c.state !== null) || other.length > 0 || park.reservation_required || park.official_url || !!park.hours;
   if (!hasAnything) return null;
 
   return (
@@ -53,6 +54,8 @@ export function RulesCard({ park }: RulesCardProps) {
           )}
         </div>
       )}
+
+      <OpeningHours park={park} now={now} className="mb-3" />
 
       <ChipGrid items={chips} />
 

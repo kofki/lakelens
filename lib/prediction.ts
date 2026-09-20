@@ -40,7 +40,6 @@ export const HOT_F = 90;
 export const VERY_HOT_F = 95;
 export const RAIN_PROB_THRESHOLD = 50;
 export const MINUTES_EARLIER_PER_POINT = 25;
-export const NO_TYPICAL_TIME_REASON = "No typical fill time known";
 export const QUIET_WEEKDAY_REASON = "Weekday: closures are rare";
 
 /** Parse "HH:MM" or "HH:MM:SS" (Postgres `time`) → { hour, minute } or null. */
@@ -164,11 +163,11 @@ export function predictClosure(input: PredictionInput, now: Date, tz: string = D
       const clampMin = ((totalMin % 1440) + 1440) % 1440;
       predictedTimeLabel = `around ${formatClock(Math.floor(clampMin / 60), clampMin % 60)}`;
       const when = dayContext.isHoliday || dayContext.isHolidayWeekend ? "on holidays" : dayContext.isWeekend ? "on weekends" : "on busy days";
-      reasons.push(`Usually fills around ${formatClock(typical.hour, typical.minute)} ${when}`);
-      if (shiftMin > 0) reasons.push(`Expected ${shiftMin} min earlier than usual today`);
-    } else {
-      reasons.push(NO_TYPICAL_TIME_REASON);
+      reasons.push(`Usually busiest from ${formatClock(typical.hour, typical.minute)} ${when}`);
+      if (shiftMin > 0) reasons.push(`Likely ${shiftMin} min earlier than usual today`);
     }
+    // No reason is pushed when there is no curated busy time: a line saying we do not know
+    // is a statement about our data, not about the park.
   }
 
   return {

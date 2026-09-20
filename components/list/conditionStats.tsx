@@ -1,4 +1,4 @@
-import { Biohazard, CloudSun, FlaskConical, Sun, Thermometer } from "lucide-react";
+import { CloudSun, FlaskConical, Sun, Thermometer } from "lucide-react";
 import type { ParkWithStatus } from "@/lib/types";
 import { describeWaterTemp } from "@/lib/plainLanguage";
 import type { StatRowItem } from "@/components/ui/StatRow";
@@ -20,8 +20,6 @@ export function conditionStatItems(item: ParkWithStatus): StatRowItem[] {
   const uv = item.forecast?.nowUv ?? item.forecast?.uvPeak ?? null;
   const feels = item.forecast?.nowFeelsLikeF ?? null;
   const airF = feels ?? item.forecast?.nowTempF ?? item.weather?.current?.tempF ?? null;
-  const beachWater = item.forecast?.beachWaterQuality ?? null;
-  const redTide = item.forecast?.redTide ?? null;
   const quality = item.forecast?.waterQuality ?? null;
 
   const items: StatRowItem[] = [];
@@ -32,19 +30,14 @@ export function conditionStatItems(item: ParkWithStatus): StatRowItem[] {
       value: `${Math.round(airF)}°F`,
     });
   }
-  // A posted advisory or an active bloom outranks UV in the middle slot: it is the one
-  // reading that decides whether to get in the water at all.
-  if (beachWater && beachWater.level !== "good") {
-    items.push({ icon: <FlaskConical aria-hidden="true" focusable="false" />, label: "Water quality", value: beachWater.label });
-  } else if (redTide && redTide.level !== "none") {
-    items.push({ icon: <Biohazard aria-hidden="true" focusable="false" />, label: "Red tide", value: redTide.label });
-  } else if (quality && quality.level !== "clear") {
+  // An active bloom outranks UV in the middle slot: it is the one reading that decides
+  // whether to get in the water at all.
+  if (quality && quality.level !== "clear") {
     items.push({ icon: <FlaskConical aria-hidden="true" focusable="false" />, label: "Water quality", value: quality.label });
   } else if (uv != null) {
     items.push({ icon: <Sun aria-hidden="true" focusable="false" />, label: "UV", value: String(Math.round(uv)) });
-  } else if (beachWater ?? quality) {
-    const q = beachWater ?? quality!;
-    items.push({ icon: <FlaskConical aria-hidden="true" focusable="false" />, label: "Water quality", value: q.label });
+  } else if (quality) {
+    items.push({ icon: <FlaskConical aria-hidden="true" focusable="false" />, label: "Water quality", value: quality.label });
   }
   if (waterF != null) {
     items.push({

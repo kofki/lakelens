@@ -232,7 +232,6 @@ export type Database = {
       }
       park_forecast: {
         Row: {
-          beach_water_quality: Json | null
           daily: Json
           forecast_at: string
           forecast_issued_at: string | null
@@ -245,14 +244,12 @@ export type Database = {
           now_uv: number | null
           now_wind_mph: number | null
           park_id: string
-          red_tide: Json | null
           sources: Json
           uv_peak: number | null
           uv_peak_hour: number | null
           water_quality: Json | null
         }
         Insert: {
-          beach_water_quality?: Json | null
           daily?: Json
           forecast_at?: string
           forecast_issued_at?: string | null
@@ -265,14 +262,12 @@ export type Database = {
           now_uv?: number | null
           now_wind_mph?: number | null
           park_id: string
-          red_tide?: Json | null
           sources?: Json
           uv_peak?: number | null
           uv_peak_hour?: number | null
           water_quality?: Json | null
         }
         Update: {
-          beach_water_quality?: Json | null
           daily?: Json
           forecast_at?: string
           forecast_issued_at?: string | null
@@ -285,7 +280,6 @@ export type Database = {
           now_uv?: number | null
           now_wind_mph?: number | null
           park_id?: string
-          red_tide?: Json | null
           sources?: Json
           uv_peak?: number | null
           uv_peak_hour?: number | null
@@ -385,6 +379,7 @@ export type Database = {
           slug: string
           swim_season: Json | null
           swimming_verified: boolean
+          time_zone: string | null
           type: string
           typical_closure_time: string | null
           updated_at: string
@@ -420,6 +415,7 @@ export type Database = {
           slug: string
           swim_season?: Json | null
           swimming_verified?: boolean
+          time_zone?: string | null
           type: string
           typical_closure_time?: string | null
           updated_at?: string
@@ -455,6 +451,7 @@ export type Database = {
           slug?: string
           swim_season?: Json | null
           swimming_verified?: boolean
+          time_zone?: string | null
           type?: string
           typical_closure_time?: string | null
           updated_at?: string

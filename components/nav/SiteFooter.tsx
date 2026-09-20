@@ -35,8 +35,8 @@ export function SiteFooter({ className }: { className?: string }) {
             <span className="text-xl font-extrabold text-white">LakeLens</span>
           </div>
           <p className="max-w-prose text-[0.95rem] leading-relaxed">
-            Closure estimates, one-tap visitor reports, parking and accessibility for Florida&rsquo;s
-            springs and state-park swim areas.
+            Crowding estimates, one-tap visitor reports, parking and accessibility for the
+            springs, lakes and rivers you can swim in.
           </p>
           <p className="text-[0.9rem] text-sand">Built at SASEhack 2026.</p>
         </div>

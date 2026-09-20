@@ -7,8 +7,8 @@ export const revalidate = 60;
 
 export const metadata: Metadata = {
   // "Map" alone told search engines nothing; the template appends " | LakeLens".
-  title: "Florida springs & swim-area map",
-  description: "Florida springs and state-park swim areas: which are open, which are likely to fill, and where you can get into the water.",
+  title: "Freshwater swim map",
+  description: "Springs, lakes and rivers you can swim in: which are open right now, which get busy early, and where you can get into the water.",
   alternates: { canonical: "/" },
 };
 

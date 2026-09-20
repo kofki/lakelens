@@ -116,7 +116,7 @@ export function formatDistance(km: number | null | undefined): string | null {
   return `${miles < 10 ? miles.toFixed(1) : Math.round(miles)} mi`;
 }
 
-const TYPE_LABEL: Record<Park["type"], string> = { spring: "Spring", lake: "Lake", river: "River", beach: "Beach" };
+const TYPE_LABEL: Record<Park["type"], string> = { spring: "Spring", lake: "Lake", river: "River" };
 const OPERATOR_LABEL: Record<Park["operator"], string> = {
   state: "State park",
   county: "County park",
@@ -133,6 +133,8 @@ export function statusSourceLabel(source: StatusSource): string {
   switch (source) {
     case "alert":
       return "Official notice";
+    case "hours":
+      return "Park hours";
     case "seasonal":
       return "Swim season rules";
     case "confirmed_reports":

@@ -7,7 +7,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "LakeLens",
     short_name: "LakeLens",
     description:
-      "Florida springs and state-park swim areas: closure estimates, crowd reports, parking, accessibility.",
+      "Springs, lakes and rivers you can swim in: crowding estimates, visitor reports, parking and accessibility.",
     start_url: "/",
     scope: "/",
     display: "standalone",

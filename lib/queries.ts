@@ -122,8 +122,6 @@ interface ParkForecastRow {
   hourly: unknown;
   daily: unknown;
   water_quality: unknown;
-  red_tide: unknown;
-  beach_water_quality: unknown;
   sources: unknown;
 }
 
@@ -146,8 +144,6 @@ function toForecasts(rows: ParkForecastRow[]): Map<string, ParkForecast> {
       hourly: (r.hourly as ParkForecast["hourly"]) ?? null,
       daily: Array.isArray(r.daily) ? (r.daily as ParkForecast["daily"]) : [],
       waterQuality: (r.water_quality as ParkForecast["waterQuality"]) ?? null,
-      redTide: (r.red_tide as ParkForecast["redTide"]) ?? null,
-      beachWaterQuality: (r.beach_water_quality as ParkForecast["beachWaterQuality"]) ?? null,
       sources: (r.sources as ParkForecast["sources"]) ?? {},
     });
   }
@@ -305,10 +301,6 @@ function slimForList(item: ParkWithStatus): ParkWithStatus {
         hourly: null,
         daily: [],
         waterQuality: f.waterQuality,
-        // A bacterial advisory changes whether someone gets in the water, so it survives
-        // the trip to the list and the map even though most forecast fields do not.
-        redTide: f.redTide,
-        beachWaterQuality: f.beachWaterQuality,
         sources: {},
       }
     : null;

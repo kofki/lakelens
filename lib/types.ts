@@ -16,7 +16,7 @@
  */
 export type StatusLevel = "open" | "full" | "closed" | "unknown";
 export type CoverageTier = "basic" | "deep";
-export type ParkType = "spring" | "lake" | "river" | "beach";
+export type ParkType = "spring" | "lake" | "river";
 export type Operator = "state" | "county" | "private";
 export type Guarded = "yes" | "no" | "unknown";
 export type WaterAccess = "yes" | "limited" | "no" | "unknown";
@@ -113,6 +113,8 @@ export interface Park {
   noaa_distance_km?: number | null;
   nws_grid: NwsGrid | null;
   nws_zone: string | null;
+  /** IANA zone from the NWS points response, e.g. "America/New_York". Null falls back to Eastern. */
+  time_zone?: string | null;
   nws_county: string | null;
   /** "HH:MM" local time the park typically fills on weekends/holidays, or null */
   typical_closure_time: string | null;
@@ -286,36 +288,7 @@ export interface ParkForecast {
   hourly?: HourlyColumnar | null;
   daily?: ForecastDay[];
   waterQuality: WaterQuality | null;
-  /** FWC Karenia brevis. Beaches only; null everywhere else. */
-  redTide: RedTide | null;
-  /** FDOH Healthy Beaches enterococcus. Beaches only; null everywhere else. */
-  beachWaterQuality: BeachWaterQuality | null;
   sources: Record<string, SourceStamp>;
-}
-
-export type RedTideLevel = "none" | "very-low" | "low" | "medium" | "high";
-
-export interface RedTide {
-  level: RedTideLevel;
-  label: string;
-  abundance: string;
-  sampledAt: string;
-  distanceKm: number;
-  location: string | null;
-  sampleCount: number;
-}
-
-export type BeachWaterLevel = "good" | "caution" | "advisory";
-
-export interface BeachWaterQuality {
-  level: BeachWaterLevel;
-  label: string;
-  valueCfu: number;
-  station: string;
-  county: string;
-  sampledAt: string;
-  distanceKm: number;
-  advisory: boolean;
 }
 
 // ---------- reviews ----------
@@ -408,6 +381,7 @@ export interface ReportSummary {
 export type StatusSource =
   | "alert"
   | "seasonal"
+  | "hours"
   | "confirmed_reports"
   | "report_prediction"
   | "prediction"

@@ -6,7 +6,7 @@
  * whose fill and tint come from the same place, so the text and the colour can never
  * disagree. Pure TS, no React or DB imports.
  */
-import type { BeachWaterQuality, RedTide, WaterQuality } from "./types";
+import type { WaterQuality } from "./types";
 
 /** Matches StatTile's tone union. Kept here so lib/ stays free of component imports. */
 export type LevelTone = "neutral" | "good" | "ok" | "warn" | "high" | "bad";
@@ -114,29 +114,4 @@ const WATER_QUALITY_TONE: Record<WaterQuality["level"], LevelTone> = {
 export function waterQualityLevel(q: WaterQuality | null | undefined): Level | null {
   if (!q) return null;
   return { label: q.label, tone: WATER_QUALITY_TONE[q.level], percent: null };
-}
-
-
-/**
- * FWC's abundance bands. "Not present" is deliberately a positive reading rather than a
- * neutral one: on a Gulf beach in bloom season, knowing there is no red tide today is the
- * answer people came for.
- */
-export function redTideLevel(rt: RedTide | null | undefined): Level | null {
-  if (!rt) return null;
-  const tone: LevelTone =
-    rt.level === "none" ? "good" : rt.level === "very-low" ? "ok" : rt.level === "low" ? "warn" : rt.level === "medium" ? "high" : "bad";
-  return { label: rt.label, tone, percent: null };
-}
-
-const BEACH_WATER_TONE: Record<BeachWaterQuality["level"], LevelTone> = {
-  good: "good",
-  caution: "warn",
-  advisory: "bad",
-};
-
-/** FDOH enterococcus: 35.4 and 70.4 cfu/100mL are the programme's own thresholds. */
-export function beachWaterLevel(q: BeachWaterQuality | null | undefined): Level | null {
-  if (!q) return null;
-  return { label: q.label, tone: BEACH_WATER_TONE[q.level], percent: null };
 }

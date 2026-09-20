@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { MapPin } from "lucide-react";
 import type { ParkWithStatus } from "@/lib/types";
-import { reportLine } from "@/lib/plainLanguage";
 import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
 import { LastUpdated } from "@/components/ui/LastUpdated";
@@ -57,7 +56,16 @@ export function ParkCard({ item, selected = false, onSelect }: ParkCardProps) {
     >
       <Card as="article" padded={false} interactive className="relative overflow-hidden">
         <div className="flex gap-3 p-3">
-          <ParkPhoto src={park.photo_url} className="size-20 shrink-0 rounded-xl" />
+          {/* The photo is a link in its own right: people tap pictures. */}
+          <Link
+            href={`/park/${park.slug}`}
+            onClick={selectable ? (e) => e.stopPropagation() : undefined}
+            tabIndex={-1}
+            aria-hidden="true"
+            className="shrink-0 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-taupe"
+          >
+            <ParkPhoto src={park.photo_url} className="size-20 shrink-0 rounded-xl" />
+          </Link>
           <div className="min-w-0 flex-1">
             <h3 className="text-base font-extrabold leading-tight text-ink">
               <Link
@@ -94,11 +102,6 @@ export function ParkCard({ item, selected = false, onSelect }: ParkCardProps) {
         </div>
         <div className="space-y-1.5 border-t border-mist-light px-3 py-2">
           <StatRow items={conditionStatItems(item)} />
-          {reportSummary.signal !== "none" && (
-            <p className="text-xs text-cocoa" suppressHydrationWarning>
-              {reportLine(reportSummary, new Date())}
-            </p>
-          )}
           <div className="flex flex-wrap items-center justify-between gap-2">
             <LastUpdated at={status.updatedAt} source={statusSourceLabel(status.source)} />
             {selectable && (

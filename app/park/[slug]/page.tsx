@@ -120,7 +120,7 @@ export default async function ParkPage({ params }: Params) {
 
             <ConditionsCard bundle={bundle} now={now} />
 
-            <RulesCard park={park} />
+            <RulesCard park={park} now={now} />
 
             <ReportsSection
               park={park}
@@ -142,6 +142,7 @@ export default async function ParkPage({ params }: Params) {
 
           <PlanSidebar
             bundle={bundle}
+            now={now}
             className="hidden space-y-4 self-start lg:sticky lg:top-[calc(var(--top-nav-h)+80px)] lg:block"
           />
         </div>

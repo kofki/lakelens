@@ -8,10 +8,18 @@ export interface PredictionCardProps {
   prediction: Prediction | null;
 }
 
+/**
+ * How busy, not whether it will fill.
+ *
+ * "Might fill up today" claimed a specific outcome from a weekend and a forecast high,
+ * which is not something this model can know: no park publishes live capacity. What the
+ * calendar and the weather genuinely support is a statement about crowding, so that is
+ * what it says.
+ */
 const HEADLINE: Record<Prediction["level"], string> = {
-  none: "No closure expected today",
-  possible: "Might fill up today",
-  likely: "Likely to fill up today",
+  none: "About as busy as usual",
+  possible: "Busier than usual today",
+  likely: "Much busier than usual today",
   closed: "Closed today",
 };
 
@@ -22,11 +30,11 @@ const HOW_IT_WORKS = [
   },
   {
     title: "What the score means",
-    body: "0 or less means no closure expected, 1 to 2 means possible, 3 or more means likely. Each point above 2 also shifts the expected fill time 25 minutes earlier.",
+    body: "0 or less reads as a normal day, 1 to 2 as busier than usual, 3 or more as much busier. Each point above 2 also shifts the expected busy time 25 minutes earlier.",
   },
   {
     title: "It is an estimate",
-    body: "This comes from the calendar, the forecast and past patterns. It is not an official capacity count, and only an official closure, the swim season or visitors reporting they were turned away will mark a park full or closed.",
+    body: "This comes from the calendar, the forecast and past patterns. No park publishes live capacity, so this can never tell you a park will be full. Only an official closure, the swim season or visitors reporting they were turned away will mark a park closed or full.",
   },
 ];
 
@@ -44,7 +52,7 @@ export function PredictionCard({ prediction }: PredictionCardProps) {
   return (
     <Section
       id="prediction"
-      title="Will it fill up?"
+      title="How busy today?"
       icon={<CalendarClock />}
       action={
         <InfoSheet label="How this is worked out" title="How this is worked out" entries={HOW_IT_WORKS} />
@@ -54,7 +62,7 @@ export function PredictionCard({ prediction }: PredictionCardProps) {
         <p className="text-xl font-extrabold leading-tight text-ink">{HEADLINE[prediction.level]}</p>
         {prediction.predictedTimeLabel && (
           <p className="text-base text-cocoa">
-            Expected to reach capacity <strong>{prediction.predictedTimeLabel}</strong>.
+            Usually busiest <strong>{prediction.predictedTimeLabel}</strong>.
           </p>
         )}
 
