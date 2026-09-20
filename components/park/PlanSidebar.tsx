@@ -7,7 +7,7 @@ import { ButtonLink } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { LastUpdated } from "@/components/ui/LastUpdated";
 import { StatusPill } from "@/components/ui/StatusPill";
-import { MiniMapLazy } from "@/components/map/MiniMapLazy";
+import { ParkingMapLazy } from "@/components/map/ParkingMapLazy";
 import { directionsUrl } from "@/components/map/directions";
 import { ReportButton } from "@/components/report/ReportButton";
 import { STATUS_SOURCE_TEXT } from "./format";
@@ -128,7 +128,7 @@ export function PlanSidebar({ bundle, className }: PlanSidebarProps) {
 
       <Card as="section" className="space-y-3 border-mist">
         <h2 className="text-lg font-extrabold leading-tight text-brown">Where you&apos;ll be</h2>
-        <MiniMapLazy center={{ lat: park.lat, lng: park.lng }} parkName={park.name} lots={bundle.parkingLots} className="w-full" />
+        <ParkingMapLazy center={{ lat: park.lat, lng: park.lng }} parkName={park.name} lots={bundle.parkingLots} className="w-full" />
       </Card>
 
       <Card as="section" className="flex items-start gap-2">

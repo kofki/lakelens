@@ -1,5 +1,5 @@
 /**
- * Map style constants shared by ParkMap and MiniMap.
+ * Map style constants shared by the full-screen map and the parking map.
  * Keyless OpenFreeMap vector style by default (commercial OK, attribution auto-injected).
  * Swap NEXT_PUBLIC_MAP_STYLE_URL to the Versatiles fallback if OpenFreeMap is down.
  * Only `import type` from maplibre-gl here so this file stays safe to import anywhere.

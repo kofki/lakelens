@@ -1,10 +1,10 @@
-import { Accessibility, Car, ExternalLink, Navigation, SquareParking, TriangleAlert } from "lucide-react";
+import { Accessibility, ExternalLink, Navigation, SquareParking, TriangleAlert } from "lucide-react";
 import type { Park, ParkingLot } from "@/lib/types";
 import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
 import { Section } from "@/components/ui/Section";
-import { MiniMapLazy } from "@/components/map/MiniMapLazy";
-import { directionsUrl } from "./format";
+import { ParkingMapLazy } from "@/components/map/ParkingMapLazy";
+import { directionsUrl } from "@/components/map/directions";
 
 export interface ParkingCardProps {
   park: Park;
@@ -18,7 +18,12 @@ export function mentionsNoRoadsideWaiting(park: Park, lots: ParkingLot[]): boole
   return lots.some((l) => l.notes && ROADSIDE_RE.test(l.notes));
 }
 
-/** Curated parking lots with fee / ADA spaces / overflow / notes, a mini map and a directions link. */
+/**
+ * Parking lots with fee, ADA spaces, overflow and notes, numbered to match the pins on the
+ * map below. Each lot links to directions using its OWN coordinates: a park centroid can
+ * be kilometres from the entrance you actually want, and for the island parks it is open
+ * water.
+ */
 export function ParkingCard({ park, lots }: ParkingCardProps) {
   const sorted = [...lots].sort((a, b) => Number(a.is_overflow) - Number(b.is_overflow));
   const roadside = mentionsNoRoadsideWaiting(park, lots);
@@ -30,7 +35,7 @@ export function ParkingCard({ park, lots }: ParkingCardProps) {
       icon={<SquareParking />}
       action={
         <a
-          href={directionsUrl(park.lat, park.lng)}
+          href={directionsUrl(park.lat, park.lng, park.name)}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex min-h-11 items-center gap-1 rounded-full border border-mist bg-white px-3 text-sm font-bold text-brown shadow-card hover:border-moss"
@@ -51,6 +56,10 @@ export function ParkingCard({ park, lots }: ParkingCardProps) {
         </div>
       )}
 
+      {sorted.length > 0 && (
+        <ParkingMapLazy center={{ lat: park.lat, lng: park.lng }} parkName={park.name} lots={sorted} className="w-full" />
+      )}
+
       {sorted.length === 0 ? (
         park.entrance_notes ? (
           <Card>
@@ -59,12 +68,18 @@ export function ParkingCard({ park, lots }: ParkingCardProps) {
         ) : null
       ) : (
         <ul className={sorted.length > 1 ? "space-y-3 md:grid md:grid-cols-2 md:gap-3 md:space-y-0" : "space-y-3"}>
-          {sorted.map((lot) => (
+          {sorted.map((lot, i) => (
             <li key={lot.id}>
               <Card as="article" className="h-full space-y-2">
                 <div className="flex flex-wrap items-center gap-2">
                   <h3 className="flex items-center gap-1.5 font-extrabold text-ink">
-                    <Car aria-hidden="true" focusable="false" className="size-4 text-taupe" />
+                    {/* The number is the pin number on the map, so the two can be matched. */}
+                    <span
+                      aria-hidden="true"
+                      className="inline-flex size-6 shrink-0 items-center justify-center rounded-full border-2 border-cyan-deep text-xs font-extrabold text-cyan-deep"
+                    >
+                      {i + 1}
+                    </span>
                     {lot.name}
                   </h3>
                   {lot.is_overflow && <Badge variant="info">Overflow lot</Badge>}
@@ -99,6 +114,16 @@ export function ParkingCard({ park, lots }: ParkingCardProps) {
                   )}
                 </dl>
                 {lot.notes && <p className="text-sm text-cocoa">{lot.notes}</p>}
+                <a
+                  href={directionsUrl(lot.lat, lot.lng, `${lot.name} parking`)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-11 items-center gap-1.5 text-sm font-bold text-brown underline underline-offset-2"
+                >
+                  <Navigation aria-hidden="true" focusable="false" className="size-4" />
+                  Directions to this lot
+                  <span className="sr-only">(opens in a new tab)</span>
+                </a>
               </Card>
             </li>
           ))}
@@ -111,9 +136,6 @@ export function ParkingCard({ park, lots }: ParkingCardProps) {
         </p>
       )}
 
-      <div className="lg:hidden">
-        <MiniMapLazy center={{ lat: park.lat, lng: park.lng }} parkName={park.name} lots={sorted} className="w-full overflow-hidden rounded-card" />
-      </div>
 
       {park.official_url && (
         <p className="text-xs text-mocha">
