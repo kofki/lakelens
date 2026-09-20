@@ -22,8 +22,9 @@ function pickReading(readings: UsgsReading[], parameter: UsgsReading["parameter"
   return readings.find((x) => x.parameter === parameter) ?? null;
 }
 
-function providerLabel(p: "nws" | "open-meteo" | undefined): string {
-  return p === "open-meteo" ? "Open-Meteo" : "National Weather Service";
+/** Weather comes from one provider only. */
+function providerLabel(): string {
+  return "National Weather Service";
 }
 
 function pickNoaa(noaa: NoaaPayload | null | undefined, parameter: NoaaReading["parameter"]): NoaaReading | null {
@@ -81,7 +82,7 @@ export function ConditionsCard({ bundle, now }: ConditionsCardProps) {
           ? `Water: ${noaaStationLabel} (no recent reading)`
           : "Water: no gauge for this park";
 
-  const attribution = [weather ? `Weather: ${providerLabel(weather.provider)}` : "Weather: not available", waterAttribution].join(" · ");
+  const attribution = [weather ? `Weather: ${providerLabel()}` : "Weather: not available", waterAttribution].join(" · ");
 
   return (
     <Section id="conditions" title="Conditions today" icon={<Thermometer aria-hidden="true" focusable="false" />}>
@@ -108,7 +109,7 @@ export function ConditionsCard({ bundle, now }: ConditionsCardProps) {
               {weather.current.tempF !== null ? `${Math.round(weather.current.tempF)}°F` : "—"}
             </p>
             <p className="mt-1 text-sm font-bold text-mocha">{describeWeather(weather, now)}</p>
-            <LastUpdated at={weatherFetchedAt} source={providerLabel(weather.provider)} stale={weatherStale} className="mt-1" />
+            <LastUpdated at={weatherFetchedAt} source={providerLabel()} stale={weatherStale} className="mt-1" />
           </div>
           {weather.daily.length > 0 && (
             <ol className="flex gap-2 overflow-x-auto pb-1 md:grid md:grid-cols-7 md:overflow-visible" aria-label="Seven-day outlook">

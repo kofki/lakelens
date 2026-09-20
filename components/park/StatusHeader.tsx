@@ -21,7 +21,7 @@ function sourcesLine(bundle: ParkBundle): string {
   const operator = bundle.park.operator === "state" ? "Florida State Parks" : bundle.park.operator === "county" ? "the county park office" : "the park operator";
   parts.push(operator);
   if (bundle.usgs) parts.push("USGS");
-  if (bundle.weather) parts.push(bundle.weather.provider === "nws" ? "National Weather Service" : "Open-Meteo");
+  if (bundle.weather) parts.push("National Weather Service");
   if (bundle.reportSummary.count > 0) parts.push("visitor reports");
   return parts.join(" · ");
 }

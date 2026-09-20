@@ -1,31 +1,29 @@
 /**
- * Ingestion job runner (server only — uses the admin client).
+ * LakeLens `refresh-conditions` Edge Function — the single scheduled ingestion path.
  *
- *   usgs     batched USGS calls (40 sites/request) for every distinct gauge of EVERY park with a gauge
- *            -> one conditions_snapshots(source=usgs) row per gauged park
- *   noaa     NOAA CO-OPS (Tides & Currents) water temperature + tide for every coastal park with a
- *            noaa_station_id -> one conditions_snapshots(source=noaa) row per such park
- *   weather  EVERY park every run. Deep parks: NWS (Open-Meteo fallback), 4 in parallel. Basic parks:
- *            Open-Meteo multi-location batches of 20, sequential (429-safe), one insert per batch.
- *            A park is skipped when its latest weather snapshot is < 50 min old (unless force).
- *   alerts   ONE statewide NWS call -> park_alerts(kind=nws) upsert by hash; stale/expired rows -> active=false
- *   algae    FDEP algal bloom samples (21 days) within 3 km -> park_alerts(kind=notice, source=fdep-algae)
- *   holidays refresh holidays + long_weekends for this year and next (Nager.Date)
- *   prune    delete conditions_snapshots older than 7 days
+ * pg_cron (supabase/migrations/*_edge_cron.sql) POSTs here on a schedule; the app's
+ * /api/refresh proxies here for on-demand refresh when a park page finds stale data.
+ * Everything runs inside Supabase, so there is no dependency on the Vercel deployment.
  *
- * Every job is idempotent and never throws: failures are returned in `errors`. `ok` is false only when the
- * job could not run at all (bad env, fatal exception).
+ *   weather   National Weather Service for EVERY park (no second provider by design)
+ *   noaa      NOAA CO-OPS water temperature + tide for coastal parks
+ *   usgs      USGS gauges (batched 40 sites per request) for springs and rivers
+ *   alerts    one NWS FL alert sweep, matched to parks by UGC zone/county
+ *   algae     FDEP algal-bloom samples -> park_alerts notices
+ *   holidays  Nager.Date public holidays + long weekends
+ *   prune     drop conditions_snapshots older than 7 days
+ *
+ * The fetch/normalise logic lives in ../_shared/*, which the Next.js app and vitest
+ * import too, so there is exactly one implementation of each parser.
  */
+import { withSupabase, type SupabaseContext } from "npm:@supabase/server@^1";
 import type { SupabaseClient } from "@supabase/supabase-js";
-import type { Database, Json } from "@/lib/database.types";
-import { createAdminClient } from "@/lib/supabase/admin";
-import type { CronJob, NwsGrid, Park } from "@/lib/types";
-import { buildUsgsPayloadForPark, fetchUsgsLatestDetailed } from "./usgs";
-import { buildNoaaPayloadForPark, fetchNoaaLatest } from "./noaa";
-import { fetchAlertsFL, fetchNwsWeather, matchAlertsToPark, type NwsAlertFeature } from "./nws";
-import { OPEN_METEO_BATCH_SIZE, fetchOpenMeteo, fetchOpenMeteoBatch } from "./openMeteo";
-import { fetchLongWeekends, fetchNagerHolidays } from "./holidays";
-import { nwsAlertHash } from "./hash";
+import { buildUsgsPayloadForPark, fetchUsgsLatestDetailed } from "../_shared/usgs.ts";
+import { buildNoaaPayloadForPark, fetchNoaaLatest } from "../_shared/noaa.ts";
+import { fetchAlertsFL, fetchNwsWeather, matchAlertsToPark, type NwsAlertFeature } from "../_shared/nws.ts";
+import { fetchLongWeekends, fetchNagerHolidays } from "../_shared/holidays.ts";
+import { nwsAlertHash } from "../_shared/hash.ts";
+import type { CronJob, NwsGrid, ParkAlertInsert, ParkLike } from "../_shared/types.ts";
 import {
   ALGAE_SOURCE,
   FDEP_ALGAE_DASHBOARD_URL,
@@ -35,13 +33,18 @@ import {
   algaeSeverity,
   fetchAlgaeSamples,
   matchAlgaeToParks,
-} from "./algae";
+} from "../_shared/algae.ts";
 
 export const CRON_JOBS: readonly CronJob[] = ["usgs", "noaa", "weather", "alerts", "holidays", "prune", "algae"];
 
 export function isCronJob(value: string): value is CronJob {
   return (CRON_JOBS as readonly string[]).includes(value);
 }
+
+/** withSupabase hands us an untyped service-role client; rows are `any` at the edge. */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type Db = SupabaseClient<any>;
+type Json = unknown;
 
 export interface RunJobOptions {
   /** restrict usgs/weather to one park (used by /api/refresh) */
@@ -51,7 +54,7 @@ export interface RunJobOptions {
   /** injectable clock (tests) */
   now?: Date;
   /** injectable client (tests); defaults to createAdminClient() */
-  client?: SupabaseClient<Database>;
+  client?: Db;
   /** stop starting new per-park work after this many ms (default 50 s; route maxDuration is 60 s) */
   timeBudgetMs?: number;
 }
@@ -69,7 +72,7 @@ export const WEATHER_FRESH_MS = 50 * 60e3;
 export const PRUNE_AFTER_MS = 7 * 24 * 3600e3;
 const WEATHER_CONCURRENCY = 4;
 
-type Db = SupabaseClient<Database>;
+
 type Ctx = { db: Db; now: Date; counts: Record<string, number>; errors: string[]; notes: string[]; opts: RunJobOptions; startedAt: number };
 
 const msg = (err: unknown) => (err instanceof Error ? err.message : String(err));
@@ -86,11 +89,8 @@ export async function runJob(job: CronJob, opts: RunJobOptions = {}): Promise<Ru
     opts,
     startedAt: Date.now(),
   };
-  try {
-    ctx.db = opts.client ?? createAdminClient();
-  } catch (err) {
-    return { ok: false, counts: {}, errors: [`admin client: ${msg(err)}`] };
-  }
+  if (!opts.client) return { ok: false, counts: {}, errors: ["no supabase client supplied"] };
+  ctx.db = opts.client;
   try {
     switch (job) {
       case "usgs":
@@ -217,7 +217,7 @@ async function runNoaa(ctx: Ctx): Promise<void> {
 
 // ---------- weather ----------
 
-type WeatherParkRow = Pick<Park, "id" | "slug" | "name" | "lat" | "lng"> & {
+type WeatherParkRow = Pick<ParkLike, "id" | "slug" | "name" | "lat" | "lng"> & {
   coverage_tier: string;
   nws_grid: Json | null;
   nws_zone: string | null;
@@ -238,7 +238,7 @@ async function runWeather(ctx: Ctx): Promise<void> {
     const { data: rows, error: lcErr } = await ctx.db
       .from("latest_conditions")
       .select("park_id,source,fetched_at")
-      .in("source", ["nws", "open-meteo"]);
+      .eq("source", "nws");
     if (lcErr) ctx.errors.push(`latest_conditions: ${lcErr.message}`);
     for (const r of rows ?? []) {
       if (!r.park_id || !r.fetched_at) continue;
@@ -253,68 +253,45 @@ async function runWeather(ctx: Ctx): Promise<void> {
     if (fresh) bump(ctx, "skipped_fresh");
     return !fresh;
   }) as WeatherParkRow[];
-  const deep = queue.filter((p) => p.coverage_tier === "deep");
-  const basic = queue.filter((p) => p.coverage_tier !== "deep");
-  ctx.counts.deep_due = deep.length;
-  ctx.counts.basic_due = basic.length;
+  // NWS covers every park. Deep-coverage parks also get the hourly grid (used by the
+  // forecast strip); basic parks take the daily periods only, which halves the call count.
+  ctx.counts.deep_due = queue.filter((p) => p.coverage_tier === "deep").length;
+  ctx.counts.basic_due = queue.length - ctx.counts.deep_due;
 
-  // deep parks: NWS with per-park Open-Meteo fallback, a few in parallel
   let i = 0;
   const worker = async () => {
-    while (i < deep.length) {
+    while (i < queue.length) {
       if (overBudget(ctx)) {
-        bump(ctx, "skipped_time_budget", deep.length - i);
-        i = deep.length;
+        bump(ctx, "skipped_time_budget", queue.length - i);
+        i = queue.length;
         return;
       }
-      await refreshParkWeather(ctx, deep[i++]);
+      await refreshParkWeather(ctx, queue[i++]);
     }
   };
-  await Promise.all(Array.from({ length: Math.min(WEATHER_CONCURRENCY, deep.length) }, worker));
-
-  // basic parks: Open-Meteo multi-location batches, sequential so we never trip its burst limit
-  for (let start = 0; start < basic.length; start += OPEN_METEO_BATCH_SIZE) {
-    if (overBudget(ctx)) {
-      bump(ctx, "skipped_time_budget", basic.length - start);
-      break;
-    }
-    const batch = basic.slice(start, start + OPEN_METEO_BATCH_SIZE);
-    await refreshBasicWeatherBatch(ctx, batch);
-  }
+  await Promise.all(Array.from({ length: Math.min(WEATHER_CONCURRENCY, queue.length) }, worker));
 }
 
-/** One Open-Meteo request + one insert for up to OPEN_METEO_BATCH_SIZE basic parks. */
-async function refreshBasicWeatherBatch(ctx: Ctx, batch: WeatherParkRow[]): Promise<void> {
-  const fetchedAt = new Date().toISOString();
-  bump(ctx, "open_meteo_batches");
-  try {
-    const payloads = await fetchOpenMeteoBatch(
-      batch.map((p) => ({ lat: p.lat, lng: p.lng })),
-      { fetchedAt },
-    );
-    const rows = batch.map((p, idx) => ({ park_id: p.id, source: "open-meteo", fetched_at: fetchedAt, payload: payloads[idx] as unknown as Json }));
-    const { error } = await ctx.db.from("conditions_snapshots").insert(rows);
-    if (error) throw new Error(`insert weather batch: ${error.message}`);
-    bump(ctx, "open_meteo", batch.length);
-    bump(ctx, "inserted", batch.length);
-  } catch (err) {
-    ctx.errors.push(`open-meteo batch (${batch[0]?.slug}…, ${batch.length} parks): ${msg(err)}`);
-    bump(ctx, "failed", batch.length);
-  }
-}
-
+/**
+ * One park's weather from the National Weather Service.
+ * There is deliberately no second provider: if NWS fails for a park we record the error and
+ * leave the previous snapshot in place rather than mixing sources in the same field.
+ */
 async function refreshParkWeather(ctx: Ctx, park: WeatherParkRow): Promise<void> {
   const fetchedAt = new Date().toISOString();
   const grid = (park.nws_grid && typeof park.nws_grid === "object" && "forecast" in park.nws_grid ? park.nws_grid : null) as NwsGrid | null;
-  let payload: Json | null = null;
-  let source: "nws" | "open-meteo" = "nws";
 
+  let payload: Json;
   try {
-    const { payload: nws, points } = await fetchNwsWeather({ lat: park.lat, lng: park.lng, nws_grid: grid }, fetchedAt);
+    const { payload: nws, points } = await fetchNwsWeather(
+      { lat: park.lat, lng: park.lng, nws_grid: grid },
+      fetchedAt,
+      { hourly: park.coverage_tier === "deep" },
+    );
     payload = nws as unknown as Json;
     bump(ctx, "nws");
     if (points) {
-      // persist the grid so later runs skip /points (cache 24 h upstream; grid ids are stable)
+      // persist the grid so later runs skip /points (grid ids are stable)
       const { error } = await ctx.db
         .from("parks")
         .update({
@@ -328,18 +305,11 @@ async function refreshParkWeather(ctx: Ctx, park: WeatherParkRow): Promise<void>
     }
   } catch (err) {
     ctx.errors.push(`nws ${park.slug}: ${msg(err)}`);
-    try {
-      payload = (await fetchOpenMeteo(park.lat, park.lng, { fetchedAt })) as unknown as Json;
-      source = "open-meteo";
-      bump(ctx, "open_meteo");
-    } catch (err2) {
-      ctx.errors.push(`open-meteo ${park.slug}: ${msg(err2)}`);
-      bump(ctx, "failed");
-      return;
-    }
+    bump(ctx, "failed");
+    return;
   }
 
-  const { error } = await ctx.db.from("conditions_snapshots").insert({ park_id: park.id, source, fetched_at: fetchedAt, payload: payload! });
+  const { error } = await ctx.db.from("conditions_snapshots").insert({ park_id: park.id, source: "nws", fetched_at: fetchedAt, payload });
   if (error) {
     ctx.errors.push(`insert weather ${park.slug}: ${error.message}`);
     bump(ctx, "failed");
@@ -369,7 +339,7 @@ async function runAlerts(ctx: Ctx): Promise<void> {
   ctx.counts.parks = parks?.length ?? 0;
 
   const nowIso = ctx.now.toISOString();
-  const rows = new Map<string, Database["public"]["Tables"]["park_alerts"]["Insert"]>();
+  const rows = new Map<string, ParkAlertInsert>();
   for (const park of parks ?? []) {
     for (const f of matchAlertsToPark(features, park)) {
       const p = f.properties;
@@ -454,7 +424,7 @@ async function runAlgae(ctx: Ctx): Promise<void> {
   ctx.counts.parks = parks?.length ?? 0;
 
   const nowIso = ctx.now.toISOString();
-  const rows = new Map<string, Database["public"]["Tables"]["park_alerts"]["Insert"]>();
+  const rows = new Map<string, ParkAlertInsert>();
   for (const m of matchAlgaeToParks(samples, parks ?? [], ctx.now)) {
     const hash = algaeAlertHash(m.park.id, m.sample.id);
     if (rows.has(hash)) continue;
@@ -503,3 +473,49 @@ async function runPrune(ctx: Ctx): Promise<void> {
   if (error) throw new Error(`prune conditions_snapshots: ${error.message}`);
   ctx.counts.deleted = count ?? 0;
 }
+
+
+// ---------- HTTP entrypoint ----------
+
+/**
+ * pg_cron (via pg_net) and the app's /api/refresh both POST here with the project's
+ * sb_secret_ key in the `apikey` header. Secret keys are not JWTs, so config.toml sets
+ * verify_jwt = false and withSupabase({ auth: "secret" }) validates the key itself.
+ *
+ * Body: { source: CronJob | "all", park_id?: uuid, force?: boolean }
+ * 200:  { ok, source, ranAt, counts, errors }
+ */
+const ALL_SOURCES: readonly CronJob[] = ["weather", "noaa", "usgs", "alerts"];
+
+const handler = {
+  fetch: withSupabase({ auth: "secret" }, async (req: Request, ctx: SupabaseContext): Promise<Response> => {
+    if (req.method !== "POST" && req.method !== "GET") {
+      return Response.json({ ok: false, error: "method_not_allowed" }, { status: 405 });
+    }
+    const body = (await req.json().catch(() => ({}))) as { source?: unknown; park_id?: unknown; force?: unknown };
+    const url = new URL(req.url);
+    const raw = typeof body.source === "string" ? body.source : (url.searchParams.get("source") ?? "all");
+    const parkId = typeof body.park_id === "string" ? body.park_id : (url.searchParams.get("park_id") ?? undefined);
+    const force = body.force === true || url.searchParams.get("force") === "1";
+    const ranAt = new Date().toISOString();
+    const client = ctx.supabaseAdmin as unknown as Db;
+
+    const jobs: CronJob[] = raw === "all" ? [...ALL_SOURCES] : isCronJob(raw) ? [raw] : [];
+    if (jobs.length === 0) {
+      return Response.json({ ok: false, source: raw, ranAt, counts: {}, errors: [`unknown source: ${raw}`] }, { status: 400 });
+    }
+
+    const counts: Record<string, number> = {};
+    const errors: string[] = [];
+    let ok = true;
+    for (const job of jobs) {
+      const result = await runJob(job, { client, parkId, force, timeBudgetMs: 20_000 });
+      ok = ok && result.ok;
+      for (const [k, v] of Object.entries(result.counts)) counts[jobs.length > 1 ? `${job}_${k}` : k] = v;
+      errors.push(...result.errors.map((e) => (jobs.length > 1 ? `${job}: ${e}` : e)));
+    }
+    return Response.json({ ok, source: raw, ranAt, counts, errors });
+  }),
+};
+
+export default handler;

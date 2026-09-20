@@ -79,7 +79,7 @@ export function describeWaterTemp(usgs: UsgsPayload | null, park: Park): { value
   return { valueF: null, sentence: "Water temperature not available", typical: false };
 }
 
-/** WMO 4677 weather interpretation codes (Open-Meteo) → short text. */
+/** WMO 4677 weather interpretation codes → short text. */
 export function wmoToText(code: number): string {
   const table: Record<number, string> = {
     0: "Clear sky",

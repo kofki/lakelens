@@ -12,7 +12,6 @@ const EXPLORE: { href: "/" | "/list" | "/report" | "/about"; label: string }[] =
 const CREDITS: { href: string; label: string }[] = [
   { href: "https://waterdata.usgs.gov/", label: "USGS Water Services" },
   { href: "https://www.weather.gov/documentation/services-web-api", label: "National Weather Service" },
-  { href: "https://open-meteo.com/", label: "Open-Meteo (CC BY 4.0)" },
   { href: "https://openfreemap.org/", label: "OpenStreetMap contributors / OpenFreeMap" },
   { href: "https://www.floridastateparks.org/", label: "Florida State Parks" },
 ];

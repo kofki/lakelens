@@ -102,12 +102,6 @@ const SOURCES: { name: string; href: string; what: string; licence: string }[] =
     licence: "U.S. public domain.",
   },
   {
-    name: "Open-Meteo",
-    href: "https://open-meteo.com/",
-    what: "Backup forecast when the NWS API is unavailable. The provider is shown on every forecast.",
-    licence: "Weather data by Open-Meteo.com, CC BY 4.0.",
-  },
-  {
     name: "Nager.Date",
     href: "https://date.nager.at/",
     what: "US public holidays and long weekends used by the closure estimate.",

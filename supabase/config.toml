@@ -13,3 +13,10 @@ project_id = "lakelens"
 # (MCP deploy_edge_function must be called with verify_jwt: false to match).
 verify_jwt = false
 enabled = true
+
+[functions.refresh-conditions]
+# pg_cron (via pg_net) and the app's /api/refresh call this with the project's sb_secret_ key
+# in the `apikey` header. Secret keys are not JWTs, so the platform JWT gate must be off;
+# withSupabase({ auth: "secret" }) validates the key itself.
+verify_jwt = false
+enabled = true

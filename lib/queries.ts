@@ -128,7 +128,7 @@ function assemble(park: Park, world: World, dayContext: DayContext, now: Date): 
   const usgsRow = newest(mine.filter((r) => r.source === "usgs"));
   // Coastal parks have no USGS gauge; their water data is a NOAA CO-OPS snapshot instead.
   const noaaRow = newest(mine.filter((r) => r.source === "noaa"));
-  const weatherRow = newest(mine.filter((r) => r.source === "nws" || r.source === "open-meteo"));
+  const weatherRow = newest(mine.filter((r) => r.source === "nws"));
   const usgs = (usgsRow?.payload as UsgsPayload | undefined) ?? null;
   const noaa = (noaaRow?.payload as NoaaPayload | undefined) ?? null;
   const weather = (weatherRow?.payload as WeatherPayload | undefined) ?? null;

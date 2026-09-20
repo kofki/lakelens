@@ -1,15 +1,17 @@
 /**
  * POST /api/refresh  { park_id: uuid, sources?: ("usgs" | "noaa" | "weather")[] }
  *
- * On-demand refresh used by the park page when its data looks stale. Public (no secret) but
- * throttled: one run per park per 5 minutes (module-level map, per server instance) plus a
- * small global rate cap. Runs the usgs + noaa + weather jobs for that park only, with force=true.
- * A park only ever has one of usgs / noaa, so the unused one simply inserts nothing.
- * Response: { ok, throttled, park_id, ranAt, counts: { usgs?, noaa?, weather? }, errors }.
+ * On-demand refresh used by the park page when its data looks stale. All ingestion lives in
+ * the `refresh-conditions` Supabase Edge Function (which pg_cron also drives), so this route
+ * is just an authenticated proxy: it holds the secret key server-side and throttles callers.
+ *
+ * Public (no secret from the browser) but throttled: one run per park per 5 minutes plus a
+ * global cap, both per server instance — enough to stop a page refresh loop from hammering
+ * NWS/NOAA/USGS. A park only ever has one of usgs / noaa, so the unused one inserts nothing.
+ *
+ * Response: { ok, throttled, park_id, ranAt, counts, errors }.
  */
 import type { NextRequest } from "next/server";
-import { runJob, type RunJobResult } from "@/lib/ingest/run";
-import type { CronJob } from "@/lib/types";
 
 export const maxDuration = 60;
 export const dynamic = "force-dynamic";
@@ -30,6 +32,28 @@ function pruneMaps(now: number): void {
   while (recentRuns.length && now - recentRuns[0] > 60e3) recentRuns.shift();
 }
 
+interface EdgeResult {
+  ok?: boolean;
+  counts?: Record<string, number>;
+  errors?: string[];
+}
+
+/** Calls the Edge Function with the project's secret key (never exposed to the browser). */
+async function invokeEdge(source: RefreshSource, parkId: string): Promise<EdgeResult> {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const key = process.env.SUPABASE_SECRET_KEY;
+  if (!url || !key) return { ok: false, errors: ["refresh is not configured on this deployment"] };
+  const res = await fetch(`${url}/functions/v1/refresh-conditions`, {
+    method: "POST",
+    headers: { apikey: key, "Content-Type": "application/json" },
+    body: JSON.stringify({ source, park_id: parkId, force: true }),
+    cache: "no-store",
+  });
+  const body = (await res.json().catch(() => null)) as EdgeResult | null;
+  if (!res.ok) return { ok: false, errors: [`edge ${source}: HTTP ${res.status}`, ...(body?.errors ?? [])] };
+  return body ?? { ok: false, errors: [`edge ${source}: empty response`] };
+}
+
 export async function POST(req: NextRequest): Promise<Response> {
   const body = (await req.json().catch(() => null)) as { park_id?: unknown; sources?: unknown } | null;
   const parkId = typeof body?.park_id === "string" ? body.park_id.trim() : "";
@@ -37,20 +61,19 @@ export async function POST(req: NextRequest): Promise<Response> {
     return Response.json({ ok: false, error: "park_id must be a uuid" }, { status: 400 });
   }
   const sources: RefreshSource[] = Array.isArray(body?.sources)
-    ? (body!.sources as unknown[]).filter((s): s is RefreshSource => typeof s === "string" && (REFRESH_SOURCES as readonly string[]).includes(s))
+    ? (body.sources as unknown[]).filter((s): s is RefreshSource => typeof s === "string" && (REFRESH_SOURCES as readonly string[]).includes(s))
     : [...REFRESH_SOURCES];
   if (sources.length === 0) {
-    return Response.json({ ok: false, error: `sources must include one of ${REFRESH_SOURCES.join(", ")}` }, { status: 400 });
+    return Response.json({ ok: false, error: "no valid sources" }, { status: 400 });
   }
 
   const now = Date.now();
   pruneMaps(now);
   const last = lastRun.get(parkId);
   if (last !== undefined && now - last < THROTTLE_MS) {
-    const nextAllowedAt = new Date(last + THROTTLE_MS);
     return Response.json(
-      { ok: true, throttled: true, park_id: parkId, nextAllowedAt: nextAllowedAt.toISOString(), counts: {}, errors: [] },
-      { status: 200, headers: { "Retry-After": String(Math.ceil((last + THROTTLE_MS - now) / 1000)) } },
+      { ok: true, throttled: true, park_id: parkId, ranAt: new Date(last).toISOString(), counts: {}, errors: [] },
+      { status: 200 },
     );
   }
   if (recentRuns.length >= GLOBAL_CAP_PER_MIN) {
@@ -59,14 +82,14 @@ export async function POST(req: NextRequest): Promise<Response> {
   lastRun.set(parkId, now);
   recentRuns.push(now);
 
-  const results = await Promise.all(sources.map((s) => runJob(s as CronJob, { parkId, force: true })));
-  const counts: Partial<Record<RefreshSource, RunJobResult["counts"]>> = {};
+  const results = await Promise.all(sources.map((s) => invokeEdge(s, parkId)));
+  const counts: Partial<Record<RefreshSource, Record<string, number>>> = {};
   const errors: string[] = [];
   let ok = true;
   results.forEach((r, i) => {
-    counts[sources[i]] = r.counts;
-    errors.push(...r.errors.map((e) => `${sources[i]}: ${e}`));
-    ok &&= r.ok;
+    counts[sources[i]] = r.counts ?? {};
+    errors.push(...(r.errors ?? []).map((e) => `${sources[i]}: ${e}`));
+    ok &&= r.ok !== false;
   });
 
   return Response.json({ ok, throttled: false, park_id: parkId, ranAt: new Date(now).toISOString(), counts, errors }, { status: 200 });

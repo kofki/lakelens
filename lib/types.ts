@@ -23,7 +23,8 @@ export type WaterAccess = "yes" | "limited" | "no" | "unknown";
 export type EntryType = "ramp" | "stairs" | "dock_ladder" | "sloped_bank" | "sand" | "other" | "unknown";
 export type Surface = "paved" | "boardwalk" | "sand" | "natural" | "unknown";
 export type AlertKind = "closure" | "notice" | "nws";
-export type ConditionsSource = "usgs" | "noaa" | "nws" | "open-meteo";
+/** Weather is NWS only (no second provider); water is USGS inland, NOAA on the coast. */
+export type ConditionsSource = "usgs" | "noaa" | "nws";
 export type ReportCategory = "entry" | "conditions" | "parking" | "accessibility";
 
 export const REPORT_VALUES = {
@@ -222,92 +223,36 @@ export interface CalendarEvent {
 }
 
 // ---------- ingest payloads (stored in conditions_snapshots.payload) ----------
-export type UsgsParameter = "00060" | "00065" | "00010" | "63160";
+// Defined in supabase/functions/_shared/types.ts so the Edge Function and the app agree.
+import type {
+  UsgsParameter,
+  UsgsReading,
+  UsgsPayload,
+  NoaaParameter,
+  NoaaReading,
+  NoaaTide,
+  NoaaPayload,
+  WeatherHour,
+  WeatherDay,
+  WeatherPayload,
+  ParkLike,
+} from "../supabase/functions/_shared/types";
 
-export interface UsgsReading {
-  site: string; // "02322700"
-  parameter: UsgsParameter;
-  value: number;
-  unit: string; // "ft3/s" | "ft" | "degC"
-  time: string; // ISO UTC
-  stale: boolean; // older than 6 h at fetch time
-  provisional: boolean;
-}
+// Re-exported so every import site keeps using "@/lib/types".
+export type {
+  UsgsParameter,
+  UsgsReading,
+  UsgsPayload,
+  NoaaParameter,
+  NoaaReading,
+  NoaaTide,
+  NoaaPayload,
+  WeatherHour,
+  WeatherDay,
+  WeatherPayload,
+  ParkLike,
+};
 
-export interface UsgsPayload {
-  source: "usgs-ogc" | "usgs-legacy";
-  fetchedAt: string;
-  readings: UsgsReading[];
-  /** "high" when discharge is well above a typical baseline; see lib/ingest/usgs.ts */
-  flowFlag: "normal" | "high" | "unknown";
-  flowNote: string | null;
-}
-
-/** NOAA CO-OPS parameters we surface. `water_level` is a tide height above MLLW. */
-export type NoaaParameter = "water_temp" | "water_level";
-
-export interface NoaaReading {
-  station: string; // "8720218"
-  parameter: NoaaParameter;
-  value: number;
-  unit: string; // "degF" | "ft"
-  time: string; // ISO UTC
-  stale: boolean; // older than 3 h at fetch time
-}
-
-export interface NoaaTide {
-  type: "H" | "L";
-  time: string; // ISO UTC
-  valueFt: number;
-}
-
-export interface NoaaPayload {
-  source: "noaa";
-  fetchedAt: string;
-  stationId: string;
-  stationName: string | null;
-  /** km from the park to the station, when known */
-  distanceKm: number | null;
-  readings: NoaaReading[];
-  nextTide: NoaaTide | null;
-  note: string | null;
-}
-
-export interface WeatherHour {
-  time: string; // ISO local with offset
-  tempF: number | null;
-  rainProb: number | null;
-  shortForecast: string;
-}
-
-export interface WeatherDay {
-  date: string; // YYYY-MM-DD
-  name: string; // "Sat"
-  highF: number | null;
-  lowF: number | null;
-  rainProb: number | null;
-  shortForecast: string;
-  icon: string | null;
-}
-
-export interface WeatherPayload {
-  provider: "nws" | "open-meteo";
-  fetchedAt: string;
-  current: {
-    tempF: number | null;
-    shortForecast: string;
-    windMph: number | null;
-    humidity: number | null;
-    icon: string | null;
-  };
-  today: {
-    highF: number | null;
-    lowF: number | null;
-    rainProbMax: number | null;
-  };
-  hourly: WeatherHour[];
-  daily: WeatherDay[];
-}
 
 // ---------- derived / computed ----------
 export interface DayContext {
@@ -431,4 +376,5 @@ export interface ConfirmReportInput {
   response: "still_true" | "no_longer";
 }
 
-export type CronJob = "usgs" | "noaa" | "weather" | "alerts" | "holidays" | "prune" | "algae";
+// CronJob lives in supabase/functions/_shared/types.ts (shared with the Edge Function).
+export type { CronJob } from "../supabase/functions/_shared/types";

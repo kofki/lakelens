@@ -30,16 +30,6 @@ import {
   type NwsForecastResponse,
   type NwsPointsResponse,
 } from "@/lib/ingest/nws";
-import {
-  buildOpenMeteoBatchUrl,
-  buildOpenMeteoUrl,
-  fetchOpenMeteoBatch,
-  normalizeOpenMeteo,
-  normalizeOpenMeteoMulti,
-  offsetString,
-  wmoText,
-  type OpenMeteoResponse,
-} from "@/lib/ingest/openMeteo";
 import { buildContinuousUrl, chunk, fetchFlowHistory, normalizeContinuous } from "@/lib/ingest/usgs";
 import { haversineKm, parseRdbSites, selectGauges, usgsSitesUrl, isLiveReading, type SiteLiveness } from "@/lib/ingest/gauges";
 import {
@@ -82,8 +72,6 @@ import pointsFixture from "./fixtures/nws-points.json";
 import forecastFixture from "./fixtures/nws-forecast.json";
 import hourlyFixture from "./fixtures/nws-hourly.json";
 import alertsFixture from "./fixtures/nws-alerts-fl.json";
-import openMeteoFixture from "./fixtures/open-meteo.json";
-import openMeteoMultiFixture from "./fixtures/open-meteo-multi.json";
 import continuousFixture from "./fixtures/usgs-continuous.json";
 import algaeFixture from "./fixtures/fdep-algae.json";
 import nagerFixture from "./fixtures/nager-2026.json";
@@ -101,8 +89,6 @@ const points = pointsFixture as unknown as NwsPointsResponse;
 const forecast = forecastFixture as unknown as NwsForecastResponse;
 const hourly = hourlyFixture as unknown as NwsForecastResponse;
 const alerts = (alertsFixture as unknown as { features: NwsAlertFeature[] }).features;
-const openMeteo = openMeteoFixture as unknown as OpenMeteoResponse;
-const openMeteoMulti = openMeteoMultiFixture as unknown as OpenMeteoResponse[];
 const continuous = continuousFixture as unknown as OgcFeatureCollection;
 const algae = algaeFixture as unknown as ArcgisQueryResponse;
 const sitesRdb = readFileSync(join(__dirname, "fixtures/usgs-sites-ichetucknee.rdb"), "utf8");
@@ -436,52 +422,6 @@ describe("nws normalizeNws", () => {
   });
 });
 
-// ---------------------------------------------------------------- Open-Meteo
-
-describe("open-meteo", () => {
-  const payload = normalizeOpenMeteo(openMeteo, "2026-09-19T05:45:00.000Z");
-
-  it("maps WMO codes to plain text", () => {
-    expect(wmoText(0)).toBe("Clear sky");
-    expect(wmoText(3)).toBe("Overcast");
-    expect(wmoText(95)).toBe("Thunderstorm");
-    expect(wmoText(null)).toBe("");
-    expect(wmoText(42)).toBe("Unknown conditions");
-  });
-
-  it("formats UTC offsets", () => {
-    expect(offsetString(-14400)).toBe("-04:00");
-    expect(offsetString(19800)).toBe("+05:30");
-    expect(offsetString(0)).toBe("+00:00");
-  });
-
-  it("builds the documented request", () => {
-    const url = buildOpenMeteoUrl(29.9839, -82.7619);
-    expect(url).toContain("temperature_unit=fahrenheit");
-    expect(url).toContain("timezone=America%2FNew_York");
-    expect(url).toContain("forecast_days=7");
-    expect(url).toContain("daily=weather_code%2Ctemperature_2m_max");
-  });
-
-  it("produces the same WeatherPayload shape as NWS with provider open-meteo", () => {
-    expect(payload.provider).toBe("open-meteo");
-    expect(payload.current.tempF).toBe(73.7);
-    expect(payload.current.shortForecast).toBe("Overcast");
-    expect(payload.current.windMph).toBe(3.1);
-    expect(payload.current.humidity).toBe(85);
-    expect(payload.today).toEqual({ highF: 91.5, lowF: 69.5, rainProbMax: 12 });
-    expect(payload.daily).toHaveLength(7);
-    expect(payload.daily[0]).toMatchObject({ date: "2026-09-19", name: "Sat", shortForecast: "Overcast", icon: null });
-    expect(payload.daily[2].shortForecast).toBe("Light drizzle");
-  });
-
-  it("hourly starts at the current hour and carries the local offset", () => {
-    expect(payload.hourly).toHaveLength(24);
-    expect(payload.hourly[0].time).toBe("2026-09-19T01:00-04:00");
-    expect(typeof payload.hourly[0].tempF).toBe("number");
-    expect(typeof payload.hourly[0].rainProb).toBe("number");
-  });
-});
 
 // ---------------------------------------------------------------- Holidays
 
@@ -594,56 +534,6 @@ describe("usgs flow history (OGC continuous)", () => {
 });
 
 // ---------------------------------------------------------------- Open-Meteo multi-location
-
-describe("open-meteo multi-location", () => {
-  it("builds comma-separated coordinate lists with forecast_hours=24", () => {
-    const url = buildOpenMeteoBatchUrl([
-      { lat: 29.98389, lng: -82.76194 },
-      { lat: 28.94722, lng: -81.33972 },
-    ]);
-    expect(url).toContain("latitude=29.98389%2C28.94722");
-    expect(url).toContain("longitude=-82.76194%2C-81.33972");
-    expect(url).toContain("forecast_hours=24");
-    expect(buildOpenMeteoUrl(1, 2)).toContain("latitude=1&longitude=2");
-  });
-
-  it("parses the array response in request order (element 0 has no location_id)", () => {
-    const payloads = normalizeOpenMeteoMulti(openMeteoMulti, 3, "2026-09-19T17:30:00.000Z");
-    expect(payloads).toHaveLength(3);
-    expect(payloads.every((p) => p.provider === "open-meteo")).toBe(true);
-    expect(payloads[0].current.tempF).toBe(openMeteoMulti[0].current!.temperature_2m);
-    expect(payloads[2].current.tempF).toBe(openMeteoMulti[2].current!.temperature_2m);
-    // forecast_hours=24 responses already start at the current hour
-    expect(payloads[0].hourly).toHaveLength(24);
-    expect(payloads[0].hourly[0].time).toBe("2026-09-19T13:00-04:00");
-    expect(payloads[0].daily).toHaveLength(7);
-    expect(payloads[1].today.highF).not.toBeNull();
-  });
-
-  it("accepts a bare object for a single location and rejects a count mismatch", () => {
-    expect(normalizeOpenMeteoMulti(openMeteo, 1, "2026-09-19T05:45:00.000Z")[0].current.tempF).toBe(73.7);
-    expect(() => normalizeOpenMeteoMulti(openMeteoMulti, 2, "x")).toThrow(/expected 2/);
-  });
-
-  it("retries once after HTTP 429 and refuses batches over 20", async () => {
-    let n = 0;
-    const fetchImpl: typeof fetch = async () => {
-      n++;
-      return n === 1 ? new Response("rate limited", { status: 429 }) : jsonResponse(openMeteoMulti);
-    };
-    const payloads = await fetchOpenMeteoBatch(
-      [
-        { lat: 1, lng: 1 },
-        { lat: 2, lng: 2 },
-        { lat: 3, lng: 3 },
-      ],
-      { fetchImpl, sleep: async () => {} },
-    );
-    expect(n).toBe(2);
-    expect(payloads).toHaveLength(3);
-    await expect(fetchOpenMeteoBatch(Array.from({ length: 21 }, (_, i) => ({ lat: i, lng: i })), { fetchImpl })).rejects.toThrow(/exceeds 20/);
-  });
-});
 
 // ---------------------------------------------------------------- gauge selection
 

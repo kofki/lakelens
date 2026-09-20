@@ -19,12 +19,12 @@ Built in 48 hours at **SASEhack 2026** by the team behind [BeachLens](https://be
 
 | Feature | How |
 |---|---|
-| **Map + list of every Florida state park with swimming** (69 parks) plus 7 deep-coverage springs | Curated data + FDEP GIS centroids; deep parks use spring-vent coordinates |
+| **Map + list of 84 Florida swim spots** — every state park with swimming, plus county and private springs — with 17 deep-coverage parks | Curated data + FDEP GIS centroids; deep parks use spring-vent coordinates |
 | **Closure estimate** ("likely fills around 9:35 AM") with the reasons shown | Transparent scoring model — see below. Always labelled *Estimate* |
 | **One-tap visitor reports** (turned away / got in / line / lot full / gator / ramp blocked…) | Anonymous device id, no login; 5 reports / 10 min rate limit; reports fade after 2 h; 3 matching reports within 30 min = *confirmed* |
 | **"Still full?" prompts** | Waze-style confirmation when a "full" report is getting old |
 | **Backup suggestions** | When a park is full/closed: up to 3 nearby parks with room, drive time, parking and accessible-entry info |
-| **Live conditions** | USGS river flow / level / water temperature, NWS forecast + active weather alerts (Open-Meteo fallback), refreshed by pg_cron |
+| **Live conditions** | NWS forecast and alerts for every park, USGS flow / level / water temperature inland, NOAA CO-OPS tides and water temperature on the coast — all refreshed by a Supabase Edge Function on pg_cron |
 | **Official closures as data** | Closures are `park_alerts` rows evaluated at request time — deactivate the alert and the park reopens automatically |
 | **Safety card** | Lifeguard status, cavern warnings, current + cold-water advice, alcohol / life-jacket rules per park |
 | **Parking + accessibility** | Curated lots (fees, ADA spaces, overflow, "no roadside waiting"), water-entry type, surfaces, restrooms — each marked *verified* or *unverified* with its source |
@@ -40,27 +40,28 @@ flowchart LR
     CRON[pg_cron + pg_net]
     EF[Edge Function<br/>submit-report]
     ST[Storage<br/>report-photos]
+    EFR["Edge Function<br/>refresh-conditions"]
   end
   subgraph Vercel["Next.js 16 on Vercel"]
-    RH["/api/cron/{usgs,weather,alerts,holidays,prune}"]
     PAGES["Server Components<br/>/ · /list · /park/[slug] · /report · /about"]
     CLIENT["Client: MapLibre map, bottom sheet,<br/>report sheet"]
   end
-  USGS["USGS Water Services"] --> RH
-  NWS["National Weather Service"] --> RH
-  OM["Open-Meteo (fallback)"] --> RH
-  CRON -- "Bearer CRON_SECRET" --> RH
-  RH --> PG
+  USGS["USGS Water Services"] --> EFR
+  NWS["National Weather Service"] --> EFR
+  NOAA["NOAA CO-OPS"] --> EFR
+  FDEP["FDEP algal blooms"] --> EFR
+  CRON -- "apikey (Vault)" --> EFR
+  EFR --> PG
   PAGES --> PG
   PAGES -- "lib/prediction · reportStatus<br/>parkStatus · backups" --> CLIENT
   CLIENT -- "apikey" --> EF --> PG
   CLIENT --> ST
-  CLIENT -- "stale? /api/refresh" --> RH
+  CLIENT -- "stale? /api/refresh" --> EFR
 ```
 
 - **Frontend:** Next.js 16 (App Router, ISR `revalidate = 60`), TypeScript, Tailwind v4 (CSS-first design tokens), MapLibre GL via `@vis.gl/react-maplibre` with keyless [OpenFreeMap](https://openfreemap.org) vector tiles, `vaul` for modal sheets, hand-rolled persistent bottom sheet.
-- **Backend:** Supabase Postgres with RLS (public read, no anonymous writes to tables), Edge Function `submit-report` (validation + rate limiting, service-role insert, DB trigger as backstop), Storage bucket for report photos, `pg_cron` + `pg_net` scheduling the Next.js ingestion routes (USGS every 30 min, weather hourly, NWS alerts hourly, holidays monthly, prune nightly). Secrets live in Supabase Vault.
-- **Pure logic** in `lib/` (no React/DB imports, 138 unit tests): prediction, report summarisation, status blending, backups, freshness, plain-language helpers.
+- **Backend:** Supabase Postgres with RLS (public read, no anonymous writes to tables), Edge Function `submit-report` (validation + rate limiting, service-role insert, DB trigger as backstop), Storage bucket for report photos, `pg_cron` + `pg_net` driving the `refresh-conditions` Edge Function (USGS every 30 min, weather hourly, NOAA twice an hour, NWS alerts hourly, FDEP algae every 6 h, holidays monthly, prune nightly). Ingestion runs entirely inside Supabase, so it keeps collecting even if the web deployment is down. Secrets live in Supabase Vault.
+- **Pure logic** in `lib/` (no React/DB imports, 166 unit tests): prediction, report summarisation, status blending, backups, freshness, plain-language helpers.
 
 ### How the closure estimate works (`lib/prediction.ts`)
 
@@ -75,7 +76,7 @@ A transparent additive score, shown to the user as plain reasons:
 | Rain chance ≥ 50 % | −2 |
 | Active official closure or out of swim season (Blue Spring manatee season) | → **Closed** |
 
-Score ≤ 0 → no closure expected · 1–2 → possible · ≥ 3 → likely. The park's *typical* weekend fill time (curated from official notices and news) is shifted **25 min earlier per point above 2**. Confidence reflects how much live data was available. It is an estimate and is labelled as one everywhere.
+Score ≤ 0 → no closure expected · 1–2 → possible · ≥ 3 → likely. A park that is merely *expected* to fill still reads **Open** — only an official closure, the swim season or a "turned away" report marks it Full or Closed. The park's *typical* weekend fill time (curated from official notices and news) is shifted **25 min earlier per point above 2**. Confidence reflects how much live data was available. It is an estimate and is labelled as one everywhere.
 
 ### How reports become a status (`lib/reportStatus.ts`, `lib/parkStatus.ts`)
 
@@ -86,7 +87,7 @@ Score ≤ 0 → no closure expected · 1–2 → possible · ≥ 3 → likely. T
 
 ### Verified vs. sample vs. unverified
 
-- Park facts for the 7 deep springs were curated from official pages, with `sources[]` recorded in `data/parks.deep.json`.
+- Park facts for the deep-coverage parks were curated from official pages, with `sources[]` recorded in `data/parks.deep.json` and `data/parks.extra.json`.
 - Accessibility fields are marked **verified** only when an official page states them; everything else is **unverified** and says so.
 - Demo reports are seeded with `is_sample = true` and rendered with a **Sample data** badge. Real reports have none.
 - Official alerts are entered manually (Florida State Parks blocks server-side fetches) and are labelled "entered manually · last checked …".
@@ -95,7 +96,7 @@ Score ≤ 0 → no closure expected · 1–2 → possible · ≥ 3 → likely. T
 
 - [USGS Water Services](https://api.waterdata.usgs.gov/) — river discharge, gauge height, water temperature (public domain)
 - [National Weather Service API](https://www.weather.gov/documentation/services-web-api) — forecasts and active alerts (public domain)
-- [Open-Meteo](https://open-meteo.com/) — weather fallback (CC BY 4.0)
+- [NOAA CO-OPS Tides & Currents](https://api.tidesandcurrents.noaa.gov/) — coastal water temperature and tides (public domain)
 - [Nager.Date](https://date.nager.at/) — US public holidays
 - [OpenStreetMap](https://www.openstreetmap.org/copyright) contributors via [OpenFreeMap](https://openfreemap.org) — map tiles; Overpass API — parking lots
 - [FDEP Florida State Parks boundaries](https://geodata.dep.state.fl.us/) — park centroids
@@ -104,7 +105,7 @@ Score ≤ 0 → no closure expected · 1–2 → possible · ≥ 3 → likely. T
 ## Run locally
 
 ```bash
-cp .env.example .env.local   # Supabase URL + keys, CRON_SECRET, ADMIN_TOKEN
+cp .env.example .env.local   # Supabase URL + keys, ADMIN_TOKEN
 npm install
 npm run dev
 ```
