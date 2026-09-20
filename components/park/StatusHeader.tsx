@@ -47,7 +47,7 @@ export function StatusHeader({ bundle, now }: StatusHeaderProps) {
         Status
       </h2>
       <div className="flex flex-wrap items-center gap-2 md:hidden">
-        <StatusPill level={status.level} size="lg" />
+        <StatusPill level={status.level} source={status.source} size="lg" />
       </div>
 
       <p className="text-base text-cocoa md:text-lg md:font-bold">{statusDescription(status)}</p>

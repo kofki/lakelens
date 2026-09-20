@@ -113,7 +113,7 @@ export function ParkPreviewCard({ item, onClose, onHeightChange, style, classNam
               </button>
             </div>
             <div className="mt-2 flex flex-wrap items-center gap-1.5">
-              <StatusPill level={status.level} size="md" />
+              <StatusPill level={status.level} source={status.source} size="md" />
               {reportSummary.sampleCount > 0 && <Badge variant="sample" />}
             </div>
           </div>

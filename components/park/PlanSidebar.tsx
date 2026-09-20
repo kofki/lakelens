@@ -65,7 +65,7 @@ export function PlanSidebar({ bundle, now, className }: PlanSidebarProps) {
     <aside aria-label="Plan your visit" className={className}>
       <Card as="section" className="space-y-3">
         <h2 className="text-xs font-extrabold uppercase tracking-wide text-taupe">Plan your visit</h2>
-        <StatusPill level={status.level} size="lg" />
+        <StatusPill level={status.level} source={status.source} size="lg" />
         <p className="text-sm font-bold text-cocoa">{line}</p>
         <LastUpdated at={status.updatedAt} source={STATUS_SOURCE_TEXT[status.source]} prefix="Status updated" />
 

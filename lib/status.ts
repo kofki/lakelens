@@ -6,6 +6,9 @@
  */
 import type { ParkStatus, StatusLevel } from "./types";
 
+/** Every glyph the status system can ask for. UI components resolve the name. */
+export type StatusIconName = "CircleCheck" | "Clock" | "Ban" | "OctagonX" | "CircleHelp" | "Moon" | "CalendarOff";
+
 export interface StatusMeta {
   label: string;
   shortLabel: string;
@@ -17,7 +20,7 @@ export interface StatusMeta {
   bgHex: string;
   /** Border/marker edge hex (3:1 on white). */
   edgeHex: string;
-  icon: "CircleCheck" | "Clock" | "Ban" | "OctagonX" | "CircleHelp";
+  icon: StatusIconName;
   description: string;
 }
 
@@ -76,6 +79,35 @@ export const STATUS_ORDER: StatusLevel[] = ["open", "full", "closed", "unknown"]
  * as having an official notice against it, which is a different and much more alarming
  * claim.
  */
+/**
+ * The glyph for a status, which depends on WHY it holds.
+ *
+ * All three kinds of "closed" shared one stop sign, so on the map a park shut for the
+ * night looked exactly like one an official notice had closed. They are very different
+ * things to a person deciding whether to drive out tomorrow morning.
+ */
+export function statusIconName(status: Pick<ParkStatus, "level" | "source">): StatusIconName {
+  if (status.level === "closed") {
+    if (status.source === "hours") return "Moon";
+    if (status.source === "seasonal") return "CalendarOff";
+  }
+  return STATUS_META[status.level].icon;
+}
+
+/**
+ * Short label for a status, spelling out which kind of closure it is.
+ *
+ * Used where the glyph carries meaning on its own, such as a map marker's accessible
+ * name: a moon and a calendar must not both read as "Closed".
+ */
+export function statusShortReason(status: Pick<ParkStatus, "level" | "source">): string {
+  if (status.level === "closed") {
+    if (status.source === "hours") return "Closed for the night";
+    if (status.source === "seasonal") return "Closed for the season";
+  }
+  return STATUS_META[status.level].label;
+}
+
 export function statusDescription(status: Pick<ParkStatus, "level" | "source">): string {
   if (status.level === "closed") {
     if (status.source === "hours") return "Outside the park's opening hours.";

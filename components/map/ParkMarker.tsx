@@ -3,7 +3,7 @@
 import type { CSSProperties } from "react";
 import { Marker } from "@vis.gl/react-maplibre";
 import type { ParkWithStatus } from "@/lib/types";
-import { STATUS_META } from "@/lib/status";
+import { STATUS_META, statusShortReason } from "@/lib/status";
 import { StatusIcon } from "@/components/ui/StatusIcon";
 import { cn } from "@/components/ui/cn";
 
@@ -17,8 +17,9 @@ export interface ParkMarkerProps {
 
 /** Accessible name for a marker button: "Ichetucknee Springs State Park: Open (estimate)". */
 export function markerLabel(item: ParkWithStatus): string {
-  const meta = STATUS_META[item.status.level];
-  return `${item.park.name}: ${meta.label}${item.status.isEstimate ? " (estimate)" : ""}`;
+  // The glyph distinguishes an overnight closure from a seasonal one, so the accessible
+  // name has to as well: colour and shape alone are never the whole message.
+  return `${item.park.name}: ${statusShortReason(item.status)}`;
 }
 
 /**
@@ -60,7 +61,7 @@ export function ParkMarker({ item, selected, showLabel, onSelect }: ParkMarkerPr
             selected && "ring-3 ring-sunset ring-offset-2 ring-offset-cream",
           )}
         >
-          <StatusIcon level={status.level} className="relative z-10 size-5 text-(--marker-fg)" />
+          <StatusIcon level={status.level} source={status.source} className="relative z-10 size-5 text-(--marker-fg)" />
         </span>
         <span
           className={

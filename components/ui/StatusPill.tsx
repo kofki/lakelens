@@ -1,10 +1,12 @@
-import type { StatusLevel } from "@/lib/types";
+import type { ParkStatus, StatusLevel } from "@/lib/types";
 import { STATUS_META } from "@/lib/status";
 import { StatusIcon } from "./StatusIcon";
 import { cn } from "./cn";
 
 export interface StatusPillProps {
   level: StatusLevel;
+  /** When given, a closure shows why: overnight, seasonal or an official notice. */
+  source?: ParkStatus["source"];
   size?: "sm" | "md" | "lg";
   className?: string;
 }
@@ -28,7 +30,7 @@ const SIZE = {
  * Park status as icon + text + colour. `sm` shows the short label visually and the
  * full label to screen readers.
  */
-export function StatusPill({ level, size = "md", className }: StatusPillProps) {
+export function StatusPill({ level, source, size = "md", className }: StatusPillProps) {
   const meta = STATUS_META[level];
   const s = SIZE[size];
   const useShort = size === "sm" && meta.shortLabel !== "?";
@@ -42,7 +44,7 @@ export function StatusPill({ level, size = "md", className }: StatusPillProps) {
         className,
       )}
     >
-      <StatusIcon level={level} className={s.icon} />
+      <StatusIcon level={level} source={source} className={s.icon} />
       {useShort ? (
         <>
           <span aria-hidden="true">{meta.shortLabel}</span>
