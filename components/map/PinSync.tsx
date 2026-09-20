@@ -28,9 +28,18 @@ export interface PinSyncProps {
  */
 export function PinSync({ index, onPins, onReady }: PinSyncProps) {
   const { current } = useMap();
+  /**
+   * Resolved during render, not inside the effect.
+   *
+   * `useMap()` hands back a stable wrapper, but the map underneath it is replaced when
+   * React remounts the tree, which StrictMode does on every dev mount. An effect that
+   * reads the map once then captures it keeps listening to the map that was thrown away:
+   * the canvas on screen belongs to the new one, so nothing ever fires and no marker
+   * appears. Reading it here makes the instance itself a dependency, so a swap re-attaches.
+   */
+  const map = current?.getMap() ?? null;
 
   useEffect(() => {
-    const map = current?.getMap();
     if (!map) return;
 
     const sync = () => {
@@ -73,7 +82,7 @@ export function PinSync({ index, onPins, onReady }: PinSyncProps) {
       map.off("moveend", sync);
       map.off("zoomend", sync);
     };
-  }, [current, index, onPins, onReady]);
+  }, [map, index, onPins, onReady]);
 
   return null;
 }
