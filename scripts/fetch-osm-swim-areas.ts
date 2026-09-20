@@ -115,17 +115,30 @@ interface OverpassElement {
  * swimming_verified false like everything else here, and the water check still has to name
  * the lake before any of them is published.
  */
-export function buildStateQuery(state: string): string {
+/**
+ * Tag groups, asked for separately.
+ *
+ * All six in one query timed out in all fifty-one states: an area query costs roughly its
+ * number of clauses, and six is past what the mirrors will finish in 150 seconds. Run one
+ * group at a time with --tags and they all complete.
+ */
+export const TAG_GROUPS: Record<string, string[]> = {
+  swim: ['nwr["natural"="beach"]["name"](area.a);', 'nwr["leisure"="swimming_area"]["name"](area.a);'],
+  spring: ['nwr["natural"="spring"]["name"](area.a);'],
+  access: [
+    'nwr["leisure"="slipway"]["name"](area.a);',
+    'nwr["leisure"="marina"]["name"](area.a);',
+    'nwr["leisure"="fishing"]["name"](area.a);',
+  ],
+};
+
+export function buildStateQuery(state: string, group = "swim"): string {
+  const clauses = TAG_GROUPS[group] ?? TAG_GROUPS.swim!;
   return [
     `[out:json][timeout:${SERVER_TIMEOUT_S}];`,
     `area["ISO3166-2"="US-${state}"][admin_level=4]->.a;`,
     "(",
-    '  nwr["natural"="beach"]["name"](area.a);',
-    '  nwr["leisure"="swimming_area"]["name"](area.a);',
-    '  nwr["natural"="spring"]["name"](area.a);',
-    '  nwr["leisure"="slipway"]["name"](area.a);',
-    '  nwr["leisure"="marina"]["name"](area.a);',
-    '  nwr["leisure"="fishing"]["name"](area.a);',
+    ...clauses.map((c) => `  ${c}`),
     ");",
     "out tags center;",
   ].join("\n");
@@ -282,8 +295,16 @@ export function normalize(elements: OverpassElement[], state: string): OsmPark[]
   return [...bySlug.values()].sort((a, b) => a.slug.localeCompare(b.slug));
 }
 
+/** Which tag group this run is asking for. One group per run; see TAG_GROUPS. */
+const TAG_GROUP = (() => {
+  const arg = process.argv.find((a) => a.startsWith("--tags="))?.split("=")[1];
+  return arg && TAG_GROUPS[arg] ? arg : "swim";
+})();
+
 async function fetchState(state: string): Promise<OverpassElement[]> {
-  const cachePath = join(CACHE_DIR, `osm-swim-${state}.json`);
+  // Cached per group, so asking for springs does not overwrite the beaches.
+  const suffix = TAG_GROUP === "swim" ? "" : `-${TAG_GROUP}`;
+  const cachePath = join(CACHE_DIR, `osm-swim-${state}${suffix}.json`);
   if (!REFRESH) {
     const cached = readJson<{ elements: OverpassElement[] }>(cachePath);
     if (cached) {
@@ -292,7 +313,7 @@ async function fetchState(state: string): Promise<OverpassElement[]> {
     }
   }
 
-  const body = new URLSearchParams({ data: buildStateQuery(state) }).toString();
+  const body = new URLSearchParams({ data: buildStateQuery(state, TAG_GROUP) }).toString();
   let lastError: unknown = null;
   for (const endpoint of ENDPOINTS) {
     try {
@@ -366,10 +387,12 @@ async function main(): Promise<void> {
       try {
         const elements = await fetchState(state);
         const parks = normalize(elements, state);
-        // A state that answered is authoritative for itself: drop what a previous run
-        // recorded for it first. Merging instead kept rows that no longer qualify, so
-        // tightening a filter could never actually remove anything.
-        for (const [slug, park] of [...bySlug]) if (park.state === state) bySlug.delete(slug);
+        // A full swim-tag run is authoritative for its state: drop what a previous run
+        // recorded first, so tightening a filter can actually remove something. A run for
+        // one extra tag group only adds, because it never asked about the rest.
+        if (TAG_GROUP === "swim") {
+          for (const [slug, park] of [...bySlug]) if (park.state === state) bySlug.delete(slug);
+        }
         for (const park of parks) bySlug.set(park.slug, park);
         log(`${state}: ${parks.length} named public swim areas`);
       } catch (err) {
