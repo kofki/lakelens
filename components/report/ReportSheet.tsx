@@ -13,6 +13,8 @@ import {
 } from "@/lib/types";
 import { submitReport, uploadReportPhoto } from "@/lib/reports";
 import { getDeviceId } from "@/lib/deviceId";
+import { getUserId } from "@/lib/supabase/session";
+import { getReporterLocation } from "@/lib/reporterLocation";
 import { Button } from "@/components/ui/Button";
 import { SegmentedTabs } from "@/components/ui/SegmentedTabs";
 import { cn } from "@/components/ui/cn";
@@ -58,7 +60,13 @@ export function ReportSheet({ park, open, onOpenChange, onSubmitted }: ReportShe
     setState("sending");
     setError(null);
     const deviceId = getDeviceId();
-    const photoUrl = photo ? await uploadReportPhoto(photo, deviceId) : null;
+    // Both of these fail soft and are gathered in parallel with the upload: a report is
+    // never held up, or held back, by identity or location.
+    const [userId, where, photoUrl] = await Promise.all([
+      getUserId(),
+      getReporterLocation(),
+      photo ? uploadReportPhoto(photo, deviceId) : Promise.resolve(null),
+    ]);
     const result = await submitReport({
       park_id: park.id,
       category,
@@ -66,6 +74,9 @@ export function ReportSheet({ park, open, onOpenChange, onSubmitted }: ReportShe
       note: note.trim() ? note.trim().slice(0, NOTE_MAX) : null,
       photo_url: photoUrl,
       device_id: deviceId,
+      user_id: userId,
+      lat: where?.lat,
+      lng: where?.lng,
     });
     if (result.ok) {
       setState("done");

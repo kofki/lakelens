@@ -152,6 +152,12 @@ export async function submitReport(input: SubmitReportInput): Promise<SubmitRepo
     note: cleanNote(input.note),
     photo_url: input.photo_url ? input.photo_url : null,
     device_id: input.device_id,
+    user_id: input.user_id ?? null,
+    // Omitted rather than sent as null when unknown, so the server sees "no location"
+    // the same way whether the browser refused, timed out, or was never asked.
+    ...(typeof input.lat === "number" && typeof input.lng === "number"
+      ? { lat: input.lat, lng: input.lng }
+      : {}),
   };
   const result = await post(body);
   if (!result.ok) return { ok: false, error: result.error, status: result.status };

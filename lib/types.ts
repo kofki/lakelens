@@ -479,6 +479,11 @@ export interface SubmitReportInput {
   note?: string | null;
   photo_url?: string | null;
   device_id: string;
+  /** Anonymous auth session, when the browser has one. A report without it is still a report. */
+  user_id?: string | null;
+  /** Where the reporter was. Ranks the report; never gates it. See lib/reportProximity.ts. */
+  lat?: number;
+  lng?: number;
 }
 
 export interface ConfirmReportInput {

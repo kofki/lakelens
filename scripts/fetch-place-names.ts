@@ -29,6 +29,15 @@ const GAP_MS = 1_100;
  * park itself, which is the name we already have.
  */
 const ZOOM = 10;
+/**
+ * Second pass for rural parks.
+ *
+ * Zoom 10 answers "which city" and returns nothing but a county for a lake an hour from
+ * one, which is most of them: 808 of 2,100 parks had no town. Zoom 14 answers "what is
+ * this place called", which for those is a hamlet or a named locality, and that is what
+ * belongs on a card next to the state.
+ */
+const FINE_ZOOM = 14;
 
 export interface Place {
   /** Town, city or village. Null when the answer was a county or nothing at all. */
@@ -58,6 +67,10 @@ interface NominatimAddress {
   village?: string;
   hamlet?: string;
   municipality?: string;
+  suburb?: string;
+  neighbourhood?: string;
+  locality?: string;
+  isolated_dwelling?: string;
   county?: string;
   state?: string;
 }
@@ -71,7 +84,19 @@ interface NominatimAddress {
  */
 export function pickPlace(address: NominatimAddress | undefined): Place {
   const a = address ?? {};
-  const city = a.city ?? a.town ?? a.village ?? a.municipality ?? a.hamlet ?? null;
+  // Widest to narrowest. The last four only ever appear on the finer-zoom retry, and they
+  // are what a rural park has instead of a city: a named locality, a hamlet, a crossroads.
+  const city =
+    a.city ??
+    a.town ??
+    a.village ??
+    a.municipality ??
+    a.hamlet ??
+    a.suburb ??
+    a.neighbourhood ??
+    a.locality ??
+    a.isolated_dwelling ??
+    null;
   const state = a.state ? (STATE_CODES[a.state.toLowerCase()] ?? null) : null;
   return { city: city?.trim() || null, state };
 }
@@ -89,8 +114,8 @@ interface Point {
   lng: number;
 }
 
-async function reverse(point: Point): Promise<Place | null> {
-  const url = `${API}?format=jsonv2&lat=${point.lat}&lon=${point.lng}&zoom=${ZOOM}&addressdetails=1`;
+async function reverse(point: Point, zoom = ZOOM): Promise<Place | null> {
+  const url = `${API}?format=jsonv2&lat=${point.lat}&lon=${point.lng}&zoom=${zoom}&addressdetails=1`;
   const res = await fetch(url, { headers: { "User-Agent": USER_AGENT, "Accept-Language": "en" } });
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   const json = (await res.json()) as { address?: NominatimAddress };
@@ -115,14 +140,25 @@ async function main(): Promise<void> {
 
   const cachePath = join(CACHE_DIR, "places.json");
   const places: Record<string, Place> = REFRESH ? {} : (readJson<Record<string, Place>>(cachePath) ?? {});
-  const todo = points.filter((p) => !places[p.slug]).slice(0, limit);
-  log(`${points.length} parks, ${points.length - todo.length} cached, ${todo.length} to look up`);
+  // --fill re-asks, at a finer zoom, only for parks that came back with no town.
+  const fill = process.argv.includes("--fill");
+  const todo = (fill
+    ? points.filter((p) => places[p.slug] && !places[p.slug]!.city)
+    : points.filter((p) => !places[p.slug])
+  ).slice(0, limit);
+  log(
+    fill
+      ? `${points.length} parks, ${todo.length} still without a town, retrying at zoom ${FINE_ZOOM}`
+      : `${points.length} parks, ${points.length - todo.length} cached, ${todo.length} to look up`,
+  );
 
   let failures = 0;
   for (const [i, point] of todo.entries()) {
     try {
-      const place = await reverse(point);
-      if (place) places[point.slug] = place;
+      const place = await reverse(point, fill ? FINE_ZOOM : ZOOM);
+      // On the fill pass, keep the state we already had if the finer zoom drops it.
+      if (place?.city) places[point.slug] = { city: place.city, state: place.state ?? places[point.slug]?.state ?? null };
+      else if (place && !fill) places[point.slug] = place;
     } catch (err) {
       failures += 1;
       // One town missing costs one card its location line. Stopping would cost all of them.

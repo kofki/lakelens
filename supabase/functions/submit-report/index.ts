@@ -10,7 +10,8 @@
  *   - ctx.supabaseAdmin service-role client (bypasses RLS): the ONLY write path
  *
  * Accepts two POST bodies:
- *   1) SubmitReportInput  { park_id, category, value, note?, photo_url?, device_id }
+ *   1) SubmitReportInput  { park_id, category, value, note?, photo_url?, device_id,
+ *                            user_id?, lat?, lng? }
  *   2) ConfirmReportInput { type: "confirmation", report_id, device_id, response }
  *
  * Responses:
@@ -28,6 +29,7 @@
  */
 import { withSupabase, type SupabaseContext } from "npm:@supabase/server@^1";
 import { z } from "npm:zod@^4";
+import { classifyOrigin } from "../_shared/proximity.ts";
 
 // ---------- enums (mirror lib/types.ts REPORT_VALUES; keep in sync by hand) ----------
 const REPORT_VALUES = {
@@ -89,6 +91,11 @@ const ReportSchema = z
     note: NoteSchema,
     photo_url: PhotoUrlSchema,
     device_id: z.uuid(),
+    // Optional on purpose: a report from a browser with no session, or with location
+    // switched off, is still a report. See _shared/proximity.ts.
+    user_id: z.uuid().nullable().optional(),
+    lat: z.number().min(-90).max(90).optional(),
+    lng: z.number().min(-180).max(180).optional(),
   })
   .refine((b) => (REPORT_VALUES[b.category] as readonly string[]).includes(b.value), {
     path: ["value"],
@@ -160,6 +167,14 @@ async function handleReport(admin: Admin, input: ReportInput): Promise<Response>
   const limited = await rateLimit(admin, "reports", input.device_id, REPORT_LIMIT);
   if (limited) return limited;
 
+  // The park's own coordinates, so the client cannot choose both ends of the distance it
+  // is being judged on. An unknown park is a 404 here rather than a foreign key error.
+  const { data: park } = await admin.from("parks").select("lat,lng").eq("id", input.park_id).maybeSingle();
+  if (!park) return json({ ok: false, error: "unknown park_id" }, 404);
+  const reporter =
+    typeof input.lat === "number" && typeof input.lng === "number" ? { lat: input.lat, lng: input.lng } : null;
+  const proximity = classifyOrigin(reporter, { lat: park.lat, lng: park.lng });
+
   const { data, error } = await admin
     .from("reports")
     .insert({
@@ -169,6 +184,10 @@ async function handleReport(admin: Admin, input: ReportInput): Promise<Response>
       note: input.note,
       photo_url: input.photo_url,
       device_id: input.device_id,
+      user_id: input.user_id ?? null,
+      origin: proximity.origin,
+      reporter_distance_km:
+        proximity.distanceKm === null ? null : Math.round(proximity.distanceKm * 100) / 100,
       is_sample: false, // never trust the client for this
     })
     .select()
