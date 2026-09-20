@@ -2,7 +2,7 @@
  * POST /api/reports: fallback write path (NEXT_PUBLIC_REPORTS_VIA=api) mirroring the
  * Supabase Edge Function `submit-report`.
  *
- *   report:        { park_id, category, value, note?, photo_url?, device_id }
+ *   report:        { park_id, category, value, note?, photo_url?, device_id, user_id?, lat?, lng? }
  *                  -> 201 { ok: true, report, ...report }   (row fields spread for parity with the Edge Function)
  *   confirmation:  { type: "confirmation", report_id, device_id, response: "still_true" | "no_longer" }
  *                  -> 201 { ok: true, confirmation }
@@ -13,6 +13,7 @@
  */
 import type { NextRequest } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { classifyOrigin } from "@/lib/reportProximity";
 import { REPORT_VALUES, type ReportCategory, type ReportValue } from "@/lib/types";
 
 export const dynamic = "force-dynamic";
@@ -74,6 +75,15 @@ async function handleReport(body: Record<string, unknown>): Promise<Response> {
     photoUrl = body.photo_url;
   }
 
+  // The reporter's own anonymous session, if the browser has one. Optional on purpose: a
+  // report from someone whose session failed to start is still a report.
+  const userId = typeof body.user_id === "string" && UUID_RE.test(body.user_id.trim()) ? body.user_id.trim() : null;
+
+  // Location is read but never required. See lib/reportProximity.ts for why this ranks
+  // rather than rejects.
+  const reporter =
+    typeof body.lat === "number" && typeof body.lng === "number" ? { lat: body.lat, lng: body.lng } : null;
+
   const db = createAdminClient();
   const since = new Date(Date.now() - WINDOW_MIN * 60e3).toISOString();
   const { count, error: countErr } = await db
@@ -84,6 +94,17 @@ async function handleReport(body: Record<string, unknown>): Promise<Response> {
   if (countErr) return bad(countErr.message, 500);
   if ((count ?? 0) >= REPORT_LIMIT) return rateLimited();
 
+  // The park's own coordinates, so the distance is measured against something the client
+  // cannot choose. A client-supplied park position would make the whole check decorative.
+  const { data: park, error: parkErr } = await db
+    .from("parks")
+    .select("lat,lng")
+    .eq("id", parkId)
+    .maybeSingle();
+  if (parkErr) return bad(parkErr.message, 500);
+  if (!park) return bad("unknown park_id", 404);
+  const proximity = classifyOrigin(reporter, { lat: park.lat, lng: park.lng });
+
   const { data, error } = await db
     .from("reports")
     .insert({
@@ -93,6 +114,9 @@ async function handleReport(body: Record<string, unknown>): Promise<Response> {
       note,
       photo_url: photoUrl,
       device_id: deviceId,
+      user_id: userId,
+      origin: proximity.origin,
+      reporter_distance_km: proximity.distanceKm == null ? null : Math.round(proximity.distanceKm * 100) / 100,
       is_sample: false,
     })
     .select("*")

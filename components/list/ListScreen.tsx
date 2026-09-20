@@ -16,6 +16,9 @@ import { SearchField } from "./SearchField";
 import { SortControl } from "./SortControl";
 import { StateControl } from "./StateControl";
 import { LocationPrompt } from "./LocationPrompt";
+import { useFavorites, useRecents } from "./usePersonal";
+import { nearestState } from "@/lib/nearestState";
+import { relatedTo } from "@/lib/related";
 import { useGeolocation } from "./useGeolocation";
 import { useAccessibleParam } from "./useAccessibleParam";
 import {
@@ -95,6 +98,31 @@ export function ListScreen({ parks, initialFilters }: ListScreenProps) {
    */
   const [showAllTiles, setShowAllTiles] = useState(false);
   const geo = useGeolocation();
+  const favorites = useFavorites();
+  const recents = useRecents();
+
+  /**
+   * The reader's own state, inferred from the nearest park rather than a geocoder, so no
+   * third party is told where they are. Applied as a default only: an explicit choice of
+   * "All states" is a choice, and re-imposing the local state on the next render would make
+   * the picker feel broken.
+   */
+  const localState = useMemo(
+    () => nearestState(geo.location, parks.map((item) => item.park)),
+    [geo.location, parks],
+  );
+  /**
+   * Derived, not stored. Writing the inferred state into `filters` from an effect meant a
+   * render where the filter said one thing and the list showed another, and it fought the
+   * picker: choosing "All states" would be overwritten on the next pass. `stateTouched`
+   * records that the reader has an opinion, after which we stop having one.
+   */
+  const [stateTouched, setStateTouched] = useState(false);
+  const effectiveState = stateTouched ? filters.state : (filters.state ?? localState);
+  const effectiveFilters = useMemo(
+    () => ({ ...filters, state: effectiveState }),
+    [filters, effectiveState],
+  );
 
   // Nearest once we know where the reader is, and the user's explicit choice always wins.
   // Without a location there is no distance to sort by, so name order is the fallback and
@@ -102,7 +130,7 @@ export function ListScreen({ parks, initialFilters }: ListScreenProps) {
   const sort: SortKey = sortOverride ?? (geo.location ? "distance" : "name");
 
   const located = useMemo(() => withDistances(parks, geo.location), [parks, geo.location]);
-  const filtered = useMemo(() => filterParks(located, filters, query), [located, filters, query]);
+  const filtered = useMemo(() => filterParks(located, effectiveFilters, query), [located, effectiveFilters, query]);
   const sorted = useMemo(() => sortParks(filtered, sort), [filtered, sort]);
   const visibleTiles = useMemo(
     () => (showAllTiles ? sorted : sorted.slice(0, TILE_COUNT)),
@@ -110,12 +138,30 @@ export function ListScreen({ parks, initialFilters }: ListScreenProps) {
   );
   const remainingTiles = sorted.length - visibleTiles.length;
   const counts = useMemo(() => countStatuses(filtered), [filtered]);
-  const filterCount = activeFilterCount(filters);
+  const filterCount = activeFilterCount(effectiveFilters);
   const stateOptions = useMemo(() => availableStates(parks), [parks]);
   /**
    * Grouping runs on the capped slice, not the whole list, so "Show 576 more" stays
    * one pass and the headings never reshuffle when the rest arrives.
    */
+  /**
+   * Saved parks and the "because you looked at" row.
+   *
+   * Both read the FULL list rather than the filtered one: a saved park in another state is
+   * still saved, and hiding it because the state filter defaulted to somewhere else would
+   * make saving feel unreliable. Related parks are scored against the last park opened.
+   */
+  const bySlug = useMemo(() => new Map(parks.map((item) => [item.park.slug, item])), [parks]);
+  const savedItems = useMemo(
+    () => favorites.map((slug) => bySlug.get(slug)).filter((item): item is ParkWithStatus => !!item),
+    [favorites, bySlug],
+  );
+  const lastSeen = recents.map((slug) => bySlug.get(slug)).find((item): item is ParkWithStatus => !!item) ?? null;
+  const related = useMemo(
+    () => (lastSeen ? relatedTo(lastSeen, parks, { exclude: new Set(recents) }) : []),
+    [lastSeen, parks, recents],
+  );
+
   const grouped = useMemo(
     () => (sort === "name" ? groupParksByState(visibleTiles) : null),
     [sort, visibleTiles],
@@ -171,8 +217,11 @@ export function ListScreen({ parks, initialFilters }: ListScreenProps) {
           <div className="flex items-center gap-2">
             <StateControl
               id="list-state"
-              value={filters.state}
-              onChange={(state) => setFilters({ ...filters, state })}
+              value={effectiveState}
+              onChange={(state) => {
+                setStateTouched(true);
+                setFilters({ ...filters, state });
+              }}
               options={stateOptions}
             />
             <SortControl id="list-sort" value={sort} onChange={setSort} hasLocation={!!geo.location} />
@@ -210,6 +259,25 @@ export function ListScreen({ parks, initialFilters }: ListScreenProps) {
           <EmptyState title="Park data isn't available yet" body="We couldn't load parks right now. Try again in a minute." />
         ) : (
           <>
+            {savedItems.length > 0 && (
+              <section aria-labelledby="saved-heading" className="mb-8">
+                <h2 id="saved-heading" className="mb-3 text-lg font-extrabold text-brown">
+                  Saved
+                </h2>
+                <TileGrid items={savedItems} label="Saved parks" className="grid" />
+              </section>
+            )}
+
+            {lastSeen && related.length > 0 && (
+              <section aria-labelledby="related-heading" className="mb-8">
+                <h2 id="related-heading" className="mb-1 text-lg font-extrabold text-brown">
+                  Because you looked at {lastSeen.park.name}
+                </h2>
+                <p className="mb-3 text-sm text-mocha">{related[0]?.reason ?? "Similar places nearby"}</p>
+                <TileGrid items={related.map((r) => r.item)} label="Related parks" className="grid" />
+              </section>
+            )}
+
             <h2 className="sr-only">Parks</h2>
             <div className="sm:hidden">
               <ParkList parks={sorted} userLocation={geo.location} sort={sort} />

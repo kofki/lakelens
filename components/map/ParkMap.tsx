@@ -20,6 +20,7 @@ import type { LatLng } from "@/lib/distance";
 import {
   CONTINENTAL_US_BOUNDS,
   CONTINENTAL_US_CENTER,
+  US_MAX_BOUNDS,
   FALLBACK_MAP_STYLE_URL,
   LABEL_ZOOM,
   MAP_ARIA_LABEL,
@@ -293,6 +294,7 @@ function ParkMapInner({
         style={{ width: "100%", height: "100%" }}
         minZoom={2}
         maxZoom={17}
+        maxBounds={US_MAX_BOUNDS}
         dragRotate={false}
         touchPitch={false}
         pitchWithRotate={false}

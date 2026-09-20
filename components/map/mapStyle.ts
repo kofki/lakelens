@@ -17,6 +17,20 @@ export const CONTINENTAL_US_BOUNDS: [[number, number], [number, number]] = [
   [-66.9, 49.4],
 ];
 
+/**
+ * How far the map may be dragged.
+ *
+ * Every park is in the United States, so panning to the Atlantic or to Asia only loses the
+ * reader. Wide enough to hold Alaska, Hawaii and Puerto Rico, because there are parks in
+ * the first two and the box has to contain the data before it contains anything else.
+ *
+ * MapLibre keeps the centre inside this box rather than the whole viewport, so it is a
+ * little larger than the land itself; a tighter box makes the map feel like it is fighting
+ * the drag near the edges.
+ */
+/** [west, south, east, north], which is the shape MapGL's `maxBounds` takes. */
+export const US_MAX_BOUNDS: [number, number, number, number] = [-180.0, 15.0, -60.0, 72.0];
+
 /** Centre of CONTINENTAL_US_BOUNDS, for the pre-fit first frame and the fitBounds fallback. */
 export const CONTINENTAL_US_CENTER = { longitude: -96.0, latitude: 37.0, zoom: 3.4 };
 

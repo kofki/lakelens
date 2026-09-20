@@ -27,3 +27,10 @@ enabled = true
 # withSupabase({ auth: "secret" }) validates the key itself.
 verify_jwt = false
 enabled = true
+
+[auth]
+# Anonymous sign-in, so a first-time visitor has a durable identity without meeting a signup
+# form. A one-tap "the lot is full" behind a password is a report that never gets sent.
+# Reports and reviews carry the resulting user_id; an email can be linked to it later.
+# Only this property is declared here: `config push` leaves undeclared auth settings alone.
+enable_anonymous_sign_ins = true

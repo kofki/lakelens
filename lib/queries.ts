@@ -340,6 +340,46 @@ const LIST_USGS_PARAMETERS = new Set(["00010", "00065", "63160"]);
  * is invisible on screen and removes most of the document weight. Prediction has
  * already run against the full payload by the time this is applied.
  */
+/**
+ * Fields of `park` the list and the map actually read.
+ *
+ * Everything else on the row is prose and plumbing: descriptions, safety notes, entrance
+ * notes, rules, gauge ids, NWS grid coordinates, licence strings. None of it reaches a
+ * card, and all of it was being serialised twice for every park. At 2,100 parks the page
+ * went to 5 MB raw and 399 kB gzipped, from 156 kB at 616.
+ *
+ * Derived from what the components dereference, so adding a field to a card means adding
+ * it here. The park page does not use this path: it loads the whole row for its one park.
+ */
+const LIST_PARK_FIELDS = [
+  "id",
+  "slug",
+  "name",
+  "type",
+  "operator",
+  "lat",
+  "lng",
+  "state",
+  "city",
+  "coverage_tier",
+  "guarded",
+  "photo_url",
+  // Short, and the strongest signal lib/related.ts has: two beaches on one lake are
+  // genuinely interchangeable in a way two beaches in one state are not.
+  "water_body",
+  "swim_season",
+  "time_zone",
+  "typical_closure_time",
+] as const satisfies readonly (keyof Park)[];
+
+function slimPark(park: Park): Park {
+  const out: Partial<Park> = {};
+  for (const key of LIST_PARK_FIELDS) {
+    (out as Record<string, unknown>)[key] = park[key];
+  }
+  return out as Park;
+}
+
 function slimForList(item: ParkWithStatus): ParkWithStatus {
   const weather = item.weather ? { ...item.weather, hourly: [], daily: [] } : null;
   const usgs = item.usgs ? { ...item.usgs, readings: item.usgs.readings.filter((r) => LIST_USGS_PARAMETERS.has(r.parameter)) } : null;
@@ -372,6 +412,7 @@ function slimForList(item: ParkWithStatus): ParkWithStatus {
     : item.reviewStats;
   return {
     ...item,
+    park: slimPark(item.park),
     weather,
     usgs,
     forecast,

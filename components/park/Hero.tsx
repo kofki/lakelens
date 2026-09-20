@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/Badge";
 import { Score } from "@/components/ui/RatingStars";
 import { StatusPill } from "@/components/ui/StatusPill";
 import {GUARDED_TEXT, OPERATOR_TEXT, PARK_TYPE_TEXT, canOptimizeImage} from "./format";
+import { FavoriteButton } from "./FavoriteButton";
 
 export interface HeroProps {
   park: Park;
@@ -85,7 +86,12 @@ export function Hero({ park, status, reviewStats }: HeroProps) {
                 been through the water check, so the type stays as the fallback. */}
             {park.water_body ?? PARK_TYPE_TEXT[park.type]} · {OPERATOR_TEXT[park.operator]}
           </p>
-          <h1 className="text-[1.75rem] font-extrabold leading-tight text-ink md:text-[2.25rem]">{park.name}</h1>
+          <div className="flex items-start gap-2">
+            <h1 className="min-w-0 flex-1 text-[1.75rem] font-extrabold leading-tight text-ink md:text-[2.25rem]">
+              {park.name}
+            </h1>
+            <FavoriteButton slug={park.slug} name={park.name} className="mt-1 shrink-0" />
+          </div>
           {reviewStats && reviewStats.averageRating != null && reviewStats.reviewCount > 0 && (
             <a href="#reviews" className="inline-flex rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-taupe">
               <Score

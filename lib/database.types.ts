@@ -84,6 +84,7 @@ export type Database = {
           name: string
           source: string | null
           start_date: string
+          state: string | null
           updated_at: string
           weight: number
         }
@@ -94,6 +95,7 @@ export type Database = {
           name: string
           source?: string | null
           start_date: string
+          state?: string | null
           updated_at?: string
           weight?: number
         }
@@ -104,6 +106,7 @@ export type Database = {
           name?: string
           source?: string | null
           start_date?: string
+          state?: string | null
           updated_at?: string
           weight?: number
         }
@@ -353,6 +356,7 @@ export type Database = {
           amenities: Json | null
           amenities_checked_at: string | null
           cavern_warning: boolean
+          city: string | null
           coverage_tier: string
           description: string | null
           entrance_notes: string | null
@@ -372,6 +376,9 @@ export type Database = {
           official_url: string | null
           operator: string
           osm_checked_at: string | null
+          photo_author: string | null
+          photo_license: string | null
+          photo_source_url: string | null
           photo_url: string | null
           reservation_required: boolean
           reservation_url: string | null
@@ -379,6 +386,7 @@ export type Database = {
           rules: Json
           safety_notes: string | null
           slug: string
+          state: string | null
           swim_season: Json | null
           swimming_verified: boolean
           time_zone: string | null
@@ -386,11 +394,13 @@ export type Database = {
           typical_closure_time: string | null
           updated_at: string
           usgs_site_id: string | null
+          water_body: string | null
         }
         Insert: {
           amenities?: Json | null
           amenities_checked_at?: string | null
           cavern_warning?: boolean
+          city?: string | null
           coverage_tier?: string
           description?: string | null
           entrance_notes?: string | null
@@ -410,6 +420,9 @@ export type Database = {
           official_url?: string | null
           operator: string
           osm_checked_at?: string | null
+          photo_author?: string | null
+          photo_license?: string | null
+          photo_source_url?: string | null
           photo_url?: string | null
           reservation_required?: boolean
           reservation_url?: string | null
@@ -417,6 +430,7 @@ export type Database = {
           rules?: Json
           safety_notes?: string | null
           slug: string
+          state?: string | null
           swim_season?: Json | null
           swimming_verified?: boolean
           time_zone?: string | null
@@ -424,11 +438,13 @@ export type Database = {
           typical_closure_time?: string | null
           updated_at?: string
           usgs_site_id?: string | null
+          water_body?: string | null
         }
         Update: {
           amenities?: Json | null
           amenities_checked_at?: string | null
           cavern_warning?: boolean
+          city?: string | null
           coverage_tier?: string
           description?: string | null
           entrance_notes?: string | null
@@ -448,6 +464,9 @@ export type Database = {
           official_url?: string | null
           operator?: string
           osm_checked_at?: string | null
+          photo_author?: string | null
+          photo_license?: string | null
+          photo_source_url?: string | null
           photo_url?: string | null
           reservation_required?: boolean
           reservation_url?: string | null
@@ -455,6 +474,7 @@ export type Database = {
           rules?: Json
           safety_notes?: string | null
           slug?: string
+          state?: string | null
           swim_season?: Json | null
           swimming_verified?: boolean
           time_zone?: string | null
@@ -462,6 +482,7 @@ export type Database = {
           typical_closure_time?: string | null
           updated_at?: string
           usgs_site_id?: string | null
+          water_body?: string | null
         }
         Relationships: []
       }
@@ -505,8 +526,11 @@ export type Database = {
           id: string
           is_sample: boolean
           note: string | null
+          origin: string | null
           park_id: string
           photo_url: string | null
+          reporter_distance_km: number | null
+          user_id: string | null
           value: string
         }
         Insert: {
@@ -516,8 +540,11 @@ export type Database = {
           id?: string
           is_sample?: boolean
           note?: string | null
+          origin?: string | null
           park_id: string
           photo_url?: string | null
+          reporter_distance_km?: number | null
+          user_id?: string | null
           value: string
         }
         Update: {
@@ -527,8 +554,11 @@ export type Database = {
           id?: string
           is_sample?: boolean
           note?: string | null
+          origin?: string | null
           park_id?: string
           photo_url?: string | null
+          reporter_distance_km?: number | null
+          user_id?: string | null
           value?: string
         }
         Relationships: [
@@ -551,6 +581,7 @@ export type Database = {
           park_id: string
           photo_urls: string[]
           rating: number
+          user_id: string | null
           visited_on: string | null
         }
         Insert: {
@@ -562,6 +593,7 @@ export type Database = {
           park_id: string
           photo_urls?: string[]
           rating: number
+          user_id?: string | null
           visited_on?: string | null
         }
         Update: {
@@ -573,6 +605,7 @@ export type Database = {
           park_id?: string
           photo_urls?: string[]
           rating?: number
+          user_id?: string | null
           visited_on?: string | null
         }
         Relationships: [

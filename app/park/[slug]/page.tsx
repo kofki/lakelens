@@ -22,6 +22,7 @@ import { BackupSuggestions } from "@/components/park/BackupSuggestions";
 import { ReportButton } from "@/components/report/ReportButton";
 import { SiteFooter } from "@/components/nav/SiteFooter";
 import { ParkJsonLd } from "@/components/park/ParkJsonLd";
+import { RecordVisit } from "@/components/park/RecordVisit";
 
 export const revalidate = 60;
 
@@ -95,6 +96,7 @@ export default async function ParkPage({ params }: Params) {
 
   return (
     <>
+      <RecordVisit slug={park.slug} />
       <ParkJsonLd park={park} status={bundle.status} origin={origin} />
       <article className="mx-auto w-full max-w-[1100px] px-4 pb-24 md:px-6 lg:pb-12">
         <Hero park={park} status={bundle.status} reviewStats={bundle.reviewStats ?? null} />
