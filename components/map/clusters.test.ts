@@ -1,14 +1,14 @@
 import { describe, expect, it } from "vitest";
-import { clusterLabel, readPins, toFeatureCollection, type ClusterBubble } from "./clusters";
+import { buildIndex, clusterLabel, pinsFor, toFeatureCollection, type ClusterBubble } from "./clusters";
 import type { ParkWithStatus } from "@/lib/types";
 
 const park = (id: string, lng: number, lat: number, level = "open") =>
   ({ park: { id, lng, lat }, status: { level } }) as unknown as ParkWithStatus;
 
-const cluster = (id: number, count: number, closed = 0, lng = -87, lat = 42) => ({
-  properties: { cluster: true, cluster_id: id, point_count: count, closed },
-  geometry: { type: "Point", coordinates: [lng, lat] },
-});
+/** Ten parks within a few km of each other, and one a long way off. */
+const CLUSTER_OF_TEN = Array.from({ length: 10 }, (_, i) => park(`c${i}`, -87.6 + i * 0.002, 41.88 + i * 0.002));
+const LONE_PARK = park("lone", -110, 40);
+const WHOLE_US: [number, number, number, number] = [-180, 15, -60, 72];
 
 describe("toFeatureCollection", () => {
   it("carries the id and status level onto each point", () => {
@@ -20,26 +20,44 @@ describe("toFeatureCollection", () => {
   });
 });
 
-describe("readPins", () => {
-  it("separates bubbles from single pins", () => {
-    const pins = readPins([cluster(7, 12, 3), { properties: { id: "a" }, geometry: { type: "Point", coordinates: [-87, 42] } }]);
-    expect(pins).toHaveLength(2);
-    expect(pins.find((p) => p.kind === "cluster")).toMatchObject({ clusterId: 7, count: 12, closed: 3 });
-    expect(pins.find((p) => p.kind === "park")).toMatchObject({ parkId: "a" });
+describe("pinsFor", () => {
+  const index = buildIndex([...CLUSTER_OF_TEN, LONE_PARK]);
+
+  it("merges neighbours into one bubble when zoomed out", () => {
+    const pins = pinsFor(index, WHOLE_US, 3);
+    const bubbles = pins.filter((p) => p.kind === "cluster");
+    expect(bubbles).toHaveLength(1);
+    expect(bubbles[0]).toMatchObject({ count: 10 });
   });
 
-  it("deduplicates a feature returned once per tile it touches", () => {
-    const single = { properties: { id: "a" }, geometry: { type: "Point", coordinates: [-87, 42] } };
-    expect(readPins([cluster(7, 12), cluster(7, 12), single, single])).toHaveLength(2);
+  it("keeps a park with no neighbours as its own pin", () => {
+    const pins = pinsFor(index, WHOLE_US, 3);
+    expect(pins.filter((p) => p.kind === "park").map((p) => p.kind === "park" && p.parkId)).toContain("lone");
   });
 
-  it("drops a feature with no id and a cluster with no coordinates", () => {
-    expect(readPins([{ properties: {} }])).toEqual([]);
-    expect(readPins([{ properties: { cluster: true, cluster_id: 1, point_count: 5 }, geometry: null }])).toEqual([]);
+  it("breaks the bubble apart once zoomed in", () => {
+    const pins = pinsFor(index, [-87.7, 41.8, -87.5, 42.0], 15);
+    expect(pins.every((p) => p.kind === "park")).toBe(true);
+    expect(pins).toHaveLength(10);
   });
 
-  it("survives a null properties bag", () => {
-    expect(() => readPins([{ properties: null, geometry: null }])).not.toThrow();
+  it("shows nothing for a viewport with no parks in it", () => {
+    expect(pinsFor(index, [10, 10, 11, 11], 8)).toEqual([]);
+  });
+
+  it("counts how many parks in a bubble are shut", () => {
+    const mixed = buildIndex([
+      park("a", -87.6, 41.88, "closed"),
+      park("b", -87.601, 41.881, "closed"),
+      park("c", -87.602, 41.882, "open"),
+    ]);
+    const bubble = pinsFor(mixed, WHOLE_US, 3).find((p) => p.kind === "cluster");
+    expect(bubble).toMatchObject({ count: 3, closed: 2 });
+  });
+
+  it("gives every pin a distinct key, because React needs one", () => {
+    const pins = pinsFor(index, WHOLE_US, 3);
+    expect(new Set(pins.map((p) => p.key)).size).toBe(pins.length);
   });
 });
 

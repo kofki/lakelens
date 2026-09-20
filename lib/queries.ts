@@ -207,6 +207,21 @@ export const PAGE_SIZE = 1000;
  * park_forecast is four megabytes, and no list, map or status calculation touches it. The
  * one page that draws it fetches it for its own park.
  */
+/**
+ * Columns of `parks` the world load asks Postgres for.
+ *
+ * Trimming the serialised payload was not enough: the QUERY was still `select("*")`, and
+ * with a three second timeout on the anon role, 2,100 rows of 35 columns intermittently
+ * blew it. When it did, the map rendered no markers at all while the cached HTML still
+ * said "2100 parks shown", which is the worst possible way to fail.
+ *
+ * This is the union of what the cards read and what the status, prediction and backup
+ * calculations dereference. `hours` is here and not in LIST_PARK_FIELDS because it is read
+ * to compute the open/closed state and then never shown.
+ */
+const WORLD_PARK_COLUMNS =
+  "id,slug,name,type,operator,lat,lng,state,city,coverage_tier,guarded,photo_url,water_body,swim_season,time_zone,typical_closure_time,hours";
+
 const FORECAST_LIST_COLUMNS =
   "park_id,forecast_at,now_temp_f,now_feels_like_f,now_uv,now_humidity,now_wind_mph,now_thunder_prob,now_short_forecast,uv_peak,uv_peak_hour,daily,water_quality,sources";
 
@@ -238,7 +253,11 @@ async function loadWorld(db: Db, now: Date): Promise<World> {
   // are paged anyway rather than leaving a trap for whoever adds the next decade.
   const [parks, accRows, latestRows, alertRows, reportRows, confRows, holRows, lwRows, evRows, fcRows, rsRows] =
     await Promise.all([
-      selectAll<Park>("parks", (a, b) => db.from("parks").select("*").order("name").range(a, b), { required: true }),
+      selectAll<Park>(
+        "parks",
+        (a, b) => db.from("parks").select(WORLD_PARK_COLUMNS).order("name").range(a, b),
+        { required: true },
+      ),
       selectAll<Accessibility>("accessibility", (a, b) => db.from("accessibility").select("*").range(a, b)),
       selectAll<LatestRow>("latest_conditions", (a, b) =>
         db.from("latest_conditions").select("park_id,source,payload,fetched_at").range(a, b),
@@ -465,13 +484,23 @@ export async function getParkBundle(slug: string, now: Date = new Date()): Promi
     if (!target) return null;
 
     const since = new Date(now.getTime() - BUNDLE_REPORTS_WINDOW_MS).toISOString();
-    // The world load leaves `hourly` behind because it is a day of arrays per park and only
-    // this page draws it. One row, one column, for the park being rendered.
-    const hourlyR = await db.from("park_forecast").select("hourly").eq("park_id", target.park.id).maybeSingle();
+    // The world load asks for a subset of columns, so the row in `all` is the one the cards
+    // need and not the one this page needs: descriptions, rules, safety notes and entrance
+    // notes are all missing from it. Two single-row reads fill both gaps, which is what the
+    // whole trim buys: the expensive query is narrow and the wide one is for one park.
+    const [fullParkR, hourlyR] = await Promise.all([
+      db.from("parks").select("*").eq("id", target.park.id).maybeSingle(),
+      db.from("park_forecast").select("hourly").eq("park_id", target.park.id).maybeSingle(),
+    ]);
+    if (fullParkR.error) warn("parks(full)", fullParkR.error);
     if (hourlyR.error) warn("park_forecast(hourly)", hourlyR.error);
     const hourly = (hourlyR.data?.hourly ?? null) as ParkForecast["hourly"];
-    const withHourly: ParkWithStatus =
-      target.forecast && hourly ? { ...target, forecast: { ...target.forecast, hourly } } : target;
+    const fullPark = (fullParkR.data as Park | null) ?? target.park;
+    const withHourly: ParkWithStatus = {
+      ...target,
+      park: fullPark,
+      forecast: target.forecast && hourly ? { ...target.forecast, hourly } : target.forecast,
+    };
 
     const [lotsR, reportsR] = await Promise.all([
       // Every park's lots, not just this one: suggestBackups summarises parking for the

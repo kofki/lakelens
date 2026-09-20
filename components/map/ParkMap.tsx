@@ -4,17 +4,15 @@ import "maplibre-gl/dist/maplibre-gl.css";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   AttributionControl,
-  Layer,
   Map as MapGL,
   Marker,
   NavigationControl,
-  Source,
   type ErrorEvent,
-  type MapEvent,
   type MapLayerMouseEvent,
   type MapRef,
   type ViewStateChangeEvent,
 } from "@vis.gl/react-maplibre";
+import type { Map as MaplibreMap } from "maplibre-gl";
 import type { ParkWithStatus } from "@/lib/types";
 import type { LatLng } from "@/lib/distance";
 import {
@@ -32,18 +30,15 @@ import { useWebGL2 } from "./useWebGL2";
 import { MapSkeleton } from "./MapSkeleton";
 import { MapUnavailable } from "./MapUnavailable";
 import { ParkMarker } from "./ParkMarker";
+import { PinSync } from "./PinSync";
 import { ClusterMarker } from "./ClusterMarker";
 import {
-  CLUSTER_LAYER_ID,
   CLUSTER_MAX_ZOOM,
-  CLUSTER_PROPERTIES,
-  CLUSTER_RADIUS,
-  CLUSTER_SOURCE_ID,
-  POINT_LAYER_ID,
-  readPins,
-  toFeatureCollection,
+  buildIndex,
+  pinsFor,
   type ClusterBubble,
   type MapPin,
+  type ParkIndex,
 } from "./clusters";
 
 export interface ParkMapProps {
@@ -102,6 +97,8 @@ function ParkMapInner({
    * rendered from this and not from `parks` directly.
    */
   const [pins, setPins] = useState<MapPin[]>([]);
+  /** Setup is once per map, not once per mount. */
+  const didSetUp = useRef(false);
   const [tileError, setTileError] = useState(false);
   /** Swapped to the keyless Versatiles style if OpenFreeMap fails to load its style/tiles. */
   const [styleUrl, setStyleUrl] = useState(MAP_STYLE_URL);
@@ -111,7 +108,7 @@ function ParkMapInner({
 
   // Fit whatever is on the map, so a park outside any one region is still on screen.
   const parksById = useMemo(() => new Map(parks.map((item) => [item.park.id, item])), [parks]);
-  const featureCollection = useMemo(() => toFeatureCollection(parks), [parks]);
+  const index: ParkIndex = useMemo(() => buildIndex(parks), [parks]);
 
   const parkBounds = useMemo(
     () => boundsForPoints(parks.map((item) => item.park)) ?? CONTINENTAL_US_BOUNDS,
@@ -153,22 +150,24 @@ function ParkMapInner({
   }, [selectedId]);
 
   /**
-   * Re-read the source after anything that can change which tiles are loaded.
+   * Recompute what is on screen after anything that moves the map.
    *
-   * `querySourceFeatures` answers from tiles, so it is empty before the first tile arrives
-   * and stale immediately after a pan. Every event that moves or reloads the source calls
-   * this, and the result is deduplicated in `readPins`.
+   * The index is held in a ref so this callback stays stable: it is attached to map events
+   * once, and rebuilding it on every park change would mean detaching and reattaching
+   * listeners on a map that is mid-gesture.
    */
   const syncPins = useCallback(() => {
     const map = mapRef.current;
     if (!map) return;
     try {
-      if (!map.getSource(CLUSTER_SOURCE_ID)) return;
-      setPins(readPins(map.querySourceFeatures(CLUSTER_SOURCE_ID) as never[]));
+      const b = map.getBounds();
+      setPins(pinsFor(index, [b.getWest(), b.getSouth(), b.getEast(), b.getNorth()], map.getZoom()));
     } catch {
-      // The source is mid-reload; the next idle event reads it again.
+      // The map is mid-resize and has no bounds yet; the next event asks again.
     }
-  }, []);
+    // Rebuilt when the park list changes. The handlers are props, so a new identity simply
+    // replaces the old one rather than leaving a stale listener attached to the map.
+  }, [index]);
 
   /**
    * Clicking a bubble zooms to the point where it breaks apart, rather than a fixed step.
@@ -178,25 +177,35 @@ function ParkMapInner({
     const map = mapRef.current;
     if (!map) return;
     interactedRef.current = true;
-    const source = map.getSource(CLUSTER_SOURCE_ID) as
-      | { getClusterExpansionZoom?: (id: number) => Promise<number> }
-      | undefined;
-    const fallback = Math.min(map.getZoom() + 2, 17);
-    const go = (zoom: number) =>
-      map.easeTo({
-        center: [bubble.lng, bubble.lat],
-        zoom: Math.max(zoom, map.getZoom() + 0.5),
-        duration: prefersReducedMotion() ? 0 : 420,
-        essential: true,
-      });
-    const promise = source?.getClusterExpansionZoom?.(bubble.clusterId);
-    if (promise) promise.then(go).catch(() => go(fallback));
-    else go(fallback);
-  }, []);
+    // supercluster answers synchronously, so there is no promise to lose track of. It can
+    // still throw for a cluster id from a previous index, which is what the fallback is for.
+    let zoom: number;
+    try {
+      zoom = index.getClusterExpansionZoom(bubble.clusterId);
+    } catch {
+      zoom = map.getZoom() + 2;
+    }
+    map.easeTo({
+      center: [bubble.lng, bubble.lat],
+      // Never a step backwards, and never past what the map allows.
+      zoom: Math.min(Math.max(zoom, map.getZoom() + 0.5), 17),
+      duration: prefersReducedMotion() ? 0 : 420,
+      essential: true,
+    });
+  }, [index]);
 
-  const handleLoad = useCallback(
-    (e: MapEvent) => {
-      const map = e.target;
+  /**
+   * One-time setup, driven from an effect rather than the `onLoad` prop.
+   *
+   * The map object outlives a React remount, so by the time the second instance attaches
+   * `onLoad` the map has already fired `load` and the prop is never called. Nothing ran:
+   * no brand paint, no padding, no initial fit, and no pins, which is why every marker was
+   * missing while the data behind them was fine.
+   */
+  const handleReady = useCallback(
+    (map: MaplibreMap) => {
+      if (didSetUp.current) return;
+      didSetUp.current = true;
       applyBrandPaint(map);
       map.touchZoomRotate.disableRotation();
       map.keyboard.disableRotation();
@@ -215,11 +224,11 @@ function ParkMapInner({
       // this the view snapped back to the fitted bounds the next time the sheet resized
       // and the map appeared impossible to zoom out of. `originalEvent` is what separates
       // a person zooming from our own fitBounds call.
-      map.on("zoomstart", (ev) => {
-        if ((ev as { originalEvent?: unknown }).originalEvent) interactedRef.current = true;
+      map.on("zoomstart", (ev: { originalEvent?: unknown }) => {
+        if (ev.originalEvent) interactedRef.current = true;
       });
-      map.on("moveend", (ev) => {
-        if ((ev as { originalEvent?: unknown }).originalEvent) interactedRef.current = true;
+      map.on("moveend", (ev: { originalEvent?: unknown }) => {
+        if (ev.originalEvent) interactedRef.current = true;
       });
       try {
         map.fitBounds(fitBoundsRef.current, { padding: 12, duration: 0, maxZoom: 9 });
@@ -227,16 +236,12 @@ function ParkMapInner({
         map.jumpTo({ center: [CONTINENTAL_US_CENTER.longitude, CONTINENTAL_US_CENTER.latitude], zoom: CONTINENTAL_US_CENTER.zoom });
       }
       setShowLabels(map.getZoom() >= LABEL_ZOOM);
-      map.on("idle", syncPins);
-      map.on("sourcedata", (ev) => {
-        if ((ev as { sourceId?: string }).sourceId === CLUSTER_SOURCE_ID) syncPins();
-      });
-      syncPins();
     },
     // initial padding only; later changes go through the effect above
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [],
   );
+
 
   const handleClick = useCallback(
     (e: MapLayerMouseEvent) => {
@@ -255,7 +260,15 @@ function ParkMapInner({
     [syncPins],
   );
 
-  const handleMoveEnd = useCallback(() => syncPins(), [syncPins]);
+  /**
+   * Every event that can change what should be on screen recomputes the pins.
+   *
+   * These go through the component's own props rather than `map.on(...)`. Hand-registered
+   * listeners outlive a React remount: after a Fast Refresh they were still calling
+   * `setPins` on a dead instance, so the live one rendered an empty array while the data
+   * behind it was perfectly fine, and every marker disappeared.
+   */
+
 
   const handleError = useCallback(
     (e: ErrorEvent) => {
@@ -266,9 +279,6 @@ function ParkMapInner({
       if (/fetch|style|source|tile|network/i.test(message)) sourceErrors.current += 1;
       if (sourceErrors.current >= 2 && styleUrl === MAP_STYLE_URL && FALLBACK_MAP_STYLE_URL !== MAP_STYLE_URL) {
         setStyleUrl(FALLBACK_MAP_STYLE_URL);
-        // The new style rebuilds every source, so the pins we are holding describe one that
-        // no longer exists. They come back on the next idle, once its tiles are built.
-        setPins([]);
         sourceErrors.current = 0;
         return;
       }
@@ -276,6 +286,7 @@ function ParkMapInner({
     },
     [styleUrl],
   );
+
 
   const controlOffset = { marginTop: topInsetPx + 8 };
 
@@ -299,26 +310,11 @@ function ParkMapInner({
         touchPitch={false}
         pitchWithRotate={false}
         attributionControl={false}
-        onLoad={handleLoad}
         onClick={handleClick}
         onZoomEnd={handleZoomEnd}
-        onMoveEnd={handleMoveEnd}
         onError={handleError}
       >
-        {/* Transparent: the source exists to cluster, and both bubbles and pins are drawn
-            as DOM markers below. A layer still has to reference it or no tiles are built. */}
-        <Source
-          id={CLUSTER_SOURCE_ID}
-          type="geojson"
-          data={featureCollection}
-          cluster
-          clusterRadius={CLUSTER_RADIUS}
-          clusterMaxZoom={CLUSTER_MAX_ZOOM}
-          clusterProperties={CLUSTER_PROPERTIES as unknown as Record<string, unknown>}
-        >
-          <Layer id={CLUSTER_LAYER_ID} type="circle" filter={["has", "point_count"]} paint={{ "circle-radius": 1, "circle-opacity": 0 }} />
-          <Layer id={POINT_LAYER_ID} type="circle" filter={["!", ["has", "point_count"]]} paint={{ "circle-radius": 1, "circle-opacity": 0 }} />
-        </Source>
+        <PinSync index={index} onPins={setPins} onReady={handleReady} />
         {pins.map((pin) => {
           if (pin.kind === "cluster") {
             return <ClusterMarker key={pin.key} bubble={pin} onExpand={expandCluster} />;

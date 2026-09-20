@@ -5,18 +5,21 @@
  * pins with no country visible under it, and the browser was laying out 616 DOM nodes on
  * every pan.
  *
- * MapLibre's GeoJSON source does the clustering, but nothing is drawn from it: the layers
- * it needs are transparent, and both bubbles and pins are read back out with
- * `querySourceFeatures` and rendered as DOM. Drawing the counts as a symbol layer would
- * mean naming a font, and the two basemaps this app can fall back between ship different
- * glyph sets, so a style swap would silently blank every number.
+ * Clustered here rather than by MapLibre's GeoJSON source.
+ *
+ * The source approach needs the answer read back with `querySourceFeatures`, which only
+ * sees features in tiles that are currently loaded. With nothing actually drawn from the
+ * source, whether those tiles load at all is up to MapLibre's own optimisations: the same
+ * page returned 21 features on one load and 0 on the next, so every marker on the map
+ * vanished intermittently while the data behind them was perfectly fine.
+ *
+ * supercluster is what MapLibre uses internally, so the behaviour is the same and the
+ * timing is ours. Bubbles and pins are still plain DOM markers, because drawing the counts
+ * as a symbol layer means naming a font, and the two basemaps this app falls back between
+ * ship different glyph sets: a style swap would silently blank every number.
  */
+import Supercluster from "supercluster";
 import type { ParkWithStatus } from "@/lib/types";
-
-export const CLUSTER_SOURCE_ID = "parks";
-/** A transparent layer, present only so MapLibre builds tiles for the source. */
-export const CLUSTER_LAYER_ID = "parks-clustered";
-export const POINT_LAYER_ID = "parks-unclustered";
 
 /**
  * Radius in pixels within which pins merge. 56 is a little wider than a marker, so two
@@ -50,9 +53,62 @@ export function toFeatureCollection(parks: ParkWithStatus[]): GeoJSON.FeatureCol
  * A bubble that says only "48" hides the one thing the map is for. Counting the closed
  * parks inside it lets the bubble say "48, some shut" without the reader zooming in first.
  */
-export const CLUSTER_PROPERTIES = {
-  closed: ["+", ["case", ["==", ["get", "level"], "closed"], 1, 0]],
-} as const;
+const CLUSTER_PROPERTIES = {
+  closed: {
+    map: (props: ParkFeatureProps) => ({ closed: props.level === "closed" ? 1 : 0 }),
+    reduce: (accumulated: { closed: number }, props: { closed: number }) => {
+      accumulated.closed += props.closed;
+    },
+  },
+};
+
+export type ParkIndex = Supercluster<ParkFeatureProps, { closed: number }>;
+
+/** Build the index. Cheap enough to rebuild whenever the park list changes. */
+export function buildIndex(parks: ParkWithStatus[]): ParkIndex {
+  const index: ParkIndex = new Supercluster({
+    radius: CLUSTER_RADIUS,
+    maxZoom: CLUSTER_MAX_ZOOM,
+    // Cluster counts have to stay right at the zoom the reader is actually at.
+    minPoints: 2,
+    map: CLUSTER_PROPERTIES.closed.map,
+    reduce: CLUSTER_PROPERTIES.closed.reduce,
+  });
+  index.load(toFeatureCollection(parks).features as never[]);
+  return index;
+}
+
+/**
+ * What to draw for a viewport.
+ *
+ * `bbox` is [west, south, east, north] and zoom is rounded, because supercluster indexes
+ * integer zooms and asking for 4.7 answers for 4: rounding keeps the bubbles in step with
+ * what the reader sees rather than one level behind.
+ */
+export function pinsFor(index: ParkIndex, bbox: [number, number, number, number], zoom: number): MapPin[] {
+  const clusters = index.getClusters(bbox, Math.round(zoom));
+  const out: MapPin[] = [];
+  for (const feature of clusters) {
+    const coords = feature.geometry?.coordinates;
+    if (!coords || coords.length < 2) continue;
+    const props = feature.properties as unknown as Record<string, unknown>;
+    if (props.cluster === true) {
+      out.push({
+        kind: "cluster",
+        clusterId: Number(props.cluster_id),
+        key: `c${props.cluster_id}`,
+        lng: coords[0]!,
+        lat: coords[1]!,
+        count: Number(props.point_count ?? 0),
+        closed: Number(props.closed ?? 0),
+      });
+      continue;
+    }
+    const id = typeof props.id === "string" ? props.id : null;
+    if (id) out.push({ kind: "park", key: id, parkId: id });
+  }
+  return out;
+}
 
 export interface ClusterBubble {
   kind: "cluster";
@@ -73,50 +129,7 @@ export interface SinglePin {
 
 export type MapPin = ClusterBubble | SinglePin;
 
-interface RawFeature {
-  properties?: Record<string, unknown> | null;
-  geometry?: { type?: string; coordinates?: number[] } | null;
-}
 
-/**
- * Source features to things we can render.
- *
- * `querySourceFeatures` returns tile features, so the same cluster can come back once per
- * tile it touches and a park sitting on a tile seam can come back twice. Both are keyed and
- * deduplicated here; without it React sees duplicate keys and the same pin is drawn twice.
- */
-export function readPins(features: RawFeature[]): MapPin[] {
-  const clusters = new Map<number, ClusterBubble>();
-  const parks = new Map<string, SinglePin>();
-
-  for (const feature of features) {
-    const props = feature.properties ?? {};
-    const coords = feature.geometry?.coordinates;
-
-    if (props.cluster === true || typeof props.cluster_id === "number") {
-      const clusterId = Number(props.cluster_id);
-      const count = Number(props.point_count ?? 0);
-      if (!Number.isFinite(clusterId) || count < 1) continue;
-      if (!coords || coords.length < 2) continue;
-      clusters.set(clusterId, {
-        kind: "cluster",
-        clusterId,
-        key: `c${clusterId}`,
-        lng: coords[0]!,
-        lat: coords[1]!,
-        count,
-        closed: Number(props.closed ?? 0),
-      });
-      continue;
-    }
-
-    const id = typeof props.id === "string" ? props.id : null;
-    if (!id) continue;
-    parks.set(id, { kind: "park", key: id, parkId: id });
-  }
-
-  return [...clusters.values(), ...parks.values()];
-}
 
 /** Plain-language name for a bubble, because a number alone is not a label. */
 export function clusterLabel(bubble: ClusterBubble): string {
