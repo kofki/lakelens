@@ -293,4 +293,6 @@ async function main(): Promise<void> {
   log(`wrote ${OUT_PATH}: ${Object.keys(photos).length} photos (${checked} parks checked this run, ${found} new)`);
 }
 
-await main();
+// Guarded: without this, importing the module for its exported helpers runs the whole
+// harvest. A unit test for one pure function started a network sweep of every state.
+if (import.meta.url === `file://${process.argv[1]}`) await main();

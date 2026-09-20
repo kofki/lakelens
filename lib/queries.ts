@@ -184,38 +184,82 @@ function toReviewStats(rows: ReviewStatsRow[]): Map<string, ReviewStats> {
   return out;
 }
 
+/**
+ * PostgREST answers with at most 1,000 rows and says nothing about the rest.
+ *
+ * That was invisible while there were 616 parks. At 2,043 the map showed exactly 1,000 of
+ * them, and every per-park table behind it was cut at the same point: a park past the
+ * boundary would have rendered with no conditions and no forecast rather than not at all,
+ * which is worse than missing.
+ *
+ * Paging stops on a short page, so a table under the limit still costs one request.
+ */
+export const PAGE_SIZE = 1000;
+
+export async function selectAll<T>(
+  scope: string,
+  build: (from: number, to: number) => PromiseLike<{ data: unknown; error: { message: string } | null }>,
+  { required = false }: { required?: boolean } = {},
+): Promise<T[]> {
+  const out: T[] = [];
+  for (let from = 0; ; from += PAGE_SIZE) {
+    const { data, error } = await build(from, from + PAGE_SIZE - 1);
+    if (error) {
+      // Same bargain rowsOr struck: without parks there is no page, and without reviews
+      // there is a page with no stars. Only the first is worth failing over. A later page
+      // failing keeps the earlier ones, which is a partial list rather than none.
+      if (required) throw new Error(`${scope}: ${error.message}`);
+      warn(scope, error);
+      return out;
+    }
+    const page = (data ?? []) as T[];
+    out.push(...page);
+    if (page.length < PAGE_SIZE) return out;
+  }
+}
+
 async function loadWorld(db: Db, now: Date): Promise<World> {
   const since = new Date(now.getTime() - REPORT_WINDOW_MS).toISOString();
-  const [parksR, accR, latestR, alertsR, reportsR, confR, holR, lwR, evR, fcR, rsR] = await Promise.all([
-    db.from("parks").select("*").order("name"),
-    db.from("accessibility").select("*"),
-    db.from("latest_conditions").select("park_id,source,payload,fetched_at"),
-    db.from("park_alerts").select("*").eq("active", true),
-    db.from("reports").select("*").gte("created_at", since).order("created_at", { ascending: false }),
-    db.from("report_confirmations").select("*").gte("created_at", since),
-    db.from("holidays").select("*"),
-    db.from("long_weekends").select("*"),
-    db.from("calendar_events").select("name,start_date,end_date,weight"),
-    db.from("park_forecast").select("*"),
-    db.from("park_review_stats").select("*"),
-  ]);
-  if (parksR.error) throw new Error(`parks: ${parksR.error.message}`);
+  // Every table keyed by park can now pass a thousand rows. The calendar ones cannot, and
+  // are paged anyway rather than leaving a trap for whoever adds the next decade.
+  const [parks, accRows, latestRows, alertRows, reportRows, confRows, holRows, lwRows, evRows, fcRows, rsRows] =
+    await Promise.all([
+      selectAll<Park>("parks", (a, b) => db.from("parks").select("*").order("name").range(a, b), { required: true }),
+      selectAll<Accessibility>("accessibility", (a, b) => db.from("accessibility").select("*").range(a, b)),
+      selectAll<LatestRow>("latest_conditions", (a, b) =>
+        db.from("latest_conditions").select("park_id,source,payload,fetched_at").range(a, b),
+      ),
+      selectAll<ParkAlert>("park_alerts", (a, b) => db.from("park_alerts").select("*").eq("active", true).range(a, b)),
+      selectAll<Report>("reports", (a, b) =>
+        db.from("reports").select("*").gte("created_at", since).order("created_at", { ascending: false }).range(a, b),
+      ),
+      selectAll<ReportConfirmation>("report_confirmations", (a, b) =>
+        db.from("report_confirmations").select("*").gte("created_at", since).range(a, b),
+      ),
+      selectAll<Holiday>("holidays", (a, b) => db.from("holidays").select("*").range(a, b)),
+      selectAll<LongWeekend>("long_weekends", (a, b) => db.from("long_weekends").select("*").range(a, b)),
+      selectAll<CalendarEventRow>("calendar_events", (a, b) =>
+        db.from("calendar_events").select("name,start_date,end_date,weight").range(a, b),
+      ),
+      selectAll<ParkForecastRow>("park_forecast", (a, b) => db.from("park_forecast").select("*").range(a, b)),
+      selectAll<ReviewStatsRow>("park_review_stats", (a, b) => db.from("park_review_stats").select("*").range(a, b)),
+    ]);
 
   const accessibility = new Map<string, Accessibility>();
-  for (const a of rowsOr<Accessibility>("accessibility", accR)) accessibility.set(a.park_id, a);
+  for (const a of accRows) accessibility.set(a.park_id, a);
 
   return {
-    parks: (parksR.data ?? []) as unknown as Park[],
+    parks,
     accessibility,
-    latest: rowsOr<LatestRow>("latest_conditions", latestR),
-    alerts: rowsOr<ParkAlert>("park_alerts", alertsR),
-    reports: rowsOr<Report>("reports", reportsR),
-    confirmations: rowsOr<ReportConfirmation>("report_confirmations", confR),
-    holidays: rowsOr<Holiday>("holidays", holR),
-    longWeekends: rowsOr<LongWeekend>("long_weekends", lwR),
-    events: toCalendarEvents(rowsOr<CalendarEventRow>("calendar_events", evR)),
-    forecasts: toForecasts(rowsOr<ParkForecastRow>("park_forecast", fcR)),
-    reviewStats: toReviewStats(rowsOr<ReviewStatsRow>("park_review_stats", rsR)),
+    latest: latestRows,
+    alerts: alertRows,
+    reports: reportRows,
+    confirmations: confRows,
+    holidays: holRows,
+    longWeekends: lwRows,
+    events: toCalendarEvents(evRows),
+    forecasts: toForecasts(fcRows),
+    reviewStats: toReviewStats(rsRows),
   };
 }
 

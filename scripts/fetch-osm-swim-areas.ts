@@ -121,6 +121,21 @@ export function kebab(value: string): string {
     .slice(0, 60);
 }
 
+/**
+ * Names that identify nothing.
+ *
+ * OSM carries `name=2` and `name=A` on beaches inside a numbered or lettered campground.
+ * They are real names in context and useless out of it: a card reading "2 · Lake · Portage
+ * Lake, ME" tells a reader nothing they can act on, and the park page is worse.
+ */
+export function isUsableName(name: string): boolean {
+  const trimmed = name.trim();
+  if (trimmed.length < 3) return false;
+  // "12", "3B", "#4": a label from a sign, not the name of a place.
+  if (/^#?\d+[a-z]?$/i.test(trimmed)) return false;
+  return /[a-z]{3}/i.test(trimmed);
+}
+
 /** Tags that mean "not somewhere the public can go and swim". */
 function isPublic(tags: Record<string, string>): boolean {
   const access = tags.access;
@@ -197,7 +212,7 @@ export function normalize(elements: OverpassElement[], state: string): OsmPark[]
   for (const el of elements ?? []) {
     const tags = el.tags ?? {};
     const name = (tags.name ?? "").trim();
-    if (!name || !isPublic(tags)) continue;
+    if (!isUsableName(name) || !isPublic(tags)) continue;
     const at = coords(el);
     if (!at) continue;
 
@@ -330,6 +345,10 @@ async function main(): Promise<void> {
       try {
         const elements = await fetchState(state);
         const parks = normalize(elements, state);
+        // A state that answered is authoritative for itself: drop what a previous run
+        // recorded for it first. Merging instead kept rows that no longer qualify, so
+        // tightening a filter could never actually remove anything.
+        for (const [slug, park] of [...bySlug]) if (park.state === state) bySlug.delete(slug);
         for (const park of parks) bySlug.set(park.slug, park);
         log(`${state}: ${parks.length} named public swim areas`);
       } catch (err) {
@@ -358,4 +377,6 @@ async function main(): Promise<void> {
     (failed.length ? `; FAILED: ${failed.join(", ")}` : ""));
 }
 
-await main();
+// Guarded: without this, importing the module for its exported helpers runs the whole
+// harvest. A unit test for one pure function started a network sweep of every state.
+if (import.meta.url === `file://${process.argv[1]}`) await main();

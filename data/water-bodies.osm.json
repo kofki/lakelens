@@ -1,6 +1,6 @@
 {
   "_note": "Water body each OSM swim area sits on, from scripts/fetch-osm-water-bodies.ts. Matched by bounding box against every named lake and river in the state, smallest box first. water_body null means the point named no fresh water and is not published.",
-  "generated_at": "2026-09-20T11:41:33.525Z",
+  "generated_at": "2026-09-20T12:55:13.971Z",
   "pad_m": 600,
   "verdicts": {
     "alexai-beach-ak": {
@@ -24629,6 +24629,360 @@
     },
     "yorktown-beach-va": {
       "water_body": "York River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "aquatorium-beach-left-side-pa": {
+      "water_body": "Pigeon Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "aquatorium-beach-right-side-pa": {
+      "water_body": "Pigeon Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "avonia-beach-pa": {
+      "water_body": "Lake Erie",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "bab-pa": {
+      "water_body": "Beaver River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "barracks-beach-pa": {
+      "water_body": "Lake Erie",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "beach-10-budny-pa": {
+      "water_body": "Lake Erie",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "beach-11-pa": {
+      "water_body": "Lake Erie",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "beach-9-pine-tree-pa": {
+      "water_body": "Lake Erie",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "beach-access-to-kish-creek-pa": {
+      "water_body": "Kishacoquillas Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "beach-front-pa": {
+      "water_body": "Moonpool",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "beach-no-1-pa": {
+      "water_body": "Lake Erie",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "beach-no-6-pa": {
+      "water_body": "Lake Erie",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "beach-no-7-waterworks-pa": {
+      "water_body": "Lake Erie",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "beach-no-8-pettinato-pa": {
+      "water_body": "Lake Erie",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "bimini-beach-pa": {
+      "water_body": "Lake Bimini",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "black-moshannon-beach-pa": {
+      "water_body": "Black Moshannon Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "chestnut-run-swim-beach-pa": {
+      "water_body": "Shenango River Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "concrete-beach-pa": {
+      "water_body": "Susquehanna River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "cool-dip-pa": {
+      "water_body": "Bushkill Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "cowell-beach-pa": {
+      "water_body": "Lake Erie",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "deer-beach-pa": {
+      "water_body": "Deer Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "devon-drive-pond-pa": {
+      "water_body": "Fishing Pond #1",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "dunbars-lehigh-river-access-pa": {
+      "water_body": "Lehigh Canal",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "eagle-rock-beach-pa": {
+      "water_body": "Lake Susquehanna",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "fishermans-beach-pa": {
+      "water_body": "Lake Erie",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "freeport-beach-pa": {
+      "water_body": "Lake Erie",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "glen-onoko-lehigh-river-access-pa": {
+      "water_body": "Glen Onoko Run",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "gold-key-beach-pa": {
+      "water_body": "Misty Cove",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "gouldsboro-state-park-beach-pa": {
+      "water_body": "Gouldsboro Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "gravel-beach-pa": {
+      "water_body": "Lake Wallenpaupack",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "indain-mountain-lake-beach-pa": {
+      "water_body": "Indian Mountain Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "jamestown-beach-2-pa": {
+      "water_body": "Pymatuning Reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "jim-thorpe-lehigh-river-access-pa": {
+      "water_body": "Silkmill Run",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "keystone-beach-pa": {
+      "water_body": "Keystone Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "kinzua-beach-pa": {
+      "water_body": "Allegheny Reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "kish-park-beach-access-pa": {
+      "water_body": "Kishacoquillas Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lake-jean-beach-pa": {
+      "water_body": "Lake Jean",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lakeview-beach-pa": {
+      "water_body": "Lake Arthur",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "laurel-ridge-beach-pa": {
+      "water_body": "McConnell Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "manchester-beach-pa": {
+      "water_body": "Lake Erie",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "mill-road-beaches-pa": {
+      "water_body": "Lake Erie",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "mt-gretna-lake-and-beach-pa": {
+      "water_body": "Conewago Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "palmyra-township-public-beach-pa": {
+      "water_body": "Lake Wallenpaupack",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "parker-dam-state-park-beach-pa": {
+      "water_body": "Parker Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "pwlpoa-beach-pa": {
+      "water_body": "PWLPOA Van Auken Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "quarry-swimming-association-pa": {
+      "water_body": "Radley Run",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "redds-beach-pa": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "sandy-beach-pa": {
+      "water_body": "Lake Wallenpaupack",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "shades-beach-pa": {
+      "water_body": "Lake Erie",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "shorewood-beach-pa": {
+      "water_body": "Lake Erie",
+      "type": "lake",
+      "great_lake": true,
+      "reason": "ok"
+    },
+    "smithfield-beach-pa": {
+      "water_body": "Delaware River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "stoneboro-beach-pa": {
+      "water_body": "Stoneboro Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "tall-timber-beach-pa": {
+      "water_body": "Timber Trails Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "thornburg-beach-pa": {
+      "water_body": "Chartiers Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "tiger-beach-pa": {
+      "water_body": "Lewis Run",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "tobyhanna-lake-beach-pa": {
+      "water_body": "Tobyhanna Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "tunnelville-beach-pa": {
+      "water_body": "Crooked Creek Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "walnutport-lehigh-river-access-pa": {
+      "water_body": "Trout Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "wilson-avenue-river-access-pa": {
+      "water_body": "Lehigh Canal",
       "type": "river",
       "great_lake": false,
       "reason": "ok"
