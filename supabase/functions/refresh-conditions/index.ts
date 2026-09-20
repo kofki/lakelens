@@ -12,6 +12,8 @@
  *   algae     FDEP algal-bloom samples -> park_alerts notices
  *   holidays  Nager.Date public holidays + long weekends
  *   prune     drop conditions_snapshots older than 7 days
+ *   parking   OpenStreetMap (Overpass) parking lots for every park — weekly
+ *   stations  backfill missing USGS gauge / NOAA station / NWS grid assignments — weekly
  *
  * The fetch/normalise logic lives in ../_shared/*, which the Next.js app and vitest
  * import too, so there is exactly one implementation of each parser.
@@ -22,6 +24,8 @@ import { buildUsgsPayloadForPark, fetchUsgsLatestDetailed } from "../_shared/usg
 import { buildNoaaPayloadForPark, fetchNoaaLatest } from "../_shared/noaa.ts";
 import { fetchAlertsFL, fetchNwsWeather, matchAlertsToPark, type NwsAlertFeature } from "../_shared/nws.ts";
 import { fetchLongWeekends, fetchNagerHolidays } from "../_shared/holidays.ts";
+import { fetchParkingElements, groupParkingByPark } from "../_shared/overpass.ts";
+import { assignGauges, assignNwsGrid, fetchNoaaStationCandidates, nearestStation } from "../_shared/stations.ts";
 import { nwsAlertHash } from "../_shared/hash.ts";
 import type { CronJob, NwsGrid, ParkAlertInsert, ParkLike } from "../_shared/types.ts";
 import {
@@ -35,7 +39,25 @@ import {
   matchAlgaeToParks,
 } from "../_shared/algae.ts";
 
-export const CRON_JOBS: readonly CronJob[] = ["usgs", "noaa", "weather", "alerts", "holidays", "prune", "algae"];
+export const CRON_JOBS: readonly CronJob[] = ["usgs", "noaa", "weather", "alerts", "holidays", "prune", "algae", "parking", "stations"];
+
+/**
+ * Per-job wall-clock budget. The cheap per-park jobs stay well inside the 60 s route
+ * limit; parking and stations talk to slow third-party services (an Overpass query for
+ * every park, then a USGS site lookup per unassigned park) and get the longer window
+ * their pg_cron timeout allows.
+ */
+export const JOB_TIME_BUDGET_MS: Record<CronJob, number> = {
+  usgs: 20_000,
+  noaa: 20_000,
+  weather: 20_000,
+  alerts: 20_000,
+  holidays: 20_000,
+  prune: 20_000,
+  algae: 20_000,
+  parking: 110_000,
+  stations: 110_000,
+};
 
 export function isCronJob(value: string): value is CronJob {
   return (CRON_JOBS as readonly string[]).includes(value);
@@ -113,6 +135,12 @@ export async function runJob(job: CronJob, opts: RunJobOptions = {}): Promise<Ru
         break;
       case "algae":
         await runAlgae(ctx);
+        break;
+      case "parking":
+        await runParking(ctx);
+        break;
+      case "stations":
+        await runStations(ctx);
         break;
       default:
         return { ok: false, counts: {}, errors: [`unknown job: ${String(job)}`] };
@@ -467,6 +495,162 @@ async function runAlgae(ctx: Ctx): Promise<void> {
 
 // ---------- prune ----------
 
+// ---------- parking (OpenStreetMap via Overpass) ----------
+
+/** Parks covered per parking run. A full sweep does not fit in one invocation. */
+export const PARKING_PARKS_PER_RUN = 24;
+
+/**
+ * Refresh OpenStreetMap parking for a slice of parks, least-recently-checked first.
+ *
+ * Overpass is slow and its mirrors are unreliable, so this is deliberately bounded:
+ * a daily run covers PARKING_PARKS_PER_RUN parks and stamps parks.osm_checked_at, and
+ * the whole state cycles every few days.
+ *
+ * Because the batch is known, the prune is exact — OSM lots belonging to these parks
+ * that Overpass no longer returns are gone, and no other park's lots are touched.
+ */
+async function runParking(ctx: Ctx): Promise<void> {
+  let q = ctx.db
+    .from("parks")
+    .select("id,slug,name,lat,lng")
+    .order("osm_checked_at", { ascending: true, nullsFirst: true })
+    .limit(PARKING_PARKS_PER_RUN);
+  if (ctx.opts.parkId) q = ctx.db.from("parks").select("id,slug,name,lat,lng").eq("id", ctx.opts.parkId);
+
+  const { data: parks, error } = await q;
+  if (error) throw new Error(`load parks: ${error.message}`);
+  const batch = (parks ?? []) as { id: string; slug: string; name: string; lat: number; lng: number }[];
+  ctx.counts.parks = batch.length;
+  if (batch.length === 0) return;
+
+  const response = await fetchParkingElements(batch, { deadlineMs: 60_000 });
+  ctx.counts.elements = (response.elements ?? []).length;
+  if (response.partial) ctx.notes.push(`partial overpass sweep: ${(response.failures ?? []).join("; ")}`);
+
+  const rows = groupParkingByPark(response, batch);
+  ctx.counts.matched = rows.length;
+
+  if (rows.length > 0) {
+    const { error: upsertError, count } = await ctx.db
+      .from("parking_lots")
+      .upsert(rows, { onConflict: "osm_ref", count: "exact" });
+    if (upsertError) throw new Error(`upsert parking_lots: ${upsertError.message}`);
+    ctx.counts.upserted = count ?? rows.length;
+  }
+
+  // Drop OSM lots for these parks that Overpass no longer returns — but never on a
+  // partial sweep, where a missing lot only means a chunk failed.
+  if (!response.partial) {
+    const keep = rows.map((r) => r.osm_ref);
+    let del = ctx.db
+      .from("parking_lots")
+      .delete({ count: "exact" })
+      .eq("source", "osm")
+      .in("park_id", batch.map((p) => p.id));
+    if (keep.length > 0) del = del.not("osm_ref", "in", `(${keep.map((k) => `"${k}"`).join(",")})`);
+    const { error: deleteError, count: deleted } = await del;
+    if (deleteError) ctx.errors.push(`prune osm parking_lots: ${deleteError.message}`);
+    else ctx.counts.removed = deleted ?? 0;
+  }
+
+  // Stamp only when the sweep was complete, so a failed chunk is retried tomorrow.
+  if (!response.partial) {
+    const { error: stampError } = await ctx.db
+      .from("parks")
+      .update({ osm_checked_at: ctx.now.toISOString() })
+      .in("id", batch.map((p) => p.id));
+    if (stampError) ctx.errors.push(`stamp osm_checked_at: ${stampError.message}`);
+  }
+}
+
+// ---------- stations (gauge / tide station / NWS grid assignment) ----------
+
+/**
+ * Fill in missing station assignments. Curated ones are never overwritten: a park that
+ * already has a gauge, a tide station or a grid is skipped entirely.
+ *
+ * Ordered cheapest-first so a run that hits the time budget still makes progress: the
+ * NWS grid is one request per park, NOAA needs a single station list for all of them,
+ * and USGS needs a site lookup plus a liveness check per park.
+ */
+async function runStations(ctx: Ctx): Promise<void> {
+  const { data: parks, error } = await ctx.db
+    .from("parks")
+    .select("id,slug,name,type,lat,lng,nws_grid,nws_zone,nws_county,usgs_site_id,river_gauge_site_id,noaa_station_id");
+  if (error) throw new Error(`load parks: ${error.message}`);
+  const list = (parks ?? []) as {
+    id: string;
+    slug: string;
+    name: string;
+    type: string | null;
+    lat: number;
+    lng: number;
+    nws_grid: unknown;
+    usgs_site_id: string | null;
+    river_gauge_site_id: string | null;
+    noaa_station_id: string | null;
+  }[];
+  ctx.counts.parks = list.length;
+
+  // 1. NWS grid — one /points call per park that has none.
+  for (const park of list.filter((p) => !p.nws_grid)) {
+    if (overBudget(ctx)) {
+      ctx.notes.push("time budget reached during nws grid backfill");
+      return;
+    }
+    try {
+      const grid = await assignNwsGrid(park);
+      const { error: updateError } = await ctx.db.from("parks").update(grid).eq("id", park.id);
+      if (updateError) throw new Error(updateError.message);
+      bump(ctx, "nws_grid");
+    } catch (err) {
+      ctx.errors.push(`nws grid ${park.slug}: ${msg(err)}`);
+    }
+  }
+
+  // 2. NOAA tide/water-temp station — coastal parks with no USGS gauge and no station yet.
+  const needStation = list.filter((p) => !p.noaa_station_id && !p.usgs_site_id && !p.river_gauge_site_id);
+  if (needStation.length > 0 && !overBudget(ctx)) {
+    try {
+      const candidates = await fetchNoaaStationCandidates();
+      ctx.counts.noaa_candidates = candidates.length;
+      for (const park of needStation) {
+        const best = nearestStation(park, candidates);
+        if (!best) continue;
+        const { error: updateError } = await ctx.db
+          .from("parks")
+          .update({ noaa_station_id: best.station.id, noaa_distance_km: Math.round(best.km * 10) / 10 })
+          .eq("id", park.id);
+        if (updateError) {
+          ctx.errors.push(`noaa station ${park.slug}: ${updateError.message}`);
+          continue;
+        }
+        bump(ctx, "noaa_station");
+      }
+    } catch (err) {
+      ctx.errors.push(`noaa stations: ${msg(err)}`);
+    }
+  }
+
+  // 3. USGS gauges — inland parks with nothing assigned.
+  for (const park of list.filter((p) => !p.usgs_site_id && !p.river_gauge_site_id && !p.noaa_station_id)) {
+    if (overBudget(ctx)) {
+      ctx.notes.push("time budget reached during usgs gauge backfill");
+      return;
+    }
+    try {
+      const gauges = await assignGauges(park, ctx.now);
+      if (!gauges) continue;
+      const { error: updateError } = await ctx.db.from("parks").update(gauges).eq("id", park.id);
+      if (updateError) throw new Error(updateError.message);
+      bump(ctx, "usgs_gauge");
+    } catch (err) {
+      ctx.errors.push(`usgs gauge ${park.slug}: ${msg(err)}`);
+    }
+  }
+}
+
 async function runPrune(ctx: Ctx): Promise<void> {
   const cutoff = new Date(ctx.now.getTime() - PRUNE_AFTER_MS).toISOString();
   const { error, count } = await ctx.db.from("conditions_snapshots").delete({ count: "exact" }).lt("fetched_at", cutoff);
@@ -509,7 +693,7 @@ const handler = {
     const errors: string[] = [];
     let ok = true;
     for (const job of jobs) {
-      const result = await runJob(job, { client, parkId, force, timeBudgetMs: 20_000 });
+      const result = await runJob(job, { client, parkId, force, timeBudgetMs: JOB_TIME_BUDGET_MS[job] ?? 20_000 });
       ok = ok && result.ok;
       for (const [k, v] of Object.entries(result.counts)) counts[jobs.length > 1 ? `${job}_${k}` : k] = v;
       errors.push(...result.errors.map((e) => (jobs.length > 1 ? `${job}: ${e}` : e)));

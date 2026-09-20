@@ -76,6 +76,39 @@ export type Database = {
           },
         ]
       }
+      calendar_events: {
+        Row: {
+          created_at: string
+          end_date: string
+          id: string
+          name: string
+          source: string | null
+          start_date: string
+          updated_at: string
+          weight: number
+        }
+        Insert: {
+          created_at?: string
+          end_date: string
+          id?: string
+          name: string
+          source?: string | null
+          start_date: string
+          updated_at?: string
+          weight?: number
+        }
+        Update: {
+          created_at?: string
+          end_date?: string
+          id?: string
+          name?: string
+          source?: string | null
+          start_date?: string
+          updated_at?: string
+          weight?: number
+        }
+        Relationships: []
+      }
       conditions_snapshots: {
         Row: {
           fetched_at: string
@@ -208,6 +241,7 @@ export type Database = {
           lng: number
           name: string
           notes: string | null
+          osm_ref: string | null
           park_id: string
           source: string
         }
@@ -221,6 +255,7 @@ export type Database = {
           lng: number
           name: string
           notes?: string | null
+          osm_ref?: string | null
           park_id: string
           source?: string
         }
@@ -234,6 +269,7 @@ export type Database = {
           lng?: number
           name?: string
           notes?: string | null
+          osm_ref?: string | null
           park_id?: string
           source?: string
         }
@@ -261,6 +297,8 @@ export type Database = {
           lat: number
           lng: number
           name: string
+          noaa_distance_km: number | null
+          noaa_station_id: string | null
           nws_county: string | null
           nws_grid: Json | null
           nws_zone: string | null
@@ -293,6 +331,8 @@ export type Database = {
           lat: number
           lng: number
           name: string
+          noaa_distance_km?: number | null
+          noaa_station_id?: string | null
           nws_county?: string | null
           nws_grid?: Json | null
           nws_zone?: string | null
@@ -325,6 +365,8 @@ export type Database = {
           lat?: number
           lng?: number
           name?: string
+          noaa_distance_km?: number | null
+          noaa_station_id?: string | null
           nws_county?: string | null
           nws_grid?: Json | null
           nws_zone?: string | null
@@ -444,7 +486,7 @@ export type Database = {
       }
     }
     Functions: {
-      [_ in never]: never
+      refresh_sample_reports: { Args: never; Returns: number }
     }
     Enums: {
       [_ in never]: never

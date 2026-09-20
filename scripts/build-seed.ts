@@ -22,7 +22,7 @@
  *   alerts.manual.json        { alerts: AlertSeed[] }                required  (DATA-deep)
  *   alerts.extra.json         { alerts: AlertSeed[] }                optional  (DATA-extra)
  *   sample_reports.json       { reports: SampleReportSeed[] }        required  (DATA-deep)
- *   events.json               { events: CalendarEvent[] }            required  (validated only; no table)
+ *   events.json               { events: CalendarEvent[] }            required  (DATA-deep)
  *   holidays-2026-2027.json   { holidays, long_weekends }            optional  (DATA-basic)
  *   photos.json / photos.extra.json / photos.basic.json
  *                             { photos: { [slug]: PhotoCredit } }    optional  (attribution only —
@@ -795,7 +795,20 @@ export function buildSeedSql(data: SeedData, opts: BuildOptions = {}): string {
     out.push("-- (no holidays file — skipped)");
   }
   out.push("");
-  out.push(`-- events.json (${data.events.length} calendar events) has no table: lib/queries.ts reads data/events.json directly.`);
+
+  // 7. calendar events ------------------------------------------------------
+  // These drive the closure score (UF home games, spring break, summer). They used to be
+  // bundled into the app from data/events.json; now the DB is what the app reads, and
+  // this file is only the seed source.
+  out.push("-- ---------------------------------------------------------------- calendar_events");
+  for (const e of data.events) {
+    out.push(
+      `insert into public.calendar_events ("name", "start_date", "end_date", "weight", "source")`,
+      `values (${sqlLiteral(e.name)}, ${sqlLiteral(e.start)}, ${sqlLiteral(e.end)}, ${e.weight ?? 1}, 'data/events.json')`,
+      `on conflict ("name", "start_date") do update set "end_date" = excluded."end_date", "weight" = excluded."weight", "source" = excluded."source";`,
+    );
+  }
+  out.push("");
   out.push("-- end of seed", "");
   return out.join("\n");
 }

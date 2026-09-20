@@ -49,3 +49,6 @@ supabase/functions/.env
 
 # local tooling
 .claude/
+
+# fetch caches for scripts/ (re-downloaded on demand; never read at runtime)
+/data/osm-cache

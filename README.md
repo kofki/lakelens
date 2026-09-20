@@ -28,6 +28,8 @@ Built in 48 hours at **SASEhack 2026** by the team behind [BeachLens](https://be
 | **Official closures as data** | Closures are `park_alerts` rows evaluated at request time — deactivate the alert and the park reopens automatically |
 | **Safety card** | Lifeguard status, cavern warnings, current + cold-water advice, alcohol / life-jacket rules per park |
 | **Parking + accessibility** | Curated lots (fees, ADA spaces, overflow, "no roadside waiting"), water-entry type, surfaces, restrooms — each marked *verified* or *unverified* with its source |
+| **Parking that keeps itself current** | OpenStreetMap lots refreshed daily from Overpass (a slice of parks per run), merged with the curated lots |
+| **Self-healing coverage** | A weekly job assigns a USGS gauge, NOAA station or NWS grid to any park missing one, so new sensors get picked up without a redeploy |
 | **Installable PWA** | Manifest + service worker; works offline for the basics |
 | **Accessibility first** | Status is always icon + text, never colour alone; 44 px targets; screen-reader-friendly list view; 200 % zoom safe |
 
@@ -36,7 +38,7 @@ Built in 48 hours at **SASEhack 2026** by the team behind [BeachLens](https://be
 ```mermaid
 flowchart LR
   subgraph Supabase["Supabase (Postgres)"]
-    PG[(parks · accessibility · parking_lots<br/>conditions_snapshots · park_alerts<br/>reports · report_confirmations · holidays)]
+    PG[(parks · accessibility · parking_lots<br/>conditions_snapshots · park_alerts<br/>reports · report_confirmations<br/>holidays · long_weekends · calendar_events)]
     CRON[pg_cron + pg_net]
     EF[Edge Function<br/>submit-report]
     ST[Storage<br/>report-photos]
@@ -50,6 +52,7 @@ flowchart LR
   NWS["National Weather Service"] --> EFR
   NOAA["NOAA CO-OPS"] --> EFR
   FDEP["FDEP algal blooms"] --> EFR
+  OSM["OpenStreetMap / Overpass"] --> EFR
   CRON -- "apikey (Vault)" --> EFR
   EFR --> PG
   PAGES --> PG
@@ -60,8 +63,8 @@ flowchart LR
 ```
 
 - **Frontend:** Next.js 16 (App Router, ISR `revalidate = 60`), TypeScript, Tailwind v4 (CSS-first design tokens), MapLibre GL via `@vis.gl/react-maplibre` with keyless [OpenFreeMap](https://openfreemap.org) vector tiles, `vaul` for modal sheets, hand-rolled persistent bottom sheet.
-- **Backend:** Supabase Postgres with RLS (public read, no anonymous writes to tables), Edge Function `submit-report` (validation + rate limiting, service-role insert, DB trigger as backstop), Storage bucket for report photos, `pg_cron` + `pg_net` driving the `refresh-conditions` Edge Function (USGS every 30 min, weather hourly, NOAA twice an hour, NWS alerts hourly, FDEP algae every 6 h, holidays monthly, prune nightly). Ingestion runs entirely inside Supabase, so it keeps collecting even if the web deployment is down. Secrets live in Supabase Vault.
-- **Pure logic** in `lib/` (no React/DB imports, 166 unit tests): prediction, report summarisation, status blending, backups, freshness, plain-language helpers.
+- **Backend:** Supabase Postgres with RLS (public read, no anonymous writes to tables), Edge Function `submit-report` (validation + rate limiting, service-role insert, DB trigger as backstop), Storage bucket for report photos, `pg_cron` + `pg_net` driving the `refresh-conditions` Edge Function (USGS every 30 min, weather hourly, NOAA twice an hour, NWS alerts hourly, FDEP algae every 6 h, OSM parking daily, station assignment weekly, holidays monthly, prune nightly). Ingestion runs entirely inside Supabase, so it keeps collecting even if the web deployment is down. Secrets live in Supabase Vault.
+- **Pure logic** in `lib/` (no React/DB imports, 182 unit tests): prediction, report summarisation, status blending, backups, freshness, plain-language helpers.
 
 ### How the closure estimate works (`lib/prediction.ts`)
 
@@ -110,21 +113,22 @@ npm install
 npm run dev
 ```
 
-- `npm test` — vitest (prediction, reports, status, backups, ingestion normalisers, seed validation)
+- `npm test` — vitest (prediction, reports, status, backups, ingestion normalisers, Overpass/station assignment, seed validation)
 - `npm run lint` · `npm run build`
 - `node --experimental-strip-types scripts/build-seed.ts` — regenerate `supabase/seed.sql` from `data/*.json`
 - Migrations: `supabase/migrations/*.sql` (`npx supabase db push --include-seed`), one-time Vault setup in `supabase/migrations/README.md`
-- Edge Function: `npx supabase functions deploy submit-report --use-api`
+- Edge Functions: `npx supabase functions deploy submit-report --use-api` · `npx supabase functions deploy refresh-conditions --use-api`
 
 ## Repository map
 
 ```
-app/            routes (map, list, park/[slug], report, about, offline) + /api (cron, refresh, admin alerts, reports fallback)
+app/            routes (map, list, park/[slug], report, about, offline) + /api (refresh proxy, admin alerts, reports fallback, flow history)
 components/     ui primitives · map · list · sheet · park sections · report flow · nav · pwa · a11y
-lib/            pure logic (prediction, reportStatus, parkStatus, backups, freshness…) · ingest (usgs, nws, openMeteo) · queries · supabase clients
-data/           curated JSON: deep parks, accessibility, parking, alerts, sample reports, events, holidays, basic parks
+lib/            pure logic (prediction, reportStatus, parkStatus, backups, freshness…) · ingest shims (usgs, nws, noaa, gauges) · queries · supabase clients
+data/           curated seed JSON: deep parks, accessibility, parking, alerts, sample reports, events, holidays, basic parks
+                (seed source only — the app always reads Postgres; fetch caches are gitignored)
 scripts/        seed builder, FDEP / NWS / Overpass / holiday fetchers
-supabase/       migrations, seed.sql, config, functions/submit-report
+supabase/       migrations, seed.sql, config, functions/{submit-report, refresh-conditions, _shared}
 tests/          ingestion fixtures + tests, seed validation
 ```
 

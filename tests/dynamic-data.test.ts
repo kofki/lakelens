@@ -1,0 +1,181 @@
+/**
+ * Tests for the two ingestion jobs that replaced committed JSON caches:
+ * Overpass parking (data/osm-cache/overpass-parking.json) and station assignment
+ * (data/gauges.json, data/noaa_stations.json). No network: fetch is injected.
+ */
+import { describe, expect, it, vi } from "vitest";
+import {
+  MAX_LOTS_PER_PARK,
+  PARKING_RADIUS_M,
+  buildParkingQuery,
+  describeFee,
+  describeNotes,
+  fetchParkingElements,
+  groupParkingByPark,
+  type OverpassElement,
+} from "../supabase/functions/_shared/overpass";
+import { NOAA_BEACH_MAX_KM, NOAA_MAX_KM, nearestStation, parseStations } from "../supabase/functions/_shared/stations";
+import { toCalendarEvents } from "@/lib/queries";
+
+const ICHETUCKNEE = { id: "p1", slug: "ichetucknee", name: "Ichetucknee", lat: 29.9841, lng: -82.7612 };
+const RAINBOW = { id: "p2", slug: "rainbow", name: "Rainbow", lat: 29.1025, lng: -82.4375 };
+
+function node(id: number, lat: number, lng: number, tags: Record<string, string> = {}): OverpassElement {
+  return { type: "node", id, lat, lon: lng, tags: { amenity: "parking", ...tags } };
+}
+
+describe("overpass parking", () => {
+  it("builds one around-clause per park", () => {
+    const q = buildParkingQuery([ICHETUCKNEE, RAINBOW], 1000);
+    expect(q).toContain('nwr["amenity"="parking"](around:1000,29.98410,-82.76120);');
+    expect(q).toContain('nwr["amenity"="parking"](around:1000,29.10250,-82.43750);');
+    expect(q).toContain("out center;");
+  });
+
+  it("assigns each lot to the nearest park and ignores ones out of range", () => {
+    const rows = groupParkingByPark(
+      { elements: [node(1, 29.9845, -82.7615), node(2, 29.1028, -82.4378), node(3, 27.0, -80.0)] },
+      [ICHETUCKNEE, RAINBOW],
+    );
+    expect(rows.map((r) => r.park_id).sort()).toEqual(["p1", "p2"]);
+    expect(rows.find((r) => r.park_id === "p1")?.osm_ref).toBe("node/1");
+  });
+
+  it("a lot inside two parks' circles is claimed once, by the nearer park", () => {
+    const a = { ...ICHETUCKNEE, id: "near" };
+    const b = { ...ICHETUCKNEE, id: "far", lat: 29.9900 };
+    const rows = groupParkingByPark({ elements: [node(1, 29.9841, -82.7612)] }, [b, a]);
+    expect(rows).toHaveLength(1);
+    expect(rows[0].park_id).toBe("near");
+  });
+
+  it("drops parking that is not public, and roadway parking", () => {
+    const rows = groupParkingByPark(
+      {
+        elements: [
+          node(1, 29.9842, -82.7613, { access: "private" }),
+          node(2, 29.9842, -82.7613, { access: "customers" }),
+          node(3, 29.9842, -82.7613, { parking: "street_side" }),
+          node(4, 29.9842, -82.7613, { name: "Keep me" }),
+        ],
+      },
+      [ICHETUCKNEE],
+    );
+    expect(rows.map((r) => r.name)).toEqual(["Keep me"]);
+  });
+
+  it("keeps only the nearest MAX_LOTS_PER_PARK lots", () => {
+    const many = Array.from({ length: MAX_LOTS_PER_PARK + 4 }, (_, i) => node(i + 1, 29.9841 + i * 0.0005, -82.7612));
+    const rows = groupParkingByPark({ elements: many }, [ICHETUCKNEE]);
+    expect(rows).toHaveLength(MAX_LOTS_PER_PARK);
+    // Nearest first: node/1 sits exactly on the park centre.
+    expect(rows[0].osm_ref).toBe("node/1");
+  });
+
+  it("reads fee, capacity, ada spaces and notes from OSM tags", () => {
+    const [row] = groupParkingByPark(
+      {
+        elements: [
+          node(1, 29.9842, -82.7613, {
+            name: "North lot",
+            fee: "yes",
+            charge: "$6 per vehicle",
+            capacity: "120",
+            "capacity:disabled": "4",
+            surface: "crushed_limestone",
+          }),
+        ],
+      },
+      [ICHETUCKNEE],
+    );
+    expect(row).toMatchObject({ name: "North lot", fee: "$6 per vehicle", capacity: 120, ada_spaces: 4, source: "osm" });
+    expect(row.notes).toContain("crushed limestone surface");
+  });
+
+  it("describeFee / describeNotes stay quiet when OSM says nothing", () => {
+    expect(describeFee({})).toBeNull();
+    expect(describeFee({ fee: "no" })).toBe("Free");
+    expect(describeFee({ fee: "yes" })).toBe("Paid");
+    expect(describeNotes({})).toBeNull();
+  });
+
+  it("merges chunks, dedupes by osm id and reports a partial sweep", async () => {
+    const parks = Array.from({ length: 5 }, (_, i) => ({ lat: 29 + i, lng: -82 }));
+    const fetchImpl = vi
+      .fn()
+      // chunk 1 succeeds
+      .mockResolvedValueOnce(new Response(JSON.stringify({ elements: [node(1, 29, -82), node(2, 29, -82)] }), { status: 200 }))
+      // chunk 2 fails on every mirror
+      .mockResolvedValue(new Response("busy", { status: 406 }));
+
+    const res = await fetchParkingElements(parks, { fetchImpl: fetchImpl as unknown as typeof fetch, chunkSize: 3 });
+    expect(res.elements?.length).toBe(2);
+    expect(res.partial).toBe(true);
+    expect(res.failures?.length).toBeGreaterThan(0);
+  });
+
+  it("throws only when every chunk fails, so a total outage never looks like 'no parking'", async () => {
+    const fetchImpl = vi.fn().mockResolvedValue(new Response("busy", { status: 406 }));
+    await expect(
+      fetchParkingElements([{ lat: 29, lng: -82 }], { fetchImpl: fetchImpl as unknown as typeof fetch }),
+    ).rejects.toThrow(/overpass/i);
+  });
+
+  it("uses a radius that excludes town-centre parking", () => {
+    expect(PARKING_RADIUS_M).toBeLessThanOrEqual(1000);
+  });
+});
+
+describe("station assignment", () => {
+  const stations = { stations: [
+    { id: "8720218", name: "Mayport", lat: 30.3982, lng: -81.4279, state: "FL" },
+    { id: "9999999", name: "Far away", lat: 42.0, lng: -71.0, state: "MA" },
+    { id: "bad", name: "No coords", state: "FL" },
+  ] };
+
+  it("keeps regional stations with coordinates and drops the rest", () => {
+    const parsed = parseStations(stations);
+    expect(parsed.map((s) => s.id)).toEqual(["8720218"]);
+  });
+
+  it("picks the nearest station inside the park type's limit", () => {
+    const parsed = parseStations(stations);
+    const near = nearestStation({ lat: 30.4, lng: -81.43, type: "beach" }, parsed);
+    expect(near?.station.id).toBe("8720218");
+    expect(near?.km).toBeLessThan(2);
+  });
+
+  it("refuses a station that is too far away rather than inventing coverage", () => {
+    const parsed = parseStations(stations);
+    // Inland spring, hundreds of km from the only station.
+    expect(nearestStation({ lat: 29.98, lng: -82.76, type: "spring" }, parsed)).toBeNull();
+  });
+
+  it("beaches tolerate a more distant station than inland parks", () => {
+    expect(NOAA_BEACH_MAX_KM).toBeGreaterThan(NOAA_MAX_KM);
+  });
+});
+
+describe("calendar events from the database", () => {
+  it("maps rows and defaults the weight", () => {
+    expect(
+      toCalendarEvents([
+        { name: "Spring break", start_date: "2027-03-13", end_date: "2027-03-21", weight: 2 },
+        { name: "Summer", start_date: "2026-06-01", end_date: "2026-08-10", weight: null },
+      ]),
+    ).toEqual([
+      { start: "2027-03-13", end: "2027-03-21", name: "Spring break", weight: 2 },
+      { start: "2026-06-01", end: "2026-08-10", name: "Summer", weight: 1 },
+    ]);
+  });
+
+  it("drops rows the prediction could not use", () => {
+    expect(
+      toCalendarEvents([
+        { name: null, start_date: "2026-06-01", end_date: "2026-06-02", weight: 1 },
+        { name: "Bad date", start_date: "June 1", end_date: "2026-06-02", weight: 1 },
+        { name: "Missing end", start_date: "2026-06-01", end_date: null, weight: 1 },
+      ]),
+    ).toEqual([]);
+  });
+});

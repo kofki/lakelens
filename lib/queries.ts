@@ -32,7 +32,6 @@ import {
   type UsgsPayload,
   type WeatherPayload,
 } from "@/lib/types";
-import eventsJson from "@/data/events.json";
 
 /** Reports/confirmations loaded for the status summary (LOGIC applies the same 2 h window). */
 export const REPORT_WINDOW_MS = 2 * 3600e3;
@@ -58,18 +57,33 @@ interface World {
   confirmations: ReportConfirmation[];
   holidays: Holiday[];
   longWeekends: LongWeekend[];
+  events: CalendarEvent[];
 }
 
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 
-/** Calendar events bundled at build time from data/events.json ({ events: CalendarEvent[] }). */
-export function loadEvents(): CalendarEvent[] {
-  const raw = (eventsJson as { events?: unknown }).events;
-  if (!Array.isArray(raw)) return [];
-  return raw.filter(
-    (e): e is CalendarEvent =>
-      !!e && typeof e === "object" && DATE_RE.test(String((e as CalendarEvent).start)) && DATE_RE.test(String((e as CalendarEvent).end)) && typeof (e as CalendarEvent).name === "string",
-  );
+interface CalendarEventRow {
+  name: string | null;
+  start_date: string | null;
+  end_date: string | null;
+  weight: number | null;
+}
+
+/**
+ * Crowd-driving calendar events (UF home games, spring break, summer) from the database.
+ *
+ * These used to be imported from data/events.json and bundled at build time, which meant
+ * adding next season's home games was a code change and a redeploy. They live in
+ * public.calendar_events now; data/events.json is only the seed source.
+ */
+export function toCalendarEvents(rows: CalendarEventRow[]): CalendarEvent[] {
+  const out: CalendarEvent[] = [];
+  for (const r of rows) {
+    if (!r?.name || !r.start_date || !r.end_date) continue;
+    if (!DATE_RE.test(r.start_date) || !DATE_RE.test(r.end_date)) continue;
+    out.push({ start: r.start_date, end: r.end_date, name: r.name, weight: r.weight ?? 1 });
+  }
+  return out;
 }
 
 function warn(scope: string, err: unknown): void {
@@ -88,7 +102,7 @@ function rowsOr<T>(scope: string, res: { data: unknown; error: { message: string
 
 async function loadWorld(db: Db, now: Date): Promise<World> {
   const since = new Date(now.getTime() - REPORT_WINDOW_MS).toISOString();
-  const [parksR, accR, latestR, alertsR, reportsR, confR, holR, lwR] = await Promise.all([
+  const [parksR, accR, latestR, alertsR, reportsR, confR, holR, lwR, evR] = await Promise.all([
     db.from("parks").select("*").order("name"),
     db.from("accessibility").select("*"),
     db.from("latest_conditions").select("park_id,source,payload,fetched_at"),
@@ -97,6 +111,7 @@ async function loadWorld(db: Db, now: Date): Promise<World> {
     db.from("report_confirmations").select("*").gte("created_at", since),
     db.from("holidays").select("*"),
     db.from("long_weekends").select("*"),
+    db.from("calendar_events").select("name,start_date,end_date,weight"),
   ]);
   if (parksR.error) throw new Error(`parks: ${parksR.error.message}`);
 
@@ -112,6 +127,7 @@ async function loadWorld(db: Db, now: Date): Promise<World> {
     confirmations: rowsOr<ReportConfirmation>("report_confirmations", confR),
     holidays: rowsOr<Holiday>("holidays", holR),
     longWeekends: rowsOr<LongWeekend>("long_weekends", lwR),
+    events: toCalendarEvents(rowsOr<CalendarEventRow>("calendar_events", evR)),
   };
 }
 
@@ -181,7 +197,7 @@ function slimForList(item: ParkWithStatus): ParkWithStatus {
 }
 
 function assembleAll(world: World, now: Date): ParkWithStatus[] {
-  const dayContext = getDayContext(now, world.holidays, world.longWeekends, loadEvents());
+  const dayContext = getDayContext(now, world.holidays, world.longWeekends, world.events);
   return world.parks.map((park) => assemble(park, world, dayContext, now));
 }
 
