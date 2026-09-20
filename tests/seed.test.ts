@@ -246,7 +246,13 @@ describe("data/*.json validate against the schemas", () => {
       // "No restrictions" is the Flickr Commons tag institutions apply to works with no
       // known copyright. It carries no share-alike obligation, and the schema still requires
       // a named author for it, so it is credited like any other.
-      expect(credit.license, slug).toMatch(/^(Public domain|CC0|CC BY \d\.\d|No restrictions)$/);
+      //
+      // A CC BY version can carry a jurisdiction port ("CC BY 3.0 us"), which is the same
+      // licence localised and has no share-alike term either. What must never appear is an
+      // SA suffix, and that is asserted separately so the version pattern cannot quietly
+      // let one through.
+      expect(credit.license, slug).toMatch(/^(Public domain|CC0|CC BY \d\.\d( [a-z]{2})?|No restrictions)$/i);
+      expect(credit.license, slug).not.toMatch(/\bsa\b/i);
       // A harvested credit points at a Commons thumbnail, which is not in this repo. Only a
       // local path makes a claim about a file we ship.
       if (credit.file.startsWith("/")) {
