@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import type { ParkBundle, ParkWithStatus } from "@/lib/types";
-import { getParkBundle, getParkSlugs, getParksWithStatus } from "@/lib/queries";
+import { getParkBundle, getPrerenderParkSlugs, getParksWithStatus } from "@/lib/queries";
 import { Hero } from "@/components/park/Hero";
 import { StatusHeader } from "@/components/park/StatusHeader";
 import { SectionTabs, type SectionLink } from "@/components/park/SectionTabs";
@@ -29,7 +29,7 @@ type Params = { params: Promise<{ slug: string }> };
 
 export async function generateStaticParams() {
   try {
-    const slugs = await getParkSlugs();
+    const slugs = await getPrerenderParkSlugs();
     return slugs.map((slug) => ({ slug }));
   } catch {
     return [];

@@ -460,15 +460,49 @@ export async function getParkBundle(slug: string, now: Date = new Date()): Promi
   }
 }
 
-/** Slugs for generateStaticParams / sitemaps. */
+/**
+ * Every park slug, for the sitemap.
+ *
+ * Paged, because there are more than a thousand of them and a sitemap missing two thirds
+ * of the site is worse than no sitemap.
+ */
 export async function getParkSlugs(): Promise<string[]> {
   try {
     const db = createPublicClient();
-    const { data, error } = await db.from("parks").select("slug").order("slug");
+    const rows = await selectAll<{ slug: string }>("getParkSlugs", (a, b) =>
+      db.from("parks").select("slug").order("slug").range(a, b),
+    );
+    return rows.map((r) => r.slug);
+  } catch (err) {
+    warn("getParkSlugs", err);
+    return [];
+  }
+}
+
+/**
+ * Slugs worth building before anyone asks for them.
+ *
+ * Prerendering all of them stopped working at 2,100 parks: the build generated 1,013 pages,
+ * each one loading the whole world, and Postgres started cancelling statements. Pages were
+ * being written out with no conditions at all, which looks like a park with no weather
+ * rather than a build failure, so it would have shipped.
+ *
+ * The curated parks are built ahead. Everything else renders on first request and is cached
+ * by the same `revalidate` the prebuilt ones use, so a visitor sees no difference and the
+ * build stays flat as the harvest grows.
+ */
+export async function getPrerenderParkSlugs(): Promise<string[]> {
+  try {
+    const db = createPublicClient();
+    const { data, error } = await db
+      .from("parks")
+      .select("slug")
+      .in("coverage_tier", ["deep", "extra"])
+      .order("slug");
     if (error) throw error;
     return (data ?? []).map((r) => r.slug);
   } catch (err) {
-    warn("getParkSlugs", err);
+    warn("getPrerenderParkSlugs", err);
     return [];
   }
 }
