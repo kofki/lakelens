@@ -97,6 +97,23 @@ interface OverpassElement {
  * alone); `leisure=swimming_area` is the semantically correct one but barely used, so both
  * are asked for. A name is required: an unnamed beach polygon cannot be presented as a
  * destination.
+ *
+ * WHY THERE IS MORE THAN BEACHES HERE
+ * -----------------------------------
+ * Asking only for beaches made the map a map of where people tag beaches. North Dakota,
+ * Wyoming and New Mexico came back with one swim spot each, not because they have one but
+ * because nobody has drawn `natural=beach` polygons there.
+ *
+ * `natural=spring` is the obvious omission on a product that puts springs in its own
+ * heading, and it is well mapped in exactly the states beaches are not: Florida, Missouri,
+ * Arkansas, Idaho. `leisure=water_park` is excluded on purpose, because a chlorinated slide
+ * park is not a lake.
+ *
+ * Boat ramps and piers are the other honest signal: a named `leisure=slipway` or
+ * `man_made=pier` means the public can reach that water, which is the thing a beach polygon
+ * was standing in for. They are not swim areas themselves, so they arrive with
+ * swimming_verified false like everything else here, and the water check still has to name
+ * the lake before any of them is published.
  */
 export function buildStateQuery(state: string): string {
   return [
@@ -105,6 +122,10 @@ export function buildStateQuery(state: string): string {
     "(",
     '  nwr["natural"="beach"]["name"](area.a);',
     '  nwr["leisure"="swimming_area"]["name"](area.a);',
+    '  nwr["natural"="spring"]["name"](area.a);',
+    '  nwr["leisure"="slipway"]["name"](area.a);',
+    '  nwr["leisure"="marina"]["name"](area.a);',
+    '  nwr["leisure"="fishing"]["name"](area.a);',
     ");",
     "out tags center;",
   ].join("\n");
@@ -157,7 +178,7 @@ const round5 = (n: number) => Math.round(n * 1e5) / 1e5;
 export interface OsmPark {
   slug: string;
   name: string;
-  type: "lake";
+  type: "lake" | "spring";
   state: string;
   operator: "state" | "county" | "private";
   lat: number;
@@ -222,10 +243,10 @@ export function normalize(elements: OverpassElement[], state: string): OsmPark[]
     bySlug.set(slug, {
       slug,
       name,
-      // Everything harvested here sits on inland water in a state with no salt coast, so
-      // "lake" is the honest default. A river swim area mis-typed as a lake costs nothing
-      // the UI depends on; inventing a type we have not checked would.
-      type: "lake",
+      // A spring is the one thing the tag tells us outright. Everything else is "lake"
+      // provisionally and is corrected by the water check, which is what actually decides
+      // between a lake and a river.
+      type: tags.natural === "spring" ? "spring" : "lake",
       state,
       operator: inferOperator(tags),
       lat: round5(at.lat),
