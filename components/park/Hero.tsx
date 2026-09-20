@@ -21,6 +21,12 @@ export interface HeroProps {
  */
 export function Hero({ park, status, reviewStats }: HeroProps) {
   const photo = park.photo_url;
+  // No author means no credit line at all: a photo labelled "Unknown" credits nobody.
+  const credit = park.photo_author
+    ? park.photo_license
+      ? `${park.photo_author} (${park.photo_license})`
+      : park.photo_author
+    : null;
   const GuardIcon = park.guarded === "yes" ? ShieldCheck : park.guarded === "no" ? ShieldOff : ShieldQuestionMark;
   return (
     <header>
@@ -45,11 +51,39 @@ export function Hero({ park, status, reviewStats }: HeroProps) {
         )}
       </div>
 
+      {photo && credit && (
+        /*
+         * Sits below the image rather than over it: a scrim would compete with the park name and
+         * has to survive whatever the photo does behind it. This is a licence obligation, so it is
+         * quiet by design, and the link is deliberately under the 44px touch target: it is a
+         * provenance link, not a primary control.
+         */
+        <p className="mt-2 text-xs text-mocha">
+          Photo:{" "}
+          {park.photo_source_url ? (
+            <a
+              href={park.photo_source_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-taupe"
+            >
+              {credit}
+              <span className="sr-only"> (opens in a new tab)</span>
+            </a>
+          ) : (
+            credit
+          )}
+        </p>
+      )}
+
       <div className="mt-4 flex flex-wrap items-start justify-between gap-4 md:mt-6">
         <div className="min-w-0 flex-1 space-y-2">
           <p className="inline-flex items-center gap-1 text-[0.95rem] font-bold text-mocha">
             <MapPin aria-hidden="true" focusable="false" className="size-4 shrink-0" />
-            {PARK_TYPE_TEXT[park.type]} · {OPERATOR_TEXT[park.operator]}
+            {/* The named water is the more useful of the two: "Lake Winnebago" says where you
+                are standing in a way "Lake" never does. It is only known for parks that have
+                been through the water check, so the type stays as the fallback. */}
+            {park.water_body ?? PARK_TYPE_TEXT[park.type]} · {OPERATOR_TEXT[park.operator]}
           </p>
           <h1 className="text-[1.75rem] font-extrabold leading-tight text-ink md:text-[2.25rem]">{park.name}</h1>
           {reviewStats && reviewStats.averageRating != null && reviewStats.reviewCount > 0 && (

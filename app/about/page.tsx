@@ -467,6 +467,10 @@ export default function AboutPage() {
                 than 6 hours, forecasts older than 3 hours and reports older than 2 hours are flagged as
                 possibly out of date.
               </p>
+              <p className="text-sm text-mocha">
+                Park photos come from Wikimedia Commons contributors and are used under the licence named on
+                each photo. The photographer and licence appear under the photo on every park page.
+              </p>
             </Section>
 
             <Section id="rules" title="Park rules" icon={<Scale />}>

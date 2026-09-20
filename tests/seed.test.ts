@@ -41,11 +41,18 @@ import {
   validateReferences,
   AlertSeedSchema,
   SampleReportSeedSchema,
+  applyOsmDetails,
+  applyWaterVerdict,
+  type ParkSeed,
   type SeedData,
 } from "@/scripts/build-seed";
 
 const data: SeedData = loadSeedData(REPO_ROOT);
 const bySlug = Object.fromEntries(data.deepParks.map((p) => [p.slug, p]));
+
+/** A real harvested row, so the enrichment tests run against the shape the seed produces. */
+const OSM_PARK: ParkSeed =
+  data.basicParks.find((p) => p.sources.some((s) => s.includes("openstreetmap.org"))) ?? data.deepParks[0]!;
 
 describe("enum mirrors match lib/types.ts", () => {
   it("REPORT_VALUES is identical to the frozen contract", () => {
@@ -234,10 +241,21 @@ describe("data/*.json validate against the schemas", () => {
     expect(data.events.some((e) => /Memorial Day/.test(e.name))).toBe(true);
   });
 
-  it("photos: every credited photo is PD/CC0/CC-BY (no share-alike) and the file exists", () => {
+  it("photos: every credited photo is PD/CC0/CC-BY (no share-alike), and a committed one exists on disk", () => {
     for (const [slug, credit] of Object.entries(data.photos)) {
-      expect(credit.license, slug).toMatch(/^(Public domain|CC0|CC BY \d\.\d)$/);
-      expect(existsSync(resolve(REPO_ROOT, "public", credit.file.slice(1))), `${slug} file`).toBe(true);
+      // "No restrictions" is the Flickr Commons tag institutions apply to works with no
+      // known copyright. It carries no share-alike obligation, and the schema still requires
+      // a named author for it, so it is credited like any other.
+      expect(credit.license, slug).toMatch(/^(Public domain|CC0|CC BY \d\.\d|No restrictions)$/);
+      // A harvested credit points at a Commons thumbnail, which is not in this repo. Only a
+      // local path makes a claim about a file we ship.
+      if (credit.file.startsWith("/")) {
+        expect(existsSync(resolve(REPO_ROOT, "public", credit.file.slice(1))), `${slug} file`).toBe(true);
+      } else {
+        expect(credit.file, slug).toMatch(/^https:\/\/(upload|thumb)\.wikimedia\.org\//);
+        // Tracking parameters would be stored in the seed and served to every visitor.
+        expect(credit.file, slug).not.toMatch(/utm_/);
+      }
     }
     for (const p of data.deepParks) expect(p.photo_url, p.slug).toBe(`/photos/${p.slug}.jpg`);
   });
@@ -355,5 +373,90 @@ describe("SQL generation", () => {
     for (const slug of DEEP_SLUGS) expect(text).toContain(`'${slug}'`);
     for (const a of data.alerts) expect(text, `alert hash for ${a.park_slug}`).toContain(alertHash(a));
     expect(text).toContain("delete from public.reports where is_sample = true;");
+  });
+});
+
+describe("applyOsmDetails", () => {
+  const base = (over: Partial<ParkSeed> = {}) =>
+    ({
+      ...OSM_PARK,
+      hours: null,
+      fees: null,
+      official_url: null,
+      description: null,
+      guarded: "unknown",
+      rules: {},
+      ...over,
+    }) as ParkSeed;
+
+  it("does nothing without a record", () => {
+    const park = base();
+    expect(applyOsmDetails(park, undefined)).toBe(park);
+  });
+
+  it("takes converted hours and leaves the raw OSM syntax out", () => {
+    const out = applyOsmDetails(base(), {
+      osm_ref: "way/1",
+      opening_hours: "Mo-Su 07:00-21:00",
+      hours_text: "7 a.m. to 9 p.m.",
+      hours_converted: true,
+    });
+    expect(out.hours).toBe("7 a.m. to 9 p.m.");
+    expect(JSON.stringify(out)).not.toContain("Mo-Su");
+  });
+
+  it("refuses hours the converter was not confident about", () => {
+    const out = applyOsmDetails(base(), {
+      osm_ref: "way/1",
+      opening_hours: "Mo-Fr 07:00-21:00; Sa off",
+      hours_text: null,
+      hours_converted: false,
+    });
+    expect(out.hours).toBeNull();
+  });
+
+  it("turns supervised into a real lifeguard answer", () => {
+    expect(applyOsmDetails(base(), { osm_ref: "n/1", supervised: "yes" }).guarded).toBe("yes");
+    expect(applyOsmDetails(base(), { osm_ref: "n/1", supervised: "no" }).guarded).toBe("no");
+    // "interval" and friends are not an answer to "is there a lifeguard".
+    expect(applyOsmDetails(base(), { osm_ref: "n/1", supervised: "interval" }).guarded).toBe("unknown");
+  });
+
+  it("never overwrites a curated value", () => {
+    const park = base({ hours: "Curated hours.", guarded: "yes", fees: "Curated fee." });
+    const out = applyOsmDetails(park, { osm_ref: "n/1", hours_text: "8 a.m. to 5 p.m.", hours_converted: true, supervised: "no", fee: "yes" });
+    expect(out).toMatchObject({ hours: "Curated hours.", guarded: "yes", fees: "Curated fee." });
+  });
+
+  it("writes the fee and the dog rule as prose", () => {
+    const out = applyOsmDetails(base(), { osm_ref: "n/1", fee: "no", dog: "leashed" });
+    expect(out.fees).toBe("Free.");
+    expect(out.rules.pets).toBe("Dogs allowed on a leash.");
+  });
+
+  it("ignores a website that is not a URL", () => {
+    expect(applyOsmDetails(base(), { osm_ref: "n/1", website: "call the office" }).official_url).toBeNull();
+  });
+});
+
+describe("applyWaterVerdict", () => {
+  const park = { ...OSM_PARK, type: "lake" } as ParkSeed;
+
+  it("keeps a park the probe has not reached yet", () => {
+    expect(applyWaterVerdict(park, undefined)).toBe(park);
+  });
+
+  it("names the water and corrects the type", () => {
+    const out = applyWaterVerdict(park, {
+      water_body: "Wisconsin River",
+      type: "river",
+      great_lake: false,
+      reason: "ok",
+    });
+    expect(out).toMatchObject({ water_body: "Wisconsin River", type: "river" });
+  });
+
+  it("drops a park that could not name fresh water", () => {
+    expect(applyWaterVerdict(park, { water_body: null, type: null, great_lake: false, reason: "coastline within range" })).toBeNull();
   });
 });

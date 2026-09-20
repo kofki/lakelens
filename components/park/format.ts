@@ -65,7 +65,6 @@ export const PARK_TYPE_TEXT = {
   spring: "Spring",
   lake: "Lake",
   river: "River",
-  beach: "Beach",
 } as const;
 
 export const OPERATOR_TEXT = {

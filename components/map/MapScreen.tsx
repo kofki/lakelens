@@ -18,6 +18,7 @@ import { useAccessibleParam } from "@/components/list/useAccessibleParam";
 import { useMediaQuery } from "@/components/list/useMediaQuery";
 import {
   activeFilterCount,
+  availableStates,
   countStatuses,
   countsMessage,
   filterParks,
@@ -68,6 +69,7 @@ export function MapScreen({ parks, initialFilters }: MapScreenProps) {
   const counts = useMemo(() => countStatuses(filtered), [filtered]);
   const selected = selectedId ? (located.find((p) => p.park.id === selectedId) ?? null) : null;
   const filterCount = activeFilterCount(filters);
+  const stateOptions = useMemo(() => availableStates(parks), [parks]);
 
   const onSelect = useCallback((id: string | null) => {
     setSelectedId(id);
@@ -238,6 +240,7 @@ export function MapScreen({ parks, initialFilters }: MapScreenProps) {
         onRequestLocation={geo.request}
         locationMessage={geo.message}
         resultCount={filtered.length}
+        stateOptions={stateOptions}
       />
 
       <LiveRegion message={geo.message ?? ""} />

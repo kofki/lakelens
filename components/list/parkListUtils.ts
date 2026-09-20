@@ -6,6 +6,7 @@
 import type { Filters, Park, ParkWithStatus, StatusLevel, StatusSource } from "@/lib/types";
 import { STATUS_ORDER } from "@/lib/status";
 import { haversineKm, isAccessibleEntry, kmToMiles, type LatLng } from "@/lib/distance";
+import { normalizeStateCode, stateName } from "@/lib/states";
 
 export type { LatLng };
 
@@ -25,12 +26,13 @@ export function withDistances(items: ParkWithStatus[], location: LatLng | null |
   }));
 }
 
-/** Applies the three contract filters plus an optional name search (case-insensitive substring). */
+/** Applies the contract filters and the state narrowing, plus an optional name search (case-insensitive substring). */
 export function filterParks(items: ParkWithStatus[], filters: Filters, query = ""): ParkWithStatus[] {
   const q = query.trim().toLowerCase();
   return items.filter((item) => {
     if (filters.accessibleEntry && !isAccessibleEntry(item.accessibility)) return false;
     if (filters.guardedOnly && item.park.guarded !== "yes") return false;
+    if (filters.state && normalizeStateCode(item.park.state) !== filters.state) return false;
     if (q && !item.park.name.toLowerCase().includes(q)) return false;
     return true;
   });
@@ -69,7 +71,59 @@ export function sortParks(items: ParkWithStatus[], sort: SortKey): ParkWithStatu
 }
 
 export function activeFilterCount(filters: Filters): number {
-  return Number(filters.accessibleEntry) + Number(filters.guardedOnly);
+  return Number(filters.accessibleEntry) + Number(filters.guardedOnly) + Number(filters.state != null);
+}
+
+export interface StateOption {
+  code: string;
+  name: string;
+}
+
+/**
+ * The states the current data actually covers, by full name. Offering all fifty would
+ * promise coverage we do not have, so the menu is derived from the parks in hand.
+ */
+export function availableStates(items: ParkWithStatus[]): StateOption[] {
+  const seen = new Map<string, string>();
+  for (const item of items) {
+    const code = normalizeStateCode(item.park.state);
+    if (!code || seen.has(code)) continue;
+    const name = stateName(code);
+    if (name) seen.set(code, name);
+  }
+  return [...seen].map(([code, name]) => ({ code, name })).sort((a, b) => a.name.localeCompare(b.name));
+}
+
+export interface StateGroup extends StateOption {
+  items: ParkWithStatus[];
+}
+
+export interface GroupedParks {
+  groups: StateGroup[];
+  /** Parks whose state is missing or unrecognised: they belong under no heading. */
+  ungrouped: ParkWithStatus[];
+}
+
+/**
+ * Single pass over an already-sorted list, so each group keeps that sort order and the
+ * caller can slice to a render cap before grouping without the groups shifting around.
+ */
+export function groupParksByState(items: ParkWithStatus[]): GroupedParks {
+  const byCode = new Map<string, StateGroup>();
+  const ungrouped: ParkWithStatus[] = [];
+  for (const item of items) {
+    const code = normalizeStateCode(item.park.state);
+    const name = code ? stateName(code) : null;
+    if (!code || !name) {
+      ungrouped.push(item);
+      continue;
+    }
+    const group = byCode.get(code);
+    if (group) group.items.push(item);
+    else byCode.set(code, { code, name, items: [item] });
+  }
+  const groups = [...byCode.values()].sort((a, b) => a.name.localeCompare(b.name));
+  return { groups, ungrouped };
 }
 
 export interface StatusCounts {

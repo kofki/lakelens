@@ -129,9 +129,23 @@ export interface Park {
   safety_notes: string | null;
   official_url: string | null;
   photo_url: string | null;
+  /**
+   * Credit for photo_url, from data/photos*.json. CC BY obliges us to name the author
+   * wherever the photo is shown. Optional so fixtures predating migration 20260920070000
+   * still typecheck; null when the photo is unattributed public domain.
+   */
+  photo_author?: string | null;
+  photo_license?: string | null;
+  photo_source_url?: string | null;
   entrance_notes: string | null;
   swim_season: SwimSeason | null;
   description: string | null;
+  /**
+   * The named water this swim area is on, checked against OSM rather than guessed from the
+   * park name. Optional for fixtures predating migration 20260920080000; null for curated
+   * parks that have not been through the check.
+   */
+  water_body?: string | null;
   updated_at: string;
 }
 
@@ -411,9 +425,11 @@ export interface ParkStatus {
 export interface Filters {
   accessibleEntry: boolean;
   guardedOnly: boolean;
+  /** USPS code, or null for every state. Seven states and growing makes this the first cut. */
+  state: string | null;
 }
 
-export const DEFAULT_FILTERS: Filters = { accessibleEntry: false, guardedOnly: false };
+export const DEFAULT_FILTERS: Filters = { accessibleEntry: false, guardedOnly: false, state: null };
 
 export interface ParkWithStatus {
   park: Park;

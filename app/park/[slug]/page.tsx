@@ -17,6 +17,7 @@ import { ConditionsCard } from "@/components/park/ConditionsCard";
 import { RulesCard } from "@/components/park/RulesCard";
 import { ReportsSection } from "@/components/park/ReportsSection";
 import { ReviewsSection } from "@/components/review/ReviewsSection";
+import { VisitorPhotos } from "@/components/review/VisitorPhotos";
 import { BackupSuggestions } from "@/components/park/BackupSuggestions";
 import { ReportButton } from "@/components/report/ReportButton";
 import { SiteFooter } from "@/components/nav/SiteFooter";
@@ -97,6 +98,8 @@ export default async function ParkPage({ params }: Params) {
       <ParkJsonLd park={park} status={bundle.status} origin={origin} />
       <article className="mx-auto w-full max-w-[1100px] px-4 pb-24 md:px-6 lg:pb-12">
         <Hero park={park} status={bundle.status} reviewStats={bundle.reviewStats ?? null} />
+
+        <VisitorPhotos reviews={bundle.reviews} />
 
         <SectionTabs sections={sections} className="mt-4 md:mt-6" />
 

@@ -6,7 +6,8 @@ import { DEFAULT_FILTERS, type Filters } from "@/lib/types";
 import { Button } from "@/components/ui/Button";
 import { ModalSheet } from "@/components/sheet/ModalSheet";
 import { SortControl } from "./SortControl";
-import type { SortKey } from "./parkListUtils";
+import { StateControl } from "./StateControl";
+import type { SortKey, StateOption } from "./parkListUtils";
 
 export interface FilterSheetProps {
   open: boolean;
@@ -20,6 +21,8 @@ export interface FilterSheetProps {
   onRequestLocation?: () => void;
   locationMessage?: string | null;
   resultCount: number;
+  /** States present in the data; the control hides itself below two of them. */
+  stateOptions?: StateOption[];
 }
 
 function ToggleRow({
@@ -69,6 +72,7 @@ export function FilterSheet({
   onRequestLocation,
   locationMessage,
   resultCount,
+  stateOptions = [],
 }: FilterSheetProps) {
   const base = useId();
   const set = (key: keyof Filters) => (checked: boolean) => onFiltersChange({ ...filters, [key]: checked });
@@ -94,6 +98,14 @@ export function FilterSheet({
         />
       </fieldset>
 
+      <StateControl
+        id={`${base}-state`}
+        value={filters.state}
+        onChange={(state) => onFiltersChange({ ...filters, state })}
+        options={stateOptions}
+        className="mt-4"
+      />
+
       <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
         <SortControl id={`${base}-sort`} value={sort} onChange={onSortChange} hasLocation={hasLocation} />
         {!hasLocation && onRequestLocation && (
@@ -109,7 +121,7 @@ export function FilterSheet({
         <Button
           variant="ghost"
           onClick={() => onFiltersChange({ ...DEFAULT_FILTERS })}
-          disabled={!filters.accessibleEntry && !filters.guardedOnly}
+          disabled={!filters.accessibleEntry && !filters.guardedOnly && filters.state === null}
         >
           Clear filters
         </Button>

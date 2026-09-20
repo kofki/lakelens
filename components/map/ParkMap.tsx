@@ -142,6 +142,16 @@ function ParkMapInner({
       map.on("touchstart", () => {
         interactedRef.current = true;
       });
+      // The +/- buttons and keyboard zoom are not drags, wheels or touches, so without
+      // this the view snapped back to the fitted bounds the next time the sheet resized
+      // and the map appeared impossible to zoom out of. `originalEvent` is what separates
+      // a person zooming from our own fitBounds call.
+      map.on("zoomstart", (ev) => {
+        if ((ev as { originalEvent?: unknown }).originalEvent) interactedRef.current = true;
+      });
+      map.on("moveend", (ev) => {
+        if ((ev as { originalEvent?: unknown }).originalEvent) interactedRef.current = true;
+      });
       try {
         map.fitBounds(fitBoundsRef.current, { padding: 12, duration: 0, maxZoom: 9 });
       } catch {
@@ -199,7 +209,7 @@ function ParkMapInner({
         mapStyle={styleUrl}
         initialViewState={CONTINENTAL_US_CENTER}
         style={{ width: "100%", height: "100%" }}
-        minZoom={3}
+        minZoom={2}
         maxZoom={17}
         dragRotate={false}
         touchPitch={false}

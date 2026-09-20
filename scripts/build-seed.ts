@@ -173,9 +173,15 @@ const parkSeedShape = {
     .string()
     .refine((s) => localPhotoPath.test(s) || /^https?:\/\/\S+$/.test(s), "expected /photos/<...>.jpg or http(s) URL")
     .nullable(),
+  /** Credit for photo_url, stitched on from data/photos*.json rather than authored here. */
+  photo_author: z.string().nullable().optional(),
+  photo_license: z.string().nullable().optional(),
+  photo_source_url: httpUrl.nullable().optional(),
   entrance_notes: z.string().nullable(),
   swim_season: SwimSeasonSchema.nullable(),
   description: z.string().nullable(),
+  /** The named lake, river or spring this swim area is on. Verified, not assumed. */
+  water_body: z.string().nullable().optional(),
   sources: z.array(nonEmpty).min(1),
 };
 /** Strict: used for data/parks.deep.json (our own file). */
@@ -275,7 +281,14 @@ export const LongWeekendSchema = z
 
 export const PhotoCreditSchema = z
   .object({
-    file: z.string().regex(localPhotoPath, "expected /photos/<...>.jpg"),
+    /**
+     * A curated photo is a file we committed; a harvested one is a Wikimedia Commons
+     * thumbnail we hotlink. Both are allowed, and both carry the same attribution, which is
+     * the point of this record.
+     */
+    file: z
+      .string()
+      .refine((v) => localPhotoPath.test(v) || /^https:\/\/\S+$/.test(v), "expected /photos/<...>.jpg or an https URL"),
     title: nonEmpty,
     /** Null only for public-domain works with no named creator (e.g. US federal photography). */
     author: nonEmpty.nullable(),
@@ -342,6 +355,9 @@ export const DATA_FILES = {
   photos: "data/photos.json",
   photosExtra: "data/photos.extra.json",
   photosBasic: "data/photos.basic.json",
+  photosOsm: "data/photos.osm.json",
+  osmDetails: "data/park-details.osm.json",
+  waterBodies: "data/water-bodies.osm.json",
   gauges: "data/gauges.json",
 } as const;
 
@@ -424,6 +440,120 @@ export function applyGauges(park: ParkSeed, gauge: GaugeSeed | undefined): ParkS
   return out;
 }
 
+/**
+ * CC BY obliges us to name the author wherever the photo is shown, so the credit has to reach
+ * the park row: the app renders from parks, never from data/photos*.json. The file check keeps a
+ * credit from landing on a park whose photo_url has since been pointed somewhere else.
+ */
+/**
+ * Attach a photo and the credit its licence requires.
+ *
+ * Two cases. A curated park already names its own photo file, and the record only supplies
+ * the attribution. A harvested park has no photo at all, and the record supplies both: the
+ * Commons thumbnail URL becomes its photo_url. Either way the credit and the image come
+ * from the same record, so a park can never end up showing one person's photograph under
+ * another person's name.
+ */
+export function applyPhotoCredit(park: ParkSeed, credit: PhotoCredit | undefined): ParkSeed {
+  if (!credit) return park;
+  if (park.photo_url && credit.file !== park.photo_url) return park;
+  return {
+    ...park,
+    photo_url: park.photo_url ?? credit.file,
+    photo_author: credit.author,
+    photo_license: credit.license,
+    // source_url is the Commons file page, which is where the licence and author can be checked.
+    photo_source_url: credit.source_url,
+  };
+}
+
+/**
+ * Tags harvested from the OSM element a community park came from.
+ *
+ * Every field is optional because OSM coverage is thin: `opening_hours` is set on 6 of 575
+ * parks. A field that is absent leaves the seed's own value alone rather than nulling it.
+ */
+export const OsmDetailSchema = z.object({
+  osm_ref: z.string(),
+  opening_hours: z.string().optional(),
+  /** Prose lib/openingHours.ts can parse. Only present when the raw value converted cleanly. */
+  hours_text: z.string().nullable().optional(),
+  hours_converted: z.boolean().optional(),
+  fee: z.string().optional(),
+  website: z.string().optional(),
+  operator: z.string().optional(),
+  phone: z.string().optional(),
+  description: z.string().optional(),
+  supervised: z.string().optional(),
+  dog: z.string().optional(),
+});
+export type OsmDetail = z.infer<typeof OsmDetailSchema>;
+export const OsmDetailsFileSchema = z.object({ details: z.record(slug, OsmDetailSchema) });
+
+export const WaterVerdictSchema = z.object({
+  water_body: z.string().nullable(),
+  type: z.enum(PARK_TYPES).nullable(),
+  great_lake: z.boolean(),
+  reason: z.string(),
+});
+export type WaterVerdict = z.infer<typeof WaterVerdictSchema>;
+export const WaterBodiesFileSchema = z.object({ verdicts: z.record(slug, WaterVerdictSchema) });
+
+/** OSM's `fee` is yes/no/donation; anything else is free text we will not guess at. */
+const FEE_TEXT: Record<string, string> = {
+  no: "Free.",
+  yes: "There is a fee.",
+  donation: "Donation requested.",
+};
+
+/**
+ * Fold an OSM element's tags into its park row.
+ *
+ * Only tags that were actually present are applied, and only onto fields the harvest left
+ * null. A curated value always wins: this is community data filling gaps, not correcting
+ * work someone did by hand.
+ */
+export function applyOsmDetails(park: ParkSeed, detail: OsmDetail | undefined): ParkSeed {
+  if (!detail) return park;
+  const next = { ...park };
+  // hours_text is set only when the converter was confident. The raw OSM syntax is not
+  // shown to anyone: "Mo-Su 07:00-21:00" is not an answer to "when does it close".
+  if (!next.hours && detail.hours_converted && detail.hours_text) next.hours = detail.hours_text;
+  if (!next.fees && detail.fee && FEE_TEXT[detail.fee]) next.fees = FEE_TEXT[detail.fee]!;
+  if (!next.official_url && detail.website && /^https?:\/\/\S+$/.test(detail.website)) next.official_url = detail.website;
+  if (!next.description && detail.description) next.description = detail.description;
+  // `supervised` is OSM's word for a lifeguard. It is the single best-covered tag here (84
+  // parks), and it turns "unknown" into a real answer on the safety card.
+  if (next.guarded === "unknown" && (detail.supervised === "yes" || detail.supervised === "no")) {
+    next.guarded = detail.supervised;
+  }
+  // OSM's `dog` is yes/no/leashed. `rules.pets` is prose, so it is written as prose.
+  const DOG_TEXT: Record<string, string> = {
+    yes: "Dogs allowed.",
+    no: "No dogs.",
+    leashed: "Dogs allowed on a leash.",
+  };
+  if (!next.rules.pets && detail.dog && DOG_TEXT[detail.dog]) {
+    next.rules = { ...next.rules, pets: DOG_TEXT[detail.dog]! };
+  }
+  return next;
+}
+
+/**
+ * Apply what we learned about the water, or drop the park.
+ *
+ * The harvest typed every community row "lake" without checking, which is how a river
+ * sandbar and a Great Lakes city beach ended up indistinguishable. A row survives only if
+ * it can name fresh water nearby; `null` here means it cannot, and the caller leaves it out
+ * of the seed entirely.
+ */
+export function applyWaterVerdict(park: ParkSeed, verdict: WaterVerdict | undefined): ParkSeed | null {
+  // No verdict at all means the probe has not reached this park yet, not that it failed.
+  if (!verdict) return park;
+  if (!verdict.water_body || !verdict.type) return null;
+  return { ...park, type: verdict.type, water_body: verdict.water_body };
+}
+
 export function loadSeedData(root: string = REPO_ROOT, opts: LoadOptions = {}): SeedData {
   const p = (rel: string) => resolve(root, rel);
   const warnings: string[] = [];
@@ -465,7 +595,15 @@ export function loadSeedData(root: string = REPO_ROOT, opts: LoadOptions = {}): 
   const photosDeep = optional(PhotosFileSchema, DATA_FILES.photos, false, "")?.photos ?? {};
   const photosExtra = optional(PhotosFileSchema, DATA_FILES.photosExtra, skipExtra, "--skip-extra")?.photos ?? {};
   const photosBasic = optional(PhotosFileSchema, DATA_FILES.photosBasic, skipBasic, "--skip-basic")?.photos ?? {};
+  // Commons photos found by coordinates. Lowest precedence: a curated photo of the right
+  // park always beats a proximity match.
+  const photosOsm = optional(PhotosFileSchema, DATA_FILES.photosOsm, skipBasic, "--skip-basic")?.photos ?? {};
+  const osmDetails = optional(OsmDetailsFileSchema, DATA_FILES.osmDetails, skipBasic, "--skip-basic")?.details ?? {};
+  const waterBodies = optional(WaterBodiesFileSchema, DATA_FILES.waterBodies, skipBasic, "--skip-basic")?.verdicts ?? {};
   const gauges = optional(GaugesFileSchema, DATA_FILES.gauges, false, "") ?? {};
+
+  // Photo credits merge first: the park rows below are built with their credit already attached.
+  const photos: Record<string, PhotoCredit> = { ...photosOsm, ...photosBasic, ...photosExtra, ...photosDeep };
 
   // Merge parks: deep > extra > basic > osm, deduped by slug.
   const tierBySlug: Record<string, ParkTier> = {};
@@ -473,29 +611,47 @@ export function loadSeedData(root: string = REPO_ROOT, opts: LoadOptions = {}): 
   const deepParks: ParkSeed[] = [];
   const extraParks: ParkSeed[] = [];
   const basicParks: ParkSeed[] = [];
-  const take = (rows: ParkSeed[], tier: ParkTier, into: ParkSeed[]) => {
+  /**
+   * `enrich` is where community rows earn their place. It may return null, which drops the
+   * row: an OSM swim area that cannot name the fresh water it sits on is not published.
+   */
+  const take = (
+    rows: ParkSeed[],
+    tier: ParkTier,
+    into: ParkSeed[],
+    enrich: (row: ParkSeed) => ParkSeed | null = (row) => row,
+  ) => {
     let skipped = 0;
+    let dropped = 0;
     for (const row of rows) {
       if (tierBySlug[row.slug]) {
         skipped++;
         continue;
       }
-      const park = applyGauges(row, gauges[row.slug]);
-      tierBySlug[row.slug] = tier;
+      const enriched = enrich(row);
+      if (!enriched) {
+        dropped++;
+        continue;
+      }
+      const park = applyPhotoCredit(applyGauges(enriched, gauges[enriched.slug]), photos[enriched.slug]);
+      tierBySlug[park.slug] = tier;
       into.push(park);
       parks.push(park);
     }
     if (skipped) warnings.push(`${tier} tier: ${skipped} row(s) skipped because the slug is already covered by a higher tier`);
+    if (dropped) warnings.push(`${tier} tier: ${dropped} row(s) dropped because they could not name fresh water nearby`);
   };
   take(deepRaw, "deep", deepParks);
   take(extraRaw, "extra", extraParks);
   take(basicRaw, "basic", basicParks);
-  // OSM rows join the basic tier: same coverage, different provenance.
-  take(osmRaw, "basic", basicParks);
+  // OSM rows join the basic tier: same coverage, different provenance. They are the only
+  // rows nobody curated, so they are the only ones that have to prove their water.
+  take(osmRaw, "basic", basicParks, (row) =>
+    applyWaterVerdict(applyOsmDetails(row, osmDetails[row.slug]), waterBodies[row.slug]),
+  );
 
-  // Merge accessibility / photos: lower tiers never override a higher tier's record.
+  // Merge accessibility: lower tiers never override a higher tier's record.
   const accessibility: Record<string, AccessibilitySeed> = { ...accessibilityBasic, ...accessibilityExtra, ...accessibilityDeep };
-  const photos: Record<string, PhotoCredit> = { ...photosBasic, ...photosExtra, ...photosDeep };
 
   return {
     deepParks,
@@ -653,9 +809,13 @@ const PARK_COLUMNS = [
   "safety_notes",
   "official_url",
   "photo_url",
+  "photo_author",
+  "photo_license",
+  "photo_source_url",
   "entrance_notes",
   "swim_season",
   "description",
+  "water_body",
 ] as const;
 
 function parkValues(p: ParkSeed): string {
@@ -686,9 +846,13 @@ function parkValues(p: ParkSeed): string {
     safety_notes: sqlLiteral(p.safety_notes),
     official_url: sqlLiteral(p.official_url),
     photo_url: sqlLiteral(p.photo_url),
+    photo_author: sqlLiteral(p.photo_author ?? null),
+    photo_license: sqlLiteral(p.photo_license ?? null),
+    photo_source_url: sqlLiteral(p.photo_source_url ?? null),
     entrance_notes: sqlLiteral(p.entrance_notes),
     swim_season: sqlJsonb(p.swim_season),
     description: sqlLiteral(p.description),
+    water_body: sqlLiteral(p.water_body ?? null),
   };
   return PARK_COLUMNS.map((c) => v[c]).join(",\n    ");
 }

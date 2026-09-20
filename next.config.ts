@@ -6,8 +6,11 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       // Supabase Storage (report photos) and any project subdomain.
       { protocol: "https", hostname: "**.supabase.co" },
-      // Wikimedia Commons park photos (attribution shown next to each image).
+      // Wikimedia Commons park photos (attribution shown next to each image). The API
+      // hands back thumb.wikimedia.org for a scaled thumbnail and upload.wikimedia.org for
+      // an original, and which one you get depends on the file, so both are allowed.
       { protocol: "https", hostname: "upload.wikimedia.org" },
+      { protocol: "https", hostname: "thumb.wikimedia.org" },
     ],
   },
   async headers() {

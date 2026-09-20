@@ -1,0 +1,1022 @@
+{
+  "_note": "Hero photos found on Wikimedia Commons by coordinates (scripts/fetch-commons-photos.ts). Public domain, CC0 and CC BY only: share-alike would oblige the whole page to carry the same licence. `file` is a Commons thumbnail URL rather than a local path, so these are not downloaded. Author and licence MUST be rendered wherever the photo appears.",
+  "generated_at": "2026-09-20T07:43:09.628Z",
+  "photos": {
+    "12th-street-beach-il": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/12th_Street_Beach_%2835292914940%29.jpg/1280px-12th_Street_Beach_%2835292914940%29.jpg",
+      "title": "12th Street Beach (35292914940).jpg",
+      "author": "piet theisohn from Leverkusen, Germany",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:12th_Street_Beach_(35292914940).jpg"
+    },
+    "41st-street-beach-il": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/41st_St_Pedestrian_Bridge_eastern_approach_-_Chicago%2C_IL_-_April_2023.jpg/1280px-41st_St_Pedestrian_Bridge_eastern_approach_-_Chicago%2C_IL_-_April_2023.jpg",
+      "title": "41st St Pedestrian Bridge eastern approach - Chicago, IL - April 2023.jpg",
+      "author": "AlphaBeta135",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:41st_St_Pedestrian_Bridge_eastern_approach_-_Chicago,_IL_-_April_2023.jpg"
+    },
+    "49th-street-beach-il": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/East_49th_Street_restrooms_along_Lakefront_Trail%2C_Chicago%2C_2025.jpg/1280px-East_49th_Street_restrooms_along_Lakefront_Trail%2C_Chicago%2C_2025.jpg",
+      "title": "East 49th Street restrooms along Lakefront Trail, Chicago, 2025.jpg",
+      "author": "DimiTalen",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:East_49th_Street_restrooms_along_Lakefront_Trail,_Chicago,_2025.jpg"
+    },
+    "albert-lea-beach-mn": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Albert_Lea_Lake_-_panoramio.jpg/1280px-Albert_Lea_Lake_-_panoramio.jpg",
+      "title": "Albert Lea Lake - panoramio.jpg",
+      "author": "Bohao Zhao",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Albert_Lea_Lake_-_panoramio.jpg"
+    },
+    "alum-creek-beach-oh": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/USACE_Alum_Creek_Dam_and_Lake.jpg/1280px-USACE_Alum_Creek_Dam_and_Lake.jpg",
+      "title": "USACE Alum Creek Dam and Lake.jpg",
+      "author": "U.S. Army Corps of Engineers, photographer not specified or unknown",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:USACE_Alum_Creek_Dam_and_Lake.jpg"
+    },
+    "amery-swimming-beach-wi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Norwegian_Church%2C_Amery%2C_Wis._%2820086083676%29.jpg/1280px-Norwegian_Church%2C_Amery%2C_Wis._%2820086083676%29.jpg",
+      "title": "Norwegian Church, Amery, Wis. (20086083676).jpg",
+      "author": "Nasjonalbiblioteket from Norway",
+      "license": "No restrictions",
+      "license_url": "https://www.flickr.com/commons/usage/",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Norwegian_Church,_Amery,_Wis._(20086083676).jpg"
+    },
+    "ardmore-hollywood-osterman-beach-il": {
+      "file": "https://upload.wikimedia.org/wikipedia/commons/a/a5/19970907_01_Ardmore_Hollywood_Beach_%286027355199%29.jpg",
+      "title": "19970907 01 Ardmore Hollywood Beach (6027355199).jpg",
+      "author": "David Wilson from Oak Park, Illinois, USA",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:19970907_01_Ardmore_Hollywood_Beach_(6027355199).jpg"
+    },
+    "atwood-lake-beach-oh": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Atwood_Lake_from_dam_toward_Carroll_County.jpg/1280px-Atwood_Lake_from_dam_toward_Carroll_County.jpg",
+      "title": "Atwood Lake from dam toward Carroll County.jpg",
+      "author": "Roseohioresident",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Atwood_Lake_from_dam_toward_Carroll_County.jpg"
+    },
+    "b-b-clarke-beach-wi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/B.B._Clarke_Beach_Park_Shelter_-_panoramio.jpg/1280px-B.B._Clarke_Beach_Park_Shelter_-_panoramio.jpg",
+      "title": "B.B. Clarke Beach Park Shelter - panoramio.jpg",
+      "author": "Corey Coyle",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:B.B._Clarke_Beach_Park_Shelter_-_panoramio.jpg"
+    },
+    "bde-maka-ska-north-beach-mn": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Sailboats_on_Bde_Maka_Ska-Minneapolis.jpg/1280px-Sailboats_on_Bde_Maka_Ska-Minneapolis.jpg",
+      "title": "Sailboats on Bde Maka Ska-Minneapolis.jpg",
+      "author": "Chad Davis from Minneapolis, United States",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Sailboats_on_Bde_Maka_Ska-Minneapolis.jpg"
+    },
+    "bde-maka-ska-thomas-beach-mn": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Minneapolis_Skyline_from_Thomas_Beach%2C_Lake_Calhoun_%2817208998350%29.jpg/1280px-Minneapolis_Skyline_from_Thomas_Beach%2C_Lake_Calhoun_%2817208998350%29.jpg",
+      "title": "Minneapolis Skyline from Thomas Beach, Lake Calhoun (17208998350).jpg",
+      "author": "Tony Webster from San Francisco, California",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Minneapolis_Skyline_from_Thomas_Beach,_Lake_Calhoun_(17208998350).jpg"
+    },
+    "beach-potawatomi-state-park-wi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Site_of_Future_Group_Camping_Facility_Potawatomi_State_Park_Door_County_Wisconsin.jpg/1280px-Site_of_Future_Group_Camping_Facility_Potawatomi_State_Park_Door_County_Wisconsin.jpg",
+      "title": "Site of Future Group Camping Facility Potawatomi State Park Door County Wisconsin.jpg",
+      "author": "Rick Techlin",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Site_of_Future_Group_Camping_Facility_Potawatomi_State_Park_Door_County_Wisconsin.jpg"
+    },
+    "beaver-river-beach-mn": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/City_of_Beaver_Bay%2C_Minnesota.jpg/1280px-City_of_Beaver_Bay%2C_Minnesota.jpg",
+      "title": "City of Beaver Bay, Minnesota.jpg",
+      "author": "Myotus",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:City_of_Beaver_Bay,_Minnesota.jpg"
+    },
+    "black-beach-mn": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Black_Beach_Silver_Bay.jpg/1280px-Black_Beach_Silver_Bay.jpg",
+      "title": "Black Beach Silver Bay.jpg",
+      "author": "Thesavagenorwegian",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Black_Beach_Silver_Bay.jpg"
+    },
+    "blandin-beach-mn": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Blandin_Paper_Company_%28UPM_Blandin%29%2C_paper_mill_plant%2C_Grand_Rapids%2C_MN-01.jpg/1280px-Blandin_Paper_Company_%28UPM_Blandin%29%2C_paper_mill_plant%2C_Grand_Rapids%2C_MN-01.jpg",
+      "title": "Blandin Paper Company (UPM Blandin), paper mill plant, Grand Rapids, MN-01.jpg",
+      "author": "Myotus",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Blandin_Paper_Company_(UPM_Blandin),_paper_mill_plant,_Grand_Rapids,_MN-01.jpg"
+    },
+    "boaters-beach-leesville-lake-oh": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Leesville_Lake_%28Ohio%29.jpg/1280px-Leesville_Lake_%28Ohio%29.jpg",
+      "title": "Leesville Lake (Ohio).jpg",
+      "author": "Roseohioresident",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Leesville_Lake_(Ohio).jpg"
+    },
+    "brittingham-beach-wi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Brittingham_Park_Boathouse_-_panoramio.jpg/1280px-Brittingham_Park_Boathouse_-_panoramio.jpg",
+      "title": "Brittingham Park Boathouse - panoramio.jpg",
+      "author": "Corey Coyle",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Brittingham_Park_Boathouse_-_panoramio.jpg"
+    },
+    "buffington-harbor-beach-in": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/19970419_35_Buffington%2C_IN_%285674322460%29.jpg/1280px-19970419_35_Buffington%2C_IN_%285674322460%29.jpg",
+      "title": "19970419 35 Buffington, IN (5674322460).jpg",
+      "author": "David Wilson from Oak Park, Illinois, USA",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:19970419_35_Buffington,_IN_(5674322460).jpg"
+    },
+    "caesar-creek-state-park-beach-oh": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Public_Lands_Institute_-_Caesar_Creek_State_Park_-_001.tif/lossy-page1-1280px-Public_Lands_Institute_-_Caesar_Creek_State_Park_-_001.tif.jpg",
+      "title": "Public Lands Institute - Caesar Creek State Park - 001.tif",
+      "author": "Public Lands Institute",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Public_Lands_Institute_-_Caesar_Creek_State_Park_-_001.tif"
+    },
+    "calumet-beach-il": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Calumet_Park_-_panoramio.jpg/1280px-Calumet_Park_-_panoramio.jpg",
+      "title": "Calumet Park - panoramio.jpg",
+      "author": "Bohao Zhao",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Calumet_Park_-_panoramio.jpg"
+    },
+    "camp-st-croix-beach-wi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/St_Croix_Meadows_Dog_Track_%2849112284043%29.jpg/1280px-St_Croix_Meadows_Dog_Track_%2849112284043%29.jpg",
+      "title": "St Croix Meadows Dog Track (49112284043).jpg",
+      "author": "Chad Davis",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:St_Croix_Meadows_Dog_Track_(49112284043).jpg"
+    },
+    "cedar-lake-east-beach-mn": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Cedar_Lake%2C_Minneapolis_%2853470308653%29.jpg/1280px-Cedar_Lake%2C_Minneapolis_%2853470308653%29.jpg",
+      "title": "Cedar Lake, Minneapolis (53470308653).jpg",
+      "author": "Chad Davis from Minneapolis, United States",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Cedar_Lake,_Minneapolis_(53470308653).jpg"
+    },
+    "cedar-lake-point-beach-mn": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Cedar_Lake%2C_Minneapolis_%2853470308653%29.jpg/1280px-Cedar_Lake%2C_Minneapolis_%2853470308653%29.jpg",
+      "title": "Cedar Lake, Minneapolis (53470308653).jpg",
+      "author": "Chad Davis from Minneapolis, United States",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Cedar_Lake,_Minneapolis_(53470308653).jpg"
+    },
+    "cedar-lake-south-beach-mn": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/19_Water_main_work_continues_on_Cedar_Lake_Trail_near_Cedar_Lake_Parkway.jpg/1280px-19_Water_main_work_continues_on_Cedar_Lake_Trail_near_Cedar_Lake_Parkway.jpg",
+      "title": "19 Water main work continues on Cedar Lake Trail near Cedar Lake Parkway.jpg",
+      "author": "Chad Davis",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:19_Water_main_work_continues_on_Cedar_Lake_Trail_near_Cedar_Lake_Parkway.jpg"
+    },
+    "cedar-point-beach-oh": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Cedar_Point_WindSeeker_beach.jpg/1280px-Cedar_Point_WindSeeker_beach.jpg",
+      "title": "Cedar Point WindSeeker beach.jpg",
+      "author": "peardg from Vancouver, Canada",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Cedar_Point_WindSeeker_beach.jpg"
+    },
+    "chapel-beach-mi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Chapel_Rock_%28ae728f10-f399-4a19-9e25-31fb2e1c6082%29.JPG/1280px-Chapel_Rock_%28ae728f10-f399-4a19-9e25-31fb2e1c6082%29.JPG",
+      "title": "Chapel Rock (ae728f10-f399-4a19-9e25-31fb2e1c6082).JPG",
+      "author": "NPS",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Chapel_Rock_(ae728f10-f399-4a19-9e25-31fb2e1c6082).JPG"
+    },
+    "charles-mears-state-park-beach-mi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Mears_State_Park_beachfront_%28August_2025%29.jpg/1280px-Mears_State_Park_beachfront_%28August_2025%29.jpg",
+      "title": "Mears State Park beachfront (August 2025).jpg",
+      "author": "Notorious4life ( talk ) ( Uploads )",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Mears_State_Park_beachfront_(August_2025).jpg"
+    },
+    "cherry-street-beach-il": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Green_Bay_Trail_north_at_Cherry_St_-_Winnetka%2C_IL_-_July_2025.jpg/1280px-Green_Bay_Trail_north_at_Cherry_St_-_Winnetka%2C_IL_-_July_2025.jpg",
+      "title": "Green Bay Trail north at Cherry St - Winnetka, IL - July 2025.jpg",
+      "author": "AlphaBeta135",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Green_Bay_Trail_north_at_Cherry_St_-_Winnetka,_IL_-_July_2025.jpg"
+    },
+    "conneaut-beach-oh": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Conneaut_Township_Park%2C_Beach_and_Playground_Area_%2850846383126%29.jpg/1280px-Conneaut_Township_Park%2C_Beach_and_Playground_Area_%2850846383126%29.jpg",
+      "title": "Conneaut Township Park, Beach and Playground Area (50846383126).jpg",
+      "author": "Ashtabula Archive",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Conneaut_Township_Park,_Beach_and_Playground_Area_(50846383126).jpg"
+    },
+    "cowan-lake-public-beach-oh": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Cowan_Creek_Circular_Enclosure.jpg/1280px-Cowan_Creek_Circular_Enclosure.jpg",
+      "title": "Cowan Creek Circular Enclosure.jpg",
+      "author": "Nyttend",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Cowan_Creek_Circular_Enclosure.jpg"
+    },
+    "cox-hollow-beach-wi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Cox_Hollow_Lake_-_panoramio.jpg/1280px-Cox_Hollow_Lake_-_panoramio.jpg",
+      "title": "Cox Hollow Lake - panoramio.jpg",
+      "author": "Corey Coyle",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Cox_Hollow_Lake_-_panoramio.jpg"
+    },
+    "crescent-dune-beach-in": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Indiana_Sand_Dunes_%285532826958%29.jpg/1280px-Indiana_Sand_Dunes_%285532826958%29.jpg",
+      "title": "Indiana Sand Dunes (5532826958).jpg",
+      "author": "Kevin Dooley from Chandler, AZ, USA",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Indiana_Sand_Dunes_(5532826958).jpg"
+    },
+    "crystal-lake-beach-mn": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Crystal_Lake%2C_Burnsville%2C_MN_%287122503029%29.jpg/1280px-Crystal_Lake%2C_Burnsville%2C_MN_%287122503029%29.jpg",
+      "title": "Crystal Lake, Burnsville, MN (7122503029).jpg",
+      "author": "WorldIslandInfo.com",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Crystal_Lake,_Burnsville,_MN_(7122503029).jpg"
+    },
+    "deephaven-main-beach-mn": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Minnesota_State_Senators_in_Deephaven%2C_Minnesota.jpg/1280px-Minnesota_State_Senators_in_Deephaven%2C_Minnesota.jpg",
+      "title": "Minnesota State Senators in Deephaven, Minnesota.jpg",
+      "author": "Minnesota Senate Republican Caucus",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Minnesota_State_Senators_in_Deephaven,_Minnesota.jpg"
+    },
+    "diamond-lake-beach-il": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Diamond_Lake%2C_Illinois.jpg/1280px-Diamond_Lake%2C_Illinois.jpg",
+      "title": "Diamond Lake, Illinois.jpg",
+      "author": "SeymourHolcomb",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Diamond_Lake,_Illinois.jpg"
+    },
+    "douglas-beach-mi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Douglas%2C_Michigan.jpg/1280px-Douglas%2C_Michigan.jpg",
+      "title": "Douglas, Michigan.jpg",
+      "author": "WMrapids",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Douglas,_Michigan.jpg"
+    },
+    "dune-acres-beach-in": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Dune_Acres_Clubhouse.jpg/1280px-Dune_Acres_Clubhouse.jpg",
+      "title": "Dune Acres Clubhouse.jpg",
+      "author": "Nyttend",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Dune_Acres_Clubhouse.jpg"
+    },
+    "eastwood-beach-mi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Stony_Creek_Eastwood_Beach.jpg/1280px-Stony_Creek_Eastwood_Beach.jpg",
+      "title": "Stony Creek Eastwood Beach.jpg",
+      "author": "Jaek303",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Stony_Creek_Eastwood_Beach.jpg"
+    },
+    "edgewater-beach-oh": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Edgewater_Park_%2835356221776%29.jpg/1280px-Edgewater_Park_%2835356221776%29.jpg",
+      "title": "Edgewater Park (35356221776).jpg",
+      "author": "Erik Drost",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Edgewater_Park_(35356221776).jpg"
+    },
+    "escanaba-public-beach-mi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Harbor_Tower_Escanaba_2026.jpg/1280px-Harbor_Tower_Escanaba_2026.jpg",
+      "title": "Harbor Tower Escanaba 2026.jpg",
+      "author": "TCP04",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Harbor_Tower_Escanaba_2026.jpg"
+    },
+    "fairport-harbor-lakefront-park-oh": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Fairport_Harbor_gull_flock_on_beach.jpg/1280px-Fairport_Harbor_gull_flock_on_beach.jpg",
+      "title": "Fairport Harbor gull flock on beach.jpg",
+      "author": "Nyttend",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Fairport_Harbor_gull_flock_on_beach.jpg"
+    },
+    "fish-creek-public-beach-wi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Lake_People_gift_shop_in_Fish_Creek%2C_Door_County.jpeg/1280px-Lake_People_gift_shop_in_Fish_Creek%2C_Door_County.jpeg",
+      "title": "Lake People gift shop in Fish Creek, Door County.jpeg",
+      "author": "Chad Davis",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Lake_People_gift_shop_in_Fish_Creek,_Door_County.jpeg"
+    },
+    "forest-park-beach-il": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/David_Adler_-_Charles_Pike_House%2C_Lake_Forest%2C_IL.jpg/1280px-David_Adler_-_Charles_Pike_House%2C_Lake_Forest%2C_IL.jpg",
+      "title": "David Adler - Charles Pike House, Lake Forest, IL.jpg",
+      "author": "Bmzuckerman",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:David_Adler_-_Charles_Pike_House,_Lake_Forest,_IL.jpg"
+    },
+    "foster-beach-il": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Foster_Beach%2C_Edgewater%2C_Chicago.jpg/1280px-Foster_Beach%2C_Edgewater%2C_Chicago.jpg",
+      "title": "Foster Beach, Edgewater, Chicago.jpg",
+      "author": "Alanscottwalker",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Foster_Beach,_Edgewater,_Chicago.jpg"
+    },
+    "france-park-beach-in": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/France_Park_-_Logansport%2C_IN_%286206082834%29.jpg/1280px-France_Park_-_Logansport%2C_IN_%286206082834%29.jpg",
+      "title": "France Park - Logansport, IN (6206082834).jpg",
+      "author": "Serge Melki from Indianapolis, USA",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:France_Park_-_Logansport,_IN_(6206082834).jpg"
+    },
+    "frankfort-beach-mi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Frankfort_Light_-_US-MI_2010.jpg/1280px-Frankfort_Light_-_US-MI_2010.jpg",
+      "title": "Frankfort Light - US-MI 2010.jpg",
+      "author": "Jim Sorbie",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Frankfort_Light_-_US-MI_2010.jpg"
+    },
+    "geist-beach-in": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Sunset_over_Geist_Reservoir.jpg/1280px-Sunset_over_Geist_Reservoir.jpg",
+      "title": "Sunset over Geist Reservoir.jpg",
+      "author": "Shocksingularity",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Sunset_over_Geist_Reservoir.jpg"
+    },
+    "genoa-swimming-quarry-oh": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Genoa_former_school.jpg/1280px-Genoa_former_school.jpg",
+      "title": "Genoa former school.jpg",
+      "author": "Nyttend",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Genoa_former_school.jpg"
+    },
+    "glencoe-beach-il": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Glencoe%2C_IL%2C_USA_-_panoramio.jpg/1280px-Glencoe%2C_IL%2C_USA_-_panoramio.jpg",
+      "title": "Glencoe, IL, USA - panoramio.jpg",
+      "author": "bogdanstepniak",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Glencoe,_IL,_USA_-_panoramio.jpg"
+    },
+    "golden-lake-mn": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Golden_Lake_-_Flickr_-_Me_in_Maine.jpg/1280px-Golden_Lake_-_Flickr_-_Me_in_Maine.jpg",
+      "title": "Golden Lake - Flickr - Me in Maine.jpg",
+      "author": "Paul VanDerWerf from Brunswick, Maine, USA",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Golden_Lake_-_Flickr_-_Me_in_Maine.jpg"
+    },
+    "great-sand-bay-conservation-and-recreation-area-mi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Great_Sand_Bay_Upper_Peninsula_Michigan.jpg/1280px-Great_Sand_Bay_Upper_Peninsula_Michigan.jpg",
+      "title": "Great Sand Bay Upper Peninsula Michigan.jpg",
+      "author": "Tony Webster",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Great_Sand_Bay_Upper_Peninsula_Michigan.jpg"
+    },
+    "hammond-marina-beach-in": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Horseshoe_Hammond_-_panoramio.jpg/1280px-Horseshoe_Hammond_-_panoramio.jpg",
+      "title": "Horseshoe Hammond - panoramio.jpg",
+      "author": "Bohao Zhao",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Horseshoe_Hammond_-_panoramio.jpg"
+    },
+    "harrisville-state-park-beach-mi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Harrisville%2C_MI_%282025%29.jpg/1280px-Harrisville%2C_MI_%282025%29.jpg",
+      "title": "Harrisville, MI (2025).jpg",
+      "author": "Notorious4life ( talk ) ( Uploads )",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Harrisville,_MI_(2025).jpg"
+    },
+    "hill-lake-beach-mn": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/City_Hall_and_Lake%2C_Hill_City%2C_MN.jpg/1280px-City_Hall_and_Lake%2C_Hill_City%2C_MN.jpg",
+      "title": "City Hall and Lake, Hill City, MN.jpg",
+      "author": "Myotus",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:City_Hall_and_Lake,_Hill_City,_MN.jpg"
+    },
+    "hodag-beach-wi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Hodag_Statue_-_panoramio.jpg/1280px-Hodag_Statue_-_panoramio.jpg",
+      "title": "Hodag Statue - panoramio.jpg",
+      "author": "Corey Coyle",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Hodag_Statue_-_panoramio.jpg"
+    },
+    "huntington-beach-oh": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Huntington_Beach_Sunrise3.jpg/1280px-Huntington_Beach_Sunrise3.jpg",
+      "title": "Huntington Beach Sunrise3.jpg",
+      "author": "Erik Drost",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Huntington_Beach_Sunrise3.jpg"
+    },
+    "independence-grove-beach-il": {
+      "file": "https://upload.wikimedia.org/wikipedia/commons/1/14/Mixed_duck_flock%2C_Independence_Grove%2C_Waukegan%2C_Illinois.jpg",
+      "title": "Mixed duck flock, Independence Grove, Waukegan, Illinois.jpg",
+      "author": "CheepShot",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Mixed_duck_flock,_Independence_Grove,_Waukegan,_Illinois.jpg"
+    },
+    "knife-river-beach-mn": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/DM%26IR_332%2C_Knife_River.jpg/1280px-DM%26IR_332%2C_Knife_River.jpg",
+      "title": "DM&IR 332, Knife River.jpg",
+      "author": "Jerry Huddleston",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:DM%26IR_332,_Knife_River.jpg"
+    },
+    "lake-byllesby-beach-mn": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Lake_Byllesby_Park_Spring_Hiking_Trail_-_Dakota_County_Parks%2C_Minnesota_%2841339260554%29.jpg/1280px-Lake_Byllesby_Park_Spring_Hiking_Trail_-_Dakota_County_Parks%2C_Minnesota_%2841339260554%29.jpg",
+      "title": "Lake Byllesby Park Spring Hiking Trail - Dakota County Parks, Minnesota (41339260554).jpg",
+      "author": "Tony Webster from Minneapolis, Minnesota, United States",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Lake_Byllesby_Park_Spring_Hiking_Trail_-_Dakota_County_Parks,_Minnesota_(41339260554).jpg"
+    },
+    "lake-byllesby-beach-swimming-area-mn": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Lake_Byllesby_Park_Spring_Hiking_Trail_-_Dakota_County_Parks%2C_Minnesota_%2841339260554%29.jpg/1280px-Lake_Byllesby_Park_Spring_Hiking_Trail_-_Dakota_County_Parks%2C_Minnesota_%2841339260554%29.jpg",
+      "title": "Lake Byllesby Park Spring Hiking Trail - Dakota County Parks, Minnesota (41339260554).jpg",
+      "author": "Tony Webster from Minneapolis, Minnesota, United States",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Lake_Byllesby_Park_Spring_Hiking_Trail_-_Dakota_County_Parks,_Minnesota_(41339260554).jpg"
+    },
+    "lake-gogebic-state-park-beach-mi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Lake_Gogebic_State_Park_-_Autumn_%2853741508459%29.jpg/1280px-Lake_Gogebic_State_Park_-_Autumn_%2853741508459%29.jpg",
+      "title": "Lake Gogebic State Park - Autumn (53741508459).jpg",
+      "author": "Tony Webster",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Lake_Gogebic_State_Park_-_Autumn_(53741508459).jpg"
+    },
+    "lake-harriet-north-beach-mn": {
+      "file": "https://upload.wikimedia.org/wikipedia/commons/7/70/Deer_in_Lake_Harriet_Bird_Sanctuary_June_2008_-_panoramio.jpg",
+      "title": "Deer in Lake Harriet Bird Sanctuary June 2008 - panoramio.jpg",
+      "author": "JimMNy",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Deer_in_Lake_Harriet_Bird_Sanctuary_June_2008_-_panoramio.jpg"
+    },
+    "lake-harriet-southeast-beach-mn": {
+      "file": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Turtle_at_Lake_Harriet_-_panoramio.jpg",
+      "title": "Turtle at Lake Harriet - panoramio.jpg",
+      "author": "JimMNy",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Turtle_at_Lake_Harriet_-_panoramio.jpg"
+    },
+    "lake-michigan-beach-mi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Charlevoix%2C_Michigan.jpg/1280px-Charlevoix%2C_Michigan.jpg",
+      "title": "Charlevoix, Michigan.jpg",
+      "author": "MeepMade",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Charlevoix,_Michigan.jpg"
+    },
+    "lake-wildwood-beach-1-il": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Dogs_at_Lake_Wildwood%2C_Hopewell_Township%2C_Marshall_County%2C_IL_61375%2C_USA_-_panoramio.jpg/1280px-Dogs_at_Lake_Wildwood%2C_Hopewell_Township%2C_Marshall_County%2C_IL_61375%2C_USA_-_panoramio.jpg",
+      "title": "Dogs at Lake Wildwood, Hopewell Township, Marshall County, IL 61375, USA - panoramio.jpg",
+      "author": "Michael Boyd",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Dogs_at_Lake_Wildwood,_Hopewell_Township,_Marshall_County,_IL_61375,_USA_-_panoramio.jpg"
+    },
+    "lake-wildwood-beach-2-il": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Dogs_at_Lake_Wildwood%2C_Hopewell_Township%2C_Marshall_County%2C_IL_61375%2C_USA_-_panoramio.jpg/1280px-Dogs_at_Lake_Wildwood%2C_Hopewell_Township%2C_Marshall_County%2C_IL_61375%2C_USA_-_panoramio.jpg",
+      "title": "Dogs at Lake Wildwood, Hopewell Township, Marshall County, IL 61375, USA - panoramio.jpg",
+      "author": "Michael Boyd",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Dogs_at_Lake_Wildwood,_Hopewell_Township,_Marshall_County,_IL_61375,_USA_-_panoramio.jpg"
+    },
+    "lakeland-beach-mn": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Lakeland_City_Hall.jpg/1280px-Lakeland_City_Hall.jpg",
+      "title": "Lakeland City Hall.jpg",
+      "author": "Wikideas1",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Lakeland_City_Hall.jpg"
+    },
+    "lakeside-beach-oh": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/20200807_64_Hotel_Lakeside%2C_Lakeside%2C_Ohio_%2850552819796%29.jpg/1280px-20200807_64_Hotel_Lakeside%2C_Lakeside%2C_Ohio_%2850552819796%29.jpg",
+      "title": "20200807 64 Hotel Lakeside, Lakeside, Ohio (50552819796).jpg",
+      "author": "David Wilson from Oak Park, Illinois, USA",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:20200807_64_Hotel_Lakeside,_Lakeside,_Ohio_(50552819796).jpg"
+    },
+    "lime-kiln-beach-oh": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Kiln_by_Miller_docks_on_South_Bass.jpg/1280px-Kiln_by_Miller_docks_on_South_Bass.jpg",
+      "title": "Kiln by Miller docks on South Bass.jpg",
+      "author": "Nyttend",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Kiln_by_Miller_docks_on_South_Bass.jpg"
+    },
+    "log-slide-beach-mi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/View_of_Au_Sable_Lighthouse_from_the_Log_Slide_-_Spring_%2857ef5118-68aa-470c-8ac7-35ebec6c59f4%29.jpg/1280px-View_of_Au_Sable_Lighthouse_from_the_Log_Slide_-_Spring_%2857ef5118-68aa-470c-8ac7-35ebec6c59f4%29.jpg",
+      "title": "View of Au Sable Lighthouse from the Log Slide - Spring (57ef5118-68aa-470c-8ac7-35ebec6c59f4).jpg",
+      "author": "NPS Photo",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:View_of_Au_Sable_Lighthouse_from_the_Log_Slide_-_Spring_(57ef5118-68aa-470c-8ac7-35ebec6c59f4).jpg"
+    },
+    "mcfarland-lake-swimming-beach-mn": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Border_Route_Trail_-_Trailhead_at_McFarland_Lake%2C_Arrowhead_Trail%2C_Minnesota_in_Autumn_%2843981931834%29.jpg/1280px-Border_Route_Trail_-_Trailhead_at_McFarland_Lake%2C_Arrowhead_Trail%2C_Minnesota_in_Autumn_%2843981931834%29.jpg",
+      "title": "Border Route Trail - Trailhead at McFarland Lake, Arrowhead Trail, Minnesota in Autumn (43981931834).jpg",
+      "author": "Tony Webster from Minneapolis, Minnesota, United States",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Border_Route_Trail_-_Trailhead_at_McFarland_Lake,_Arrowhead_Trail,_Minnesota_in_Autumn_(43981931834).jpg"
+    },
+    "miners-beach-mi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/The_tannin_stained_Miners_River._%283afc0eaf-814f-4693-8afd-f52b5298759a%29.JPG/1280px-The_tannin_stained_Miners_River._%283afc0eaf-814f-4693-8afd-f52b5298759a%29.JPG",
+      "title": "The tannin stained Miners River. (3afc0eaf-814f-4693-8afd-f52b5298759a).JPG",
+      "author": "NPS",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:The_tannin_stained_Miners_River._(3afc0eaf-814f-4693-8afd-f52b5298759a).JPG"
+    },
+    "montrose-beach-il": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/2021%2C_Piping_Plover_Monitoring%2C_Montrose_Beach_Dunes%2C_Chicago%2C_IL_%2851351634568%29.jpg/1280px-2021%2C_Piping_Plover_Monitoring%2C_Montrose_Beach_Dunes%2C_Chicago%2C_IL_%2851351634568%29.jpg",
+      "title": "2021, Piping Plover Monitoring, Montrose Beach Dunes, Chicago, IL (51351634568).jpg",
+      "author": "Raed Mansour from Chicago, USA",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:2021,_Piping_Plover_Monitoring,_Montrose_Beach_Dunes,_Chicago,_IL_(51351634568).jpg"
+    },
+    "new-buffalo-public-beach-mi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/New_Buffalo_Beach_Lighthouse.jpg/1280px-New_Buffalo_Beach_Lighthouse.jpg",
+      "title": "New Buffalo Beach Lighthouse.jpg",
+      "author": "TCP04",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:New_Buffalo_Beach_Lighthouse.jpg"
+    },
+    "nicolet-bay-beach-wi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Nicolet_Bay_Store_%2853920727803%29.jpg/1280px-Nicolet_Bay_Store_%2853920727803%29.jpg",
+      "title": "Nicolet Bay Store (53920727803).jpg",
+      "author": "Chris Rycroft from Madison, Wisconsin, United States",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Nicolet_Bay_Store_(53920727803).jpg"
+    },
+    "ohio-street-beach-il": {
+      "file": "https://upload.wikimedia.org/wikipedia/commons/0/0d/View_from_Ohio_St._Beach_%287173345257%29.jpg",
+      "title": "View from Ohio St. Beach (7173345257).jpg",
+      "author": "Amy Guth from Chicago, IL, USA, USA",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:View_from_Ohio_St._Beach_(7173345257).jpg"
+    },
+    "okee-beach-wi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Okee_Dairy_Farm_-_panoramio.jpg/1280px-Okee_Dairy_Farm_-_panoramio.jpg",
+      "title": "Okee Dairy Farm - panoramio.jpg",
+      "author": "Corey Coyle",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Okee_Dairy_Farm_-_panoramio.jpg"
+    },
+    "olbrich-beach-wi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Capitol_Seen_from_Olbrich_Park_-_panoramio.jpg/1280px-Capitol_Seen_from_Olbrich_Park_-_panoramio.jpg",
+      "title": "Capitol Seen from Olbrich Park - panoramio.jpg",
+      "author": "Corey Coyle",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Capitol_Seen_from_Olbrich_Park_-_panoramio.jpg"
+    },
+    "ontonagon-township-park-beach-mi": {
+      "file": "https://upload.wikimedia.org/wikipedia/commons/f/fc/MainStreamOntonagon_%2823518220410%29.jpg",
+      "title": "MainStreamOntonagon (23518220410).jpg",
+      "author": "usfs_Eastern_Region",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:MainStreamOntonagon_(23518220410).jpg"
+    },
+    "palmyra-beach-wi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Palmyra_Town_Hall.jpg/1280px-Palmyra_Town_Hall.jpg",
+      "title": "Palmyra Town Hall.jpg",
+      "author": "Wikideas1",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Palmyra_Town_Hall.jpg"
+    },
+    "peninsula-quarry-oh": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Peninsula%2C_United_States_%28Unsplash%29.jpg/1280px-Peninsula%2C_United_States_%28Unsplash%29.jpg",
+      "title": "Peninsula, United States (Unsplash).jpg",
+      "author": "Jordan Stewart jordan_stewart",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Peninsula,_United_States_(Unsplash).jpg"
+    },
+    "phalen-park-beach-mn": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Lilypads%2C_Lake_Phalen%2C_Maplewood_7_6_07_%2825310816807%29.jpg/1280px-Lilypads%2C_Lake_Phalen%2C_Maplewood_7_6_07_%2825310816807%29.jpg",
+      "title": "Lilypads, Lake Phalen, Maplewood 7 6 07 (25310816807).jpg",
+      "author": "Sharon Mollerus",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Lilypads,_Lake_Phalen,_Maplewood_7_6_07_(25310816807).jpg"
+    },
+    "pike-lake-beach-wi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Deer_%40_Pike_Lake_-_panoramio.jpg/1280px-Deer_%40_Pike_Lake_-_panoramio.jpg",
+      "title": "Deer @ Pike Lake - panoramio.jpg",
+      "author": "NaturesFan1226",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Deer_@_Pike_Lake_-_panoramio.jpg"
+    },
+    "port-clinton-public-swimming-beach-oh": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Madison_south_of_Perry_in_Port_Clinton.jpg/1280px-Madison_south_of_Perry_in_Port_Clinton.jpg",
+      "title": "Madison south of Perry in Port Clinton.jpg",
+      "author": "Nyttend",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Madison_south_of_Perry_in_Port_Clinton.jpg"
+    },
+    "rainbow-beach-il": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Chicago_Skyline_from_Rainbow_Beach_Park_-_panoramio.jpg/1280px-Chicago_Skyline_from_Rainbow_Beach_Park_-_panoramio.jpg",
+      "title": "Chicago Skyline from Rainbow Beach Park - panoramio.jpg",
+      "author": "Bohao Zhao",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Chicago_Skyline_from_Rainbow_Beach_Park_-_panoramio.jpg"
+    },
+    "sand-point-beach-mi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Sand_Point_beach_covered_with_a_swirl_of_snow_and_pink_sand._%2814c821c6-37d6-432e-9300-fbaa29f03f28%29.JPG/1280px-Sand_Point_beach_covered_with_a_swirl_of_snow_and_pink_sand._%2814c821c6-37d6-432e-9300-fbaa29f03f28%29.JPG",
+      "title": "Sand Point beach covered with a swirl of snow and pink sand. (14c821c6-37d6-432e-9300-fbaa29f03f28).JPG",
+      "author": "NPS",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Sand_Point_beach_covered_with_a_swirl_of_snow_and_pink_sand._(14c821c6-37d6-432e-9300-fbaa29f03f28).JPG"
+    },
+    "shady-oak-beach-mn": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/06_30_19_Demolition_between_Shady_Oak_Station_and_Opus_Station._%2849070370651%29.jpg/1280px-06_30_19_Demolition_between_Shady_Oak_Station_and_Opus_Station._%2849070370651%29.jpg",
+      "title": "06 30 19 Demolition between Shady Oak Station and Opus Station. (49070370651).jpg",
+      "author": "Chad Davis",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:06_30_19_Demolition_between_Shady_Oak_Station_and_Opus_Station._(49070370651).jpg"
+    },
+    "simmons-island-beach-wi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Kenosha%2C_Wi._Simmons_island_lighthouse_%281406464630%29.jpg/1280px-Kenosha%2C_Wi._Simmons_island_lighthouse_%281406464630%29.jpg",
+      "title": "Kenosha, Wi. Simmons island lighthouse (1406464630).jpg",
+      "author": "William Garrett from Wisconsin Rapids, United States",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Kenosha,_Wi._Simmons_island_lighthouse_(1406464630).jpg"
+    },
+    "sister-bay-beach-wi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Sister_Bay_and_Liberty_Grove_Branch_Library%2C_Sister_Bay%2C_WI.jpg/1280px-Sister_Bay_and_Liberty_Grove_Branch_Library%2C_Sister_Bay%2C_WI.jpg",
+      "title": "Sister Bay and Liberty Grove Branch Library, Sister Bay, WI.jpg",
+      "author": "Nick Number",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Sister_Bay_and_Liberty_Grove_Branch_Library,_Sister_Bay,_WI.jpg"
+    },
+    "snelling-beach-mn": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Snelling_Lake_Fishing_Pier_Dock_-_Fort_Snelling_State_Park%2C_Minnesota_%2842393112101%29.jpg/1280px-Snelling_Lake_Fishing_Pier_Dock_-_Fort_Snelling_State_Park%2C_Minnesota_%2842393112101%29.jpg",
+      "title": "Snelling Lake Fishing Pier Dock - Fort Snelling State Park, Minnesota (42393112101).jpg",
+      "author": "Tony Webster from Minneapolis, Minnesota, United States",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Snelling_Lake_Fishing_Pier_Dock_-_Fort_Snelling_State_Park,_Minnesota_(42393112101).jpg"
+    },
+    "speed-beach-in": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Speedlawn.jpg/1280px-Speedlawn.jpg",
+      "title": "Speedlawn.jpg",
+      "author": "Cjeiler",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Speedlawn.jpg"
+    },
+    "spring-harbor-beach-wi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Spring_Harbor_Middle_School_-_panoramio.jpg/1280px-Spring_Harbor_Middle_School_-_panoramio.jpg",
+      "title": "Spring Harbor Middle School - panoramio.jpg",
+      "author": "Corey Coyle",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Spring_Harbor_Middle_School_-_panoramio.jpg"
+    },
+    "sunset-beach-park-wi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Sunset_Bike_Route_in_Peninsula_State_Park_%2853917565422%29.jpg/1280px-Sunset_Bike_Route_in_Peninsula_State_Park_%2853917565422%29.jpg",
+      "title": "Sunset Bike Route in Peninsula State Park (53917565422).jpg",
+      "author": "Chris Rycroft from Madison, Wisconsin, United States",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Sunset_Bike_Route_in_Peninsula_State_Park_(53917565422).jpg"
+    },
+    "sunset-bluff-beach-mi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Holland_Light_House_Sunset_%284803868360%29.jpg/1280px-Holland_Light_House_Sunset_%284803868360%29.jpg",
+      "title": "Holland Light House Sunset (4803868360).jpg",
+      "author": "LadyDragonflyCC - &gt;;&lt;",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Holland_Light_House_Sunset_(4803868360).jpg"
+    },
+    "tawas-point-camper-s-beach-mi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Common_Ground_Dove%2C_Tawas_Point%2C_Michigan_01.jpg/1280px-Common_Ground_Dove%2C_Tawas_Point%2C_Michigan_01.jpg",
+      "title": "Common Ground Dove, Tawas Point, Michigan 01.jpg",
+      "author": "Don Henise from Myrtle Point, OR",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Common_Ground_Dove,_Tawas_Point,_Michigan_01.jpg"
+    },
+    "tawas-point-pet-friendly-beach-mi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Common_Ground_Dove%2C_Tawas_Point%2C_Michigan_01.jpg/1280px-Common_Ground_Dove%2C_Tawas_Point%2C_Michigan_01.jpg",
+      "title": "Common Ground Dove, Tawas Point, Michigan 01.jpg",
+      "author": "Don Henise from Myrtle Point, OR",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Common_Ground_Dove,_Tawas_Point,_Michigan_01.jpg"
+    },
+    "thorndale-avenue-beach-il": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Thorndale.jpg/1280px-Thorndale.jpg",
+      "title": "Thorndale.jpg",
+      "author": "vxla from Chicago, US",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Thorndale.jpg"
+    },
+    "twin-valley-beach-wi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Twin_Valley_Lake_-_panoramio.jpg/1280px-Twin_Valley_Lake_-_panoramio.jpg",
+      "title": "Twin Valley Lake - panoramio.jpg",
+      "author": "Corey Coyle",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Twin_Valley_Lake_-_panoramio.jpg"
+    },
+    "vilas-park-beach-wi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Vilas_Park_Lagoon_-_panoramio_%2811%29.jpg/1280px-Vilas_Park_Lagoon_-_panoramio_%2811%29.jpg",
+      "title": "Vilas Park Lagoon - panoramio (11).jpg",
+      "author": "Corey Coyle",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Vilas_Park_Lagoon_-_panoramio_(11).jpg"
+    },
+    "warner-park-beach-wi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Warner_Park_Beach_-_panoramio.jpg/1280px-Warner_Park_Beach_-_panoramio.jpg",
+      "title": "Warner Park Beach - panoramio.jpg",
+      "author": "Corey Coyle",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Warner_Park_Beach_-_panoramio.jpg"
+    },
+    "whihala-beach-in": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Whihala_Beach_-_Whiting%2C_Indiana.jpg/1280px-Whihala_Beach_-_Whiting%2C_Indiana.jpg",
+      "title": "Whihala Beach - Whiting, Indiana.jpg",
+      "author": "David Wilson from Oak Park, Illinois, USA",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Whihala_Beach_-_Whiting,_Indiana.jpg"
+    },
+    "whitewater-beach-wi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Rice_Lake_Whitewater_Wisconsin_-_panoramio_%281%29.jpg/1280px-Rice_Lake_Whitewater_Wisconsin_-_panoramio_%281%29.jpg",
+      "title": "Rice Lake Whitewater Wisconsin - panoramio (1).jpg",
+      "author": "JD Milburn",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Rice_Lake_Whitewater_Wisconsin_-_panoramio_(1).jpg"
+    },
+    "wirth-lake-beach-mn": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Wirth_Lake%2C_Golden_Valley%2C_Minnesota.jpg/1280px-Wirth_Lake%2C_Golden_Valley%2C_Minnesota.jpg",
+      "title": "Wirth Lake, Golden Valley, Minnesota.jpg",
+      "author": "Michael Hicks from Saint Paul, MN, USA",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Wirth_Lake,_Golden_Valley,_Minnesota.jpg"
+    },
+    "woods-lake-beach-wi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Thompson_Woods_-_panoramio.jpg/1280px-Thompson_Woods_-_panoramio.jpg",
+      "title": "Thompson Woods - panoramio.jpg",
+      "author": "On^ste82",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Thompson_Woods_-_panoramio.jpg"
+    },
+    "wyalusing-beach-wi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Wyalusing%2C_Wisconsin.jpg/1280px-Wyalusing%2C_Wisconsin.jpg",
+      "title": "Wyalusing, Wisconsin.jpg",
+      "author": "Wikideas1",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Wyalusing,_Wisconsin.jpg"
+    },
+    "6th-avenue-west-beach-wi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Bay_Theater_-_panoramio.jpg/1280px-Bay_Theater_-_panoramio.jpg",
+      "title": "Bay Theater - panoramio.jpg",
+      "author": "Corey Coyle",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Bay_Theater_-_panoramio.jpg"
+    },
+    "dog-beach-il": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Rocks_Fence_Sand_Lake_%286758261651%29.jpg/1280px-Rocks_Fence_Sand_Lake_%286758261651%29.jpg",
+      "title": "Rocks Fence Sand Lake (6758261651).jpg",
+      "author": "Jaysin Trevino from Evanston, IL, US",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Rocks_Fence_Sand_Lake_(6758261651).jpg"
+    },
+    "dog-cove-mn": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Snowy_Afton_State_Park%2C_Minnesota_%2839159269222%29.jpg/1280px-Snowy_Afton_State_Park%2C_Minnesota_%2839159269222%29.jpg",
+      "title": "Snowy Afton State Park, Minnesota (39159269222).jpg",
+      "author": "Tony Webster from Minneapolis, Minnesota, United States",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Snowy_Afton_State_Park,_Minnesota_(39159269222).jpg"
+    },
+    "east-beach-in": {
+      "file": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Chicago_Skyline_Dune_Park_%283542717685%29.jpg",
+      "title": "Chicago Skyline Dune Park (3542717685).jpg",
+      "author": "Russell Sekeet",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Chicago_Skyline_Dune_Park_(3542717685).jpg"
+    },
+    "fox-island-beach-oh": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Dunns_Pond_Mound.jpg/1280px-Dunns_Pond_Mound.jpg",
+      "title": "Dunns Pond Mound.jpg",
+      "author": "Nyttend",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Dunns_Pond_Mound.jpg"
+    },
+    "gem-beach-oh": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Ice_On_Lake_Erie.jpg/1280px-Ice_On_Lake_Erie.jpg",
+      "title": "Ice On Lake Erie.jpg",
+      "author": "JustAAABattery",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Ice_On_Lake_Erie.jpg"
+    },
+    "lake-street-beach-in": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Red_lifeguard_station_Miller_Beach.jpg/1280px-Red_lifeguard_station_Miller_Beach.jpg",
+      "title": "Red lifeguard station Miller Beach.jpg",
+      "author": "Visviva",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Red_lifeguard_station_Miller_Beach.jpg"
+    },
+    "lake-view-beach-in": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Lake_Michigan_in_Indiana_Dunes.jpg/1280px-Lake_Michigan_in_Indiana_Dunes.jpg",
+      "title": "Lake Michigan in Indiana Dunes.jpg",
+      "author": "Wizzi7",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Lake_Michigan_in_Indiana_Dunes.jpg"
+    },
+    "little-beach-mi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Ontario_Lake_waterside_-_panoramio.jpg/1280px-Ontario_Lake_waterside_-_panoramio.jpg",
+      "title": "Ontario Lake waterside - panoramio.jpg",
+      "author": "Jiaqian AirplaneFan",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Ontario_Lake_waterside_-_panoramio.jpg"
+    },
+    "north-beach-mi": {
+      "file": "https://upload.wikimedia.org/wikipedia/commons/1/1d/South_Haven_Lighthouse_%26_Pier_%285028035610%29.jpg",
+      "title": "South Haven Lighthouse & Pier (5028035610).jpg",
+      "author": "Rhys A.",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:South_Haven_Lighthouse_%26_Pier_(5028035610).jpg"
+    },
+    "north-shore-beach-wi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Devils_Lake_State_Park_Headquarters_-_panoramio.jpg/1280px-Devils_Lake_State_Park_Headquarters_-_panoramio.jpg",
+      "title": "Devils Lake State Park Headquarters - panoramio.jpg",
+      "author": "Corey Coyle",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Devils_Lake_State_Park_Headquarters_-_panoramio.jpg"
+    },
+    "north-swimming-beach-oh": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Ice_On_Lake_Erie.jpg/1280px-Ice_On_Lake_Erie.jpg",
+      "title": "Ice On Lake Erie.jpg",
+      "author": "JustAAABattery",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Ice_On_Lake_Erie.jpg"
+    },
+    "oak-street-beach-il": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/19690200_03_Lake_Shore_Dr._%40_Oak_St._%286819564632%29.jpg/1280px-19690200_03_Lake_Shore_Dr._%40_Oak_St._%286819564632%29.jpg",
+      "title": "19690200 03 Lake Shore Dr. @ Oak St. (6819564632).jpg",
+      "author": "David Wilson from Oak Park, Illinois, USA",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:19690200_03_Lake_Shore_Dr._@_Oak_St._(6819564632).jpg"
+    },
+    "park-road-beach-wi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Cell_Tower_near_Lake_Dubay_-_panoramio.jpg/1280px-Cell_Tower_near_Lake_Dubay_-_panoramio.jpg",
+      "title": "Cell Tower near Lake Dubay - panoramio.jpg",
+      "author": "Corey Coyle",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Cell_Tower_near_Lake_Dubay_-_panoramio.jpg"
+    },
+    "south-beach-mi": {
+      "file": "https://upload.wikimedia.org/wikipedia/commons/1/1d/South_Haven_Lighthouse_%26_Pier_%285028035610%29.jpg",
+      "title": "South Haven Lighthouse & Pier (5028035610).jpg",
+      "author": "Rhys A.",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:South_Haven_Lighthouse_%26_Pier_(5028035610).jpg"
+    },
+    "south-beach-oh": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/NASA_astronaut_Scott_Kelly_captured_this_sunrise_over_the_US_East_Coast_06.jpg/1280px-NASA_astronaut_Scott_Kelly_captured_this_sunrise_over_the_US_East_Coast_06.jpg",
+      "title": "NASA astronaut Scott Kelly captured this sunrise over the US East Coast 06.jpg",
+      "author": "NASA",
+      "license": "Public domain",
+      "license_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:NASA_astronaut_Scott_Kelly_captured_this_sunrise_over_the_US_East_Coast_06.jpg"
+    },
+    "south-shore-beach-il": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/20160220_86_CTA_Bus%2C_South_Shore_Dr._%40_73rd_St_%2828888004293%29.jpg/1280px-20160220_86_CTA_Bus%2C_South_Shore_Dr._%40_73rd_St_%2828888004293%29.jpg",
+      "title": "20160220 86 CTA Bus, South Shore Dr. @ 73rd St (28888004293).jpg",
+      "author": "David Wilson from Oak Park, Illinois, USA",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:20160220_86_CTA_Bus,_South_Shore_Dr._@_73rd_St_(28888004293).jpg"
+    },
+    "south-shore-beach-mn": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Lake_Bemidji_sunset.jpg/1280px-Lake_Bemidji_sunset.jpg",
+      "title": "Lake Bemidji sunset.jpg",
+      "author": "Travisleehardin",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Lake_Bemidji_sunset.jpg"
+    },
+    "south-shore-beach-wi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Fall_Foliage_a_long_Devil%27s_lake_-_panoramio.jpg/1280px-Fall_Foliage_a_long_Devil%27s_lake_-_panoramio.jpg",
+      "title": "Fall Foliage a long Devil's lake - panoramio.jpg",
+      "author": "Corey Coyle",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Fall_Foliage_a_long_Devil%27s_lake_-_panoramio.jpg"
+    },
+    "van-s-beach-mi": {
+      "file": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Better_Stay_off_the_Lake_-_Flickr_-_farlane.jpg",
+      "title": "Better Stay off the Lake - Flickr - farlane.jpg",
+      "author": "Andrew McFarlane from Traverse City, MI, USA",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Better_Stay_off_the_Lake_-_Flickr_-_farlane.jpg"
+    },
+    "west-beach-in": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Indiana_Dunes_National_Park_%2850217121557%29.jpg/1280px-Indiana_Dunes_National_Park_%2850217121557%29.jpg",
+      "title": "Indiana Dunes National Park (50217121557).jpg",
+      "author": "Matthew Dillon from Hollywood, CA, USA",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Indiana_Dunes_National_Park_(50217121557).jpg"
+    },
+    "west-end-beach-mi": {
+      "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Boardman_River_-_Traverse_City%2C_Michigan_%2822410904091%29.jpg/1280px-Boardman_River_-_Traverse_City%2C_Michigan_%2822410904091%29.jpg",
+      "title": "Boardman River - Traverse City, Michigan (22410904091).jpg",
+      "author": "gabe popa",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Boardman_River_-_Traverse_City,_Michigan_(22410904091).jpg"
+    }
+  }
+}

@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import { LocateFixed, SlidersHorizontal } from "lucide-react";
 import { DEFAULT_FILTERS, type Filters, type ParkWithStatus } from "@/lib/types";
 import { Button } from "@/components/ui/Button";
+import { cn } from "@/components/ui/cn";
 import { EmptyState } from "@/components/ui/EmptyState";
 import { LiveRegion } from "@/components/a11y/LiveRegion";
 import { SiteFooter } from "@/components/nav/SiteFooter";
@@ -13,17 +14,57 @@ import { FilterChips } from "./FilterChips";
 import { FilterSheet } from "./FilterSheet";
 import { SearchField } from "./SearchField";
 import { SortControl } from "./SortControl";
+import { StateControl } from "./StateControl";
 import { useGeolocation } from "./useGeolocation";
 import { useAccessibleParam } from "./useAccessibleParam";
 import {
   activeFilterCount,
+  availableStates,
   countStatuses,
   countsMessage,
   filterParks,
+  groupParksByState,
   sortParks,
   withDistances,
+  type StateGroup,
   type SortKey,
 } from "./parkListUtils";
+
+/** Display is left to the caller: the flat grid hides below sm, a grouped one does not. */
+const TILE_GRID = "grid-cols-1 gap-5 sm:grid-cols-[repeat(auto-fill,minmax(280px,1fr))] md:gap-7";
+
+function TileGrid({ items, label, className }: { items: ParkWithStatus[]; label?: string; className?: string }) {
+  return (
+    <ul
+      aria-label={label}
+      className={cn(TILE_GRID, className)}
+    >
+      {items.map((item) => (
+        <li key={item.park.id}>
+          <ParkTile item={item} />
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function StateSection({ group }: { group: StateGroup }) {
+  const headingId = `state-${group.code}`;
+  return (
+    <section aria-labelledby={headingId} className="mt-6 first:mt-0">
+      <h3 id={headingId} className="mb-3 border-b border-mist pb-2 text-lg font-extrabold text-brown">
+        {group.name}
+      </h3>
+      <ul aria-labelledby={headingId} className={cn("grid", TILE_GRID)}>
+        {group.items.map((item) => (
+          <li key={item.park.id}>
+            <ParkTile item={item} />
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
 
 export interface ListScreenProps {
   parks: ParkWithStatus[];
@@ -31,6 +72,9 @@ export interface ListScreenProps {
 }
 
 const HERO_PHOTO = "/photos/ichetucknee-springs-state-park.jpg";
+
+/** Tiles rendered before the reader asks for more, counted across all state groups. */
+const TILE_COUNT = 40;
 
 /**
  * "Discover" page: the primary screen-reader-friendly surface (no map required).
@@ -51,17 +95,29 @@ export function ListScreen({ parks, initialFilters }: ListScreenProps) {
   const [showAllTiles, setShowAllTiles] = useState(false);
   const geo = useGeolocation();
 
-  // Default to distance once we have a location; the user's explicit choice always wins.
-  const sort: SortKey = sortOverride ?? (geo.location ? "distance" : "status");
+  // Nearest once we know where the reader is, and the user's explicit choice always
+  // wins. Without a location, name order is what the state grouping reads against.
+  const sort: SortKey = sortOverride ?? (geo.location ? "distance" : "name");
 
   const located = useMemo(() => withDistances(parks, geo.location), [parks, geo.location]);
   const filtered = useMemo(() => filterParks(located, filters, query), [located, filters, query]);
   const sorted = useMemo(() => sortParks(filtered, sort), [filtered, sort]);
-  const TILE_COUNT = 40;
-  const visibleTiles = showAllTiles ? sorted : sorted.slice(0, TILE_COUNT);
+  const visibleTiles = useMemo(
+    () => (showAllTiles ? sorted : sorted.slice(0, TILE_COUNT)),
+    [showAllTiles, sorted],
+  );
   const remainingTiles = sorted.length - visibleTiles.length;
   const counts = useMemo(() => countStatuses(filtered), [filtered]);
   const filterCount = activeFilterCount(filters);
+  const stateOptions = useMemo(() => availableStates(parks), [parks]);
+  /**
+   * Grouping runs on the capped slice, not the whole list, so "Show 576 more" stays
+   * one pass and the headings never reshuffle when the rest arrives.
+   */
+  const grouped = useMemo(
+    () => (sort === "name" ? groupParksByState(visibleTiles) : null),
+    [sort, visibleTiles],
+  );
 
   return (
     <div className="flex w-full flex-1 flex-col">
@@ -111,6 +167,12 @@ export function ListScreen({ parks, initialFilters }: ListScreenProps) {
         <div className="mx-auto mt-2 flex max-w-[1280px] flex-wrap items-center justify-between gap-x-3 gap-y-2">
           <p className="text-sm font-bold text-mocha">{countsMessage(counts)}</p>
           <div className="flex items-center gap-2">
+            <StateControl
+              id="list-state"
+              value={filters.state}
+              onChange={(state) => setFilters({ ...filters, state })}
+              options={stateOptions}
+            />
             <SortControl id="list-sort" value={sort} onChange={setSort} hasLocation={!!geo.location} />
             <Button
               type="button"
@@ -143,16 +205,18 @@ export function ListScreen({ parks, initialFilters }: ListScreenProps) {
               />
             ) : (
               <>
-                <ul
-                  aria-label="Parks"
-                  className="hidden grid-cols-1 gap-5 sm:grid sm:grid-cols-[repeat(auto-fill,minmax(280px,1fr))] md:gap-7"
-                >
-                  {visibleTiles.map((item) => (
-                    <li key={item.park.id}>
-                      <ParkTile item={item} />
-                    </li>
-                  ))}
-                </ul>
+                {grouped ? (
+                  <div className="hidden sm:block">
+                    {grouped.groups.map((group) => (
+                      <StateSection key={group.code} group={group} />
+                    ))}
+                    {grouped.ungrouped.length > 0 && (
+                      <TileGrid items={grouped.ungrouped} label="More parks" className="mt-6 grid first:mt-0" />
+                    )}
+                  </div>
+                ) : (
+                  <TileGrid items={visibleTiles} label="Parks" className="hidden sm:grid" />
+                )}
                 {remainingTiles > 0 && (
                   <button
                     type="button"
@@ -179,6 +243,7 @@ export function ListScreen({ parks, initialFilters }: ListScreenProps) {
         onRequestLocation={geo.request}
         locationMessage={geo.message}
         resultCount={filtered.length}
+        stateOptions={stateOptions}
       />
 
       <LiveRegion message={geo.message ?? ""} />
