@@ -74,16 +74,29 @@ export function ParkingCard({ park, lots }: ParkingCardProps) {
                     <Badge variant="unverified">OpenStreetMap, unverified</Badge>
                   )}
                 </div>
+                {/* Only facts we have. A lot with no recorded fee shows no fee row. */}
                 <dl className="grid grid-cols-2 gap-x-3 gap-y-1 text-sm">
-                  <dt className="text-mocha">Fee</dt>
-                  <dd className="font-bold text-cocoa">{lot.fee ?? "Not stated"}</dd>
-                  <dt className="text-mocha">Spaces</dt>
-                  <dd className="font-bold text-cocoa">{lot.capacity != null ? `about ${lot.capacity}` : "Not stated"}</dd>
-                  <dt className="flex items-center gap-1 text-mocha">
-                    <Accessibility aria-hidden="true" focusable="false" className="size-3.5" />
-                    ADA spaces
-                  </dt>
-                  <dd className="font-bold text-cocoa">{lot.ada_spaces != null ? lot.ada_spaces : "Unknown"}</dd>
+                  {lot.fee && (
+                    <>
+                      <dt className="text-mocha">Fee</dt>
+                      <dd className="font-bold text-cocoa">{lot.fee}</dd>
+                    </>
+                  )}
+                  {lot.capacity != null && (
+                    <>
+                      <dt className="text-mocha">Spaces</dt>
+                      <dd className="font-bold text-cocoa">about {lot.capacity}</dd>
+                    </>
+                  )}
+                  {lot.ada_spaces != null && (
+                    <>
+                      <dt className="flex items-center gap-1 text-mocha">
+                        <Accessibility aria-hidden="true" focusable="false" className="size-3.5" />
+                        ADA spaces
+                      </dt>
+                      <dd className="font-bold text-cocoa">{lot.ada_spaces}</dd>
+                    </>
+                  )}
                 </dl>
                 {lot.notes && <p className="text-sm text-cocoa">{lot.notes}</p>}
               </Card>

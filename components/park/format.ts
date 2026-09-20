@@ -115,9 +115,3 @@ export function directionsUrl(lat: number, lng: number): string {
   return `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
 }
 
-/** Plain-language confidence line shown next to the status pill. */
-export const CONFIDENCE_TEXT = {
-  high: "High confidence",
-  medium: "Medium confidence",
-  low: "Low confidence",
-} as const;

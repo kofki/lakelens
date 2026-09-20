@@ -91,20 +91,26 @@ export function PlanSidebar({ bundle, className }: PlanSidebarProps) {
           )}
         </div>
 
-        <dl className="divide-y divide-mist border-t border-mist text-sm">
-          <div className="flex gap-3 py-2">
-            <dt className="flex w-16 shrink-0 items-center gap-1 font-bold text-mocha">
-              <Clock aria-hidden="true" focusable="false" className="size-4" /> Hours
-            </dt>
-            <dd className="text-cocoa">{park.hours ?? "Not stated"}</dd>
-          </div>
-          <div className="flex gap-3 py-2">
-            <dt className="flex w-16 shrink-0 items-center gap-1 font-bold text-mocha">
-              <DollarSign aria-hidden="true" focusable="false" className="size-4" /> Fees
-            </dt>
-            <dd className="text-cocoa">{park.fees ?? "Not stated"}</dd>
-          </div>
-        </dl>
+        {(park.hours || park.fees) && (
+          <dl className="divide-y divide-mist border-t border-mist text-sm">
+            {park.hours && (
+              <div className="flex gap-3 py-2">
+                <dt className="flex w-16 shrink-0 items-center gap-1 font-bold text-mocha">
+                  <Clock aria-hidden="true" focusable="false" className="size-4" /> Hours
+                </dt>
+                <dd className="text-cocoa">{park.hours}</dd>
+              </div>
+            )}
+            {park.fees && (
+              <div className="flex gap-3 py-2">
+                <dt className="flex w-16 shrink-0 items-center gap-1 font-bold text-mocha">
+                  <DollarSign aria-hidden="true" focusable="false" className="size-4" /> Fees
+                </dt>
+                <dd className="text-cocoa">{park.fees}</dd>
+              </div>
+            )}
+          </dl>
+        )}
 
         {park.official_url && (
           <a
