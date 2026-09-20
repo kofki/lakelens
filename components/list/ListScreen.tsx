@@ -162,9 +162,17 @@ export function ListScreen({ parks, initialFilters }: ListScreenProps) {
     [lastSeen, parks, recents],
   );
 
+  /**
+   * Group by state only when looking at the whole country.
+   *
+   * The cap is 40 tiles and there are 51 states, so grouping a nationwide list produced a
+   * heading with one card under it, over and over: a page of section titles rather than a
+   * page of parks. With a state selected, which is now the default, every card is in that
+   * state anyway and the heading says nothing.
+   */
   const grouped = useMemo(
-    () => (sort === "name" ? groupParksByState(visibleTiles) : null),
-    [sort, visibleTiles],
+    () => (sort === "name" && !effectiveState ? groupParksByState(visibleTiles) : null),
+    [sort, effectiveState, visibleTiles],
   );
 
   return (

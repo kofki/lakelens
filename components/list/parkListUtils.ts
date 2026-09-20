@@ -108,7 +108,16 @@ export interface GroupedParks {
  * Single pass over an already-sorted list, so each group keeps that sort order and the
  * caller can slice to a render cap before grouping without the groups shifting around.
  */
-export function groupParksByState(items: ParkWithStatus[]): GroupedParks {
+/**
+ * Below this, a state does not get its own heading.
+ *
+ * The tile cap is 40 and there are 51 states, so a nationwide list produced a heading with
+ * a single card under it over and over: a page of section titles rather than a page of
+ * parks. A heading has to earn its vertical space by organising something.
+ */
+export const MIN_GROUP_SIZE = 3;
+
+export function groupParksByState(items: ParkWithStatus[], minGroupSize = MIN_GROUP_SIZE): GroupedParks {
   const byCode = new Map<string, StateGroup>();
   const ungrouped: ParkWithStatus[] = [];
   for (const item of items) {
@@ -122,7 +131,14 @@ export function groupParksByState(items: ParkWithStatus[]): GroupedParks {
     if (group) group.items.push(item);
     else byCode.set(code, { code, name, items: [item] });
   }
-  const groups = [...byCode.values()].sort((a, b) => a.name.localeCompare(b.name));
+  const groups: StateGroup[] = [];
+  for (const group of byCode.values()) {
+    // Too few to organise: those cards go in with the rest rather than each getting a
+    // heading of their own.
+    if (group.items.length < minGroupSize) ungrouped.push(...group.items);
+    else groups.push(group);
+  }
+  groups.sort((a, b) => a.name.localeCompare(b.name));
   return { groups, ungrouped };
 }
 
