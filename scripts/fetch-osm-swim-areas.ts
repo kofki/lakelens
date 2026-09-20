@@ -52,6 +52,16 @@ const SERVER_TIMEOUT_S = 180;
 const deadline = createDeadline();
 
 /**
+ * Longer than the shared default of 60 seconds.
+ *
+ * This is a tag search across a whole state rather than a lookup, and the big ones are
+ * genuinely slow: California, Oregon, Texas and Florida all aborted at 60 while Washington
+ * answered in about 90. Sixty is right for a mirror that has stopped responding and wrong
+ * for a state with a lot of coast.
+ */
+const STATE_QUERY_TIMEOUT_MS = 150_000;
+
+/**
  * States with no salt coast, where a `natural=beach` is fresh water whatever else we know.
  *
  * The landlocked ones plus Michigan, Wisconsin, Ohio and Pennsylvania, whose only coast is
@@ -254,7 +264,7 @@ async function fetchState(state: string): Promise<OverpassElement[]> {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded", "User-Agent": USER_AGENT, Accept: "application/json" },
         body,
-        signal: AbortSignal.timeout(requestTimeout(deadline)),
+        signal: AbortSignal.timeout(requestTimeout(deadline, STATE_QUERY_TIMEOUT_MS)),
       });
       if (!res.ok) {
         lastError = new Error(`${endpoint}: HTTP ${res.status}`);

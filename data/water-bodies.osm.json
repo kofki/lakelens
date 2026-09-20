@@ -1,6 +1,6 @@
 {
   "_note": "Water body each OSM swim area sits on, from scripts/fetch-osm-water-bodies.ts. Matched by bounding box against every named lake and river in the state, smallest box first. water_body null means the point named no fresh water and is not published.",
-  "generated_at": "2026-09-20T09:07:58.132Z",
+  "generated_at": "2026-09-20T09:23:30.388Z",
   "pad_m": 600,
   "verdicts": {
     "beaver-lake-dive-park-ar": {
@@ -4347,6 +4347,552 @@
       "great_lake": false,
       "reason": "ok"
     },
+    "hobie-cat-beach-sd": {
+      "water_body": "Lewis and Clark Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lake-alvin-beach-sd": {
+      "water_body": "Lake Alvin",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lake-louise-beach-sd": {
+      "water_body": "Lake Louise",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lake-louise-campground-beach-sd": {
+      "water_body": "Lake Louise",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "north-beach-sd": {
+      "water_body": "Big Stone Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "pebble-beach-sd": {
+      "water_body": "Lewis and Clark Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sheridan-lake-north-sd": {
+      "water_body": "Sheridan Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sheridan-lake-south-sd": {
+      "water_body": "Sheridan Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "south-beach-sd": {
+      "water_body": "Big Stone Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "stockdam-shore-sd": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "swim-beach-sd": {
+      "water_body": "Lake Kampeska",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sylvan-lake-beach-sd": {
+      "water_body": "Sylvan Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "blue-hole-tn": {
+      "water_body": "Richland Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "booker-t-washington-park-beach-tn": {
+      "water_body": "Tennessee River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "cherokee-landing-beach-tn": {
+      "water_body": "Chancellor and Son Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "chester-frost-park-beach-tn": {
+      "water_body": "Tennessee River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "chickamauga-dam-beach-tn": {
+      "water_body": null,
+      "type": null,
+      "great_lake": false,
+      "reason": "no named water within range"
+    },
+    "cmrpoa-beach-residents-only-tn": {
+      "water_body": "Hickory Hollow Lake (CMRPOA Private Lake 1)",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "east-bethany-beach-tn": {
+      "water_body": "Wolf River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "east-georges-curve-beach-tn": {
+      "water_body": "Wolf River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "east-houston-shore-beach-tn": {
+      "water_body": "Wolf River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "east-robbins-halle-beach-tn": {
+      "water_body": "Treatment falls stream",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "east-talen-beach-tn": {
+      "water_body": "Wolf River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "harrison-bay-park-beach-tn": {
+      "water_body": "Tennessee River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "houston-sliver-beach-tn": {
+      "water_body": "Wolf River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "north-forrest-bend-beach-tn": {
+      "water_body": "Wolf River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "north-mudbar-beach-tn": {
+      "water_body": "Wolf River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "parksville-beach-tn": {
+      "water_body": "Ocoee Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "pig-pen-tn": {
+      "water_body": "Gum Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "robbins-halle-beach-tn": {
+      "water_body": "Treatment falls stream",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "shady-beach-tn": {
+      "water_body": "Ocoee Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "shook-branch-swimming-area-tn": {
+      "water_body": "Watauga Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "south-forrest-bend-beach-tn": {
+      "water_body": "Wolf River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "south-mudbar-beach-tn": {
+      "water_body": "Wolf River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "swimming-area-tn": {
+      "water_body": "J. Percy Priest Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "west-bethany-beach-tn": {
+      "water_body": "Wolf River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "west-claw-beach-tn": {
+      "water_body": "Wolf River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "west-falcon-head-beach-tn": {
+      "water_body": "Wolf River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "west-georges-curve-beach-tn": {
+      "water_body": "Wolf River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "west-houston-shore-beach-tn": {
+      "water_body": "Wolf River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "west-junction-shore-tn": {
+      "water_body": "Wolf River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "west-potato-beach-tn": {
+      "water_body": "Wolf River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "west-robbins-halle-beach-tn": {
+      "water_body": "Treatment falls stream",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "west-snake-beach-tn": {
+      "water_body": "Wolf River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "anderson-cove-beach-ut": {
+      "water_body": "Pineview Reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "bridger-bay-beach-ut": {
+      "water_body": "Great Salt Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "camera-flats-ut": {
+      "water_body": "Great Salt Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "cemetery-point-beach-ut": {
+      "water_body": "Pineview Reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "cisco-beach-ut": {
+      "water_body": "Bear Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "eagle-beach-ut": {
+      "water_body": "Willard Creek",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "hyrum-state-park-beach-area-ut": {
+      "water_body": "Hyrum Reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "ideal-beach-ut": {
+      "water_body": "Bear Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "jones-beach-ut": {
+      "water_body": "Great Salt Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lincoln-beach-ut": {
+      "water_body": "Utah Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lone-rock-beach-ut": {
+      "water_body": "Lake Powell",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "middle-inlet-beach-ut": {
+      "water_body": "Pineview Reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "pelican-beach-ut": {
+      "water_body": "Pineview Reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "rendezvous-beach-ut": {
+      "water_body": "Bear Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "silver-sands-beach-ut": {
+      "water_body": "Great Salt Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sunny-cove-ut": {
+      "water_body": "Flaming Gorge Reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sunset-beach-ut": {
+      "water_body": "Great Salt Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "swasey-s-beach-ut": {
+      "water_body": "Green River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "vineyard-beach-ut": {
+      "water_body": "Utah Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "windsurfer-beach-ut": {
+      "water_body": "Pineview Reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "alburg-dunes-vt": {
+      "water_body": "Lake Champlain",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "balm-of-gilead-beach-vt": {
+      "water_body": "Little Salem Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "blanchard-beach-vt": {
+      "water_body": "Lake Champlain",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "blodgett-beach-vt": {
+      "water_body": "Lake Champlain",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "boulder-beach-vt": {
+      "water_body": "Lake Groton",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "campers-beach-vt": {
+      "water_body": "Spectacle Pond",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "dog-beach-vt": {
+      "water_body": "West Branch Ompompanoosuc River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "fairlee-town-beach-vt": {
+      "water_body": "Lake Morey",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "green-mountain-beach-vt": {
+      "water_body": "Lake Raponda",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lake-elmore-beach-vt": {
+      "water_body": "Lake Elmore",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "lakeside-beach-access-vt": {
+      "water_body": "Lake Champlain",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "leddy-park-beach-vt": {
+      "water_body": "Lake Champlain",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "north-beach-vt": {
+      "water_body": "Lake Champlain",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "oakledge-cove-vt": {
+      "water_body": "Lake Champlain",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "punch-bowl-swimming-hole-vt": {
+      "water_body": "Folsom Brook",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "rol-camp-beach-vt": {
+      "water_body": "Ware Brook",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "sandy-beach-vt": {
+      "water_body": "Ompompanoosuc River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "shelburne-beach-vt": {
+      "water_body": "Lake Champlain",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "south-beach-vt": {
+      "water_body": "Lake Willoughby",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "southwest-cove-beach-vt": {
+      "water_body": "Lake Willoughby",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "stoughton-pond-recreation-area-vt": {
+      "water_body": "North Branch Black River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "swimming-hole-vt": {
+      "water_body": "Haynesville Brook",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "texaco-beach-vt": {
+      "water_body": "Lake Champlain",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "thayer-beach-vt": {
+      "water_body": "Lake Champlain",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "the-ledges-vt": {
+      "water_body": "Harriman Reservoir",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "treasure-island-beach-vt": {
+      "water_body": "Lake Fairlee",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "white-river-swimming-spot-vt": {
+      "water_body": "First Branch White River",
+      "type": "river",
+      "great_lake": false,
+      "reason": "ok"
+    },
     "6th-avenue-west-beach-wi": {
       "water_body": "Lake Superior",
       "type": "lake",
@@ -5075,6 +5621,12 @@
     },
     "bulltown-swimming-area-wv": {
       "water_body": "Burnsville Lake",
+      "type": "lake",
+      "great_lake": false,
+      "reason": "ok"
+    },
+    "phelps-beach-wy": {
+      "water_body": "Phelps Lake",
       "type": "lake",
       "great_lake": false,
       "reason": "ok"
