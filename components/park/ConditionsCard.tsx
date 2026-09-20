@@ -1,11 +1,13 @@
-import { CloudRain, CloudLightning, Droplets, FlaskConical, Sun, Thermometer, Waves, Wind } from "lucide-react";
+import { Biohazard, CloudRain, CloudLightning, Droplets, FlaskConical, Sun, Thermometer, Waves, Wind } from "lucide-react";
 import type { NoaaPayload, NoaaReading, ParkBundle, UsgsReading } from "@/lib/types";
 import { describeWaterTemp } from "@/lib/plainLanguage";
 import { formatLocalTime, relativeTime } from "@/lib/freshness";
 import {
+  beachWaterLevel,
   feelsLikeLevel,
   humidityLevel,
   rainLevel,
+  redTideLevel,
   thunderLevel,
   uvLevel,
   waterQualityLevel,
@@ -76,8 +78,15 @@ export function ConditionsCard({ bundle, now }: ConditionsCardProps) {
       uv != null ? String(Math.round(uv)) : null, uvLevel(uv)),
     tile("water", <Waves aria-hidden="true" focusable="false" />, temp.typical ? "Water (typical)" : "Water temp",
       waterF != null ? `${waterF}°F` : null, waterTempLevel(waterF)),
+    // A beach reads its bacteria count and its red tide; inland water reads the FDEP
+    // algal-bloom sample. A park never shows both kinds of water quality.
+    tile("beachwater", <FlaskConical aria-hidden="true" focusable="false" />, "Water quality",
+      forecast?.beachWaterQuality ? forecast.beachWaterQuality.label : null, beachWaterLevel(forecast?.beachWaterQuality)),
+    tile("redtide", <Biohazard aria-hidden="true" focusable="false" />, "Red tide",
+      forecast?.redTide ? forecast.redTide.label : null, redTideLevel(forecast?.redTide)),
     tile("quality", <FlaskConical aria-hidden="true" focusable="false" />, "Water quality",
-      forecast?.waterQuality ? forecast.waterQuality.label : null, waterQualityLevel(forecast?.waterQuality)),
+      !forecast?.beachWaterQuality && forecast?.waterQuality ? forecast.waterQuality.label : null,
+      forecast?.beachWaterQuality ? null : waterQualityLevel(forecast?.waterQuality)),
     tile("thunder", <CloudLightning aria-hidden="true" focusable="false" />, "Thunder",
       forecast?.nowThunderProb != null ? `${Math.round(forecast.nowThunderProb)}%` : null,
       thunderLevel(forecast?.nowThunderProb)),
@@ -108,7 +117,9 @@ export function ConditionsCard({ bundle, now }: ConditionsCardProps) {
     uv != null ? "EPA" : null,
     usgs?.readings.length ? "USGS" : null,
     noaa?.readings.length ? `NOAA #${noaa.stationId}` : null,
-    forecast?.waterQuality ? "FDEP" : null,
+    forecast?.beachWaterQuality ? "FDOH" : null,
+    forecast?.redTide ? "FWC" : null,
+    !forecast?.beachWaterQuality && forecast?.waterQuality ? "FDEP" : null,
   ].filter(Boolean);
   const asOf = forecast?.forecastAt ?? bundle.weatherFetchedAt;
 
@@ -185,8 +196,23 @@ export function ConditionsCard({ bundle, now }: ConditionsCardProps) {
         </div>
       )}
 
-      {noaaTemp && (
+      {forecast?.beachWaterQuality && (
         <p className="mt-3 text-xs text-mocha">
+          {forecast.beachWaterQuality.valueCfu} cfu/100mL at {forecast.beachWaterQuality.station},{" "}
+          {forecast.beachWaterQuality.distanceKm} km away, sampled {relativeTime(forecast.beachWaterQuality.sampledAt, now)}.
+          {forecast.beachWaterQuality.advisory && " A swimming advisory is posted."}
+        </p>
+      )}
+
+      {forecast?.redTide && forecast.redTide.level !== "none" && (
+        <p className="mt-2 text-xs text-mocha">
+          Red tide {forecast.redTide.abundance} at {forecast.redTide.location ?? "a nearby site"},{" "}
+          {forecast.redTide.distanceKm} km away, sampled {relativeTime(forecast.redTide.sampledAt, now)}.
+        </p>
+      )}
+
+      {noaaTemp && (
+        <p className="mt-2 text-xs text-mocha">
           Water measured at NOAA station #{noaa?.stationId}, updated {relativeTime(noaaTemp.time, now)}.
         </p>
       )}

@@ -16,6 +16,8 @@ import {
 } from "../supabase/functions/_shared/overpass";
 import { NOAA_BEACH_MAX_KM, NOAA_MAX_KM, nearestStation, parseStations } from "../supabase/functions/_shared/stations";
 import { WATER_QUALITY_MATCH_KM, nearestSample, waterQualityFor } from "../supabase/functions/_shared/algae";
+import { abundanceLevel, normalizeHab, redTideForPark } from "../supabase/functions/_shared/redtide";
+import { beachWaterFor, levelFromCfu, parseResultSet, parseRow, toIsoDate } from "../supabase/functions/_shared/fdoh";
 import { toCalendarEvents } from "@/lib/queries";
 
 const ICHETUCKNEE = { id: "p1", slug: "ichetucknee", name: "Ichetucknee", lat: 29.9841, lng: -82.7612 };
@@ -227,5 +229,169 @@ describe("water quality reading", () => {
 
   it("uses a wider radius than the alert rule, which matched no parks at 3 km", () => {
     expect(WATER_QUALITY_MATCH_KM).toBeGreaterThan(3);
+  });
+});
+
+describe("red tide (FWC)", () => {
+  const s = (over: Partial<import("../supabase/functions/_shared/redtide").HabSample> = {}) => ({
+    id: "1",
+    sampledAt: "2026-09-19T00:00:00.000Z",
+    lat: 27.21,
+    lng: -82.51,
+    county: "Sarasota",
+    location: "Midnight Pass",
+    abundance: "not present/background (0-1,000)",
+    level: abundanceLevel("not present/background (0-1,000)"),
+    ...over,
+  });
+  const NOW = new Date("2026-09-20T00:00:00.000Z");
+  const beach = { lat: 27.21, lng: -82.51, type: "beach" };
+
+  it("reads FWC's abundance wording, including the cases that contain each other", () => {
+    expect(abundanceLevel("not present/background (0-1,000)")).toBe("none");
+    expect(abundanceLevel("very low (1,000-10,000)")).toBe("very-low");
+    expect(abundanceLevel("low (10,000-100,000)")).toBe("low");
+    expect(abundanceLevel("medium (100,000-1,000,000)")).toBe("medium");
+    expect(abundanceLevel("high (>1,000,000)")).toBe("high");
+  });
+
+  it("never reports red tide for inland water", () => {
+    expect(redTideForPark([s()], { lat: 27.21, lng: -82.51, type: "spring" }, NOW)).toBeNull();
+    expect(redTideForPark([s()], { lat: 27.21, lng: -82.51, type: "lake" }, NOW)).toBeNull();
+  });
+
+  it("takes the worst level in range, not the nearest sample", () => {
+    const clean = s({ id: "clean" });
+    const bloom = s({ id: "bloom", lat: 27.3, lng: -82.5, abundance: "high (>1,000,000)", level: "high" });
+    const out = redTideForPark([clean, bloom], beach, NOW);
+    expect(out?.level).toBe("high");
+    expect(out?.sampleCount).toBe(2);
+  });
+
+  it("ignores samples that are too old or too far", () => {
+    expect(redTideForPark([s({ sampledAt: "2026-08-01T00:00:00.000Z" })], beach, NOW)).toBeNull();
+    expect(redTideForPark([s({ lat: 30, lng: -85 })], beach, NOW)).toBeNull();
+  });
+
+  it("normalizes ArcGIS features and drops rows with no coordinates", () => {
+    const parsed = normalizeHab({
+      features: [
+        { attributes: { OBJECTID: 1, LATITUDE: 27.2, LONGITUDE: -82.5, SAMPLE_DATE: 1789185600000, Abundance: "high (x)", LOCATION: "A" } },
+        { attributes: { OBJECTID: 2, Abundance: "high (x)" } },
+      ],
+    });
+    expect(parsed).toHaveLength(1);
+    expect(parsed[0].level).toBe("high");
+  });
+});
+
+describe("beach water quality (FDOH)", () => {
+  const NOW = new Date("2026-09-20T00:00:00.000Z");
+  const beach = { lat: 27.98, lng: -82.83, type: "beach" };
+  const site = (over: Partial<import("../supabase/functions/_shared/fdoh").WqSample> = {}) => ({
+    stationId: "Pinellas|CLEARWATER BEACH",
+    stationName: "CLEARWATER BEACH",
+    county: "Pinellas",
+    lat: 27.984,
+    lng: -82.829,
+    date: "2026-09-14",
+    period: "1305",
+    valueCfu: 4,
+    advisory: false,
+    level: levelFromCfu(4),
+    ...over,
+  });
+
+  it("uses FDOH's own thresholds", () => {
+    expect(levelFromCfu(35.4)).toBe("good");
+    expect(levelFromCfu(35.5)).toBe("caution");
+    expect(levelFromCfu(70.4)).toBe("caution");
+    expect(levelFromCfu(70.5)).toBe("advisory");
+  });
+
+  it("parses the US date format zero-padded, so dates sort lexicographically", () => {
+    expect(toIsoDate("9/14/2026")).toBe("2026-09-14");
+    expect(toIsoDate("12/1/2026")).toBe("2026-12-01");
+    expect(toIsoDate("not a date")).toBeNull();
+  });
+
+  it("never reports beach water quality for inland water", () => {
+    expect(beachWaterFor([site()], { lat: 27.98, lng: -82.83, type: "spring" }, NOW)).toBeNull();
+  });
+
+  it("takes the worst reading in range", () => {
+    const clean = site();
+    const bad = site({ stationId: "b", valueCfu: 300, level: "advisory", advisory: true, lat: 27.99, lng: -82.84 });
+    expect(beachWaterFor([clean, bad], beach, NOW)?.level).toBe("advisory");
+  });
+
+  it("drops readings older than the posting cycle allows", () => {
+    expect(beachWaterFor([site({ date: "2026-07-01" })], beach, NOW)).toBeNull();
+  });
+
+  it("parses a Caspio row, taking the enterococcus value from the script variable", () => {
+    const row = [
+      '<tr class="cbResultSetDataRow">',
+      "<span>Period:</span> 1305",
+      "<span>Location:</span> CLEARWATER BEACH - PIER 60",
+      "<span>Date:</span> 9/14/2026",
+      "<span>Advisory:</span> No",
+      '<div id="Latitude:x" >27.973913</div>',
+      '<div id="Longitude:x" >-82.830386</div>',
+      "<script>var enterococcus = '4';</script>",
+    ].join("\n");
+    const parsed = parseRow(row, "Pinellas");
+    expect(parsed).toMatchObject({ stationName: "CLEARWATER BEACH - PIER 60", date: "2026-09-14", valueCfu: 4, level: "good", advisory: false });
+  });
+
+  it("treats a high reading as an advisory even when FDOH's column says No", () => {
+    const row = [
+      '<tr class="cbResultSetDataRow">',
+      "<span>Location:</span> SOUTH BEACH",
+      "<span>Date:</span> 9/8/2026",
+      "<span>Advisory:</span> No",
+      '<div id="Latitude:x" >24.546</div>',
+      '<div id="Longitude:x" >-81.804</div>',
+      "<script>var enterococcus = '521';</script>",
+    ].join("\n");
+    expect(parseRow(row, "Monroe")).toMatchObject({ level: "advisory", advisory: true });
+  });
+
+  it("drops a No Result row so the previous reading survives", () => {
+    const row = [
+      '<tr class="cbResultSetDataRow">',
+      "<span>Location:</span> SOUTH BEACH",
+      "<span>Date:</span> 9/8/2026",
+      "<script>var enterococcus = '';</script>",
+    ].join("\n");
+    expect(parseRow(row, "Monroe")).toBeNull();
+  });
+
+  it("rejects coordinates outside Florida", () => {
+    const row = [
+      '<tr class="cbResultSetDataRow">',
+      "<span>Location:</span> NOWHERE",
+      "<span>Date:</span> 9/8/2026",
+      '<div id="Latitude:x" >48.1</div>',
+      '<div id="Longitude:x" >-122.3</div>',
+      "<script>var enterococcus = '4';</script>",
+    ].join("\n");
+    expect(parseRow(row, "Monroe")).toBeNull();
+  });
+
+  it("keeps the newest sample per site, so a clearing resample wins", () => {
+    const sink = new Map<string, import("../supabase/functions/_shared/fdoh").WqSample>();
+    const mk = (date: string, ent: string) =>
+      [
+        '<tr class="cbResultSetDataRow">',
+        "<span>Period:</span> 1305",
+        "<span>Location:</span> A BEACH",
+        `<span>Date:</span> ${date}`,
+        '<div id="Latitude:x" >27.9</div>',
+        '<div id="Longitude:x" >-82.8</div>',
+        `<script>var enterococcus = '${ent}';</script>`,
+      ].join("\n");
+    parseResultSet(`${mk("7/20/2026", "240")}${mk("7/22/2026", "4")}</table>`, "Pinellas", sink);
+    expect([...sink.values()][0]).toMatchObject({ date: "2026-07-22", valueCfu: 4, level: "good" });
   });
 });

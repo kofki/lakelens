@@ -133,7 +133,7 @@ export interface WeatherPayload {
 }
 
 /** Jobs the refresh-conditions Edge Function can run (also the pg_cron job names). */
-export type CronJob = "usgs" | "noaa" | "weather" | "alerts" | "holidays" | "prune" | "algae" | "parking" | "stations" | "forecast";
+export type CronJob = "usgs" | "noaa" | "weather" | "alerts" | "holidays" | "prune" | "algae" | "parking" | "stations" | "forecast" | "redtide" | "beachwater";
 
 /** Shape of a park_alerts row the ingest jobs insert. */
 export interface ParkAlertInsert {

@@ -286,7 +286,36 @@ export interface ParkForecast {
   hourly?: HourlyColumnar | null;
   daily?: ForecastDay[];
   waterQuality: WaterQuality | null;
+  /** FWC Karenia brevis. Beaches only; null everywhere else. */
+  redTide: RedTide | null;
+  /** FDOH Healthy Beaches enterococcus. Beaches only; null everywhere else. */
+  beachWaterQuality: BeachWaterQuality | null;
   sources: Record<string, SourceStamp>;
+}
+
+export type RedTideLevel = "none" | "very-low" | "low" | "medium" | "high";
+
+export interface RedTide {
+  level: RedTideLevel;
+  label: string;
+  abundance: string;
+  sampledAt: string;
+  distanceKm: number;
+  location: string | null;
+  sampleCount: number;
+}
+
+export type BeachWaterLevel = "good" | "caution" | "advisory";
+
+export interface BeachWaterQuality {
+  level: BeachWaterLevel;
+  label: string;
+  valueCfu: number;
+  station: string;
+  county: string;
+  sampledAt: string;
+  distanceKm: number;
+  advisory: boolean;
 }
 
 // ---------- derived / computed ----------
