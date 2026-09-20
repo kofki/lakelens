@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { LocateFixed, SlidersHorizontal } from "lucide-react";
+import { LocateFixed, MapPinned, SlidersHorizontal } from "lucide-react";
 import { DEFAULT_FILTERS, type Filters, type ParkWithStatus } from "@/lib/types";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/components/ui/cn";
@@ -15,6 +15,7 @@ import { FilterSheet } from "./FilterSheet";
 import { SearchField } from "./SearchField";
 import { SortControl } from "./SortControl";
 import { StateControl } from "./StateControl";
+import { LocationPrompt } from "./LocationPrompt";
 import { useGeolocation } from "./useGeolocation";
 import { useAccessibleParam } from "./useAccessibleParam";
 import {
@@ -95,8 +96,9 @@ export function ListScreen({ parks, initialFilters }: ListScreenProps) {
   const [showAllTiles, setShowAllTiles] = useState(false);
   const geo = useGeolocation();
 
-  // Nearest once we know where the reader is, and the user's explicit choice always
-  // wins. Without a location, name order is what the state grouping reads against.
+  // Nearest once we know where the reader is, and the user's explicit choice always wins.
+  // Without a location there is no distance to sort by, so name order is the fallback and
+  // the prompt below is what turns it into distance for most people.
   const sort: SortKey = sortOverride ?? (geo.location ? "distance" : "name");
 
   const located = useMemo(() => withDistances(parks, geo.location), [parks, geo.location]);
@@ -186,6 +188,21 @@ export function ListScreen({ parks, initialFilters }: ListScreenProps) {
             </Button>
           </div>
         </div>
+      </div>
+
+      <div className="px-4 md:px-6">
+        <LocationPrompt
+          status={geo.status}
+          onRequest={geo.request}
+          fallback={
+            <section className="mx-auto mt-4 flex max-w-[1280px] items-center gap-3 rounded-tile border border-mist bg-white p-4 text-sm text-mocha shadow-card">
+              <MapPinned aria-hidden="true" focusable="false" className="size-5 shrink-0 text-forest" />
+              <p>
+                Location is off for this site. Pick a state above to narrow the list, or search for a park by name.
+              </p>
+            </section>
+          }
+        />
       </div>
 
       <div id="park-list" tabIndex={-1} className="mx-auto w-full max-w-[1280px] px-4 py-5 pb-16 outline-none md:px-6">

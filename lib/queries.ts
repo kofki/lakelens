@@ -196,6 +196,20 @@ function toReviewStats(rows: ReviewStatsRow[]): Map<string, ReviewStats> {
  */
 export const PAGE_SIZE = 1000;
 
+/**
+ * Columns the world load actually reads.
+ *
+ * The anon role has a three second statement timeout, and `select("*")` across eleven
+ * tables at 2,100 parks went past it: the list rendered "0 parks shown" and the build wrote
+ * park pages with no weather. Naming columns is what brings it back under budget.
+ *
+ * `hourly` is the expensive one. It is a day of parallel arrays per park, it is the reason
+ * park_forecast is four megabytes, and no list, map or status calculation touches it. The
+ * one page that draws it fetches it for its own park.
+ */
+const FORECAST_LIST_COLUMNS =
+  "park_id,forecast_at,now_temp_f,now_feels_like_f,now_uv,now_humidity,now_wind_mph,now_thunder_prob,now_short_forecast,uv_peak,uv_peak_hour,daily,water_quality,sources";
+
 export async function selectAll<T>(
   scope: string,
   build: (from: number, to: number) => PromiseLike<{ data: unknown; error: { message: string } | null }>,
@@ -241,7 +255,9 @@ async function loadWorld(db: Db, now: Date): Promise<World> {
       selectAll<CalendarEventRow>("calendar_events", (a, b) =>
         db.from("calendar_events").select("name,start_date,end_date,weight").range(a, b),
       ),
-      selectAll<ParkForecastRow>("park_forecast", (a, b) => db.from("park_forecast").select("*").range(a, b)),
+      selectAll<ParkForecastRow>("park_forecast", (a, b) =>
+        db.from("park_forecast").select(FORECAST_LIST_COLUMNS).range(a, b),
+      ),
       selectAll<ReviewStatsRow>("park_review_stats", (a, b) => db.from("park_review_stats").select("*").range(a, b)),
     ]);
 
@@ -408,6 +424,14 @@ export async function getParkBundle(slug: string, now: Date = new Date()): Promi
     if (!target) return null;
 
     const since = new Date(now.getTime() - BUNDLE_REPORTS_WINDOW_MS).toISOString();
+    // The world load leaves `hourly` behind because it is a day of arrays per park and only
+    // this page draws it. One row, one column, for the park being rendered.
+    const hourlyR = await db.from("park_forecast").select("hourly").eq("park_id", target.park.id).maybeSingle();
+    if (hourlyR.error) warn("park_forecast(hourly)", hourlyR.error);
+    const hourly = (hourlyR.data?.hourly ?? null) as ParkForecast["hourly"];
+    const withHourly: ParkWithStatus =
+      target.forecast && hourly ? { ...target, forecast: { ...target.forecast, hourly } } : target;
+
     const [lotsR, reportsR] = await Promise.all([
       // Every park's lots, not just this one: suggestBackups summarises parking for the
       // backup candidates too.
@@ -447,7 +471,7 @@ export async function getParkBundle(slug: string, now: Date = new Date()): Promi
 
     const backups = suggestBackups(target, all, DEFAULT_FILTERS, lotsByPark);
     return {
-      ...target,
+      ...withHourly,
       reviews: rowsOr<Review>("reviews", reviewsR),
       parkingLots: lotsByPark[target.park.id] ?? [],
       reports,
