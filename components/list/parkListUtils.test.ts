@@ -1,6 +1,13 @@
 import { describe, expect, it } from "vitest";
-import { DEFAULT_FILTERS, type Filters, type ParkWithStatus } from "@/lib/types";
-import { activeFilterCount, availableStates, filterParks, groupParksByState } from "./parkListUtils";
+import { DEFAULT_FILTERS, type Filters, type Park, type ParkWithStatus } from "@/lib/types";
+import {
+  activeFilterCount,
+  availableStates,
+  describeParkKind,
+  filterParks,
+  groupParksByState,
+  parkLocation,
+} from "./parkListUtils";
 
 /**
  * ParkWithStatus carries a dozen payloads these helpers never touch, so the fixture
@@ -89,5 +96,36 @@ describe("groupParksByState", () => {
 
   it("handles an empty list", () => {
     expect(groupParksByState([])).toEqual({ groups: [], ungrouped: [] });
+  });
+});
+
+describe("parkLocation", () => {
+  const park = (city: string | null, state: string | null) =>
+    ({ city, state }) as Pick<Park, "city" | "state">;
+
+  it("reads as a place you could drive to", () => {
+    expect(parkLocation(park("Gainesville", "FL"))).toBe("Gainesville, FL");
+  });
+
+  it("falls back to the state when the town is unknown", () => {
+    expect(parkLocation(park(null, "MI"))).toBe("MI");
+  });
+
+  it("refuses a town with no state, because most town names repeat", () => {
+    expect(parkLocation(park("Springfield", null))).toBeNull();
+    expect(parkLocation(park(null, null))).toBeNull();
+  });
+});
+
+describe("describeParkKind", () => {
+  const park = (over: Partial<Park> = {}) =>
+    ({ type: "lake", operator: "county", city: null, state: null, ...over }) as Park;
+
+  it("gives the second slot to the town", () => {
+    expect(describeParkKind(park({ city: "Traverse City", state: "MI" }))).toBe("Lake · Traverse City, MI");
+  });
+
+  it("falls back to who runs it when there is no location at all", () => {
+    expect(describeParkKind(park())).toBe("Lake · County park");
   });
 });

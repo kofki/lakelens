@@ -182,6 +182,8 @@ const parkSeedShape = {
   description: z.string().nullable(),
   /** The named lake, river or spring this swim area is on. Verified, not assumed. */
   water_body: z.string().nullable().optional(),
+  /** Nearest town, for the "Town, ST" line on a card. */
+  city: z.string().nullable().optional(),
   sources: z.array(nonEmpty).min(1),
 };
 /** Strict: used for data/parks.deep.json (our own file). */
@@ -358,6 +360,7 @@ export const DATA_FILES = {
   photosOsm: "data/photos.osm.json",
   osmDetails: "data/park-details.osm.json",
   waterBodies: "data/water-bodies.osm.json",
+  places: "data/places.json",
   gauges: "data/gauges.json",
 } as const;
 
@@ -554,6 +557,29 @@ export function applyWaterVerdict(park: ParkSeed, verdict: WaterVerdict | undefi
   return { ...park, type: verdict.type, water_body: verdict.water_body };
 }
 
+export const PlaceSchema = z.object({
+  city: z.string().nullable(),
+  state: z.string().regex(/^[A-Z]{2}$/).nullable(),
+});
+export type Place = z.infer<typeof PlaceSchema>;
+export const PlacesFileSchema = z.object({ places: z.record(slug, PlaceSchema) });
+
+/**
+ * Attach the nearest town.
+ *
+ * The state is only filled in when the row has none. Where both disagree the harvest's
+ * value wins: it came from a state boundary query, which is exact, whereas this came from
+ * a reverse geocode of a point that may sit on a lake straddling a border.
+ */
+export function applyPlace(park: ParkSeed, place: Place | undefined): ParkSeed {
+  if (!place) return park;
+  return {
+    ...park,
+    city: park.city ?? place.city,
+    state: park.state ?? place.state,
+  };
+}
+
 export function loadSeedData(root: string = REPO_ROOT, opts: LoadOptions = {}): SeedData {
   const p = (rel: string) => resolve(root, rel);
   const warnings: string[] = [];
@@ -600,6 +626,7 @@ export function loadSeedData(root: string = REPO_ROOT, opts: LoadOptions = {}): 
   const photosOsm = optional(PhotosFileSchema, DATA_FILES.photosOsm, skipBasic, "--skip-basic")?.photos ?? {};
   const osmDetails = optional(OsmDetailsFileSchema, DATA_FILES.osmDetails, skipBasic, "--skip-basic")?.details ?? {};
   const waterBodies = optional(WaterBodiesFileSchema, DATA_FILES.waterBodies, skipBasic, "--skip-basic")?.verdicts ?? {};
+  const places = optional(PlacesFileSchema, DATA_FILES.places, false, "")?.places ?? {};
   const gauges = optional(GaugesFileSchema, DATA_FILES.gauges, false, "") ?? {};
 
   // Photo credits merge first: the park rows below are built with their credit already attached.
@@ -633,7 +660,10 @@ export function loadSeedData(root: string = REPO_ROOT, opts: LoadOptions = {}): 
         dropped++;
         continue;
       }
-      const park = applyPhotoCredit(applyGauges(enriched, gauges[enriched.slug]), photos[enriched.slug]);
+      const park = applyPlace(
+        applyPhotoCredit(applyGauges(enriched, gauges[enriched.slug]), photos[enriched.slug]),
+        places[enriched.slug],
+      );
       tierBySlug[park.slug] = tier;
       into.push(park);
       parks.push(park);
@@ -816,6 +846,7 @@ const PARK_COLUMNS = [
   "swim_season",
   "description",
   "water_body",
+  "city",
 ] as const;
 
 function parkValues(p: ParkSeed): string {
@@ -853,6 +884,7 @@ function parkValues(p: ParkSeed): string {
     swim_season: sqlJsonb(p.swim_season),
     description: sqlLiteral(p.description),
     water_body: sqlLiteral(p.water_body ?? null),
+    city: sqlLiteral(p.city ?? null),
   };
   return PARK_COLUMNS.map((c) => v[c]).join(",\n    ");
 }

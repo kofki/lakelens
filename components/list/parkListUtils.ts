@@ -177,9 +177,28 @@ const OPERATOR_LABEL: Record<Park["operator"], string> = {
   private: "Privately run",
 };
 
-/** "Spring · State park" */
-export function describeParkKind(park: Pick<Park, "type" | "operator">): string {
-  return `${TYPE_LABEL[park.type] ?? park.type} · ${OPERATOR_LABEL[park.operator] ?? park.operator}`;
+/**
+ * "Spring · Gainesville, FL", or "Spring · State park" where the town is unknown.
+ *
+ * The operator used to hold the second slot unconditionally. With parks across more than
+ * twenty states, "Blue Lake Beach · County park" gives a reader no way to tell whether it
+ * is an hour away or a thousand miles, and who runs a park is a question for its own page.
+ * Where we know the town, the town wins.
+ */
+export function describeParkKind(park: Pick<Park, "type" | "operator" | "city" | "state">): string {
+  const kind = TYPE_LABEL[park.type] ?? park.type;
+  return `${kind} · ${parkLocation(park) ?? OPERATOR_LABEL[park.operator] ?? park.operator}`;
+}
+
+/**
+ * "Gainesville, FL", falling back to the state alone.
+ *
+ * A town with no state is not returned: there is a Springfield in most of them, so the name
+ * on its own locates nothing.
+ */
+export function parkLocation(park: Pick<Park, "city" | "state">): string | null {
+  if (park.city && park.state) return `${park.city}, ${park.state}`;
+  return park.state ?? null;
 }
 
 /** Plain-language source for the status "last updated" line. */

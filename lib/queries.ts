@@ -274,7 +274,7 @@ const LIST_USGS_PARAMETERS = new Set(["00010", "00065", "63160"]);
 /**
  * Shrink a ParkWithStatus to what the map and list screens draw.
  *
- * The map page serialises all 84 parks twice (HTML + RSC payload), and a deep park's
+ * The map page serialises every park twice (HTML + RSC payload), and a deep park's
  * NWS snapshot carries a 156-entry hourly grid plus a 14-day outlook that no list or
  * map surface ever reads. Dropping those, and the gauge parameters we don't chart,
  * is invisible on screen and removes most of the document weight. Prediction has
@@ -284,7 +284,7 @@ function slimForList(item: ParkWithStatus): ParkWithStatus {
   const weather = item.weather ? { ...item.weather, hourly: [], daily: [] } : null;
   const usgs = item.usgs ? { ...item.usgs, readings: item.usgs.readings.filter((r) => LIST_USGS_PARAMETERS.has(r.parameter)) } : null;
   // A card draws at most three stats, so everything else in the forecast row is dead
-  // weight in a document that serialises all 84 parks twice. Only the fields
+  // weight in a document that serialises every park twice. Only the fields
   // conditionStatItems actually reads survive the trip to the list and the map.
   const f = item.forecast;
   const forecast: ParkForecast | null = f

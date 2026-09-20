@@ -4,9 +4,11 @@ import "maplibre-gl/dist/maplibre-gl.css";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   AttributionControl,
+  Layer,
   Map as MapGL,
   Marker,
   NavigationControl,
+  Source,
   type ErrorEvent,
   type MapEvent,
   type MapLayerMouseEvent,
@@ -29,6 +31,19 @@ import { useWebGL2 } from "./useWebGL2";
 import { MapSkeleton } from "./MapSkeleton";
 import { MapUnavailable } from "./MapUnavailable";
 import { ParkMarker } from "./ParkMarker";
+import { ClusterMarker } from "./ClusterMarker";
+import {
+  CLUSTER_LAYER_ID,
+  CLUSTER_MAX_ZOOM,
+  CLUSTER_PROPERTIES,
+  CLUSTER_RADIUS,
+  CLUSTER_SOURCE_ID,
+  POINT_LAYER_ID,
+  readPins,
+  toFeatureCollection,
+  type ClusterBubble,
+  type MapPin,
+} from "./clusters";
 
 export interface ParkMapProps {
   parks: ParkWithStatus[];
@@ -80,6 +95,12 @@ function ParkMapInner({
     parksRef.current = parks;
   }, [parks]);
   const [showLabels, setShowLabels] = useState(false);
+  /**
+   * What is actually on screen: a mix of bubbles and single pins, read back out of the
+   * clustering source. Empty until the source has tiles, which is why the parks below are
+   * rendered from this and not from `parks` directly.
+   */
+  const [pins, setPins] = useState<MapPin[]>([]);
   const [tileError, setTileError] = useState(false);
   /** Swapped to the keyless Versatiles style if OpenFreeMap fails to load its style/tiles. */
   const [styleUrl, setStyleUrl] = useState(MAP_STYLE_URL);
@@ -88,6 +109,9 @@ function ParkMapInner({
   const interactedRef = useRef(false);
 
   // Fit whatever is on the map, so a park outside any one region is still on screen.
+  const parksById = useMemo(() => new Map(parks.map((item) => [item.park.id, item])), [parks]);
+  const featureCollection = useMemo(() => toFeatureCollection(parks), [parks]);
+
   const parkBounds = useMemo(
     () => boundsForPoints(parks.map((item) => item.park)) ?? CONTINENTAL_US_BOUNDS,
     [parks],
@@ -119,11 +143,61 @@ function ParkMapInner({
     if (!item || !map) return;
     map.easeTo({
       center: [item.park.lng, item.park.lat],
-      zoom: Math.max(map.getZoom(), 9),
+      // Past the clustering zoom, so a park picked from the list is always its own pin
+      // rather than a number the reader then has to hunt through.
+      zoom: Math.max(map.getZoom(), CLUSTER_MAX_ZOOM + 1),
       duration: prefersReducedMotion() ? 0 : 450,
       essential: true,
     });
   }, [selectedId]);
+
+  /**
+   * Re-read the source after anything that can change which tiles are loaded.
+   *
+   * `querySourceFeatures` answers from tiles, so it is empty before the first tile arrives
+   * and stale immediately after a pan. Every event that moves or reloads the source calls
+   * this, and the result is deduplicated in `readPins`.
+   */
+  const syncPins = useCallback(() => {
+    const map = mapRef.current;
+    if (!map) return;
+    try {
+      if (!map.getSource(CLUSTER_SOURCE_ID)) return;
+      setPins(readPins(map.querySourceFeatures(CLUSTER_SOURCE_ID) as never[]));
+    } catch {
+      // The source is mid-reload; the next idle event reads it again.
+    }
+  }, []);
+
+  // A style swap (the OpenFreeMap fallback) rebuilds every source, so the pins we are
+  // holding belong to a source that no longer exists.
+  useEffect(() => {
+    setPins([]);
+  }, [styleUrl]);
+
+  /**
+   * Clicking a bubble zooms to the point where it breaks apart, rather than a fixed step.
+   * A fixed step leaves dense clusters intact and needs three or four more taps.
+   */
+  const expandCluster = useCallback((bubble: ClusterBubble) => {
+    const map = mapRef.current;
+    if (!map) return;
+    interactedRef.current = true;
+    const source = map.getSource(CLUSTER_SOURCE_ID) as
+      | { getClusterExpansionZoom?: (id: number) => Promise<number> }
+      | undefined;
+    const fallback = Math.min(map.getZoom() + 2, 17);
+    const go = (zoom: number) =>
+      map.easeTo({
+        center: [bubble.lng, bubble.lat],
+        zoom: Math.max(zoom, map.getZoom() + 0.5),
+        duration: prefersReducedMotion() ? 0 : 420,
+        essential: true,
+      });
+    const promise = source?.getClusterExpansionZoom?.(bubble.clusterId);
+    if (promise) promise.then(go).catch(() => go(fallback));
+    else go(fallback);
+  }, []);
 
   const handleLoad = useCallback(
     (e: MapEvent) => {
@@ -158,6 +232,11 @@ function ParkMapInner({
         map.jumpTo({ center: [CONTINENTAL_US_CENTER.longitude, CONTINENTAL_US_CENTER.latitude], zoom: CONTINENTAL_US_CENTER.zoom });
       }
       setShowLabels(map.getZoom() >= LABEL_ZOOM);
+      map.on("idle", syncPins);
+      map.on("sourcedata", (ev) => {
+        if ((ev as { sourceId?: string }).sourceId === CLUSTER_SOURCE_ID) syncPins();
+      });
+      syncPins();
     },
     // initial padding only; later changes go through the effect above
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -173,9 +252,15 @@ function ParkMapInner({
     [onSelect],
   );
 
-  const handleZoomEnd = useCallback((e: ViewStateChangeEvent) => {
-    setShowLabels(e.viewState.zoom >= LABEL_ZOOM);
-  }, []);
+  const handleZoomEnd = useCallback(
+    (e: ViewStateChangeEvent) => {
+      setShowLabels(e.viewState.zoom >= LABEL_ZOOM);
+      syncPins();
+    },
+    [syncPins],
+  );
+
+  const handleMoveEnd = useCallback(() => syncPins(), [syncPins]);
 
   const handleError = useCallback(
     (e: ErrorEvent) => {
@@ -218,17 +303,39 @@ function ParkMapInner({
         onLoad={handleLoad}
         onClick={handleClick}
         onZoomEnd={handleZoomEnd}
+        onMoveEnd={handleMoveEnd}
         onError={handleError}
       >
-        {parks.map((item) => (
-          <ParkMarker
-            key={item.park.id}
-            item={item}
-            selected={item.park.id === selectedId}
-            showLabel={showLabels}
-            onSelect={onSelect}
-          />
-        ))}
+        {/* Transparent: the source exists to cluster, and both bubbles and pins are drawn
+            as DOM markers below. A layer still has to reference it or no tiles are built. */}
+        <Source
+          id={CLUSTER_SOURCE_ID}
+          type="geojson"
+          data={featureCollection}
+          cluster
+          clusterRadius={CLUSTER_RADIUS}
+          clusterMaxZoom={CLUSTER_MAX_ZOOM}
+          clusterProperties={CLUSTER_PROPERTIES as unknown as Record<string, unknown>}
+        >
+          <Layer id={CLUSTER_LAYER_ID} type="circle" filter={["has", "point_count"]} paint={{ "circle-radius": 1, "circle-opacity": 0 }} />
+          <Layer id={POINT_LAYER_ID} type="circle" filter={["!", ["has", "point_count"]]} paint={{ "circle-radius": 1, "circle-opacity": 0 }} />
+        </Source>
+        {pins.map((pin) => {
+          if (pin.kind === "cluster") {
+            return <ClusterMarker key={pin.key} bubble={pin} onExpand={expandCluster} />;
+          }
+          const item = parksById.get(pin.parkId);
+          if (!item) return null;
+          return (
+            <ParkMarker
+              key={pin.key}
+              item={item}
+              selected={item.park.id === selectedId}
+              showLabel={showLabels}
+              onSelect={onSelect}
+            />
+          );
+        })}
         {userLocation && (
           <Marker longitude={userLocation.lng} latitude={userLocation.lat} anchor="center" style={{ zIndex: 0 }}>
             <div

@@ -146,6 +146,8 @@ export interface Park {
    * parks that have not been through the check.
    */
   water_body?: string | null;
+  /** Nearest town. Optional for fixtures predating migration 20260920090000. */
+  city?: string | null;
   updated_at: string;
 }
 
