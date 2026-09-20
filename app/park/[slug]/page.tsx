@@ -11,6 +11,7 @@ import { PredictionCard } from "@/components/park/PredictionCard";
 import { AlertsCard, activeAlerts } from "@/components/park/AlertsCard";
 import { SafetyCard } from "@/components/park/SafetyCard";
 import { ParkingCard } from "@/components/park/ParkingCard";
+import { AmenitiesCard } from "@/components/park/AmenitiesCard";
 import { AccessibilityCard } from "@/components/park/AccessibilityCard";
 import { ConditionsCard } from "@/components/park/ConditionsCard";
 import { RulesCard } from "@/components/park/RulesCard";
@@ -81,6 +82,7 @@ export default async function ParkPage({ params }: Params) {
     ...(showBackups ? [{ id: "backups", label: "Backups" }] : []),
     { id: "safety", label: "Safety" },
     ...(bundle.parkingLots.length ? [{ id: "parking", label: "Parking" }] : []),
+    ...(park.amenities && Object.keys(park.amenities).length ? [{ id: "amenities", label: "Amenities" }] : []),
     ...(bundle.accessibility ? [{ id: "accessibility", label: "Accessibility" }] : []),
     { id: "conditions", label: "Conditions" },
     ...(park.hours || park.fees || park.official_url ? [{ id: "rules", label: "Rules" }] : []),
@@ -115,6 +117,8 @@ export default async function ParkPage({ params }: Params) {
             <SafetyCard park={park} usgs={bundle.usgs} usgsFetchedAt={bundle.usgsFetchedAt} now={now} />
 
             <ParkingCard park={park} lots={bundle.parkingLots} />
+
+            <AmenitiesCard park={park} />
 
             <AccessibilityCard accessibility={bundle.accessibility} />
 

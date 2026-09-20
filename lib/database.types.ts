@@ -350,6 +350,8 @@ export type Database = {
       }
       parks: {
         Row: {
+          amenities: Json | null
+          amenities_checked_at: string | null
           cavern_warning: boolean
           coverage_tier: string
           description: string | null
@@ -386,6 +388,8 @@ export type Database = {
           usgs_site_id: string | null
         }
         Insert: {
+          amenities?: Json | null
+          amenities_checked_at?: string | null
           cavern_warning?: boolean
           coverage_tier?: string
           description?: string | null
@@ -422,6 +426,8 @@ export type Database = {
           usgs_site_id?: string | null
         }
         Update: {
+          amenities?: Json | null
+          amenities_checked_at?: string | null
           cavern_warning?: boolean
           coverage_tier?: string
           description?: string | null

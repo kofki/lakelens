@@ -7,6 +7,9 @@
  * from Supabase without mapping. Generated `lib/database.types.ts` is the source of
  * truth for DB shapes once created; these interfaces are the app-level view.
  */
+import type { AmenityKind, ParkAmenities } from "../supabase/functions/_shared/amenities";
+
+export type { AmenityKind, ParkAmenities };
 
 // ---------- enums (mirrored as CHECK constraints in SQL) ----------
 /**
@@ -115,6 +118,8 @@ export interface Park {
   nws_zone: string | null;
   /** IANA zone from the NWS points response, e.g. "America/New_York". Null falls back to Eastern. */
   time_zone?: string | null;
+  /** OSM amenity counts. An absent kind means unmapped, NOT absent on the ground. */
+  amenities?: ParkAmenities | null;
   nws_county: string | null;
   /** "HH:MM" local time the park typically fills on weekends/holidays, or null */
   typical_closure_time: string | null;
@@ -290,6 +295,9 @@ export interface ParkForecast {
   waterQuality: WaterQuality | null;
   sources: Record<string, SourceStamp>;
 }
+
+// ---------- amenities ----------
+// Defined in supabase/functions/_shared/amenities.ts so the Edge Function and the app agree.
 
 // ---------- reviews ----------
 

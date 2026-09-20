@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useId, useRef, type CSSProperties, type KeyboardEvent } from "react";
 import { MapPin, X } from "lucide-react";
 import type { ParkWithStatus } from "@/lib/types";
-import {STATUS_META, statusDescription} from "@/lib/status";
+import { statusDescription } from "@/lib/status";
 import {reportLine} from "@/lib/plainLanguage";
 import { Badge } from "@/components/ui/Badge";
 import { ButtonLink } from "@/components/ui/Button";

@@ -194,13 +194,16 @@ export const OVERPASS_USER_AGENT = "LakeLens/1.0 (https://github.com/kofki/lakel
 const CHUNK_GAP_MS = 1_000;
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
-async function postOverpass(
-  parks: ReadonlyArray<{ lat: number; lng: number }>,
-  opts: FetchParkingOptions,
-): Promise<OverpassResponse> {
+/**
+ * POST one Overpass query, trying each mirror and retrying the ones that are merely busy.
+ *
+ * Shared by the parking and amenity sweeps: which mirror is healthy changes week to week,
+ * and the 406-on-a-non-form-body trap is worth learning once.
+ */
+export async function postOverpassQuery(query: string, opts: FetchParkingOptions = {}): Promise<OverpassResponse> {
   const doFetch = opts.fetchImpl ?? fetch;
   // Overpass answers 406 unless the body is a pre-encoded form string.
-  const body = new URLSearchParams({ data: buildParkingQuery(parks) }).toString();
+  const body = new URLSearchParams({ data: query }).toString();
   const errors: string[] = [];
   for (const endpoint of OVERPASS_ENDPOINTS) {
     for (let attempt = 0; attempt < 2; attempt++) {
@@ -259,7 +262,7 @@ export async function fetchParkingElements(
     }
     const chunk = parks.slice(i, i + chunkSize);
     try {
-      const res = await postOverpass(chunk, opts);
+      const res = await postOverpassQuery(buildParkingQuery(chunk), opts);
       succeeded++;
       for (const el of res.elements ?? []) byKey.set(`${el.type}/${el.id}`, el);
     } catch (err) {

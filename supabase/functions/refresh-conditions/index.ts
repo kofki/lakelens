@@ -15,6 +15,7 @@
  *   parking   OpenStreetMap (Overpass) parking lots for every park: weekly
  *   stations  backfill missing USGS gauge / NOAA station / NWS grid assignments: weekly
  *   forecast  park_forecast: NWS weather + gridpoint extras + EPA UV, one row per park: hourly
+ *   amenities OpenStreetMap restrooms, pavilions, docks, showers and grills: weekly
  *
  * The fetch/normalise logic lives in ../_shared/*, which the Next.js app and vitest
  * import too, so there is exactly one implementation of each parser.
@@ -27,6 +28,8 @@ import { fetchAlertsFL, fetchNwsWeather, matchAlertsToPark, type NwsAlertFeature
 import { fetchLongWeekends, fetchNagerHolidays } from "../_shared/holidays.ts";
 import { fetchParkingElements, groupParkingByPark } from "../_shared/overpass.ts";
 import { assembleForecast, type ForecastPark } from "../_shared/forecast.ts";
+import { AMENITY_RADIUS_M, buildAmenityQuery, groupAmenitiesByPark, type OverpassAmenityElement } from "../_shared/amenities.ts";
+import { OVERPASS_USER_AGENT, postOverpassQuery } from "../_shared/overpass.ts";
 import { WATER_QUALITY_MATCH_KM, nearestSample, waterQualityFor } from "../_shared/algae.ts";
 import { assignGauges, assignNwsGrid, fetchNoaaStationCandidates, nearestStation } from "../_shared/stations.ts";
 import { nwsAlertHash } from "../_shared/hash.ts";
@@ -42,7 +45,7 @@ import {
   matchAlgaeToParks,
 } from "../_shared/algae.ts";
 
-export const CRON_JOBS: readonly CronJob[] = ["usgs", "noaa", "weather", "alerts", "holidays", "prune", "algae", "parking", "stations", "forecast"];
+export const CRON_JOBS: readonly CronJob[] = ["usgs", "noaa", "weather", "alerts", "holidays", "prune", "algae", "parking", "stations", "forecast", "amenities"];
 
 /**
  * Per-job wall-clock budget. The cheap per-park jobs stay well inside the 60 s route
@@ -61,6 +64,7 @@ export const JOB_TIME_BUDGET_MS: Record<CronJob, number> = {
   parking: 110_000,
   stations: 110_000,
   forecast: 110_000,
+  amenities: 110_000,
 };
 
 export function isCronJob(value: string): value is CronJob {
@@ -148,6 +152,9 @@ export async function runJob(job: CronJob, opts: RunJobOptions = {}): Promise<Ru
         break;
       case "forecast":
         await runForecast(ctx);
+        break;
+      case "amenities":
+        await runAmenities(ctx);
         break;
       default:
         return { ok: false, counts: {}, errors: [`unknown job: ${String(job)}`] };
@@ -592,6 +599,67 @@ async function runForecast(ctx: Ctx): Promise<void> {
     .upsert(rows, { onConflict: "park_id", count: "exact" });
   if (upErr) throw new Error(`upsert park_forecast: ${upErr.message}`);
   ctx.counts.upserted = count ?? rows.length;
+}
+
+// ---------- amenities (OpenStreetMap via Overpass) ----------
+
+/** Parks per amenity sweep. Twelve selectors each, so the query grows fast. */
+export const AMENITY_PARKS_PER_RUN = 20;
+
+/**
+ * Count the restrooms, pavilions, docks, showers and grills around a slice of parks.
+ *
+ * Same bounded, cursored shape as the parking job and for the same reason: Overpass is
+ * slow, its mirrors come and go, and a statewide fan-out is what trips the worker's
+ * resource limit. Least-recently-checked first, stamped on success.
+ */
+async function runAmenities(ctx: Ctx): Promise<void> {
+  let q = ctx.db
+    .from("parks")
+    .select("id,slug,lat,lng")
+    .order("amenities_checked_at", { ascending: true, nullsFirst: true })
+    .limit(AMENITY_PARKS_PER_RUN);
+  if (ctx.opts.parkId) q = ctx.db.from("parks").select("id,slug,lat,lng").eq("id", ctx.opts.parkId);
+
+  const { data, error } = await q;
+  if (error) throw new Error(`load parks: ${error.message}`);
+  const batch = (data ?? []) as { id: string; slug: string; lat: number; lng: number }[];
+  ctx.counts.parks = batch.length;
+  if (batch.length === 0) return;
+
+  const res = await postOverpassQuery(buildAmenityQuery(batch, AMENITY_RADIUS_M), { userAgent: OVERPASS_USER_AGENT });
+  const elements = (res.elements ?? []) as OverpassAmenityElement[];
+  ctx.counts.elements = elements.length;
+
+  // No elements at all across twenty parks means Overpass answered with nothing useful,
+  // not that twenty parks have no restrooms. Leave what is stored alone.
+  if (elements.length === 0) {
+    ctx.notes.push("overpass returned no amenities; existing counts left alone");
+    return;
+  }
+
+  const byPark = groupAmenitiesByPark(elements, batch, AMENITY_RADIUS_M);
+  let withAny = 0;
+  let total = 0;
+  const checkedAt = ctx.now.toISOString();
+
+  for (const park of batch) {
+    const amenities = byPark.get(park.id) ?? null;
+    if (amenities) {
+      withAny += 1;
+      total += Object.values(amenities).reduce((n, v) => n + v, 0);
+    }
+    const { error: updateError } = await ctx.db
+      .from("parks")
+      .update({ amenities: amenities as unknown as Json, amenities_checked_at: checkedAt })
+      .eq("id", park.id);
+    if (updateError) {
+      ctx.errors.push(`amenities ${park.slug}: ${updateError.message}`);
+      return;
+    }
+  }
+  ctx.counts.parks_with_amenities = withAny;
+  ctx.counts.amenities = total;
 }
 
 // ---------- parking (OpenStreetMap via Overpass) ----------

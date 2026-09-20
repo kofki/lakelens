@@ -1,5 +1,5 @@
 import type { ParkBundle } from "@/lib/types";
-import { STATUS_META, statusDescription } from "@/lib/status";
+import { statusDescription } from "@/lib/status";
 import {formatLocalTime, relativeTime} from "@/lib/freshness";
 import { LastUpdated } from "@/components/ui/LastUpdated";
 import { StatusPill } from "@/components/ui/StatusPill";
@@ -36,7 +36,6 @@ function sourcesLine(bundle: ParkBundle): string {
 export function StatusHeader({ bundle, now }: StatusHeaderProps) {
   const { status } = bundle;
   const conditionsAt = newestIso(bundle.usgsFetchedAt, bundle.weatherFetchedAt);
-  const meta = STATUS_META[status.level];
 
   return (
     <section
