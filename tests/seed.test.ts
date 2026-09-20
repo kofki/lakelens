@@ -360,7 +360,6 @@ describe("SQL generation", () => {
 
   it("does not use unsafe constructs (no dollar-quoting, no backslash escapes, no transaction control)", () => {
     expect(sql).not.toMatch(/\$\$/);
-    expect(sql).not.toMatch(/\bE'/);
     expect(sql).not.toMatch(/^\s*(begin|commit|rollback)\b/im);
   });
 
@@ -458,5 +457,43 @@ describe("applyWaterVerdict", () => {
 
   it("drops a park that could not name fresh water", () => {
     expect(applyWaterVerdict(park, { water_body: null, type: null, great_lake: false, reason: "coastline within range" })).toBeNull();
+  });
+});
+
+/**
+ * Escape-string literals used to be checked by grepping the generated SQL for `E'`. That
+ * cannot work: a park in New Jersey is called "Beach E", so the SQL contains `'Beach E',`
+ * and every pattern that catches a real `E'...'` also catches that closing quote.
+ *
+ * The question is really about the generator, so it is asked there, with the inputs that
+ * would produce an escape literal if anything ever did.
+ */
+describe("sqlLiteral never produces an escape-string literal", () => {
+  const hostile = [
+    "Beach E",
+    "back\\slash",
+    "new\nline",
+    "tab\there",
+    "quote's",
+    "both\\'mixed",
+    "E",
+    "\u0000nul",
+  ];
+
+  it("emits a plain single-quoted literal for anything", () => {
+    for (const value of hostile) {
+      const out = sqlLiteral(value);
+      expect(out.startsWith("'"), value).toBe(true);
+      expect(out.endsWith("'"), value).toBe(true);
+    }
+  });
+
+  it("doubles quotes and leaves backslashes alone, which standard_conforming_strings requires", () => {
+    expect(sqlLiteral("quote's")).toBe("'quote''s'");
+    expect(sqlLiteral("back\\slash")).toBe("'back\\slash'");
+  });
+
+  it("does the same inside jsonb", () => {
+    expect(sqlJsonb({ a: "quote's" })).toBe(`'{"a":"quote''s"}'::jsonb`);
   });
 });
