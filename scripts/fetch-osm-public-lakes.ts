@@ -308,37 +308,58 @@ async function main(): Promise<void> {
   const targets = states.length > 0 ? states : [...new Set(existing.parks.map((p) => p.state))].sort();
   log(`${targets.length} state(s) to check for lakes beside public land`);
 
+  /**
+   * Retry rounds, as in the other harvesters.
+   *
+   * The first nationwide run lost 19 of 51 states to 504s and aborted requests: this query
+   * asks each state for every park, reserve and protected area it has, and a busy mirror
+   * gives up on the big ones. The same state usually answers on a later round.
+   */
+  const MAX_ROUNDS = 3;
   let added = 0;
-  const failed: string[] = [];
-  for (const state of targets) {
-    if (deadline.expired()) {
-      log(`out of time after ${deadline.elapsedMin()} min; stopping at ${state}`);
-      break;
+  let pending = [...targets];
+  let failed: string[] = [];
+
+  for (let round = 1; round <= MAX_ROUNDS && pending.length > 0; round += 1) {
+    if (round > 1) {
+      if (deadline.expired()) break;
+      log(`retry ${round - 1}: ${pending.length} state(s) still missing: ${pending.join(", ")}`);
+      await sleep(GAP_MS * round * 2);
     }
-    const lakes = cachedLakes(state);
-    if (lakes.length === 0) {
-      log(`${state}: no cached lakes; run fetch-osm-water-bodies.ts for it first`);
-      continue;
-    }
-    let publicLand: Box[];
-    try {
-      publicLand = await fetchPublicLand(state);
-    } catch (err) {
-      failed.push(state);
-      log(`${state} failed: ${(err as Error).message}`);
+    const stillFailing: string[] = [];
+    for (const [i, state] of pending.entries()) {
+      if (deadline.expired()) {
+        log(`out of time after ${deadline.elapsedMin()} min; stopping at ${state}`);
+        stillFailing.push(...pending.slice(i));
+        break;
+      }
+      const lakes = cachedLakes(state);
+      if (lakes.length === 0) {
+        log(`${state}: no cached lakes; run fetch-osm-water-bodies.ts for it first`);
+        continue;
+      }
+      let publicLand: Box[];
+      try {
+        publicLand = await fetchPublicLand(state);
+      } catch (err) {
+        stillFailing.push(state);
+        log(`${state} failed: ${(err as Error).message}`);
+        await sleep(GAP_MS);
+        continue;
+      }
+      const found = lakesNearPublicLand(lakes, publicLand, state, new Set(bySlug.keys()));
+      for (const park of found) bySlug.set(park.slug, park);
+      added += found.length;
+      log(`${state}: ${found.length} lakes beside public land (${lakes.length} named lakes seen)`);
+      writeJson(OUT_PATH, {
+        ...existing,
+        generated_at: new Date().toISOString(),
+        parks: [...bySlug.values()].sort((a, b) => a.slug.localeCompare(b.slug)),
+      });
       await sleep(GAP_MS);
-      continue;
     }
-    const found = lakesNearPublicLand(lakes, publicLand, state, new Set(bySlug.keys()));
-    for (const park of found) bySlug.set(park.slug, park);
-    added += found.length;
-    log(`${state}: ${found.length} lakes beside public land (${lakes.length} named lakes seen)`);
-    writeJson(OUT_PATH, {
-      ...existing,
-      generated_at: new Date().toISOString(),
-      parks: [...bySlug.values()].sort((a, b) => a.slug.localeCompare(b.slug)),
-    });
-    await sleep(GAP_MS);
+    pending = stillFailing;
+    failed = stillFailing;
   }
 
   log(`added ${added} lakes; ${bySlug.size} parks in ${OUT_PATH}`);
