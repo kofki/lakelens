@@ -1,10 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="LakeLens">
-  <rect width="512" height="512" rx="112" fill="#f5f3ea"/>
+  <rect width="512" height="512" rx="112" fill="#1f4d3a"/>
   <g transform="translate(0 0) scale(1)">
-  <path d="M256 64c-48 70-100 130-100 192a100 100 0 0 0 200 0c0-62-52-122-100-192z" fill="#e08a2e"/>
-  <path d="M234 308c-12-48 18-92 66-102c4 48-18 92-66 102z" fill="#7a9a5b"/>
-  <path d="M240 302l56-92" fill="none" stroke="#f5f3ea" stroke-width="7" stroke-linecap="round"/>
-  <path d="M40 400c36-28 72-28 108 0s72 28 108 0 72-28 108 0 72 28 108 0" fill="none" stroke="#3fb5c2" stroke-width="26" stroke-linecap="round"/>
-  <path d="M40 452c36-28 72-28 108 0s72 28 108 0 72-28 108 0 72 28 108 0" fill="none" stroke="#cfeff2" stroke-width="22" stroke-linecap="round"/>
+  <circle cx="256" cy="248" r="118" fill="#1f4d3a"/>
+  <path d="M139 266 q29 -26 58 0 t58 0 t58 0 t58 0 A118 118 0 0 1 139 266 Z" fill="#3fb5c2"/>
+  <circle cx="303" cy="198" r="26" fill="#e08a2e"/>
+  <circle cx="256" cy="248" r="132" fill="none" stroke="#f5f3ea" stroke-width="30"/>
 </g>
 </svg>

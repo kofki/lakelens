@@ -236,11 +236,9 @@ export default function AboutPage() {
 
             <Section id="estimate" title="How the closure estimate works" icon={<Gauge />}>
               <Card className="space-y-4">
-                <p className="flex flex-wrap items-center gap-2">
-                  <Badge variant="estimate" />
-                  <span className="text-sm text-mocha">
-                    It is an estimate. Parks never publish live capacity, so we score the day instead.
-                  </span>
+                <p className="text-sm text-mocha">
+                  Parks never publish live capacity, so we score the day instead. Treat the time as a
+                  guide, not a guarantee.
                 </p>
                 <p>
                   Each park starts at zero and we add or subtract points for the things that fill springs:
@@ -275,14 +273,14 @@ export default function AboutPage() {
                   <div className="rounded-xl bg-cream p-3">
                     <dt className="text-xs font-bold text-mocha">Score 1 to 2 (possible)</dt>
                     <dd className="mt-1 space-y-1">
-                      <StatusPill level="open" size="sm" estimate />
+                      <StatusPill level="open" size="sm" />
                       <p className="text-xs text-mocha">Still open. We show the time it usually fills.</p>
                     </dd>
                   </div>
                   <div className="rounded-xl bg-cream p-3">
                     <dt className="text-xs font-bold text-mocha">Score 3 or more (likely)</dt>
                     <dd className="mt-1 space-y-1">
-                      <StatusPill level="open" size="sm" estimate />
+                      <StatusPill level="open" size="sm" />
                       <p className="text-xs text-mocha">Open, but go early. It is likely to fill today.</p>
                     </dd>
                   </div>

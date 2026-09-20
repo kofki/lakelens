@@ -27,14 +27,15 @@ const BAR: Record<StatTone, string> = {
 };
 
 /**
- * Stat tile: icon and label, big value, a one-word level, thin meter.
+ * Stat tile: icon and label, big value, a one-word level, thin meter. White so it
+ * reads as a card against the ivory page rather than blending into it.
  * Ivory tile on white cards. The bar is decorative: value + descriptor already carry
  * the meaning in text.
  */
 export function StatTile({ icon, label, value, descriptor, percent, tone = "neutral", footnote, className }: StatTileProps) {
   const pct = percent == null || Number.isNaN(percent) ? null : Math.max(0, Math.min(100, percent));
   return (
-    <div className={cn("flex flex-col gap-1 rounded-tile border border-mist bg-cream p-4", className)}>
+    <div className={cn("flex flex-col gap-1 rounded-tile border border-mist bg-white p-4", className)}>
       <div className="flex items-center gap-2 text-sm font-bold text-mocha">
         <span aria-hidden="true" className="inline-flex shrink-0 text-taupe [&>svg]:size-4">
           {icon}

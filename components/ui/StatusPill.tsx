@@ -6,8 +6,6 @@ import { cn } from "./cn";
 export interface StatusPillProps {
   level: StatusLevel;
   size?: "sm" | "md" | "lg";
-  /** Adds a visible "Estimate" badge inside the pill (never colour alone). */
-  estimate?: boolean;
   className?: string;
 }
 
@@ -30,7 +28,7 @@ const SIZE = {
  * Park status as icon + text + colour. `sm` shows the short label visually and the
  * full label to screen readers.
  */
-export function StatusPill({ level, size = "md", estimate = false, className }: StatusPillProps) {
+export function StatusPill({ level, size = "md", className }: StatusPillProps) {
   const meta = STATUS_META[level];
   const s = SIZE[size];
   const useShort = size === "sm" && meta.shortLabel !== "?";
@@ -52,11 +50,6 @@ export function StatusPill({ level, size = "md", estimate = false, className }: 
         </>
       ) : (
         <span>{meta.label}</span>
-      )}
-      {estimate && (
-        <span className="ml-0.5 rounded-full bg-white/80 px-1.5 py-px text-[0.72em] font-extrabold uppercase tracking-wide text-cocoa">
-          Estimate
-        </span>
       )}
     </span>
   );

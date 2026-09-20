@@ -170,7 +170,7 @@ export function ConditionsCard({ bundle, now }: ConditionsCardProps) {
                 const pop = "pop" in d ? d.pop : d.rainProb;
                 const text = "short_forecast" in d ? d.short_forecast : d.shortForecast;
                 return (
-                  <li key={d.date} className="min-w-14 rounded-xl border border-mist bg-cream px-2 py-1.5 text-center md:min-w-0">
+                  <li key={d.date} className="min-w-14 rounded-xl border border-mist bg-white px-2 py-1.5 text-center md:min-w-0">
                     <p className="text-xs font-extrabold text-cocoa">{d.name}</p>
                     <WeatherGlyph shortForecast={text} className="mx-auto my-0.5 size-4" />
                     <p className="text-sm font-bold text-cocoa">{hi !== null ? `${Math.round(hi)}°` : ""}</p>
@@ -201,7 +201,7 @@ export function ConditionsCard({ bundle, now }: ConditionsCardProps) {
       )}
 
       {uvHours && uvHours.some((v) => v != null) && (
-        <div className="mt-4 rounded-tile border border-mist bg-cream p-4">
+        <div className="mt-4 rounded-tile border border-mist bg-white p-4">
           <p className="text-sm font-bold text-mocha">
             UV through the day
             {uvPeakHour != null && forecast?.uvPeak != null && (

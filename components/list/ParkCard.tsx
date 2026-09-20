@@ -77,7 +77,7 @@ export function ParkCard({ item, selected = false, onSelect }: ParkCardProps) {
               )}
             </p>
             <div className="mt-1.5 flex flex-wrap items-center gap-1.5">
-              <StatusPill level={status.level} size="sm" estimate={status.isEstimate} />
+              <StatusPill level={status.level} size="sm" />
               {reportSummary.sampleCount > 0 && <Badge variant="sample" />}
             </div>
           </div>

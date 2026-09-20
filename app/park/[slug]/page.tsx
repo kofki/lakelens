@@ -75,7 +75,7 @@ export default async function ParkPage({ params }: Params) {
   // an empty anchor on a park we know less about.
   const sections: SectionLink[] = [
     { id: "status", label: "Status" },
-    ...(bundle.prediction ? [{ id: "prediction", label: "Estimate" }] : []),
+    ...(bundle.prediction ? [{ id: "prediction", label: "Crowds" }] : []),
     ...(alerts.length ? [{ id: "alerts", label: "Alerts" }] : []),
     ...(showBackups ? [{ id: "backups", label: "Backups" }] : []),
     { id: "safety", label: "Safety" },

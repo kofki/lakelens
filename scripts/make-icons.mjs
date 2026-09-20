@@ -1,6 +1,6 @@
 /**
- * Generates the LakeLens app icons from a simple SVG mark (water drop + leaf + waves)
- * in the "spring forest" palette (app/globals.css). Keep components/ui/Logo.tsx in sync.
+ * Generates the LakeLens app icons from the SVG mark: a lens looking at water.
+ * Palette is the "spring forest" set in app/globals.css. Keep components/ui/Logo.tsx in sync.
  *   node scripts/make-icons.mjs
  * Writes: public/icons/logo.svg, icon-192.png, icon-512.png, icon-512-maskable.png,
  *         app/icon.png (64px favicon), app/apple-icon.png (180px, full bleed).
@@ -14,19 +14,23 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const ICONS_DIR = path.join(ROOT, "public", "icons");
 const APP_DIR = path.join(ROOT, "app");
 
-const IVORY = "#f5f3ea"; // --color-cream
-const AMBER = "#e08a2e"; // --color-sunset
-const MOSS = "#7a9a5b"; // --color-moss
-const TEAL = "#3fb5c2"; // --color-lagoon
-const TEAL_LIGHT = "#cfeff2"; // spring-water tint (map water)
+const FOREST = "#1f4d3a"; // --color-brown (the tile)
+const IVORY = "#f5f3ea"; // --color-cream (the lens ring)
+const AMBER = "#e08a2e"; // --color-sunset (the sun)
+const TEAL = "#3fb5c2"; // --color-lagoon (the water)
 
-/** The mark itself (drop + leaf highlight + two waves) on a 512 x 512 canvas. */
+/**
+ * The mark: a lens looking at water.
+ *
+ * The old mark was an amber droplet, which read as heat rather than water and vanished on
+ * a light browser tab because its background was ivory. This one is a dark tile so it holds
+ * its shape anywhere, and the three shapes are legible at 16 px: ring, waterline, sun.
+ */
 const ART = `
-  <path d="M256 64c-48 70-100 130-100 192a100 100 0 0 0 200 0c0-62-52-122-100-192z" fill="${AMBER}"/>
-  <path d="M234 308c-12-48 18-92 66-102c4 48-18 92-66 102z" fill="${MOSS}"/>
-  <path d="M240 302l56-92" fill="none" stroke="${IVORY}" stroke-width="7" stroke-linecap="round"/>
-  <path d="M40 400c36-28 72-28 108 0s72 28 108 0 72-28 108 0 72 28 108 0" fill="none" stroke="${TEAL}" stroke-width="26" stroke-linecap="round"/>
-  <path d="M40 452c36-28 72-28 108 0s72 28 108 0 72-28 108 0 72 28 108 0" fill="none" stroke="${TEAL_LIGHT}" stroke-width="22" stroke-linecap="round"/>
+  <circle cx="256" cy="248" r="118" fill="${FOREST}"/>
+  <path d="M139 266 q29 -26 58 0 t58 0 t58 0 t58 0 A118 118 0 0 1 139 266 Z" fill="${TEAL}"/>
+  <circle cx="303" cy="198" r="26" fill="${AMBER}"/>
+  <circle cx="256" cy="248" r="132" fill="none" stroke="${IVORY}" stroke-width="30"/>
 `;
 
 /**
@@ -37,7 +41,7 @@ const ART = `
 function svg({ rounded, scale }) {
   const offset = (512 * (1 - scale)) / 2;
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="LakeLens">
-  <rect width="512" height="512" rx="${rounded ? 112 : 0}" fill="${IVORY}"/>
+  <rect width="512" height="512" rx="${rounded ? 112 : 0}" fill="${FOREST}"/>
   <g transform="translate(${offset} ${offset}) scale(${scale})">${ART}</g>
 </svg>
 `;

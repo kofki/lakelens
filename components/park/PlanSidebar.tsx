@@ -24,19 +24,19 @@ const PREDICTION_LINE: Record<Prediction["level"], string> = {
   closed: "Closed today",
 };
 
-/** One plain-language line under the status pill: the estimate when we have one, else the status description. */
-function summaryLine(bundle: ParkBundle): { text: string; estimate: boolean } {
+/** One plain-language line under the status pill: the forecast when we have one, else the status description. */
+function summaryLine(bundle: ParkBundle): string {
   const { status, prediction, park } = bundle;
   if (status.source === "alert" || status.source === "seasonal" || status.source === "confirmed_reports") {
-    return { text: STATUS_META[status.level].description, estimate: false };
+    return STATUS_META[status.level].description;
   }
   if (park.coverage_tier === "deep" && prediction) {
     if (prediction.predictedTimeLabel && prediction.level !== "none") {
-      return { text: `May reach capacity ${prediction.predictedTimeLabel}`, estimate: true };
+      return `May reach capacity ${prediction.predictedTimeLabel}`;
     }
-    return { text: PREDICTION_LINE[prediction.level], estimate: true };
+    return PREDICTION_LINE[prediction.level];
   }
-  return { text: STATUS_META[status.level].description, estimate: status.isEstimate };
+  return STATUS_META[status.level].description;
 }
 
 /**
@@ -62,11 +62,8 @@ export function PlanSidebar({ bundle, className }: PlanSidebarProps) {
     <aside aria-label="Plan your visit" className={className}>
       <Card as="section" className="space-y-3">
         <h2 className="text-xs font-extrabold uppercase tracking-wide text-taupe">Plan your visit</h2>
-        <StatusPill level={status.level} size="lg" estimate={status.isEstimate} />
-        <p className="text-sm font-bold text-cocoa">
-          {line.text}
-          {line.estimate && <Badge variant="estimate" className="ml-1.5 align-middle" />}
-        </p>
+        <StatusPill level={status.level} size="lg" />
+        <p className="text-sm font-bold text-cocoa">{line}</p>
         <LastUpdated at={status.updatedAt} source={STATUS_SOURCE_TEXT[status.source]} prefix="Status updated" />
 
         <div className="space-y-2 pt-1">

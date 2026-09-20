@@ -1,6 +1,5 @@
 import { CalendarClock, ChevronDown } from "lucide-react";
 import type { Prediction } from "@/lib/types";
-import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
 import { InfoSheet } from "@/components/ui/InfoSheet";
 import { Section } from "@/components/ui/Section";
@@ -48,10 +47,7 @@ export function PredictionCard({ prediction }: PredictionCardProps) {
       title="Will it fill up?"
       icon={<CalendarClock />}
       action={
-        <span className="flex items-center gap-1">
-          <Badge variant="estimate" />
-          <InfoSheet label="How the closure estimate works" title="How the estimate works" entries={HOW_IT_WORKS} />
-        </span>
+        <InfoSheet label="How this is worked out" title="How this is worked out" entries={HOW_IT_WORKS} />
       }
     >
       <Card className="space-y-3">

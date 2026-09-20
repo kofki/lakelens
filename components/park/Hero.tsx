@@ -66,7 +66,7 @@ export function Hero({ park, status }: HeroProps) {
 
         {status && (
           <div className="hidden shrink-0 md:flex">
-            <StatusPill level={status.level} size="lg" estimate={status.isEstimate} />
+            <StatusPill level={status.level} size="lg" />
           </div>
         )}
       </div>

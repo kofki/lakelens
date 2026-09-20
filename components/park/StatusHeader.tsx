@@ -3,7 +3,6 @@ import { STATUS_META } from "@/lib/status";
 import {formatLocalTime, relativeTime} from "@/lib/freshness";
 import { LastUpdated } from "@/components/ui/LastUpdated";
 import { StatusPill } from "@/components/ui/StatusPill";
-import { Badge } from "@/components/ui/Badge";
 import {STATUS_SOURCE_TEXT, newestIso} from "./format";
 
 export type { SectionLink } from "./SectionTabs";
@@ -49,15 +48,14 @@ export function StatusHeader({ bundle, now }: StatusHeaderProps) {
         Status
       </h2>
       <div className="flex flex-wrap items-center gap-2 md:hidden">
-        <StatusPill level={status.level} size="lg" estimate={status.isEstimate} />
+        <StatusPill level={status.level} size="lg" />
       </div>
 
       <p className="text-base text-cocoa md:text-lg md:font-bold">{meta.description}</p>
 
       {status.predictedTime && status.level === "open" && (
         <p className="text-sm font-bold text-cocoa">
-          Usually fills around {formatLocalTime(status.predictedTime)}. Arrive earlier to be safe.{" "}
-          <Badge variant="estimate" className="ml-1 align-middle" />
+          Usually fills around {formatLocalTime(status.predictedTime)}. Arrive earlier to be safe.
         </p>
       )}
 
