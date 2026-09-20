@@ -1,4 +1,4 @@
-import { Biohazard, CloudSun, FlaskConical, Sun, Thermometer, Waves } from "lucide-react";
+import { Biohazard, CloudSun, FlaskConical, Sun, Thermometer } from "lucide-react";
 import type { ParkWithStatus } from "@/lib/types";
 import { describeWaterTemp } from "@/lib/plainLanguage";
 import type { StatRowItem } from "@/components/ui/StatRow";
@@ -51,12 +51,6 @@ export function conditionStatItems(item: ParkWithStatus): StatRowItem[] {
       icon: <Thermometer aria-hidden="true" focusable="false" />,
       label: temp.typical && !noaaTemp ? "Water (typical)" : "Water",
       value: `${waterF}°F`,
-    });
-  } else if (item.noaa?.nextTide) {
-    items.push({
-      icon: <Waves aria-hidden="true" focusable="false" />,
-      label: "Next tide",
-      value: `${item.noaa.nextTide.type === "H" ? "High" : "Low"} ${item.noaa.nextTide.valueFt.toFixed(1)} ft`,
     });
   }
   return items.slice(0, 3);

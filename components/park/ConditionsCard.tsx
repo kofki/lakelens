@@ -1,14 +1,13 @@
-import { Biohazard, CloudRain, CloudLightning, Droplets, FlaskConical, Sun, Thermometer, Waves, Wind } from "lucide-react";
-import type { NoaaPayload, NoaaReading, ParkBundle, UsgsReading } from "@/lib/types";
+import { Biohazard, CloudRain, Droplets, FlaskConical, Sun, Thermometer, Waves, Wind } from "lucide-react";
+import type {NoaaPayload, NoaaReading, ParkBundle} from "@/lib/types";
 import { describeWaterTemp } from "@/lib/plainLanguage";
 import { formatLocalTime, relativeTime } from "@/lib/freshness";
 import {
   beachWaterLevel,
   feelsLikeLevel,
   humidityLevel,
-  rainLevel,
+  precipitationLevel,
   redTideLevel,
-  thunderLevel,
   uvLevel,
   waterQualityLevel,
   waterTempLevel,
@@ -24,15 +23,6 @@ import type { ReactNode } from "react";
 export interface ConditionsCardProps {
   bundle: ParkBundle;
   now: Date;
-}
-
-function pickReading(readings: UsgsReading[], parameter: UsgsReading["parameter"], preferredSites: (string | null)[]): UsgsReading | null {
-  for (const site of preferredSites) {
-    if (!site) continue;
-    const r = readings.find((x) => x.site === site && x.parameter === parameter);
-    if (r) return r;
-  }
-  return readings.find((x) => x.parameter === parameter) ?? null;
 }
 
 function pickNoaa(noaa: NoaaPayload | null | undefined, parameter: NoaaReading["parameter"]): NoaaReading | null {
@@ -72,14 +62,8 @@ const hourLabel = (h: number) => `${((h + 11) % 12) + 1} ${h < 12 ? "AM" : "PM"}
 
 export function ConditionsCard({ bundle, now }: ConditionsCardProps) {
   const { park, weather, usgs, noaa, forecast } = bundle;
-  const readings = usgs?.readings ?? [];
-  const sites = [park.usgs_site_id, park.river_gauge_site_id];
-
   const temp = describeWaterTemp(usgs, park);
   const noaaTemp = pickNoaa(noaa, "water_temp");
-  const noaaLevel = pickNoaa(noaa, "water_level");
-  const usgsLevel = pickReading(readings, "63160", sites) ?? pickReading(readings, "00065", sites);
-  const level = usgsLevel && !usgsLevel.stale ? usgsLevel : null;
 
   const waterF = noaaTemp ? Math.round(noaaTemp.value) : temp.valueF;
   const uv = forecast?.nowUv ?? forecast?.uvPeak ?? null;
@@ -107,20 +91,15 @@ export function ConditionsCard({ bundle, now }: ConditionsCardProps) {
       !forecast?.beachWaterQuality && forecast?.waterQuality ? forecast.waterQuality.label : null,
       forecast?.beachWaterQuality ? null : waterQualityLevel(forecast?.waterQuality),
       !forecast?.beachWaterQuality && forecast?.waterQuality ? `sampled ${forecast.waterQuality.distanceKm} km away` : null),
-    tile("thunder", <CloudLightning aria-hidden="true" focusable="false" />, "Thunder",
-      forecast?.nowThunderProb != null ? `${Math.round(forecast.nowThunderProb)}%` : null,
-      thunderLevel(forecast?.nowThunderProb)),
-    tile("rain", <CloudRain aria-hidden="true" focusable="false" />, "Rain today",
-      rain != null ? `${rain}%` : null, rainLevel(rain)),
+    // Rain and thunder were two tiles answering one question. The value is the rain
+    // probability; the word and the colour escalate when there are storms in it.
+    tile("precip", <CloudRain aria-hidden="true" focusable="false" />, "Rain & storms",
+      rain != null ? `${rain}%` : forecast?.nowThunderProb != null ? `${Math.round(forecast.nowThunderProb)}%` : null,
+      precipitationLevel(rain, forecast?.nowThunderProb)),
     tile("wind", <Wind aria-hidden="true" focusable="false" />, "Wind",
       forecast?.nowWindMph != null ? `${Math.round(forecast.nowWindMph)} mph` : null, windLevel(forecast?.nowWindMph)),
     tile("humidity", <Droplets aria-hidden="true" focusable="false" />, "Humidity",
       forecast?.nowHumidity != null ? `${Math.round(forecast.nowHumidity)}%` : null, humidityLevel(forecast?.nowHumidity)),
-    tile("tide", <Waves aria-hidden="true" focusable="false" />, "Next tide",
-      noaa?.nextTide ? `${noaa.nextTide.type === "H" ? "High" : "Low"} ${noaa.nextTide.valueFt.toFixed(1)} ft` : null,
-      noaa?.nextTide ? { label: formatLocalTime(noaa.nextTide.time), tone: "neutral", percent: null } : null),
-    tile("level", <Waves aria-hidden="true" focusable="false" />, "Water level",
-      noaaLevel ? `${noaaLevel.value.toFixed(1)} ft` : level ? `${level.value.toFixed(2)} ft` : null, null),
   ].filter((t): t is Tile => t !== null);
 
   const daily = forecast?.daily ?? weather?.daily ?? [];

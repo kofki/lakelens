@@ -3,7 +3,7 @@ import {
   feelsLikeLevel,
   humidityLevel,
   rainLevel,
-  thunderLevel,
+  precipitationLevel,
   uvLevel,
   waterQualityLevel,
   waterTempLevel,
@@ -28,7 +28,7 @@ describe("level ramps", () => {
   });
 
   it("every ramp returns null rather than inventing a reading", () => {
-    for (const fn of [uvLevel, feelsLikeLevel, humidityLevel, windLevel, rainLevel, thunderLevel, waterTempLevel]) {
+    for (const fn of [uvLevel, feelsLikeLevel, humidityLevel, windLevel, rainLevel, waterTempLevel]) {
       expect(fn(null)).toBeNull();
       expect(fn(undefined)).toBeNull();
       expect(fn(Number.NaN)).toBeNull();
@@ -49,10 +49,25 @@ describe("level ramps", () => {
     expect(feelsLikeLevel(103)?.label).toBe("Extreme caution");
   });
 
-  it("thunderLevel warns well below half, because the rule is to leave at first thunder", () => {
-    expect(thunderLevel(10)?.tone).toBe("good");
-    expect(thunderLevel(20)?.tone).toBe("warn");
-    expect(thunderLevel(40)?.tone).toBe("bad");
+  it("precipitationLevel escalates on thunder well below half, because the rule is to leave at first rumble", () => {
+    expect(precipitationLevel(10, 5)?.label).toBe("Dry");
+    expect(precipitationLevel(10, 20)).toMatchObject({ label: "Storms possible", tone: "warn" });
+    expect(precipitationLevel(10, 40)).toMatchObject({ label: "Storms likely", tone: "bad" });
+  });
+
+  it("precipitationLevel keeps the rain probability as the number on screen", () => {
+    expect(precipitationLevel(70, 40)?.percent).toBe(70);
+    expect(precipitationLevel(20, 5)).toMatchObject({ label: "Dry", percent: 20 });
+    expect(precipitationLevel(45, 0)?.label).toBe("Showers");
+    expect(precipitationLevel(80, 0)?.label).toBe("Wet");
+  });
+
+  it("precipitationLevel works when only one of the two is known", () => {
+    expect(precipitationLevel(null, 50)?.label).toBe("Storms likely");
+    expect(precipitationLevel(null, 2)?.label).toBe("Storms unlikely");
+    expect(precipitationLevel(40, null)?.label).toBe("Showers");
+    expect(precipitationLevel(null, null)).toBeNull();
+    expect(precipitationLevel(Number.NaN, Number.NaN)).toBeNull();
   });
 
   it("spring water reads as cold", () => {

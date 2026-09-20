@@ -14,6 +14,7 @@ import {
 import type {Accessibility} from "@/lib/types";
 import { isAccessibleEntry } from "@/lib/distance";
 import { Badge } from "@/components/ui/Badge";
+import { SERVICE_ANIMAL_LABEL, summarizeServiceAnimals } from "@/lib/accessibility";
 import { Card } from "@/components/ui/Card";
 import { Section } from "@/components/ui/Section";
 import {ENTRY_TYPE_TEXT, SURFACE_TEXT, WATER_ACCESS_TEXT, metresLabel} from "./format";
@@ -44,6 +45,13 @@ export function AccessibilityCard({ accessibility }: AccessibilityCardProps) {
   const known = (value: string | null | undefined): string | null => (value && value !== "Unknown" ? value : null);
   const yesNo = (v: boolean | null | undefined): string | null => (v == null ? null : v ? "Yes" : "No");
 
+  // The raw note is a quotation from the park's page, which is right for provenance and
+  // wrong for a value column. Whether the animal can follow you into the water is the part
+  // that matters, so it gets its own answer rather than a footnote on "Yes".
+  const animals = summarizeServiceAnimals(a.service_animals_note);
+  const serviceAnimals = animals ? SERVICE_ANIMAL_LABEL[animals] : null;
+
+
   const rows: RowDef[] = (
     [
       { icon: WavesLadder, label: "Water access for wheelchair users", value: known(WATER_ACCESS_TEXT[a.water_access]) },
@@ -55,8 +63,9 @@ export function AccessibilityCard({ accessibility }: AccessibilityCardProps) {
       { icon: AccessibilityIcon, label: "Water wheelchair loaner", value: yesNo(a.wheelchair_loaner) },
       { icon: Hand, label: "Handrails at the entry", value: yesNo(a.handrails) },
       { icon: Sun, label: "Shade near the water", value: yesNo(a.shade) },
-      { icon: Ruler, label: "Depth at the entry", value: known(a.depth_at_entry_note) },
-      { icon: Dog, label: "Service animals", value: known(a.service_animals_note) },
+      // "Depth at the entry" is gone: the curated notes under it describe chair lifts and
+      // boardwalks, not a depth, and that ground is already covered by "How you get in".
+      { icon: Dog, label: "Service animals", value: serviceAnimals },
     ] as { icon: RowDef["icon"]; label: string; value: string | null }[]
   )
     .filter((r): r is RowDef => r.value !== null);

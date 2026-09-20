@@ -70,14 +70,29 @@ export function rainLevel(pct: number | null | undefined): Level | null {
 }
 
 /**
- * Chance of thunder. Florida storms build fast and the rule is to leave the water at the
- * first rumble, so this crosses into a warning well below the halfway mark.
+ * Rain and thunder as one reading.
+ *
+ * They were two tiles asking the same question, and a visitor reads them together anyway:
+ * a 50 % chance of rain means something different with storms in it. The meter follows the
+ * rain probability, because that is the number on screen, but the WORD and the colour
+ * escalate on thunder. Florida storms build fast and the rule is to leave the water at the
+ * first rumble, so thunder crosses into a warning well below the halfway mark.
  */
-export function thunderLevel(pct: number | null | undefined): Level | null {
-  if (pct == null || !Number.isFinite(pct)) return null;
-  if (pct < 15) return { label: "Unlikely", tone: "good", percent: pct };
-  if (pct < 35) return { label: "Possible", tone: "warn", percent: pct };
-  return { label: "Likely", tone: "bad", percent: pct };
+export function precipitationLevel(
+  rainPct: number | null | undefined,
+  thunderPct: number | null | undefined,
+): Level | null {
+  const rain = rainPct != null && Number.isFinite(rainPct) ? rainPct : null;
+  const thunder = thunderPct != null && Number.isFinite(thunderPct) ? thunderPct : null;
+  if (rain === null && thunder === null) return null;
+
+  const percent = rain ?? thunder ?? 0;
+  if (thunder !== null && thunder >= 35) return { label: "Storms likely", tone: "bad", percent };
+  if (thunder !== null && thunder >= 15) return { label: "Storms possible", tone: "warn", percent };
+  if (rain === null) return { label: "Storms unlikely", tone: "good", percent };
+  if (rain < 30) return { label: "Dry", tone: "good", percent };
+  if (rain < 60) return { label: "Showers", tone: "ok", percent };
+  return { label: "Wet", tone: "warn", percent };
 }
 
 /** Spring water sits near 72 °F all year, cold enough to tire a swimmer. */
