@@ -251,7 +251,11 @@ describe("data/*.json validate against the schemas", () => {
       // licence localised and has no share-alike term either. What must never appear is an
       // SA suffix, and that is asserted separately so the version pattern cannot quietly
       // let one through.
-      expect(credit.license, slug).toMatch(/^(Public domain|CC0|CC BY \d\.\d( [a-z]{2})?|No restrictions)$/i);
+      // "Attribution" is what Commons calls a CC BY work imported from Flickr, and
+      // isAllowedLicence already accepts it; the two lists had drifted apart.
+      expect(credit.license, slug).toMatch(
+        /^(Public domain|CC0|CC BY \d\.\d( [a-z]{2})?|No restrictions|Attribution)$/i,
+      );
       expect(credit.license, slug).not.toMatch(/\bsa\b/i);
       // A harvested credit points at a Commons thumbnail, which is not in this repo. Only a
       // local path makes a claim about a file we ship.

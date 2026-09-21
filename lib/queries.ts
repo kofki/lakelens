@@ -16,6 +16,7 @@ import { summarizeReports } from "@/lib/reportStatus";
 import { getParkStatus } from "@/lib/parkStatus";
 import { cardStatsFor } from "@/lib/cardStats";
 import { compactPhotoUrl } from "@/lib/photoUrl";
+import { levelIndex, nearestToCentre, roundCoord, type Bbox, type MapPointsResult } from "@/lib/mapPoints";
 import { suggestBackups } from "@/lib/backups";
 import {
   DEFAULT_FILTERS,
@@ -249,24 +250,69 @@ export async function selectAll<T>(
   }
 }
 
-async function loadWorld(db: Db, now: Date): Promise<World> {
+export interface WorldScope {
+  /** Only parks inside this viewport: [west, south, east, north]. */
+  bbox?: Bbox;
+  /** Hard cap on parks loaded, applied after the viewport. */
+  limit?: number;
+}
+
+/**
+ * Load the world, optionally only the part of it inside a viewport.
+ *
+ * Unscoped, this reads every park and every reading attached to one. That was the only
+ * mode for a long time and it stopped being viable at 22,679 parks: the map alone would
+ * have shipped 1.95 MB gzipped. A viewport-scoped load reads the parks in the box first,
+ * then fetches only the rows belonging to those parks, which keeps a map pan cheap however
+ * large the country gets.
+ */
+async function loadWorld(db: Db, now: Date, scope: WorldScope = {}): Promise<World> {
   const since = new Date(now.getTime() - REPORT_WINDOW_MS).toISOString();
+
+  // The parks come first when scoped, because their ids are what narrows everything else.
+  const scopedParks = scope.bbox
+    ? await selectAll<Park>(
+        "parks",
+        (a, b) => {
+          const [west, south, east, north] = scope.bbox!;
+          return db
+            .from("parks")
+            .select(WORLD_PARK_COLUMNS)
+            .gte("lat", south)
+            .lte("lat", north)
+            .gte("lng", west)
+            .lte("lng", east)
+            .order("name")
+            .range(a, b);
+        },
+        { required: true },
+      )
+    : null;
+  const scopedIds = scopedParks?.slice(0, scope.limit ?? scopedParks.length).map((p) => p.id) ?? null;
+  /** Narrow a per-park table to the scope, or leave it alone when unscoped. */
+  const forScope = <T>(q: T): T =>
+    scopedIds ? ((q as { in: (c: string, v: string[]) => T }).in("park_id", scopedIds) as T) : q;
+
   // Every table keyed by park can now pass a thousand rows. The calendar ones cannot, and
   // are paged anyway rather than leaving a trap for whoever adds the next decade.
   const [parks, accRows, latestRows, alertRows, reportRows, confRows, holRows, lwRows, evRows, fcRows, rsRows] =
     await Promise.all([
-      selectAll<Park>(
-        "parks",
-        (a, b) => db.from("parks").select(WORLD_PARK_COLUMNS).order("name").range(a, b),
-        { required: true },
-      ),
-      selectAll<Accessibility>("accessibility", (a, b) => db.from("accessibility").select("*").range(a, b)),
+      scopedParks
+        ? Promise.resolve(scopedIds ? scopedParks.slice(0, scopedIds.length) : scopedParks)
+        : selectAll<Park>(
+            "parks",
+            (a, b) => db.from("parks").select(WORLD_PARK_COLUMNS).order("name").range(a, b),
+            { required: true },
+          ),
+      selectAll<Accessibility>("accessibility", (a, b) => forScope(db.from("accessibility").select("*")).range(a, b)),
       selectAll<LatestRow>("latest_conditions", (a, b) =>
-        db.from("latest_conditions").select("park_id,source,payload,fetched_at").range(a, b),
+        forScope(db.from("latest_conditions").select("park_id,source,payload,fetched_at")).range(a, b),
       ),
-      selectAll<ParkAlert>("park_alerts", (a, b) => db.from("park_alerts").select("*").eq("active", true).range(a, b)),
+      selectAll<ParkAlert>("park_alerts", (a, b) => forScope(db.from("park_alerts").select("*").eq("active", true)).range(a, b)),
       selectAll<Report>("reports", (a, b) =>
-        db.from("reports").select("*").gte("created_at", since).order("created_at", { ascending: false }).range(a, b),
+        forScope(db.from("reports").select("*").gte("created_at", since))
+          .order("created_at", { ascending: false })
+          .range(a, b),
       ),
       selectAll<ReportConfirmation>("report_confirmations", (a, b) =>
         db.from("report_confirmations").select("*").gte("created_at", since).range(a, b),
@@ -277,9 +323,9 @@ async function loadWorld(db: Db, now: Date): Promise<World> {
         db.from("calendar_events").select("name,start_date,end_date,weight").range(a, b),
       ),
       selectAll<ParkForecastRow>("park_forecast", (a, b) =>
-        db.from("park_forecast").select(FORECAST_LIST_COLUMNS).range(a, b),
+        forScope(db.from("park_forecast").select(FORECAST_LIST_COLUMNS)).range(a, b),
       ),
-      selectAll<ReviewStatsRow>("park_review_stats", (a, b) => db.from("park_review_stats").select("*").range(a, b)),
+      selectAll<ReviewStatsRow>("park_review_stats", (a, b) => forScope(db.from("park_review_stats").select("*")).range(a, b)),
     ]);
 
   const accessibility = new Map<string, Accessibility>();
@@ -460,6 +506,39 @@ export async function getParksWithStatus(now: Date = new Date()): Promise<ParkWi
   } catch (err) {
     warn("getParksWithStatus", err);
     return [];
+  }
+}
+
+/**
+ * Pins for one viewport.
+ *
+ * The map's own query. It loads only the parks in the box and only the readings attached to
+ * them, then hands back four values per park. Everything else about a park arrives when one
+ * is selected, which is the only moment it is read.
+ */
+export async function getMapPoints(bbox: Bbox, now: Date = new Date()): Promise<MapPointsResult> {
+  try {
+    const db = createPublicClient();
+    const world = await loadWorld(db, now, { bbox });
+    const all = assembleAll(world, now);
+    const kept = nearestToCentre(
+      all.map((item) => ({ item, lat: item.park.lat, lng: item.park.lng })),
+      bbox,
+    );
+    return {
+      points: kept.map(({ item }) => [
+        item.park.slug,
+        item.park.name,
+        roundCoord(item.park.lat),
+        roundCoord(item.park.lng),
+        levelIndex(item.status.level),
+      ]),
+      total: all.length,
+      truncated: kept.length < all.length,
+    };
+  } catch (err) {
+    warn("getMapPoints", err);
+    return { points: [], total: 0, truncated: false };
   }
 }
 
