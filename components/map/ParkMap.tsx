@@ -29,17 +29,19 @@ import {
 import { useWebGL2 } from "./useWebGL2";
 import { MapSkeleton } from "./MapSkeleton";
 import { MapUnavailable } from "./MapUnavailable";
-import { ParkMarker } from "./ParkMarker";
+import { PointMarker } from "./PointMarker";
 import { PinSync } from "./PinSync";
 import { ClusterMarker } from "./ClusterMarker";
 import {
   CLUSTER_MAX_ZOOM,
-  buildIndex,
+  buildPointIndex,
   pinsFor,
   type ClusterBubble,
   type MapPin,
   type ParkIndex,
 } from "./clusters";
+import { useMapPoints } from "./useMapPoints";
+
 
 export interface ParkMapProps {
   parks: ParkWithStatus[];
@@ -107,8 +109,15 @@ function ParkMapInner({
   const interactedRef = useRef(false);
 
   // Fit whatever is on the map, so a park outside any one region is still on screen.
-  const parksById = useMemo(() => new Map(parks.map((item) => [item.park.id, item])), [parks]);
-  const index: ParkIndex = useMemo(() => buildIndex(parks), [parks]);
+  /**
+   * Pins come from the viewport, not from the page.
+   *
+   * `parks` is still the list beside the map, which is scoped and small. The pins are every
+   * park in view, which at 22,679 nationwide cannot travel in the document.
+   */
+  const { points, load } = useMapPoints();
+  const pointBySlug = useMemo(() => new Map(points.map((p) => [p[0], p])), [points]);
+  const index: ParkIndex = useMemo(() => buildPointIndex(points), [points]);
 
   const parkBounds = useMemo(
     () => boundsForPoints(parks.map((item) => item.park)) ?? CONTINENTAL_US_BOUNDS,
@@ -136,18 +145,18 @@ function ParkMapInner({
   // Centre the selected park in the visible area.
   useEffect(() => {
     if (!selectedId) return;
-    const item = parksRef.current.find((p) => p.park.id === selectedId);
+    const point = pointBySlug.get(selectedId);
     const map = mapRef.current;
-    if (!item || !map) return;
+    if (!point || !map) return;
     map.easeTo({
-      center: [item.park.lng, item.park.lat],
+      center: [point[3], point[2]],
       // Past the clustering zoom, so a park picked from the list is always its own pin
       // rather than a number the reader then has to hunt through.
       zoom: Math.max(map.getZoom(), CLUSTER_MAX_ZOOM + 1),
       duration: prefersReducedMotion() ? 0 : 450,
       essential: true,
     });
-  }, [selectedId]);
+  }, [selectedId, pointBySlug]);
 
   /**
    * Recompute what is on screen after anything that moves the map.
@@ -314,18 +323,18 @@ function ParkMapInner({
         onZoomEnd={handleZoomEnd}
         onError={handleError}
       >
-        <PinSync index={index} onPins={setPins} onReady={handleReady} />
+        <PinSync index={index} onPins={setPins} onReady={handleReady} onViewport={load} />
         {pins.map((pin) => {
           if (pin.kind === "cluster") {
             return <ClusterMarker key={pin.key} bubble={pin} onExpand={expandCluster} />;
           }
-          const item = parksById.get(pin.parkId);
-          if (!item) return null;
+          const point = pointBySlug.get(pin.parkId);
+          if (!point) return null;
           return (
-            <ParkMarker
+            <PointMarker
               key={pin.key}
-              item={item}
-              selected={item.park.id === selectedId}
+              point={point}
+              selected={point[0] === selectedId}
               showLabel={showLabels}
               onSelect={onSelect}
             />

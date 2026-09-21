@@ -20,6 +20,7 @@
  */
 import Supercluster from "supercluster";
 import type { ParkWithStatus } from "@/lib/types";
+import { levelFromIndex, type MapPoint } from "@/lib/mapPoints";
 
 /**
  * Radius in pixels within which pins merge. 56 is a little wider than a marker, so two
@@ -45,6 +46,39 @@ export function toFeatureCollection(parks: ParkWithStatus[]): GeoJSON.FeatureCol
       geometry: { type: "Point", coordinates: [item.park.lng, item.park.lat] },
     })),
   };
+}
+
+/**
+ * The same thing from the map's own compact points.
+ *
+ * The map no longer receives whole parks, so this is the shape clustering actually runs on
+ * now. The slug stands in for the id: it is what the marker links to and what the preview
+ * fetches by, and it compresses far better than a uuid.
+ */
+export function pointsToFeatureCollection(
+  points: readonly MapPoint[],
+): GeoJSON.FeatureCollection<GeoJSON.Point, ParkFeatureProps> {
+  return {
+    type: "FeatureCollection",
+    features: points.map(([slug, , lat, lng, level]) => ({
+      type: "Feature",
+      properties: { id: slug, level: levelFromIndex(level) },
+      geometry: { type: "Point", coordinates: [lng, lat] },
+    })),
+  };
+}
+
+/** Build the index straight from map points. */
+export function buildPointIndex(points: readonly MapPoint[]): ParkIndex {
+  const index: ParkIndex = new Supercluster({
+    radius: CLUSTER_RADIUS,
+    maxZoom: CLUSTER_MAX_ZOOM,
+    minPoints: 2,
+    map: CLUSTER_PROPERTIES.closed.map,
+    reduce: CLUSTER_PROPERTIES.closed.reduce,
+  });
+  index.load(pointsToFeatureCollection(points).features as never[]);
+  return index;
 }
 
 /**

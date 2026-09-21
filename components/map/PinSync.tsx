@@ -8,6 +8,8 @@ import { pinsFor, type MapPin, type ParkIndex } from "./clusters";
 export interface PinSyncProps {
   index: ParkIndex;
   onPins: (pins: MapPin[]) => void;
+  /** Called with the viewport whenever it changes, so the pins can be fetched for it. */
+  onViewport?: (bbox: [number, number, number, number]) => void;
   /** Run once per map: brand paint, padding, the initial fit. */
   onReady: (map: MaplibreMap) => void;
 }
@@ -26,7 +28,7 @@ export interface PinSyncProps {
  *
  * Renders nothing.
  */
-export function PinSync({ index, onPins, onReady }: PinSyncProps) {
+export function PinSync({ index, onPins, onReady, onViewport }: PinSyncProps) {
   const { current } = useMap();
   /**
    * Resolved during render, not inside the effect.
@@ -45,7 +47,9 @@ export function PinSync({ index, onPins, onReady }: PinSyncProps) {
     const sync = () => {
       try {
         const b = map.getBounds();
-        onPins(pinsFor(index, [b.getWest(), b.getSouth(), b.getEast(), b.getNorth()], map.getZoom()));
+        const bbox: [number, number, number, number] = [b.getWest(), b.getSouth(), b.getEast(), b.getNorth()];
+        onViewport?.(bbox);
+        onPins(pinsFor(index, bbox, map.getZoom()));
       } catch {
         // Mid-resize, no bounds yet. The next event asks again.
       }
@@ -82,7 +86,7 @@ export function PinSync({ index, onPins, onReady }: PinSyncProps) {
       map.off("moveend", sync);
       map.off("zoomend", sync);
     };
-  }, [map, index, onPins, onReady]);
+  }, [map, index, onPins, onReady, onViewport]);
 
   return null;
 }
