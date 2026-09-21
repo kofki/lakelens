@@ -47,12 +47,24 @@ import {
   type SeedData,
 } from "@/scripts/build-seed";
 
-const data: SeedData = loadSeedData(REPO_ROOT);
-const bySlug = Object.fromEntries(data.deepParks.map((p) => [p.slug, p]));
+/**
+ * The seed inputs are no longer in the repository.
+ *
+ * data/ is 748 MB of harvest output and cache, and the database is the source of truth for
+ * what is published. It stays on the machine that harvests, so these tests run there and
+ * skip everywhere else rather than failing a deploy over files that are deliberately absent.
+ */
+const HAS_SEED_DATA = existsSync(resolve(REPO_ROOT, "data/parks.deep.json"));
+const withData = HAS_SEED_DATA ? describe : describe.skip;
+
+const data: SeedData = HAS_SEED_DATA ? loadSeedData(REPO_ROOT) : ({ parks: [], deepParks: [], extraParks: [], basicParks: [], photos: {}, events: [], accessibility: {}, lots: [], alerts: [], sampleReports: [], sampleReviews: [], holidays: [], longWeekends: [], gauges: {}, warnings: [] } as unknown as SeedData);
+const bySlug = Object.fromEntries((data.deepParks ?? []).map((p) => [p.slug, p]));
 
 /** A real harvested row, so the enrichment tests run against the shape the seed produces. */
 const OSM_PARK: ParkSeed =
-  data.basicParks.find((p) => p.sources.some((s) => s.includes("openstreetmap.org"))) ?? data.deepParks[0]!;
+  (data.basicParks ?? []).find((p) => p.sources.some((s) => s.includes("openstreetmap.org"))) ??
+  (data.deepParks ?? [])[0] ??
+  ({ slug: "none", state: null, rules: {}, sources: [] } as unknown as ParkSeed);
 
 describe("enum mirrors match lib/types.ts", () => {
   it("REPORT_VALUES is identical to the frozen contract", () => {
@@ -92,7 +104,7 @@ describe("enum mirrors match lib/types.ts", () => {
   });
 });
 
-describe("data/*.json validate against the schemas", () => {
+withData("data/*.json validate against the schemas", () => {
   it("loads every file without validation errors", () => {
     expect(data.deepParks.length).toBe(DEEP_SLUGS.length);
     // Every deep park is described; basic/extra packages add more.
@@ -295,8 +307,10 @@ describe("schema guards", () => {
   });
 });
 
-describe("SQL generation", () => {
-  const sql = buildSeedSql(data, { now: new Date("2026-09-19T12:00:00Z") });
+withData("SQL generation", () => {
+  // Lazy: `describe.skip` still runs this callback, so building the SQL here would throw
+  // on a machine without data/ even though every test below is skipped.
+  const sql = HAS_SEED_DATA ? buildSeedSql(data, { now: new Date("2026-09-19T12:00:00Z") }) : "";
 
   it("escapes strings, numbers, booleans, nulls and jsonb", () => {
     expect(sqlLiteral("Dampier's Landing")).toBe("'Dampier''s Landing'");
@@ -385,7 +399,7 @@ describe("SQL generation", () => {
   });
 });
 
-describe("applyOsmDetails", () => {
+withData("applyOsmDetails", () => {
   const base = (over: Partial<ParkSeed> = {}) =>
     ({
       ...OSM_PARK,
@@ -448,7 +462,7 @@ describe("applyOsmDetails", () => {
   });
 });
 
-describe("applyWaterVerdict", () => {
+withData("applyWaterVerdict", () => {
   const park = { ...OSM_PARK, type: "lake" } as ParkSeed;
 
   it("keeps a park the probe has not reached yet", () => {
@@ -508,7 +522,7 @@ describe("sqlLiteral never produces an escape-string literal", () => {
   });
 });
 
-describe("applyWaterVerdict refuses an unchecked coastal park", () => {
+withData("applyWaterVerdict refuses an unchecked coastal park", () => {
   const park = (state: string) => ({ ...OSM_PARK, state, type: "lake" }) as ParkSeed;
 
   it("publishes an unchecked park where there is no ocean", () => {

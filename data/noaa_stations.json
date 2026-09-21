@@ -1,9 +1,0 @@
-{
-  "lake-manatee-state-park": {
-    "station_id": "8726384",
-    "name": "Port Manatee",
-    "distance_km": 28.4,
-    "has_water_temp": true,
-    "has_water_level": true
-  }
-}

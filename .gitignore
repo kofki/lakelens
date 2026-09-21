@@ -51,4 +51,7 @@ supabase/functions/.env
 .claude/
 
 # fetch caches for scripts/ (re-downloaded on demand; never read at runtime)
-/data/osm-cache
+# Harvest inputs and cache: 748 MB, and the database is the source of truth for what is
+# published. These stay on the machine that harvests. tests/seed.test.ts skips itself when
+# they are absent, so a deploy does not fail over files that are deliberately not here.
+/data
