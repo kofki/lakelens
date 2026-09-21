@@ -1,9 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="LakeLens">
-  <rect width="512" height="512" rx="112" fill="#1f4d3a"/>
+  <rect width="512" height="512" rx="112" fill="#f7f3e8"/>
+  <g fill="#1f4d3a"><path d="M0 352 C80 334 160 334 240 348 S420 362 512 344 L512 400 A112 112 0 0 1 400 512 L112 512 A112 112 0 0 1 0 400 Z"/></g>
   <g transform="translate(0 0) scale(1)">
-  <circle cx="256" cy="248" r="118" fill="#1f4d3a"/>
-  <path d="M139 266 q29 -26 58 0 t58 0 t58 0 t58 0 A118 118 0 0 1 139 266 Z" fill="#3fb5c2"/>
-  <circle cx="303" cy="198" r="26" fill="#e08a2e"/>
-  <circle cx="256" cy="248" r="132" fill="none" stroke="#f5f3ea" stroke-width="30"/>
-</g>
+  <g fill="none" stroke="#1f4d3a" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M120 90 C175 58 262 82 296 178 C230 170 165 150 120 90 Z" stroke-width="15"/>
+    <path d="M187 104 Q193 128 172 141" stroke-width="9"/>
+    <g stroke-width="8.5"><ellipse cx="330.0" cy="214.0" rx="26" ry="11" transform="rotate(-10 330.0 214.0)"/><ellipse cx="334.6" cy="232.9" rx="26" ry="11" transform="rotate(-10 334.6 232.9)"/><ellipse cx="339.1" cy="251.7" rx="26" ry="11" transform="rotate(-10 339.1 251.7)"/><ellipse cx="343.7" cy="270.6" rx="26" ry="11" transform="rotate(-10 343.7 270.6)"/><ellipse cx="348.3" cy="289.4" rx="26" ry="11" transform="rotate(-10 348.3 289.4)"/><ellipse cx="352.9" cy="308.3" rx="26" ry="11" transform="rotate(-10 352.9 308.3)"/><ellipse cx="357.4" cy="327.1" rx="26" ry="11" transform="rotate(-10 357.4 327.1)"/><ellipse cx="362.0" cy="346.0" rx="26" ry="11" transform="rotate(-10 362.0 346.0)"/></g>
+  </g>
+  <g fill="#1f4d3a">
+    <circle cx="159" cy="99" r="8"/>
+    <path d="M214 80 Q252 74 274 95 Q256 96 244 104 Z"/>
+    <path d="M176 156 L197 190 Q199 172 207 163 Z"/>
+    <path d="M292 172 Q288 200 300 222 Q304 198 314 186 Z"/>
+    <path d="M290 174 Q322 168 346 190 Q322 188 304 192 Z"/>
+  </g>
+  <g fill="none" stroke="#f7f3e8" stroke-linecap="round" stroke-width="6">
+    <path d="M6 370 Q180 410 340 393 T496 378" stroke-width="7"/>
+    <path d="M322 368 Q362 382 404 366"/>
+    <path d="M292 364 Q298 382 330 386"/>
+    <path d="M420 362 Q438 368 430 380"/>
+  </g></g>
+  <rect x="3" y="3" width="506" height="506" rx="109" fill="none" stroke="#1f4d3a" stroke-opacity="0.18" stroke-width="6"/>
 </svg>
