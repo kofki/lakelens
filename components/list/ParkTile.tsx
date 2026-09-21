@@ -1,3 +1,4 @@
+import { hasKnownStatus } from "@/lib/status";
 import Link from "next/link";
 import { MapPin } from "lucide-react";
 import type { ParkWithStatus } from "@/lib/types";
@@ -37,7 +38,9 @@ export function ParkTile({ item }: ParkTileProps) {
         className="absolute inset-0 -z-10 size-full transition-transform duration-500 group-hover:scale-105"
       />
 
-      <StatusPill level={status.level} source={status.source} size="sm" className="absolute left-3 top-3" />
+      {hasKnownStatus(status) && (
+        <StatusPill level={status.level} source={status.source} size="sm" className="absolute left-3 top-3" />
+      )}
 
       {distance && (
         <span className="absolute right-3 top-3 inline-flex items-center gap-1 rounded-full bg-aqua/95 px-2.5 py-1 text-xs font-bold text-cyan-deep shadow-card backdrop-blur">

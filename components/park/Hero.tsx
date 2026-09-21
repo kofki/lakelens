@@ -1,3 +1,4 @@
+import { hasKnownStatus } from "@/lib/status";
 import Image from "next/image";
 import { MapPin, ShieldCheck, ShieldOff, ShieldQuestionMark } from "lucide-react";
 import type { Park, ParkStatus, ReviewStats } from "@/lib/types";
@@ -119,7 +120,7 @@ export function Hero({ park, status, reviewStats }: HeroProps) {
 
         {status && (
           <div className="hidden shrink-0 md:flex">
-            <StatusPill level={status.level} source={status.source} size="lg" />
+            {hasKnownStatus(status) && <StatusPill level={status.level} source={status.source} size="lg" />}
           </div>
         )}
       </div>

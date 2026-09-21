@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useId, useRef, type CSSProperties, type KeyboardEvent } from "react";
 import { MapPin, X } from "lucide-react";
 import type { ParkWithStatus } from "@/lib/types";
-import { statusDescription } from "@/lib/status";
+import { statusDescription, hasKnownStatus } from "@/lib/status";
 import {reportLine} from "@/lib/plainLanguage";
 import { Badge } from "@/components/ui/Badge";
 import { ButtonLink } from "@/components/ui/Button";
@@ -113,7 +113,7 @@ export function ParkPreviewCard({ item, onClose, onHeightChange, style, classNam
               </button>
             </div>
             <div className="mt-2 flex flex-wrap items-center gap-1.5">
-              <StatusPill level={status.level} source={status.source} size="md" />
+              {hasKnownStatus(status) && <StatusPill level={status.level} source={status.source} size="md" />}
               {reportSummary.sampleCount > 0 && <Badge variant="sample" />}
             </div>
           </div>

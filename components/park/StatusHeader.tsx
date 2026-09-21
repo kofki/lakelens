@@ -1,5 +1,5 @@
 import type { ParkBundle } from "@/lib/types";
-import { statusDescription } from "@/lib/status";
+import { statusDescription, hasKnownStatus } from "@/lib/status";
 import {formatLocalTime, relativeTime} from "@/lib/freshness";
 import { LastUpdated } from "@/components/ui/LastUpdated";
 import { StatusPill } from "@/components/ui/StatusPill";
@@ -48,7 +48,7 @@ export function StatusHeader({ bundle, now }: StatusHeaderProps) {
         Status
       </h2>
       <div className="flex flex-wrap items-center gap-2 md:hidden">
-        <StatusPill level={status.level} source={status.source} size="lg" />
+        {hasKnownStatus(status) && <StatusPill level={status.level} source={status.source} size="lg" />}
       </div>
 
       <p className="text-base text-cocoa md:text-lg md:font-bold">{statusDescription(status)}</p>

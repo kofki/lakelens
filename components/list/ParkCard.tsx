@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { hasKnownStatus } from "@/lib/status";
 import { useEffect, useRef } from "react";
 import { MapPin } from "lucide-react";
 import type { ParkWithStatus } from "@/lib/types";
@@ -95,7 +96,7 @@ export function ParkCard({ item, selected = false, onSelect }: ParkCardProps) {
               )}
             </p>
             <div className="mt-1.5 flex flex-wrap items-center gap-1.5">
-              <StatusPill level={status.level} source={status.source} size="sm" />
+              {hasKnownStatus(status) && <StatusPill level={status.level} source={status.source} size="sm" />}
               {reportSummary.sampleCount > 0 && <Badge variant="sample" />}
             </div>
           </div>

@@ -4,7 +4,7 @@
  * `icon` is a lucide-react icon name; UI components resolve it.
  * This file must stay free of React / Next / map imports (used by lib tests).
  */
-import type { ParkStatus, StatusLevel } from "./types";
+import type { ParkStatus, StatusLevel, StatusSource } from "./types";
 
 /** Every glyph the status system can ask for. UI components resolve the name. */
 export type StatusIconName = "CircleCheck" | "Clock" | "Ban" | "OctagonX" | "CircleHelp" | "Moon" | "CalendarOff";
@@ -22,6 +22,18 @@ export interface StatusMeta {
   edgeHex: string;
   icon: StatusIconName;
   description: string;
+}
+
+/**
+ * Whether we know anything about whether this place is open.
+ *
+ * False for a lake the harvest found by its public shore and nobody has recorded anything
+ * about. Those are not parks that might be shut, they are bodies of water we can point at,
+ * and a badge reading "Status unknown" still frames them as somewhere with opening hours
+ * we happen to be missing. Nothing to say, so nothing is shown.
+ */
+export function hasKnownStatus(status: { level: StatusLevel; source: StatusSource }): boolean {
+  return !(status.level === "unknown" && status.source === "unknown");
 }
 
 export const STATUS_META: Record<StatusLevel, StatusMeta> = {
