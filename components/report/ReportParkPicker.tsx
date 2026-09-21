@@ -1,4 +1,5 @@
 "use client";
+import { hasKnownStatus } from "@/lib/status";
 
 import { useMemo, useState } from "react";
 import { LocateFixed } from "lucide-react";
@@ -46,7 +47,7 @@ export function ReportParkPicker({ parks }: ReportParkPickerProps) {
               <div>
                 <p className="text-base font-extrabold text-cocoa">{item.park.name}</p>
                 <div className="mt-1 flex flex-wrap items-center gap-2 text-xs text-mocha">
-                  <StatusPill level={item.status.level} source={item.status.source} size="sm" />
+                  {hasKnownStatus(item.status) && <StatusPill level={item.status.level} source={item.status.source} size="sm" />}
                   {item.distanceKm !== null && <span>{kmToMiles(item.distanceKm).toFixed(0)} mi away</span>}
                 </div>
               </div>

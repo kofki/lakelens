@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { isAllowedLicence, photoYear, recencyScore, scoreCandidate, stripHtml, stripTracking } from "./fetch-commons-photos.ts";
+import { isAllowedLicence, isPhotoFile, photoYear, recencyScore, scoreCandidate, stripHtml, stripTracking } from "./fetch-commons-photos.ts";
 
 const NOW = 2026;
 
@@ -75,5 +75,21 @@ describe("licences and urls", () => {
 
   it("turns an HTML author fragment into a name", () => {
     expect(stripHtml('<a href="/wiki/User:Someone">Someone</a>')).toBe("Someone");
+  });
+});
+
+describe("isPhotoFile", () => {
+  it("accepts the raster photo formats", () => {
+    for (const t of ["Icy shores of Lake Michigan.jpg", "Blue Spring.JPEG", "Wauburg.png", "Silver Glen.webp", "Ginnie.tif"]) {
+      expect(isPhotoFile(t), t).toBe(true);
+    }
+  });
+
+  it("rejects the audio, video and document files Commons returns from the same search", () => {
+    // These come back with a generic file-type icon as their thumburl, which is how
+    // anne-marie-lake-fl ended up illustrated by an Ogg speaker glyph.
+    for (const t of ["En-us-lake.ogg", "Loon call.wav", "Boating safety.webm", "Park map.pdf", "Watershed diagram.svg"]) {
+      expect(isPhotoFile(t), t).toBe(false);
+    }
   });
 });

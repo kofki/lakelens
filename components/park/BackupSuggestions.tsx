@@ -1,4 +1,5 @@
 "use client";
+import { hasKnownStatus } from "@/lib/status";
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
@@ -61,7 +62,7 @@ export function BackupSuggestions({ target, all, initial }: BackupSuggestionsPro
                 >
                   <div className="flex flex-wrap items-center justify-between gap-2">
                     <p className="text-base font-extrabold text-ink">{s.park.name}</p>
-                    <StatusPill level={s.status.level} source={s.status.source} size="sm" />
+                    {hasKnownStatus(s.status) && <StatusPill level={s.status.level} source={s.status.source} size="sm" />}
                   </div>
                   <p className="mt-1 text-sm text-mocha">
                     {kmToMiles(s.distanceKm).toFixed(0)} mi · about {s.driveMinutes} min drive

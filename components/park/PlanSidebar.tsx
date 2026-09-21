@@ -1,6 +1,6 @@
 import {Accessibility as AccessibilityIcon, CalendarCheck, DollarSign, ExternalLink, Navigation} from "lucide-react";
 import type { ParkBundle, Prediction } from "@/lib/types";
-import { statusDescription } from "@/lib/status";
+import { statusDescription, hasKnownStatus } from "@/lib/status";
 import { isAccessibleEntry } from "@/lib/distance";
 import { OpeningHours } from "./OpeningHours";
 import { Badge } from "@/components/ui/Badge";
@@ -65,9 +65,13 @@ export function PlanSidebar({ bundle, now, className }: PlanSidebarProps) {
     <aside aria-label="Plan your visit" className={className}>
       <Card as="section" className="space-y-3">
         <h2 className="text-xs font-extrabold uppercase tracking-wide text-taupe">Plan your visit</h2>
-        <StatusPill level={status.level} source={status.source} size="lg" />
-        <p className="text-sm font-bold text-cocoa">{line}</p>
-        <LastUpdated at={status.updatedAt} source={STATUS_SOURCE_TEXT[status.source]} prefix="Status updated" />
+        {hasKnownStatus(status) && (
+          <>
+            <StatusPill level={status.level} source={status.source} size="lg" />
+            <p className="text-sm font-bold text-cocoa">{line}</p>
+            <LastUpdated at={status.updatedAt} source={STATUS_SOURCE_TEXT[status.source]} prefix="Status updated" />
+          </>
+        )}
 
         <div className="space-y-2 pt-1">
           <ReportButton park={park} full size="md" />

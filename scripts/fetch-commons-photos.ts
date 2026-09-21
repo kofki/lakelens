@@ -234,12 +234,22 @@ export function scoreCandidate(
  */
 const MIN_RELEVANCE = 4;
 
+/**
+ * Commons returns audio, video and PDF files from the same searches as photographs, and
+ * their thumburl is a generic file-type icon rather than a picture of anywhere. Accept only
+ * the raster photo formats; SVG is excluded too, since those are diagrams and maps.
+ */
+export function isPhotoFile(title: string): boolean {
+  return /\.(jpe?g|png|webp|tiff?)$/i.test(title.trim());
+}
+
 export function pickBest(pages: CommonsPage[], parkName: string): PhotoCredit | null {
   let best: { credit: PhotoCredit; score: number } | null = null;
   for (const page of pages) {
     const info = page.imageinfo?.[0];
     const title = (page.title ?? "").replace(/^File:/, "");
     if (!info?.thumburl || !title) continue;
+    if (!isPhotoFile(title)) continue;
     const meta = info.extmetadata ?? {};
     const licence = stripHtml(meta.LicenseShortName?.value);
     if (!isAllowedLicence(licence)) continue;
