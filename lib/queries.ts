@@ -16,7 +16,7 @@ import { summarizeReports } from "@/lib/reportStatus";
 import { getParkStatus } from "@/lib/parkStatus";
 import { cardStatsFor } from "@/lib/cardStats";
 import { compactPhotoUrl } from "@/lib/photoUrl";
-import { levelIndex, nearestToCentre, roundCoord, type Bbox, type MapPointsResult } from "@/lib/mapPoints";
+import { levelIndex, spreadAcross, roundCoord, type Bbox, type MapPointsResult } from "@/lib/mapPoints";
 import { suggestBackups } from "@/lib/backups";
 import {
   DEFAULT_FILTERS,
@@ -521,7 +521,7 @@ export async function getMapPoints(bbox: Bbox, now: Date = new Date()): Promise<
     const db = createPublicClient();
     const world = await loadWorld(db, now, { bbox });
     const all = assembleAll(world, now);
-    const kept = nearestToCentre(
+    const kept = spreadAcross(
       all.map((item) => ({ item, lat: item.park.lat, lng: item.park.lng })),
       bbox,
     );

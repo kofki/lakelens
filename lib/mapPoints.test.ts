@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { LEVELS, MAX_POINTS, levelFromIndex, levelIndex, nearestToCentre, parseBbox, roundCoord } from "./mapPoints";
+import { LEVELS, MAX_POINTS, levelFromIndex, levelIndex, parseBbox, roundCoord, spreadAcross } from "./mapPoints";
 
 describe("levels round-trip", () => {
   it("survives the trip through an index", () => {
@@ -36,27 +36,42 @@ describe("parseBbox", () => {
   });
 });
 
-describe("nearestToCentre", () => {
-  const bbox: [number, number, number, number] = [-10, -10, 10, 10];
+describe("spreadAcross", () => {
+  const usa: [number, number, number, number] = [-125, 24, -66, 50];
 
   it("returns everything when it fits", () => {
-    const items = [{ lat: 0, lng: 0 }, { lat: 5, lng: 5 }];
-    expect(nearestToCentre(items, bbox, 10)).toHaveLength(2);
+    const items = [{ lat: 30, lng: -82 }, { lat: 44, lng: -85 }];
+    expect(spreadAcross(items, usa, 10)).toHaveLength(2);
   });
 
-  it("keeps the middle of the viewport when it does not", () => {
-    const items = [
-      { lat: 9, lng: 9, id: "corner" },
-      { lat: 0, lng: 0, id: "centre" },
-      { lat: 4, lng: 4, id: "near" },
-    ];
-    expect(nearestToCentre(items, bbox, 2).map((i) => i.id)).toEqual(["centre", "near"]);
+  it("keeps the edges of the country, not just the middle", () => {
+    // The bug this replaced: nearest-to-centre dropped Florida and Maine from a zoomed-out
+    // view, because the centre of the continental US is Kansas.
+    const kansas = Array.from({ length: 500 }, (_, i) => ({ lat: 38 + i * 0.001, lng: -98, id: "ks" }));
+    const florida = [{ lat: 27, lng: -81, id: "fl" }];
+    const maine = [{ lat: 45, lng: -69, id: "me" }];
+    const kept = spreadAcross([...kansas, ...florida, ...maine], usa, 50);
+    expect(kept.map((i) => i.id)).toContain("fl");
+    expect(kept.map((i) => i.id)).toContain("me");
+  });
+
+  it("thins the dense places first", () => {
+    const dense = Array.from({ length: 300 }, () => ({ lat: 38, lng: -98, id: "dense" }));
+    const sparse = Array.from({ length: 5 }, (_, i) => ({ lat: 30 + i, lng: -75, id: "sparse" }));
+    const kept = spreadAcross([...dense, ...sparse], usa, 20);
+    expect(kept.filter((i) => i.id === "sparse").length).toBeGreaterThan(0);
+    expect(kept.filter((i) => i.id === "dense").length).toBeLessThan(300);
+  });
+
+  it("honours the limit", () => {
+    const many = Array.from({ length: 2000 }, (_, i) => ({ lat: 25 + (i % 200) * 0.12, lng: -124 + (i % 300) * 0.19 }));
+    expect(spreadAcross(many, usa, 400)).toHaveLength(400);
   });
 
   it("does not mutate what it was given", () => {
-    const items = [{ lat: 9, lng: 9 }, { lat: 0, lng: 0 }];
+    const items = [{ lat: 30, lng: -82 }, { lat: 44, lng: -85 }];
     const copy = [...items];
-    nearestToCentre(items, bbox, 1);
+    spreadAcross(items, usa, 1);
     expect(items).toEqual(copy);
   });
 

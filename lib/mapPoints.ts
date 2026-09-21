@@ -64,26 +64,58 @@ export function parseBbox(raw: string | null): Bbox | null {
  * How many pins the map will accept at once.
  *
  * Past this the map is a texture rather than a set of places, and the payload stops being
- * free. When a viewport holds more, the closest to the centre are kept and the map says so:
- * attention on a map decays outward from the middle, so the middle is what to keep.
+ * free.
  */
 export const MAX_POINTS = 400;
 
-export function nearestToCentre<T extends { lat: number; lng: number }>(
+/** Cells per side of the sampling grid. 20 x 20 gives 400 cells for 400 pins. */
+const GRID = 20;
+
+/**
+ * Keep a sample spread across the whole viewport.
+ *
+ * The first version kept the pins nearest the centre, on the theory that attention on a map
+ * decays outward. That is true of where people look and false as a way to choose what to
+ * draw: zoomed out to the whole country, the centre is Kansas, and Florida and Maine fell
+ * off the map entirely. A reader cannot look at what is not there.
+ *
+ * So the viewport is divided into a grid and the sample is taken round-robin across the
+ * cells. Every part of the screen that has parks keeps some, dense regions thin out first,
+ * and an empty cell costs nothing.
+ */
+export function spreadAcross<T extends { lat: number; lng: number }>(
   items: readonly T[],
   bbox: Bbox,
   limit = MAX_POINTS,
 ): T[] {
   if (items.length <= limit) return [...items];
   const [west, south, east, north] = bbox;
-  const midLat = (south + north) / 2;
-  const midLng = (west + east) / 2;
-  // Squared distance in degrees: only the ordering matters, so no square root and no
-  // great-circle correction.
-  return [...items]
-    .sort(
-      (a, b) =>
-        (a.lat - midLat) ** 2 + (a.lng - midLng) ** 2 - ((b.lat - midLat) ** 2 + (b.lng - midLng) ** 2),
-    )
-    .slice(0, limit);
+  const latSpan = north - south || 1;
+  const lngSpan = east - west || 1;
+
+  const cells = new Map<number, T[]>();
+  for (const item of items) {
+    const row = Math.min(GRID - 1, Math.max(0, Math.floor(((item.lat - south) / latSpan) * GRID)));
+    const col = Math.min(GRID - 1, Math.max(0, Math.floor(((item.lng - west) / lngSpan) * GRID)));
+    const key = row * GRID + col;
+    const bucket = cells.get(key);
+    if (bucket) bucket.push(item);
+    else cells.set(key, [item]);
+  }
+
+  // Round-robin: one from each occupied cell, then a second from each, until full. A cell
+  // with forty lakes gives up the same first pin as a cell with one.
+  const buckets = [...cells.values()];
+  const out: T[] = [];
+  for (let depth = 0; out.length < limit; depth += 1) {
+    let placed = false;
+    for (const bucket of buckets) {
+      if (depth >= bucket.length) continue;
+      out.push(bucket[depth]!);
+      placed = true;
+      if (out.length >= limit) break;
+    }
+    if (!placed) break;
+  }
+  return out;
 }
