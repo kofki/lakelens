@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { Park, ParkAlert, Prediction, ReportSummary } from "./types";
-import { getParkStatus, isActiveClosureAlert } from "./parkStatus";
+import { getParkStatus, hasStatusBasis, isActiveClosureAlert } from "./parkStatus";
 import { EMPTY_SUMMARY } from "./reportStatus";
 
 const NOW = new Date("2026-09-05T15:00:00Z");
@@ -209,5 +209,51 @@ describe("getParkStatus", () => {
     const s = getParkStatus({ park: makePark(), alerts: [older, newer], reportSummary: EMPTY_SUMMARY, prediction: null, now: NOW });
     expect(s.reasons[0]).toContain("Newer closure");
     expect(s.updatedAt).toBe("2026-09-05T13:00:00Z");
+  });
+});
+
+describe("a lake nobody has recorded anything about", () => {
+  const bareLake = {
+    park: {
+      slug: "lake-wauburg-fl",
+      hours: null,
+      swim_season: null,
+      typical_closure_time: null,
+      swimming_verified: false,
+      guarded: "unknown",
+      time_zone: null,
+      lat: 29.53,
+      lng: -82.3,
+    },
+    alerts: [],
+    reportSummary: { signal: "none", category: null, value: null, sampleCount: 0, freshestAt: null },
+    prediction: { level: "none", confidence: "low", reasons: [], predictedTime: null },
+    now: new Date("2026-07-04T15:00:00Z"),
+  } as unknown as Parameters<typeof getParkStatus>[0];
+
+  it("is not called open", () => {
+    // The harvest finds lakes by their public shore now, and most carry no hours, no
+    // season and no reports. "Open" there is a claim with nothing behind it.
+    expect(getParkStatus(bareLake).level).toBe("unknown");
+  });
+
+  it("says nothing rather than inventing a reason", () => {
+    expect(getParkStatus(bareLake).reasons).toEqual([]);
+  });
+
+  it("is called open again as soon as there is something to go on", () => {
+    const withHours = {
+      ...bareLake,
+      park: { ...bareLake.park, hours: "8 a.m. to sundown." },
+    } as Parameters<typeof getParkStatus>[0];
+    expect(hasStatusBasis(withHours)).toBe(true);
+  });
+
+  it("counts a visitor report as something to go on", () => {
+    const reported = {
+      ...bareLake,
+      reportSummary: { ...bareLake.reportSummary, signal: "reported" },
+    } as unknown as Parameters<typeof getParkStatus>[0];
+    expect(hasStatusBasis(reported)).toBe(true);
   });
 });

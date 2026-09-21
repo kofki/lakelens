@@ -62,6 +62,27 @@ function sourceLabel(alert: ParkAlert): string {
   return alert.source ? `Source: ${alert.source}` : "Official notice";
 }
 
+/**
+ * Whether anything is actually known about when this park is open.
+ *
+ * The harvest now finds lakes by their public shore rather than by a swimming tag, and
+ * most of those carry nothing: no hours, no season, no closing time, nobody has confirmed
+ * you may swim, nobody has reported on it. Saying "Open" about such a lake is not a
+ * cautious guess, it is a claim with nothing behind it, and it reads exactly like the
+ * claim we make about a park whose hours we actually read off the park's own website.
+ *
+ * With nothing to go on the honest answer is that we do not know.
+ */
+export function hasStatusBasis(input: Pick<ParkStatusInput, "park" | "alerts" | "reportSummary">): boolean {
+  const { park, alerts, reportSummary } = input;
+  if (park.hours || park.swim_season || park.typical_closure_time) return true;
+  if (park.swimming_verified) return true;
+  if (park.guarded === "yes" || park.guarded === "no") return true;
+  if ((alerts ?? []).length > 0) return true;
+  if (reportSummary && reportSummary.signal !== "none") return true;
+  return false;
+}
+
 export function getParkStatus(input: ParkStatusInput): ParkStatus {
   const { park, alerts, reportSummary, prediction, now } = input;
   const nowIso = now.toISOString();
@@ -170,6 +191,20 @@ export function getParkStatus(input: ParkStatusInput): ParkStatus {
         reasons,
         updatedAt: nowIso,
         isEstimate: false,
+        predictedTime: null,
+      };
+    }
+    // A prediction alone is not a reason to call a park open. The crowd model runs on the
+    // calendar and the weather, so it produces an answer for a lake nobody has ever
+    // recorded anything about, and that answer would read as knowledge.
+    if (!hasStatusBasis(input)) {
+      return {
+        level: "unknown",
+        source: "unknown",
+        confidence: "low",
+        reasons: [],
+        updatedAt: null,
+        isEstimate: true,
         predictedTime: null,
       };
     }
