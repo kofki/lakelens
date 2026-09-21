@@ -253,6 +253,8 @@ export async function selectAll<T>(
 export interface WorldScope {
   /** Only parks inside this viewport: [west, south, east, north]. */
   bbox?: Bbox;
+  /** Only parks in this state, as a two-letter code. */
+  state?: string | null;
   /** Hard cap on parks loaded, applied after the viewport. */
   limit?: number;
 }
@@ -270,12 +272,13 @@ async function loadWorld(db: Db, now: Date, scope: WorldScope = {}): Promise<Wor
   const since = new Date(now.getTime() - REPORT_WINDOW_MS).toISOString();
 
   // The parks come first when scoped, because their ids are what narrows everything else.
-  const wantsScope = Boolean(scope.bbox) || typeof scope.limit === "number";
+  const wantsScope = Boolean(scope.bbox) || Boolean(scope.state) || typeof scope.limit === "number";
   const scopedParks = wantsScope
     ? await selectAll<Park>(
         "parks",
         (a, b) => {
           const q = db.from("parks").select(WORLD_PARK_COLUMNS);
+          if (scope.state) q.eq("state", scope.state);
           if (scope.bbox) {
             const [west, south, east, north] = scope.bbox;
             q.gte("lat", south).lte("lat", north).gte("lng", west).lte("lng", east);
@@ -511,10 +514,13 @@ function assembleAll(world: World, now: Date): ParkWithStatus[] {
  */
 export const LIST_PARK_LIMIT = 1500;
 
-export async function getParksWithStatus(now: Date = new Date(), limit = LIST_PARK_LIMIT): Promise<ParkWithStatus[]> {
+export async function getParksWithStatus(
+  now: Date = new Date(),
+  { state = null, limit = LIST_PARK_LIMIT }: { state?: string | null; limit?: number } = {},
+): Promise<ParkWithStatus[]> {
   try {
     const db = createPublicClient();
-    const world = await loadWorld(db, now, { limit });
+    const world = await loadWorld(db, now, { state, limit });
     return assembleAll(world, now).map(slimForList);
   } catch (err) {
     warn("getParksWithStatus", err);
@@ -691,5 +697,30 @@ export async function getParkById(id: string): Promise<Park | null> {
   } catch (err) {
     warn(`getParkById(${id})`, err);
     return null;
+  }
+}
+
+/**
+ * How many parks each state has, for the picker.
+ *
+ * One grouped read rather than counting an array the page no longer carries. Without it
+ * the state list could only name states the 1,500 loaded parks happened to cover, which at
+ * 18,314 parks is a different and much shorter list than the truth.
+ */
+export async function getStateCounts(): Promise<Record<string, number>> {
+  try {
+    const db = createPublicClient();
+    const rows = await selectAll<{ state: string | null }>("state counts", (a, b) =>
+      db.from("parks").select("state").not("state", "is", null).range(a, b),
+    );
+    const out: Record<string, number> = {};
+    for (const row of rows) {
+      if (!row.state) continue;
+      out[row.state] = (out[row.state] ?? 0) + 1;
+    }
+    return out;
+  } catch (err) {
+    warn("getStateCounts", err);
+    return {};
   }
 }

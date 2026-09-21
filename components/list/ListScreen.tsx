@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useRouter } from "next/navigation";
 import { LocateFixed, MapPinned, SlidersHorizontal } from "lucide-react";
 import { DEFAULT_FILTERS, type Filters, type ParkWithStatus } from "@/lib/types";
 import { Button } from "@/components/ui/Button";
@@ -18,6 +19,7 @@ import { StateControl } from "./StateControl";
 import { LocationPrompt } from "./LocationPrompt";
 import { useFavorites, useRecents } from "./usePersonal";
 import { nearestState } from "@/lib/nearestState";
+import { stateName } from "@/lib/states";
 import { relatedTo } from "@/lib/related";
 import { useGeolocation } from "./useGeolocation";
 import { useAccessibleParam } from "./useAccessibleParam";
@@ -73,6 +75,10 @@ function StateSection({ group }: { group: StateGroup }) {
 export interface ListScreenProps {
   parks: ParkWithStatus[];
   initialFilters?: Partial<Filters>;
+  /** Every state and how many parks it has, counted in the database rather than in `parks`. */
+  stateCounts?: Record<string, number>;
+  /** The state this page was loaded for, from the URL. Null means the nationwide slice. */
+  selectedState?: string | null;
 }
 
 const HERO_PHOTO = "/photos/ichetucknee-springs-state-park.jpg";
@@ -85,7 +91,8 @@ const TILE_COUNT = 40;
  * Phones keep the row cards; tablets and desktops get the hero plus photo
  * tile grid. Filtering, sorting and location are shared with the map screen.
  */
-export function ListScreen({ parks, initialFilters }: ListScreenProps) {
+export function ListScreen({ parks, initialFilters, stateCounts, selectedState = null }: ListScreenProps) {
+  const router = useRouter();
   const [filters, setFilters] = useState<Filters>({ ...DEFAULT_FILTERS, ...initialFilters });
   useAccessibleParam(filters, setFilters);
   const [query, setQuery] = useState("");
@@ -118,7 +125,8 @@ export function ListScreen({ parks, initialFilters }: ListScreenProps) {
    * records that the reader has an opinion, after which we stop having one.
    */
   const [stateTouched, setStateTouched] = useState(false);
-  const effectiveState = stateTouched ? filters.state : (filters.state ?? localState);
+  // The URL wins: the page was loaded for that state, so the filter has to agree with it.
+  const effectiveState = selectedState ?? (stateTouched ? filters.state : (filters.state ?? localState));
   const effectiveFilters = useMemo(
     () => ({ ...filters, state: effectiveState }),
     [filters, effectiveState],
@@ -139,7 +147,22 @@ export function ListScreen({ parks, initialFilters }: ListScreenProps) {
   const remainingTiles = sorted.length - visibleTiles.length;
   const counts = useMemo(() => countStatuses(filtered), [filtered]);
   const filterCount = activeFilterCount(effectiveFilters);
-  const stateOptions = useMemo(() => availableStates(parks), [parks]);
+  /**
+   * Every state, from the database.
+   *
+   * Derived from `parks` this could only ever name the states the loaded slice happened to
+   * cover, which is a much shorter list than the truth once the page stopped carrying the
+   * country.
+   */
+  const stateOptions = useMemo(
+    () =>
+      stateCounts && Object.keys(stateCounts).length > 0
+        ? Object.keys(stateCounts)
+            .map((code) => ({ code, name: stateName(code) ?? code }))
+            .sort((a, b) => a.name.localeCompare(b.name))
+        : availableStates(parks),
+    [stateCounts, parks],
+  );
   /**
    * Grouping runs on the capped slice, not the whole list, so "Show 576 more" stays
    * one pass and the headings never reshuffle when the rest arrives.
@@ -229,6 +252,9 @@ export function ListScreen({ parks, initialFilters }: ListScreenProps) {
               onChange={(state) => {
                 setStateTouched(true);
                 setFilters({ ...filters, state });
+                // A different state is a different set of parks, so it is a navigation
+                // rather than a filter over what is already here.
+                router.push(state ? `/list?state=${state}` : "/list");
               }}
               options={stateOptions}
             />
