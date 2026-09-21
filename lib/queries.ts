@@ -270,20 +270,20 @@ async function loadWorld(db: Db, now: Date, scope: WorldScope = {}): Promise<Wor
   const since = new Date(now.getTime() - REPORT_WINDOW_MS).toISOString();
 
   // The parks come first when scoped, because their ids are what narrows everything else.
-  const scopedParks = scope.bbox
+  const wantsScope = Boolean(scope.bbox) || typeof scope.limit === "number";
+  const scopedParks = wantsScope
     ? await selectAll<Park>(
         "parks",
         (a, b) => {
-          const [west, south, east, north] = scope.bbox!;
-          return db
-            .from("parks")
-            .select(WORLD_PARK_COLUMNS)
-            .gte("lat", south)
-            .lte("lat", north)
-            .gte("lng", west)
-            .lte("lng", east)
-            .order("name")
-            .range(a, b);
+          const q = db.from("parks").select(WORLD_PARK_COLUMNS);
+          if (scope.bbox) {
+            const [west, south, east, north] = scope.bbox;
+            q.gte("lat", south).lte("lat", north).gte("lng", west).lte("lng", east);
+          }
+          // Cap the read itself: asking for 18,000 rows and slicing afterwards still
+          // transfers 18,000 rows.
+          const end = typeof scope.limit === "number" ? Math.min(b, scope.limit - 1) : b;
+          return q.order("name").range(a, end);
         },
         { required: true },
       )
@@ -498,10 +498,23 @@ function assembleAll(world: World, now: Date): ParkWithStatus[] {
 }
 
 /** Every park with derived status: the map and list screens. */
-export async function getParksWithStatus(now: Date = new Date()): Promise<ParkWithStatus[]> {
+/**
+ * How many parks the list will carry in the page.
+ *
+ * The map fetches its pins per viewport, but the list still needs whole cards to filter,
+ * sort and draw, and at 18,314 parks that is about 2 MB gzipped. Nobody waits for that, so
+ * the page carries a bounded set and the rest is reached through the state filter and
+ * search, which run against the whole database.
+ *
+ * Not a sample: it is the parks nearest the middle of the country by name order, which is
+ * arbitrary, and that is the honest description of it until the list is paged properly.
+ */
+export const LIST_PARK_LIMIT = 1500;
+
+export async function getParksWithStatus(now: Date = new Date(), limit = LIST_PARK_LIMIT): Promise<ParkWithStatus[]> {
   try {
     const db = createPublicClient();
-    const world = await loadWorld(db, now);
+    const world = await loadWorld(db, now, { limit });
     return assembleAll(world, now).map(slimForList);
   } catch (err) {
     warn("getParksWithStatus", err);
