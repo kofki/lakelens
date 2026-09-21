@@ -16,8 +16,8 @@ import { summarizeReports } from "@/lib/reportStatus";
 import { getParkStatus } from "@/lib/parkStatus";
 import { cardStatsFor } from "@/lib/cardStats";
 import { compactPhotoUrl } from "@/lib/photoUrl";
-import { levelIndex, spreadAcross, roundCoord, type Bbox, type MapPointsResult } from "@/lib/mapPoints";
-import { suggestBackups } from "@/lib/backups";
+import { cellKey, gridCellDeg, levelIndex, roundCoord, type Bbox, type MapPoint, type MapPointsResult } from "@/lib/mapPoints";
+import { BACKUP_EXCLUDED_LEVELS, suggestBackups } from "@/lib/backups";
 import {
   DEFAULT_FILTERS,
   type Accessibility,
@@ -69,6 +69,22 @@ interface World {
   events: CalendarEvent[];
   forecasts: Map<string, ParkForecast>;
   reviewStats: Map<string, ReviewStats>;
+  /** The same rows grouped by park, so assembling one park is a lookup rather than a scan. */
+  latestByPark: Map<string, LatestRow[]>;
+  alertsByPark: Map<string, ParkAlert[]>;
+  reportsByPark: Map<string, Report[]>;
+  confirmationsByReport: Map<string, ReportConfirmation[]>;
+}
+
+function groupBy<T>(rows: readonly T[], key: (row: T) => string): Map<string, T[]> {
+  const out = new Map<string, T[]>();
+  for (const row of rows) {
+    const k = key(row);
+    const bucket = out.get(k);
+    if (bucket) bucket.push(row);
+    else out.set(k, [row]);
+  }
+  return out;
 }
 
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
@@ -257,6 +273,31 @@ export interface WorldScope {
   state?: string | null;
   /** Hard cap on parks loaded, applied after the viewport. */
   limit?: number;
+  /**
+   * Only parks that can have a status: the ones with hours, a season, a closing time, a
+   * lifeguard answer or a verified swim area (`has_status_basis`), plus any with a live
+   * alert or a recent report. Every other park is "nothing to say" by definition, so the
+   * map runs the status model for about 150 parks instead of 23,000.
+   */
+  basisOnly?: boolean;
+}
+
+/**
+ * Most parks an alert or report can pull into a basis-only load. Those ids travel in the
+ * URL, so they are capped well under where a URL breaks; there are about thirty today.
+ */
+const BASIS_EXTRA_IDS_MAX = 150;
+
+/** Parks with an active alert or a report inside the status window: small, and capped. */
+async function liveSignalParkIds(db: Db, since: string): Promise<string[]> {
+  const [alertsR, reportsR] = await Promise.all([
+    db.from("park_alerts").select("park_id").eq("active", true).limit(BASIS_EXTRA_IDS_MAX),
+    db.from("reports").select("park_id").gte("created_at", since).limit(BASIS_EXTRA_IDS_MAX),
+  ]);
+  const ids = new Set<string>();
+  for (const r of rowsOr<{ park_id: string | null }>("park_alerts(ids)", alertsR)) if (r.park_id) ids.add(r.park_id);
+  for (const r of rowsOr<{ park_id: string | null }>("reports(ids)", reportsR)) if (r.park_id) ids.add(r.park_id);
+  return [...ids].slice(0, BASIS_EXTRA_IDS_MAX);
 }
 
 /**
@@ -272,12 +313,21 @@ async function loadWorld(db: Db, now: Date, scope: WorldScope = {}): Promise<Wor
   const since = new Date(now.getTime() - REPORT_WINDOW_MS).toISOString();
 
   // The parks come first when scoped, because their ids are what narrows everything else.
-  const wantsScope = Boolean(scope.bbox) || Boolean(scope.state) || typeof scope.limit === "number";
+  const wantsScope =
+    Boolean(scope.bbox) || Boolean(scope.state) || typeof scope.limit === "number" || Boolean(scope.basisOnly);
+  const extraIds = scope.basisOnly ? await liveSignalParkIds(db, since) : [];
   const scopedParks = wantsScope
     ? await selectAll<Park>(
         "parks",
         (a, b) => {
           const q = db.from("parks").select(WORLD_PARK_COLUMNS);
+          if (scope.basisOnly) {
+            q.or(
+              extraIds.length
+                ? `has_status_basis.eq.true,id.in.(${extraIds.join(",")})`
+                : "has_status_basis.eq.true",
+            );
+          }
           if (scope.state) q.eq("state", scope.state);
           if (scope.bbox) {
             const [west, south, east, north] = scope.bbox;
@@ -292,9 +342,19 @@ async function loadWorld(db: Db, now: Date, scope: WorldScope = {}): Promise<Wor
       )
     : null;
   const scopedIds = scopedParks?.slice(0, scope.limit ?? scopedParks.length).map((p) => p.id) ?? null;
-  /** Narrow a per-park table to the scope, or leave it alone when unscoped. */
-  const forScope = <T>(q: T): T =>
-    scopedIds ? ((q as { in: (c: string, v: string[]) => T }).in("park_id", scopedIds) as T) : q;
+  /**
+   * Side tables are read whole and narrowed here, never with `park_id=in.(...)`.
+   *
+   * That filter travels in the URL, and a state or a zoomed-out viewport is thousands of
+   * uuids: Cloudflare answered 414 and PostgREST 400, and because a failed side table
+   * degrades to no rows rather than throwing, statuses, forecasts and review stars simply
+   * disappeared from every scoped page. Every one of these tables is small (the largest is
+   * under two thousand rows, one per park with a live feed), so reading them whole is
+   * cheaper than any scheme for splitting the id list.
+   */
+  const inScope = scopedIds ? new Set(scopedIds) : null;
+  const keep = <T extends { park_id: string | null }>(rows: T[]): T[] =>
+    inScope ? rows.filter((r) => r.park_id != null && inScope.has(r.park_id)) : rows;
 
   // Every table keyed by park can now pass a thousand rows. The calendar ones cannot, and
   // are paged anyway rather than leaving a trap for whoever adds the next decade.
@@ -307,13 +367,13 @@ async function loadWorld(db: Db, now: Date, scope: WorldScope = {}): Promise<Wor
             (a, b) => db.from("parks").select(WORLD_PARK_COLUMNS).order("name").range(a, b),
             { required: true },
           ),
-      selectAll<Accessibility>("accessibility", (a, b) => forScope(db.from("accessibility").select("*")).range(a, b)),
+      selectAll<Accessibility>("accessibility", (a, b) => db.from("accessibility").select("*").range(a, b)),
       selectAll<LatestRow>("latest_conditions", (a, b) =>
-        forScope(db.from("latest_conditions").select("park_id,source,payload,fetched_at")).range(a, b),
+        db.from("latest_conditions").select("park_id,source,payload,fetched_at").range(a, b),
       ),
-      selectAll<ParkAlert>("park_alerts", (a, b) => forScope(db.from("park_alerts").select("*").eq("active", true)).range(a, b)),
+      selectAll<ParkAlert>("park_alerts", (a, b) => db.from("park_alerts").select("*").eq("active", true).range(a, b)),
       selectAll<Report>("reports", (a, b) =>
-        forScope(db.from("reports").select("*").gte("created_at", since))
+        db.from("reports").select("*").gte("created_at", since)
           .order("created_at", { ascending: false })
           .range(a, b),
       ),
@@ -326,26 +386,33 @@ async function loadWorld(db: Db, now: Date, scope: WorldScope = {}): Promise<Wor
         db.from("calendar_events").select("name,start_date,end_date,weight").range(a, b),
       ),
       selectAll<ParkForecastRow>("park_forecast", (a, b) =>
-        forScope(db.from("park_forecast").select(FORECAST_LIST_COLUMNS)).range(a, b),
+        db.from("park_forecast").select(FORECAST_LIST_COLUMNS).range(a, b),
       ),
-      selectAll<ReviewStatsRow>("park_review_stats", (a, b) => forScope(db.from("park_review_stats").select("*")).range(a, b)),
+      selectAll<ReviewStatsRow>("park_review_stats", (a, b) => db.from("park_review_stats").select("*").range(a, b)),
     ]);
 
   const accessibility = new Map<string, Accessibility>();
-  for (const a of accRows) accessibility.set(a.park_id, a);
+  for (const a of keep(accRows)) accessibility.set(a.park_id, a);
 
+  const latest = keep(latestRows);
+  const alerts = keep(alertRows);
+  const reports = keep(reportRows);
   return {
     parks,
     accessibility,
-    latest: latestRows,
-    alerts: alertRows,
-    reports: reportRows,
+    latest,
+    alerts,
+    reports,
     confirmations: confRows,
     holidays: holRows,
     longWeekends: lwRows,
     events: toCalendarEvents(evRows),
-    forecasts: toForecasts(fcRows),
-    reviewStats: toReviewStats(rsRows),
+    forecasts: toForecasts(keep(fcRows)),
+    reviewStats: toReviewStats(keep(rsRows)),
+    latestByPark: groupBy(latest, (r) => r.park_id ?? ""),
+    alertsByPark: groupBy(alerts, (r) => r.park_id),
+    reportsByPark: groupBy(reports, (r) => r.park_id),
+    confirmationsByReport: groupBy(confRows, (c) => c.report_id),
   };
 }
 
@@ -358,7 +425,7 @@ function newest(rows: LatestRow[]): LatestRow | null {
 }
 
 function assemble(park: Park, world: World, dayContext: DayContext, now: Date): ParkWithStatus {
-  const mine = world.latest.filter((r) => r.park_id === park.id);
+  const mine = world.latestByPark.get(park.id) ?? [];
   const usgsRow = newest(mine.filter((r) => r.source === "usgs"));
   // Coastal parks have no USGS gauge; their water data is a NOAA CO-OPS snapshot instead.
   const noaaRow = newest(mine.filter((r) => r.source === "noaa"));
@@ -367,10 +434,9 @@ function assemble(park: Park, world: World, dayContext: DayContext, now: Date): 
   const noaa = (noaaRow?.payload as NoaaPayload | undefined) ?? null;
   const weather = (weatherRow?.payload as WeatherPayload | undefined) ?? null;
 
-  const alerts = world.alerts.filter((a) => a.park_id === park.id);
-  const reports = world.reports.filter((r) => r.park_id === park.id);
-  const reportIds = new Set(reports.map((r) => r.id));
-  const confirmations = world.confirmations.filter((c) => reportIds.has(c.report_id));
+  const alerts = world.alertsByPark.get(park.id) ?? [];
+  const reports = world.reportsByPark.get(park.id) ?? [];
+  const confirmations = reports.flatMap((r) => world.confirmationsByReport.get(r.id) ?? []);
 
   const reportSummary = summarizeReports(reports, confirmations, now);
   const prediction = predictClosure({ park, dayContext, weather, alerts }, now, park.time_zone || undefined);
@@ -535,37 +601,141 @@ export async function getParksWithStatus(
  * them, then hands back four values per park. Everything else about a park arrives when one
  * is selected, which is the only moment it is read.
  */
+/**
+ * Status levels for the parks that can have one, cached for the page window.
+ *
+ * About 150 parks: the rest have nothing to base a status on, so they are "unknown"
+ * without running anything. Cached per server instance because every pan asks for the
+ * same answer, and it only changes as fast as alerts, reports and the clock do.
+ */
+let knownLevelsCache: { at: number; levels: Map<string, { level: number; lat: number; lng: number }> } | null = null;
+const KNOWN_LEVELS_TTL_MS = 60_000;
+
+async function getKnownLevels(db: Db, now: Date): Promise<Map<string, { level: number; lat: number; lng: number }>> {
+  if (knownLevelsCache && now.getTime() - knownLevelsCache.at < KNOWN_LEVELS_TTL_MS) return knownLevelsCache.levels;
+  const world = await loadWorld(db, now, { basisOnly: true });
+  const levels = new Map<string, { level: number; lat: number; lng: number }>();
+  for (const item of assembleAll(world, now)) {
+    levels.set(item.park.slug, { level: levelIndex(item.status.level), lat: item.park.lat, lng: item.park.lng });
+  }
+  knownLevelsCache = { at: now.getTime(), levels };
+  return levels;
+}
+
+/**
+ * Up to this many parks in view are sent individually instead of as grid cells: about
+ * 60 kB raw, 15 kB over the wire, and supercluster groups them on the client as smoothly
+ * as it always has.
+ */
+const MAP_INDIVIDUAL_MAX = 1500;
+
+interface GridRow {
+  cx: number;
+  cy: number;
+  lat: number;
+  lng: number;
+  n: number;
+  slug: string | null;
+  name: string | null;
+}
+
+/**
+ * Every park in a viewport, as parks where they stand alone and as counted cells where
+ * they crowd together.
+ *
+ * The bucketing happens in Postgres (map_grid), so a country-wide view is a few hundred
+ * rows in tens of milliseconds, and no park is dropped to make the payload fit. Statuses
+ * come from the small known-levels set; a park outside it has none by definition.
+ */
 export async function getMapPoints(bbox: Bbox, now: Date = new Date()): Promise<MapPointsResult> {
   try {
     const db = createPublicClient();
-    const world = await loadWorld(db, now, { bbox });
-    const all = assembleAll(world, now);
-    const kept = spreadAcross(
-      all.map((item) => ({ item, lat: item.park.lat, lng: item.park.lng })),
-      bbox,
-    );
-    return {
-      points: kept.map(({ item }) => [
-        item.park.slug,
-        item.park.name,
-        roundCoord(item.park.lat),
-        roundCoord(item.park.lng),
-        levelIndex(item.status.level),
-      ]),
-      total: all.length,
-      truncated: kept.length < all.length,
-    };
+    const cell = gridCellDeg(bbox);
+    const [west, south, east, north] = bbox;
+    const [rows, known] = await Promise.all([
+      selectAll<GridRow>(
+        "map_grid",
+        (a, b) => db.rpc("map_grid", { west, south, east, north, cell }).order("cx").order("cy").range(a, b),
+        { required: true },
+      ),
+      getKnownLevels(db, now),
+    ]);
+
+    // Closed parks per cell, so a bubble can still say "some shut" without the reader
+    // zooming in. Only known parks can be closed, and there are few of them.
+    const closedByCell = new Map<string, number>();
+    const closedIdx = levelIndex("closed");
+    for (const k of known.values()) {
+      if (k.level !== closedIdx) continue;
+      if (k.lat < south || k.lat > north || k.lng < west || k.lng > east) continue;
+      const key = cellKey(k.lat, k.lng, cell);
+      closedByCell.set(key, (closedByCell.get(key) ?? 0) + 1);
+    }
+
+    const unknownIdx = levelIndex("unknown");
+    const total = rows.reduce((sum, r) => sum + r.n, 0);
+
+    // Few enough to send one by one: do. A cell is only a way to keep a crowded view small,
+    // and at street level it would hold two springs a hundred metres apart together
+    // forever, since no zoom makes the cell smaller than the gap between them.
+    if (total <= MAP_INDIVIDUAL_MAX) {
+      const parks = await selectAll<{ slug: string; name: string; lat: number; lng: number }>(
+        "parks(map)",
+        (a, b) =>
+          db
+            .from("parks")
+            .select("slug,name,lat,lng")
+            .gte("lat", south)
+            .lte("lat", north)
+            .gte("lng", west)
+            .lte("lng", east)
+            .order("slug")
+            .range(a, b),
+        { required: true },
+      );
+      return {
+        points: parks.map((p) => [p.slug, p.name, roundCoord(p.lat), roundCoord(p.lng), known.get(p.slug)?.level ?? unknownIdx]),
+        total: parks.length,
+        truncated: false,
+      };
+    }
+
+    const points: MapPoint[] = [];
+    for (const r of rows) {
+      if (r.n === 1 && r.slug) {
+        points.push([r.slug, r.name ?? "", roundCoord(r.lat), roundCoord(r.lng), known.get(r.slug)?.level ?? unknownIdx]);
+      } else {
+        points.push(["", "", roundCoord(r.lat), roundCoord(r.lng), unknownIdx, r.n, closedByCell.get(`${r.cx}:${r.cy}`) ?? 0]);
+      }
+    }
+    return { points, total, truncated: false };
   } catch (err) {
     warn("getMapPoints", err);
     return { points: [], total: 0, truncated: false };
   }
 }
 
+/**
+ * How far around a park its page looks for backups, in degrees: about 110 km north to
+ * south, well past the hour's drive a backup is worth suggesting within.
+ */
+const BACKUP_RADIUS_DEG = 1;
+/** Candidates the page carries for re-ranking backups on the client. */
+const NEARBY_CANDIDATES = 40;
+
 /** One park with parking lots, recent reports, confirmations and backup suggestions: the detail page. */
 export async function getParkBundle(slug: string, now: Date = new Date()): Promise<ParkBundle | null> {
   try {
     const db = createPublicClient();
-    const world = await loadWorld(db, now);
+    // Where the park is, first, so the world load can be the neighbourhood instead of the
+    // country. The whole country was 23,000 statuses and six seconds for every park page,
+    // to pick three backups that are never more than an hour's drive away.
+    const whereR = await db.from("parks").select("lat,lng").eq("slug", slug).maybeSingle();
+    if (whereR.error) warn("parks(where)", whereR.error);
+    if (!whereR.data) return null;
+    const { lat, lng } = whereR.data as { lat: number; lng: number };
+    const r = BACKUP_RADIUS_DEG;
+    const world = await loadWorld(db, now, { bbox: [lng - r, lat - r, lng + r, lat + r] });
     const all = assembleAll(world, now);
     const target = all.find((p) => p.park.slug === slug);
     if (!target) return null;
@@ -627,6 +797,14 @@ export async function getParkBundle(slug: string, now: Date = new Date()): Promi
       .limit(REVIEWS_LIMIT);
 
     const backups = suggestBackups(target, all, DEFAULT_FILTERS, lotsByPark);
+    // The page re-ranks backups on the client when the reader asks for step-free entry, so
+    // it needs candidates too: the nearest ones that could be suggested, not the country.
+    const nearby = all
+      .filter((c) => c.park.id !== target.park.id && !BACKUP_EXCLUDED_LEVELS.has(c.status.level))
+      .map((c) => ({ c, d: (c.park.lat - lat) ** 2 + ((c.park.lng - lng) * Math.cos((lat * Math.PI) / 180)) ** 2 }))
+      .sort((a, b) => a.d - b.d)
+      .slice(0, NEARBY_CANDIDATES)
+      .map(({ c }) => slimForList(c));
     return {
       ...withHourly,
       reviews: rowsOr<Review>("reviews", reviewsR),
@@ -634,9 +812,30 @@ export async function getParkBundle(slug: string, now: Date = new Date()): Promi
       reports,
       confirmations,
       backups,
+      nearby,
     };
   } catch (err) {
     warn(`getParkBundle(${slug})`, err);
+    return null;
+  }
+}
+
+/**
+ * What a park page's <head> needs: one row, three columns.
+ *
+ * Metadata used to call getParkBundle, which loads the neighbourhood and runs the status
+ * model, so every park page did that work twice to print a title.
+ */
+export async function getParkMeta(
+  slug: string,
+): Promise<{ name: string; description: string | null; photo_url: string | null } | null> {
+  try {
+    const db = createPublicClient();
+    const { data, error } = await db.from("parks").select("name,description,photo_url").eq("slug", slug).maybeSingle();
+    if (error) warn(`getParkMeta(${slug})`, error);
+    return (data as { name: string; description: string | null; photo_url: string | null } | null) ?? null;
+  } catch (err) {
+    warn(`getParkMeta(${slug})`, err);
     return null;
   }
 }

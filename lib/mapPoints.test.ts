@@ -1,5 +1,17 @@
 import { describe, expect, it } from "vitest";
-import { LEVELS, MAX_POINTS, levelFromIndex, levelIndex, parseBbox, roundCoord, spreadAcross } from "./mapPoints";
+import {
+  LEVELS,
+  MAP_GRID,
+  cellKey,
+  gridCellDeg,
+  levelFromIndex,
+  levelIndex,
+  parseBbox,
+  pointClosed,
+  pointCount,
+  roundCoord,
+  type MapPoint,
+} from "./mapPoints";
 
 describe("levels round-trip", () => {
   it("survives the trip through an index", () => {
@@ -36,46 +48,33 @@ describe("parseBbox", () => {
   });
 });
 
-describe("spreadAcross", () => {
-  const usa: [number, number, number, number] = [-125, 24, -66, 50];
-
-  it("returns everything when it fits", () => {
-    const items = [{ lat: 30, lng: -82 }, { lat: 44, lng: -85 }];
-    expect(spreadAcross(items, usa, 10)).toHaveLength(2);
+describe("map grid", () => {
+  it("sizes cells to the wider side of the viewport", () => {
+    expect(gridCellDeg([-128, 24, -64, 50])).toBeCloseTo(1, 5);
+    expect(gridCellDeg([-82.5, 29.5, -82.4, 29.6])).toBeCloseTo(0.1 / MAP_GRID, 8);
   });
 
-  it("keeps the edges of the country, not just the middle", () => {
-    // The bug this replaced: nearest-to-centre dropped Florida and Maine from a zoomed-out
-    // view, because the centre of the continental US is Kansas.
-    const kansas = Array.from({ length: 500 }, (_, i) => ({ lat: 38 + i * 0.001, lng: -98, id: "ks" }));
-    const florida = [{ lat: 27, lng: -81, id: "fl" }];
-    const maine = [{ lat: 45, lng: -69, id: "me" }];
-    const kept = spreadAcross([...kansas, ...florida, ...maine], usa, 50);
-    expect(kept.map((i) => i.id)).toContain("fl");
-    expect(kept.map((i) => i.id)).toContain("me");
+  it("never lets a street-level zoom shrink the cell to nothing", () => {
+    expect(gridCellDeg([-82.4, 29.5, -82.4 + 1e-6, 29.5 + 1e-6])).toBe(1e-4);
   });
 
-  it("thins the dense places first", () => {
-    const dense = Array.from({ length: 300 }, () => ({ lat: 38, lng: -98, id: "dense" }));
-    const sparse = Array.from({ length: 5 }, (_, i) => ({ lat: 30 + i, lng: -75, id: "sparse" }));
-    const kept = spreadAcross([...dense, ...sparse], usa, 20);
-    expect(kept.filter((i) => i.id === "sparse").length).toBeGreaterThan(0);
-    expect(kept.filter((i) => i.id === "dense").length).toBeLessThan(300);
+  it("keys cells the way map_grid() does, including west of Greenwich", () => {
+    // floor, not truncation: -82.3 / 0.5 is -164.6, which is cell -165.
+    expect(cellKey(29.6, -82.3, 0.5)).toBe("-165:59");
+  });
+});
+
+describe("points and cells", () => {
+  const park: MapPoint = ["lake-wauburg", "Lake Wauburg", 29.53, -82.3, levelIndex("closed")];
+  const cell: MapPoint = ["", "", 28.1, -81.9, levelIndex("unknown"), 212, 3];
+
+  it("counts a park as one and a cell as what it holds", () => {
+    expect(pointCount(park)).toBe(1);
+    expect(pointCount(cell)).toBe(212);
   });
 
-  it("honours the limit", () => {
-    const many = Array.from({ length: 2000 }, (_, i) => ({ lat: 25 + (i % 200) * 0.12, lng: -124 + (i % 300) * 0.19 }));
-    expect(spreadAcross(many, usa, 400)).toHaveLength(400);
-  });
-
-  it("does not mutate what it was given", () => {
-    const items = [{ lat: 30, lng: -82 }, { lat: 44, lng: -85 }];
-    const copy = [...items];
-    spreadAcross(items, usa, 1);
-    expect(items).toEqual(copy);
-  });
-
-  it("caps at a number a map can actually draw", () => {
-    expect(MAX_POINTS).toBeLessThanOrEqual(500);
+  it("reads closed from a park's own level and from a cell's tally", () => {
+    expect(pointClosed(park)).toBe(1);
+    expect(pointClosed(cell)).toBe(3);
   });
 });

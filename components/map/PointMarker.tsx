@@ -2,6 +2,7 @@
 
 import type { CSSProperties } from "react";
 import { Marker } from "@vis.gl/react-maplibre";
+import { Waves } from "lucide-react";
 import { levelFromIndex, type MapPoint } from "@/lib/mapPoints";
 import { STATUS_META } from "@/lib/status";
 import { StatusIcon } from "@/components/ui/StatusIcon";
@@ -15,6 +16,9 @@ export interface PointMarkerProps {
   onSelect: (slug: string) => void;
 }
 
+/** Brand forest: a pin for a place, not a verdict on it. */
+const NEUTRAL_EDGE = "#1f4d3a";
+
 /**
  * A pin drawn from a map point rather than a whole park.
  *
@@ -27,6 +31,12 @@ export function PointMarker({ point, selected, showLabel, onSelect }: PointMarke
   const [slug, name, lat, lng, levelIdx] = point;
   const level = levelFromIndex(levelIdx);
   const meta = STATUS_META[level];
+  // Most lakes on the map have nothing to base a status on. Their pin is a plain water
+  // mark with the lake's name: a question mark, or a label reading "Unknown", would say
+  // we checked and could not tell, when there was simply nothing to check.
+  const known = level !== "unknown";
+  const edge = known ? meta.edgeHex : NEUTRAL_EDGE;
+  const fg = known ? meta.hex : NEUTRAL_EDGE;
 
   return (
     <Marker
@@ -44,9 +54,9 @@ export function PointMarker({ point, selected, showLabel, onSelect }: PointMarke
       <button
         type="button"
         data-park-marker={slug}
-        aria-label={`${name}: ${meta.label}`}
+        aria-label={known ? `${name}: ${meta.label}` : name}
         aria-pressed={selected}
-        style={{ "--marker-edge": meta.edgeHex, "--marker-fg": meta.hex } as CSSProperties}
+        style={{ "--marker-edge": edge, "--marker-fg": fg } as CSSProperties}
         className="relative flex min-h-11 min-w-11 cursor-pointer items-center justify-center rounded-full"
       >
         <span
@@ -57,7 +67,11 @@ export function PointMarker({ point, selected, showLabel, onSelect }: PointMarke
             selected && "ring-3 ring-sunset-deep ring-offset-2 ring-offset-cream",
           )}
         >
-          <StatusIcon level={level} source="hours" className="relative z-10 size-5 text-(--marker-fg)" />
+          {known ? (
+            <StatusIcon level={level} source="hours" className="relative z-10 size-5 text-(--marker-fg)" />
+          ) : (
+            <Waves aria-hidden="true" focusable="false" className="relative z-10 size-5 text-(--marker-fg)" />
+          )}
         </span>
         <span
           className={
@@ -66,7 +80,7 @@ export function PointMarker({ point, selected, showLabel, onSelect }: PointMarke
               : "sr-only"
           }
         >
-          {meta.shortLabel}
+          {known ? meta.shortLabel : name}
         </span>
       </button>
     </Marker>

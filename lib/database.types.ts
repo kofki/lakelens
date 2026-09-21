@@ -363,6 +363,7 @@ export type Database = {
           fees: string | null
           gauge_distance_km: number | null
           guarded: string
+          has_status_basis: boolean | null
           hours: string | null
           id: string
           lat: number
@@ -407,6 +408,7 @@ export type Database = {
           fees?: string | null
           gauge_distance_km?: number | null
           guarded?: string
+          has_status_basis?: boolean | null
           hours?: string | null
           id?: string
           lat: number
@@ -451,6 +453,7 @@ export type Database = {
           fees?: string | null
           gauge_distance_km?: number | null
           guarded?: string
+          has_status_basis?: boolean | null
           hours?: string | null
           id?: string
           lat?: number
@@ -662,6 +665,25 @@ export type Database = {
       }
     }
     Functions: {
+      map_grid: {
+        Args: {
+          cell: number
+          east: number
+          north: number
+          south: number
+          west: number
+        }
+        Returns: {
+          cx: number
+          cy: number
+          has_status_basis: boolean
+          lat: number
+          lng: number
+          n: number
+          name: string
+          slug: string
+        }[]
+      }
       refresh_sample_reports: { Args: never; Returns: number }
     }
     Enums: {

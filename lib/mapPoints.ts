@@ -18,8 +18,47 @@ import type { StatusLevel } from "./types";
 /** Index into LEVELS. A single digit on the wire instead of "closed_seasonal". */
 export const LEVELS: readonly StatusLevel[] = ["open", "full", "closed", "unknown"];
 
-/** [slug, name, lat, lng, level index] */
-export type MapPoint = [string, string, number, number, number];
+/**
+ * One park: [slug, name, lat, lng, level index].
+ *
+ * Or a grid cell holding several: ["", "", lat, lng, level index, count, closed]. Cells come
+ * from the database's map_grid(), which is what lets a zoomed-out map account for every
+ * park without shipping every park.
+ */
+export type MapPoint =
+  | [string, string, number, number, number]
+  | [string, string, number, number, number, number, number];
+
+/** How many parks a point stands for: 1 for a park, the count for a cell. */
+export function pointCount(point: MapPoint): number {
+  return point.length > 5 ? (point[5] ?? 1) : 1;
+}
+
+/** Closed parks inside a cell, or 1/0 for a single park by its own level. */
+export function pointClosed(point: MapPoint): number {
+  if (point.length > 5) return point[6] ?? 0;
+  return levelFromIndex(point[4]) === "closed" ? 1 : 0;
+}
+
+/**
+ * Cells per side of the viewport grid the database buckets parks into.
+ *
+ * 64 across a phone-width map is a cell every six or so pixels, well under the 56 px the
+ * client merges within, so the grid never decides what the reader sees; supercluster does,
+ * with the grid only keeping the payload to a few hundred rows at any zoom.
+ */
+export const MAP_GRID = 64;
+
+/** The grid's cell size in degrees for a viewport, floored so a street-level zoom still buckets. */
+export function gridCellDeg(bbox: Bbox): number {
+  const [west, south, east, north] = bbox;
+  return Math.max((east - west) / MAP_GRID, (north - south) / MAP_GRID, 1e-4);
+}
+
+/** Integer cell coordinates, matching map_grid()'s floor(coord / cell). */
+export function cellKey(lat: number, lng: number, cell: number): string {
+  return `${Math.floor(lng / cell)}:${Math.floor(lat / cell)}`;
+}
 
 export interface MapPointsResult {
   points: MapPoint[];
@@ -58,64 +97,4 @@ export function parseBbox(raw: string | null): Bbox | null {
   // A viewport with no area returns nothing useful, and south above north is a client bug.
   if (south >= north || west >= east) return null;
   return [west, south, east, north];
-}
-
-/**
- * How many pins the map will accept at once.
- *
- * Past this the map is a texture rather than a set of places, and the payload stops being
- * free.
- */
-export const MAX_POINTS = 400;
-
-/** Cells per side of the sampling grid. 20 x 20 gives 400 cells for 400 pins. */
-const GRID = 20;
-
-/**
- * Keep a sample spread across the whole viewport.
- *
- * The first version kept the pins nearest the centre, on the theory that attention on a map
- * decays outward. That is true of where people look and false as a way to choose what to
- * draw: zoomed out to the whole country, the centre is Kansas, and Florida and Maine fell
- * off the map entirely. A reader cannot look at what is not there.
- *
- * So the viewport is divided into a grid and the sample is taken round-robin across the
- * cells. Every part of the screen that has parks keeps some, dense regions thin out first,
- * and an empty cell costs nothing.
- */
-export function spreadAcross<T extends { lat: number; lng: number }>(
-  items: readonly T[],
-  bbox: Bbox,
-  limit = MAX_POINTS,
-): T[] {
-  if (items.length <= limit) return [...items];
-  const [west, south, east, north] = bbox;
-  const latSpan = north - south || 1;
-  const lngSpan = east - west || 1;
-
-  const cells = new Map<number, T[]>();
-  for (const item of items) {
-    const row = Math.min(GRID - 1, Math.max(0, Math.floor(((item.lat - south) / latSpan) * GRID)));
-    const col = Math.min(GRID - 1, Math.max(0, Math.floor(((item.lng - west) / lngSpan) * GRID)));
-    const key = row * GRID + col;
-    const bucket = cells.get(key);
-    if (bucket) bucket.push(item);
-    else cells.set(key, [item]);
-  }
-
-  // Round-robin: one from each occupied cell, then a second from each, until full. A cell
-  // with forty lakes gives up the same first pin as a cell with one.
-  const buckets = [...cells.values()];
-  const out: T[] = [];
-  for (let depth = 0; out.length < limit; depth += 1) {
-    let placed = false;
-    for (const bucket of buckets) {
-      if (depth >= bucket.length) continue;
-      out.push(bucket[depth]!);
-      placed = true;
-      if (out.length >= limit) break;
-    }
-    if (!placed) break;
-  }
-  return out;
 }

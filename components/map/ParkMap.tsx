@@ -190,7 +190,8 @@ function ParkMapInner({
     // still throw for a cluster id from a previous index, which is what the fallback is for.
     let zoom: number;
     try {
-      zoom = index.getClusterExpansionZoom(bubble.clusterId);
+      // A database grid cell has no supercluster id; two levels in is where cells split.
+      zoom = bubble.clusterId < 0 ? map.getZoom() + 2 : index.getClusterExpansionZoom(bubble.clusterId);
     } catch {
       zoom = map.getZoom() + 2;
     }

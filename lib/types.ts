@@ -465,6 +465,8 @@ export interface ParkBundle extends ParkWithStatus {
   confirmations: ReportConfirmation[];
   backups: BackupSuggestion[];
   reviews: Review[];
+  /** The nearest parks that could be suggested as backups, for re-ranking on the client. */
+  nearby?: ParkWithStatus[];
 }
 
 export interface BackupSuggestion {

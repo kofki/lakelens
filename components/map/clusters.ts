@@ -20,7 +20,7 @@
  */
 import Supercluster from "supercluster";
 import type { ParkWithStatus } from "@/lib/types";
-import { levelFromIndex, type MapPoint } from "@/lib/mapPoints";
+import { levelFromIndex, pointClosed, pointCount, type MapPoint } from "@/lib/mapPoints";
 
 /**
  * Radius in pixels within which pins merge. 56 is a little wider than a marker, so two
@@ -35,6 +35,10 @@ export interface ParkFeatureProps {
   id: string;
   /** "open" | "closed" | ... Kept on the feature so a bubble can be tinted by what is in it. */
   level: string;
+  /** Parks this feature stands for: 1 for a park, more for a database grid cell. */
+  count?: number;
+  /** Closed parks among them. */
+  closed?: number;
 }
 
 export function toFeatureCollection(parks: ParkWithStatus[]): GeoJSON.FeatureCollection<GeoJSON.Point, ParkFeatureProps> {
@@ -60,11 +64,16 @@ export function pointsToFeatureCollection(
 ): GeoJSON.FeatureCollection<GeoJSON.Point, ParkFeatureProps> {
   return {
     type: "FeatureCollection",
-    features: points.map(([slug, , lat, lng, level]) => ({
-      type: "Feature",
-      properties: { id: slug, level: levelFromIndex(level) },
-      geometry: { type: "Point", coordinates: [lng, lat] },
-    })),
+    features: points.map((point, i) => {
+      const [slug, , lat, lng, level] = point;
+      const count = pointCount(point);
+      return {
+        type: "Feature",
+        // A cell has no slug; its index keeps its key unique among the bubbles.
+        properties: { id: slug || `cell-${i}`, level: levelFromIndex(level), count, closed: pointClosed(point) },
+        geometry: { type: "Point", coordinates: [lng, lat] },
+      };
+    }),
   };
 }
 
@@ -74,8 +83,8 @@ export function buildPointIndex(points: readonly MapPoint[]): ParkIndex {
     radius: CLUSTER_RADIUS,
     maxZoom: CLUSTER_MAX_ZOOM,
     minPoints: 2,
-    map: CLUSTER_PROPERTIES.closed.map,
-    reduce: CLUSTER_PROPERTIES.closed.reduce,
+    map: CLUSTER_PROPERTIES.weighted.map,
+    reduce: CLUSTER_PROPERTIES.weighted.reduce,
   });
   index.load(pointsToFeatureCollection(points).features as never[]);
   return index;
@@ -89,14 +98,32 @@ export function buildPointIndex(points: readonly MapPoint[]): ParkIndex {
  */
 const CLUSTER_PROPERTIES = {
   closed: {
-    map: (props: ParkFeatureProps) => ({ closed: props.level === "closed" ? 1 : 0 }),
-    reduce: (accumulated: { closed: number }, props: { closed: number }) => {
+    map: (props: ParkFeatureProps) => ({ closed: props.level === "closed" ? 1 : 0, count: 1 }),
+    reduce: (accumulated: ClusterSums, props: ClusterSums) => {
       accumulated.closed += props.closed;
+      accumulated.count += props.count;
+    },
+  },
+  /**
+   * The same sums when a feature may already stand for many parks. supercluster's own
+   * point_count counts features, so a bubble made of three grid cells would say 3 when it
+   * holds 300; the real total is carried up here instead.
+   */
+  weighted: {
+    map: (props: ParkFeatureProps) => ({ closed: props.closed ?? 0, count: props.count ?? 1 }),
+    reduce: (accumulated: ClusterSums, props: ClusterSums) => {
+      accumulated.closed += props.closed;
+      accumulated.count += props.count;
     },
   },
 };
 
-export type ParkIndex = Supercluster<ParkFeatureProps, { closed: number }>;
+interface ClusterSums {
+  closed: number;
+  count: number;
+}
+
+export type ParkIndex = Supercluster<ParkFeatureProps, ClusterSums>;
 
 /** Build the index. Cheap enough to rebuild whenever the park list changes. */
 export function buildIndex(parks: ParkWithStatus[]): ParkIndex {
@@ -133,7 +160,22 @@ export function pinsFor(index: ParkIndex, bbox: [number, number, number, number]
         key: `c${props.cluster_id}`,
         lng: coords[0]!,
         lat: coords[1]!,
-        count: Number(props.point_count ?? 0),
+        count: Number(props.count ?? props.point_count ?? 0),
+        closed: Number(props.closed ?? 0),
+      });
+      continue;
+    }
+    // A database cell that supercluster left on its own is still many parks: draw it as a
+    // bubble. It has no supercluster id, so expanding it zooms in on its position instead.
+    const cellCount = Number(props.count ?? 1);
+    if (cellCount > 1) {
+      out.push({
+        kind: "cluster",
+        clusterId: -1,
+        key: `g${String(props.id)}`,
+        lng: coords[0]!,
+        lat: coords[1]!,
+        count: cellCount,
         closed: Number(props.closed ?? 0),
       });
       continue;
@@ -146,7 +188,7 @@ export function pinsFor(index: ParkIndex, bbox: [number, number, number, number]
 
 export interface ClusterBubble {
   kind: "cluster";
-  /** MapLibre's cluster id, which `getClusterExpansionZoom` takes. */
+  /** supercluster's cluster id for `getClusterExpansionZoom`, or -1 for a database grid cell. */
   clusterId: number;
   key: string;
   lng: number;

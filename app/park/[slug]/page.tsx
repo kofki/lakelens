@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { notFound } from "next/navigation";
-import type { ParkBundle, ParkWithStatus } from "@/lib/types";
-import { getParkBundle, getPrerenderParkSlugs, getParksWithStatus } from "@/lib/queries";
+import type { ParkBundle } from "@/lib/types";
+import { getParkBundle, getParkMeta, getPrerenderParkSlugs } from "@/lib/queries";
 import { Hero } from "@/components/park/Hero";
 import { StatusHeader } from "@/components/park/StatusHeader";
 import { SectionTabs, type SectionLink } from "@/components/park/SectionTabs";
@@ -40,18 +40,18 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { slug } = await params;
   try {
-    const bundle = await getParkBundle(slug);
-    if (!bundle) return { title: "Park not found" };
+    const park = await getParkMeta(slug);
+    if (!park) return { title: "Park not found" };
     return {
-      title: bundle.park.name,
+      title: park.name,
       description:
-        bundle.park.description ??
-        `Status, closure estimate, parking, accessibility and safety information for ${bundle.park.name}.`,
+        park.description ??
+        `Status, closure estimate, parking, accessibility and safety information for ${park.name}.`,
       alternates: { canonical: `/park/${slug}` },
       openGraph: {
         type: "article",
         url: `/park/${slug}`,
-        ...(bundle.park.photo_url ? { images: [bundle.park.photo_url] } : {}),
+        ...(park.photo_url ? { images: [park.photo_url] } : {}),
       },
     };
   } catch {
@@ -63,9 +63,8 @@ export default async function ParkPage({ params }: Params) {
   const { slug } = await params;
   const now = new Date();
   let bundle: ParkBundle | null = null;
-  let all: ParkWithStatus[] = [];
   try {
-    [bundle, all] = await Promise.all([getParkBundle(slug, now), getParksWithStatus(now)]);
+    bundle = await getParkBundle(slug, now);
   } catch {
     bundle = null;
   }
@@ -115,7 +114,7 @@ export default async function ParkPage({ params }: Params) {
 
             {showBackups && (
               <Suspense fallback={null}>
-                <BackupSuggestions target={bundle} all={all} initial={bundle.backups} />
+                <BackupSuggestions target={bundle} all={bundle.nearby ?? []} initial={bundle.backups} />
               </Suspense>
             )}
 
