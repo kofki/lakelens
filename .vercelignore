@@ -1,0 +1,5 @@
+# Local harvest cache (OSM, Commons, gazetteer): ~900 MB and 18,000 files. The app reads
+# the database, never this folder, and uploading it breaks the 15,000-file deploy limit.
+/data
+# The seed goes to Supabase with `supabase db push --include-seed`, not to Vercel.
+/supabase/seed.sql
