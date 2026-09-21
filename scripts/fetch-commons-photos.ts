@@ -45,9 +45,16 @@ const THUMB_WIDTH = 1200;
  * handful of parallel requests from an identified client is well within it, and it turns
  * an overnight job into minutes.
  */
-const CONCURRENCY = 8;
-/** Between batches, not between requests. */
-const GAP_MS = 60;
+const CONCURRENCY = 3;
+/**
+ * Between batches, not between requests.
+ *
+ * Eight at a time with a 60 ms gap drew 17,433 HTTP 429s in one run: Wikimedia's limit is
+ * tighter than its guidance suggests for an anonymous client. Three at a time with a
+ * breath between batches is still roughly ten times the old serial rate and comes back
+ * clean. A request that is refused writes no cache entry, so a later run retries it.
+ */
+const GAP_MS = 200;
 
 /** Licences with no share-alike obligation. Everything else is skipped. */
 const ALLOWED_LICENCE = /^(cc0|cc[- ]by(?![- ]?sa)|public domain|pd[- ]|no restrictions|attribution$)/i;
