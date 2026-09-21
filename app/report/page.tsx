@@ -47,7 +47,7 @@ export default async function ReportPage() {
               Report conditions
             </h1>
             <p className="mt-1 text-sm text-mocha md:mt-3 md:text-base">
-              Pick the park you&apos;re at. One tap is enough &mdash; reports fade after about two hours.
+              Pick the park you&apos;re at. One tap is enough. Reports fade after about two hours.
             </p>
             {/* Desktop-only explainer; the picker itself carries the essentials on mobile. */}
             <ul className="mt-6 hidden space-y-4 md:block">

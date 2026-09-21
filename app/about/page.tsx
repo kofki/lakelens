@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
-  BookOpen,
   CalendarDays,
   CloudRain,
   Compass,
@@ -11,7 +11,6 @@ import {
   Gauge,
   Heart,
   Megaphone,
-  Rocket,
   Scale,
   ShieldCheck,
   Sun,
@@ -21,6 +20,8 @@ import {
   WavesLadder,
 } from "lucide-react";
 import { STATUS_META, STATUS_ORDER } from "@/lib/status";
+import { REPORT_VALUES, REPORT_VALUE_LABELS, type ReportCategory } from "@/lib/types";
+import { ReportIcon } from "@/components/report/ReportIcon";
 import { Badge } from "@/components/ui/Badge";
 import { ButtonLink } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
@@ -33,7 +34,7 @@ import { SideNav } from "./SideNav";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "How LakeLens works out how busy a park will be, how crowd reports work, what is verified, where the data comes from, and who built it.",
+    "How LakeLens estimates how busy a park will be, how crowd reports work, what is verified, and where the data comes from.",
   alternates: { canonical: "/about" },
 };
 
@@ -41,12 +42,10 @@ const TOC: { id: string; label: string }[] = [
   { id: "what", label: "What LakeLens does" },
   { id: "estimate", label: "How busy today?" },
   { id: "reports", label: "How reports work" },
-  { id: "verified", label: "Verified vs unverified" },
+  { id: "verified", label: "What we verify" },
   { id: "sources", label: "Data sources" },
-  { id: "rules", label: "Park rules" },
-  { id: "disclaimer", label: "Disclaimer" },
-  { id: "team", label: "About the team" },
-  { id: "roadmap", label: "Roadmap" },
+  { id: "disclaimer", label: "Rules and disclaimer" },
+  { id: "maker", label: "Who made this" },
 ];
 
 interface Factor {
@@ -178,10 +177,9 @@ export default function AboutPage() {
             Never drive out to a closed gate.
           </h1>
           <p className="max-w-prose text-mocha md:text-lg">
-            LakeLens tells you whether a spring, lake or river swim area is open, closed or running busy
-            before you drive out, and shows the parking, amenities and accessibility details that decide
-            whether a trip works for you. Coverage today is Florida, and the product is built for the whole
-            US.
+            LakeLens covers freshwater swim areas across all 50 states: springs, lakes and rivers inside
+            public land. It tells you what is known about a place before you drive out, and says nothing
+            when nothing is known.
           </p>
           {/* Mobile: chip list of section links. Desktop gets the sticky side nav below instead. */}
           <nav aria-label="On this page" className="md:hidden">
@@ -216,8 +214,8 @@ export default function AboutPage() {
               <Card className="space-y-3">
                 <ul className="list-disc space-y-2 pl-5 text-cocoa">
                   <li>
-                    <span className="font-bold">How busy today.</span> A transparent score that says whether
-                    a park is running busier than usual, and roughly when the crowds arrive.
+                    <span className="font-bold">How busy today.</span> A transparent score for whether a park
+                    is running busier than usual, and roughly when the crowds arrive.
                   </li>
                   <li>
                     <span className="font-bold">Hours you can trust.</span> Opening hours and sunset are
@@ -225,36 +223,20 @@ export default function AboutPage() {
                   </li>
                   <li>
                     <span className="font-bold">One-tap crowd reports.</span> Got in, turned away, line at the
-                    gate, lot full. No account needed.
+                    gate, lot full. No account needed. When a park is full, the nearest open alternatives.
                   </li>
                   <li>
-                    <span className="font-bold">Backup suggestions.</span> When a park is full or closed, the
-                    nearest open alternatives with drive time and parking notes.
+                    <span className="font-bold">Conditions, parking and access.</span> Water temperature, UV,
+                    feels-like and the forecast, plus water entry type, ADA parking, restrooms and amenities.
                   </li>
                   <li>
-                    <span className="font-bold">Live conditions.</span> Water temperature, UV index,
-                    feels-like temperature, thunder chance and the hourly forecast in plain language, each
-                    with its source and last-updated time.
-                  </li>
-                  <li>
-                    <span className="font-bold">Accessibility and parking.</span> Water entry type, ADA
-                    parking, accessible restrooms, loaner wheelchairs, and where the lots are.
-                  </li>
-                  <li>
-                    <span className="font-bold">Amenities.</span> Restrooms, showers, pavilions, docks, boat
-                    ramps, grills, picnic tables, drinking water, boat rental, food and playgrounds.
-                  </li>
-                  <li>
-                    <span className="font-bold">Visitor reviews.</span> A star rating, a few words and up to
-                    four photos from people who have actually been.
-                  </li>
-                  <li>
-                    <span className="font-bold">Safety cards.</span> Lifeguard status, cave and cavern
-                    warnings, cold water, currents and park rules.
+                    <span className="font-bold">Silence where we have nothing.</span> Most lakes here were
+                    found by their public shore and have no posted hours or lifeguard. Those get no status at
+                    all, rather than a badge implying we checked.
                   </li>
                 </ul>
                 <p className="text-sm text-mocha">
-                  Every status is shown as an icon plus words, never a colour on its own:
+                  Where there is a status, it is an icon plus words, never a colour on its own:
                 </p>
                 <ul className="flex flex-wrap gap-2">
                   {STATUS_ORDER.map((level) => (
@@ -271,10 +253,7 @@ export default function AboutPage() {
               <Card className="space-y-4">
                 <p className="text-sm text-mocha">
                   Parks never publish live capacity, so we score the day instead. We never claim a park will
-                  fill; at most we say it is busier than usual. Treat the time as a guide, not a guarantee.
-                </p>
-                <p>
-                  Each park starts at zero and we add or subtract points for the things that draw crowds:
+                  fill; at most we say it is busier than usual. Each park starts at zero:
                 </p>
                 <ul className="divide-y divide-mist rounded-xl border border-mist">
                   {FACTORS.map((f) => (
@@ -295,60 +274,17 @@ export default function AboutPage() {
                     </li>
                   ))}
                 </ul>
-                <dl className="grid gap-2 sm:grid-cols-3">
-                  <div className="rounded-xl bg-cream p-3">
-                    <dt className="text-xs font-bold text-mocha">Score 0 or less</dt>
-                    <dd className="mt-1 space-y-1">
-                      <StatusPill level="open" size="sm" />
-                      <p className="text-xs text-mocha">A normal day. No crowd expected.</p>
-                    </dd>
-                  </div>
-                  <div className="rounded-xl bg-cream p-3">
-                    <dt className="text-xs font-bold text-mocha">Score 1 to 2</dt>
-                    <dd className="mt-1 space-y-1">
-                      <StatusPill level="open" size="sm" />
-                      <p className="text-xs text-mocha">
-                        Somewhat busier. We show the time crowds usually arrive.
-                      </p>
-                    </dd>
-                  </div>
-                  <div className="rounded-xl bg-cream p-3">
-                    <dt className="text-xs font-bold text-mocha">Score 3 or more</dt>
-                    <dd className="mt-1 space-y-1">
-                      <StatusPill level="open" size="sm" />
-                      <p className="text-xs text-mocha">Busier than usual today. Go early.</p>
-                    </dd>
-                  </div>
-                </dl>
+                <p className="text-sm text-mocha">
+                  0 or less is a normal day. 1 to 2 is somewhat busier. 3 or more means go early. Parks with a
+                  known typical busy time also get a time, which moves 25 minutes earlier for every point
+                  above 2.
+                </p>
                 <p className="rounded-xl bg-aqua p-3 text-sm text-cyan-deep">
                   A park is only marked <strong>Full</strong> or <strong>Closed</strong> once it has actually
                   stopped letting people in: an official closure, the park&rsquo;s own hours, the swim season,
-                  or visitors reporting they were turned away. Everything else stays{" "}
-                  <strong>Open</strong>, with the busyness outlook shown alongside it.
+                  or visitors reporting they were turned away. An active closure or a gate shut for the night
+                  always wins over the score, and the park reopens by itself when the notice ends.
                 </p>
-                <ul className="list-disc space-y-2 pl-5 text-sm">
-                  <li>
-                    <span className="font-bold">Expected time.</span> Parks with a known typical busy time
-                    (for example &ldquo;usually busy by 10:30 AM on weekends&rdquo;) get a time that moves 25
-                    minutes earlier for every point above 2. Parks without one just show the level.
-                  </li>
-                  <li>
-                    <span className="font-bold">Hours and closures win.</span> An active closure notice, a
-                    swim area that is out of season, or a park that is shut for the night always shows{" "}
-                    <span className="font-bold">Closed</span> no matter the score. Hours are parsed per park
-                    and sunset comes from the NOAA solar equations, in the park&rsquo;s own time zone. When
-                    the notice ends or the gate opens, the park reopens automatically.
-                  </li>
-                  <li>
-                    <span className="font-bold">Confidence.</span> High when we have a fresh forecast, a
-                    typical busy time and deep coverage for that park; medium when one is missing; low
-                    otherwise. Weekdays with no events simply say crowds are rare.
-                  </li>
-                  <li>
-                    <span className="font-bold">Reports can override it.</span> Confirmed visitor reports beat
-                    the outlook (see below).
-                  </li>
-                </ul>
               </Card>
             </Section>
 
@@ -356,36 +292,38 @@ export default function AboutPage() {
               <Card className="space-y-3">
                 <ul className="list-disc space-y-2 pl-5">
                   <li>
-                    <span className="font-bold">One tap, no account.</span> Pick what you saw: got in, turned
-                    away, line at the gate, lot full, water high, gator sighting and a few more. A note and a
-                    photo are optional. Your device gets a random ID so we can rate-limit (5 reports per 10
-                    minutes) without knowing who you are.
+                    <span className="font-bold">One tap, no account.</span> Pick what you saw. Your device
+                    gets a random ID so we can rate-limit without knowing who you are.
                   </li>
                   <li>
-                    <span className="font-bold">Reports expire after 2 hours.</span> Anything older is dropped
-                    from the status. Conditions at a spring change fast, so stale reports would mislead.
+                    <span className="font-bold">Reports expire after 2 hours.</span> Conditions change fast,
+                    so stale reports would mislead.
                   </li>
                   <li>
-                    <span className="font-bold">3 matching reports within 30 minutes = confirmed.</span> A
-                    single &ldquo;turned away&rdquo; shows as <Badge variant="user">Reported</Badge>; three
-                    people saying the same thing in half an hour makes it{" "}
-                    <Badge variant="verified">Confirmed</Badge>, and confirmed reports override the outlook.
-                  </li>
-                  <li>
-                    <span className="font-bold">&ldquo;Still full?&rdquo; prompts.</span> When a full or
-                    turned-away status is more than 30 minutes old, people at the park are asked whether it is
-                    still true. A majority of &ldquo;no longer&rdquo; answers clears it.
+                    <span className="font-bold">3 matching reports in 30 minutes = confirmed.</span> One
+                    &ldquo;turned away&rdquo; shows as <Badge variant="user">Reported</Badge>; three makes it{" "}
+                    <Badge variant="verified">Confirmed</Badge>, which overrides the outlook. When a full
+                    status is over 30 minutes old, people at the park are asked whether it is still true.
                   </li>
                   <li>
                     <span className="font-bold">Contradictions are shown, not hidden.</span> A newer
-                    &ldquo;got in&rdquo; after a &ldquo;turned away&rdquo; lowers our confidence and both are
+                    &ldquo;got in&rdquo; after a &ldquo;turned away&rdquo; lowers our confidence and both stay
                     visible.
                   </li>
-                  <li>
-                    <span className="font-bold">Sample data is labelled.</span> During the hackathon demo some
-                    parks carry seeded reports marked <Badge variant="sample" />. They are never counted as
-                    real confirmations in the wild.
-                  </li>
+                </ul>
+                <p className="text-sm font-bold text-mocha">The things you can report:</p>
+                <ul className="flex flex-wrap gap-2">
+                  {(Object.keys(REPORT_VALUES) as ReportCategory[]).flatMap((category) =>
+                    REPORT_VALUES[category].map((v) => (
+                      <li
+                        key={v}
+                        className="inline-flex items-center gap-1.5 rounded-full border border-mist bg-white px-3 py-1 text-sm font-bold text-cocoa"
+                      >
+                        <ReportIcon value={v} className="size-4 shrink-0 text-taupe" />
+                        {REPORT_VALUE_LABELS[v]}
+                      </li>
+                    )),
+                  )}
                 </ul>
                 <ButtonLink href="/report" variant="secondary">
                   <Megaphone aria-hidden="true" />
@@ -394,7 +332,7 @@ export default function AboutPage() {
               </Card>
             </Section>
 
-            <Section id="verified" title="Verified vs unverified" icon={<ShieldCheck />}>
+            <Section id="verified" title="What we verify" icon={<ShieldCheck />}>
               <Card className="space-y-3">
                 <p>
                   We only call something verified when an official page says it. Everything else is labelled
@@ -406,8 +344,7 @@ export default function AboutPage() {
                       <Badge variant="verified" />
                     </dt>
                     <dd className="text-sm text-mocha">
-                      Stated on the park&rsquo;s official page (Florida State Parks, Alachua County, Ginnie
-                      Springs Outdoors), with a link to the source.
+                      Stated on the park&rsquo;s official page, with a link to the source.
                     </dd>
                   </div>
                   <div className="flex flex-col gap-1 sm:flex-row sm:gap-3">
@@ -415,18 +352,8 @@ export default function AboutPage() {
                       <Badge variant="unverified" />
                     </dt>
                     <dd className="text-sm text-mocha">
-                      Accessibility details we could not confirm officially, OpenStreetMap parking lots, and
-                      anything a visitor reported. Shown as text, including &ldquo;unknown&rdquo; where we
-                      simply do not know.
-                    </dd>
-                  </div>
-                  <div className="flex flex-col gap-1 sm:flex-row sm:gap-3">
-                    <dt className="shrink-0 sm:w-40">
-                      <Badge variant="official" />
-                    </dt>
-                    <dd className="text-sm text-mocha">
-                      Closure and notice alerts are entered manually from official notices and show when they
-                      were last checked. We do not scrape park websites.
+                      OpenStreetMap details, accessibility we could not confirm, and anything a visitor
+                      reported.
                     </dd>
                   </div>
                   <div className="flex flex-col gap-1 sm:flex-row sm:gap-3">
@@ -434,17 +361,16 @@ export default function AboutPage() {
                       <Badge variant="typical" />
                     </dt>
                     <dd className="text-sm text-mocha">
-                      Values like &ldquo;spring water is typically 72°F&rdquo; when there is no live gauge.
-                      Never presented as a live reading.
+                      Values like &ldquo;spring water is typically 72&deg;F&rdquo; when there is no live
+                      gauge. Never presented as a live reading.
                     </dd>
                   </div>
                 </dl>
                 <p className="flex items-start gap-2 rounded-xl bg-peach p-3 text-sm text-cocoa">
                   <TriangleAlert aria-hidden="true" className="mt-0.5 size-4 shrink-0 text-cocoa" />
                   <span>
-                    <span className="font-bold">Lifeguards:</span> most springs have no lifeguard on
-                    duty. We show &ldquo;yes&rdquo;, &ldquo;no&rdquo; or &ldquo;unknown&rdquo; per park; treat
-                    &ldquo;unknown&rdquo; as no.
+                    <span className="font-bold">Lifeguards:</span> most freshwater swim areas have none. We
+                    show &ldquo;yes&rdquo;, &ldquo;no&rdquo; or nothing at all; assume no.
                   </span>
                 </p>
               </Card>
@@ -463,136 +389,66 @@ export default function AboutPage() {
                 </ul>
               </Card>
               <p className="text-sm text-mocha">
-                Each number in the app shows where it came from and when it was last fetched. Water data older
-                than 6 hours, forecasts older than 3 hours and reports older than 2 hours are flagged as
-                possibly out of date.
-              </p>
-              <p className="text-sm text-mocha">
-                Park photos come from Wikimedia Commons contributors and are used under the licence named on
-                each photo. The photographer and licence appear under the photo on every park page.
+                Each number shows where it came from and when it was fetched. Water data older than 6 hours,
+                forecasts older than 3 hours and reports older than 2 hours are flagged as possibly out of
+                date. Park photos come from Wikimedia Commons, with the photographer and licence under every
+                photo.
               </p>
             </Section>
 
-            <Section id="rules" title="Park rules" icon={<Scale />}>
-              <Card className="space-y-3">
-                <p>
-                  Florida State Parks follow the Florida Administrative Code. Under{" "}
-                  <ExtLink href="https://flrules.elaws.us/fac/62d-2.014">F.A.C. 62D-2.014</ExtLink>:
-                </p>
-                <ul className="list-disc space-y-2 pl-5">
-                  <li>
-                    <span className="font-bold">Alcohol is prohibited</span> in state parks except in
-                    designated areas, restaurants and sanctioned events.
-                  </li>
-                  <li>
-                    <span className="font-bold">Pets are excluded from swimming areas</span>, both the land
-                    and the water portions, as well as buildings, playgrounds and food-service areas.
-                  </li>
-                </ul>
-                <p className="text-sm text-mocha">
-                  Each park card lists its own tubing, life-jacket and inflatable rules from the official
-                  page. Ginnie Springs and Poe Springs are not state parks and set their own rules. See the{" "}
-                  <ExtLink href="https://www.floridastateparks.org/Rules">
-                    Florida State Parks rules page
-                  </ExtLink>{" "}
-                  for the full list.
-                </p>
-              </Card>
-            </Section>
-
-            <Section id="disclaimer" title="Disclaimer" icon={<BookOpen />}>
+            <Section id="disclaimer" title="Rules and disclaimer" icon={<Scale />}>
               <Card className="space-y-2 text-sm">
                 <p>
                   LakeLens is <span className="font-bold">informational only</span>. The busyness outlook is
-                  an estimate, visitor reports are unverified, and conditions at springs, lakes and rivers
-                  change quickly.
+                  an estimate, visitor reports are unverified, and conditions change quickly. Always follow
+                  posted rules, signs and park staff. Swim at your own risk, and never enter caves or caverns
+                  without cave-diving certification.
                 </p>
                 <p>
-                  Always follow posted rules, signs and park staff. Swim at your own risk; most springs have
-                  no lifeguard. Never enter caves or caverns without cave-diving certification.
+                  Park rules vary by operator. Florida State Parks follow{" "}
+                  <ExtLink href="https://flrules.elaws.us/fac/62d-2.014">F.A.C. 62D-2.014</ExtLink>: no
+                  alcohol outside designated areas, and no pets in swimming areas. Each park page lists its
+                  own rules where we have them.
                 </p>
                 <p>
-                  LakeLens is <span className="font-bold">not affiliated with Florida State Parks</span>, the
-                  Florida Department of Environmental Protection, Alachua County or Ginnie Springs Outdoors.
-                  Official information always takes precedence over anything shown here.
+                  LakeLens is <span className="font-bold">not affiliated with any park operator</span> or
+                  state agency. Official information always takes precedence over anything shown here.
                 </p>
               </Card>
             </Section>
 
-            <Section id="team" title="About the team" icon={<Heart />}>
-              <Card className="space-y-3">
-                <p>
-                  LakeLens was built at <span className="font-bold">SASEhack 2026</span> (September 18 to 20,
-                  2026). It brings honest, accessible conditions at a glance to freshwater swim areas: the
-                  springs, lakes and rivers inside parks that fill to capacity before mid-morning on a summer
-                  weekend. Salt water is out of scope on purpose: a beach has no gate, so it cannot turn you
-                  away.
-                </p>
-                <p className="text-sm text-mocha">
-                  Tracks: Social Impact and Best Design. Built with Next.js, Supabase, MapLibre and a lot of
-                  iced coffee.
-                </p>
-              </Card>
-            </Section>
-
-            <Section id="roadmap" title="Roadmap" icon={<Rocket />}>
-              <Card>
-                <ol className="relative space-y-4 border-l-2 border-mist pl-5">
-                  <li>
-                    <span
-                      aria-hidden="true"
-                      className="absolute -left-[9px] mt-1 size-4 rounded-full bg-taupe"
-                    />
-                    <p className="font-bold">Now: 40 freshwater parks in Florida</p>
-                    <p className="text-sm text-mocha">
-                      31 springs, 6 lakes and 3 rivers, with live USGS, weather, UV and algae feeds.
-                    </p>
-                  </li>
-                  <li>
-                    <span
-                      aria-hidden="true"
-                      className="absolute -left-[9px] mt-1 size-4 rounded-full bg-moss"
-                    />
-                    <p className="font-bold">Next: more states</p>
-                    <p className="text-sm text-mocha">
-                      The same freshwater coverage state by state: boat ramps, blue-green algae advisories
-                      and river stage warnings.
-                    </p>
-                  </li>
-                  <li>
-                    <span
-                      aria-hidden="true"
-                      className="absolute -left-[9px] mt-1 size-4 rounded-full bg-lagoon"
-                    />
-                    <p className="font-bold">Then: the Great Lakes</p>
-                    <p className="text-sm text-mocha">
-                      Water quality and NOAA water temperature for the busiest lakefront parks.
-                    </p>
-                  </li>
-                  <li>
-                    <span
-                      aria-hidden="true"
-                      className="absolute -left-[9px] mt-1 size-4 rounded-full bg-mist"
-                    />
-                    <p className="font-bold">Later: nationwide</p>
-                    <p className="text-sm text-mocha">
-                      Any public freshwater swim area with an open data source.
-                    </p>
-                  </li>
-                </ol>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  <ButtonLink href="/">
-                    <WavesLadder aria-hidden="true" />
-                    Open the map
-                  </ButtonLink>
-                  <Link
-                    href="/list"
-                    className="inline-flex min-h-11 items-center rounded-full px-4 font-bold text-brown underline decoration-moss decoration-2 underline-offset-4"
-                  >
-                    Browse the list
-                  </Link>
+            <Section id="maker" title="Who made this" icon={<Heart />}>
+              <Card className="flex flex-col gap-4 sm:flex-row sm:items-center">
+                <Image
+                  src="/kenzo-fukuda.jpg"
+                  alt="Kenzo Fukuda"
+                  width={96}
+                  height={96}
+                  className="size-24 shrink-0 rounded-full object-cover shadow-card"
+                />
+                <div className="min-w-0 space-y-2">
+                  <p>
+                    Made by <span className="font-bold">Kenzo Fukuda</span>, a student at the University of
+                    Florida.
+                  </p>
+                  <p className="text-sm text-mocha">
+                    Salt water is out of scope on purpose: a beach has no gate, so it cannot turn you away.
+                    Built with Next.js, Supabase and MapLibre.
+                  </p>
                 </div>
               </Card>
+              <div className="flex flex-wrap gap-2">
+                <ButtonLink href="/">
+                  <WavesLadder aria-hidden="true" />
+                  Open the map
+                </ButtonLink>
+                <Link
+                  href="/list"
+                  className="inline-flex min-h-11 items-center rounded-full px-4 font-bold text-brown underline decoration-moss decoration-2 underline-offset-4"
+                >
+                  Browse the list
+                </Link>
+              </div>
             </Section>
           </div>
         </div>

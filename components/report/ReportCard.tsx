@@ -1,6 +1,7 @@
-import { CheckCircle2, MessageSquare } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import { REPORT_CATEGORY_LABELS, REPORT_VALUE_LABELS, type Report } from "@/lib/types";
 import { relativeTime } from "@/lib/freshness";
+import { ReportIcon } from "./ReportIcon";
 import { Badge } from "@/components/ui/Badge";
 
 export interface ReportCardProps {
@@ -15,7 +16,7 @@ export function ReportCard({ report, confirmations, now }: ReportCardProps) {
   return (
     <article className="rounded-xl border border-mist bg-white p-3" aria-label={`${label}, reported ${relativeTime(report.created_at, now)}`}>
       <div className="flex flex-wrap items-center gap-2">
-        <MessageSquare aria-hidden="true" focusable="false" className="h-4 w-4 text-mocha" />
+        <ReportIcon value={report.value} className="size-4 shrink-0 text-mocha" />
         <p className="text-sm font-extrabold text-cocoa">{label}</p>
         <span className="text-xs text-mocha">{REPORT_CATEGORY_LABELS[report.category]}</span>
         <span className="ml-auto text-xs text-mocha">{relativeTime(report.created_at, now)}</span>

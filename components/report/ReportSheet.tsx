@@ -14,6 +14,7 @@ import {
 import { submitReport, uploadReportPhoto } from "@/lib/reports";
 import { getDeviceId } from "@/lib/deviceId";
 import { getUserId } from "@/lib/supabase/session";
+import { ReportIcon } from "./ReportIcon";
 import { getReporterLocation } from "@/lib/reporterLocation";
 import { Button } from "@/components/ui/Button";
 import { SegmentedTabs } from "@/components/ui/SegmentedTabs";
@@ -138,12 +139,16 @@ export function ReportSheet({ park, open, onOpenChange, onSubmitted }: ReportShe
                     aria-pressed={selected}
                     onClick={() => setValue(v)}
                     className={cn(
-                      "min-h-12 rounded-full border-2 px-3 text-sm font-extrabold transition-colors",
+                      "flex min-h-12 items-center justify-center gap-1.5 rounded-full border-2 px-3 text-sm font-extrabold transition-colors",
                       selected ? "border-brown bg-brown text-white" : "border-mist bg-white text-cocoa hover:border-moss",
                     )}
                   >
-                    {selected && <Check aria-hidden="true" focusable="false" className="mr-1 inline h-4 w-4" />}
-                    {REPORT_VALUE_LABELS[v]}
+                    {selected ? (
+                      <Check aria-hidden="true" focusable="false" className="size-4 shrink-0" />
+                    ) : (
+                      <ReportIcon value={v} className="size-4 shrink-0 text-taupe" />
+                    )}
+                    <span className="min-w-0 text-left">{REPORT_VALUE_LABELS[v]}</span>
                   </button>
                 );
               })}
