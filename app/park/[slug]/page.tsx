@@ -48,10 +48,11 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
         park.description ??
         `Status, closure estimate, parking, accessibility and safety information for ${park.name}.`,
       alternates: { canonical: `/park/${slug}` },
+      // No `images` here: the generated card beside this page (opengraph-image.tsx) carries
+      // the logo, the park's name and its status. A bare Commons photo said none of that.
       openGraph: {
         type: "article",
         url: `/park/${slug}`,
-        ...(park.photo_url ? { images: [park.photo_url] } : {}),
       },
     };
   } catch {

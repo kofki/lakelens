@@ -1,6 +1,7 @@
 import { ImageResponse } from "next/og";
 import { getParkBundle } from "@/lib/queries";
-import { STATUS_META, statusShortReason } from "@/lib/status";
+import { STATUS_META, hasKnownStatus, statusShortReason } from "@/lib/status";
+import { logoDataUri } from "@/lib/ogBrand";
 import { parkLocation } from "@/components/list/parkListUtils";
 
 /**
@@ -30,9 +31,13 @@ export default async function Image({ params }: { params: Promise<{ slug: string
   const bundle = await getParkBundle(slug).catch(() => null);
 
   const name = bundle?.park.name ?? "LakeLens";
-  const water = bundle?.park.water_body ?? null;
+  // "Bright Lake · Bright Lake" says nothing twice: drop the water when it is the park.
+  const waterBody = bundle?.park.water_body ?? null;
+  const water = waterBody && waterBody.toLowerCase() !== name.toLowerCase() ? waterBody : null;
   const where = bundle ? parkLocation(bundle.park) : null;
-  const status = bundle ? statusShortReason(bundle.status) : null;
+  // A lake with nothing to base a status on gets no pill, the same as on the page.
+  const status = bundle && hasKnownStatus(bundle.status) ? statusShortReason(bundle.status) : null;
+  const logo = await logoDataUri();
   // The pill has to carry the status, not just say it: a shut park in reassuring green is
   // worse than no pill. STATUS_META already holds the AA-checked pairs the app uses.
   const meta = bundle ? STATUS_META[bundle.status.level] : null;
@@ -53,7 +58,8 @@ export default async function Image({ params }: { params: Promise<{ slug: string
           borderLeft: `24px solid ${LAGOON}`,
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: 16, color: FOREST, fontSize: 30, fontWeight: 800 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 16, color: FOREST, fontSize: 34, fontWeight: 800 }}>
+          <img src={logo} width={64} height={64} alt="" style={{ borderRadius: 14 }} />
           LakeLens
         </div>
 
@@ -96,7 +102,7 @@ export default async function Image({ params }: { params: Promise<{ slug: string
               {status}
             </div>
           )}
-          <div style={{ display: "flex", fontSize: 26, color: MOCHA }}>Freshwater swim spots across the US</div>
+          <div style={{ display: "flex", fontSize: 26, color: MOCHA }}>Check the water before you drive.</div>
         </div>
       </div>
     ),

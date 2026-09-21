@@ -39,7 +39,7 @@ export function SiteFooter({ className }: { className?: string }) {
             Crowding estimates, one-tap visitor reports, parking and accessibility for the
             springs, lakes and rivers you can swim in.
           </p>
-          <p className="text-[0.9rem] text-sand">Made by Kenzo Fukuda, University of Florida.</p>
+          <p className="text-[0.9rem] text-sand">Made by Kenzo Fukuda, CS student at the University of Florida.</p>
         </div>
 
         <nav aria-labelledby="footer-explore-heading">

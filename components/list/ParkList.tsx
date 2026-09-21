@@ -54,7 +54,7 @@ export function ParkList({
       <ul className="flex flex-col gap-3" aria-label="Parks">
         {visible.map((item) => (
           <li key={item.park.id}>
-            <ParkCard item={item} selected={item.park.id === selectedId} onSelect={onSelect} />
+            <ParkCard item={item} selected={item.park.slug === selectedId} onSelect={onSelect} />
           </li>
         ))}
       </ul>

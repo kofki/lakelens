@@ -142,14 +142,34 @@ function ParkMapInner({
     }
   }, [bottomInsetPx, topInsetPx, fitBounds]);
 
-  // Centre the selected park in the visible area.
+  /**
+   * Centre the selected park in the visible area, once per selection.
+   *
+   * Once, because new pins arrive after every pan: re-running on those would drag the map
+   * back to the selection each time the reader moved it. The park's position comes from the
+   * loaded pins or, for a park picked from the list that is outside the loaded area, from
+   * the list itself: every list card carries its coordinates.
+   */
+  const flownTo = useRef<string | null>(null);
   useEffect(() => {
-    if (!selectedId) return;
+    if (!selectedId) {
+      flownTo.current = null;
+      return;
+    }
+    if (flownTo.current === selectedId) return;
     const point = pointBySlug.get(selectedId);
+    const fromList = parksRef.current.find((item) => item.park.slug === selectedId)?.park;
+    const lat = point?.[2] ?? fromList?.lat;
+    const lng = point?.[3] ?? fromList?.lng;
     const map = mapRef.current;
-    if (!point || !map) return;
+    if (lat == null || lng == null || !map) return;
+    flownTo.current = selectedId;
+    // Picking a park is the reader steering the map. Without this, the auto-fit to the list
+    // (which follows the search box until the map is touched) ran again when search results
+    // landed, cut this animation short and left the park inside a cluster.
+    interactedRef.current = true;
     map.easeTo({
-      center: [point[3], point[2]],
+      center: [lng, lat],
       // Past the clustering zoom, so a park picked from the list is always its own pin
       // rather than a number the reader then has to hunt through.
       zoom: Math.max(map.getZoom(), CLUSTER_MAX_ZOOM + 1),

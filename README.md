@@ -1,8 +1,8 @@
 # LakeLens 🌊
 
-**Check the gate before you drive.** Closure estimates, one-tap visitor reports, parking, amenities and accessibility for freshwater swim spots.
+**Check the water before you drive.** Closure estimates, one-tap visitor reports, parking, amenities and accessibility for freshwater swim spots.
 
-Made by Kenzo Fukuda, a student at the University of Florida. LakeLens covers springs, lakes and rivers: the places that close at capacity before 10 AM on a summer Saturday, after families have already driven two hours to get there. The product is built for the whole US; today's data covers Florida, where 40 parks are live.
+Made by Kenzo Fukuda, CS student at the University of Florida. LakeLens covers springs, lakes and rivers: the places that close at capacity before 10 AM on a summer Saturday, after families have already driven two hours to get there. The product is built for the whole US; today's data covers Florida, where 40 parks are live.
 
 **Live app:** https://lakelens-kenzo-fukudas-projects.vercel.app · **Tracks:** Social Impact + Best Design
 

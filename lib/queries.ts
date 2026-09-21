@@ -280,6 +280,8 @@ export interface WorldScope {
    * map runs the status model for about 150 parks instead of 23,000.
    */
   basisOnly?: boolean;
+  /** Only these parks, by slug. Kept small (search results), since the list is in the URL. */
+  slugs?: string[];
 }
 
 /**
@@ -314,7 +316,11 @@ async function loadWorld(db: Db, now: Date, scope: WorldScope = {}): Promise<Wor
 
   // The parks come first when scoped, because their ids are what narrows everything else.
   const wantsScope =
-    Boolean(scope.bbox) || Boolean(scope.state) || typeof scope.limit === "number" || Boolean(scope.basisOnly);
+    Boolean(scope.bbox) ||
+    Boolean(scope.state) ||
+    typeof scope.limit === "number" ||
+    Boolean(scope.basisOnly) ||
+    Boolean(scope.slugs);
   const extraIds = scope.basisOnly ? await liveSignalParkIds(db, since) : [];
   const scopedParks = wantsScope
     ? await selectAll<Park>(
@@ -329,6 +335,7 @@ async function loadWorld(db: Db, now: Date, scope: WorldScope = {}): Promise<Wor
             );
           }
           if (scope.state) q.eq("state", scope.state);
+          if (scope.slugs) q.in("slug", scope.slugs.length ? scope.slugs : ["-"]);
           if (scope.bbox) {
             const [west, south, east, north] = scope.bbox;
             q.gte("lat", south).lte("lat", north).gte("lng", west).lte("lng", east);
@@ -817,6 +824,44 @@ export async function getParkBundle(slug: string, now: Date = new Date()): Promi
   } catch (err) {
     warn(`getParkBundle(${slug})`, err);
     return null;
+  }
+}
+
+/** Most results a search returns: a screenful of cards, and a slug list that fits a URL. */
+export const SEARCH_LIMIT = 40;
+
+/**
+ * Parks whose name contains the query, from the whole database.
+ *
+ * The list and the map carry a bounded set of parks in the page, and filtering only that
+ * set meant a search for Ichetucknee, which is not in the nationwide first 1,500, found
+ * nothing. Parks with something to say (a status basis) rank first, then by name.
+ */
+export async function searchParks(query: string, now: Date = new Date()): Promise<ParkWithStatus[]> {
+  const q = query.trim();
+  if (q.length < 2) return [];
+  try {
+    const db = createPublicClient();
+    // ilike wildcards in the query are literal characters here, not patterns.
+    const pattern = `%${q.replace(/[\\%_]/g, (c) => `\\${c}`)}%`;
+    const { data, error } = await db
+      .from("parks")
+      .select("slug")
+      .ilike("name", pattern)
+      .order("has_status_basis", { ascending: false })
+      .order("name")
+      .limit(SEARCH_LIMIT);
+    if (error) throw error;
+    const slugs = (data ?? []).map((r) => (r as { slug: string }).slug);
+    if (slugs.length === 0) return [];
+    const world = await loadWorld(db, now, { slugs });
+    const order = new Map(slugs.map((slug, i) => [slug, i]));
+    return assembleAll(world, now)
+      .sort((a, b) => (order.get(a.park.slug) ?? 0) - (order.get(b.park.slug) ?? 0))
+      .map(slimForList);
+  } catch (err) {
+    warn(`searchParks(${q})`, err);
+    return [];
   }
 }
 

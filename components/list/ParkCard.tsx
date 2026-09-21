@@ -52,7 +52,7 @@ export function ParkCard({ item, selected = false, onSelect }: ParkCardProps) {
     <div
       ref={ref}
       aria-current={selected ? "true" : undefined}
-      onClick={selectable ? () => onSelect(park.id) : undefined}
+      onClick={selectable ? () => onSelect(park.slug) : undefined}
       className={cn("rounded-card", selectable && "cursor-pointer", selected && "ring-2 ring-sunset ring-offset-2 ring-offset-white")}
     >
       <Card as="article" padded={false} interactive className="relative overflow-hidden">
@@ -111,7 +111,7 @@ export function ParkCard({ item, selected = false, onSelect }: ParkCardProps) {
                 aria-pressed={selected}
                 onClick={(e) => {
                   e.stopPropagation();
-                  onSelect(park.id);
+                  onSelect(park.slug);
                 }}
                 className="inline-flex min-h-11 items-center gap-1 rounded-full px-2 text-xs font-bold text-brown hover:bg-mist-light"
               >

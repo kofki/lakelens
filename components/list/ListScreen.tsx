@@ -1,5 +1,6 @@
 "use client";
 
+import { useMergedParks, useParkSearch } from "./useParkSearch";
 import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import { LocateFixed, MapPinned, SlidersHorizontal } from "lucide-react";
@@ -137,7 +138,10 @@ export function ListScreen({ parks, initialFilters, stateCounts, selectedState =
   // the prompt below is what turns it into distance for most people.
   const sort: SortKey = sortOverride ?? (geo.location ? "distance" : "name");
 
-  const located = useMemo(() => withDistances(parks, geo.location), [parks, geo.location]);
+  // Search reaches the whole database, not just the parks this page arrived with.
+  const searched = useParkSearch(query);
+  const pool = useMergedParks(parks, searched);
+  const located = useMemo(() => withDistances(pool, geo.location), [pool, geo.location]);
   const filtered = useMemo(() => filterParks(located, effectiveFilters, query), [located, effectiveFilters, query]);
   const sorted = useMemo(() => sortParks(filtered, sort), [filtered, sort]);
   const visibleTiles = useMemo(

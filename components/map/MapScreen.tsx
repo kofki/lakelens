@@ -1,5 +1,6 @@
 "use client";
 
+import { useMergedParks, useParkSearch } from "@/components/list/useParkSearch";
 import { useCallback, useMemo, useState } from "react";
 import { LocateFixed, SlidersHorizontal } from "lucide-react";
 import { DEFAULT_FILTERS, type Filters, type ParkWithStatus } from "@/lib/types";
@@ -63,11 +64,15 @@ export function MapScreen({ parks, initialFilters }: MapScreenProps) {
   // Default to distance once we have a location; the user's explicit choice always wins.
   const sort: SortKey = sortOverride ?? (geo.location ? "distance" : "status");
 
-  const located = useMemo(() => withDistances(parks, geo.location), [parks, geo.location]);
+  // Search reaches the whole database, not just the parks this page arrived with.
+  const searched = useParkSearch(query);
+  const pool = useMergedParks(parks, searched);
+  const located = useMemo(() => withDistances(pool, geo.location), [pool, geo.location]);
   const filtered = useMemo(() => filterParks(located, filters, query), [located, filters, query]);
   const sorted = useMemo(() => sortParks(filtered, sort), [filtered, sort]);
   const counts = useMemo(() => countStatuses(filtered), [filtered]);
-  const selected = selectedId ? (located.find((p) => p.park.id === selectedId) ?? null) : null;
+  // Selection is by slug everywhere: it is what map pins carry, and the list now matches.
+  const selected = selectedId ? (located.find((p) => p.park.slug === selectedId) ?? null) : null;
   const filterCount = activeFilterCount(filters);
   const stateOptions = useMemo(() => availableStates(parks), [parks]);
 

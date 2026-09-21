@@ -16,8 +16,8 @@ export interface PointMarkerProps {
   onSelect: (slug: string) => void;
 }
 
-/** Brand forest: a pin for a place, not a verdict on it. */
-const NEUTRAL_EDGE = "#1f4d3a";
+/** Muted forest: a pin for a place, not a verdict on it. 5.9:1 on white and 4:1 on map water, so it clears 3:1. */
+const NEUTRAL_EDGE = "#4d6b5b";
 
 /**
  * A pin drawn from a map point rather than a whole park.
@@ -44,7 +44,8 @@ export function PointMarker({ point, selected, showLabel, onSelect }: PointMarke
       latitude={lat}
       anchor="bottom"
       offset={[0, -4]}
-      style={{ zIndex: selected ? 2 : 1 }}
+      // Parks we know something about sit above the bare lakes they are often surrounded by.
+      style={{ zIndex: selected ? 3 : known ? 2 : 1 }}
       onClick={(e) => {
         // The map's own click handler deselects; don't let this reach it.
         e.originalEvent.stopPropagation();
@@ -62,25 +63,33 @@ export function PointMarker({ point, selected, showLabel, onSelect }: PointMarke
         <span
           aria-hidden="true"
           className={cn(
-            "relative flex size-10 items-center justify-center rounded-full border-[2.5px] border-(--marker-edge) bg-white shadow-md",
-            "after:content-[''] after:absolute after:left-1/2 after:top-full after:-mt-2 after:size-3 after:-translate-x-1/2 after:rotate-45 after:border-b-[2.5px] after:border-r-[2.5px] after:border-(--marker-edge) after:bg-white",
+            "relative flex items-center justify-center rounded-full bg-white",
+            "after:content-[''] after:absolute after:left-1/2 after:top-full after:-translate-x-1/2 after:rotate-45 after:border-(--marker-edge) after:bg-white",
+            // Two sizes, so the map reads at a glance: a full pin for a place with a status and
+            // a page worth opening, a small quiet one for a lake we can only point at.
+            known
+              ? "size-11 border-[3px] border-(--marker-edge) shadow-md after:-mt-2 after:size-3 after:border-b-[3px] after:border-r-[3px]"
+              : "size-7 border-2 border-(--marker-edge) shadow-sm after:-mt-1.5 after:size-2 after:border-b-2 after:border-r-2",
             selected && "ring-3 ring-sunset-deep ring-offset-2 ring-offset-cream",
           )}
         >
           {known ? (
             <StatusIcon level={level} source="hours" className="relative z-10 size-5 text-(--marker-fg)" />
           ) : (
-            <Waves aria-hidden="true" focusable="false" className="relative z-10 size-5 text-(--marker-fg)" />
+            <Waves aria-hidden="true" focusable="false" className="relative z-10 size-3.5 text-(--marker-fg)" />
           )}
         </span>
         <span
           className={
             showLabel
-              ? "absolute left-full top-1/2 ml-1 -translate-y-1/2 whitespace-nowrap rounded-full border border-mist-light bg-white/95 px-2 py-0.5 text-xs font-extrabold text-ink shadow-card"
+              ? cn(
+                  "absolute left-full top-1/2 ml-1 -translate-y-1/2 whitespace-nowrap rounded-full border bg-white/95 px-2 py-0.5 text-xs shadow-card",
+                  known ? "border-mist-light font-extrabold text-ink" : "border-transparent font-semibold text-cocoa",
+                )
               : "sr-only"
           }
         >
-          {known ? meta.shortLabel : name}
+          {known ? `${name} · ${meta.shortLabel}` : name}
         </span>
       </button>
     </Marker>

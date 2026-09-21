@@ -174,7 +174,7 @@ export default function AboutPage() {
         <header className="space-y-4 md:space-y-5">
           <Wordmark size="lg" className="md:hidden" />
           <h1 className="max-w-[18ch] text-[2rem] font-extrabold leading-tight text-brown md:text-[3rem]">
-            Never drive out to a closed gate.
+            Check the water before you drive.
           </h1>
           <p className="max-w-prose text-mocha md:text-lg">
             LakeLens covers freshwater swim areas across all 50 states: springs, lakes and rivers inside
@@ -426,16 +426,10 @@ export default function AboutPage() {
                   height={96}
                   className="size-24 shrink-0 rounded-full object-cover shadow-card"
                 />
-                <div className="min-w-0 space-y-2">
-                  <p>
-                    Made by <span className="font-bold">Kenzo Fukuda</span>, a student at the University of
-                    Florida.
-                  </p>
-                  <p className="text-sm text-mocha">
-                    Salt water is out of scope on purpose: a beach has no gate, so it cannot turn you away.
-                    Built with Next.js, Supabase and MapLibre.
-                  </p>
-                </div>
+                <p className="min-w-0">
+                  Made by <span className="font-bold">Kenzo Fukuda</span>, CS student at the University of
+                  Florida.
+                </p>
               </Card>
               <div className="flex flex-wrap gap-2">
                 <ButtonLink href="/">
