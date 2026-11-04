@@ -16,7 +16,7 @@ export const DATA_DIR = join(ROOT, "data");
 export const CACHE_DIR = join(DATA_DIR, "osm-cache");
 
 /** Identifies LakeLens to NWS / Overpass / Nager (NWS returns 403 without a UA). */
-export const USER_AGENT = "LakeLens/0.1 (https://lakelens.vercel.app; kenzof28@gmail.com)";
+export const USER_AGENT = "LakeLens/0.1 (https://lakelens.vercel.app; kenzo@beachlens.net)";
 
 export const REFRESH = process.argv.includes("--refresh");
 

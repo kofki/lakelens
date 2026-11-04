@@ -188,7 +188,7 @@ export interface FetchParkingOptions {
 }
 
 /** Contact address, as Overpass's usage policy asks for. */
-export const OVERPASS_USER_AGENT = "LakeLens/1.0 (https://github.com/kofki/lakelens; kenzof28@gmail.com)";
+export const OVERPASS_USER_AGENT = "LakeLens/1.0 (https://github.com/kofki/lakelens; kenzo@beachlens.net)";
 
 /** Overpass asks for a gap between queries from the same client. */
 const CHUNK_GAP_MS = 1_000;
